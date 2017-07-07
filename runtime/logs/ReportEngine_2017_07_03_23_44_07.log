@@ -1,0 +1,58 @@
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.api.impl.ReportEngine <init>
+FINE: ReportEngine created. EngineConfig: EngineConfig: tmpDir=/home/mspl/Documents/new/ofbiz.16.11/runtime/tempfiles;logDest=/home/mspl/Documents/new/ofbiz.16.11/runtime/logs/;logLevel=FINE;org.eclipse.birt.report.engine.api.EngineConfig.scriptObjects={};org.eclipse.birt.report.engine.api.EngineConfig.emitterConfigs={html=org.eclipse.birt.report.engine.api.HTMLEmitterConfig@13f66e7}; 
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportitemGeneration
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadGenerationExtensionDefns
+FINE: Load generation extension: Chart
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportitemPresentation
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadPresentationExtensionDefns
+FINE: Load prsentation extension: Chart
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportitemQuery
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadQueryExtensionDefns
+FINE: Load query extension: Chart
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.emitters
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load html emitter org.eclipse.birt.report.engine.emitter.html
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load pdf emitter org.eclipse.birt.report.engine.emitter.pdf
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load postscript emitter org.eclipse.birt.report.engine.emitter.postscript
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load ppt emitter org.eclipse.birt.report.engine.emitter.ppt
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load xls emitter org.eclipse.birt.report.engine.emitter.prototype.excel
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load doc emitter org.eclipse.birt.report.engine.emitter.word
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load docx emitter org.eclipse.birt.report.engine.emitter.docx
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load pptx emitter org.eclipse.birt.report.engine.emitter.pptx
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load odp emitter org.eclipse.birt.report.engine.emitter.odp
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load ods emitter org.eclipse.birt.report.engine.emitter.prototype.ods
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load odt emitter org.eclipse.birt.report.engine.emitter.odt
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load xlsx emitter uk.co.spudsoft.birt.emitters.excel.XlsxEmitter
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load xls_spudsoft emitter uk.co.spudsoft.birt.emitters.excel.XlsEmitter
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportEventHandler
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportItemPreparation
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.dataExtraction
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadDataExtractionExtensions
+FINE: Load data extraction extension: org.eclipse.birt.report.engine.dataextraction.csv
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.extendedItemFactory
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINE: Load extendedItem extension: Crosstab
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINE: Load extendedItem extension: CrosstabCell
+Jul 03, 2017 11:44:07 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINE: Load extendedItem extension: AggregationCell

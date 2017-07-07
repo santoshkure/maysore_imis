@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.apache.ofbiz.webapp.control.ControlFilterTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-07-03T18:04:50" hostname="mspl" time="1.086">
+  <properties/>
+  <testcase name="initRetrievesAllInitParameters" classname="org.apache.ofbiz.webapp.control.ControlFilterTests" time="0.36"/>
+  <testcase name="initSetsProperErrorCode" classname="org.apache.ofbiz.webapp.control.ControlFilterTests" time="0.725"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+]]></system-err>
+</testsuite>
