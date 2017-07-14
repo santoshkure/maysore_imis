@@ -32,8 +32,8 @@ under the License.
   }
 </script>
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <div class="boxlink">
       <#if requestParameters.singleUsePayment?default("N") != "Y">
         <div>

@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
+<div class="row">
     <h3>${uiLabelMap.EcommerceRequestHistory}</h3>
     <div class="screenlet-body">
         <table>

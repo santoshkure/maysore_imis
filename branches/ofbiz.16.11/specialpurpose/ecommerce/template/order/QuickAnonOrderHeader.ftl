@@ -26,8 +26,8 @@ under the License.
     <#-- left side -->
     <td width="50%" valign="top">
 
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <div class="boxlink">
                 <#if maySelectItems?default("N") == "Y" && returnLink?default("N") == "Y" && (orderHeader.statusId)! == "ORDER_COMPLETED">
                     <a href="<@ofbizUrl>makeReturn?orderId=${orderHeader.orderId}</@ofbizUrl>" class="submenutextright">${uiLabelMap.OrderRequestReturn}</a>
@@ -107,8 +107,8 @@ under the License.
     <td width="50%" valign="top">
       <#if orderItemShipGroups?has_content>
 
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <div class="h3">${uiLabelMap.OrderShippingInformation}</div>
         </div>
         <div class="screenlet-body">

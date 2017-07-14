@@ -62,8 +62,8 @@ under the License.
   <fieldset>
     <input type="hidden" name="checkoutpage" value="shippingoptions"/>
 
-    <div class="screenlet" style="height: 100%;">
-      <div class="screenlet-title-bar">
+    <div class="row" style="height: 100%;">
+      <div class="alert alert-info">
         <div class="h3">2)&nbsp;${uiLabelMap.OrderHowShallWeShipIt}?</div>
       </div>
       <div class="screenlet-body" style="height: 100%;">

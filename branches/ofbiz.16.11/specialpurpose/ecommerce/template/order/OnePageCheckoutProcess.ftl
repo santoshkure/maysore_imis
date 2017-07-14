@@ -24,12 +24,12 @@ under the License.
     <div id="checkoutPanel">
 
     <#-- ========================================================================================================================== -->
-      <div id="cartPanel" class="screenlet">
+      <div id="cartPanel" class="row">
       ${screens.render("component://ecommerce/widget/CartScreens.xml#UpdateCart")}
       </div>
 
     <#-- ========================================================================================================================== -->
-      <div id="shippingPanel" class="screenlet">
+      <div id="shippingPanel" class="row">
         <h3>${uiLabelMap.EcommerceStep} 2: ${uiLabelMap.FacilityShipping}</h3>
         <div id="shippingSummaryPanel" style="display: none;">
           <a href="javascript:void(0);" id="openShippingPanel" class="button">
@@ -268,7 +268,7 @@ under the License.
       </div>
 
     <#-- ========================================================================================================================== -->
-      <div id="shippingOptionPanel" class="screenlet">
+      <div id="shippingOptionPanel" class="row">
         <h3>${uiLabelMap.EcommerceStep} 3: ${uiLabelMap.PageTitleShippingOptions}</h3>
         <div id="shippingOptionSummaryPanel" class="screenlet-body" style="display: none;">
           <a href="javascript:void(0);" id="openShippingOptionPanel"
@@ -309,7 +309,7 @@ under the License.
       </div>
 
     <#-- ========================================================================================================================== -->
-      <div id="billingPanel" class="screenlet">
+      <div id="billingPanel" class="row">
         <h3>${uiLabelMap.EcommerceStep} 4: ${uiLabelMap.AccountingBilling}</h3>
         <div id="billingSummaryPanel" class="screenlet-body" style="display: none;">
           <a href="javascript:void(0);" id="openBillingPanel" class="button">${uiLabelMap.EcommerceClickHereToEdit}</a>
@@ -593,7 +593,7 @@ under the License.
       </div>
 
     <#-- ========================================================================================================================== -->
-      <div class="screenlet">
+      <div class="row">
         <h3>${uiLabelMap.EcommerceStep} 5: ${uiLabelMap.OrderSubmitOrder}</h3>
         <div id="orderSubmitPanel" style="display: none;">
           <form id="orderSubmitForm" action="<@ofbizUrl>onePageProcessOrder</@ofbizUrl>" method="post">

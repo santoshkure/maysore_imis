@@ -24,7 +24,7 @@ under the License.
   <#assign externalOrder = "(" + orderHeader.externalId + ")"/>
 </#if>
 
-    <div class="screenlet">
+    <div class="row">
       <h3>
       <#if maySelectItems?default("N") == "Y" && returnLink?default("N") == "Y" && (orderHeader.statusId)! == "ORDER_COMPLETED" && roleTypeId! == "PLACING_CUSTOMER">
         <a href="<@ofbizUrl fullPath="true">makeReturn?orderId=${orderHeader.orderId}</@ofbizUrl>"
@@ -79,7 +79,7 @@ under the License.
       </ul>
     </div>
 
-    <div class="screenlet">
+    <div class="row">
       <#if paymentMethods?has_content || paymentMethodType?has_content || billingAccount?has_content>
         <#-- order payment info -->
         <h3>${uiLabelMap.AccountingPaymentInformation}</h3>
@@ -236,7 +236,7 @@ under the License.
     </div>
 
   <#-- right side -->
-  <div class="screenlet">
+  <div class="row">
     <#if orderItemShipGroups?has_content>
       <h3>${uiLabelMap.OrderShippingInformation}</h3>
       <#-- shipping address -->
