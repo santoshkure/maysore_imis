@@ -1,5 +1,5 @@
 /* common colors */
-@black: #000;
+@black: #393939;
 @white: #fff;
 @grey: #e6e6e6;
 @greydark: #929292;
@@ -23,8 +23,8 @@
 @color-border-success: #d6e9c6;
 
 /* Saphir colors */
-@blue-dark: #002333;
-@blue-main: #005982;
+@blue-dark: #FFFFFF;
+@blue-main: #4598d4;
 @blue-medium: #c7dfff;
 @blue-light: #f1f7ff;
 @blue-light2: #e4f0f5;
@@ -108,9 +108,9 @@
 */
 
 
-@app-bar-height: 60px;
+@app-bar-height: 50px;
 @sub-app-bar-height: 40px;
-@footer-height: 20px;
+@footer-height: 30px;
 @home-btn-width: 47px;
 @color-line-height: 9px;
 
@@ -121,7 +121,7 @@
 @third-lvl-height: 80px;
 @third-lvl-width : 100px;
 @min-screen : 1170px;
-@min-container-width: 1130px;
+@min-container-width: auto;
 
 @box-border-color: #d7d7d7;
 
@@ -418,15 +418,15 @@
 #company-logo {
   right: 10px;
   top: 2px;
-  background: url("images/ofbiz-simple-white.svg") no-repeat left top / cover;
+  background: url("images/imis-logo.jpg") no-repeat left top / cover;
   min-height: 50px;
-  min-width: 50px;
+  min-width: 120px;
   margin-right: 15px;
   align-self: center;
   @media screen and (min-width : 1232px) {
     min-height: 50px;
     min-width: 129px;
-    background: url("images/ofbiz-white.svg") no-repeat left top / cover;
+    background: url("images/imis-logo.jpg") no-repeat left top / cover;
   }
 }
 
@@ -565,7 +565,7 @@ li.line-odd {
   width: 40px;
   padding: 2px;
   align-self: center;
-
+  margin-left: 25px;
   :hover {
     cursor: pointer;
   }
@@ -616,7 +616,7 @@ li.line-odd {
   a {
     padding:10px;
     color: @font-color-for-dark;
-    font-size: 1.4em !important;
+    font-size: 1.1em !important;
   }
 }
 
@@ -630,7 +630,7 @@ li.line-odd {
   background-color: @main-color-theme;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  box-shadow: 1px 1px 12px @shadow-color;
+  box-shadow: 1px 1px 5px #09090966;
   a {
     position: relative;
     top: 6px;
@@ -653,7 +653,7 @@ li.line-odd {
   align-items: center;
   justify-content: center;
   background-color: @main-color-theme;
-  box-shadow: 1px -2px 12px @shadow-color;
+  box-shadow: 1px 1px 5px #09090966;
   z-index: 0;
   opacity: .99;
   border-top-left-radius : 8px ;
@@ -718,13 +718,13 @@ li.line-odd {
   border-top-width: @color-line-height;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  padding: 6px 10px;
   li {
-    padding-left : 4px;
-    padding-right: 4px;
+    padding: 4px;
   }
 
   a {
-    color: @font-color-for-dark;
+    color: #777;
     font-size: 15px;
   }
 
@@ -784,7 +784,7 @@ li.line-odd {
   right: 20px;
   top : 62px;
   background-color: @dark-color-theme;
-  color : @font-color-for-dark;
+  color : #6f6f6f;
   font-size: 15px;
   font-weight: bold;
   padding-top: 5px;
@@ -803,7 +803,7 @@ li.line-odd {
     margin-right: 5px;
   }
   #logout {
-    background-color: @white;
+    background-color: #337ab7;
     color: @dark-color-theme !important;
     border-radius: 2px;
     :hover {
@@ -1225,6 +1225,9 @@ a.user-pref-btn {
     position: absolute;
   }
 }
+.expanded{
+	display:none;
+}
 
 .login-screenlet {
   display: flex;
@@ -1318,7 +1321,9 @@ a.user-pref-btn {
 
 /* End Login screenlet */
 
-
+body {
+	background-color: #f5f5f5;
+}
 /* --------------------------------------------- */
 /*      Begin Screenlet style                    */
 /* --------------------------------------------- */
@@ -1961,10 +1966,9 @@ input[type="button"] {
 /* ---------------------- */
 
 #footer {
-  background: @dark-color-theme;
+  background: #666;
   border-top: 0.1em inset #000;
-  padding: 0.5em 0 0.5em 0.5em;
-
+  padding: 0.1em 0.1em;
   height: @footer-height;
   position: fixed;
   bottom: 0;
@@ -1975,6 +1979,10 @@ input[type="button"] {
   justify-content: space-between;
   font-family: "Quicksand", Arial, "Lucida Grande", sans-serif !important;
   z-index: 10;
+  background: #5d5d5d;
+	padding: 8px;
+	color: #fff;
+  
 
   span {
     color: @font-color-for-dark;
