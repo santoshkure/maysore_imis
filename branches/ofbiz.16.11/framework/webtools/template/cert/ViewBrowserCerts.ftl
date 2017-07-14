@@ -23,13 +23,13 @@ under the License.
     <#assign clientCerts = request.getAttribute("javax.net.ssl.peer_certificates")!/>
 </#if>
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.WebtoolsCertsX509}</h3>
   </div>
   <#if (isSecure)>
     <#if (clientCerts?has_content)>
-      <table class="basic-table">
+      <table class="basic-table table-responsive">
         <#list clientCerts as cert>
           <#assign certString = Static["org.apache.ofbiz.base.util.KeyStoreUtil"].certToString(cert)!>
           <#if (certString?has_content)>

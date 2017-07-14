@@ -18,9 +18,9 @@ under the License.
 -->
 
 
-<div class="screenlet">
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+  <div class="row">
+    <div class="alert alert-info">
       <h3>${uiLabelMap.WebtoolsEntityXMLRepresentation}</h3>
     </div>
     <div class="screenlet-body">
