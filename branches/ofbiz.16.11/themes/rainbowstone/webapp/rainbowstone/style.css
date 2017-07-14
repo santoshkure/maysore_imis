@@ -41,7 +41,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
     outline: 0;
     padding: 0;
-    font-size: 100%;
+    font-size: 11px;
     background: transparent;
     vertical-align: baseline;
 }
@@ -96,7 +96,7 @@ a:hover, a:active {
 }
 
 body, textarea, input, select {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 /*
@@ -108,10 +108,14 @@ background-image: url(images/tile.gif);
 body {
     font-size: 62.5%;
     position: relative;
-    color: #000;
+    color: #393939;
     min-width: 780px;
     margin: 0;
     width: expression(document.body.clientWidth < 782? "780px" : "auto");
+    background:#f5f5f5;
+}
+.navbar {
+	margin-bottom:0;	
 }
 
 hr {
@@ -137,6 +141,8 @@ h2, .h2 {
 h3, .h3 {
     font-size: 1.1em;
     font-weight: bold;
+    margin:0;
+    margin-top:8px;
 }
 
 /* IE7 fix */
@@ -182,7 +188,9 @@ th, th a {
 
 .alert {
     /* Used for alert text */
-    color: #ff0000;
+    padding:0px;
+    text-align: center;
+    height: 33px;
 }
 
 .content-messages p {
@@ -796,6 +804,7 @@ text-decoration: underline;
 
 .basic-form table tr td {
     padding: 0.1em;
+    text-align: left;
 }
 
 .basic-form table tr .label,
@@ -1620,9 +1629,7 @@ A.lightbuttontextsmall:hover {
 }
 
 DIV.row {
-    background-color: #B4B0AA;
     margin: 0 auto 0 auto;
-    text-align: center;
 }
 
 DIV.col {
