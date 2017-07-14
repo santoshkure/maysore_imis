@@ -60,4 +60,4 @@ under the License.
 <!-- end header -->
 
 <div class="centerarea">
-  <div class="contentarea">
+  <div class="container-fluid">
