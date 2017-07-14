@@ -27,8 +27,8 @@ under the License.
 <h1>${uiLabelMap.CommonLogin}</h1>
 <br />
 
-<div style="float: center; width: 49%; margin-right: 5px; text-align: center;" class="screenlet">
-    <div class="screenlet-title-bar">
+<div style="float: center; width: 49%; margin-right: 5px; text-align: center;" class="row">
+    <div class="alert alert-info">
         <div class="h3">${uiLabelMap.CommonPasswordChange}</div>
     </div>
     <div class="screenlet-body" style="text-align: center;">

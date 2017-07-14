@@ -194,8 +194,8 @@ under the License.
         }
     }
 </script>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">Items to export</li>
       <li>
@@ -214,7 +214,7 @@ under the License.
     <form id="ProductsExportToEbay" method="post" action="<@ofbizUrl>exportProductsFromEbayStore</@ofbizUrl>"
         name="ProductsExportToEbay">
       <input type="hidden" name="productStoreId" value="${productStoreId!}"/>
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr>
           <td>
             <#if addItemObj?has_content>
@@ -301,8 +301,8 @@ under the License.
                         </td>
                       </tr>
                     </table>
-                    <div class="screenlet">
-                      <div class="screenlet-title-bar">
+                    <div class="row">
+                      <div class="alert alert-info">
                         <ul>
                           <li class="h3">Product ${item.getSKU()!}</li>
                         </ul>
@@ -529,8 +529,8 @@ under the License.
                     <!-- item specifices section -->
                     <#if primaryCate?has_content && primaryCate.getCategoryID()?? && listingTypes?has_content>
                       <#if checkSpecific == "true">
-                        <div class="screenlet">
-                          <div class="screenlet-title-bar">
+                        <div class="row">
+                          <div class="alert alert-info">
                             <ul>
                               <li class="h3">Item specifices</li>
                             </ul>
@@ -568,8 +568,8 @@ under the License.
                     </#if>
                     <!-- Setup ad templates section -->
                     <#if primaryCate?has_content && primaryCate.getCategoryID()?? && listingTypes?has_content>
-                      <div class="screenlet">
-                        <div class="screenlet-title-bar">
+                      <div class="row">
+                        <div class="alert alert-info">
                           <ul>
                             <li class="h3">Details</li>
                           </ul>
@@ -680,8 +680,8 @@ under the License.
                     </#if>
                     <!-- product Price Type -->
                     <#if primaryCate?has_content && primaryCate.getCategoryID()?? && listingTypes?has_content>
-                      <div class="screenlet">
-                        <div class="screenlet-title-bar">
+                      <div class="row">
+                        <div class="alert alert-info">
                           <ul>
                             <li class="h3">Listing Type</li>
                           </ul>
@@ -847,8 +847,8 @@ under the License.
                     </#if>
                     <!-- payment section -->
                     <#if primaryCate?has_content && primaryCate.getCategoryID()?? && listingTypes?has_content>
-                      <div class="screenlet">
-                        <div class="screenlet-title-bar">
+                      <div class="row">
+                        <div class="alert alert-info">
                           <ul>
                             <li class="h3">Payment</li>
                           </ul>
@@ -927,8 +927,8 @@ under the License.
                       </div>
                     </#if>
                     <#if primaryCate?has_content && primaryCate.getCategoryID()?? && listingTypes?has_content>
-                      <div class="screenlet">
-                        <div class="screenlet-title-bar">
+                      <div class="row">
+                        <div class="alert alert-info">
                           <ul>
                             <li class="h3">Shipping Service</li>
                           </ul>
@@ -1002,7 +1002,7 @@ under the License.
         </tr>
       </table>
       <#--if addItemList?has_content>
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
           <tr>
             <td align="center" colspan="2">
               <a href="#" class="buttontext">${uiLabelMap.EbayExportToEbay}</a>

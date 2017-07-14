@@ -147,7 +147,7 @@ under the License.
     <input type="hidden" name="storeLogoName" value="${ebayStore.storeLogoName!}"/>
     <input type="hidden" name="productStoreId" value="${parameters.productStoreId!}"/>
     <fieldset>
-      <table cellspacing="0" class="basic-table">
+      <table cellspacing="0" class="basic-table table-responsive">
         <tr>
           <td class="label" align="right" valign="middle">${uiLabelMap.EbayStoreStoreName} :</td>
           <td valign="middle">

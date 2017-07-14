@@ -43,8 +43,8 @@ under the License.
     }
 //]]>
 </script>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.ProductAdvancedSearchInCategory}</h3>
   </div>
   <div class="screenlet-body">
@@ -55,7 +55,7 @@ under the License.
         <input type="hidden" name="VIEW_SIZE" value="25"/>
         <input type="hidden" name="PAGING" value="Y"/>
         <input type="hidden" name="noConditionFind" value="Y"/>
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
           <tr>
             <td class="label" align="right" valign="top">
               ${uiLabelMap.ProductCatalog}:
