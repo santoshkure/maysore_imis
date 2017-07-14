@@ -58,8 +58,8 @@ under the License.
   </tr>
 </#macro>
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <div class="boxlink">
       <#if parameters.showSent! == "true">
         <a href="<@ofbizUrl>messagelist</@ofbizUrl>" class="submenutextright">

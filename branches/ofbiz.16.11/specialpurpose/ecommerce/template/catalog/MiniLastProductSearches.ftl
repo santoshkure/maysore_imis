@@ -26,7 +26,7 @@ under the License.
   <#else>
     <#assign limit=(searchOptionsHistoryList?size-1)/>
   </#if>
-  <div id="minilastproductsearches" class="screenlet">
+  <div id="minilastproductsearches" class="row">
     <div class="boxlink">
       <a href="<@ofbizUrl>clearLastViewed</@ofbizUrl>" class="lightbuttontextsmall">
         [${uiLabelMap.CommonClear}]

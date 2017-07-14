@@ -18,7 +18,7 @@ under the License.
 -->
 
 <#import "BlogLib.ftl" as blog/>
-<div class="screenlet">
+<div class="row">
   <h1>{${uiLabelMap.EcommerceFromSite}</h1><br/>
   <div>
     <@blog.renderAncestryPath trail=ancestorList?default([]) endIndexOffset=1 />

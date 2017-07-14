@@ -20,7 +20,7 @@ under the License.
 <#assign associatedProducts = Static["org.apache.ofbiz.order.shoppingcart.product.ProductDisplayWorker"]
     .getRandomCartProductAssoc(request, true)!>
 <#if associatedProducts?has_content>
-  <div id="miniassocproducts" class="screenlet">
+  <div id="miniassocproducts" class="row">
     <h3>${uiLabelMap.EcommerceYouMightLike}...</h3>
     <div class="screenlet-body">
     <#-- random complementary products -->

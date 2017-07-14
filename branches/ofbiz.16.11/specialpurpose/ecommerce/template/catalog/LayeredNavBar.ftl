@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if currentSearchCategory??>
-  <div id="layeredNav" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="layeredNav" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.EcommerceLayeredNavigation}</li>
       </ul>

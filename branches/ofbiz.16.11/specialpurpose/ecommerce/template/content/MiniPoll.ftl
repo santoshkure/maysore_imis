@@ -24,8 +24,8 @@ under the License.
 </#if>
 
 <#if randomSurvey?has_content>
-  <div id="minipoll" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="minipoll" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${randomSurvey.getSurveyName()!}</li>
       </ul>

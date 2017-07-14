@@ -30,8 +30,8 @@ under the License.
   </#if>
 </#if>
 
-<div id="content_catagories" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="content_catagories" class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ProductBrowseContent}</li>
     </ul>

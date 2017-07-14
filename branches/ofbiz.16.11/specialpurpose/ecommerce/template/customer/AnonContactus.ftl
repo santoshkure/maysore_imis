@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.CommonContactUs}</h3>
   </div>
   <script type="text/javascript" language="JavaScript">
@@ -39,7 +39,7 @@ under the License.
       <input type="hidden" name="communicationEventTypeId" value="WEB_SITE_COMMUNICATI"/>
       <input type="hidden" name="productStoreId" value="${productStore.productStoreId}"/>
       <input type="hidden" name="emailType" value="CONT_NOTI_EMAIL"/>
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tbody>
         <tr>
           <td class="label">${uiLabelMap.EcommerceSubject}</td>

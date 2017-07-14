@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.EcommerceMyAccount}</h3>
   <div class="screenlet-body">
     <form id="newUserForm" method="post" action="<@ofbizUrl>createCustomerProfile</@ofbizUrl>">

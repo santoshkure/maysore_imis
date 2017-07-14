@@ -44,8 +44,8 @@ under the License.
   }
 </script>
 
-<div id="miniSignUpForContactList" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="miniSignUpForContactList" class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.EcommerceSignUpForContactList}</li>
     </ul>
