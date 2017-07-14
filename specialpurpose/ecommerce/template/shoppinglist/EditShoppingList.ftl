@@ -82,7 +82,7 @@ under the License.
 </#if>
 </#macro>
 
-<div class="screenlet">
+<div class="row">
         <div class="boxlink">
             <form id="createEmptyShoppingList" action="<@ofbizUrl>createEmptyShoppingList</@ofbizUrl>" method="post">
                <input type="hidden" name="productStoreId" value="${productStoreId!}" />
@@ -119,8 +119,8 @@ under the License.
 <#if shoppingList?has_content>
     <#if canView>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="boxlink">
           <a class='submenutext' href='javascript:document.createCustRequestFromShoppingList.submit();'>${uiLabelMap.OrderCreateCustRequestFromShoppingList}</a>
           <a class='submenutext' href='javascript:document.createQuoteFromShoppingList.submit();'>${uiLabelMap.OrderCreateQuoteFromShoppingList}</a>
@@ -208,8 +208,8 @@ under the License.
 
 <#if shoppingListType?? && shoppingListType.shoppingListTypeId == "SLT_AUTO_REODR">
   <#assign nowTimestamp = Static["org.apache.ofbiz.base.util.UtilDateTime"].monthBegin()>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="boxlink">
             <a href="javascript:document.reorderinfo.submit();" class="submenutextright">${uiLabelMap.CommonSave}</a>
         </div>
@@ -353,8 +353,8 @@ under the License.
 </#if>
 
 <#if childShoppingListDatas?has_content>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="boxlink">
             <a href="<@ofbizUrl>addListToCart?shoppingListId=${shoppingList.shoppingListId}&amp;includeChild=yes</@ofbizUrl>" class="submenutextright">${uiLabelMap.EcommerceAddChildListsToCart}</a>
         </div>
@@ -401,8 +401,8 @@ under the License.
 </div>
 </#if>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="boxlink">
             <a href="<@ofbizUrl>addListToCart?shoppingListId=${shoppingList.shoppingListId}</@ofbizUrl>" class="submenutextright">${uiLabelMap.EcommerceAddListToCart}</a>
         </div>
@@ -545,7 +545,7 @@ under the License.
     </div>
 </div>
 
-<div class="screenlet">
+<div class="row">
     <h3>${uiLabelMap.EcommerceShoppingListPriceTotals} - ${shoppingList.listName}</h3>
     <div class="screenlet-body">
       <div>
@@ -563,7 +563,7 @@ under the License.
     </div>
 </div>
 
-<div class="screenlet">
+<div class="row">
     <h3>${uiLabelMap.CommonQuickAddList}</h3>
     <div class="screenlet-body">
         <form name="addToShoppingList" method="post" action="<@ofbizUrl>addItemToShoppingList</@ofbizUrl>">

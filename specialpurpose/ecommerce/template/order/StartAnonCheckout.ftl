@@ -25,7 +25,7 @@ under the License.
 </#if>
 
 <#if (shoppingCartSize > 0)>
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.CommonCheckoutAnonymous}</h3>
   <p>${uiLabelMap.CommonCheckoutAnonymousMsg}:</p>
   <ul>

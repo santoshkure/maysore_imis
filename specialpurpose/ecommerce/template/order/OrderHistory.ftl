@@ -18,7 +18,7 @@ under the License.
 -->
 
 <div>
-  <div class="screenlet">
+  <div class="row">
     <h3>${uiLabelMap.OrderSalesHistory}</h3>
     <table id="orderSalesHistory" summary="This table display order sales history.">
       <thead>
@@ -67,7 +67,7 @@ under the License.
       </tbody>
     </table>
   </div>
-  <div class="screenlet">
+  <div class="row">
     <h3>${uiLabelMap.OrderPurchaseHistory}</h3>
     <table id="orderPurchaseHistory" summary="This table display order purchase history.">
       <thead>
@@ -102,7 +102,7 @@ under the License.
       </tbody>
     </table>
   </div>
-  <div class="screenlet">
+  <div class="row">
     <h3>${uiLabelMap.EcommerceDownloadsAvailableTitle}</h3>
     <table id="availableTitleDownload" summary="This table display available title for download.">
       <thead>

@@ -39,8 +39,8 @@ under the License.
   </#if>
 </#macro>
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
      <div class="h3">${uiLabelMap.PartyBasicInformation}</div>
   </div>
   <div class="screenlet-body">

@@ -45,8 +45,8 @@ function submitForm(form, mode, value) {
 //]]>
 </script>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="h3">${uiLabelMap.OrderItemGroups}</div>
     </div>
     <div class="screenlet-body">
@@ -151,8 +151,8 @@ function submitForm(form, mode, value) {
     </div>
 </div>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="h3">${uiLabelMap.EcommerceAssignItems}</div>
     </div>
     <div class="screenlet-body">

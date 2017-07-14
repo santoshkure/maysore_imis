@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="boxlink">
           <#if maySelectItems?default(false)>
               <a href="javascript:document.addCommonToCartForm.add_all.value='true';document.addCommonToCartForm.submit()" class="submenutext">${uiLabelMap.OrderAddAllToCart}</a><a href="javascript:document.addCommonToCartForm.add_all.value='false';document.addCommonToCartForm.submit()" class="submenutextright">${uiLabelMap.OrderAddCheckedToCart}</a>

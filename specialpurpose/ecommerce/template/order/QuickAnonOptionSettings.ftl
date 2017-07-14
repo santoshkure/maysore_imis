@@ -65,7 +65,7 @@ function onClickShippingMethod(e) {
 <div id="optInfoSection">
 <table  width="100%" >
     <tr>
-    <td><div class="screenlet">
+    <td><div class="row">
         <table hight="100%" >
               <tr><td><div class="errorMessage" id="noShippingMethodSelectedError"></div></td></tr>
             <tr>
