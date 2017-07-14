@@ -48,7 +48,7 @@ under the License.
         </td>
       </tr>
     </table>
-    <table cellspacing="0" cellpadding="2" class="basic-table">
+    <table cellspacing="0" cellpadding="2" class="basic-table table-responsive">
       <thead class="searchProductsResultsHead">
         <tr class="header-row">
           <td nowrap>&nbsp;</td>
