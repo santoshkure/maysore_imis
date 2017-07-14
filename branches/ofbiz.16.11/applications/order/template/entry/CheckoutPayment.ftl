@@ -92,8 +92,8 @@ var issuerId = "";
     <input type="hidden" name="BACK_PAGE" value="checkoutoptions" />
     <input type="hidden" name="issuerId" id="issuerId" value="" />
 
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>3)${uiLabelMap.OrderHowShallYouPay}?</h3>
         </div>
         <div class="screenlet-body inline">

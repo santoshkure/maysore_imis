@@ -18,15 +18,15 @@ under the License.
 -->
 
 <!-- begin visitdetail.ftl -->
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyVisitDetail}</li>
     </ul>
     <br class="clear"/>
   </div>
   <div class="screenlet-body">
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr>
           <td class="label">${uiLabelMap.PartyVisitIDSessionID}</td>
           <td>${visit.visitId!} / ${visit.sessionId!}</td>
@@ -86,8 +86,8 @@ under the License.
       </table>
   </div>
 </div>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyHitTracker}</li>
     </ul>
@@ -110,7 +110,7 @@ under the License.
         </div>
         <br class="clear"/>
       </#if>
-      <table class="basic-table hover-bar" cellspacing="0">
+      <table class="basic-table table-responsive hover-bar" cellspacing="0">
         <tr class="header-row">
           <td>${uiLabelMap.PartyContentId}</td>
           <td>${uiLabelMap.PartyType}</td>
@@ -174,8 +174,8 @@ under the License.
 JIRA OFBIZ-4488: BEGIN
 https://issues.apache.org/jira/browse/OFBIZ-4488
 *******************************************************************************
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyPagePushFollowing}</li>
     </ul>
@@ -183,7 +183,7 @@ https://issues.apache.org/jira/browse/OFBIZ-4488
   </div>  
   <div class="screenlet-body">
       <#if security.hasPermission("SEND_CONTROL_APPLET", session)>
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
             <tr>
               <th>${uiLabelMap.PartyPushURL}</th>
               <td>

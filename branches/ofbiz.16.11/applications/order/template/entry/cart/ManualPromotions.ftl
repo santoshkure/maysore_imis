@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if allProductPromos?has_content>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="h3">&nbsp;${uiLabelMap.OrderManualPromotions}</div>
     </div>
     <div class="screenlet-body">

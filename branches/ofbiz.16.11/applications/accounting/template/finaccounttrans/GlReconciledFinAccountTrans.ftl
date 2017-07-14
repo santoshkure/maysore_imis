@@ -21,8 +21,8 @@ under the License.
   <input name="_useRowSubmit" type="hidden" value="Y"/>
   <input name="finAccountId" type="hidden" value="${finAccountId}"/>
   <input name="glReconciliationId" type="hidden" value="${glReconciliationId}"/>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.AccountingCurrentBankReconciliation}</li>
       </ul>
@@ -71,8 +71,8 @@ under the License.
       </#if>
     </div>
   </div>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.AccountingPreviousBankReconciliation}</li>
       </ul>
@@ -116,8 +116,8 @@ under the License.
       </#if>
     </div>
   </div>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.AccountingFinAcctTransAssociatedToGlReconciliation}</li>
       </ul>
@@ -125,7 +125,7 @@ under the License.
     </div>
     <div class="screenlet-body">
       <#if finAccountTransList?has_content>
-        <table class="basic-table hover-bar" cellspacing="0">
+        <table class="basic-table table-responsive hover-bar" cellspacing="0">
           <tr class="header-row-2">
             <th>${uiLabelMap.FormFieldTitle_finAccountTransId}</th>
             <th>${uiLabelMap.FormFieldTitle_finAccountTransType}</th>

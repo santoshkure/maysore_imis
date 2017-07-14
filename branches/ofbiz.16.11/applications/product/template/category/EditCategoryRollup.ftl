@@ -18,13 +18,13 @@ under the License.
 -->
 
 <#if productCategoryId?has_content>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductCategoryRollupParentCategories}</h3>
     </div>
     <div class="screenlet-body">
         <#if currentProductCategoryRollups.size() == 0>
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
                <tr class="header-row">
                   <td><b>${uiLabelMap.ProductParentCategoryId}</b></td>
                   <td><b>${uiLabelMap.CommonFromDate}</b></td>
@@ -38,7 +38,7 @@ under the License.
         <#else>        
            <form method="post" action="<@ofbizUrl>updateProductCategoryToCategory</@ofbizUrl>" name="updateProductCategoryForm">
            <input type="hidden" name="showProductCategoryId" value="${productCategoryId}" />
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
             <tr class="header-row">
                 <td><b>${uiLabelMap.ProductParentCategoryId}</b></td>
                 <td><b>${uiLabelMap.CommonFromDate}</b></td>
@@ -105,12 +105,12 @@ under the License.
     </#if>      
     </div>
 </div>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductAddCategoryParent} ${uiLabelMap.ProductCategorySelectCategoryAndEnterFromDate}:</h3>
     </div>
     <div class="screenlet-body">
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
             <tr><td>
                 <form method="post" action="<@ofbizUrl>addProductCategoryToCategory</@ofbizUrl>" style="margin: 0;" name="addParentForm">
                     <input type="hidden" name="productCategoryId" value="${productCategoryId}" />
@@ -124,13 +124,13 @@ under the License.
         </table>
     </div>
 </div>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductCategoryRollupChildCategories}</h3>
     </div>
     <div class="screenlet-body">
         <#if parentProductCategoryRollups.size() == 0>
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
                 <tr class="header-row">
                     <td><b>${uiLabelMap.ProductChildCategoryId}</b></td>
                     <td><b>${uiLabelMap.CommonFromDate}</b></td>
@@ -144,7 +144,7 @@ under the License.
         <#else>
             <form method="post" action="<@ofbizUrl>updateProductCategoryToCategory</@ofbizUrl>" name="updateProductCategoryToCategoryChild">
             <input type="hidden" name="showProductCategoryId" value="${productCategoryId}" />
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
                 <tr class="header-row">
                     <td><b>${uiLabelMap.ProductChildCategoryId}</b></td>
                     <td><b>${uiLabelMap.CommonFromDate}</b></td>
@@ -213,12 +213,12 @@ under the License.
         </#if>
     </div>
 </div>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductAddCategoryChild} ${uiLabelMap.ProductCategorySelectCategoryAndEnterFromDate}:</h3>
     </div>
     <div class="screenlet-body">
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
             <tr><td>
                 <form method="post" action="<@ofbizUrl>addProductCategoryToCategory</@ofbizUrl>" style="margin: 0;" name="addChildForm">
                     <input type="hidden" name="showProductCategoryId" value="${productCategoryId}" />

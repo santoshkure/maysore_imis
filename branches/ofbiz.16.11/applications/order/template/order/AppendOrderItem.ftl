@@ -24,8 +24,8 @@ under the License.
 </script>
 
 <#if orderHeader?has_content>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">&nbsp;${uiLabelMap.OrderAddToOrder}</li>
     </ul>
@@ -43,7 +43,7 @@ under the License.
             <#if shipGroups?size == 1>
                 <input type="hidden" name="shipGroupSeqId" value="${shipGroups.first.shipGroupSeqId}"/>
             </#if>
-            <table class="basic-table" cellspacing="0">
+            <table class="basic-table table-responsive" cellspacing="0">
               <#if catalogCol?has_content && (catalogCol?size > 1)>
                 <tr>
                   <td class="label">${uiLabelMap.ProductChooseCatalog}</td>

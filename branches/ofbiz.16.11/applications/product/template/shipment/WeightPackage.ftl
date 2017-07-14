@@ -19,8 +19,8 @@ under the License.
 
 <#if security.hasEntityPermission("FACILITY", "_VIEW", session)>
   <#if !(showWarningForm)>
-    <div class="screenlet">
-      <div class="screenlet-title-bar">
+    <div class="row">
+      <div class="alert alert-info">
         <ul>
           <li class="h3">${uiLabelMap.ProductWeighPackageOnly}&nbsp;in&nbsp;${facility.facilityName!} [${(facility.facilityId)!}]</li>
         </ul>
@@ -65,7 +65,7 @@ under the License.
         <#if !(orderId?has_content)>
           <form name="selectOrderForm" method="post" action="<@ofbizUrl>WeightPackageOnly</@ofbizUrl>">
             <input type="hidden" name="facilityId" value="${(facility.facilityId)!}" />
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
               <tr>
                 <td width="25%" align="right"><span class="label">${uiLabelMap.ProductOrderId}</span></td>
                 <td width="1">&nbsp;</td>
@@ -89,7 +89,7 @@ under the License.
           <!-- select picklist bin form -->
           <form name="selectPicklistBinForm" method="post" action="<@ofbizUrl>WeightPackageOnly</@ofbizUrl>" style="margin: 0;">
             <input type="hidden" name="facilityId" value="${(facility.facilityId)!}" />
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
               <tr>
                 <td width="25%" align='right'><span class="label">${uiLabelMap.FormFieldTitle_picklistBinId}</span></td>
                 <td width="1">&nbsp;</td>
@@ -111,7 +111,7 @@ under the License.
           <#assign packedLines = weightPackageSession.getPackedLines(orderId)/>
           <#if !(shipmentPackages?has_content)>
             <#if packedLines?has_content>
-              <table class="basic-table" cellpadding="2" cellspacing='0'>
+              <table class="basic-table table-responsive" cellpadding="2" cellspacing='0'>
                 <tr>
                   <th>
                     ${uiLabelMap.ProductPackedWeight} (${("uiLabelMap.ProductShipmentUomAbbreviation_" + defaultWeightUomId)?eval}):
@@ -178,7 +178,7 @@ under the License.
               </form>
             </#if>
             <#if (orderedQuantity > packedLines.size())>
-            <table class="basic-table" cellpadding="2" cellspacing='0'>
+            <table class="basic-table table-responsive" cellpadding="2" cellspacing='0'>
               <form name="weightPackageForm" method ="post" action="<@ofbizUrl>setPackageInfo</@ofbizUrl>">
                 <input type="hidden" name = "shipGroupSeqId" value = "${shipGroupSeqId!}"/>
                 <input type="hidden" name = "facilityId" value = "${(facility.facilityId)!}"/>
@@ -220,7 +220,7 @@ under the License.
             </table>
             </#if>
           <#else>
-            <table class="basic-table" cellpadding="2" cellspacing='0'> 
+            <table class="basic-table table-responsive" cellpadding="2" cellspacing='0'> 
              <tr>
                 <th>
                  ${uiLabelMap.ProductPackedWeight} (${("uiLabelMap.ProductShipmentUomAbbreviation_" + defaultWeightUomId)?eval}):
@@ -269,8 +269,8 @@ under the License.
       </div>
     </div>
   <#else>
-    <div class="screenlet">
-      <div class="screenlet-title-bar">
+    <div class="row">
+      <div class="alert alert-info">
         <ul>
           <li class="h3">${uiLabelMap.WebtoolsWarningLogLevel}:</li>
         </ul>

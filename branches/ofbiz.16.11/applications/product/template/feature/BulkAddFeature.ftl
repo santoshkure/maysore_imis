@@ -16,13 +16,13 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductAddProductFeatureInBulk} ${uiLabelMap.CommonFor} ${featureCategory.description}</h3>
     </div>
     <div class="screenlet-body">
       <form method='post' action='<@ofbizUrl>BulkAddProductFeatures</@ofbizUrl>' name="selectAllForm">
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
           <input type="hidden" name="_useRowSubmit" value="Y" />
           <input type="hidden" name="_checkGlobalScope" value="N" />
           <input type="hidden" name="productFeatureCategoryId" value="${productFeatureCategoryId}" />

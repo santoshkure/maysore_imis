@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if productPromoCode??>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductPromoCodeEmails}</h3>
         </div>
         <div class="screenlet-body">
@@ -51,8 +51,8 @@ under the License.
             </div>
         </div>
     </div>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductPromoCodeParties}</h3>
         </div>
         <div class="screenlet-body">

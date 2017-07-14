@@ -33,8 +33,8 @@ under the License.
 <!-- Sales Order Entry -->
 <#if security.hasEntityPermission("ORDERMGR", "_CREATE", session)>
 <#if shoppingCartOrderType != "PURCHASE_ORDER">
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.OrderSalesOrder}<#if shoppingCart??>&nbsp;${uiLabelMap.OrderInProgress}</#if></li>
       <li><a href="javascript:document.salesentryform.submit();">${uiLabelMap.CommonContinue}</a></li>
@@ -125,8 +125,8 @@ under the License.
 <!-- Purchase Order Entry -->
 <#if security.hasEntityPermission("ORDERMGR", "_PURCHASE_CREATE", session)>
   <#if shoppingCartOrderType != "SALES_ORDER">
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.OrderPurchaseOrder}<#if shoppingCart??>&nbsp;${uiLabelMap.OrderInProgress}</#if></li>
         <li><a href="javascript:document.poentryform.submit();">${uiLabelMap.CommonContinue}</a></li>

@@ -119,7 +119,7 @@ function setServiceName(selection) {
 //]]>
 
 </script>
-<div class="screenlet">
+<div class="row">
     <div class="screenlet-body">
         <form id="paymentBatchForm" method="post" action="">
             <#if paymentList?has_content>
@@ -168,7 +168,7 @@ function setServiceName(selection) {
                         </select>
                     </#if>
                 </div>
-                <table class="basic-table hover-bar">
+                <table class="basic-table table-responsive hover-bar">
                   <thead>
                     <tr class="header-row-2">
                       <th>${uiLabelMap.FormFieldTitle_paymentId}</th>

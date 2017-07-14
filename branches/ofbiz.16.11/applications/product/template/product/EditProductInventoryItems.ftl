@@ -17,9 +17,9 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#assign externalKeyParam = "&amp;externalLoginKey=" + requestAttributes.externalLoginKey!>
-<div class="screenlet">
+<div class="row">
   <#if product??>
-    <div class="screenlet-title-bar">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductInventoryItems} ${uiLabelMap.CommonFor} <#if product??>${(product.internalName)!} </#if> [${uiLabelMap.CommonId}:${productId!}]</h3>
     </div>
     <div class="screenlet-body">
@@ -33,7 +33,7 @@ under the License.
         </#if>
         <br />
         <#if productId??>
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
             <tr class="header-row">
                 <td><b>${uiLabelMap.ProductItemId}</b></td>
                 <td><b>${uiLabelMap.ProductItemType}</b></td>

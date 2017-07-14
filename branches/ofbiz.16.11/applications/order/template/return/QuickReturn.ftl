@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="h3">${uiLabelMap.OrderReturnItems}</div>
     </div>
     <div class="screenlet-body">
@@ -40,7 +40,7 @@ under the License.
           <hr />
           <#if "CUSTOMER_RETURN" == returnHeaderTypeId>
           <h3>${uiLabelMap.FormFieldTitle_paymentMethodId}:</h3>
-          <table cellspacing="0" class="basic-table">
+          <table cellspacing="0" class="basic-table table-responsive">
             <tr><td>
               <#if creditCardList?? || eftAccountList??>
                 <select name='paymentMethodId'>
@@ -66,14 +66,14 @@ under the License.
             </td></tr>
           </table>
           </#if>
-          <table cellspacing="0" class="basic-table">
+          <table cellspacing="0" class="basic-table table-responsive">
             <tr><td colspan="8"><hr/></td></tr>
             <tr>
               <td colspan="8"><h3><#if "CUSTOMER_RETURN" == returnHeaderTypeId>${uiLabelMap.OrderReturnShipFromAddress}<#else>${uiLabelMap["checkhelper.select_shipping_destination"]}</#if></h3></td>
             </tr>
             <tr>
               <td colspan="8">
-                <table cellspacing="0" class="basic-table">
+                <table cellspacing="0" class="basic-table table-responsive">
                   <#list shippingContactMechList as shippingContactMech>
                     <#assign shippingAddress = shippingContactMech.getRelatedOne("PostalAddress", false)>
                     <tr>

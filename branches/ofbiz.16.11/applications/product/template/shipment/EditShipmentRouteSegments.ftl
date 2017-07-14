@@ -17,15 +17,15 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if shipment??>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.PageTitleEditShipmentRouteSegments}</li>
         </ul>
         <br class="clear"/>
     </div>
     <div class="screenlet-body">
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
         <tr class="header-row">
             <td valign="top">${uiLabelMap.ProductSegment}</td>
             <td valign="top">
@@ -346,15 +346,15 @@ under the License.
     </table>
     </div>
 </div>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.PageTitleAddShipmentRouteSegment}</li>
         </ul>
         <br class="clear"/>
     </div>
     <div class="screenlet-body">
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
             <form action="<@ofbizUrl>createShipmentRouteSegment</@ofbizUrl>" method="post" name="createShipmentRouteSegmentForm">
             <input type="hidden" name="shipmentId" value="${shipmentId}"/>
             <tr>
@@ -445,8 +445,8 @@ under the License.
     </div>
 </div>
 <#else>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.ProductShipmentNotFoundId} : [${shipmentId!}]</li>
         </ul>

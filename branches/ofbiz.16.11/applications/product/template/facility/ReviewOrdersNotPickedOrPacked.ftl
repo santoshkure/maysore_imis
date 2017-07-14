@@ -16,15 +16,15 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.OrderOrderList}</li>
         </ul>
         <br class="clear"/>
     </div>
     <div class="screenlet-body">
-        <table class="basic-table hover-bar">
+        <table class="basic-table table-responsive hover-bar">
             <tr class="header-row">
                 <td>${uiLabelMap.OrderOrderId}</td>
                 <td>${uiLabelMap.FormFieldTitle_orderPickSheetPrintedDate}</td>

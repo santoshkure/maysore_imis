@@ -34,7 +34,7 @@
 
 <table>
   <tr><td>
-    <table border="2" cellpadding="2" cellspacing="4" class="basic-table">
+    <table border="2" cellpadding="2" cellspacing="4" class="basic-table table-responsive">
       <#if (aliases?has_content)>
           <tr class="header-row">
             <td>Content ID</td>

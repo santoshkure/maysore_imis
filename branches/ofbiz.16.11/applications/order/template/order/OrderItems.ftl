@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if orderHeader?has_content>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <ul>
                 <li class="h3">&nbsp;${uiLabelMap.OrderOrderItems}</li>
             </ul>

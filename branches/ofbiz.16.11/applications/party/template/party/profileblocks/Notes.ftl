@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-  <div id="partyNotes" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="partyNotes" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.CommonNotes}</li>
         <#if security.hasEntityPermission("PARTYMGR", "_NOTE", session)>

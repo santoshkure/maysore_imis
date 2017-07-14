@@ -19,8 +19,8 @@ under the License.
 
 <#if requestParameters.lookupFlag?default("N") == "Y">
     <#if selectedFeatures?has_content>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ManufacturingSelectedFeatures}</li>
     </ul>
@@ -31,8 +31,8 @@ under the License.
          <p>${selectedFeature.productFeatureTypeId} = ${selectedFeature.description!} [${selectedFeature.productFeatureId}]</p>
        </#list>
 <#else>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ManufacturingBomSimulation}</li>
     </ul>
@@ -40,7 +40,7 @@ under the License.
   </div>
   <div class="screenlet-body">
 </#if>
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr class="header-row">
           <td width="10%">${uiLabelMap.ManufacturingProductLevel}</td>
           <td width="20%">${uiLabelMap.ProductProductId}</td>
@@ -95,7 +95,7 @@ under the License.
         </#if>
       </table>
       <br />
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr class="header-row">
           <td width="20%">${uiLabelMap.ProductProductId}</td>
           <td width="50%">${uiLabelMap.ProductProductName}</td>

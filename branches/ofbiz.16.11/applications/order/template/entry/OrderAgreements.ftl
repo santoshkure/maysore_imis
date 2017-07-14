@@ -19,8 +19,8 @@ under the License.
 
 
 <form method="post" name="agreementForm" action="<@ofbizUrl>setOrderCurrencyAgreementShipDates</@ofbizUrl>">
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.OrderOrderEntryCurrencyAgreementShipDates}</li>
         <li><a href="javascript:document.agreementForm.submit()">${uiLabelMap.CommonContinue}</a></li>

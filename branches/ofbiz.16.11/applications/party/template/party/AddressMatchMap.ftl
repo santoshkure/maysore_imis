@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div id="address-match-map" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="address-match-map" class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PageTitleAddressMatchMap}</li>
       <li><a href="<@ofbizUrl>findAddressMatch</@ofbizUrl>">${uiLabelMap.PageTitleFindMatches}</a></li>
@@ -27,7 +27,7 @@ under the License.
   </div>
   <div class="screenlet-body">
     <form name="addaddrmap" method="post" action="<@ofbizUrl>createAddressMatchMap</@ofbizUrl>">
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
         <tr>
           <td class="label">${uiLabelMap.PartyAddressMatchKey}</td>
           <td><input type="text" name="mapKey"/></td>
@@ -46,7 +46,7 @@ under the License.
         </tr>
     </table>
     </form>
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
       <tr><td colspan="2">&nbsp;</td></tr>
         <tr>
           <td></td>
@@ -61,8 +61,8 @@ under the License.
     </table>
   </div>
 </div>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PageTitleAddressMatchMap}</li>
     </ul>
@@ -70,7 +70,7 @@ under the License.
   </div>
   <div class="screenlet-body">
       <#if addressMatchMaps?has_content>
-        <table class="basic-table hover-bar" cellspacing="0">
+        <table class="basic-table table-responsive hover-bar" cellspacing="0">
           <tr class="header-row">
             <td>${uiLabelMap.PartyAddressMatchKey}</td>
             <td>=></td>

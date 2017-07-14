@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
+<div class="row">
     <div class="screenlet-body">
         <table width="100%" border="0" cellpadding="1">
         <#-- order name -->

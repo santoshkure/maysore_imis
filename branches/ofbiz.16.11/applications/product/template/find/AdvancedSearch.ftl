@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.ProductAdvancedSearchInCategory}</h3>
   </div>
   <div class="screenlet-body">
@@ -28,7 +28,7 @@ under the License.
       <#if searchCategory?has_content>
           <input type="hidden" name="SEARCH_CATEGORY_ID" value="${searchCategoryId!}"/>
       </#if>
-      <table cellspacing="0" class="basic-table">
+      <table cellspacing="0" class="basic-table table-responsive">
         <#if searchCategory?has_content>
             <tr>
               <td class="label" align="right" valign="middle">

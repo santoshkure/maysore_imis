@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if productId??>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.PageTitleEditProductFeatures}</h3>
   </div>
   <div class="screenlet-body">
@@ -26,7 +26,7 @@ under the License.
       <input type="hidden" name="_useRowSubmit" value="Y"/>
       <input type="hidden" name="_checkGlobalScope" value="Y"/>
       <input type="hidden" name="productId" value="${productId}"/>
-      <table cellspacing="0" class="basic-table">
+      <table cellspacing="0" class="basic-table table-responsive">
         <tr class="header-row">
           <td><b>${uiLabelMap.CommonId}</b></td>
           <td><b>${uiLabelMap.CommonDescription}</b></td>
@@ -110,8 +110,8 @@ under the License.
   </#list>
   </div>
 </div>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.ProductAddProductFeatureFromCategory}</h3>
   </div>
   <div class="screenlet-body">
@@ -142,8 +142,8 @@ under the License.
     </form>
   </div>
 </div>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.ProductAddProductFeatureTypeId}</h3>
   </div>
   <div class="screenlet-body">
@@ -176,8 +176,8 @@ under the License.
     </form>
   </div>
 </div>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.ProductAddProductFeatureID}</h3>
   </div>
   <div class="screenlet-body">

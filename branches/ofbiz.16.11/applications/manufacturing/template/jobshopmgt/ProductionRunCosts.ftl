@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#list taskInfoList as taskInfo>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <#assign task = taskInfo.task>
       <h3>${uiLabelMap.ManufacturingActualCosts} ${task.workEffortName!} [${task.workEffortId}]</h3>
     </div>

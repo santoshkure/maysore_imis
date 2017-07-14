@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-  <div id="partyAVS" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="partyAVS" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.PartyAvsOver}</li>
       </ul>

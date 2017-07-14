@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
-<div class="screenlet-title-bar">
+<div class="row">
+<div class="alert alert-info">
     <ul>
     <#if orderHeader?has_content>
     <li class="h3">

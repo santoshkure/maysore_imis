@@ -67,13 +67,13 @@ under the License.
 </#macro>
 
 <#if displayParty?has_content || orderContactMechValueMaps?has_content>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
       <ul><li class="h3">&nbsp;${uiLabelMap.OrderContactInformation}</li></ul>
       <br class="clear"/>
     </div>
     <div class="screenlet-body">
-      <table class="basic-table" cellspacing='0'>
+      <table class="basic-table table-responsive" cellspacing='0'>
         <tr>
           <td align="right" valign="top" width="19%"><span class="label">&nbsp;${uiLabelMap.CommonName}</span></td>
           <td width="1%">&nbsp;</td>

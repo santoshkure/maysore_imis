@@ -30,8 +30,8 @@ under the License.
     }
 </script>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.ProductStockMovesNeeded}</li>
             <li><a href="<@ofbizUrl>PickMoveStockSimple?facilityId=${facilityId!}</@ofbizUrl>">${uiLabelMap.CommonPrint}</a></li>
@@ -44,7 +44,7 @@ under the License.
               <input type="hidden" name="facilityId" value="${facilityId!}" />
               <input type="hidden" name="_useRowSubmit" value="Y" />
               <#assign rowCount = 0>
-              <table cellspacing="0" class="basic-table hover-bar">
+              <table cellspacing="0" class="basic-table table-responsive hover-bar">
                 <tr class="header-row">
                     <td>${uiLabelMap.ProductProductId}</td>
                     <td>${uiLabelMap.ProductProduct}</td>
@@ -147,7 +147,7 @@ under the License.
             <input type="hidden" name="_rowCount" value="${rowCount}" />
         </form>
     </div>
-    <div class="screenlet-title-bar">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.ProductQuickStockMove}</li>
         </ul>
@@ -156,7 +156,7 @@ under the License.
     <div class="screenlet-body">
         <form method="post" action="<@ofbizUrl>processQuickStockMove</@ofbizUrl>" name='quickStockMove'>
             <input type="hidden" name="facilityId" value="${facilityId!}" />
-            <table cellspacing="0" class="basic-table hover-bar">
+            <table cellspacing="0" class="basic-table table-responsive hover-bar">
                 <tr class="header-row">
                     <td>${uiLabelMap.ProductProduct}</td>
                     <td>${uiLabelMap.ProductFromLocation}</td>

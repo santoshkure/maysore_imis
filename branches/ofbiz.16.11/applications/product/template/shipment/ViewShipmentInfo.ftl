@@ -17,15 +17,15 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if shipment??>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.PageTitleViewShipment}</li>
         </ul>
         <br class="clear"/>
     </div>
     <div class="screenlet-body">
-        <table border="0" cellpadding="2" cellspacing="0" class="basic-table">
+        <table border="0" cellpadding="2" cellspacing="0" class="basic-table table-responsive">
           <tr>
             <td width="20%" align="right" class="label">${uiLabelMap.ProductShipmentId}</td>
             <td width="80%">${shipment.shipmentId}</td>

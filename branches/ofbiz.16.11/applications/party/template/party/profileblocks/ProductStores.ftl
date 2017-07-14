@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div id="partyProductStores" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="partyProductStores" class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ProductStores}</li>
     </ul>
@@ -26,7 +26,7 @@ under the License.
   </div>
   <div class="screenlet-body">
     <#if productStoreRoles?has_content>
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr class="header-row">
           <td>${uiLabelMap.ProductStoreNameId}</td>
           <td>${uiLabelMap.PartyRoleType}</td>

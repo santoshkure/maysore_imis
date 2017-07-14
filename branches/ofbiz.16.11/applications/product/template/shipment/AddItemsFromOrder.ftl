@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if shipment??>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.PageTitleAddItemsFromOrder}</li>
         </ul>
@@ -39,8 +39,8 @@ under the License.
         </form>
     </div>
 </div>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.ProductAddItemsShipment}: [${shipmentId!}]; ${uiLabelMap.ProductFromAnOrder}: [${orderId!}], ${uiLabelMap.ProductOrderShipGroupId}: [${shipGroupSeqId!}]</li>
         </ul>
@@ -82,7 +82,7 @@ under the License.
         </#if>
         <input type="hidden" name="shipmentId" value="${shipmentId}" />
         <input type="hidden" name="_useRowSubmit" value="Y" />
-        <table cellspacing="0" cellpadding="2" class="basic-table hover-bar">
+        <table cellspacing="0" cellpadding="2" class="basic-table table-responsive hover-bar">
             <tr class="header-row">
                 <td>${uiLabelMap.ProductOrderId}<br />${uiLabelMap.ProductOrderShipGroupId}<br />${uiLabelMap.ProductOrderItem}</td>
                 <td>${uiLabelMap.ProductProduct}</td>
@@ -232,8 +232,8 @@ under the License.
     </div>
 </div>
 <#else>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.ProductShipmentNotFoundId}: [${shipmentId!}]</li>
         </ul>

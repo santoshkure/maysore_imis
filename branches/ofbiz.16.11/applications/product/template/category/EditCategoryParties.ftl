@@ -18,12 +18,12 @@ under the License.
 -->
 
 <#if productCategoryId?? && productCategory??>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.PageTitleEditCategoryParties}</h3>
         </div>
         <div class="screenlet-body">
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
             <tr class="header-row">
             <td>${uiLabelMap.PartyPartyId}</td>
             <td>${uiLabelMap.PartyRole}</td>
@@ -76,12 +76,12 @@ under the License.
             </table>
         </div>
     </div>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductAssociatePartyToCategory}</h3>
         </div>
         <div class="screenlet-body">
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
                 <tr>
                     <td>
                         <form method="post" action="<@ofbizUrl>addPartyToCategory</@ofbizUrl>" style="margin: 0;" name="addNewForm">

@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-  <div id="partyVisits" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="partyVisits" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.PartyVisits}</li>
         <li><a href="<@ofbizUrl>findVisits?partyId=${partyId}</@ofbizUrl>">${uiLabelMap.CommonListAll}</a></li>
@@ -27,7 +27,7 @@ under the License.
     </div>
     <div class="screenlet-body">
       <#if visits?has_content>
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
           <tr class="header-row">
             <td>${uiLabelMap.PartyVisitId}</td>
             <td>${uiLabelMap.PartyUserLogin}</td>

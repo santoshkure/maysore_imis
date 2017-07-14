@@ -109,7 +109,7 @@ var rawdata = [
             alert("An error occurred loading content! : " + msg);
         },
         success: function(msg) {
-            jQuery('div.contentarea').html(msg);
+            jQuery('div.container').html(msg);
         }
     });
   }

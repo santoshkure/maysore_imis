@@ -17,9 +17,9 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if shipmentPackageDatas?has_content>
-<div class="screenlet">
+<div class="row">
     <div class="screenlet-body">
-      <table cellspacing="0" cellpadding="2" class="basic-table">
+      <table cellspacing="0" cellpadding="2" class="basic-table table-responsive">
         <tr class="header-row">
           <td>${uiLabelMap.ProductPackage}</td>
           <td>${uiLabelMap.CommonCreated}</td>

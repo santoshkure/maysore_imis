@@ -18,15 +18,15 @@ under the License.
 -->
 
 <#if orderTerms?has_content>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">&nbsp;${uiLabelMap.OrderOrderTerms}</li>
         </ul>
         <br class="clear"/>
     </div>
     <div class="screenlet-body">
-      <table class="basic-table" cellspacing='0'>
+      <table class="basic-table table-responsive" cellspacing='0'>
       <tr class="header-row">
         <td width="35%">${uiLabelMap.OrderOrderTermType}</td>
         <td width="10%" align="center">${uiLabelMap.OrderOrderTermValue}</td>

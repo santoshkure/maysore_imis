@@ -33,7 +33,7 @@ under the License.
         </#if>
     </p>
     <br />
-    <table id="fa-transactions" class="basic-table" cellspacing="0" cellpadding="2">
+    <table id="fa-transactions" class="basic-table table-responsive" cellspacing="0" cellpadding="2">
         <thead>
             <tr class="header-row">
                 <td>${uiLabelMap.FormFieldTitle_transactionDate}</td>
@@ -73,7 +73,7 @@ under the License.
 
 <#if ownedFinAccountAuthList?has_content>
     <div style="border-bottom: 1px solid #ccc; margin-bottom: 20px">
-        <table id="fa-authorizations" class="basic-table" cellspacing="0" cellpadding="2">
+        <table id="fa-authorizations" class="basic-table table-responsive" cellspacing="0" cellpadding="2">
             <thead>
                 <tr class="header-row">
                     <td>${uiLabelMap.FormFieldTitle_authorizationDate}</td>

@@ -25,8 +25,8 @@ under the License.
     }
 </script>
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.OrderOrderFound}</li>
       <#if (orderList?has_content && 0 < orderList?size)>
@@ -60,7 +60,7 @@ under the License.
         </#list>
       </#if>
     </form>
-    <table class="basic-table hover-bar" cellspacing='0'>
+    <table class="basic-table table-responsive hover-bar" cellspacing='0'>
       <tr class="header-row">
         <td>${uiLabelMap.OrderOrderId}</td>
         <td>${uiLabelMap.FormFieldTitle_itemStatusId}</td>

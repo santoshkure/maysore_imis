@@ -31,7 +31,7 @@ under the License.
 <#else>
   <#assign target="getProductInventoryAvailable">
 </#if>
-<div class="screenlet">
+<div class="row">
     <div class="screenlet-body">
       <#if shoppingCart.getOrderType() == "SALES_ORDER">
         <div>

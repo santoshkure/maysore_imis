@@ -17,12 +17,12 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="h3">${uiLabelMap.OrderRequestItems}</div>
     </div>
     <div class="screenlet-body">
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
             <tr valign="bottom" class="header-row">
                 <td width="10%">${uiLabelMap.ProductItem}</td>
                 <td width="35%">${uiLabelMap.OrderProduct}</td>

@@ -19,8 +19,8 @@ under the License.
 
 <#setting locale = locale.toString()>
 <#setting time_zone = timeZone.getID()>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.WorkEffortMyCurrentTaskList}</li>
       <li><a href="<@ofbizContentUrl>/workeffort/control/EditWorkEffort?workEffortTypeId=TASK&amp;currentStatusId=CAL_NEEDS_ACTION</@ofbizContentUrl>">${uiLabelMap.WorkEffortNewTask}</a></li>
@@ -28,7 +28,7 @@ under the License.
     <br class="clear"/>
   </div>
   <h3>${uiLabelMap.WorkEffortAssignedTasks}</h3>
-  <table class="basic-table hover-bar" cellspacing="0">
+  <table class="basic-table table-responsive hover-bar" cellspacing="0">
     <tr class="header-row">
       <td>${uiLabelMap.CommonStartDateTime}</td>
       <td>${uiLabelMap.WorkEffortPriority}</td>
@@ -50,7 +50,7 @@ under the License.
   </table>
   <#if (activities.size() > 0)>
     <h3>${uiLabelMap.WorkEffortWorkflowActivitiesUser}</h3>
-    <table class="basic-table hover-bar" cellspacing="0">
+    <table class="basic-table table-responsive hover-bar" cellspacing="0">
       <tr class="header-row">
         <td>${uiLabelMap.CommonStartDateTime}</td>
         <td>${uiLabelMap.WorkEffortPriority}</td>
@@ -77,7 +77,7 @@ under the License.
   </#if>
   <#if (roleActivities.size() > 0)>
     <h3>${uiLabelMap.WorkEffortWorkflowActivitiesUserRole}</h3>
-    <table class="basic-table hover-bar" cellspacing="0">
+    <table class="basic-table table-responsive hover-bar" cellspacing="0">
       <tr class="header-row">
         <td>${uiLabelMap.CommonStartDateTime}</td>
         <td>${uiLabelMap.WorkEffortPriority}</td>
@@ -104,7 +104,7 @@ under the License.
   </#if>
   <#if (groupActivities.size() > 0)>
     <h3>${uiLabelMap.WorkEffortWorkflowActivitiesUserGroup}</h3>
-    <table class="basic-table hover-bar" cellspacing="0">
+    <table class="basic-table table-responsive hover-bar" cellspacing="0">
       <tr class="header-row">
         <td>${uiLabelMap.CommonStartDateTime}</td>
         <td>${uiLabelMap.WorkEffortPriority}</td>

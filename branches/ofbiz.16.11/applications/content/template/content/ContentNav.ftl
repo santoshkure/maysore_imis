@@ -227,7 +227,7 @@ jQuery(document).ready(createTree());
     <#if tabButtonItem=="LookupContentTree"||tabButtonItem=="LookupDetailContentTree">
         body{background:none;}
         .left-border{float:left;width:25%;}
-        .contentarea{margin: 0 0 0 0.5em;padding:0 0 0 0.5em;}
+        .container{margin: 0 0 0 0.5em;padding:0 0 0 0.5em;}
         .leftonly{float:none;min-height:25em;}
     </#if>
 </#if>

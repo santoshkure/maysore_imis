@@ -1,12 +1,12 @@
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ContentSurveyOptions} - ${uiLabelMap.CommonId} ${surveyQuestion.surveyQuestionId!}</li>
     </ul>
     <br class="clear"/>
   </div>
   <div class="screenlet-body">
-    <table class="basic-table hover-bar" cellspacing="0">
+    <table class="basic-table table-responsive hover-bar" cellspacing="0">
       <tr class="header-row">
         <td>${uiLabelMap.CommonDescription}</td>
         <td>${uiLabelMap.CommonSequenceNum}</td>

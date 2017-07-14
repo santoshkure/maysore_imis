@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductReceiveReturn} ${uiLabelMap.CommonInto} <#if facility?has_content>"${facility.facilityName?default("Not Defined")}"</#if> [${uiLabelMap.CommonId}:${facility.facilityId!}]</h3>
     </div>
     <div class="screenlet-body">
@@ -28,7 +28,7 @@ under the License.
             <h3>${uiLabelMap.ProductReturnCompletelyReceived}</h3>
           </#if>
           <br />
-          <table cellspacing="0" class="basic-table">
+          <table cellspacing="0" class="basic-table table-responsive">
             <tr class="header-row">
               <td>${uiLabelMap.ProductReceipt}</td>
               <td>${uiLabelMap.CommonDate}</td>
@@ -62,7 +62,7 @@ under the License.
             <input type="hidden" name="_useRowSubmit" value="Y" />
             <#assign now = Static["org.apache.ofbiz.base.util.UtilDateTime"].nowTimestamp().toString()>
             <#assign rowCount = 0>
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
               <#if !returnItems?? || returnItems?size == 0>
                 <tr>
                   <td colspan="2" class="label">${uiLabelMap.ProductNoItemsToReceive}</td>
@@ -100,7 +100,7 @@ under the License.
                   </tr>
                   <tr>
                     <td>
-                      <table cellspacing="0" class="basic-table">
+                      <table cellspacing="0" class="basic-table table-responsive">
                         <tr>
                           <#assign productId = "">
                           <#if orderItem.productId??>
@@ -247,7 +247,7 @@ under the License.
           <form name="selectAllForm" method="post" action="<@ofbizUrl>ReceiveReturn</@ofbizUrl>">
             <input type="hidden" name="facilityId" value="${requestParameters.facilityId!}" />
             <input type="hidden" name="initialSelected" value="Y" />
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
               <tr><td colspan="4"><h3>${uiLabelMap.ProductReceiveReturn}</h3></td></tr>
               <tr>
                 <td width="15%" align='right' class="label">${uiLabelMap.ProductReturnNumber}</td>

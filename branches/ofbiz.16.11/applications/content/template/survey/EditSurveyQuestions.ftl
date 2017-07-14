@@ -16,14 +16,14 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
+<div class="row">
   <div class="screenlet-body no-padding">
     <h3>${uiLabelMap.PageTitleEditSurveyQuestions} ${uiLabelMap.ContentSurveySurveyId} ${surveyId}</h3>
     <#assign commonUrl="EditSurveyQuestions?surveyId=${parameters.surveyId}&amp;" />
     <#assign messageMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("lowCount", lowIndex, "highCount", highIndex, "total", listSize)/>
     <#assign commonDisplaying = Static["org.apache.ofbiz.base.util.UtilProperties"].getMessage("CommonUiLabels", "CommonDisplaying", messageMap, locale)/>
     <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
-      <table class="basic-table hover-bar" cellspacing="0">
+      <table class="basic-table table-responsive hover-bar" cellspacing="0">
         <tr class="header-row">
           <td>${uiLabelMap.CommonId}</td>
           <td>${uiLabelMap.CommonType}</td>
@@ -132,8 +132,8 @@ under the License.
 </div>
 <#-- apply question from category -->
 <#if surveyQuestionCategory?has_content>
-    <div class="screenlet">
-      <div class="screenlet-title-bar">
+    <div class="row">
+      <div class="alert alert-info">
         <ul>
           <li class="h3">${uiLabelMap.ContentSurveyApplyQuestionFromCategory} - ${surveyQuestionCategory.description!} [${surveyQuestionCategory.surveyQuestionCategoryId}]</li>
         </ul>
@@ -141,7 +141,7 @@ under the License.
       </div>
       <div class="screenlet-body">
         <a name="appl">
-        <table class="basic-table hover-bar" cellspacing="0">
+        <table class="basic-table table-responsive hover-bar" cellspacing="0">
             <tr class="header-row">
                 <td>${uiLabelMap.CommonId}</td>
                 <td>${uiLabelMap.CommonDescription}</td>
@@ -203,8 +203,8 @@ under the License.
       </div>
     </div>
 </#if>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ContentSurveyApplyQuestionFromCategory}</li>
     </ul>
