@@ -29,12 +29,12 @@ under the License.
 <div id="loginBar"><span>${uiLabelMap.CommonBeLogged}</span><div id="company-logo"></div></div>
 <center>
   <div class="screenlet login-screenlet">
-    <div class="screenlet-title-bar">
+    <div class="alert alert-info">
       <h3>${uiLabelMap.CommonRegistered}</h3>
     </div>
     <div class="screenlet-body">
       <form method="post" action="<@ofbizUrl>login</@ofbizUrl>" name="loginform">
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
           <tr>
             <td class="label">${uiLabelMap.CommonUsername}</td>
             <td><input type="text" name="USERNAME" value="${username}" size="20"/></td>
