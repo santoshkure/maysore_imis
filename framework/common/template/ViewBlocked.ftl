@@ -19,7 +19,7 @@ under the License.
 
 <center>
   <div class="screenlet login-screenlet">
-    <div class="screenlet-title-bar">
+    <div class="alert alert-info">
       <h3>${uiLabelMap.CommonViewBlocked}</h3>
     </div>
     <div class="screenlet-body">

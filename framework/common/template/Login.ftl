@@ -28,19 +28,19 @@ under the License.
 </#if>
 <center>
   <div class="screenlet login-screenlet">
-    <div class="screenlet-title-bar">
+    <div class="alert alert-info">
       <h3>${uiLabelMap.CommonRegistered}</h3>
     </div>
     <div class="screenlet-body">
       <form method="post" action="<@ofbizUrl>login</@ofbizUrl>" name="loginform">
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0" align="center">
           <tr>
             <td class="label">${uiLabelMap.CommonUsername}</td>
-            <td><input type="text" name="USERNAME" value="${username}" size="20"/></td>
+            <td><input type="text" class="form-control" name="USERNAME" value="${username}" size="20"/></td>
           </tr>
           <tr>
             <td class="label">${uiLabelMap.CommonPassword}</td>
-            <td><input type="password" name="PASSWORD" value="" size="20"/></td>
+            <td><input type="password" class="form-control" name="PASSWORD" value="" size="20"/></td>
           </tr>
           <#if ("Y" == useMultitenant) >
             <#if !requestAttributes.userTenantId??>
@@ -54,7 +54,7 @@ under the License.
           </#if>
           <tr>
             <td colspan="2" align="center">
-              <input type="submit" value="${uiLabelMap.CommonLogin}"/>
+              <input type="submit" class="btn btn-primary" value="${uiLabelMap.CommonLogin}"/>
             </td>
           </tr>
         </table>
