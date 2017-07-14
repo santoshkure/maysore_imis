@@ -22,8 +22,8 @@ under the License.
 </#if>
 
 <#if associatedProducts?has_content>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <div class="h3">${uiLabelMap.OrderHelpAlsoInterestedIn}</div>
     </div>
     <div class="screenlet-body">

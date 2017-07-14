@@ -32,12 +32,12 @@ under the License.
 <#if facilityId?? && !(facilityLocation??)>
     <form action="<@ofbizUrl>CreateFacilityLocation</@ofbizUrl>" method="post">
     <input type="hidden" name="facilityId" value="${facilityId}" />
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
 <#elseif facilityLocation??>
     <form action="<@ofbizUrl>UpdateFacilityLocation</@ofbizUrl>" method="post">
     <input type="hidden" name="facilityId" value="${facilityId!}" />
     <input type="hidden" name="locationSeqId" value="${locationSeqId}" />
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
     <tr>
         <td class="label">${uiLabelMap.ProductFacilityId}</td>
         <td>${facilityId!}</td>
@@ -98,13 +98,13 @@ under the License.
   </form>
   <#if locationSeqId??>
   <br />
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductLocationProduct}</h3>
     </div>
     <div class="screenlet-body">
         <#-- ProductFacilityLocation stuff -->
-        <table class="basic-table hover-bar" cellspacing="0">
+        <table class="basic-table table-responsive hover-bar" cellspacing="0">
         <tr class="header-row">
             <td>${uiLabelMap.ProductProduct}</td>
             <td>${uiLabelMap.ProductMinimumStockAndMoveQuantity}</td>
@@ -129,8 +129,8 @@ under the License.
         </table>
     </div>
   </div>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.ProductAddProduct}</h3>
     </div>
     <div class="screenlet-body">

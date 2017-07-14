@@ -30,8 +30,8 @@ under the License.
     <#assign shoppingCartSize = 0>
 </#if>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.OrderOrderHeaderInfo}</h3>
     </div>
     <div class="screenlet-body">

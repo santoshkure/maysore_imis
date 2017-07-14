@@ -18,8 +18,8 @@ under the License.
 -->
 
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
       <div class="h3">${uiLabelMap.ProductFindProductWithIdValue}</div>
     </div>
     <div class="screenlet-body">
@@ -32,7 +32,7 @@ under the License.
           <br />
           <h2>&nbsp;${uiLabelMap.ProductNoResultsFound}.</h2>
         <#else>
-          <table cellspacing="0" class="basic-table">
+          <table cellspacing="0" class="basic-table table-responsive">
             <#assign rowClass = "1">
             <#if idProduct?has_content>
             <tr valign="middle"<#if rowClass == "1"> class="alternate-row"</#if>>

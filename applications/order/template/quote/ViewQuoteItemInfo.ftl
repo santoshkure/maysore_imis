@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="boxlink">
             <#if maySelectItems?default("N") == "Y">
                 <a href="javascript:document.addCommonToCartForm.add_all.value='true';document.addCommonToCartForm.submit()" class="buttontext">${uiLabelMap.OrderAddAllToCart}</a>
@@ -26,7 +26,7 @@ under the License.
         <div class="h3">${uiLabelMap.OrderOrderQuoteItems}</div>
     </div>
     <div class="screenlet-body">
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
             <tr valign="bottom" class="header-row">
                 <td width="15%">${uiLabelMap.ProductItem}</td>
                 <td width="20%">${uiLabelMap.ProductProduct}</td>

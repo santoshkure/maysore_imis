@@ -18,8 +18,8 @@ under the License.
 -->
 
 <!-- begin editcreditcard.ftl -->
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <#if !creditCard??>
       <h3>${uiLabelMap.AccountingAddNewCreditCard}</h3>
     <#else>
@@ -38,7 +38,7 @@ under the License.
         <input type="hidden" name="paymentMethodId" value="${paymentMethodId}" />
     </#if>
         <input type="hidden" name="partyId" value="${partyId}"/>
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
 
         ${screens.render("component://accounting/widget/CommonScreens.xml#creditCardFields")}
         <tr>

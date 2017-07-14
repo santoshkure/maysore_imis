@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-  <div id="partyUserLogins" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="partyUserLogins" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.PartyUserName}</li>
         <#if security.hasEntityPermission("PARTYMGR", "_CREATE", session)>
@@ -29,7 +29,7 @@ under the License.
     </div>
     <div class="screenlet-body">
       <#if userLogins?has_content>
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
           <#list userLogins as userUserLogin>
             <tr>
               <td class="label">${uiLabelMap.PartyUserLogin}</td>

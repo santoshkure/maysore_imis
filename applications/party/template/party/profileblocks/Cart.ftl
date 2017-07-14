@@ -18,8 +18,8 @@ under the License.
 -->
 
   <#if savedCartItems?has_content>
-    <div id="partyShoppingCart" class="screenlet">
-      <div class="screenlet-title-bar">
+    <div id="partyShoppingCart" class="row">
+      <div class="alert alert-info">
         <ul>
           <li class="h3">${uiLabelMap.PartyCurrentShoppingCart}</li>
           <#if security.hasEntityPermission("PARTYMGR", "_UPDATE", session)>
@@ -35,7 +35,7 @@ under the License.
       </div>
       <div class="screenlet-body">
         <#if savedCartItems?has_content>
-          <table class="basic-table" cellspacing="0">
+          <table class="basic-table table-responsive" cellspacing="0">
             <tr class="header-row">
               <td>${uiLabelMap.PartySequenceId}</td>
               <td>${uiLabelMap.PartyProductId}</td>

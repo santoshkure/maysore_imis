@@ -555,7 +555,7 @@ under the License.
                                         </platform-specific>
                                     </container>
                                     <container style="leftonly">
-                                        <container style="contentarea">
+                                        <container style="container">
                                             <include-screen name="ViewContentDetail"/>
                                         </container>
                                     </container>

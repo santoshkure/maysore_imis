@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if agreement??>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PageTitleCopyAgreement}</li>
     </ul>

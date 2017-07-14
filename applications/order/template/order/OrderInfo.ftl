@@ -18,7 +18,7 @@ under the License.
 -->
 
 <div class="screenlet order-info">
-    <div class="screenlet-title-bar">
+    <div class="alert alert-info">
         <ul>
             <#if orderHeader.externalId?has_content>
                <#assign externalOrder = "(" + orderHeader.externalId + ")"/>
@@ -96,7 +96,7 @@ under the License.
         <br class="clear"/>
     </div>
     <div class="screenlet-body">
-        <table class="basic-table" cellspacing='0'>
+        <table class="basic-table table-responsive" cellspacing='0'>
             <#if orderHeader.orderName?has_content>
             <tr>
               <td align="right" valign="top" width="15%" class="label">&nbsp;${uiLabelMap.OrderOrderName}</td>

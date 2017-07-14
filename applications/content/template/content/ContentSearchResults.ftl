@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.ContentSearchContents}, ${uiLabelMap.ProductSearchFor}:</h3>
   </div>
   <div class="screenlet-body">
@@ -32,7 +32,7 @@ under the License.
     </#if>
 
     <#if contentIds?has_content>
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
         <tr>
           <td align="right" class="label">
             <#if 0 < viewIndex?int>
@@ -67,7 +67,7 @@ under the License.
     </#if>
 
     <#if contentIds?has_content>
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
         <tr>
           <td align="right" class="label">
             <#if 0 < viewIndex?int>

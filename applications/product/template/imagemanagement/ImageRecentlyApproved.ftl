@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
         
-<table cellspacing="0" class="basic-table">
+<table cellspacing="0" class="basic-table table-responsive">
     <td style="vertical-align:top;">
         <table>
             <#if approved_0?has_content>

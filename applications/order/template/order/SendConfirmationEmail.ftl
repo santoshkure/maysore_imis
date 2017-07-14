@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if security.hasEntityPermission("ORDERMGR", "_SEND_CONFIRMATION", session)>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.OrderSendConfirmationEmail}</li>
       </ul>
@@ -36,7 +36,7 @@ under the License.
         </#if>
         <input type="hidden" name="partyId" value="${partyId!}" />
         <input type="hidden" name="contentType" value="${productStoreEmailSetting.contentType?default("")}" />
-        <table class="basic-table" cellspacing='0'>
+        <table class="basic-table table-responsive" cellspacing='0'>
             <tr>
                 <td width="2%" align="right" class="label">${uiLabelMap.OrderSendConfirmationEmailSubject}&nbsp;</td>
                 <td width="54%">

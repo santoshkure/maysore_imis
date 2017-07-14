@@ -34,8 +34,8 @@ under the License.
   ${cardNumberDisplay!}
 </#macro>
 
-  <div id="partyPaymentMethod" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="partyPaymentMethod" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.AccountingPaymentMethod}</li>
         <#if security.hasEntityPermission("PAY_INFO", "_CREATE", session) || security.hasEntityPermission("ACCOUNTING", "_CREATE", session)>
@@ -50,7 +50,7 @@ under the License.
     </div>
     <div class="screenlet-body">
       <#if paymentMethodValueMaps?has_content || billingAccounts?has_content>
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
         <#if paymentMethodValueMaps?has_content>
           <#list paymentMethodValueMaps as paymentMethodValueMap>
             <#assign paymentMethod = paymentMethodValueMap.paymentMethod/>

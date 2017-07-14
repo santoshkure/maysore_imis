@@ -18,8 +18,8 @@ under the License.
 -->
 
 <br />
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyShoppingLists}</li>
       <li>
@@ -53,8 +53,8 @@ under the License.
 </div>
 <br />
 <#if shoppingList?has_content>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyShoppingListDetail} - ${shoppingList.listName}</li>
       <li><a href="javascript:document.updateList.submit();">${uiLabelMap.CommonSave}</a></li>
@@ -74,7 +74,7 @@ under the License.
     <form name="updateList" method="post" action="<@ofbizUrl>updateShoppingList</@ofbizUrl>">
       <input type="hidden" name="shoppingListId" value="${shoppingList.shoppingListId}" />
       <input type="hidden" name="partyId" value="${shoppingList.partyId!}" />
-      <table class="basic-table" cellspacing='0'>
+      <table class="basic-table table-responsive" cellspacing='0'>
         <tr>
           <td class="label">${uiLabelMap.PartyListName}</td>
           <td><input type="text" size="25" name="listName" value="${shoppingList.listName}" <#if shoppingList.listName?default("") == "auto-save">disabled="disabled"</#if> />
@@ -137,8 +137,8 @@ under the License.
 </div>
 <#if childShoppingListDatas?has_content>
 <br />
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyChildShoppingList} - ${shoppingList.listName}</li>
       <li><a href="<@ofbizUrl>addListToCart?shoppingListId=${shoppingList.shoppingListId}&amp;includeChild=yes</@ofbizUrl>">${uiLabelMap.PartyAddChildListsToCart}</a></li>
@@ -146,7 +146,7 @@ under the License.
     <br class="clear"/>
   </div>
   <div class="screenlet-body">
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
       <tr class="header-row">
         <td>${uiLabelMap.PartyListName}</td>
         <td>&nbsp;</td>
@@ -166,8 +166,8 @@ under the License.
 </div>
 </#if>
 <br />
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyListItems} - ${shoppingList.listName}</li>
     </ul>
@@ -185,7 +185,7 @@ under the License.
         <#assign messageMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("lowCount", lowIndex, "highCount", highIndex, "total", listSize)/>
         <#assign commonDisplaying = Static["org.apache.ofbiz.base.util.UtilProperties"].getMessage("CommonUiLabels", "CommonDisplaying", messageMap, locale)/>
         <@nextPrev commonUrl=commonUrl ajaxEnabled=false javaScriptEnabled=false paginateStyle="nav-pager" paginateFirstStyle="nav-first" viewIndex=viewIndex highIndex=highIndex listSize=listSize viewSize=viewSize ajaxFirstUrl="" firstUrl="" paginateFirstLabel="" paginatePreviousStyle="nav-previous" ajaxPreviousUrl="" previousUrl="" paginatePreviousLabel="" pageLabel="" ajaxSelectUrl="" selectUrl="" ajaxSelectSizeUrl="" selectSizeUrl="" commonDisplaying=commonDisplaying paginateNextStyle="nav-next" ajaxNextUrl="" nextUrl="" paginateNextLabel="" paginateLastStyle="nav-last" ajaxLastUrl="" lastUrl="" paginateLastLabel="" paginateViewSizeLabel="" />
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr class="header-row">
           <td>${uiLabelMap.PartyProduct}</td>
           <td>${uiLabelMap.PartyQuantity}</td>
@@ -242,8 +242,8 @@ under the License.
   </div>
 </div>
 <br />
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.PartyQuickAddList}</li>
     </ul>

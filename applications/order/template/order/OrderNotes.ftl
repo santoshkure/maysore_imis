@@ -19,8 +19,8 @@ under the License.
 
 <#if orderHeader?has_content>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">&nbsp;${uiLabelMap.OrderNotes}</li>
         <#if security.hasEntityPermission("ORDERMGR", "_NOTE", session)>
@@ -30,11 +30,11 @@ under the License.
       <br class="clear"/>
     </div>
     <div class="screenlet-body">
-      <table class="basic-table" cellspacing='0'>
+      <table class="basic-table table-responsive" cellspacing='0'>
         <tr>
           <td>
             <#if orderNotes?has_content>
-            <table class="basic-table" cellspacing='0'>
+            <table class="basic-table table-responsive" cellspacing='0'>
               <#list orderNotes as note>
                 <tr>
                   <td valign="top" width="35%">

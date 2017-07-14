@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-  <div id="partyContactInfo" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="partyContactInfo" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.PartyContactInformation}</li>
         <#if security.hasEntityPermission("PARTYMGR", "_CREATE", session) || userLogin.partyId == partyId>
@@ -29,7 +29,7 @@ under the License.
     </div>
     <div class="screenlet-body">
       <#if contactMeches?has_content>
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
           <tr>
             <th>${uiLabelMap.PartyContactType}</th>
             <th>${uiLabelMap.PartyContactInformation}</th>

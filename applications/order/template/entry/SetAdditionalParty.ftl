@@ -18,7 +18,7 @@ under the License.
 -->
 
 <#-- ==================== Party Selection dialog box ========================= -->
-<div class="screenlet">
+<div class="row">
     <div class="screenlet-body">
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
   <form method="post" action="<@ofbizUrl>finalizeOrder</@ofbizUrl>" name="checkoutsetupform">

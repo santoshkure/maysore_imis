@@ -18,8 +18,8 @@ under the License.
 -->
 
   <#if monthsToInclude?? && totalSubRemainingAmount?? && totalOrders??>
-    <div id="totalOrders" class="screenlet">
-      <div class="screenlet-title-bar">
+    <div id="totalOrders" class="row">
+      <div class="alert alert-info">
         <ul>
           <li class="h3">${uiLabelMap.PartyLoyaltyPoints}</li>
         </ul>

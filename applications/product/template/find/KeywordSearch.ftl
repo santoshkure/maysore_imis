@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <h3>${uiLabelMap.ProductSearchProducts}, ${uiLabelMap.ProductSearchFor}:</h3>
   </div>
   <div class="screenlet-body">
@@ -52,7 +52,7 @@ under the License.
         }
     </script>
 
-    <table cellspacing="0" class="basic-table">
+    <table cellspacing="0" class="basic-table table-responsive">
         <tr>
           <td><label><input type="checkbox" name="selectAll" value="0" class="selectAll" form="products"/> <b>${uiLabelMap.ProductProduct}</b></label></td>
           <td align="right">
@@ -95,7 +95,7 @@ under the License.
 
     <form method="post" name="products" id="products">
       <input type="hidden" name="productStoreId" value="${parameters.productStoreId!}" />
-      <table cellspacing="0" class="basic-table">
+      <table cellspacing="0" class="basic-table table-responsive">
         <#assign listIndex = lowIndex>
         <#assign rowClass = "2">
         <#list productIds as productId><#-- note that there is no boundary range because that is being done before the list is put in the content -->
@@ -116,7 +116,7 @@ under the License.
       </table>
     </form>
 
-    <table cellspacing="0" class="basic-table">
+    <table cellspacing="0" class="basic-table table-responsive">
         <tr><td colspan="2"><hr /></td></tr>
         <tr>
           <td align="right">

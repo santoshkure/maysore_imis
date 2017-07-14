@@ -22,14 +22,14 @@ under the License.
 <#if productCategoryId?has_content>
     <a href="<@ofbizUrl>EditCategory?productCategoryId=${productCategoryId}</@ofbizUrl>" class="buttontext">[${uiLabelMap.ProductBackToEditCategory}]</a>
 </#if>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3><b>&nbsp;</b></h3>
     </div>
     <div class="screenlet-body">
         <form name="createProductInCategoryCheckExistingForm" method="post" action="<@ofbizUrl>CreateProductInCategoryCheckExisting</@ofbizUrl>" style="margin: 0;">
             <input type="hidden" name="productCategoryId" value="${productCategoryId}" />
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
             <#list productFeaturesByTypeMap.keySet() as productFeatureTypeId>
                 <#assign findPftMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("productFeatureTypeId", productFeatureTypeId)>
                 <#assign productFeatureType = delegator.findOne("ProductFeatureType", findPftMap, true)>

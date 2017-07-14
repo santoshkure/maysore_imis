@@ -19,8 +19,8 @@ under the License.
 
 <#assign shoppingCart = sessionAttributes.shoppingCart!>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <div class="h3">${uiLabelMap.OrderOrderShortcuts}</div>
     </div>
     <div class="screenlet-body">

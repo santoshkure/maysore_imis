@@ -41,7 +41,7 @@ function insertImageName(size,nameValue) {
 <#if !(configItem??)>
     <h3>${uiLabelMap.ProductCouldNotFindProductConfigItem} "${configItemId}".</h3>
 <#else>
-    <table cellspacing="0" class="basic-table">
+    <table cellspacing="0" class="basic-table table-responsive">
         <tr class="header-row">
             <td><b>${uiLabelMap.ProductContent}</b></td>
             <td><b>${uiLabelMap.ProductType}</b></td>
@@ -79,16 +79,16 @@ function insertImageName(size,nameValue) {
     </table>
     <br />
     <#if configItemId?has_content && configItem?has_content>
-        <div class="screenlet">
-            <div class="screenlet-title-bar">
+        <div class="row">
+            <div class="alert alert-info">
                 <h3>${uiLabelMap.ProductCreateNewProductConfigItemContent}</h3>
             </div>
             <div class="screenlet-body">
                 ${screens.render("component://product/widget/catalog/ConfigScreens.xml#PrepareAddProductConfigItemContentAssoc")}
             </div>
         </div>
-        <div class="screenlet">
-            <div class="screenlet-title-bar">
+        <div class="row">
+            <div class="alert alert-info">
                 <h3>${uiLabelMap.ProductAddContentProductConfigItem}</h3>
             </div>
             <div class="screenlet-body">
@@ -96,14 +96,14 @@ function insertImageName(size,nameValue) {
             </div>
         </div>
     </#if>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductOverrideSimpleFields}</h3>
         </div>
         <div class="screenlet-body">
             <form action="<@ofbizUrl>updateProductConfigItemContent</@ofbizUrl>" method="post" style="margin: 0;" name="productForm">
                 <input type="hidden" name="configItemId" value="${configItemId!}" />
-                <table cellspacing="0" class="basic-table">
+                <table cellspacing="0" class="basic-table table-responsive">
                 <tr>
                     <td width="20%" align="right" valign="top" class="label">${uiLabelMap.CommonDescription}</td>
                     <td>&nbsp;</td>
@@ -147,8 +147,8 @@ function insertImageName(size,nameValue) {
             </form>
         </div>
     </div>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductUploadImage}</h3>
         </div>
         <div class="screenlet-body">

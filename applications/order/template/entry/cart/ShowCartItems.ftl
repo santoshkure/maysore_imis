@@ -26,8 +26,8 @@ under the License.
     <td>- ${(assocProduct.productName)!}<i>(${(productAssocType.description)?default("Unknown")})</i></td>
   </#if>
 </#macro>
-<div class="screenlet">
-    <div class="screenlet-title-bar">    
+<div class="row">
+    <div class="alert alert-info">    
         <div class='h3'>${uiLabelMap.OrderOrderItems}</div>
     </div>
     <div class="screenlet-body">

@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if security.hasEntityPermission("ORDERMGR", "_UPDATE", session)>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.OrderReceiveOfflinePayments}</li>
       </ul>
@@ -36,7 +36,7 @@ under the License.
         <input type="hidden" name="partyId" value="${orderRoles[0].partyId}" />
 
         <#if paymentMethods?has_content>
-        <table class="basic-table" cellspacing='0'>
+        <table class="basic-table table-responsive" cellspacing='0'>
           <tr class="header-row">
             <td width="30%" align="right">${uiLabelMap.PaymentMethod}</td>
             <td width="1">&nbsp;&nbsp;&nbsp;</td>
@@ -57,7 +57,7 @@ under the License.
         </#if>
         <br /> <br />
         <#if paymentMethodTypes?has_content>
-        <table class="basic-table" cellspacing='0'>
+        <table class="basic-table table-responsive" cellspacing='0'>
           <tr class="header-row">
             <td width="30%" align="right">${uiLabelMap.OrderPaymentType}</td>
             <td width="1">&nbsp;&nbsp;&nbsp;</td>

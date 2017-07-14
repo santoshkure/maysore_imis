@@ -19,7 +19,7 @@ under the License.
 
 <div>
   <#if contactMeches?has_content>
-    <table class="basic-table" cellspacing="0">
+    <table class="basic-table table-responsive" cellspacing="0">
       <#list contactMeches as contactMechMap>
           <#assign contactMech = contactMechMap.contactMech>
           <#assign facilityContactMech = contactMechMap.facilityContactMech>

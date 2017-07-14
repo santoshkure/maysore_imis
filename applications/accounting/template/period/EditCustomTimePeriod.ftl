@@ -20,8 +20,8 @@ under the License.
 <h1>${uiLabelMap.AccountingEditCustomTimePeriods}</h1>
 <br />
 <#if security.hasPermission("PERIOD_MAINT", session)>
-   <div class="screenlet">
-     <div class="screenlet-title-bar">
+   <div class="row">
+     <div class="alert alert-info">
          <ul>
            <li class="h3">${uiLabelMap.AccountingShowOnlyPeriodsWithOrganization}</li>
          </ul>
@@ -35,8 +35,8 @@ under the License.
      </form>
    </div>
 
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <#if currentCustomTimePeriod?has_content>
         <ul>
           <li class="h3">${uiLabelMap.AccountingCurrentCustomTimePeriod}</li>
@@ -47,7 +47,7 @@ under the License.
       </#if>
     </div>
     <#if currentCustomTimePeriod?has_content>
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr class="header-row">
           <td>${uiLabelMap.CommonId}</td>
           <td>${uiLabelMap.CommonParent}</td>
@@ -138,15 +138,15 @@ under the License.
       <div class="screenlet-body">${uiLabelMap.AccountingNoCurrentCustomTimePeriodSelected}</div>
     </#if>
   </div>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.AccountingChildPeriods}</li>
       </ul>
       <br class="clear"/>
     </div>
     <#if customTimePeriods?has_content>
-      <table class="basic-table" cellspacing="0">
+      <table class="basic-table table-responsive" cellspacing="0">
         <tr class="header-row">
           <td>${uiLabelMap.CommonId}</td>
           <td>${uiLabelMap.CommonParent}</td>
@@ -239,8 +239,8 @@ under the License.
       <div class="screenlet-body">${uiLabelMap.AccountingNoChildPeriodsFound}</div>
     </#if>
   </div>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.AccountingAddCustomTimePeriod}</li>
       </ul>

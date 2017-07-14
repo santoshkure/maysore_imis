@@ -22,8 +22,8 @@ function insertImageName(type,nameValue) {
 };
 </script>
 <#if fileType?has_content>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductResultOfImageUpload}</h3>
         </div>
         <div class="screenlet-body">
@@ -38,10 +38,10 @@ function insertImageName(type,nameValue) {
         </div>
     </div>
 </#if>
-<div class="screenlet">
+<div class="row">
 <#if ! productCategory?has_content>
     <#if productCategoryId?has_content>
-        <div class="screenlet-title-bar">
+        <div class="alert alert-info">
           <ul>
             <li class="h3">${uiLabelMap.ProductCouldNotFindProductCategoryWithId} "${productCategoryId}".</li>
           </ul>
@@ -49,7 +49,7 @@ function insertImageName(type,nameValue) {
         </div>
         <div class="screenlet-body">
             <form action="<@ofbizUrl>createProductCategory</@ofbizUrl>" method="post" style="margin: 0;" name="productCategoryForm">
-                <table cellspacing="0" class="basic-table">
+                <table cellspacing="0" class="basic-table table-responsive">
                     <tr>
                         <td align="right" class="label">${uiLabelMap.ProductProductCategoryId}</td>
                         <td>&nbsp;</td>
@@ -58,7 +58,7 @@ function insertImageName(type,nameValue) {
                         </td>
                     </tr>
     <#else>
-        <div class="screenlet-title-bar">
+        <div class="alert alert-info">
           <ul>
             <li class="h3">${uiLabelMap.PageTitleCreateProductCategory}</li>
           </ul>
@@ -66,7 +66,7 @@ function insertImageName(type,nameValue) {
         </div>
         <div class="screenlet-body">
             <form action="<@ofbizUrl>createProductCategory</@ofbizUrl>" method="post" style="margin: 0;" name="productCategoryForm">
-                <table cellspacing="0" class="basic-table">
+                <table cellspacing="0" class="basic-table table-responsive">
                     <tr>
                         <td align="right" class="label">${uiLabelMap.ProductProductCategoryId}</td>
                         <td>&nbsp;</td>
@@ -76,13 +76,13 @@ function insertImageName(type,nameValue) {
                     </tr>
     </#if>
 <#else>
-    <div class="screenlet-title-bar">
+    <div class="alert alert-info">
         <h3>${uiLabelMap.PageTitleEditProductCategories}</h3>
     </div>
     <div class="screenlet-body">
         <form action="<@ofbizUrl>updateProductCategory</@ofbizUrl>" method="post" style="margin: 0;" name="productCategoryForm">
             <input type="hidden" name="productCategoryId" value="${productCategoryId}"/>
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
                 <tr>
                     <td align="right" class="label">${uiLabelMap.ProductProductCategoryId}</td>
                     <td>&nbsp;</td>
@@ -208,13 +208,13 @@ function insertImageName(type,nameValue) {
         eval(toExec);
         };
     </script>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductCategoryUploadImage}</h3>
         </div>
         <div class="screenlet-body">
             <form method="post" enctype="multipart/form-data" action="<@ofbizUrl>UploadCategoryImage?productCategoryId=${productCategoryId!}&amp;upload_file_type=category</@ofbizUrl>" name="imageUploadForm">
-                <table cellspacing="0" class="basic-table">
+                <table cellspacing="0" class="basic-table table-responsive">
                     <tr><td>
                         <input type="file" size="50" name="fname"/>
                         <br />
@@ -229,13 +229,13 @@ function insertImageName(type,nameValue) {
             </form>
         </div>
     </div>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductDuplicateProductCategory}</h3>
         </div>
         <div class="screenlet-body">
             <form action="<@ofbizUrl>DuplicateProductCategory</@ofbizUrl>" method="post" style="margin: 0;">
-                <table cellspacing="0" class="basic-table">
+                <table cellspacing="0" class="basic-table table-responsive">
                     <tr><td>
                         ${uiLabelMap.ProductDuplicateProductCategorySelected}:
                         <input type="hidden" name="oldProductCategoryId" value="${productCategoryId}"/>

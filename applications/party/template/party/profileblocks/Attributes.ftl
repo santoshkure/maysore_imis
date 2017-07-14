@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-  <div id="partyAttributes" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="partyAttributes" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.PartyAttributes}</li>
         <#if security.hasEntityPermission("PARTYMGR", "_CREATE", session)>
@@ -29,7 +29,7 @@ under the License.
     </div>
     <div class="screenlet-body">
       <#if attributes?has_content>
-        <table class="basic-table hover-bar" cellspacing="0">
+        <table class="basic-table table-responsive hover-bar" cellspacing="0">
             <tr class="header-row">
               <td>${uiLabelMap.CommonName}</td>
               <td>${uiLabelMap.CommonValue}</td>

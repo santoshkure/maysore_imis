@@ -286,8 +286,8 @@ under the License.
 
   <br />
   <form method="post" action="setShipping" name="partyshipform">
-    <div class="screenlet">
-      <div class="screenlet-title-bar">
+    <div class="row">
+      <div class="alert alert-info">
         <ul>
           <li class="h3">${uiLabelMap.OrderShipToAnotherParty}</li>
         </ul>

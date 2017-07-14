@@ -17,15 +17,15 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div id="serialized-inventory-summary" class="screenlet">
-    <div class="screenlet-title-bar">
+<div id="serialized-inventory-summary" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.ProductSerializedInventorySummary}</li>
       </ul>
       <br class="clear" />
     </div>
     <div class="screenlet-body">
-        <table id="serialized-inventory" class="basic-table" cellspacing="0" cellpadding="2">
+        <table id="serialized-inventory" class="basic-table table-responsive" cellspacing="0" cellpadding="2">
             <thead>
                 <tr class="header-row">
                     <td>${uiLabelMap.ProductInventoryItemId}</td>

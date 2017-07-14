@@ -20,8 +20,8 @@ under the License.
 <#if productCategoryId?has_content>
     <a href="<@ofbizUrl>EditCategory?productCategoryId=${productCategoryId}</@ofbizUrl>" class="buttontext">[${uiLabelMap.ProductBackToEditCategory}]</a>
 </#if>
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <h3>
             <b>${uiLabelMap.ProductCheckingForExistingProductInCategory} <#if (productCategory.description)?has_content>"${productCategory.description}"</#if> [${uiLabelMap.CommonId}:${productCategoryId!}]</b>
             <#if productFeatureAndTypeDatas?has_content>
@@ -37,7 +37,7 @@ under the License.
     </div>
     <div class="screenlet-body">
         <#if products?has_content>
-        <table cellspacing="0" class="basic-table">
+        <table cellspacing="0" class="basic-table table-responsive">
             <tr>
                 <td>${uiLabelMap.ProductInternalName}</td>
                 <td>${uiLabelMap.ProductProductName}</td>
@@ -59,7 +59,7 @@ under the License.
     <div class="screenlet-body">
         <form name="createProductInCategoryForm" method="post" action="<@ofbizUrl>createProductInCategory</@ofbizUrl>" style="margin: 0;">
             <input type="hidden" name="productCategoryId" value="${productCategoryId}" />
-            <table cellspacing="0" class="basic-table">
+            <table cellspacing="0" class="basic-table table-responsive">
                 <#list productFeatureAndTypeDatas! as productFeatureAndTypeData>
                 <#assign productFeatureType = productFeatureAndTypeData.productFeatureType>
                 <#assign productFeature = productFeatureAndTypeData.productFeature>

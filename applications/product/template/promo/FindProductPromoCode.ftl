@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 <#if productPromoId??>
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductPromotionUploadSetOfPromotionCodes}</h3>
         </div>
         <div class="screenlet-body">
@@ -45,8 +45,8 @@ under the License.
         </div>
     </div>
     <br />
-    <div class="screenlet">
-        <div class="screenlet-title-bar">
+    <div class="row">
+        <div class="alert alert-info">
             <h3>${uiLabelMap.ProductPromotionAddSetOfPromotionCodes}</h3>
         </div>
         <div class="screenlet-body">

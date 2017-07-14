@@ -27,8 +27,8 @@ standard order confirmation page and to be re-usable by other screens.
 <#if !(cart??)><#assign cart = shoppingCart!/></#if>
 
 <#if cart??>
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <div class="h3">${uiLabelMap.OrderShippingInformation}</div>
   </div>
   <div class="screenlet-body">

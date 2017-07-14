@@ -26,8 +26,8 @@ under the License.
     <#assign allowPriceChange = true/>
 </#if>
 
-<div class="screenlet">
-    <div class="screenlet-title-bar">
+<div class="row">
+    <div class="alert alert-info">
         <ul>
           <li class="h3">&nbsp;${uiLabelMap.OrderOrderItems}</li>
           <#if security.hasEntityPermission("ORDERMGR", "_UPDATE", session)>
@@ -317,7 +317,7 @@ under the License.
                 <form name="updateOrderAdjustmentForm${orderAdjustmentId}" method="post" action="<@ofbizUrl>updateOrderAdjustment</@ofbizUrl>">
                     <input type="hidden" name="orderAdjustmentId" value="${orderAdjustmentId!}"/>
                     <input type="hidden" name="orderId" value="${orderId!}"/>
-                    <table class="basic-table" cellspacing="0">
+                    <table class="basic-table table-responsive" cellspacing="0">
                         <tr>
                             <td class="align-text" width="55%">
                                 <span class="label">${adjustmentType.get("description",locale)}</span>&nbsp;${orderHeaderAdjustment.comments!}
@@ -357,7 +357,7 @@ under the License.
                 <input type="hidden" name="comments" value="Added manually by [${userLogin.userLoginId}]"/>
                 <input type="hidden" name="isManual" value="Y"/>
                 <input type="hidden" name="orderId" value="${orderId!}"/>
-                <table class="basic-table" cellspacing="0">
+                <table class="basic-table table-responsive" cellspacing="0">
                     <tr><td colspan="3"><hr /></td></tr>
                     <tr>
                         <td class="align-text" width="55%">
@@ -385,7 +385,7 @@ under the License.
         </#if>
 
         <#-- subtotal -->
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
             <tr><td colspan="4"><hr /></td></tr>
             <tr class="align-text">
               <td width="80%"><span class="label">${uiLabelMap.OrderItemsSubTotal}</span></td>

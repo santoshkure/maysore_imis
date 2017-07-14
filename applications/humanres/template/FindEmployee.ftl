@@ -19,8 +19,8 @@ under the License.
 
 <#assign extInfo = parameters.extInfo?default("N")>
 
-<div id="findEmployee" class="screenlet">
-    <div class="screenlet-title-bar">
+<div id="findEmployee" class="row">
+    <div class="alert alert-info">
         <ul>
             <li class="h3">${uiLabelMap.CommonFind} ${uiLabelMap.HumanResEmployee}</li>
             <#if parameters.hideFields?default("N") == "Y">
@@ -131,8 +131,8 @@ under the License.
     </#if>
     <#if partyList??>
     <br />
-    <div id="findEmployeeResults" class="screenlet">
-        <div class="screenlet-title-bar">
+    <div id="findEmployeeResults" class="row">
+        <div class="alert alert-info">
             <ul>
                 <li class="h3">${uiLabelMap.PartyPartiesFound}</li>
                 <#if (partyListSize > 0)>
@@ -152,7 +152,7 @@ under the License.
             <br class="clear"/>
         </div>
     <#if partyList?has_content>
-        <table class="basic-table" cellspacing="0">
+        <table class="basic-table table-responsive" cellspacing="0">
             <tr class="header-row">
                 <td>${uiLabelMap.PartyPartyId}</td>
                 <td>${uiLabelMap.PartyUserLogin}</td>

@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div id="productcomparelist" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="productcomparelist" class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ProductCompareProducts}</li>
     </ul>

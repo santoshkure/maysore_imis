@@ -129,7 +129,7 @@ under the License.
   </#list>
 </#macro>
 
-<div class="contentarea">
+<div class="container-fluid">
   <div id="column-container">
     <div id="content-main-section">
     <@section inSection=doc.section first="yes" level=1/>
