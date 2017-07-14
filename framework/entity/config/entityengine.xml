@@ -470,7 +470,7 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="ext-demo"/>
        <inline-jdbc
                 jdbc-driver="org.postgresql.Driver"
-                jdbc-uri="jdbc:postgresql://localhost:5432/newrel16"
+                jdbc-uri="jdbc:postgresql://localhost:5432/mysore_db"
                 jdbc-username="postgres"
                 jdbc-password="password"
                 isolation-level="ReadCommitted"

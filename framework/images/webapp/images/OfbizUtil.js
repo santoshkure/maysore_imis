@@ -987,7 +987,7 @@ function showErrorAlertLoadUiLabel(errBoxTitleResource, errBoxTitleLabel, uiReso
     	labels = result.responseJSON;
     });
 
-    var errMsgBox = jQuery("#contentarea").after(jQuery("<div id='errorAlertBox'></div>"));
+    var errMsgBox = jQuery("#container").after(jQuery("<div id='errorAlertBox'></div>"));
 
     if (errMsgBox.length) {
         errMsgBox.dialog({
@@ -1029,7 +1029,7 @@ function showErrorAlert(errBoxTitle, errMessage) {
         return;
     }
 
-    var errMsgBox = jQuery("#contentarea").after(jQuery("<div id='errorAlertBox'>" + errMessage + "</div>"));
+    var errMsgBox = jQuery("#container").after(jQuery("<div id='errorAlertBox'>" + errMessage + "</div>"));
 
     if (errMsgBox.length) {
         errMsgBox.dialog({
