@@ -18,8 +18,8 @@ under the License.
 -->
 
 
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">&nbsp;${uiLabelMap.WorkEffortNotes}</li>
           <#--if project?has_content>
@@ -101,7 +101,7 @@ under the License.
         </tr>
       </table>
       <#if parameters.showForm??>
-        <div class="screenlet-title-bar">
+        <div class="alert alert-info">
           <ul>
           <li class="h3">&nbsp;${uiLabelMap.OrderAddNote}</li>
           </ul>
