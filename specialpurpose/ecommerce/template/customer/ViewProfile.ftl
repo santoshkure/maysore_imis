@@ -47,7 +47,7 @@ under the License.
   </tr>
 </table>
 
-<div class="screenlet">
+<div class="row">
   <div class="boxlink">
     <a href="<@ofbizUrl>editperson</@ofbizUrl>" class="submenutextright">
     <#if person??>${uiLabelMap.CommonUpdate}<#else>${uiLabelMap.CommonCreate}</#if></a>
@@ -89,7 +89,7 @@ under the License.
 
 <#-- ============================================================= -->
 <#if monthsToInclude?? && totalSubRemainingAmount?? && totalOrders??>
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.EcommerceLoyaltyPoints}</h3>
   <div class="screenlet-body">
     <label>${uiLabelMap.EcommerceYouHave} ${totalSubRemainingAmount} ${uiLabelMap.EcommercePointsFrom} ${totalOrders} ${uiLabelMap.EcommerceOrderInLast} ${monthsToInclude} ${uiLabelMap.EcommerceMonths}</label>
@@ -98,7 +98,7 @@ under the License.
 </#if>
 
 <#-- ============================================================= -->
-<div class="screenlet">
+<div class="row">
   <div class="boxlink">
     <a href="<@ofbizUrl>editcontactmech</@ofbizUrl>" class="submenutextright">${uiLabelMap.CommonCreateNew}</a>
   </div>
@@ -223,7 +223,7 @@ under the License.
 
 <#-- ============================================================= -->
 
-<div class="screenlet">
+<div class="row">
   <div class="boxlink">
     <a href="<@ofbizUrl>editcreditcard</@ofbizUrl>" class="submenutext">${uiLabelMap.PartyCreateNewCreditCard}</a><a href="<@ofbizUrl>editgiftcard</@ofbizUrl>" class="submenutext">${uiLabelMap.PartyCreateNewGiftCard}</a><a href="<@ofbizUrl>editeftaccount</@ofbizUrl>" class="submenutextright">${uiLabelMap.PartyCreateNewEftAccount}</a>
   </div>
@@ -335,7 +335,7 @@ under the License.
 </div>
 
 <#-- ============================================================= -->
-<div class="screenlet">
+<div class="row">
   <div class="boxlink">
     <a href="<@ofbizUrl>changepassword</@ofbizUrl>" class="submenutextright">${uiLabelMap.PartyChangePassword}</a>
   </div>
@@ -355,7 +355,7 @@ under the License.
 <form name="setdefaultshipmeth" action="<@ofbizUrl>setprofiledefault/viewprofile</@ofbizUrl>" method="post">
 <div>
   <input type="hidden" name="productStoreId" value="${productStoreId}" />
-  <div class="screenlet">
+  <div class="row">
     <div class="boxlink">
       <#if profiledefs?has_content && profiledefs.defaultShipAddr?has_content && carrierShipMethods?has_content><a href="javascript:document.setdefaultshipmeth.submit();" class="submenutextright">${uiLabelMap.EcommerceSetDefault}</a></#if>
     </div>
@@ -383,7 +383,7 @@ under the License.
 </form>
 
 <#-- ============================================================= -->
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.EcommerceFileManager}</h3>
   <div class="screenlet-body">
     <table width="100%" border="0" cellpadding="1">
@@ -446,7 +446,7 @@ under the License.
 </div>
 
 <#-- ============================================================= -->
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.PartyContactLists}</h3>
   <div class="screenlet-body">
     <table width="100%" border="0" cellpadding="1" cellspacing="0">
@@ -545,7 +545,7 @@ under the License.
 
 <#-- ============================================================= -->
 <#if surveys?has_content>
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.EcommerceSurveys}</h3>
   <div class="screenlet-body">
     <table width="100%" border="0" cellpadding="1">

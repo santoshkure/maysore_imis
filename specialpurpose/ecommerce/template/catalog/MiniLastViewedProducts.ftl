@@ -25,8 +25,8 @@ under the License.
   <#else>
     <#assign limit=(lastViewedProducts?size-1)/>
   </#if>
-  <div id="minilastviewedproducts" class="screenlet">  
-    <div class="screenlet-title-bar">
+  <div id="minilastviewedproducts" class="row">  
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.EcommerceLastProducts}</li>
         <li>

@@ -19,8 +19,8 @@ under the License.
 
 <#assign productPrice = productPriceList[0]!/>
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <div class="h3">${uiLabelMap.PageTitleDigitalProductEdit}</div>
   </div>
   <div class="screenlet-body">
@@ -89,8 +89,8 @@ under the License.
 </div>
 
 <#if supplierProduct?has_content>
-  <div class="screenlet">
-    <div class="screenlet-title-bar">
+  <div class="row">
+    <div class="alert alert-info">
       <div class="h3">${uiLabelMap.OrderDigitalProductFiles}</div>
     </div>
     <div class="screenlet-body">

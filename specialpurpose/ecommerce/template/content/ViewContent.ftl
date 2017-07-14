@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
+<div class="row">
   <div style="margin:10px;">
   <#-- Do this so that we don't have to find the content twice (again in renderSubContent) -->
   <#assign subContentId=requestParameters.contentId!/>

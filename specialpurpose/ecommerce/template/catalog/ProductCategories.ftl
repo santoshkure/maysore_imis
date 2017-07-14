@@ -213,8 +213,8 @@
 </script>
 
 
-<div id="quickadd" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="quickadd" class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ProductCategories}</li>
     </ul>

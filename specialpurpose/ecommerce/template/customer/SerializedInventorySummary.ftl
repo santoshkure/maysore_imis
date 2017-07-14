@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div id="serialized-inventory-summary" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="serialized-inventory-summary" class="row">
+  <div class="alert alert-info">
     <span class="h3">${uiLabelMap.ProductSerializedInventorySummary}</span>
   </div>
   <div class="screenlet-body">

@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if tagCloudList?has_content>
-  <div id="populartags" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="populartags" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.EcommerceTags}</li>
       </ul>

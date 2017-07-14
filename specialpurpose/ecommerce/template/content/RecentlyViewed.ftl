@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if mrvList?has_content>
-  <div id="recentlyviewed" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="recentlyviewed" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.EcommerceLastContent}</li>
       </ul>

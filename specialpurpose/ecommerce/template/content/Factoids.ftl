@@ -30,8 +30,8 @@ under the License.
   </#if>
 </#if>
 
-<div id="factoids" class="screenlet">
-  <div class="screenlet-title-bar">
+<div id="factoids" class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.EcommerceFactoids}</li>
     </ul>

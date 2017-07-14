@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.EcommerceMyAccount}</h3>
   <form id="editUserForm" method="post" action="<@ofbizUrl>updateCustomerProfile</@ofbizUrl>">
     <fieldset class="left center">

@@ -18,7 +18,7 @@ under the License.
 -->
 
 <#if reviews?has_content>
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.ProductReviews}</h3>
   <div class="screenlet-body">
     <table width="100%" border="0" cellpadding="1">
