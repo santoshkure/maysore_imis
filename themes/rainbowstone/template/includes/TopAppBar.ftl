@@ -40,12 +40,22 @@ under the License.
         </a>
     </div>
 <#if userLogin?has_content>
-    <#assign appMax = 8>
+    <#assign appMax = 6>
     <#assign alreadySelected = false>
-<div id="main-navigation-bar">
+<div id="main-navigation-bar" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+    	<div id="main-nav-bar-right" class="navbar-brand page-scroll">
+    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <div id="company-logo" class="navbar-brand page-scroll"></div>
+            <#if parameters.componentName?exists && requestAttributes._CURRENT_VIEW_?exists && helpTopic?exists>
+                <a class="dark-color" href="javascript:lookup_popup1('showHelp?helpTopic=${helpTopic}&amp;portalPageId=${parameters.portalPageId!}','help' ,500,500);" title="${uiLabelMap.CommonHelp}"></a>
+            </#if>
+        </div>
     <div id="main-nav-bar-left">
         <#--<a id="homeButton" href="<@ofbizUrl>HomeMenu</@ofbizUrl>"><img id="homeButtonImage" src="/rainbowstone/images/home.svg" alt="Home"></a>-->
-        <ul id="app-bar-list">
+        <ul id="app-bar-list" class="nav navbar-nav navbar-right">
             <#assign appCount = 0>
             <#assign firstApp = true>
             <#list displayApps as display>
@@ -129,6 +139,7 @@ under the License.
                 </#if>
             </#list>
         </ul>
+       
         <!-- Si le nombre d'application est supérieur au nombre d'application max affichable, je met le restant
         dans un menu déroulant. J'ai volontairement doublé le code car sinon, la lecture du code lors d'une maintenance
         risquait d'être compliquée. A corriger si jamais les performances s'en font ressentir -->
@@ -210,15 +221,9 @@ under the License.
         </ul> <!-- more-app-list -->
         </div> <!-- more-app -->
         </#if>
+         <#include "component://rainbowstone/template/includes/Avatar.ftl"/>
     </div>
-        <div id="main-nav-bar-right">
-            <div id="company-logo"></div>
-            <#if parameters.componentName?exists && requestAttributes._CURRENT_VIEW_?exists && helpTopic?exists>
-                <a class="dark-color" href="javascript:lookup_popup1('showHelp?helpTopic=${helpTopic}&amp;portalPageId=${parameters.portalPageId!}','help' ,500,500);" title="${uiLabelMap.CommonHelp}"></a>
-            </#if>
-
-            <#include "component://rainbowstone/template/includes/Avatar.ftl"/>
-        </div>
+	</div>
     </div> <!-- main navigation bar -->
     <div id="app-bar-line"></div>
 </#if>

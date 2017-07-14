@@ -24,6 +24,7 @@ under the License.
 <html lang="${docLangAttr}" dir="${langDir}" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/rainbowstone/css/bootstrap.css">
     <title>${layoutSettings.companyName}: <#if (titleProperty)?has_content>${uiLabelMap[titleProperty]}<#else>${title!}</#if></title>
 <#if layoutSettings.shortcutIcon?has_content>
     <#assign shortcutIcon = layoutSettings.shortcutIcon/>
@@ -90,4 +91,8 @@ under the License.
     </#list>
       </script>
 </#if>
+
+
+  <script src="/rainbowstone/js/jquery-3.2.1.min.js"></script>
+  <script src="/rainbowstone/js/bootstrap.js"></script>
 </head>
