@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if showPromoText>
-  <div id="minipromotext" class="screenlet">
-    <div class="screenlet-title-bar">
+  <div id="minipromotext" class="row">
+    <div class="alert alert-info">
       <ul>
         <li class="h3">${uiLabelMap.OrderSpecialOffers}</li>
       </ul>

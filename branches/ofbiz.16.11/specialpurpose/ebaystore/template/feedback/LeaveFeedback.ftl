@@ -51,7 +51,7 @@ under the License.
 </script>
 <form name="leaveFeedback" action="<@ofbizUrl>sendLeaveFeedback</@ofbizUrl>" method="post">
   <input type="hidden" value="${parameters.productStoreId}" name="productStoreId"/>
-  <table cellspacing="0" class="basic-table">
+  <table cellspacing="0" class="basic-table table-responsive">
     <tbody>
     <tr class="header-row">
       <td>Item</td>

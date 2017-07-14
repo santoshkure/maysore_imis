@@ -48,8 +48,8 @@ under the License.
 })();
 </script>
 <h1>${uiLabelMap.CommonLogin}</h1>
-<div class="screenlet">
-  <div class="screenlet-title-bar"><h3>${uiLabelMap.CommonRegistered}</h3></div>
+<div class="row">
+  <div class="alert alert-info"><h3>${uiLabelMap.CommonRegistered}</h3></div>
   <div class="screenlet-body">
   <table width="100%" class="Signlogin">
       <tr>
@@ -84,8 +84,8 @@ under the License.
 </div>
 <#else>
 <h1>${uiLabelMap.CommonLogin}</h1>
-<div class="screenlet">
-  <div class="screenlet-title-bar"><h3>${uiLabelMap.CommonRegistered}</h3></div>
+<div class="row">
+  <div class="alert alert-info"><h3>${uiLabelMap.CommonRegistered}</h3></div>
   <div class="screenlet-body">
     <form method="post" action="<@ofbizUrl>login</@ofbizUrl>" name="loginform" class="horizontal">
       <fieldset>
@@ -113,8 +113,8 @@ under the License.
 </div>
 </#if>
 
-<div class="screenlet">
-  <div class="screenlet-title-bar"><h3>${uiLabelMap.CommonForgotYourPassword}</h3></div>
+<div class="row">
+  <div class="alert alert-info"><h3>${uiLabelMap.CommonForgotYourPassword}</h3></div>
   <div class="screenlet-body">
   <form method="post" action="<@ofbizUrl>forgotpassword</@ofbizUrl>" class="horizontal">
     <div>
@@ -129,7 +129,7 @@ under the License.
   </div>
 </div>
 <#--    
-<div class="screenlet">
+<div class="row">
   <h3>${uiLabelMap.CommonNewUser}</h3>
   <form method="post" action="<@ofbizUrl>newcustomer</@ofbizUrl>">
     <div>
