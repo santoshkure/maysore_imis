@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.WebtoolsResults}</li>
     </ul>
@@ -30,7 +30,7 @@ under the License.
     </#if>
 
     <#if columns?has_content>
-        <table class="basic-table hover-bar" cellspacing="0">
+        <table class="basic-table table-responsive hover-bar" cellspacing="0">
             <tr class="header-row">
             <#list columns as column>
                 <td>${column}</td>

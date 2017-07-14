@@ -56,7 +56,7 @@ under the License.
 
   <h2>${uiLabelMap.WebtoolsExport}:</h2>
   <form method="post" action="<@ofbizUrl>xmldsdump</@ofbizUrl>" name="entityExport">
-    <table class="basic-table">
+    <table class="basic-table table-responsive">
       <tr>
         <td class="label">${uiLabelMap.WebtoolsOutputDirectory}</td>
         <td><input type="text" size="60" name="outpath" value="${parameters.outpath!}"/></td>
