@@ -18,8 +18,8 @@ under the License.
 -->
 
 <#if storeLoginMethList?exists && storeLoginMethList?has_content>
-<div class="screenlet">
-  <div class="screenlet-title-bar"><h3>${uiLabelMap.ThirdPartyLogin}</h3></div>
+<div class="row">
+  <div class="alert alert-info"><h3>${uiLabelMap.ThirdPartyLogin}</h3></div>
   <div class="screenlet-body">
     <#list storeLoginMethList as storeLoginMeth>
       <span><a href="${storeLoginMeth.localRedirectUri!}"><img src="${storeLoginMeth.iconUrl!}"></a></span>
