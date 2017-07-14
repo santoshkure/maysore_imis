@@ -17,8 +17,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.CommonAvailablePortlets}</li>
       <li><a href="<@ofbizUrl>ManagePortalPages?portalPageId=${parameters.portalPageId}&amp;parentPortalPageId=${parameters.parentPortalPageId}</@ofbizUrl>">${uiLabelMap.CommonCancel}</a></li>
@@ -29,7 +29,7 @@ under the License.
   <#if portalPortlets?has_content>
     <#assign orderByList = Static["org.apache.ofbiz.base.util.UtilMisc"].toList("portalPortletId")/>
 
-    <table cellspacing="20" class="basic-table">
+    <table cellspacing="20" class="basic-table table-responsive">
       <#assign leftColumn = true/>
       <#list portalPortlets as portalPortlet>
         <#if leftColumn==true>
