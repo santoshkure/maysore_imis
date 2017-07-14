@@ -42,7 +42,7 @@ under the License.
             <widgets>
                 <platform-specific><html><html-template location="component://common/template/includes/Lookup.ftl"/></html></platform-specific>
                 <platform-specific><html><html-template location="${messagesTemplateLocation}"/></html></platform-specific>
-                <container style="contentarea">
+                <container style="container">
                     <container id="column-container">
                         <!-- by default will render left-bar only if leftbarScreen value not empty -->
                         <include-screen name="${leftbarScreenName}" location="${leftbarScreenLocation}"/>

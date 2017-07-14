@@ -112,10 +112,12 @@ under the License.
     <!-- yet another demo page -->
     <DataResource dataResourceId="CMSS_DEMO_PAGE1" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL"/>
     <ElectronicText dataResourceId="CMSS_DEMO_PAGE1">
-        <textData><![CDATA[
-            <div>Sub-content 1: ${thisContent.subcontent.sub1}</div>
-            <div>Sub-content 2: ${thisContent.subcontent.sub2}</div>
-            ]]></textData>
+        <textData>
+        	<style type="text/css"><![CDATA[
+            <div class="alert alert-success">Sub- 1: ${thisContent.subcontent.sub1}</div>
+            <div class="alert alert-info">Sub-content 2: ${thisContent.subcontent.sub2}</div>
+            ]]></style>
+            </textData>
     </ElectronicText>
     <Content contentId="CMSS_DEMO_PAGE1" contentTypeId="DOCUMENT" decoratorContentId="CMSS_DEC" contentName="CMS Site Demo Page 1" dataResourceId="CMSS_DEMO_PAGE1"/>
     <ContentPurpose contentId="CMSS_DEMO_PAGE1" contentPurposeTypeId="SECTION"/>
@@ -136,7 +138,7 @@ under the License.
     <Content contentId="CMSS_DEMO_PAGE1_FTR" contentTypeId="DOCUMENT" contentName="CMS Site Demo Page FTR" dataResourceId="CMSS_DEMO_PAGE1_FTR"/>
     <ContentAssoc contentId="CMSS_DEMO_PAGE1" contentIdTo="CMSS_DEMO_PAGE1_FTR" contentAssocTypeId="SUB_CONTENT" mapKey="footer" fromDate="2001-01-01 00:00:00"/>
 
-    <DataResource dataResourceId="CMSS_DEMO_SCREEN" dataResourceTypeId="URL_RESOURCE" dataTemplateTypeId="SCREEN_COMBINED" objectInfo="component://cmssite/widget/CmssiteScreens.xml#testScreen"/>
+    <DataResource dataResourceId="CMSS_DEMO_SCREEN" dataResourceTypeId="URL_RESOURCE" dataTemplateTypeId="SCREEN_COMBINED" objectInfo="component://cmssite/widget/CmssiteScreens.xml# "/>
     <Content contentId="CMSS_DEMO_SCREEN" contentTypeId="DOCUMENT" contentName="CMS Site Demo screen/decorator example" dataResourceId="CMSS_DEMO_SCREEN"/>
     <ContentAssoc contentId="CMSS_PPOINT" contentIdTo="CMSS_DEMO_SCREEN" contentAssocTypeId="SUB_CONTENT" fromDate="2001-01-01 00:00:00"/>
 
