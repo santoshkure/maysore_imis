@@ -16,8 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<div class="screenlet">
-  <div class="screenlet-title-bar">
+<div class="row">
+  <div class="alert alert-info">
     <ul>
       <li class="h3">
         <a id="billingAddressSelected" href="javascript:void(0);">${uiLabelMap.WebPosBillingAddress}</a>
@@ -33,7 +33,7 @@ under the License.
         <input type="hidden" id="billingLocation" name="billingLocation" value="Y"/>
         <input type="hidden" id="shippingLocation" name="shippingLocation" value="N"/>
         <div id="billingAddress">
-          <table class="basic-table" cellspacing="0">
+          <table class="basic-table table-responsive" cellspacing="0">
           <#if billingPostalAddress??>
             <#if personBillTo??>
             <tr>
@@ -64,7 +64,7 @@ under the License.
           </table>
         </div>
         <div id="shippingAddress" style="display:none">
-          <table class="basic-table" cellspacing="0">
+          <table class="basic-table table-responsive" cellspacing="0">
           <#if shippingPostalAddress??>
             <#if personShipTo??>
             <tr>

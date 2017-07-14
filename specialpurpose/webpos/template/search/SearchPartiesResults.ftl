@@ -60,7 +60,7 @@ under the License.
         <td width="25%" colspan="2"></td>
       </tr>
     </table>
-    <table cellspacing="0" cellpadding="2" class="basic-table">
+    <table cellspacing="0" cellpadding="2" class="basic-table table-responsive">
       <thead class="searchPartiesResultsHead">
         <tr class="header-row">
           <td>&nbsp;</td>
