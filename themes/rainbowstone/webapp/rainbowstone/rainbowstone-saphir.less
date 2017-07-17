@@ -656,8 +656,8 @@ li.line-odd {
   box-shadow: 1px 1px 5px #09090966;
   z-index: 0;
   opacity: .99;
-  border-top-left-radius : 8px ;
-  border-top-right-radius : 8px ;
+  border-top-left-radius : 5px ;
+  border-top-right-radius : 5px ;
   a {
     position: relative;
     top: 3px;
@@ -691,10 +691,22 @@ li.line-odd {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.4em !important;
+  font-size: 1.1em !important;
   width: 40px;
   height: @app-bar-height;
-  color: @font-color-for-dark;
+  color: #777;
+	display: grid;
+	line-height: .8em;
+	padding: 8px;
+	margin-left: 7px;
+  
+}
+#more-app i{
+	font-size: 15px;
+	text-align: center;
+	margin-top: 8px;
+	line-height: .8em;
+	
 }
 #more-app:hover {
   background-color: @main-color-theme;
@@ -894,12 +906,12 @@ a.user-pref-btn {
   ul {
     display: flex;
     flex-direction: row;
-    background-color: @grey;
+    background-color: #f0eacb;
     flex-grow: 1;
   }
   ul li ul li {
-    border-left: solid 1px @black;
-    height: @sub-app-bar-height;
+    border-left: solid 1px #d8ab0e;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-items: center;
@@ -908,7 +920,7 @@ a.user-pref-btn {
     padding-left: 6px;
     padding-right: 6px;
     font-family: "Quicksand", Arial, "Lucida Grande", sans-serif;
-    border-bottom: solid 1px @black;
+    border-bottom: solid 1px #d8ab0e;
     font-size: 12px;
     @media screen and (max-width: 1500px) {
       font-size: 10px;
@@ -931,7 +943,7 @@ a.user-pref-btn {
 }
 
 #app-navigation ul li ul li:last-child {
-  border-right: solid 1px @black;
+  border-right: solid 1px #d8ab0e;
 }
 
 #app-navigation ul li ul li:hover {
@@ -1426,7 +1438,7 @@ form .basic-table,
 
 .basic-table tr td {
   /* Style for all cells */
-  padding: 0.8em 0.1em;
+  padding: 0.4em 0.7em;
   vertical-align: middle;
 }
 
@@ -1470,7 +1482,7 @@ form .basic-table,
 
 .basic-table .alternate-row {
   /* Alternating row style */
-  background-color: #eeeeee;
+  background-color: #f5f5f5;
 }
 
 .basic-table .selected {
@@ -1936,7 +1948,7 @@ input[type="button"] {
   -webkit-appearance: none;
   -moz-border-radius: 1.1em;
   -webkit-border-radius: 1.1em;
-  border-radius: 2px;
+  border-radius: 3px;
   border: 0.1em solid @main-color-theme;
   background-color: @white;
   cursor: pointer;

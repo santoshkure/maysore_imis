@@ -45,9 +45,7 @@ under the License.
 <div id="main-navigation-bar" class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
     	<div id="main-nav-bar-right" class="navbar-brand page-scroll">
-    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-            </button>
+    		
             <div id="company-logo" class="navbar-brand page-scroll"></div>
             <#if parameters.componentName?exists && requestAttributes._CURRENT_VIEW_?exists && helpTopic?exists>
                 <a class="dark-color" href="javascript:lookup_popup1('showHelp?helpTopic=${helpTopic}&amp;portalPageId=${parameters.portalPageId!}','help' ,500,500);" title="${uiLabelMap.CommonHelp}"></a>
@@ -171,7 +169,7 @@ under the License.
                     <#if appMax < appCount>
                         <#if !moreApp>
                         <div id="more-app" <#if !alreadySelected>class="selected"</#if>>
-                            <span>+</span>
+                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>More
                         <ul id="more-app-list">
                             <#assign moreApp = true>
                         </#if>
