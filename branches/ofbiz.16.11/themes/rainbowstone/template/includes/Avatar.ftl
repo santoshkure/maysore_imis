@@ -2,14 +2,14 @@
 <#if avatarDetail??>
     <img src="/content/control/stream?contentId=${avatarDetail.contentId}" alt="user">
 <#else>
-    <img src="/rainbowstone/images/avatar.svg" alt="user">
+   <i class="fa fa-user" aria-hidden="true" style="font-size: 40px;"></i>
 </#if>
     <div id="user-details" style="display:none;">
         <div id="user-row1">
         <#if avatarDetail??>
             <img src="/content/control/stream?contentId=${avatarDetail.contentId}" alt="user">
         <#else>
-            <img src="/rainbowstone/images/avatar.svg" alt="user">
+            <i class="fa fa-user" aria-hidden="true" style="font-size: 50px;padding: 10px;"></i>
         </#if>
             <div id="user-name" <#if userLogin.partyId??>onclick="javascript:location.href='/partymgr/control/viewprofile?partyId=${userLogin.partyId}'"</#if>>
                 <#if person?exists>
