@@ -32,7 +32,7 @@
     </property>
     <property key="AssetMaintCompanyName">
         <value xml:lang="de">OFBiz: Instandhaltung</value>
-        <value xml:lang="en">OFBiz: Asset Maintenance</value>
+        <value xml:lang="en">IMIS: Asset Maintenance</value>
         <value xml:lang="fr">OFBiz : maintenance des biens</value>
         <value xml:lang="it">OFBiz: Manutenzione cespiti</value>
         <value xml:lang="ja">OFBiz: 資産管理</value>
