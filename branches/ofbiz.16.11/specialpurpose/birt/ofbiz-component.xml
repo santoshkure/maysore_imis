@@ -59,7 +59,7 @@ under the License.
         base-permission="OFBTOOLS,WEBTOOLS"
         mount-point="/birt"
         menu-name="secondary"
-        app-bar-display="true"/>
+        app-bar-display="false"/>
 
     <container name="birt-container" loaders="main" class="org.apache.ofbiz.birt.container.BirtContainer"/>
 
