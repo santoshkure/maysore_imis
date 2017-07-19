@@ -41,14 +41,16 @@ under the License.
         server="default-server"
         location="webapp/facility"
         base-permission="OFBTOOLS,FACILITY"
-        mount-point="/facility"/>
+        mount-point="/facility"
+        app-bar-display="false"/>
     <webapp name="order"
         title="Order"
         description="OrderComponentDescription"
         server="default-server"
         location="webapp/ordermgr"
         base-permission="OFBTOOLS,ORDERMGR"
-        mount-point="/ordermgr"/>
+        mount-point="/ordermgr"
+        app-bar-display="false"/>
 
     <webapp name="birt"
         title="BIRT"
