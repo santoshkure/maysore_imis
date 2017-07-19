@@ -51,5 +51,5 @@ under the License.
         location="webapp/webpos"
         base-permission="WEBPOS"
         mount-point="/webpos"
-        app-bar-display="true"/>
+        app-bar-display="false"/>
 </ofbiz-component>
