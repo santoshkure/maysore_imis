@@ -3204,7 +3204,7 @@
     <property key="AccountingCompanyName">
         <value xml:lang="ar">أوفبيز: مسير المحاسبة</value>
         <value xml:lang="de">OFBiz: Buchhaltung</value>
-        <value xml:lang="en">OFBiz: Accounting Manager</value>
+        <value xml:lang="en">IMIS: Accounting Manager</value>
         <value xml:lang="es">OFBiz: Administrador de cuentas</value>
         <value xml:lang="fr">OFBiz: Gestion comptable</value>
         <value xml:lang="hi-IN">OFBiz: लेखा प्रबंधक</value>
