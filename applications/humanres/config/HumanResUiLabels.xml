@@ -1133,7 +1133,7 @@
         <value xml:lang="zh-TW">預算專案識別</value>
     </property>
     <property key="HumanResCompanyName">
-        <value xml:lang="en">OFBiz: Human Resources Manager</value>
+        <value xml:lang="en">IMIS: Human Resources Manager</value>
         <value xml:lang="fr">OFBiz : gestion de ressources humaines</value>
         <value xml:lang="it">OFBiz: Gestione Risorse Umane</value>
         <value xml:lang="ja">OFBiz: 人事管理</value>
