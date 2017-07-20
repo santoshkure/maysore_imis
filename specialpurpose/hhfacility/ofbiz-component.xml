@@ -36,5 +36,5 @@ under the License.
         location="webapp/hhfacility"
         base-permission="OFBTOOLS,HHFACILITY"
         mount-point="/hhfacility"
-        app-bar-display="false"/>
+        app-bar-display="true"/>
 </ofbiz-component>

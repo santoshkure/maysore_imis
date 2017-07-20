@@ -57,7 +57,6 @@ under the License.
         server="default-server"
         location="webapp/example"
         base-permission="OFBTOOLS,EXAMPLE"
-        mount-point="/example"
-        app-bar-display="false"/>
+        mount-point="/example"/>
 
 </ofbiz-component>
