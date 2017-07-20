@@ -51,13 +51,12 @@ under the License.
         server="default-server"
         location="webapp/workeffort"
         base-permission="OFBTOOLS,WORKEFFORTMGR"
-        mount-point="/workeffort"
-        app-bar-display="false"/>
+        mount-point="/workeffort"/>
 
      <webapp name="ical"
         title="iCalendar"
         app-bar-display="false"
         server="default-server"
         location="webapp/ical"
-        mount-point="/iCalendar" />
+        mount-point="/iCalendar"/>
 </ofbiz-component>
