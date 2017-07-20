@@ -41,16 +41,14 @@ under the License.
         server="default-server"
         location="webapp/facility"
         base-permission="OFBTOOLS,FACILITY"
-        mount-point="/facility"
-        app-bar-display="false"/>
+        mount-point="/facility"/>
     <webapp name="order"
         title="Order"
         description="OrderComponentDescription"
         server="default-server"
         location="webapp/ordermgr"
         base-permission="OFBTOOLS,ORDERMGR"
-        mount-point="/ordermgr"
-        app-bar-display="false"/>
+        mount-point="/ordermgr"/>
 
     <webapp name="birt"
         title="BIRT"
@@ -59,7 +57,7 @@ under the License.
         base-permission="OFBTOOLS,WEBTOOLS"
         mount-point="/birt"
         menu-name="secondary"
-        app-bar-display="false"/>
+        app-bar-display="true"/>
 
     <container name="birt-container" loaders="main" class="org.apache.ofbiz.birt.container.BirtContainer"/>
 
