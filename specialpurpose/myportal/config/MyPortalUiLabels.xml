@@ -63,7 +63,7 @@
         <value xml:lang="zh-TW">缺少名字(Firstname)</value>
     </property>
     <property key="MyPortalInformation">
-        <value xml:lang="en">My Information</value>
+        <value xml:lang="en">IMIS: Customer Portal</value>
         <value xml:lang="fr">Mes informations </value>
         <value xml:lang="it">Mie informazioni</value>
         <value xml:lang="ja">私の情報</value>
