@@ -26,5 +26,6 @@
             title="OFBiz Passport"
             server="default-server"
             location="webapp/passport"
-            mount-point="/passport"/>
+            mount-point="/passport"
+            app-bar-display="false"/>
 </ofbiz-component>
