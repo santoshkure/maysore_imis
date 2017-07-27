@@ -82,7 +82,10 @@
         <response name="success" type="view" value="EditPortalPage"/>
         <response name="error" type="view" value="EditPortalPage"/>
     </request-map>
-    
+     <request-map uri="Wardmaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="Wardmaster"/>
+    </request-map>
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
     <view-map name="newRegisterLogin" type="screen" page="component://myportal/widget/CommonScreens.xml#newRegisterLogin"/>  
@@ -93,4 +96,5 @@
     <view-map name="FindPortalPage" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#FindPortalPage"/>
     <view-map name="CreatePortalPage" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#CreatePortalPage"/>
     <view-map name="EditPortalPage" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#EditPortalPage"/>
+    <view-map name="Wardmaster" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#Wardmaster"/>
 </site-conf>
