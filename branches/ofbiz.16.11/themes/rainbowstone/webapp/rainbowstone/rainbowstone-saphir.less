@@ -24,7 +24,7 @@
 
 /* Saphir colors */
 @blue-dark: #FFFFFF;
-@blue-main: #4598d4;
+@blue-main: #2f87c6;
 @blue-medium: #c7dfff;
 @blue-light: #f1f7ff;
 @blue-light2: #e4f0f5;
@@ -416,11 +416,11 @@
 }
 
 #company-logo {
-  right: 10px;
+  left: 30px;
   top: 2px;
   background: url("images/imis-logo.jpg") no-repeat left top / cover;
-  min-height: 50px;
-  min-width: 120px;
+  min-height: 70px;
+  min-width: 230px;
   margin-right: 15px;
   align-self: center;
   @media screen and (min-width : 1232px) {
@@ -591,12 +591,15 @@ li.line-odd {
   font-family: Quicksand,sans-serif;
   background-color: @dark-color-theme;
   z-index: 5;
-  height: @app-bar-height;
+  height: 75px;
+  padding-top: 10px;
 }
 #main-nav-bar-left {
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: 10px;
+  float: right;
 }
 #main-nav-bar-right {
   position: relative;
@@ -616,7 +619,7 @@ li.line-odd {
   a {
     padding:10px;
     color: @font-color-for-dark;
-    font-size: 1.1em !important;
+    font-size: 1.2em !important;
   }
 }
 
@@ -628,9 +631,9 @@ li.line-odd {
   position: relative;
   top: -6px;
   background-color: @main-color-theme;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  box-shadow: 1px 1px 5px #09090966;
+	box-shadow: 1px 1px 5px #09090966;
+	border-radius: 5px;
+
   a {
     position: relative;
     top: 6px;
@@ -677,7 +680,7 @@ li.line-odd {
   box-shadow: 2px 2px 5px @shadow-color;
 }
 #color-add {
-  width: 150px;
+  width: 120px;
   background-color: @main-color-theme;
   height: @color-line-height;
   z-index: 20;
@@ -815,7 +818,7 @@ li.line-odd {
     margin-right: 5px;
   }
   #logout {
-    background-color: #337ab7;
+    background-color: @blue-main;
     color: @dark-color-theme !important;
     border-radius: 2px;
     :hover {
@@ -841,8 +844,8 @@ a.user-pref-btn {
   background-color: @dark-color-theme;
   margin-left: 10px;
   margin-right: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 4px 5px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   color: @font-color-for-dark !important;
@@ -1220,7 +1223,7 @@ a.user-pref-btn {
   top:0;
   left: 0;
   width: 100%;
-  height: @app-bar-height;
+  height: 80px;
   background-color: @dark-color-theme;
   span {
     background-color: @white;
@@ -1245,10 +1248,9 @@ a.user-pref-btn {
   display: flex;
   flex-direction: column;
   min-width: 300px;
-  max-width: 50em;
-  border-radius: 8px !important;
+  max-width: 35em;
+  border-radius: 3px !important;
   margin-top: 15%;
-  box-shadow: 3px 3px 12px @shadow-color;
   .screenlet-title-bar {
     display: flex;
     align-content: center;
@@ -1267,7 +1269,7 @@ a.user-pref-btn {
     }
   }
   .screenlet-body {
-    background-color: @main-color-theme !important;
+  		padding: 30px 20px 10px 20px;
     form {
       .button {
         width: 150px;
@@ -1284,21 +1286,26 @@ a.user-pref-btn {
         tr {
           width: 100%;
           .label {
-            color: @font-color-for-main;
+            color: #333;
             width: 25%;
-            font-size: 15px;
+            font-size: 12px;
           }
           input {
-            width: 100%;
+            width: 85%;
           }
           .buttontext,
           [type="submit"] {
-            width: 150px;
-            border-radius: 4px;
+            width:auto;
             background: none;
             background-color: @dark-color-theme;
-            color: @font-color-for-dark;
             text-shadow: none;
+            font-size: 13px;
+			margin-top: 10px;
+            
+          }
+          .buttontext,
+          [type="submit"]:hover {
+          	 background-color: @blue-main;
           }
           [name="GET_PASSWORD_HINT"] {
             background-color: @font-color-for-dark;
@@ -1322,7 +1329,7 @@ a.user-pref-btn {
       }
     }
     a {
-      color: @font-color-for-main;
+      color: @blue-main;
     }
   }
 }
@@ -1350,7 +1357,6 @@ body {
 
 .screenlet {
   border-radius: 5px;
-  border: solid 1px @grey;
   height: auto !important;
   margin-bottom: 1em;
   overflow: auto;

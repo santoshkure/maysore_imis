@@ -532,11 +532,12 @@ text-decoration: underline;
 
 .basic-nav {
     /* indent menu - helpful for widgets */
-    padding-left: 1em;
+    padding: 15px 5px;
+    float:right;
 }
 
 .basic-nav ul a {
-    color: #333;
+    color: #3d87ac;
     font-size: 1.1em;
 }
 
@@ -553,7 +554,13 @@ text-decoration: underline;
 .basic-nav ul .disabled a {
     color: #D4D0C8;
 }
+.basic-nav ul li ul li {
+	display:inline;
+	border-left:1px solid #c7c7c7;
+	box-shadow: 1px 2px 1px #c7c7c7;
+	padding: 6px;
 
+}
 /* ------------------------------------- */
 /*      Button Bar Navigation Style      */
 /* ------------------------------------- */
@@ -885,7 +892,6 @@ text-decoration: underline;
 /* --------------------------- */
 
 .fieldgroup-title-bar {
-    border-top: 0.1em solid #DADADA;
     font-size: 1em;
     font-weight: bold;
     padding: 0.1em 0.5em 0.2em 0.5em;

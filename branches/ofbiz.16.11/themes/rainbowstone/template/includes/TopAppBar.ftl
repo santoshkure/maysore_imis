@@ -33,7 +33,7 @@ under the License.
 <div id="wait-spinner" style="display:none">
     <div id="wait-spinner-image"></div>
 </div>
-<div class="page-container">
+<div class="page-container" >
     <div class="hidden">
         <a href="#column-container" title="${uiLabelMap.CommonSkipNavigation}" accesskey="2">
         ${uiLabelMap.CommonSkipNavigation}
@@ -43,7 +43,7 @@ under the License.
     <#assign appMax = 6>
     <#assign alreadySelected = false>
 <div id="main-navigation-bar" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-left: 20px;width: 100%;">
     	<div id="main-nav-bar-right" class="navbar-brand page-scroll">
     		
             <div id="company-logo" class="navbar-brand page-scroll"></div>
