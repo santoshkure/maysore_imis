@@ -1584,6 +1584,7 @@ pre code {
 .container {
   margin-right: auto;
   margin-left: auto;
+  overflow: auto;
 }
 
 .container-fluid {

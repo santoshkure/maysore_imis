@@ -32,7 +32,7 @@ under the License.
     <#assign shortcutIcon = layoutSettings.VT_SHORTCUT_ICON.get(0)/>
 </#if>
 <#if shortcutIcon?has_content>
-    <link rel="shortcut icon" href="<@ofbizContentUrl>${StringUtil.wrapString(shortcutIcon)}</@ofbizContentUrl>" />
+    <link rel="shortcut icon" href="<@ofbizContentUrl>${StringUtil.wrapString(shortcutIcon)}</@ofbizContentUrl>" sizes="32x32" />
 </#if>
 <#if layoutSettings.VT_STYLESHEET_LESS?has_content>
     <#list layoutSettings.VT_STYLESHEET_LESS as styleSheet>
