@@ -272,4 +272,19 @@
         <value xml:lang="zh">门户页面管理</value>
         <value xml:lang="zh-TW">入口網頁面管理</value>
     </property>
+    <property key="master">
+        <value xml:lang="en">Master</value>
+    </property>
+    <property key="areamaster">
+        <value xml:lang="en">Area Master</value>
+    </property>
+    <property key="zonemaster">
+        <value xml:lang="en">Zone Master</value>
+    </property>
+    <property key="wardmaster">
+        <value xml:lang="en">Ward Master</value>
+    </property>
+    <property key="streetmaster">
+        <value xml:lang="en">Street Master</value>
+    </property>
 </resource>

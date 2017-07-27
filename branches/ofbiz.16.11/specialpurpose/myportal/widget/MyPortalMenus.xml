@@ -35,6 +35,10 @@ under the License.
             </condition>
             <link target="FindPortalPage"/>
         </menu-item>
+        <menu-item name="master" title="${uiLabelMap.master}">
+           
+             <link target="Wardmaster"/>
+        </menu-item>
     </menu>
     
     <menu name="PortalPageAdmin">
@@ -78,5 +82,23 @@ under the License.
             </link>
         </menu-item>
     </menu>
-
+    <menu name="AreaMasterTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+        <menu-item name="areamastertab" title="${uiLabelMap.areamaster}">
+            <link target="Wardmaster"/>
+        </menu-item>
+        
+    </menu>
+     <menu name="AreaMasterSubTabBar" menu-container-style="button-bar button-style-2" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+        <menu-item name="zonemastertab" title="${uiLabelMap.zonemaster}">
+            <link target="ZoneMaster"/>
+        </menu-item>
+        <menu-item name="wardmastertab" title="${uiLabelMap.wardmaster}">
+            <link target="Wardmaster"/>
+        </menu-item>
+        <menu-item name="streetmastertab" title="${uiLabelMap.streetmaster}">
+            <link target="Streetmaster"/>
+        </menu-item>
+        
+    </menu>
+    
 </menus>
