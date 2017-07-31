@@ -113,28 +113,4 @@ under the License.
         </section>
     </screen>
     
-    <screen name="Wardmaster">
-        <section>
-            <actions>
-                <set field="headerItem" value="master"/>
-                <set field="tabButtonItem" value="areamastertab"/>
-                <set field="subTabButtonItem" value="wardmastertab"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="body">
-                            <container>
-							<include-menu location="component://myportal/widget/MyPortalMenus.xml" name="AreaMasterTabBar" />
-							<include-menu location="component://myportal/widget/MyPortalMenus.xml" name="AreaMasterSubTabBar" />
-							</container>
-                        <platform-specific>
-                    		<html>
-                    		<html-template location="component://myportal/webapp/myportal/myportalftl/wardMaster.ftl"/>	
-                    		</html>
-                        </platform-specific>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
 </screens>
