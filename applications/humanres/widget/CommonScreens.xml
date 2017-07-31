@@ -57,8 +57,13 @@ under the License.
                     <decorator-section name="body">
                         <section>
                             <widgets>
-                                <container style="lefthalf">
-                                    <include-screen name="OrgTree"/>
+                            	<container>
+                                <!-- Code Comment For Creating Employee Dash Board
+                                	<container style="lefthalf">
+                                    <include-screen name="OrgTree"/> 
+                                   	Add Ftl for Employee Dash Board
+                                   	Edit By Pankaj Trivedi On 31/07/17 11:00-->
+                            		<platform-specific><html><html-template location="component://humanres/webapp/humanres/hrmsftl/employeeDashBoard.ftl"/></html></platform-specific>
                                 </container>
                             </widgets>
                         </section>
