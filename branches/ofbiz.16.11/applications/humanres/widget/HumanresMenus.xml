@@ -33,6 +33,8 @@
         <menu-item name="PartyResume" title="${uiLabelMap.HumanResPartyResume}"><link target="FindPartyResumes"/></menu-item>
         <menu-item name="Leave" title="${uiLabelMap.HumanResEmplLeave}"><link target="FindEmplLeaves"/></menu-item>
         <menu-item name="GlobalHRSettings" title="${uiLabelMap.HumanResGlobalHRSettings}" selected-style="selected"><link target="globalHRSettings"/></menu-item>
+        <menu-item name="master" title="${uiLabelMap.master}">
+        <link target="ZoneMaster"/></menu-item>
     </menu>
     <menu name="EmploymentBar" default-menu-item-name="EditPartyBenefit" default-selected-style="selected"
         type="simple" menu-container-style="button-bar tab-bar" selected-menuitem-context-field-name="tabButtonItem">
@@ -330,5 +332,24 @@
             <link target="FindLeaveApprovals"/>
         </menu-item>
     </menu>
-
+    <menu name="MasterTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+        <menu-item name="areamastertab" title="${uiLabelMap.areamaster}">
+            <link target="ZoneMaster"/>
+        </menu-item>
+        <menu-item name="castmaster" title="${uiLabelMap.castmaster}">
+            <link target="CastMaster"/>
+    </menu-item>
+    <menu name="AreaMasterSubTabBar" menu-container-style="button-bar button-style-2" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+        <menu-item name="zonemastertab" title="${uiLabelMap.zonemaster}">
+            <link target="ZoneMaster"/>
+        </menu-item>
+        <menu-item name="wardmastertab" title="${uiLabelMap.wardmaster}">
+            <link target="Wardmaster"/>
+        </menu-item>
+        <menu-item name="streetmastertab" title="${uiLabelMap.streetmaster}">
+            <link target="Streetmaster"/>
+        </menu-item>
+        
+    </menu>
+    </menu>
 </menus>
