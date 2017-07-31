@@ -3305,4 +3305,22 @@
         <value xml:lang="zh">查看个人培训</value>
         <value xml:lang="zh-TW">檢視個人教育訓練</value>
     </property>
+    <property key="master">
+        <value xml:lang="en">Master</value>
+    </property>
+    <property key="areamaster">
+        <value xml:lang="en">Area Master</value>
+    </property>
+    <property key="zonemaster">
+        <value xml:lang="en">Zone Master</value>
+    </property>
+    <property key="wardmaster">
+        <value xml:lang="en">Ward Master</value>
+    </property>
+    <property key="streetmaster">
+        <value xml:lang="en">Street Master</value>
+    </property>
+    <property key="castmaster">
+        <value xml:lang="en">Cast Master</value>
+    </property>
 </resource>
