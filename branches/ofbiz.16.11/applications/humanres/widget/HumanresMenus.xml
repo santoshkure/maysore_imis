@@ -339,6 +339,7 @@
         <menu-item name="castmaster" title="${uiLabelMap.castmaster}">
             <link target="CastMaster"/>
     </menu-item>
+    </menu>
     <menu name="AreaMasterSubTabBar" menu-container-style="button-bar button-style-2" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
         <menu-item name="zonemastertab" title="${uiLabelMap.zonemaster}">
             <link target="ZoneMaster"/>
@@ -350,6 +351,6 @@
             <link target="Streetmaster"/>
         </menu-item>
         
-    </menu>
+    
     </menu>
 </menus>

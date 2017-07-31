@@ -358,4 +358,31 @@ under the License.
             </widgets>
         </section>
     </screen>
+    
+    <screen name="ZoneMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="zonemastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/zoneMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    
 </screens>
