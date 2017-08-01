@@ -362,6 +362,9 @@
         <menu-item name="wardmastertab" title="${uiLabelMap.wardmaster}">
             <link target="Wardmaster"/>
         </menu-item>
+        <menu-item name="blockmastertab" title="${uiLabelMap.blockMaster}">
+            <link target="blockMaster"/>
+        </menu-item>
         <menu-item name="streetmastertab" title="${uiLabelMap.streetmaster}">
             <link target="Streetmaster"/>
         </menu-item>

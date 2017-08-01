@@ -1103,13 +1103,49 @@ under the License.
     </request-map>
     
     
-     <!-- ==========Added By Anubha on 31 July 2017==================  -->
+      <!-- ==========Added By Anubha on 31 July 2017==================  -->
     <request-map uri="ZoneMaster">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="ZoneMaster"/>
           <response name="error" type="view" value="ZoneMaster"/>
     </request-map>
+    <request-map uri="Wardmaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="Wardmaster"/>
+          <response name="error" type="view" value="Wardmaster"/>
+    </request-map>
+    <request-map uri="Streetmaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="Streetmaster"/>
+          <response name="error" type="view" value="Streetmaster"/>
+    </request-map>
+     <request-map uri="blockMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="blockMaster"/>
+          <response name="error" type="view" value="blockMaster"/>
+    </request-map>
+     <request-map uri="createZoneMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createZoneMaster"/>
+          <response name="error" type="view" value="createZoneMaster"/>
+    </request-map>
+    <request-map uri="createWardMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createWardMaster"/>
+          <response name="error" type="view" value="createWardMaster"/>
+    </request-map>
+    <request-map uri="createBlockMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createBlockMaster"/>
+          <response name="error" type="view" value="createBlockMaster"/>
+    </request-map>
+    <request-map uri="createStreetMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createStreetMaster"/>
+          <response name="error" type="view" value="createStreetMaster"/>
+    </request-map>
   <!-- ==========end==================  --> 
+ 
   <!--Added by siddhi -->
     <request-map uri="CasteMaster">
         <security https="true" auth="true"/>
@@ -1319,9 +1355,17 @@ under the License.
     <!-- ==================PayRoll History View Map===================== -->
     <view-map name="PayrollHistory" type="screen" page="component://humanres/widget/EmployeeScreens.xml#PayrollHistory"/>
     
-    <!-- ==========Added By Anubha on 31 July 2017==================  -->
+   <!-- ==========Added By Anubha on 31 July 2017==================  -->
     <view-map name="ZoneMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#ZoneMaster"/>
+    <view-map name="Wardmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#wardMaster"/>
+    <view-map name="Streetmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#streetMaster"/>
+    <view-map name="blockMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#blockMaster"/>
+    <view-map name="createZoneMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createZoneMaster"/>
+     <view-map name="createWardMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createWardMaster"/>
+      <view-map name="createBlockMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createBlockMaster"/>
+       <view-map name="createStreetMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createStreetMaster"/>
     <!-- ==========End==================  -->
+
     <!--Added by siddhi -->
     <view-map name="CasteMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#CasteMaster"/>
     <view-map name="PincodeMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#PincodeMaster"/>
