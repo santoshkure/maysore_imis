@@ -339,12 +339,18 @@
         <menu-item name="areamastertab" title="${uiLabelMap.areamaster}">
             <link target="ZoneMaster"/>
         </menu-item>
-        <menu-item name="communitymaster" title="${uiLabelMap.communitymaster}">
+       <menu-item name="communitymaster" title="${uiLabelMap.communitymaster}">
 	       <link target="CommunityMaster" />
-        </menu-item>
-        <menu-item name="castemaster" title="${uiLabelMap.castemaster}">
+       </menu-item>
+       <menu-item name="gendermaster" title="${uiLabelMap.gendermaster}">
+		 <link target="GenderMaster" />
+       </menu-item>
+       <menu-item name="maritalstatusmaster" title="${uiLabelMap.maritalstatusmaster}">
+		<link target="MaritalStatusMaster" />
+       </menu-item>
+       <menu-item name="castemaster" title="${uiLabelMap.castemaster}">
             <link target="CasteMaster"/>
-        </menu-item>
+       </menu-item>
         <menu-item name="pincodemaster" title="${uiLabelMap.pincodemaster}">
             <link target="SearchPincodeMaster"/>
         </menu-item>

@@ -1130,7 +1130,28 @@ under the License.
         <response name="error" type="view" value="SaveCasteMaster"/>
     </request-map> 
    <!-- End -->
-   
+   <!-- ==========Added By Nikhil on 31 July 2017================== -->
+	<request-map uri="CommunityMaster">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="CommunityMaster" />
+		<response name="error" type="view" value="CommunityMaster" />
+	</request-map>
+	<!-- ==========end================== -->
+
+	<!-- ==========Added By Nikhil on 31 July 2017================== -->
+	<request-map uri="GenderMaster">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="GenderMaster" />
+		<response name="error" type="view" value="GenderMaster" />
+	</request-map>
+	<!-- ==========end================== -->
+	<!-- ==========Added By Nikhil on 31 July 2017================== -->
+	<request-map uri="MaritalStatusMaster">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="MaritalStatusMaster" />
+		<response name="error" type="view" value="MaritalStatusMaster" />
+	</request-map>
+	<!-- ==========end================== -->
    <!-- added by shubham for Emp Dash Board on 31 July 2017 ==================  -->
    <request-map uri="customerDeatil">
         <security https="true" auth="false"/>
@@ -1306,7 +1327,16 @@ under the License.
     <view-map name="PincodeMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#PincodeMaster"/>
     <view-map name="SearchPincodeMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#SearchPincodeMaster"/>
     <!-- End -->
-    
+    <!-- ==========Added By Nikhil on 31 July 2017================== -->
+	<view-map name="CommunityMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#CommunityMaster" />
+	<!-- ==========End================== -->
+
+	<!-- ==========Added By Nikhil on 31 July 2017================== -->
+	<view-map name="GenderMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GenderMaster" />
+	<!-- ==========End================== -->
+	<!-- ==========Added By Nikhil on 31 July 2017================== -->
+	<view-map name="MaritalStatusMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#MaritalStatusMaster" />
+	<!-- ==========End================== -->
     <!-- ==========Added By Shubham on 31 July 2017 ==================  -->
     <view-map name="customerDeatil" type="screen" page="component://humanres/widget/EmployeeScreens.xml#customerDeatil"/>
       <view-map name="approveCustomerDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveCustomerDetail"/>

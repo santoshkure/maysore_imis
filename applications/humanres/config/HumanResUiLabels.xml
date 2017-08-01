@@ -3340,7 +3340,37 @@
         <value xml:lang="en">Pin-Code Master List</value>
     </property>
      <!-- End -->
-     
+     <!-- ==========Added By Nikhil on 31 July 2017================== -->
+     <property key="communitymaster">
+		<value xml:lang="en">Community Master</value>
+	</property>
+	<property key="communityname">
+		<value xml:lang="en">Community Name</value>
+	</property>
+	<property key="gendermaster">
+		<value xml:lang="en">Gender Master</value>
+	</property>
+
+		<property key="gendername">
+		<value xml:lang="en">Gender Name</value>
+	</property>
+	<property key="maritalstatusmaster">
+		<value xml:lang="en">Marital Status Master</value>
+	</property>
+	<property key="communityNameList">
+		<value xml:lang="en">Community Master List</value>
+	</property>
+
+	<property key="genderNameList">
+		<value xml:lang="en">Gender Master List</value>
+	</property>
+	<property key="maritalStatus">
+		<value xml:lang="en">Marital Status Master List</value>
+	</property>
+	<property key="statusname">
+		<value xml:lang="en">Marital Status</value>
+	</property>
+      <!-- End -->
      <!-- Added By Shubham Malviya on Date 01/08/2017 -->
      <property key="customerDetails">
         <value xml:lang="en">Customer Detail</value>
