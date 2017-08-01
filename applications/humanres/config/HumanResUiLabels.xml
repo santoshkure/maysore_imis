@@ -3355,4 +3355,27 @@
         <value xml:lang="en">Deactive</value>
     </property>
      <!-- End -->
+     
+     <!-- Added By Shubham Malviya on Date 01/08/2017 -->
+     <property key="customerDetails">
+        <value xml:lang="en">Customer Detail</value>
+    </property>
+    <property key="searchCustomer">
+        <value xml:lang="en">Search Customer</value>
+    </property>
+    <property key="listCustomerDetail">
+        <value xml:lang="en">Customer Detail List</value>
+    </property>
+    <property key="customerId">
+        <value xml:lang="en">Customer Id</value>
+        <value xml:lang="kn">Customer Id</value>
+    </property>
+    <property key="customerName">
+        <value xml:lang="en">Customer Name</value>
+        <value xml:lang="kn">Customer Name</value>
+    </property>
+    <property key="customerAddress">
+        <value xml:lang="en">Customer Address</value>
+        <value xml:lang="kn">Customer Address</value>
+    </property>
 </resource>
