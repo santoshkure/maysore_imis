@@ -450,7 +450,80 @@ under the License.
         </section>
     </screen>
     <!-- End -->
-    
+    <!-- ==========Added By Nikhil on 31 July 2017================== -->
+    <screen name="CommunityMaster">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="communitymaster" />
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/communityMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="GenderMaster">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="gendermaster" />
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/genderMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="MaritalStatusMaster">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="maritalstatusmaster" />
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/maritalStatusMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+
     <!-- Added By Shubham Malviya For Emp Dash Board Service -->
     <screen name="customerDeatil">
         <section>
