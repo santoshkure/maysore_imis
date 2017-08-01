@@ -871,9 +871,5 @@ under the License.
         <description>Delete a PartyQualType record</description>
         <auto-attributes mode="IN" include="pk"/>
     </service>
-    <service name="SaveCastMaster" engine="java" location="org.apache.ofbiz.humanres.HumanResEvents" invoke="SaveCastMasterDetails">
-   		<attribute type="String" mode="IN" name="nameofcast" optional="true"/>
-        <attribute type="String" mode="IN" name="createdate" optional="true"/>
-        <attribute type="String" mode="IN" name="remark" optional="true"/>
-	</service>
+    
 </services>
