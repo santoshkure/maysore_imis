@@ -15531,8 +15531,40 @@
         <value xml:lang="zh-CN">中文</value>
         <value xml:lang="zh-TW">中文</value>
     </property>
-    
+    <!-- Added By Siddhi -->
     <property key="CommonMandatoryNote">
         <value xml:lang="en">Note: Fields marked with asterisk ( * ) are mandatory</value>
+    </property>
+    
+    <property key="master">
+        <value xml:lang="en">Master</value>
+    </property>
+    
+    <property key="remark">
+        <value xml:lang="en">Remark</value>
+    </property>
+     <property key="createdate">
+        <value xml:lang="en">Date of Creation</value>
+    </property>
+     <property key="sno">
+        <value xml:lang="en">S.No.</value>
+    </property>
+    <property key="Status">
+        <value xml:lang="en">Status</value>
+    </property>
+     <property key="edit">
+        <value xml:lang="en">Edit</value>
+    </property>
+    <property key="Remove">
+        <value xml:lang="en">Remove</value>
+    </property>
+    <property key="activeDeactive">
+        <value xml:lang="en">Active/Deactive</value>
+    </property>
+    <property key="Deactive">
+        <value xml:lang="en">Deactive</value>
+    </property>
+     <property key="search">
+        <value xml:lang="en">Search</value>
     </property>
 </resource>
