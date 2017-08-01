@@ -575,6 +575,13 @@ text-decoration: underline;
 	padding: 6px;
 
 }
+.back{
+	float: left;
+	padding-left: 15px;	
+}
+.back a{
+	color: #31708f;
+}
 /* ------------------------------------- */
 /*      Button Bar Navigation Style      */
 /* ------------------------------------- */
