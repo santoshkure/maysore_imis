@@ -619,4 +619,207 @@ under the License.
     </screen> 
     <!-- End -->
     
+    <!-- ==========Added By Anubha on 31 July 2017 For Create Master==================  -->
+    <screen name="ZoneMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="zonemastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/zoneMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="wardMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="wardmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/wardMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="streetMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="streetmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/streetMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="blockMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="blockmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/blockMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="createZoneMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="zonemastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/createZoneMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="createWardMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="wardmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/createWardMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+      <screen name="createBlockMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="blockmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/createBlockMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="createStreetMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="streetmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/createStreetMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <!-- ==========End==================  -->
+    
+    
 </screens>
