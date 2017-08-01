@@ -15531,4 +15531,8 @@
         <value xml:lang="zh-CN">中文</value>
         <value xml:lang="zh-TW">中文</value>
     </property>
+    
+    <property key="CommonMandatoryNote">
+        <value xml:lang="en">Note: Fields marked with asterisk ( * ) are mandatory</value>
+    </property>
 </resource>
