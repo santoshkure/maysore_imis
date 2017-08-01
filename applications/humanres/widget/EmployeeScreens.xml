@@ -358,7 +358,7 @@ under the License.
             </widgets>
         </section>
     </screen>
-    
+     <!--Added by siddhi on 28 July 2017 -->
     <screen name="ZoneMaster">
         <section>
             <actions>
@@ -383,6 +383,27 @@ under the License.
             </widgets>
         </section>
     </screen> 
-    
-    
+    <screen name="CasteMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="castemaster"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							</container>    
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/castMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <!-- End -->
 </screens>
