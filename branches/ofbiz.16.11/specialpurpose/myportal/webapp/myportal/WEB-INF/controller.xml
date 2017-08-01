@@ -82,6 +82,13 @@
         <response name="success" type="view" value="EditPortalPage"/>
         <response name="error" type="view" value="EditPortalPage"/>
     </request-map>
+    
+    <!-- added by shubham for Register New Customer -->
+    <request-map uri="registerNewCustomer">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="registerNewCustomer"/>
+    </request-map>
+    
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
     <view-map name="newRegisterLogin" type="screen" page="component://myportal/widget/CommonScreens.xml#newRegisterLogin"/>  
@@ -92,5 +99,6 @@
     <view-map name="FindPortalPage" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#FindPortalPage"/>
     <view-map name="CreatePortalPage" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#CreatePortalPage"/>
     <view-map name="EditPortalPage" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#EditPortalPage"/>
+   <view-map name="registerNewCustomer" type="screen" page="component://myportal/widget/CommonScreens.xml#registerNewCustomer"/> 
    
 </site-conf>
