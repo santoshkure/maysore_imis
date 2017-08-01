@@ -3305,6 +3305,7 @@
         <value xml:lang="zh">查看个人培训</value>
         <value xml:lang="zh-TW">檢視個人教育訓練</value>
     </property>
+    <!--Added by siddhi on 28 July 2017 -->
     <property key="master">
         <value xml:lang="en">Master</value>
     </property>
@@ -3320,7 +3321,38 @@
     <property key="streetmaster">
         <value xml:lang="en">Street Master</value>
     </property>
-    <property key="castmaster">
-        <value xml:lang="en">Cast Master</value>
+    <property key="castemaster">
+        <value xml:lang="en">Caste Master</value>
     </property>
+    <property key="castename">
+        <value xml:lang="en">Caste Name</value>
+    </property>
+     <property key="remark">
+        <value xml:lang="en">Remark</value>
+    </property>
+     <property key="createdate">
+        <value xml:lang="en">Date of Creation</value>
+    </property>
+    <property key="castemasterlist">
+        <value xml:lang="en">Cast Master List</value>
+    </property>
+    <property key="sno">
+        <value xml:lang="en">S.No.</value>
+    </property>
+    <property key="Status">
+        <value xml:lang="en">Status</value>
+    </property>
+     <property key="edit">
+        <value xml:lang="en">Edit</value>
+    </property>
+    <property key="Remove">
+        <value xml:lang="en">Remove</value>
+    </property>
+    <property key="activeDeactive">
+        <value xml:lang="en">Active/Deactive</value>
+    </property>
+    <property key="Deactive">
+        <value xml:lang="en">Deactive</value>
+    </property>
+     <!-- End -->
 </resource>
