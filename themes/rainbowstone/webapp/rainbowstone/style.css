@@ -97,7 +97,7 @@ a:hover, a:active {
 
 body, textarea, input, select {
     font-family: 'Lato', sans-serif;
-    background: #f5f5f5;
+    background: #f0f0f0;
 }
 
 /*
@@ -142,7 +142,6 @@ h3, .h3 {
     font-size: 1.1em;
     font-weight: bold;
     margin:0;
-    margin-top:8px;
 }
 
 /* IE7 fix */
@@ -190,7 +189,7 @@ border-radius: 4px 4px 0 0;
 /* ------------------------------- */
 
 .alert {
-	padding: 6px 0;
+	padding: 8px 0;
 	text-align: center;
 	height: auto;
 	border-radius: 4px 4px 0 0;
@@ -245,7 +244,7 @@ border-radius: 4px 4px 0 0;
 }
 
 .page-container {
-   background: #f5f5f5;
+   background: #f0f0f0;
 }
 
 .align-float {
@@ -548,6 +547,7 @@ text-decoration: underline;
     /* indent menu - helpful for widgets */
     padding: 15px 5px;
     float:right;
+    padding-bottom:0;
 }
 
 .basic-nav ul a {
@@ -827,6 +827,8 @@ text-decoration: underline;
 .basic-form table tr td {
     padding: 0.1em;
     text-align: left;
+    border: 2px solid #f0f0f0;
+    padding: 2px 15px;
 }
 
 .basic-form table tr .label,
