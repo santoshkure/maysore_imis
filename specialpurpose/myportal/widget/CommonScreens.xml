@@ -252,4 +252,31 @@ under the License.
             </widgets>
         </section>
     </screen>
+    
+    <!-- Added by Shubham Malviya For New Customer Registration -->
+    <screen name="registerNewCustomer">
+        <section>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                            </actions>
+                            <widgets>
+                                    <section>
+                                        <widgets>
+                                            <platform-specific>
+                                                <html><html-template location="component://myportal/template/newCustomerRegistration.ftl"/></html>
+                                            </platform-specific> 
+                                        </widgets>
+                                    </section>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <!-- End -->
+    
 </screens>

@@ -59,9 +59,13 @@ under the License.
           </tr>
         </table>
         <input type="hidden" name="JavaScriptEnabled" value="N"/>
-        <br />
+        <br/>
+        <#-- Added By shubham Malviya For Register New Customer Link --->
+        <a href="<@ofbizUrl>registerNewCustomer</@ofbizUrl>">${uiLabelMap.registerNewCustomer}?</a>
+        <br/>
         <a href="<@ofbizUrl>forgotPassword</@ofbizUrl>">${uiLabelMap.CommonForgotYourPassword}?</a>
-        <a href="<@ofbizUrl>newRegisterLogin</@ofbizUrl>">${uiLabelMap.MyPortalNewRegistration}</a>
+        <#-- It's Predefind Link By Ofbiz, Comment By Shubham Malviya because We have Use registerNewCustomer Link For Registration-->
+        <#-- <a href="<@ofbizUrl>newRegisterLogin</@ofbizUrl>">${uiLabelMap.MyPortalNewRegistration}</a> --->
       </form>
     </div>
   </div>
