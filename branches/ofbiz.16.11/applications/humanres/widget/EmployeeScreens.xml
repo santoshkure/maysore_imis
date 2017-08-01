@@ -406,4 +406,100 @@ under the License.
         </section>
     </screen>
     <!-- End -->
+    
+    <!-- Added By Shubham Malviya For Emp Dash Board Service -->
+    <screen name="customerDeatil">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchCustomerDeatil.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/customerDeatilList.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="approveCustomerDetail">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/SearchCustomerApprove.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/AapproveCustomerList.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="createNewConnection">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/createNewConnection.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="empCreateNewCustomer">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/empCreateNewCustomer.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="approveNewConnection">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchNewConnectionRequest.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/listNewConnectionRequest.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <!-- End -->
+    
 </screens>
