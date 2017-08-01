@@ -97,6 +97,7 @@ a:hover, a:active {
 
 body, textarea, input, select {
     font-family: 'Lato', sans-serif;
+    background: #f5f5f5;
 }
 
 /*
@@ -112,7 +113,6 @@ body {
     min-width: 780px;
     margin: 0;
     width: expression(document.body.clientWidth < 782? "780px" : "auto");
-    background:#f5f5f5;
 }
 .navbar {
 	margin-bottom:0;	
@@ -176,7 +176,10 @@ th, th a {
     visibility: hidden;
 }
 
-.no-clear .clear {
+.no-clear .clear {padding: 6px 0;
+text-align: center;
+height: auto;
+border-radius: 4px 4px 0 0;
     /* Used in container elements to override
      the clear class in contained elements. */
     clear: none;
@@ -187,11 +190,10 @@ th, th a {
 /* ------------------------------- */
 
 .alert {
-    /* Used for alert text */
-    padding:0px;
-    text-align: center;
-    height: 33px;
-    border-radius: 4px 4px 0 0;
+	padding: 6px 0;
+	text-align: center;
+	height: auto;
+	border-radius: 4px 4px 0 0;
 }
 
 .content-messages p {
@@ -213,7 +215,19 @@ th, th a {
     width: 1%;
     vertical-align: middle;
 }
-
+.arrow-link{
+	padding-bottom:10px 0;
+}
+.arrow-link li{
+	padding:5px 10px;
+	text-align: left;
+}
+.arrow-link a{
+	color: rgb(47, 135, 198) !important;
+	font-size: 13px;
+	text-shadow: 0px 0px 1px #8abdf6;
+	font-weight: 500;
+}
 .required, input.required {
     /* required style for <input> elements */
     background-color: #ffffdd;
@@ -231,7 +245,7 @@ th, th a {
 }
 
 .page-container {
-    /*background: url("images/big-fade.png") repeat-x 0 90px transparent;*/
+   background: #f5f5f5;
 }
 
 .align-float {
@@ -1652,6 +1666,8 @@ A.lightbuttontextsmall:hover {
 
 DIV.row {
     margin: 0 auto 0 auto;
+    background: #fff;
+    padding-bottom: 15px;
 }
 
 DIV.col {

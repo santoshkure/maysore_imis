@@ -40,7 +40,7 @@ under the License.
         </a>
     </div>
 <#if userLogin?has_content>
-    <#assign appMax = 6>
+    <#assign appMax = 4>
     <#assign alreadySelected = false>
 <div id="main-navigation-bar" class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid" style="margin-left: 20px;width: 100%;">
