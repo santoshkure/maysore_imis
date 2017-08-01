@@ -4,7 +4,7 @@
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Pankaj Trivedi   31/07/2016		
+<#---1.0			Pankaj Trivedi   31/07/2017		
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the Employee Dash Board of MCC which contain essential information .-->
 
@@ -34,16 +34,19 @@
    			<div class="row" style="background:#f5f5f5;">
 				<ul class="arrow-link">
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Create New Customer </a>
+						<a href="empCreateNewCustomer"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register New Customer </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Customer Details </a>
+						<a href="customerDeatil"><i class="fa fa-arrow-right" aria-hidden="true"></i> Customer Details </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Approve New Customer </a>
+						<a href="approveCustomerDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Approve New Customer </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Create New Connection </a>
+						<a href="createNewConnection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register New Connection </a>
+					</li>
+					<li>
+						<a href="approveNewConnection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Approve New Connection </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Connection Details </a>
@@ -303,7 +306,7 @@ $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.jso
             zoomType: 'x'
         },
         title: {
-            text: 'Last 2 Month Bill Collection'
+            text: 'Last Two Year Water Consumption'
         },
         subtitle: {
             text: document.ontouchstart === undefined ?
@@ -314,7 +317,7 @@ $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.jso
         },
         yAxis: {
             title: {
-                text: 'Amount(Thousand)'
+                text: 'Gallon'
             }
         },
         legend: {
