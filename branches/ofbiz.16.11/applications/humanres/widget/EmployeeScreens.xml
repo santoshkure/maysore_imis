@@ -358,7 +358,7 @@ under the License.
             </widgets>
         </section>
     </screen>
-     <!--Added by siddhi on 28 July 2017 -->
+     <!--Added by siddhi  -->
     <screen name="ZoneMaster">
         <section>
             <actions>
@@ -398,6 +398,50 @@ under the License.
                         <platform-specific>
                     		<html>
                     		<html-template location="component:///humanres/webapp/humanres/Masterftl/castMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="PincodeMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="pincodemaster"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							</container>    
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/pincodeMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="SearchPincodeMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="pincodemaster"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							</container>    
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/searchpincodeMaster.ftl"/>	
                     		</html>
                         </platform-specific>
                     </decorator-section>

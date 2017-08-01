@@ -1110,12 +1110,19 @@ under the License.
           <response name="error" type="view" value="ZoneMaster"/>
     </request-map>
   <!-- ==========end==================  --> 
-  <!--Added by siddhi on 28 July 2017 -->
+  <!--Added by siddhi -->
     <request-map uri="CasteMaster">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="CasteMaster"/>
     </request-map>
-    
+     <request-map uri="PincodeMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="PincodeMaster"/>
+    </request-map>
+    <request-map uri="SearchPincodeMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="SearchPincodeMaster"/>
+    </request-map>
     <request-map uri="saveCasteMaster">
         <security https="true" auth="true"/>
         <event type="service" invoke="SaveCasteMaster"/>
@@ -1294,8 +1301,10 @@ under the License.
     <!-- ==========Added By Anubha on 31 July 2017==================  -->
     <view-map name="ZoneMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#ZoneMaster"/>
     <!-- ==========End==================  -->
-    <!--Added by siddhi on 28 July 2017 -->
+    <!--Added by siddhi -->
     <view-map name="CasteMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#CasteMaster"/>
+    <view-map name="PincodeMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#PincodeMaster"/>
+    <view-map name="SearchPincodeMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#SearchPincodeMaster"/>
     <!-- End -->
     
     <!-- ==========Added By Shubham on 31 July 2017 ==================  -->
