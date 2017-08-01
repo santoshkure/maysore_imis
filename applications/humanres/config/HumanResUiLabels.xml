@@ -3393,4 +3393,61 @@
         <value xml:lang="en">Customer Address</value>
         <value xml:lang="kn">Customer Address</value>
     </property>
+    
+      <!-- ==========Added By Anubha on 31 July 2017==================  -->
+     <property key="zoneName">
+        <value xml:lang="en">Zone Name</value>
+    </property>
+    <property key="zoneNameList">
+        <value xml:lang="en">Zone Master List</value>
+    </property>
+    <property key="cityName">
+        <value xml:lang="en">City Name</value>
+    </property>
+    <property key="officeName">
+        <value xml:lang="en">Office Name</value>
+    </property>
+    
+   
+    <property key="zoneStatus">
+        <value xml:lang="en">Zone Status</value>
+    </property>
+    <property key="wardname">
+        <value xml:lang="en">Ward Name</value>
+    </property>
+    <property key="wardMasterList">
+        <value xml:lang="en">ward Master List</value>
+    </property>
+    <property key="streetMasterList">
+        <value xml:lang="en">Street Master List</value>
+    </property>
+    <property key="blockMaster">
+        <value xml:lang="en">Block Master</value>
+    </property>
+    <property key="blockMasterList">
+        <value xml:lang="en">Block Master List</value>
+    </property>
+    <property key="blockName">
+        <value xml:lang="en">Block Name</value>
+    </property>
+    <property key="streetName">
+        <value xml:lang="en">Street Name</value>
+    </property>
+    <property key="createZone">
+        <value xml:lang="en">Create Zone Master</value>
+    </property>
+     <property key="enableDisable">
+        <value xml:lang="en">Diable/Enable</value>
+    </property>
+    <property key="createWardMaster">
+        <value xml:lang="en">Create Ward Master</value>
+    </property>
+     <property key="createStreetMaster">
+        <value xml:lang="en">Create Street Master</value>
+    </property>
+    <property key="createBlockMaster">
+        <value xml:lang="en">Create Block Master</value>
+    </property>
+      <!-- ==========End==================  -->
+    
 </resource>
