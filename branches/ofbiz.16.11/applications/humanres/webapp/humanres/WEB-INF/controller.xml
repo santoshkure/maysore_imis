@@ -1110,8 +1110,19 @@ under the License.
           <response name="error" type="view" value="ZoneMaster"/>
     </request-map>
   <!-- ==========end==================  --> 
-   
-   
+  <!--Added by siddhi on 28 July 2017 -->
+    <request-map uri="CasteMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="CasteMaster"/>
+    </request-map>
+    
+    <request-map uri="saveCasteMaster">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="SaveCasteMaster"/>
+        <response name="success" type="view" value="CasteMaster"/>
+        <response name="error" type="view" value="SaveCasteMaster"/>
+    </request-map> 
+   <!-- End -->
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -1249,4 +1260,7 @@ under the License.
     <!-- ==========Added By Anubha on 31 July 2017==================  -->
     <view-map name="ZoneMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#ZoneMaster"/>
     <!-- ==========End==================  -->
+    <!--Added by siddhi on 28 July 2017 -->
+    <view-map name="CasteMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#CasteMaster"/>
+    <!-- End -->
 </site-conf>
