@@ -67,7 +67,7 @@ under the License.
         </section>
     </screen>
 
-    <screen name="showPortalPage">
+    <!-- <screen name="showPortalPage">
         <section>
             <actions>
                 <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
@@ -85,7 +85,7 @@ under the License.
                 </decorator-screen>
             </widgets>
         </section>
-    </screen>
+    </screen> -->
 
     <screen name="ManagePortalPages">
         <section>
@@ -244,4 +244,29 @@ under the License.
             </widgets>
         </section>
     </screen>
+    
+    <!-- Added by Anubha Saini for Customer Main Screen -->
+    
+    <screen name="showPortalPage">
+        <section>
+            <actions>
+                <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
+                <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+                <entity-one entity-name="PortalPage" value-field="portalPage"/>
+                <set field="title" from-field="portalPage.portalPageName"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/customerPortalHome.ftl"/>
+                    		</html>
+                        </platform-specific> 
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <!-- ==========End============ =-->
 </screens>
