@@ -6,6 +6,7 @@
 <#--- Siddhi    	    03 Aug 2017    -->
 
 <#-- #####################################################################################################-->
+<script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
 <form method="post" name="editMaritalMaster" class="basic-form">
 
 	<div class="row">
