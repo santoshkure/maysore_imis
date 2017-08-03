@@ -11,7 +11,6 @@
 <#setting locale="en">
     
     <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.registerNewCustomer}</span></div>
-    <script language="javascript" src="/images/jquery/plugins/validate/additional-methods.js"  type="text/javascript"></script>
     <form method="post" name="RegisterPerson" action="" class="basic-form">
     <div class="row">
     	<div class="alert alert-info">
@@ -22,12 +21,12 @@
         <table cellspacing="0" class="basic-table table-responsive">
              <tbody>
                 <tr>
-	               <td colspan="4"><font color="blue">${uiLabelMap.PersonalDetail}</font></td>
+	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
 	               <td colspan="2"><font color="blue"><u><i>${uiLabelMap.NoteMandatoryAsterisk}</i></u></font color></td>
                 </tr>
                 
                 <tr>
-                    <td class="label">${uiLabelMap.tital}</td>
+                    <td class="label">${uiLabelMap.CommonTitle}</td>
                     <td>
                     	<select name="tital" style="width:90px;">
                    			<option value="">Select</option>
@@ -53,14 +52,14 @@
                         <td><@htmlTemplate.renderDateTimeField name="dateOfBirth" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
                         
                         <td class="label">${uiLabelMap.gender}</td>
-                        <td><input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="female"> Female <input type="radio" name="gender" value="other"> Other</td>
+                        <td><input type="radio" name="gender" value="male"> ${uiLabelMap.CommonMale} <input type="radio" name="gender" value="female"> ${uiLabelMap.CommonFemale} <input type="radio" name="gender" value="other"> Other</td>
    
-   						<td class="label">${uiLabelMap.maritalStatus}</td>
+   						<td class="label">${uiLabelMap.maritalStatusOption}</td>
    						<td>
    							<select name="maritalStatus" style="width:90px;">
                    				<option value="">Select</option>
-                   				<option value="Select">Single</option>
-                   				<option value="Married">Married</option>
+                   				<option value="single">${uiLabelMap.PartyMaritalStatusSingle}</option>
+                   				<option value="married">${uiLabelMap.PartyMaritalStatusMarried}</option>
                    			</select>
                    		</td>
    					</tr>
@@ -91,10 +90,10 @@
                         </td>
                     </tr>
                     
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.CurrentAddress}</font></td></tr>
+                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.Address}</td>
+                        <td class="label">${uiLabelMap.OrderAddress}</td>
                         <td>
                         <input name="address" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterAddress}">
                         </td>
@@ -124,15 +123,15 @@
                     </tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.city}</td>
+                        <td class="label">${uiLabelMap.CommonCity}</td>
                         <td>
                         <input name="city" type="text" maxlength="25" value="Mysore" readonly>
                         </td>
-                        <td class="label">${uiLabelMap.state}</td>
+                        <td class="label">${uiLabelMap.CommonState}</td>
                         <td>
                         <input name="state" type="text" maxlength="25" value="Karnataka" readonly>
                         </td>
-                        <td class="label">${uiLabelMap.country}</td>
+                        <td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>
                         <input name="country" type="text" maxlength="25" value="India" readonly>
                         </td>
@@ -147,7 +146,7 @@
                         <td>
                         <input name="resContactNo" id="ddd" type="text" maxlength="25" value="" >
                         </td>
-                        <td class="label">${uiLabelMap.eMail}</td>
+                        <td class="label">${uiLabelMap.CommonEmail}</td>
                         <td>
                         <input name="eMail" type="text" maxlength="40" value="" placeholder="${uiLabelMap.yourEMail}">
                         </td>
@@ -156,7 +155,7 @@
                     <tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="save"   type="button" value="Save" onClick="javascript:saveRegistrationDetail(RegisterPerson);"/>
+                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail(RegisterPerson);"/>
                     	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	</center>
                      	</td>
