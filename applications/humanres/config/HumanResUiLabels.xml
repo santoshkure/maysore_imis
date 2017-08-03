@@ -3339,6 +3339,36 @@
     <property key="pinmasterlist">
         <value xml:lang="en">Pin-Code Master List</value>
     </property>
+     <property key="update">
+        <value xml:lang="en">Update</value>
+    </property>
+    <property key="editZone">
+        <value xml:lang="en">Edit Zone Master</value>
+    </property>
+    <property key="editWard">
+        <value xml:lang="en">Edit Ward Master</value>
+    </property>
+    <property key="editBlock">
+        <value xml:lang="en">Edit Block Master</value>
+    </property>
+    <property key="editStreet">
+        <value xml:lang="en">Edit Street Master</value>
+    </property>
+    <property key="editCommunity">
+        <value xml:lang="en">Edit Community Master</value>
+    </property>
+    <property key="editGender">
+        <value xml:lang="en">Edit Gender Master</value>
+    </property>
+     <property key="editMarital">
+        <value xml:lang="en">Edit Marital Status Master</value>
+    </property>
+    <property key="editCaste">
+        <value xml:lang="en">Edit Caste Master</value>
+    </property>
+    <property key="editpincode">
+        <value xml:lang="en">Edit Pin-Code Master</value>
+    </property>
      <!-- End -->
      <!-- ==========Added By Nikhil on 31 July 2017================== -->
      <property key="communitymaster">
