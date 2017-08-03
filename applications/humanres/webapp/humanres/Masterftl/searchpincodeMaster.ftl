@@ -71,7 +71,7 @@
 	            <td><center>452001</center></td>
 	            <td><center>01/08/2017</center></td>
 	            <td><center>Active</center></td>
-	            <td align="center"><center><a class="buttontext">${uiLabelMap.edit}</a></center></td>
+	            <td align="center"><center><a href="javascript:editpincodeMaster('Listpincodemaster');" class="buttontext">${uiLabelMap.edit}</a></center></td>
                 <td align="center"><center><a class="buttontext">${uiLabelMap.Remove}</a></center></td>
                 <td align="center"><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>
             </tr>
@@ -79,3 +79,11 @@
        </div>
        </div>
 	 </form>
+	<script language="JavaScript" type="text/javascript" />
+	 function editpincodeMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editpincodemaster</@ofbizUrl>";
+	    form.submit();
+	}
+	</script>

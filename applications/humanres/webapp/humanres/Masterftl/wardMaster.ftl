@@ -76,7 +76,8 @@
 	</div>
 	
 	</form>
-		<div class="row">
+ <form method="post" name="listwardMaster" class="basic-form">
+  <div class="row">
   <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.wardMasterList}</li>
@@ -84,8 +85,7 @@
     
   </div>
    <div class="screenlet-body min-scroll-div">
-   <div class="table-responsive">
-    <table class="basic-table table-responsive" cellspacing="0">
+    <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
@@ -93,7 +93,7 @@
              <td><center>${uiLabelMap.zoneName}</center></td>
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.Remark}</center></td>
-             <td><center>${uiLabelMap.dateOfCreate}</center></td>
+             <td><center>${uiLabelMap.createdate}</center></td>
              
               <td><center>${uiLabelMap.edit}</center></td>
              <td><center>${uiLabelMap.enableDisable}</center></td>
@@ -108,7 +108,7 @@
 			  	<td><center>Hyderabad</center></td> 
 			 	<td><center>Remarks</center></td> 
 		  	 	<td><center>31/07/2017</center></td> 
-				<td><center><a class="buttontext" align="center">Edit</a></center></td>
+				<td><center><a href="javascript:editWardMaster('listwardMaster');" class="buttontext" align="center">Edit</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Disable</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Remove</a></center></td>
 					     
@@ -117,8 +117,7 @@
       </table>
        </div>
       </div>
-      </div>
- 
+    </form>
 
 <script type="text/javascript" language="javascript">
 
@@ -137,7 +136,12 @@
 				}
 			
 	-->
-     
+     function editWardMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editwardmaster</@ofbizUrl>";
+	    form.submit();
+	}
 	
 	
 </script>

@@ -45,22 +45,6 @@
 </form>
 
 
-<#-----------------------Java Script for Marital Status Master------------->
-    <script language="JavaScript" type="text/javascript" />
-
-    function validateParameters(formName)
-    {
-     var form=document[formName];
-     var gendertype = form.gendertype.value;
-    if(notEmptyField(gendertype,"Marital Status should not be empty.")) 
-    {
-		  form.action = "<@ofbizUrl>savemaritalstatusmaster</@ofbizUrl>";
-		  form.submit();
-		  disSubmit('saveBtn');
-      }
-}
- </script>
-
 <#------------------------------------Marital Status Master List------------------------>
 <form method="post" name="Listmaritalstatusmaster" action="" class="basic-form">
         <div class="row">
@@ -92,7 +76,7 @@
                           <td><center>31/08/2017</center></td>
                           <td><center>remark</center></td>
                            <td><center>Act</center></td>
-                          <td><center><a class="buttontext">${uiLabelMap.edit}</a></center></td>
+                          <td><center><a href="javascript:editMaritalMaster('Listmaritalstatusmaster');" class="buttontext">${uiLabelMap.edit}</a></center></td>
                           <td><center><a class="buttontext">${uiLabelMap.Remove}</a></center></td>
                           <td><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>
                   </tr>    
@@ -100,3 +84,28 @@
      </div>
    </div>
  </div>
+ </form>
+ 
+<#-----------------------Java Script for Marital Status Master------------->
+    <script language="JavaScript" type="text/javascript" />
+
+    function validateParameters(formName)
+    {
+     var form=document[formName];
+     var gendertype = form.gendertype.value;
+    if(notEmptyField(gendertype,"Marital Status should not be empty.")) 
+    {
+		  form.action = "<@ofbizUrl>savemaritalstatusmaster</@ofbizUrl>";
+		  form.submit();
+		  disSubmit('saveBtn');
+      }
+}
+
+  function editMaritalMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editmaritalmaster</@ofbizUrl>";
+	    form.submit();
+	}
+ </script>
+ 

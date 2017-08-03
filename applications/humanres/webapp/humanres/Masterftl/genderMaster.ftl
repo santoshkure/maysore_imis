@@ -44,21 +44,7 @@
      </div>
  </form>
 
-<#-----------------------Java Script for Gender Master------------->
-    <script language="JavaScript" type="text/javascript" />
 
-    function validateParameters(formName)
-    {
-     var form=document[formName];
-     var ctype = form.gendername.value;
-    if(notEmptyField(gendername,"Gender name should not be empty.")) 
-    {
-		  form.action = "<@ofbizUrl>savegendermaster</@ofbizUrl>";
-		  form.submit();
-		  disSubmit('saveBtn');
-      }
-}
- </script>
 
 <#------------------------------------Gender Master List------------------------>
 <form method="post" name="Listgendermaster" action="" class="basic-form">
@@ -92,7 +78,7 @@
                           <td><center>31/08/2017</center></td>
                           <td><center>remark</center></td>
                            <td><center>Act</center></td>
-                          <td><center><a class="buttontext">${uiLabelMap.edit}</a></center></td>
+                          <td><center><a href="javascript:editGenderMaster('Listgendermaster');" class="buttontext">${uiLabelMap.edit}</a></center></td>
                           <td><center><a class="buttontext">${uiLabelMap.Remove}</a></center></td>
                           <td><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>
                    </tr>    
@@ -100,3 +86,24 @@
      </div>
    </div>
  </div>
+ <#-----------------------Java Script for Gender Master------------->
+    <script language="JavaScript" type="text/javascript" />
+
+    function validateParameters(formName)
+    {
+     var form=document[formName];
+     var ctype = form.gendername.value;
+    if(notEmptyField(gendername,"Gender name should not be empty.")) 
+    {
+		  form.action = "<@ofbizUrl>savegendermaster</@ofbizUrl>";
+		  form.submit();
+		  disSubmit('saveBtn');
+      }
+}
+  function editGenderMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editgendermaster</@ofbizUrl>";
+	    form.submit();
+	}
+ </script>
