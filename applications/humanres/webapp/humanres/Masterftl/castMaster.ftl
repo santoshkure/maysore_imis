@@ -6,7 +6,7 @@
 <#assign checkLocale = "${locale?if_exists}">
 <#setting locale="en_US">
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
-<form method="post" class="basic-form" name="castmaster" action="">
+<form method="post" class="basic-form" name="castemaster" action="">
 <div class="row">	
  <div class="alert alert-info">
    <ul>
@@ -19,7 +19,7 @@
 		<tr><td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
  		<tr>
 		   <td class="label" >${uiLabelMap.castename} <font color="red">*</font></td>
-		   <td><input type="text" name="nameofcast" style="width:140px" maxlength ="20"/></td>
+		   <td><input type="text" name="nameofcaste" id="castename" style="width:140px" maxlength ="20" onchange="javascript:checkCasteName();"/></td>
 		   <td class="label" >${uiLabelMap.createdate}</td>
 		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
 	    </tr>
@@ -31,7 +31,7 @@
 		<tr>
 			<td colspan="4"><center>
 			<div id ="saveBtn">
-				<input name="save" value="${uiLabelMap.CommonSave}" type="button" onClick="validateParameters('castmaster')">
+				<input name="save" value="${uiLabelMap.CommonSave}" type="button" onClick="validateParameters('castemaster')">
 				<input type="button" name="Cancel" value="Cancel" onclick="javascript:validateConfirmBack();" >
 			</div>
 			</td>
@@ -81,13 +81,50 @@
 function validateParameters(formName)
 {
   var form=document[formName];
-  var nameofcast = form.nameofcast.value;
-    if(notEmptyField(nameofcast,"Cast Name should not be empty.")) 
+  var nameofcaste = form.nameofcaste.value;
+    if(notEmptyField(nameofcaste,"Caste Name should not be empty.")) 
      {
-	  form.action = "<@ofbizUrl>saveCastMaster</@ofbizUrl>";
+	  form.action = "<@ofbizUrl>saveCasteMaster</@ofbizUrl>";
 	  form.submit();
 	  disSubmit('saveBtn');
      }
      
 }
+<#-- function checkCasteName()
+   { 
+     document.getElementById('castename').setAttribute('style','width:140px;color:black;');
+     
+       var url = '<@ofbizUrl>ajaxCheckCasteName</@ofbizUrl>';
+      
+       var nameofcaste = document.castemaster.nameofcaste.value;
+          
+          var parameter= "&nameofcaste="+nameofcaste;
+          var ajaxRequest = new Ajax.Request(
+                    url,
+                    {
+                        method: 'get',
+                        parameters: parameter,
+                        asynchronous: true,                   
+                        onComplete: setCasteName                               
+                    });
+   
+    }
+
+  function setCasteName(xmlHttpRequest, responseHeader)
+   {   
+   		
+   		var jsonvalue = xmlHttpRequest.responseJSON;
+   		var msg = jsonvalue[0];
+   		if(msg == "")
+   		{
+   		return true;
+   		}
+   		else
+   		{
+        alert(msg);
+   		document.castemaster.nameofcaste.value="";
+   	    return true;
+   			
+   		}   
+    }--> 
 </script>

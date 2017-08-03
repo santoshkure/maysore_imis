@@ -1161,10 +1161,17 @@ under the License.
     </request-map>
     <request-map uri="saveCasteMaster">
         <security https="true" auth="true"/>
-        <event type="service" invoke="SaveCasteMaster"/>
-        <response name="success" type="view" value="CasteMaster"/>
-        <response name="error" type="view" value="SaveCasteMaster"/>
+        <event type="service" invoke="SaveCasteMasterDetails"/>
+        <response name="success" type="request-redirect" value="CasteMaster"/>
+        <response name="error" type="view" value="CasteMaster"/>
     </request-map> 
+    <!-- <request-map uri="ajaxCheckCasteName">
+		<security https="true" auth="true" />
+		<event type="java" path="org.apache.ofbiz.humanres.HumanResEvents"
+			invoke="ajaxCheckCasteName" />
+		<response name="success" type="none" value="none" />
+	 	<response name="error" type="none" value="none"/>
+    </request-map> -->
    <!-- End -->
    <!-- ==========Added By Nikhil on 31 July 2017================== -->
 	<request-map uri="CommunityMaster">
