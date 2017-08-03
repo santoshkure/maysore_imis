@@ -163,7 +163,7 @@
                     <tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="Update"   type="submit" value="${uiLabelMap.CommonSearch}"/>
+                    	<input name="Update"   type="submit" value="${uiLabelMap.CommonUpdate}"/>
                     	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
                      	</center>
                      	</td>
