@@ -3403,7 +3403,7 @@
       <!-- End -->
      <!-- Added By Shubham Malviya on Date 01/08/2017 -->
      <property key="customerDetails">
-        <value xml:lang="en">Customer Detail</value>
+        <value xml:lang="en">Customer Detail Search</value>
     </property>
     <property key="searchCustomer">
         <value xml:lang="en">Search Customer</value>
@@ -3479,5 +3479,294 @@
         <value xml:lang="en">Create Block Master</value>
     </property>
       <!-- ==========End==================  -->
+      
+    <!-- Added By Shubham Malviya On 03/08/2017 -->
+    
+    <property key="listCustomerDetail">
+        <value xml:lang="en">List Customer Detail</value>
+        <value xml:lang="kn">List Customer Detail</value>
+    </property>
+    <property key="applyDate">
+        <value xml:lang="en">Apply Date</value>
+        <value xml:lang="kn">Apply Date</value>
+    </property>
+    <property key="viewRegistrationDetail">
+        <value xml:lang="en">View Registration Detail</value>
+        <value xml:lang="kn">View Registration Detail</value>
+    </property>
+    <property key="listCustomerDetail">
+        <value xml:lang="en">List Customer Detail</value>
+        <value xml:lang="kn">List Customer Detail</value>
+    </property>
+      <property key="updateCustomerDetail">
+        <value xml:lang="en">Update Customer Detail</value>
+        <value xml:lang="kn">Update Customer Detail</value>
+    </property>
+    <property key="searchConnectionRequest">
+        <value xml:lang="en">Search Connection Request</value>
+        <value xml:lang="kn">Search Connection Request</value>
+    </property>
+    <property key="listCustomerDetail">
+        <value xml:lang="en">List Connection Request Detail</value>
+        <value xml:lang="kn">List Connection Request Detail</value>
+    </property>
+     <property key="viewConnectionDetail">
+        <value xml:lang="en">View Connection Detail</value>
+        <value xml:lang="kn">View Connection Detail</value>
+    </property>
+     <property key="connectionType">
+        <value xml:lang="en">Connection Type</value>
+        <value xml:lang="kn">Connection Type</value>
+    </property>
+    <property key="applicationType">
+        <value xml:lang="en">Application Type</value>
+        <value xml:lang="kn">Application Type</value>
+    </property>
+     <property key="applicationDate">
+        <value xml:lang="en">Application Date</value>
+        <value xml:lang="kn">Application Date</value>
+    </property>
+     <property key="feeForConnection">
+        <value xml:lang="en">Fee For Connection</value>
+        <value xml:lang="kn">Fee For Connection</value>
+    </property>
+    <property key="feeStatus">
+        <value xml:lang="en">Fee Status</value>
+        <value xml:lang="kn">Fee Status</value>
+    </property>
+     <property key="connectionDetail">
+        <value xml:lang="en">Connection Detail</value>
+        <value xml:lang="kn">Connection Detail</value>
+    </property>
+    <property key="connectionActionDetail">
+        <value xml:lang="en">Connection Action Detail</value>
+        <value xml:lang="kn">Connection Action Detail</value>
+    </property>
+    <property key="typeOfBuilding">
+        <value xml:lang="en">Type Of Building</value>
+        <value xml:lang="kn">Type Of Building</value>
+    </property>
+    <property key="searchConnectionDetail">
+        <value xml:lang="en">Search Connection Detail</value>
+        <value xml:lang="kn">Search Connection Detail</value>
+    </property>
+    <property key="searchConnectionDetail">
+        <value xml:lang="en">Search Meter Detail</value>
+        <value xml:lang="kn">Search Meter Detail</value>
+    </property>
+    <property key="searchMeterDetail">
+        <value xml:lang="en">Search Meter Detail</value>
+        <value xml:lang="kn">Search Meter Detail</value>
+    </property>
+     <property key="registerNewMeterDetail">
+        <value xml:lang="en">Register New Meter Detail</value>
+        <value xml:lang="kn">Register New Meter Detail</value>
+    </property>
+    <property key="meterId">
+        <value xml:lang="en">Meter Id</value>
+        <value xml:lang="kn">Meter Id</value>
+    </property>
+    <property key="meterNo">
+        <value xml:lang="en">Meter No</value>
+        <value xml:lang="kn">Meter No</value>
+    </property>
+    <property key="meterCondition">
+        <value xml:lang="en">Meter Condition</value>
+        <value xml:lang="kn">Meter Condition</value>
+    </property>
+     <property key="meterStatus">
+        <value xml:lang="en">Meter Status</value>
+        <value xml:lang="kn">Meter Status</value>
+    </property>
+    <property key="listMeterDetail">
+        <value xml:lang="en">List Meter Detail</value>
+        <value xml:lang="kn">List Meter Detail</value>
+    </property>
+    <property key="viewMeterDetail">
+        <value xml:lang="en">View Meter Detail</value>
+        <value xml:lang="kn">View Meter Detail</value>
+    </property>
+    <property key="dateofpurchase">
+        <value xml:lang="en">Date of Purchase</value>
+        <value xml:lang="kn">Date of Purchase</value>
+    </property>
+    <property key="meterCost">
+        <value xml:lang="en">Meter Cost</value>
+        <value xml:lang="kn">Meter Cost</value>
+    </property>
+    <property key="meterExisting">
+        <value xml:lang="en">Meter Existing</value>
+        <value xml:lang="kn">Meter Existing</value>
+    </property>
+    <property key="meterConstant">
+        <value xml:lang="en">Meter Constant</value>
+        <value xml:lang="kn">Meter Constant</value>
+    </property>
+    <property key="editMeterDetail">
+        <value xml:lang="en">Edit Meter Detail</value>
+        <value xml:lang="kn">Edit Meter Detail</value>
+    </property>
+    <property key="searchMeterChangeReplacementRequest">
+        <value xml:lang="en">Search Meter Change/Replacement Request</value>
+        <value xml:lang="kn">Search Meter Change/Replacement Request</value>
+    </property>
+    <property key="requestForMeter">
+        <value xml:lang="en">Request for Meter</value>
+        <value xml:lang="kn">Request for Meter</value>
+    </property>
+    <property key="dateOfApply">
+        <value xml:lang="en">Date of Apply</value>
+        <value xml:lang="kn">Date of Apply</value>
+    </property>
+     <property key="listOfMeterChangeDetail">
+        <value xml:lang="en">List Meter Change/Replacement Request</value>
+        <value xml:lang="kn">List Meter Change/Replacement Request</value>
+    </property>
+    <property key="meterChangeApplicationNo">
+        <value xml:lang="en">Meter Change application No.</value>
+        <value xml:lang="kn">Meter Change application No.</value>
+    </property>
+     <property key="viewMeterChangeRequestDetail">
+        <value xml:lang="en">View Meter Change Request Detail</value>
+        <value xml:lang="kn">View Meter Change Request Detail</value>
+    </property>
+    <property key="feeAmount">
+        <value xml:lang="en">Fee Amount</value>
+        <value xml:lang="kn">Fee Amount</value>
+    </property>
+    <property key="feeStatus">
+        <value xml:lang="en">Fee Status</value>
+        <value xml:lang="kn">Fee Status</value>
+    </property>
+    <property key="feeRefrenceNo">
+        <value xml:lang="en">Fee Refrence No.</value>
+        <value xml:lang="kn">Fee Refrence No.</value>
+    </property>
+    <property key="issueDetail">
+        <value xml:lang="en">Issue Details</value>
+        <value xml:lang="kn">Issue Details</value>
+    </property>
+     <property key="currentMeterId">
+        <value xml:lang="en">Current Meter Id</value>
+        <value xml:lang="kn">Current Meter Id</value>
+    </property>
+    <property key="actionDetail">
+        <value xml:lang="en">Action Detail</value>
+        <value xml:lang="kn">Action Detail</value>
+    </property>
+    <property key="actionByOfficer">
+        <value xml:lang="en">Action by Officer</value>
+        <value xml:lang="kn">Action by Officer</value>
+    </property>
+    <property key="newMeterNumber">
+        <value xml:lang="en">New Meter Number</value>
+        <value xml:lang="kn">New Meter Number</value>
+    </property>
+    <property key="createMeterDetail">
+        <value xml:lang="en">Create Meter Detail</value>
+        <value xml:lang="kn">Create Meter Detail</value>
+    </property>
+    <property key="searchRequestCompliant">
+        <value xml:lang="en">Search Compliant Request</value>
+        <value xml:lang="kn">Search Compliant Request</value>
+    </property>
+    <property key="compliantApplyDate">
+        <value xml:lang="en">Complaint Apply Date</value>
+        <value xml:lang="kn">Complaint Apply Date</value>
+    </property>
+    <property key="complaintType">
+        <value xml:lang="en">List Request Compliant</value>
+        <value xml:lang="kn">ComplaintType</value>
+    </property>
+    <property key="listRequestComplaint">
+        <value xml:lang="en">List Request Compliant</value>
+        <value xml:lang="kn">List Request Compliant</value>
+    </property>
+    <property key="viewCompliantDetail">
+        <value xml:lang="en">View Compliant Detail</value>
+        <value xml:lang="kn">View Compliant Detail</value>
+    </property>
+    <property key="searchKhataChangeRequesrDetail">
+        <value xml:lang="en">Search Khata Change Request</value>
+        <value xml:lang="kn">View Compliant Detail</value>
+    </property>
+    <property key="khataChangeId">
+        <value xml:lang="en">Khata Change Id</value>
+        <value xml:lang="kn">Khata Change Id</value>
+    </property>
+     <property key="khataChangeNo">
+        <value xml:lang="en">Khata Change No</value>
+        <value xml:lang="kn">Khata Change No</value>
+    </property>
+    <property key="listKhataChangeRequest">
+        <value xml:lang="en">List Khata Change Request</value>
+        <value xml:lang="kn">List Khata Change Request</value>
+    </property>
+    <property key="viewKhataChangeRequesrDetail">
+        <value xml:lang="en">View Khata Change Request Detail</value>
+        <value xml:lang="kn">View Khata Change Request Detail</value>
+    </property>
+    <property key="actionKhataChangeDetail">
+        <value xml:lang="en">Action Khata Change Detail</value>
+        <value xml:lang="kn">Action Khata Change Detail</value>
+    </property>
+    <property key="searchRtiRequestDetail">
+        <value xml:lang="en">Search RTI Request</value>
+        <value xml:lang="kn">Search RTI Request</value>
+    </property>
+    <property key="rtiRefrenceNo">
+        <value xml:lang="en">RTI Refrence No</value>
+        <value xml:lang="kn">RTI Refrence No</value>
+    </property>
+    <property key="listRtiRequest">
+        <value xml:lang="en">List RTI Request</value>
+        <value xml:lang="kn">List RTI Request</value>
+    </property>
+    <property key="viewRtiDetail">
+        <value xml:lang="en">View RTI Detail</value>
+        <value xml:lang="kn">View RTI Detail</value>
+    </property>
+    <property key="applicantName">
+        <value xml:lang="en">Applicant Name</value>
+        <value xml:lang="kn">Applicant Name</value>
+    </property>
+    <property key="neededInformation">
+        <value xml:lang="en">Needed Information</value>
+        <value xml:lang="kn">Needed Information</value>
+    </property>
+    <property key="supportingDocument">
+        <value xml:lang="en">Supporting Document if any</value>
+        <value xml:lang="kn">Supporting Document if any</value>
+    </property>
+    <property key="feePaymentType">
+        <value xml:lang="en">Fee Payment Type</value>
+        <value xml:lang="kn">Fee Payment Type</value>
+    </property>
+     <property key="searchBillCorrectionRequest">
+        <value xml:lang="en">Search Bill Correction Request</value>
+        <value xml:lang="kn">Search Bill Correction Request</value>
+    </property>
+    <property key="billCorrectionId">
+        <value xml:lang="en">Bill Correction  Id</value>
+        <value xml:lang="kn">Bill Correction  Id</value>
+    </property>
+    <property key="billCorrectionNo">
+        <value xml:lang="en">Bill Correction  No</value>
+        <value xml:lang="kn">Bill Correction  No</value>
+    </property>
+     <property key="listBillCorrectionRequest">
+        <value xml:lang="en">List Bill Correction Request</value>
+        <value xml:lang="kn">List Bill Correction Request</value>
+    </property>
+    <property key="viewBillCorrectionRequestDetail">
+        <value xml:lang="en">View Bill Correction Request Detail</value>
+        <value xml:lang="kn">View Bill Correction Request Detail</value>
+    </property>
+    <property key="actionBillCorrectionDetail">
+        <value xml:lang="en">Action Bill Correction Detail</value>
+        <value xml:lang="kn">Action Bill Correction Detail</value>
+    </property>
+    
+    <!-- End -->
     
 </resource>

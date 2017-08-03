@@ -14,23 +14,31 @@
 		<div class="row">
 			<div class="alert alert-info">
 		    	<ul>
-		 	 		<div class="h3" align="center"><b>List Customer Detail</b></div> 
+		 	 		<div class="h3" align="center"><b>${uiLabelMap.listCustomerDetail}</b></div> 
 		   		</ul>
 	   		</div>
 	   		<div class="screenlet-body">
 		 		<table class="basic-table hover-bar" cellspacing="0">
+		 		<thead>
         			<tr class="header-row-2">
 	          			<td>${uiLabelMap.customerName}</td>
 	          			<td>${uiLabelMap.customerAddress}</td>
               			<td>${uiLabelMap.Contact}</td>
-              			<td>${uiLabelMap.RegistrationDate}</td>
-              			<td>${uiLabelMap.Action}</td>
+              			<td>${uiLabelMap.registrationDate}</td>
+              			<td>${uiLabelMap.action}</td>
            			</tr>
-           			<tr>
-           				<td colspan="11"><b>${uiLabelMap.NoRecordsFound}</b></td>
+           		</thead>
+           		<tbody>
+        			<tr>
+        				<td><a href="viewCustomerRegistrationDetail">Ravi Kuamr Rai</a></td>
+	          			<td>Sahu Colony</td>
+              			<td>4545454554</td>
+              			<td>02/08/2017</td>
+              			<td><a href="actionNewRegistration" class="buttontext">${uiLabelMap.action}</a></td>
            			</tr>
+           		</tbody>
         		</table>
-	  		</div>
+	  		
 		</div>   
 	
  </form>

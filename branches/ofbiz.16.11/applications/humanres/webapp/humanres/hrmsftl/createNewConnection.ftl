@@ -9,8 +9,7 @@
 
 <#setting locale="en">
 
-    <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">Register/Approve New Connection </span></div>
-    <script language="javascript" src="/images/jquery/plugins/validate/additional-methods.js"  type="text/javascript"></script>
+    <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.registerNewConnection} </span></div>
     <form method="post" name="RegisterPerson" action="" class="basic-form">
     <div class="row">
     <div class="alert alert-info">
@@ -22,15 +21,15 @@
                 <tbody>
                 <tr>
                 <td colspan="4"><font color="blue"></font></td>
-	                	<td colspan="6"><font color="blue"><u><i>${uiLabelMap.NoteMandatoryAsterisk}</i></u></font color></td>
+	                	<td colspan="6"><font color="blue"><u><i>${uiLabelMap.noteMandatoryAsterisk}</i></u></font color></td>
                 	</tr>
-                <tr><td class='label'>${uiLabelMap.CustomerId} *</td>
+                <tr><td class='label'>${uiLabelMap.customerId} *</td>
                     <td colspan="5">
                       <@htmlTemplate.lookupField value='' formName="RegisterPerson" name="customerDeatil" id="customerDeatil" fieldFormName="customerDeatil"/>
                     </td>
                      </tr>
                       <tr>
-                        <td class="label">${uiLabelMap.tital}</td>
+                        <td class="label">${uiLabelMap.CommonTitle}</td>
                         <td colspan="5">
                         	<input name="firstName"  type="text" maxlength="60" value="" readonly>
                         </td>
@@ -128,15 +127,15 @@
                     </tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.city}</td>
+                        <td class="label">${uiLabelMap.CommonCity}</td>
                         <td>
                         <input name="city" type="text" maxlength="25" value="Mysore" readonly>
                         </td>
-                        <td class="label">${uiLabelMap.state}</td>
+                        <td class="label">${uiLabelMap.CommonState}</td>
                         <td>
                         <input name="state" type="text" maxlength="25" value="Karnataka" readonly>
                         </td>
-                        <td class="label">${uiLabelMap.country}</td>
+                        <td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>
                         <input name="country" type="text" maxlength="25" value="India" readonly>
                         </td>
@@ -150,7 +149,7 @@
                         <td>
                         <input name="resContactNo" id="ddd" type="text" maxlength="25" value="" >
                         </td>
-                        <td class="label">${uiLabelMap.eMail}</td>
+                        <td class="label">${uiLabelMap.CommonEmail}</td>
                         <td>
                         <input name="eMail" type="text" maxlength="40" value="" readonly>
                         </td>
@@ -203,7 +202,7 @@
                      </tr>
                    <tr>
                     	<td colspan="6"><center>
-                    	<input name="Approve"   type="submit" value="Approve"/>
+                    	<input name="save"   type="submit" value="${uiLabelMap.CommonSave}"/>
                     	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      </center></td>
                     </tr>

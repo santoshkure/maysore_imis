@@ -2,7 +2,7 @@
    <div class="row">
     <div class="alert alert-info">
   		<ul>
-  		<div class="h3" align="center"><b>Search Connection Request</b></div> 
+  		<div class="h3" align="center"><b>${uiLabelMap.searchConnectionRequest}</b></div> 
 		</ul>
 	</div>
 	<div class="screenlet-body">
