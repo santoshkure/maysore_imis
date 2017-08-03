@@ -1150,14 +1150,17 @@ under the License.
     <request-map uri="CasteMaster">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="CasteMaster"/>
+        <response name="error" type="view" value="CasteMaster" />
     </request-map>
      <request-map uri="PincodeMaster">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="PincodeMaster"/>
+        <response name="error" type="view" value="PincodeMaster" />
     </request-map>
     <request-map uri="SearchPincodeMaster">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="SearchPincodeMaster"/>
+        <response name="error" type="view" value="SearchPincodeMaster" />
     </request-map>
     <request-map uri="saveCasteMaster">
         <security https="true" auth="true"/>
@@ -1165,6 +1168,51 @@ under the License.
         <response name="success" type="request-redirect" value="CasteMaster"/>
         <response name="error" type="view" value="CasteMaster"/>
     </request-map> 
+     <request-map uri="editzonemaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editzonemaster"/>
+        <response name="error" type="view" value="editzonemaster" />
+    </request-map>
+    <request-map uri="editwardmaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editwardmaster"/>
+        <response name="error" type="view" value="editwardmaster" />
+    </request-map>
+    <request-map uri="editblockmaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editblockmaster"/>
+        <response name="error" type="view" value="editblockmaster" />
+    </request-map>
+    <request-map uri="editstreetmaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editstreetmaster"/>
+        <response name="error" type="view" value="editstreetmaster" />
+    </request-map>
+    <request-map uri="editcommunitymaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editcommunitymaster"/>
+        <response name="error" type="view" value="editcommunitymaster" />
+    </request-map>
+    <request-map uri="editgendermaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editgendermaster"/>
+        <response name="error" type="view" value="editgendermaster" />
+    </request-map>
+    <request-map uri="editmaritalmaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editmaritalmaster"/>
+        <response name="error" type="view" value="editmaritalmaster" />
+    </request-map>
+      <request-map uri="editcastemaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editcastemaster"/>
+        <response name="error" type="view" value="editcastemaster" />
+    </request-map>
+    <request-map uri="editpincodemaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editpincodemaster"/>
+        <response name="error" type="view" value="editpincodemaster" />
+    </request-map>
     <!-- <request-map uri="ajaxCheckCasteName">
 		<security https="true" auth="true" />
 		<event type="java" path="org.apache.ofbiz.humanres.HumanResEvents"
@@ -1377,6 +1425,15 @@ under the License.
     <view-map name="CasteMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#CasteMaster"/>
     <view-map name="PincodeMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#PincodeMaster"/>
     <view-map name="SearchPincodeMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#SearchPincodeMaster"/>
+    <view-map name="editzonemaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editzonemaster"/>
+    <view-map name="editwardmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editwardmaster"/>
+    <view-map name="editblockmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editblockmaster"/>
+    <view-map name="editstreetmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editstreetmaster"/>
+    <view-map name="editcommunitymaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editcommunitymaster"/>
+    <view-map name="editgendermaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editgendermaster"/>
+    <view-map name="editmaritalmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editmaritalmaster"/>
+    <view-map name="editcastemaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editcastemaster"/>
+    <view-map name="editpincodemaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editpincodemaster"/>
     <!-- End -->
     <!-- ==========Added By Nikhil on 31 July 2017================== -->
 	<view-map name="CommunityMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#CommunityMaster" />

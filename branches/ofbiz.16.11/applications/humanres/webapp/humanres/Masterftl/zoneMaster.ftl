@@ -75,6 +75,7 @@
 </form>
 
 <#--------------------------Master List------------------------------>
+<form method="post" name="listzoneMaster" class="basic-form">
 <div class="row">
   <div class="alert alert-info">
     <ul>
@@ -83,8 +84,7 @@
     
   </div>
    <div class="screenlet-body min-scroll-div">
-   <div class="table-responsive">
-    <table class="basic-table table-responsive" cellspacing="0">
+    <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
@@ -92,7 +92,7 @@
              <td><center>${uiLabelMap.cityName}</center></td>
              <td><center>${uiLabelMap.officeName}<center></td>
              <td><center>${uiLabelMap.remark}</center></td>
-             <td><center>${uiLabelMap.dateOfCreate}</center></td>
+             <td><center>${uiLabelMap.createdate}</center></td>
              
              <td><center>${uiLabelMap.Edit}</center></td>
              <td><center>${uiLabelMap.enableDisable}</center></td>
@@ -108,7 +108,7 @@
 			  	<td><center>WRD</center></td> 
 			 	<td><center>Remarks</center></td> 
 		  	 	<td><center>31/07/2017</center></td> 
-				<td><center><a class="buttontext" align="center">Edit</a></center></td>
+				<td><center><a href="javascript:editZoneMaster('listzoneMaster');" class="buttontext" align="center">Edit</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Disable</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Remove</a></center></td>
 					     
@@ -116,8 +116,8 @@
       </table>
     </div>
   </div>
-</div>
- 
+
+ </form>
  
  
 
@@ -135,9 +135,14 @@
 					//return true;
 					//alert("submit");
 					
-				}
+	}
 			
-	
+	function editZoneMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editzonemaster</@ofbizUrl>";
+	    form.submit();
+	}
      
 	
 	

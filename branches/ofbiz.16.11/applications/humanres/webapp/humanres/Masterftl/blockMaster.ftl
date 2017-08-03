@@ -66,7 +66,8 @@
 	</div>
 	
 	</form>
-		<div class="row">
+<form method="post" name="listblockMaster" class="basic-form">
+ <div class="row">
   <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.blockMasterList}</li>
@@ -74,8 +75,7 @@
   
   </div>
    <div class="screenlet-body min-scroll-div">
-   <div class="table-responsive">
-    <table class="basic-table table-responsive" cellspacing="0">
+    <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
@@ -100,7 +100,7 @@
 			 	<td><center>Hyderabad</center></td> 
 			 	<td><center>Remark</center></td> 
 		  	 	<td><center>31/07/2017</center></td> 
-				<td><center><a class="buttontext" align="center">Edit</a></center></td>
+				<td><center><a href="javascript:editBlockMaster('listblockMaster');" class="buttontext" align="center">Edit</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Disable</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Remove</a></center></td>
 					     
@@ -110,8 +110,8 @@
       </table>
        </div>
       </div>
-      </div>
- 
+
+ </form>
 
 <script type="text/javascript" language="javascript">
 
@@ -130,7 +130,13 @@
 				}
 			
 	-->
-     
+     function editBlockMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editblockmaster</@ofbizUrl>";
+	    form.submit();
+	}
+	
 	
 	
 </script>

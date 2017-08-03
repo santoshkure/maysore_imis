@@ -43,21 +43,6 @@
             </div>
         </div>
     </form>
-<#-----------------------Java Script for Community Master------------->
-<script language="JavaScript" type="text/javascript" />
-
-function validateParameters(formName)
-{
-  var form=document[formName];
-  var ctype = form.communityname.value;
-    if(notEmptyField(communityname,"community name should not be empty.")) 
-    {
-		  form.action = "<@ofbizUrl>savecommunitymaster</@ofbizUrl>";
-		  form.submit();
-		  disSubmit('saveBtn');
-    }
-    }
- </script>
 
 <#------------------------------------Community Master List------------------------>
 <form method="post" name="Listcommunitymaster" action="" class="basic-form">
@@ -87,11 +72,11 @@ function validateParameters(formName)
    </thead>
                    <tr>
                           <td><center>1</center></td>
-                          <td><center>mysore city</center></td>
+                          <td><center>mysore</center></td>
                           <td><center>31/08/2017</center></td>
                           <td><center>remark</center></td>
                            <td><center>Act</center></td>
-                          <td><center><a class="buttontext">${uiLabelMap.edit}</a></center></td>
+                          <td><center><a href="javascript:editCommunityMaster('Listcommunitymaster');" class="buttontext">${uiLabelMap.edit}</a></center></td>
                           <td><center><a class="buttontext">${uiLabelMap.Remove}</a></center></td>
                           <td><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>
                   </tr>    
@@ -100,3 +85,26 @@ function validateParameters(formName)
   </div>
 </div>
  </form>
+ 
+ <#-----------------------Java Script for Community Master------------->
+<script language="JavaScript" type="text/javascript" />
+
+function validateParameters(formName)
+{
+  var form=document[formName];
+  var ctype = form.communityname.value;
+    if(notEmptyField(communityname,"community name should not be empty.")) 
+    {
+		  form.action = "<@ofbizUrl>savecommunitymaster</@ofbizUrl>";
+		  form.submit();
+		  disSubmit('saveBtn');
+    }
+    }
+    
+    function editCommunityMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editcommunitymaster</@ofbizUrl>";
+	    form.submit();
+	}
+ </script>

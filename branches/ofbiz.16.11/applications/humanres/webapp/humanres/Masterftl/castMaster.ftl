@@ -67,7 +67,7 @@
 	            <td><center>General</center></td>
 	            <td><center>01/08/2017</center></td>
 	            <td><center>Active</center></td>
-	            <td align="center"><center><a class="buttontext">${uiLabelMap.edit}</a></center></td>
+	            <td align="center"><center><a href="javascript:editCasteMaster('Listcastemaster');" class="buttontext">${uiLabelMap.edit}</a></center></td>
                 <td align="center"><center><a class="buttontext">${uiLabelMap.Remove}</a></center></td>
                 <td align="center"><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>
             </tr>
@@ -90,6 +90,12 @@ function validateParameters(formName)
      }
      
 }
+ function editCasteMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editcastemaster</@ofbizUrl>";
+	    form.submit();
+	}
 <#-- function checkCasteName()
    { 
      document.getElementById('castename').setAttribute('style','width:140px;color:black;');

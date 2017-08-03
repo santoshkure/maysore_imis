@@ -67,7 +67,8 @@
 	</div>
 	
 	</form>
-		<div class="row">
+<form method="post" name="listStreetMaster" class="basic-form">
+ <div class="row">
   <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.streetMasterList}</li>
@@ -75,13 +76,12 @@
     
   </div>
    <div class="screenlet-body min-scroll-div">
-   <div class="table-responsive">
-    <table class="basic-table table-responsive" cellspacing="0">
+    <table class="basic-table" cellspacing="0">
        <thead>  <tr class="header-row-2">
              <td><center>S.No<center></td>
 	         <td><center>${uiLabelMap.streetName}<center></td>
              <td><center>${uiLabelMap.blockName}</center></td>
-             <td><center>${uiLabelMap.officeName}<center></td>
+             <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.remark}</center></td>
              <td><center>${uiLabelMap.createdate}</center></td>
              
@@ -98,7 +98,7 @@
 			 	<td><center>Hyderabad</center></td> 
 			 	<td><center>Remark</center></td> 
 		  	 	<td><center>31/07/2017</center></td> 
-				<td><center><a class="buttontext" align="center">Edit</a></center></td>
+				<td><center><a href="javascript:editStreetMaster('listStreetMaster');"  class="buttontext" align="center">Edit</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Disable</a></center></td>
 		      	<td><center><a class="buttontext" align="center">Remove</a></center></td>
 					     
@@ -108,8 +108,7 @@
       </table>
        </div>
       </div>
-      </div>
- 
+ </form>
 
 <script type="text/javascript" language="javascript">
 
@@ -129,6 +128,11 @@
 			
 	-->
      
-	
+	function editStreetMaster(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editstreetmaster</@ofbizUrl>";
+	    form.submit();
+	}
 	
 </script>

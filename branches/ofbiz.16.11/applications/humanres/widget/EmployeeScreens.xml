@@ -449,6 +449,220 @@ under the License.
             </widgets>
         </section>
     </screen>
+    <screen name="editzonemaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="zonemastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditZoneMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="editwardmaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="wardmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditWardMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="editblockmaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="blockmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditBlockMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="editstreetmaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="areamastertab"/>
+                <set field="subTabButtonItem" value="streetmastertab"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+							</container>
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditStreetMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="editcommunitymaster">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="communitymaster" />
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/EditCommunityMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="editgendermaster">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="gendermaster" />
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/EditGenderMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="editmaritalmaster">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="maritalstatusmaster" />
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/EditMaritalStatusMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="editcastemaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="castemaster"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							</container>    
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditCasteMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="editpincodemaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="pincodemaster"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							</container>    
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditPincodeMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
     <!-- End -->
     <!-- ==========Added By Nikhil on 31 July 2017================== -->
     <screen name="CommunityMaster">
