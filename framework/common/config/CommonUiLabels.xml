@@ -15567,4 +15567,261 @@
      <property key="search">
         <value xml:lang="en">Search</value>
     </property>
+
+<!-- added by shubham Malviya for common UiLable on 31/07/2017 -->
+    
+    <property key="noteMandatoryAsterisk">
+        <value xml:lang="en">NOTE : Fields marked with * (asterisk) are mandatory.</value>
+        <value xml:lang="kn">NOTE : Fields marked with * (asterisk) are mandatory.</value>
+    </property>
+    <property key="noRecordsFound">
+        <value xml:lang="en">No Records Found</value>
+        <value xml:lang="kn">No Records Found</value>
+    </property>
+    <property key="firstName">
+        <value xml:lang="en">First Name</value>
+        <value xml:lang="kn">First Name</value>
+    </property>
+    <property key="lastName">
+        <value xml:lang="en">Last Name</value>
+        <value xml:lang="kn">Last Name</value>
+    </property>
+    <property key="contact">
+        <value xml:lang="en">Contact</value>
+        <value xml:lang="kn">Contact</value>
+    </property>
+    <property key="registrationDate">
+        <value xml:lang="en">Registration Date</value>
+        <value xml:lang="kn">Registration Date</value>
+    </property>
+    <property key="viewDetail">
+        <value xml:lang="en">View Detail</value>
+        <value xml:lang="kn">View Detail</value>
+    </property>
+    <!-- added by shubham malviya for New User Registration -->
+     <property key="registerNewCustomer">
+        <value xml:lang="en">Register New Customer</value>
+        <value xml:lang="kn">Register New Customer</value>
+    </property>
+    <property key="registerationDetail">
+        <value xml:lang="en">Registration Details</value>
+        <value xml:lang="kn">Registration Details</value>
+    </property>
+    <property key="personalDetail">
+        <value xml:lang="en">Personal Details</value>
+        <value xml:lang="kn">Personal Details</value>
+    </property>
+    <property key="middleName">
+        <value xml:lang="en">Middle Name</value>
+        <value xml:lang="kn">Middle Name</value>
+    </property>
+    <property key="gender">
+        <value xml:lang="en">Gender</value>
+        <value xml:lang="kn">Gender</value>
+    </property>
+    <property key="dateOfBirth">
+        <value xml:lang="en">Date Of Birth</value>
+        <value xml:lang="kn">Date Of Birth</value>
+    </property>
+    <property key="maritalStatusOption">
+        <value xml:lang="en">Marital Status</value>
+        <value xml:lang="kn">Marital Status</value>
+    </property>
+    <property key="fatherName">
+        <value xml:lang="en">Father Name</value>
+        <value xml:lang="kn">Father Name</value>
+    </property>
+    <property key="motherName">
+        <value xml:lang="en">Mother Name</value>
+        <value xml:lang="kn">Mother Name</value>
+    </property>
+    <property key="aadharCardNo">
+        <value xml:lang="en">Aadhar Card Number</value>
+        <value xml:lang="kn">Aadhar Card Number</value>
+    </property>
+    <property key="cummunity">
+        <value xml:lang="en">Cummunity</value>
+        <value xml:lang="kn">Cummunity</value>
+    </property>
+    <property key="cast">
+        <value xml:lang="en">Cast</value>
+        <value xml:lang="kn">Cast</value>
+    </property>
+    <property key="nationality">
+        <value xml:lang="en">Nationality</value>
+        <value xml:lang="kn">Nationality</value>
+    </property>
+    <property key="houseNo">
+        <value xml:lang="en">House No.</value>
+        <value xml:lang="kn">House No.</value>
+    </property>
+    <property key="wardNo">
+        <value xml:lang="en">Ward No.</value>
+        <value xml:lang="kn">Ward No.</value>
+    </property>
+    <property key="landMark">
+        <value xml:lang="en">Land Mark</value>
+        <value xml:lang="kn">Land Mark</value>
+    </property>
+    <property key="village">
+        <value xml:lang="en">Village</value>
+        <value xml:lang="kn">Village</value>
+    </property>
+    <property key="currentAddress">
+        <value xml:lang="en">Current Address</value>
+        <value xml:lang="kn">Current Address</value>
+    </property>
+    <property key="mobileNo">
+        <value xml:lang="en">Mobile No.</value>
+        <value xml:lang="kn">Mobile No.</value>
+    </property>
+    <property key="resContactNo">
+        <value xml:lang="en">Residence Contact No</value>
+        <value xml:lang="kn">Residence Contact No</value>
+    </property>
+    <property key="yourCummunity">
+        <value xml:lang="en">Your Cummunity</value>
+        <value xml:lang="kn">Your Cummunity</value>
+    </property>
+    <property key="enterFatherName">
+        <value xml:lang="en">Enter Father Name</value>
+        <value xml:lang="kn">Enter Father Name</value>
+    </property>
+    <property key="enterMotherName">
+        <value xml:lang="en">Enter Mother Name</value>
+        <value xml:lang="kn">Enter Mother Name</value>
+    </property>
+    <property key="EnterAadharCard">
+        <value xml:lang="en">Enter Aadhar Card</value>
+        <value xml:lang="kn">Enter Aadhar Card</value>
+    </property>
+    <property key="enterFirstName">
+        <value xml:lang="en">Enter First Name</value>
+        <value xml:lang="kn">Enter First Name</value>
+    </property>
+    <property key="enterlastName">
+        <value xml:lang="en">Enter Last Name</value>
+        <value xml:lang="kn">Enter Last Name</value>
+    </property>
+    <property key="enterMiddleName">
+        <value xml:lang="en">Enter Middle Name</value>
+        <value xml:lang="kn">Enter Middle Name</value>
+    </property>
+    <property key="yourEMail">
+        <value xml:lang="en">Example@domain.com</value>
+        <value xml:lang="kn">Your E-mail...</value>
+    </property>
+     <property key="yourNationality">
+        <value xml:lang="en">Your Nationality</value>
+        <value xml:lang="kn">Your Nationality</value>
+    </property>
+    <property key="yourCast">
+        <value xml:lang="en">Your Cast</value>
+        <value xml:lang="kn">Your Cast</value>
+    </property>
+    <property key="yourCity">
+        <value xml:lang="en">Your City</value>
+        <value xml:lang="kn">Your City</value>
+    </property>
+    <property key="yourState">
+        <value xml:lang="en">Your State</value>
+        <value xml:lang="kn">Your State</value>
+    </property>
+    <property key="yourWard">
+        <value xml:lang="en">Enter Your Ward No.</value>
+        <value xml:lang="kn">Enter Your Ward No.</value>
+    </property>
+    <property key="yourVillage">
+        <value xml:lang="en">Enter Your Village Name</value>
+        <value xml:lang="kn">Enter Your Village Name</value>
+    </property>
+     <property key="mohalla">
+        <value xml:lang="en">Mohalla</value>
+        <value xml:lang="kn">Mohalla</value>
+    </property>
+    <property key="enterAddress">
+        <value xml:lang="en">Enter Your Address</value>
+        <value xml:lang="kn">Enter Your Address</value>
+    </property>
+    <property key="enterHouseNo">
+        <value xml:lang="en">Enter House No</value>
+        <value xml:lang="kn">Enter House No</value>
+    </property>
+    <property key="enterLandMark">
+        <value xml:lang="en">Enter Land Mark</value>
+        <value xml:lang="kn">Enter Land Mark</value>
+    </property>
+    <property key="enterMohalla">
+        <value xml:lang="en">Enter Mohalla Name</value>
+        <value xml:lang="kn">Enter Mohalla Name</value>
+    </property>
+    <property key="yourMobile">
+        <value xml:lang="en">Enter Mobile Number</value>
+        <value xml:lang="kn">Enter Mobile Number</value>
+    </property>
+    
+    <property key="fromDate">
+        <value xml:lang="en">From Date</value>
+        <value xml:lang="kn">From Date</value>
+    </property>
+    <property key="toDate">
+        <value xml:lang="en">To Date</value>
+        <value xml:lang="kn">To Date</value>
+    </property>
+    <property key="action">
+        <value xml:lang="en">Action</value>
+        <value xml:lang="kn">Action</value>
+    </property>
+    <property key="approveDate">
+        <value xml:lang="en">Approve Date</value>
+        <value xml:lang="kn">Approve Date</value>
+    </property>
+    <property key="registerNewConnection">
+        <value xml:lang="en">Register New Connection</value>
+        <value xml:lang="kn">Register New Connection</value>
+    </property>
+    <property key="assentialDoccument">
+        <value xml:lang="en">Assential Doccument</value>
+        <value xml:lang="kn">Assential Doccument</value>
+    </property>
+    <property key="designation">
+        <value xml:lang="en">Designation</value>
+        <value xml:lang="kn">Designation</value>
+    </property>
+    <property key="CommonRemark">
+        <value xml:lang="en">Remark</value>
+        <value xml:lang="kn">Remark</value>
+    </property>
+    <property key="commonOfficerName">
+        <value xml:lang="en">Officer Name</value>
+        <value xml:lang="kn">Officer Name</value>
+    </property>
+    <property key="actionDate">
+        <value xml:lang="en">Action Date</value>
+        <value xml:lang="kn">Action Date</value>
+    </property>
+     <property key="connectionNo">
+        <value xml:lang="en">Connection No</value>
+        <value xml:lang="kn">Connection No</value>
+    </property>
+     <property key="commonOfficeName">
+        <value xml:lang="en">Office Name</value>
+        <value xml:lang="kn">Office Name</value>
+    </property>
+    <property key="approve">
+        <value xml:lang="en">Approve</value>
+        <value xml:lang="kn">Approve</value>
+    </property>
+    <property key="reject">
+        <value xml:lang="en">Reject</value>
+        <value xml:lang="kn">Reject</value>
+    </property>
+    <property key="billNo">
+        <value xml:lang="en">Bill No.</value>
+        <value xml:lang="kn">BillNo</value>
+    </property>
+    <property key="customerNo">
+        <value xml:lang="en">Customer No</value>
+        <value xml:lang="kn">Customer No</value>
+    </property>
 </resource>
