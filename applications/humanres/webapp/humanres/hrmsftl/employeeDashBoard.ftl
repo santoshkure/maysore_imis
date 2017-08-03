@@ -37,10 +37,10 @@
 						<a href="empCreateNewCustomer"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register New Customer </a>
 					</li>
 					<li>
-						<a href="customerDeatil"><i class="fa fa-arrow-right" aria-hidden="true"></i> Customer Details </a>
+						<a href="approveCustomerDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Approve New Customer </a>
 					</li>
 					<li>
-						<a href="approveCustomerDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Approve New Customer </a>
+						<a href="customerDeatil"><i class="fa fa-arrow-right" aria-hidden="true"></i> Customer Details </a>
 					</li>
 					<li>
 						<a href="createNewConnection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register New Connection </a>
@@ -49,31 +49,31 @@
 						<a href="approveNewConnection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Approve New Connection </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Connection Details </a>
+						<a href="connectionDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Connection Details </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Edit Personal Data </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter Details </a>
+						<a href="registerMeterDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter Details </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change Application </a>
+						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change/Replacement Request</a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance Application </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint Application </a>
+						<a href="complaintRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Application </a>
+						<a href="khataChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application Details </a>
+						<a href="RtiApplyDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application Details </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Employee </a>
@@ -88,10 +88,7 @@
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Query Engine </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Employee </a>
-					</li>
-					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Correction </a>
+						<a href="billCorrectionRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Correction </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Details </a>

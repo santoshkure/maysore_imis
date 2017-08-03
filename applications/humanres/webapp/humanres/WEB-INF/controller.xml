@@ -1274,6 +1274,150 @@ under the License.
         <response name="error" type="view" value="approveNewConnection"/>
     </request-map>
     
+    <request-map uri="connectionDetails">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="connectionDetails"/>
+        <response name="error" type="view" value="connectionDetails"/>
+    </request-map>
+    
+    <request-map uri="registerMeterDetails">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="registerMeterDetails"/>
+        <response name="error" type="view" value="registerMeterDetails"/>
+    </request-map>
+    
+    <request-map uri="createNewMeter">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="createNewMeter"/>
+        <response name="error" type="view" value="createNewMeter"/>
+    </request-map>
+    
+    <request-map uri="meterChangeReplacement">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="meterChangeReplacement"/>
+        <response name="error" type="view" value="meterChangeReplacement"/>
+    </request-map>
+    
+    <request-map uri="complaintRequest">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="complaintRequest"/>
+        <response name="error" type="view" value="complaintRequest"/>
+    </request-map>
+    
+    <request-map uri="khataChangeRequest">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="khataChangeRequest"/>
+        <response name="error" type="view" value="khataChangeRequest"/>
+    </request-map>
+    
+    <request-map uri="RtiApplyDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="RtiApplyDetail"/>
+        <response name="error" type="view" value="RtiApplyDetail"/>
+    </request-map>
+    
+    <request-map uri="billCorrectionRequest">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="billCorrectionRequest"/>
+        <response name="error" type="view" value="billCorrectionRequest"/>
+    </request-map>
+    
+    <request-map uri="actionNewRegistration">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="actionNewRegistration"/>
+        <response name="error" type="view" value="actionNewRegistration"/>
+    </request-map>
+    
+    <request-map uri="viewCustomerRegistrationDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewCustomerRegistrationDetail"/>
+    </request-map>
+    
+    <request-map uri="viewCustomerRegiApproveDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewCustomerRegiApproveDetail"/>
+    </request-map>
+    
+    <request-map uri="editCustomerDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="editCustomerDetail"/>
+    </request-map>
+    
+     <request-map uri="viewCustomerConnectionDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewCustomerConnectionDetail"/>
+    </request-map>
+    
+    <request-map uri="actionNewConnection">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="actionNewConnection"/>
+    </request-map>
+    
+    <request-map uri="editConnectionDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="editConnectionDetail"/>
+    </request-map>
+    
+    <request-map uri="viewMeterDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewMeterDetail"/>
+    </request-map>
+    
+    <request-map uri="editMeterDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="editMeterDetail"/>
+    </request-map>
+    
+    <request-map uri="viewMeterChangeRequest">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewMeterChangeRequest"/>
+    </request-map>
+    
+    <request-map uri="actionMeterChange">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="actionMeterChange"/>
+    </request-map>
+    
+    <request-map uri="actionCompliantRequest">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="actionCompliantRequest"/>
+    </request-map>
+    
+    <request-map uri="viewComplaintDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewComplaintDetail"/>
+    </request-map>
+    
+    <request-map uri="viewKhataChangeDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewKhataChangeDetail"/>
+    </request-map>
+    
+    <request-map uri="actionKhataChange">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="actionKhataChange"/>
+    </request-map>
+    
+    <request-map uri="viewRtiDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewRtiDetail"/>
+    </request-map>
+    
+    <request-map uri="actionRtiRequestDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="actionRtiRequestDetail"/>
+    </request-map>
+    
+    <request-map uri="viewBillCorrectionRequest">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewBillCorrectionRequest"/>
+    </request-map>
+    
+    <request-map uri="actionBillCorrection">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="actionBillCorrection"/>
+    </request-map>
+    
     <!-- ==========end==================  -->
     
     <!-- ===================Lookup Request===================== -->
@@ -1447,10 +1591,36 @@ under the License.
 	<!-- ==========End================== -->
     <!-- ==========Added By Shubham on 31 July 2017 ==================  -->
     <view-map name="customerDeatil" type="screen" page="component://humanres/widget/EmployeeScreens.xml#customerDeatil"/>
-      <view-map name="approveCustomerDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveCustomerDetail"/>
-        <view-map name="createNewConnection" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createNewConnection"/>
+      	 <view-map name="approveCustomerDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveCustomerDetail"/>
+         <view-map name="createNewConnection" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createNewConnection"/>
          <view-map name="empCreateNewCustomer" type="screen" page="component://humanres/widget/EmployeeScreens.xml#empCreateNewCustomer"/>
          <view-map name="approveNewConnection" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveNewConnection"/>
-        <!-- ==========End==================  -->
+         <view-map name="connectionDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#connectionDetails"/>
+         <view-map name="registerMeterDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#registerMeterDetails"/>
+         <view-map name="createNewMeter" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createNewMeter"/>
+         <view-map name="meterChangeReplacement" type="screen" page="component://humanres/widget/EmployeeScreens.xml#meterChangeReplacement"/>
+         <view-map name="complaintRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#complaintRequest"/>
+         <view-map name="khataChangeRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#khataChangeRequest"/>
+         <view-map name="RtiApplyDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#RtiApplyDetail"/>
+         <view-map name="billCorrectionRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#billCorrectionRequest"/>
+         <view-map name="actionNewRegistration" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionNewRegistration"/>
+         <view-map name="viewCustomerRegistrationDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewCustomerRegistrationDetail"/>
+         <view-map name="viewCustomerRegiApproveDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewCustomerRegiApproveDetail"/>
+         <view-map name="editCustomerDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editCustomerDetail"/>
+         <view-map name="viewCustomerConnectionDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewCustomerConnectionDetail"/>
+         <view-map name="actionNewConnection" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionNewConnection"/>
+         <view-map name="editConnectionDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editConnectionDetail"/>  
+         <view-map name="viewMeterDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewMeterDetail"/>   
+         <view-map name="editMeterDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editMeterDetail"/> 
+         <view-map name="viewMeterChangeRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewMeterChangeRequest"/>
+         <view-map name="actionMeterChange" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionMeterChange"/>
+         <view-map name="actionCompliantRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionCompliantRequest"/>                                                 
+		 <view-map name="viewComplaintDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewComplaintDetail"/>
+		 <view-map name="viewKhataChangeDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewKhataChangeDetail"/>
+		 <view-map name="actionKhataChange" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionKhataChange"/>
+		 <view-map name="viewRtiDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewRtiDetail"/>
+		 <view-map name="actionRtiRequestDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionRtiRequestDetail"/>
+		 <view-map name="viewBillCorrectionRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewBillCorrectionRequest"/>
+		 <view-map name="actionBillCorrection" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionBillCorrection"/>
         
 </site-conf>

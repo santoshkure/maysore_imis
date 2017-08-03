@@ -14,23 +14,33 @@
 	<div class="row">
 		<div class="alert alert-info">
 		    <ul>
-		 	 <div class="h3" align="center"><b>List Connection Request</b></div> 
+		 	 <div class="h3" align="center"><b>${uiLabelMap.listNewConnectionRequest}</b></div> 
 		   </ul>
 	   </div>
 		<div class="screenlet-body">
 		 <table class="basic-table hover-bar" cellspacing="0">
+		 <thead>
         	<tr class="header-row-2">
               <td>${uiLabelMap.customerId}</td>
 	          <td>${uiLabelMap.customerName}</td>
 	          <td>${uiLabelMap.customerAddress}</td>
-              <td>${uiLabelMap.Contact}</td>
-              <td>Apply Date</td>
-              <td>Action</td>
+              <td>${uiLabelMap.contact}</td>
+              <td>${uiLabelMap.applyDate}</td>
+              <td>${uiLabelMap.action}</td>
            </tr>
-           <tr>
-           	    <td colspan="11"><b>${uiLabelMap.NoRecordsFound}</b></td>
-           </tr>
-        </table>
+           
+          </thead>
+           		<tbody>
+        			<tr>
+        				<td><a href="viewCustomerConnectionDetail">10001</a></td>
+        				<td>Ravi Kuamr Rai</td>
+	          			<td>Sahu Colony</td>
+              			<td>4545454554</td>
+              			<td>02/08/2017</td>
+              			<td><a href="actionNewConnection" class="buttontext">${uiLabelMap.action}</a></td>
+           			</tr>
+           		</tbody>
+        		</table>
 	  </div>
 	</div>   
 </form>
