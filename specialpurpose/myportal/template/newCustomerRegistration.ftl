@@ -156,7 +156,7 @@
                     	<td colspan="6">
                     	<center>
                     	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail(RegisterPerson);"/>
-                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:javascript:history.go(-1);"/> 
                      	</center>
                      	</td>
                     </tr>
