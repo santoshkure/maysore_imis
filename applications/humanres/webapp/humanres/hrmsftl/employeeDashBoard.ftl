@@ -17,13 +17,112 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <#-- End -->
 
-	<div class="row">
+<style>
+	DIV.row{
+		background:transparent;
+	}
+</style>
+	<div class="row" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;">
     	<div class="alert alert-info">
     		<ul>
 	      		<div><b>Employee Dash Board</b></div> 
       		</ul>
       	</div>
 		</br>
+		<#-- Top Panel -->
+		<div id="page-wrapper">
+        	<div class="row">
+            	<div class="col-lg-3 col-md-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-handshake-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>Total Issued Connection</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"><a href="connectionDetails">View Details</a></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tint fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>Water Supply</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-user-circle fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">124</div>
+                                    <div>Total Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"><a href="customerDeatil">View Details</a></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-list-alt fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">124</div>
+                                    <div>Total Revenue Collection</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+		</div>
 		<#-- Services Part for Employee and Admin -->
    		<div class="col-md-3">
    			<div class="alert alert-info">
@@ -61,16 +160,16 @@
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
 					</li>
 					<li>
-						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change/Replacement Request</a>
+						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change Details</a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance Application </a>
+						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance Details </a>
 					</li>
 					<li>
-						<a href="complaintRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint </a>
+						<a href="complaintRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint Details</a>
 					</li>
 					<li>
-						<a href="khataChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request </a>
+						<a href="khataChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Details </a>
 					</li>
 					<li>
 						<a href="RtiApplyDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application Details </a>
