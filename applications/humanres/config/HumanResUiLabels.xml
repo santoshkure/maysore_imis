@@ -3408,9 +3408,6 @@
     <property key="searchCustomer">
         <value xml:lang="en">Search Customer</value>
     </property>
-    <property key="listCustomerDetail">
-        <value xml:lang="en">Customer Detail List</value>
-    </property>
     <property key="customerId">
         <value xml:lang="en">Customer Id</value>
         <value xml:lang="kn">Customer Id</value>
@@ -3482,10 +3479,6 @@
       
     <!-- Added By Shubham Malviya On 03/08/2017 -->
     
-    <property key="listCustomerDetail">
-        <value xml:lang="en">List Customer Detail</value>
-        <value xml:lang="kn">List Customer Detail</value>
-    </property>
     <property key="applyDate">
         <value xml:lang="en">Apply Date</value>
         <value xml:lang="kn">Apply Date</value>
@@ -3506,7 +3499,7 @@
         <value xml:lang="en">Search Connection Request</value>
         <value xml:lang="kn">Search Connection Request</value>
     </property>
-    <property key="listCustomerDetail">
+    <property key="listCustomerRequestDetail">
         <value xml:lang="en">List Connection Request Detail</value>
         <value xml:lang="kn">List Connection Request Detail</value>
     </property>
@@ -3675,8 +3668,8 @@
         <value xml:lang="kn">Complaint Apply Date</value>
     </property>
     <property key="complaintType">
-        <value xml:lang="en">List Request Compliant</value>
-        <value xml:lang="kn">ComplaintType</value>
+        <value xml:lang="en">Complaint Type</value>
+        <value xml:lang="kn">Complaint Type</value>
     </property>
     <property key="listRequestComplaint">
         <value xml:lang="en">List Request Compliant</value>
@@ -3767,6 +3760,54 @@
         <value xml:lang="kn">Action Bill Correction Detail</value>
     </property>
     
+    <property key="actionRegistrationDetail">
+        <value xml:lang="en">Action Registration Detail</value>
+        <value xml:lang="kn">Action Registration Detail</value>
+    </property>
+    <property key="registrationDetail">
+        <value xml:lang="en">Registration Detail</value>
+        <value xml:lang="kn">Registration Detail</value>
+    </property>
+    <property key="listConnectionDetail">
+        <value xml:lang="en">List Connection Detail</value>
+        <value xml:lang="kn">List Connection Detail</value>
+    </property>
+    <property key="complaintNo">
+        <value xml:lang="en">Complaint No</value>
+        <value xml:lang="kn">Complaint No</value>
+    </property>
+    <property key="complaintDescription">
+        <value xml:lang="en">Complaint Description</value>
+        <value xml:lang="kn">Complaint Description</value>
+    </property>
+    <property key="correctionNo">
+        <value xml:lang="en">Correction No</value>
+        <value xml:lang="kn">Correction No</value>
+    </property>
+     <property key="replyDetail">
+        <value xml:lang="en">Reply Detail</value>
+        <value xml:lang="kn">Reply Detail</value>
+    </property>
+    <property key="replyInformation">
+        <value xml:lang="en">Reply Information</value>
+        <value xml:lang="kn">Reply Information</value>
+    </property>
+     <property key="rtiStatus">
+        <value xml:lang="en">RTI status</value>
+        <value xml:lang="kn">RTI status</value>
+    </property>
+    <property key="bplCardNo">
+        <value xml:lang="en">BPL card No.</value>
+        <value xml:lang="kn">BPL card No.</value>
+    </property>
+    <property key="uploadBplCard">
+        <value xml:lang="en">upload copy of BPL card</value>
+        <value xml:lang="kn">upload copy of BPL card</value>
+    </property>
+    <property key="rtiReplyDetail">
+        <value xml:lang="en">RTI Reply Detail</value>
+        <value xml:lang="kn">RTI Reply Detail</value>
+    </property>
     <!-- End -->
     
 </resource>

@@ -1418,6 +1418,16 @@ under the License.
         <response name="success" type="view" value="actionBillCorrection"/>
     </request-map>
     
+    <request-map uri="viewCustomerConnectionActionDetail">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="viewCustomerConnectionActionDetail"/>
+    </request-map>
+    
+    <request-map uri="EntitySQLProcessorEmpDashboard">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="EntitySQLProcessorEmpDashboard"/>
+    </request-map>
+    
     <!-- ==========end==================  -->
     
     <!-- ===================Lookup Request===================== -->
@@ -1622,5 +1632,7 @@ under the License.
 		 <view-map name="actionRtiRequestDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionRtiRequestDetail"/>
 		 <view-map name="viewBillCorrectionRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewBillCorrectionRequest"/>
 		 <view-map name="actionBillCorrection" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionBillCorrection"/>
-        
+        <view-map name="viewCustomerConnectionActionDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewCustomerConnectionActionDetail"/>
+        <view-map name="EntitySQLProcessorEmpDashboard" type="screen" page="component://humanres/widget/EmployeeScreens.xml#EntitySQLProcessorEmpDashboard"/>
+                
 </site-conf>
