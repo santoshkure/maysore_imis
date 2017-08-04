@@ -1529,6 +1529,50 @@ under the License.
         </section>
     </screen>
     
+    <screen name="viewCustomerConnectionActionDetail">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewCustomerConnectionActionDetail.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+    <screen name="EntitySQLProcessorEmpDashboard">
+        <section>
+           <actions>
+                <set field="titleProperty" value="PageTitleEntitySQLProcessor"/>
+                <set field="tabButtonItem" value="EntitySQLProcessor"/>
+                <set field="labelTitleProperty" value="PageTitleEntitySQLProcessor"/>
+                <set field="sqlCommand" from-field="parameters.sqlCommand"/>
+                <set field="selGroup" from-field="parameters.group"/>
+                <set field="rowLimit" from-field="parameters.rowLimit" type="Integer"/>
+                <set field="parameters.TRANSACTION_TIMEOUT" value="7200"/>
+
+                <script location="component://webtools/groovyScripts/entity/EntitySQLProcessor.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                   <decorator-section name="body">
+                        <include-form name="EntitySQLCommandEmpDashBoard" location="component://humanres/widget/forms/EmployeeForms.xml"/>
+                        <platform-specific>
+                            <html><html-template location="component://humanres/webapp/humanres/hrmsftl/EntitySQLProcessorEmpDashboard.ftl"/></html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
     <!-- End -->
     
 </screens>
