@@ -9,13 +9,14 @@
 <#--This ftl is used to Register New Customer By Department Person .-->
 
 <#setting locale="en">
-    
+
+    <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
     <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">Register New Customer</span></div>
-    <script language="javascript" src="/images/jquery/plugins/validate/additional-methods.js"  type="text/javascript"></script>
     <form method="post" name="RegisterPerson" action="" class="basic-form">
     <div class="row">
 	    <div class="alert alert-info">
 		    <ul>
+		    	<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
 		    	<div class="h3" align="center"><b>${uiLabelMap.registerationDetail}</b></div> 
 			</ul>
 		</div>
@@ -23,7 +24,7 @@
             <table cellspacing="0" class="basic-table table-responsive">
                 <tbody>
                 	<tr>
-	                	<td colspan="4"><font color="blue">${uiLabelMap.PersonalDetail}</font></td>
+	                	<td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
 	                	<td colspan="2"><font color="blue"><u><i>${uiLabelMap.noteMandatoryAsterisk}</i></u></font color></td>
                 	</tr>
                     <tr>
@@ -61,7 +62,7 @@
                          <td>
                          <input type="radio" name="gender" value="male"> ${uiLabelMap.CommonMale} <input type="radio" name="gender" value="female"> ${uiLabelMap.CommonFemale} <input type="radio" name="gender" value="other"> Other  
 				   </td>
-				   <td class="label">${uiLabelMap.maritalStatus}</td>
+				   <td class="label">${uiLabelMap.maritalStatusOption}</td>
 				   <td><select name="maritalStatus" >
 				                   <option value="">Select</option>
 				                  <option value="single">${uiLabelMap.PartyMaritalStatusSingle}</option>
@@ -98,7 +99,7 @@
                         </td>
                     </tr>
                     
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.CurrentAddress}</font></td></tr>
+                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.OrderAddress}</td>
@@ -162,7 +163,7 @@
                     <tr>
                     	<td colspan="6"><center>
                     	<input name="save"   type="button" value="Save" onClick="javascript:saveRegistrationDetail(RegisterPerson);"/>
-                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:javascript:history.go(-1);"/> 
                      </center></td>
                     </tr>
                     

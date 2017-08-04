@@ -21,11 +21,8 @@
              <tbody>
               
                 <tr>
-                    <td class="label">${uiLabelMap.meterId}</td>
-                    <td>10001</td>
-                    
-                     <td class="label">${uiLabelMap.meterNo}</td>
-                    <td>M1000101</td>
+                    <td class="label">${uiLabelMap.meterNo}</td>
+                    <td colspan="5">10001</td>
                   </tr>
                   
                   <tr>

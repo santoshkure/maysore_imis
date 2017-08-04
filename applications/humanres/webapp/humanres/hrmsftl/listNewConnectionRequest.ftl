@@ -14,14 +14,15 @@
 	<div class="row">
 		<div class="alert alert-info">
 		    <ul>
-		 	 <div class="h3" align="center"><b>${uiLabelMap.listNewConnectionRequest}</b></div> 
+		 	 <div class="h3" align="center"><b>${uiLabelMap.listCustomerRequestDetail}</b></div> 
 		   </ul>
 	   </div>
 		<div class="screenlet-body">
 		 <table class="basic-table hover-bar" cellspacing="0">
 		 <thead>
         	<tr class="header-row-2">
-              <td>${uiLabelMap.customerId}</td>
+        	  <td>${uiLabelMap.sno}</td>
+              <td>${uiLabelMap.customerNo}</td>
 	          <td>${uiLabelMap.customerName}</td>
 	          <td>${uiLabelMap.customerAddress}</td>
               <td>${uiLabelMap.contact}</td>
@@ -32,6 +33,7 @@
           </thead>
            		<tbody>
         			<tr>
+        				<td>1</td>
         				<td><a href="viewCustomerConnectionDetail">10001</a></td>
         				<td>Ravi Kuamr Rai</td>
 	          			<td>Sahu Colony</td>

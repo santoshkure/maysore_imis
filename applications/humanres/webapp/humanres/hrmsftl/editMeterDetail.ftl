@@ -13,6 +13,7 @@
     <div class="row">
     <div class="alert alert-info">
   <ul>
+  <li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   <div class="h3" align="center"><b>${uiLabelMap.editMeterDetail}</b></div> 
 </ul>
 </div>
@@ -75,14 +76,29 @@
                      <tr>
                     	<td colspan="4">
                     	<center>
-                    	<input name="update"   type="submit" value="${uiLabelMap.CommonUpdate}"/>
+                    	<input name="edit"   type="button" value="${uiLabelMap.CommonEdit}" onClick="javascript:actionBillCorrection();"/>
                     	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
                      	</center>
-                     	</td>
-                     </tr>
-                    
-                </tbody>
-             </table>
-        </div>
-     </div>
+                     	</tr>
+                     	
+         			</tbody>
+       			</table>	
+    	</div>
 </form>
+
+<script type="text/javascript" language="javascript">
+
+function actionBillCorrection(editMeterDetail)
+   {
+		      var form=document['editMeterDetail'];
+		      
+		      var sure = confirm("Are you sure, you want to Update the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>registerMeterDetails</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+    </script>

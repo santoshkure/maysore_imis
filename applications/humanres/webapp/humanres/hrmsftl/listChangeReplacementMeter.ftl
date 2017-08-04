@@ -21,9 +21,10 @@
 			<table class="basic-table hover-bar" cellspacing="0">
 			<thead>
         		<tr class="header-row-2">
+        			<td>${uiLabelMap.sno}</td>
         	  		<td>${uiLabelMap.meterChangeApplicationNo}</td>
         	  		<td>${uiLabelMap.meterNo}</td>
-        	  		<td>${uiLabelMap.customerId}</td>
+        	  		<td>${uiLabelMap.customerNo}</td>
 	          		<td>${uiLabelMap.requestForMeter}</td>
              		<td>${uiLabelMap.dateOfApply}</td>
             		<td>${uiLabelMap.action}</td>
@@ -32,6 +33,7 @@
            
        		 <tbody>
 				<tr>
+					<td>1</td>
         			<td><a href="viewMeterChangeRequest">MCAN10001</a></td>
         			<td><a href="viewMeterDetail">M10001</a></td>
         			<td><a href="viewCustomerRegiApproveDetail">10001</a></td>

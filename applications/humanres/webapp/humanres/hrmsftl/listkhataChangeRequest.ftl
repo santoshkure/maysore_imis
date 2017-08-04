@@ -21,9 +21,9 @@
 			<table class="basic-table hover-bar" cellspacing="0">
 				<thead>
         			<tr class="header-row-2">
-        	  			<td>${uiLabelMap.khataChangeId}</td>
+        				<td>${uiLabelMap.sno}</td>
               			<td>${uiLabelMap.khataChangeNo}</td>
-	          			<td>${uiLabelMap.consumerId}</td>
+	          			<td>${uiLabelMap.customerNo}</td>
 	          			<td>${uiLabelMap.applyDate}</td>
             			<td>${uiLabelMap.action}</td>
            			</tr>
@@ -31,9 +31,9 @@
 				</thead>
        		 	<tbody>
 					<tr>
+						<td>1</td>
         				<td><a href="viewKhataChangeDetail">KCID10001</a></td>
-        				<td>KCNO10001</td>
-	          			<td>10001</td>
+	          			<td><a href="viewCustomerRegiApproveDetail">10001</a></td>
               			<td>02/08/2017</td>
               			<td><a href="actionKhataChange" class="buttontext">${uiLabelMap.action}</a></td>
            			</tr>

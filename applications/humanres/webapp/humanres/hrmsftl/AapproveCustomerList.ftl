@@ -21,6 +21,7 @@
 		 		<table class="basic-table hover-bar" cellspacing="0">
 		 		<thead>
         			<tr class="header-row-2">
+        				<td>${uiLabelMap.sno}</td>
 	          			<td>${uiLabelMap.customerName}</td>
 	          			<td>${uiLabelMap.customerAddress}</td>
               			<td>${uiLabelMap.Contact}</td>
@@ -30,6 +31,7 @@
            		</thead>
            		<tbody>
         			<tr>
+        				<td>1</td>
         				<td><a href="viewCustomerRegistrationDetail">Ravi Kuamr Rai</a></td>
 	          			<td>Sahu Colony</td>
               			<td>4545454554</td>

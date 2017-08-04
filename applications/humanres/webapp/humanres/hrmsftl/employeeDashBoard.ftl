@@ -85,7 +85,7 @@
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> User Permission </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Query Engine </a>
+						<a href="EntitySQLProcessorEmpDashboard"><i class="fa fa-arrow-right" aria-hidden="true"></i> Query Engine </a>
 					</li>
 					<li>
 						<a href="billCorrectionRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Correction </a>

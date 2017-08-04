@@ -13,20 +13,21 @@
 	<div class="row">
 		<div class="alert alert-info">
 		    <ul>
-		 	 <div class="h3" align="center"><b>${uiLabelMap.listCustomerDetail}</b></div> 
+		 	 <div class="h3" align="center"><b>${uiLabelMap.listConnectionDetail}</b></div> 
 		   </ul>
 	   </div>
 	   	<div class="screenlet-body">
 			<table class="basic-table hover-bar" cellspacing="0">
 				<thead>
         			<tr class="header-row-2">
+        				<td>${uiLabelMap.sno}</td>
         	  			<td>Connection No</td>
-              			<td>${uiLabelMap.customerId}</td>
+              			<td>${uiLabelMap.customerNo}</td>
 	          			<td>${uiLabelMap.customerName}</td>
 	          			<td>Connection Type</td>
              			<td>${uiLabelMap.contact}</td>
              			<td>${uiLabelMap.applyDate}</td>
-            			<td>${uiLabelMap.approveDate}</td>
+            			<td>${uiLabelMap.actionDate}</td>
             			<td>${uiLabelMap.CommonStatus}</td>
             			<td>${uiLabelMap.CommonEdit}</td>
            			</tr>
@@ -34,8 +35,9 @@
 				
 			<tbody>
 					<tr>
-        				<td><a href="viewCustomerConnectionDetail">CNMCC10001</a></td>
-        				<td><a href="">10001</a></td>
+						<td>1</td>
+        				<td><a href="viewCustomerConnectionActionDetail">CNMCC10001</a></td>
+        				<td>10001</td>
         				<td>Ravi Kumar Rai</td>
         				<td>permanent</td>
               			<td>0123345677</td>

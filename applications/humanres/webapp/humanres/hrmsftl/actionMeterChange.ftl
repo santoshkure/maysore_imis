@@ -14,6 +14,7 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  			<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>Action Meter Change Detail</b></div> 
 			</ul>
 		</div>
@@ -98,12 +99,30 @@
                   		<tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="Action"   type="submit" value="${uiLabelMap.action}"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:meterChangeAction(actionMeterChange);"/>
+                    	<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:meterChangeAction(actionMeterChange);"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onClick="javascript:javascript:history.go(-1);"/> 
                      	</center>
-                     	</tr>
+                     	</td>
+                    </tr>
                      	
          			</tbody>
        			</table>	
     	</div>
 </form>
+
+<script>
+function meterChangeAction(actionMeterChange)
+   {
+		      var form=document['actionMeterChange'];
+		      
+		      var sure = confirm("Are you sure, you want to Save the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+</script>

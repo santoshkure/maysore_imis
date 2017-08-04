@@ -21,8 +21,9 @@
 		 		<table class="basic-table hover-bar" cellspacing="0">
 		 			</thead>
         				<tr class="header-row-2">
+        					<td>${uiLabelMap.sno}</td>
 	          				<td>${uiLabelMap.listRtiRequest}</td>
-	          				<td>${uiLabelMap.customerId}</td>
+	          				<td>${uiLabelMap.customerNo}</td>
               				<td>${uiLabelMap.applyDate}</td>
               				<td>${uiLabelMap.action}</td>
            				</tr>
@@ -30,8 +31,9 @@
            			
        		 		<tbody>
 						<tr>
+							<td>1</td>
         					<td><a href="viewRtiDetail">KCID10001</a></td>
-        					<td>Ravi Kumar Rai</td>
+        					<td><a href="viewCustomerRegiApproveDetail">10001</a></td>
 	          				<td>02/08/2017</td>
               				<td><a href="actionRtiRequestDetail" class="buttontext">${uiLabelMap.action}</a></td>
            				</tr>

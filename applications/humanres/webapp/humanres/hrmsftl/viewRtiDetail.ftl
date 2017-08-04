@@ -14,6 +14,7 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  			<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>${uiLabelMap.viewRtiDetail}</b></div> 
 			</ul>
 		</div>
@@ -76,15 +77,15 @@
                      </tr>
                      
                      <tr>
-                     	<td class='label'>RTI status</td>
+                     	<td class='label'>${uiLabelMap.rtiStatus}</td>
                     	<td>status</td>
                     	
-                     	<td class='label'>BPL card No.</td>
+                     	<td class='label'>${uiLabelMap.bplCardNo}</td>
                     	<td>1234 4567 7894</td>
                      </tr>
                      
                      <tr>
-                     	<td class='label'>upload copy of BPL card</td>
+                     	<td class='label'>${uiLabelMap.uploadBplCard}</td>
                     	<td>Online.doc</td>
                      </tr>
             </tbody>

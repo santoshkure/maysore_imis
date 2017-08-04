@@ -13,6 +13,7 @@
 <div class="row">
     <div class="alert alert-info">
   		<ul>
+  		<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   		<div class="h3" align="center"><b>${uiLabelMap.searchMeterChangeReplacementRequest}</b></div> 
 		</ul>
 	</div>
@@ -20,16 +21,16 @@
         <table class="basic-table" cellspacing="0">
         
         	 <tr>
-              	<td class="label">${uiLabelMap.meterNo}</td>
-             	<td><input type="text" name="nameOfCustomer" value="" style="width:240px;" maxlength="50"></td>
+              	<td class="label">${uiLabelMap.meterChangeApplicationNo}</td>
+             	<td><input type="text" name="meterNo" value="" style="width:240px;" maxlength="50"></td>
              	
-             	<td class="label">${uiLabelMap.customerId}</td>
-             	<td><input type="text" name="customerId" value="" style="width:240px;" maxlength="50"></td>
+             	<td class="label">${uiLabelMap.customerNo}</td>
+             	<td><input type="text" name="customerNo" value="" style="width:240px;" maxlength="50"></td>
 			 </tr>
 			 
 			 <tr>
               	<td class="label">${uiLabelMap.requestForMeter}</td>
-             	<td><select name="requestMeter" style="width:90px;">
+             	<td><select name="requestForMeter" style="width:90px;">
                    <option value="">Select</option>
                    <option value="Change">Meter Change</option>
                    <option value="Replacement">Replacement</option>
