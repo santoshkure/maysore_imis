@@ -272,4 +272,282 @@
         <value xml:lang="zh">门户页面管理</value>
         <value xml:lang="zh-TW">入口網頁面管理</value>
     </property>
+    
+     <property key="billhistory">
+        <value xml:lang="en">View Bill History</value>
+    </property>
+    <property key="searchRTIApp">
+        <value xml:lang="en">Search RTI Application Details</value>
+    </property>
+    <property key="updatePersonalDetails">
+        <value xml:lang="en">Update Personal Details</value>
+    </property>
+     <property key="meterNumber">
+        <value xml:lang="en">Meter Number</value>
+    </property>
+     <property key="billDate">
+        <value xml:lang="en">Bill Date</value>
+    </property>
+     <property key="billReading">
+        <value xml:lang="en">Bill Reading</value>
+    </property>
+     <property key="unitReading">
+        <value xml:lang="en">Unit of Reading</value>
+    </property>
+     <property key="billAmount">
+        <value xml:lang="en">Bill amount</value>
+    </property>
+    <property key="billPayment">
+        <value xml:lang="en">Bill Payment</value>
+    </property>
+     <property key="emailId">
+        <value xml:lang="en">Email id</value>
+    </property>
+    <property key="paymentAmount">
+        <value xml:lang="en">Payable amount</value>
+    </property>
+    <property key="paidAmount">
+        <value xml:lang="en">Paid Amount</value>
+    </property>
+    <property key="paymentRefNo">
+        <value xml:lang="en">Payment refrence No.</value>
+    </property>
+    <property key="paymentStatus">
+        <value xml:lang="en">Payment Status</value>
+    </property>
+    <property key="paymentMode">
+        <value xml:lang="en">Payment Mode</value>
+    </property>
+    <property key="accountCardNo">
+        <value xml:lang="en">Account No./Card No.</value>
+    </property>
+    <property key="bankWalletName">
+        <value xml:lang="en">Bank/wallet name</value>
+    </property>
+    <property key="dateofPayment">
+        <value xml:lang="en">Date of Payment</value>
+    </property>
+     <property key="makePayment">
+        <value xml:lang="en">Make Payment</value>
+    </property>
+    <property key="billCalculator">
+        <value xml:lang="en">Bill Calculator</value>
+    </property>
+    <property key="previousBillReading">
+        <value xml:lang="en">Previous Bill Reading</value>
+    </property>
+    <property key="currentBillReading">
+        <value xml:lang="en">Current Bill Reading</value>
+    </property>
+    <property key="RTIApplicationList">
+        <value xml:lang="en">RTI Application List</value>
+    </property>
+ <!-- Added By Anubha On 03/08/2017 For Connection Detail -->
+    <property key="connectionApply">
+        <value xml:lang="en">Apply Connection</value>
+    </property>
+    <property key="assentialDocument">
+        <value xml:lang="en">Assential Document</value>
+    </property>
+    <property key="feeForConnection">
+        <value xml:lang="en">Fee For Connection</value>
+    </property>
+    <property key="feeStatus">
+        <value xml:lang="en">Fee Status</value>
+    </property>
+    <property key="connectionNo">
+        <value xml:lang="en">Connection No.</value>
+    </property>
+    <property key="customerNo">
+        <value xml:lang="en">Customer No.</value>
+    </property>
+     <property key="connectionStatus">
+        <value xml:lang="en">Connection Status</value>
+    </property>
+    <property key="editConnection">
+        <value xml:lang="en">Edit Connection</value>
+    </property>
+    <property key="connectionCategory">
+        <value xml:lang="en">Category of water use</value>
+    </property>
+     <property key="disconnectionApply">
+        <value xml:lang="en">Apply for Disconnection</value>
+    </property>
+     
+     <property key="ConnectionList">
+        <value xml:lang="en">Connection List</value>
+    </property>
+    <property key="searchConnection">
+        <value xml:lang="en">Search Connection</value>
+    </property>
+    <property key="applicationDate">
+        <value xml:lang="en">Application Date</value>
+    </property>
+     <property key="reasoneForDisconnection">
+        <value xml:lang="en">Reasone For Disconnection</value>
+    </property>
+    <property key="dueAmount">
+        <value xml:lang="en">Due Amount</value>
+    </property>
+     <property key="applicationType">
+        <value xml:lang="en">Application Type</value>
+    </property>
+    <property key="typeOfBuilding">
+        <value xml:lang="en">Type Of Building</value>
+    </property>
+     <property key="changeKhata">
+        <value xml:lang="en">Apply for Khata Change</value>
+    </property>
+    <property key="oldConnectionDetail">
+        <value xml:lang="en">Connection Old Details</value>
+    </property>
+    <property key="newchangeKhata">
+        <value xml:lang="en">New Khata Information</value>
+    </property>
+    <property key="newKhataId">
+        <value xml:lang="en">New Khata Number</value>
+    </property>
+    <property key="newKhataId">
+        <value xml:lang="en">New Khata ID</value>
+    </property>
+     <property key="khattaList">
+        <value xml:lang="en">Khata List</value>
+    </property>
+    <property key="changeKhata">
+        <value xml:lang="en">Change Khata</value>
+    </property>
+    <property key="searchKhata">
+        <value xml:lang="en">Search Khata</value>
+    </property>
+    <!-- ============End============= -->
+ <!-- Added By nikhil On 04/08/2017 -->
+   <property key="billDetail">
+        <value xml:lang="en">Bill Correction Details</value>
+    </property>
+     <property key="billCorrectionNo">
+        <value xml:lang="en">Bill Correction No.</value>
+    </property>
+    
+     <property key="billId">
+        <value xml:lang="en">Bill Id</value>
+    </property>
+    
+      <property key="issueDetails">
+        <value xml:lang="en">Issue Details</value>
+    </property>
+      <property key="billCorrectionApplyDate">
+        <value xml:lang="en">Bill Correction Apply Date</value>
+    </property>
+      <property key="complaintDescription">
+        <value xml:lang="en">Complaint Description</value>
+    </property>
+    <property key="complaintDate">
+        <value xml:lang="en">Complaint Date</value>
+    </property>
+     <property key="complaintType">
+        <value xml:lang="en">Complaint Type</value>
+    </property>
+     <property key="registerComplaint">
+        <value xml:lang="en">Register Complaint Details</value>
+    </property>
+    <property key="editRegisterComplaint">
+        <value xml:lang="en">Edit Complaint Details</value>
+    </property>
+     <property key="createBillCorrection">
+        <value xml:lang="en">Create Bill Correction Details</value>
+    </property>
+    <property key="editBillCorrection">
+        <value xml:lang="en">Edit Bill Correction Details</value>
+    </property>
+    <property key="searchBillDetail">
+        <value xml:lang="en">Search Bill Correction Details</value>
+    </property>
+     <property key="billCorrectionList">
+        <value xml:lang="en"> Bill Correction List</value>
+    </property>
+    <property key="complaintNo">
+        <value xml:lang="en">Complaint No.</value>
+    </property>
+    <property key="complainRegister">
+        <value xml:lang="en">Search Complaint Details</value>
+    </property>
+     <property key="registerComplainList">
+        <value xml:lang="en">Register Complaint List</value>
+    </property>
+    <property key="applyForJob">
+        <value xml:lang="en">Search Apply For Job Details</value>
+    </property>
+    <property key="applyForJobList">
+        <value xml:lang="en">Apply For Job List</value>
+    </property>
+    <property key="createApplyForJob">
+        <value xml:lang="en"> Create Apply For Job </value>
+    </property>
+     <property key="typeOfJob">
+        <value xml:lang="en"> Type Of Job </value>
+    </property>
+    
+    <property key="feeAmount">
+        <value xml:lang="en">Fee Amount</value>
+    </property>
+     <property key="serviceAddress">
+        <value xml:lang="en">Service Address</value>
+    </property>
+     <property key="serviceDate">
+        <value xml:lang="en">Service Date</value>
+    </property>
+     <property key="serviceTime">
+        <value xml:lang="en">Service Time</value>
+    </property>
+    <property key="editApplyForJob">
+        <value xml:lang="en">Edit Apply For Job</value>
+    </property>
+     <property key="applicantName">
+        <value xml:lang="en">Applicant Name</value>
+    </property>
+     <property key="applicantEmail">
+        <value xml:lang="en">Applicant Email</value>
+    </property>
+     <property key="applicantContactNo">
+        <value xml:lang="en">Applicant Contact No.</value>
+    </property>
+    <property key="applicantAddress">
+        <value xml:lang="en">Applicant Address</value>
+    </property>
+    <property key="neededInformation">
+        <value xml:lang="en">Nedded Information</value>
+    </property>
+    <property key="supportingDocument">
+        <value xml:lang="en">Supporting Document if any</value>
+    </property>
+     <property key="uploadCopyOfBPLCard">
+        <value xml:lang="en">Upload Copy Of BPL Card</value>
+    </property>
+     <property key="applicationChallanRefrenceNo">
+        <value xml:lang="en">Application Challan Refrence no.</value>
+    </property>
+      <property key="applicationBank">
+        <value xml:lang="en">Application Bank/Postoffice/teasury name</value>
+    </property>
+     <property key="uploadChallan">
+        <value xml:lang="en">Application copy of challan for upload if available</value>
+    </property>
+     <property key="RTIApplication">
+        <value xml:lang="en">Create RTI Application</value>
+    </property>
+     <property key="RTIRefNo">
+        <value xml:lang="en">RTI refrence No</value>
+    </property>
+     <property key="modeOfPayment">
+        <value xml:lang="en">Mode Of Payment</value>
+    </property>
+    <property key="RTIStatus">
+        <value xml:lang="en">RTI status</value>
+    </property>
+    <property key="BPLCardNo">
+        <value xml:lang="en">BPL card No.</value>
+    </property>
+    <property key="editRTIApplication">
+        <value xml:lang="en">Edit RTI Application</value>
+    </property>
 </resource>

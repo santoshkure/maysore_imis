@@ -112,5 +112,419 @@ under the License.
             </widgets>
         </section>
     </screen>
+   <screen name="billhistory">
+        <section>
+            <actions>
+             <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
+             <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/billHistory.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="updatecustomerdetails">
+        <section>
+            <actions>
+             <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
+             <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/updateCustomerDetails.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+     <screen name="billpayment">
+        <section>
+            <actions>
+             <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
+             <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/billPayment.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="billcalculator">
+        <section>
+            <actions>
+             <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
+             <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/billCalcultor.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="RTIappdetails">
+        <section>
+            <actions>
+             <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
+             <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/searchRTIDetails.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="editRTIDetails">
+        <section>
+            <actions>
+             <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
+             <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                            
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/editRTIDetails.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+ <!-- ==============added by Anubha Saini for Coustomer Service on 02/08/2017 ================-->
+    <screen name="connectionApplyPage">
+        <section>
+            <actions>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<!-- <html-template location="component:///myportal/webapp/myportal/myPortalftl/commonPage.ftl"/> -->
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/connectionApplyPage.ftl"/>
+                    			
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="searchConnectionApply">
+        <section>
+            <actions>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/searchConnectionApplyPage.ftl"/>	
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/listConnectionApplyPage.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="editConnectionApply">
+        <section>
+            <actions>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/editConnectionApply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="disconnectionApply">
+        <section>
+            <actions>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<!-- <html-template location="component:///myportal/webapp/myportal/myPortalftl/commonPage.ftl"/> -->
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/disconnectionApplyPage.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="kattaChangeRequest">
+        <section>
+            <actions>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<!-- <html-template location="component:///myportal/webapp/myportal/myPortalftl/commonPage.ftl"/> -->
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/kattaChangeRequest.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+     <screen name="searchKattaChange">
+        <section>
+            <actions>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<!-- <html-template location="component:///myportal/webapp/myportal/myPortalftl/commonPage.ftl"/> -->
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/searchKattaChange.ftl"/>	
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/listKattaChange.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+   <!--  =============END================== --> 
+
+<!-- Added By Nikhil  For customer bill correction -->
+    <screen name="searchbillcorrection">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/searchbillcorrection.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="editbillcorrectiondetail">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/editbillcorrection.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="createcustomerbillcorrection">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createcustomerbillcorrection.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+     <!-- Added By Nikhil  For complain register -->
+    <screen name="searchcomplainregister">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/searchRegistercomplain.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="createregisterComplain">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createRegisterComplain.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <screen name="editregistercomplain">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/editRegisterComplain.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <!-- Added By Nikhil  For apply for job -->  
+    <screen name="searchapplyforjob">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/searchApplyForJob.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+     <screen name="createapplyforjob">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createApplyForJob.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="editapplyforjob">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/editApplyForJob.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>  
+    <!-- ADDED By Nikhil for RTI application  -->
+     <screen name="createRTIapplication">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createRTIapplication.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
     
 </screens>
