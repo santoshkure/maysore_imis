@@ -3543,7 +3543,7 @@
         <value xml:lang="en">Search Connection Detail</value>
         <value xml:lang="kn">Search Connection Detail</value>
     </property>
-    <property key="searchConnectionDetail">
+    <property key="searchMeterDetail">
         <value xml:lang="en">Search Meter Detail</value>
         <value xml:lang="kn">Search Meter Detail</value>
     </property>
