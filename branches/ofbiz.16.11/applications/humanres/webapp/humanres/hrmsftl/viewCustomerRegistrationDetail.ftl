@@ -14,6 +14,7 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>View Registration Detail</b></div> 
 			</ul>
 		</div>

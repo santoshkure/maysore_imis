@@ -13,16 +13,17 @@
 <div class="row">
     <div class="alert alert-info">
   		<ul>
+  		<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   		<div class="h3" align="center"><b>${uiLabelMap.searchRequestCompliant}</b></div> 
 		</ul>
 	</div>
 	<div class="screenlet-body">
         <table class="basic-table" cellspacing="0">
         	 <tr>
-              	<td class="label">${uiLabelMap.complaintId}</td>
-             	<td><input type="text" name="complaintId" value="" style="width:240px;" maxlength="50"></td>
-             	<td class="label">${uiLabelMap.consumerId}</td>
-             	<td><input type="text" name="consumerId" value="" style="width:240px;" maxlength="50"></td>
+              	<td class="label">${uiLabelMap.complaintNo}</td>
+             	<td><input type="text" name="compiantNo" value="" style="width:240px;" maxlength="50"></td>
+             	<td class="label">${uiLabelMap.customerNo}</td>
+             	<td><input type="text" name="customerNo" value="" style="width:240px;" maxlength="50"></td>
 			 </tr>
 			 <tr>
               	<td class="label">${uiLabelMap.compliantApplyDate}</td>

@@ -1,5 +1,5 @@
 <#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
-<#---Program Name: viewCustomerRegiApproveDetail.ftl----->
+<#---Program Name: viewCustomerConnectionActionDetail.ftl----->
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
@@ -10,12 +10,12 @@
 
 <#setting locale="en">
     
-    <form method="post" name="viewCustomerRegiApproveDetail" action="" class="basic-form">
+    <form method="post" name="viewCustomerConnectionActionDetail" action="" class="basic-form">
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
   				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
-  				<div class="h3" align="center"><b>${uiLabelMap.viewRegistrationDetail}</b></div> 
+  				<div class="h3" align="center"><b>${uiLabelMap.viewConnectionDetail}</b></div> 
 			</ul>
 		</div>
         <table cellspacing="0" class="basic-table table-responsive">
@@ -23,8 +23,7 @@
               
                 <tr>
                     <td class="label">${uiLabelMap.customerNo}</td>
-                    <td colspan="2">10001</td>
-                    
+                    <td colspan="5">10001</td>
                   </tr>
                   
                 <tr>
@@ -79,7 +78,7 @@
                     <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.OrderAddress}</td>
+                        <td class="label">${uiLabelMap.Address}</td>
                         <td> Sector 3, Lane No. 1 Sahu Colony Pune</td>
                         <td class="label">${uiLabelMap.houseNo}</td>
                         <td> 45/ 12</td>
@@ -114,22 +113,58 @@
                         <td>example@gmail.com</td>
                     </tr>
                    
-                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
+                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.registrationDetail}</font></td></tr>
                     
                     <tr>
-                         <td class="label">${uiLabelMap.actionDate}</td>
-                    	 <td>02/08/2017</td>
-                         <td class="label">${uiLabelMap.actionByOfficer}</td>
-                         <td> Kailash Nath Trivedi </td>
-                         <td class="label">${uiLabelMap.designation}</td>
-                         <td> EE </td>
+                     	<td class="label">${uiLabelMap.registrationDate}</td>
+                    	<td>02/08/2017</td>
+                    	<td class="label">${uiLabelMap.approveDate}</td>
+                    	<td>02/08/2017</td>
+                    	<td class="label">${uiLabelMap.actionByOfficer}</td>
+                    	<td></td>
+                    <tr>
+                    
+                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
+                   
+                   <tr>
+                        <td class="label">${uiLabelMap.connectionType}</td>
+                        <td>Domestic</td>
+                        <td class="label">${uiLabelMap.applicationType}</td>
+                        <td>Permanent</td>
+                        <td class="label">${uiLabelMap.typeOfBuilding}</td>
+                        <td>Residential buildings etc.</td>
                     </tr>
                     
-                     <tr>
-                         <td class="label">${uiLabelMap.CommonStatus}</td>
-                    	 <td> Approved </td>
-                     </tr>
-                    	 
+                    <tr>
+                        <td class="label">${uiLabelMap.applicationDate}</td>
+                        <td>02/08/2017</td>
+                        <td class="label">${uiLabelMap.assentialDoccument}</td>
+                        <td>Example.Doc</td>
+                        <td class="label">${uiLabelMap.feeForConnection}</td>
+                        <td>500</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="label">${uiLabelMap.feeStatus}</td>
+                        <td colspan="5">Paid</td>
+                    </tr>
+                    
+                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.connectionActionDetail}</font></td></tr>
+                    
+                    <tr>
+                        <td class="label">${uiLabelMap.actionDate}</td>
+                        <td>02/08/2017</td>
+                        <td class="label">${uiLabelMap.actionByOfficer}</td>
+                        <td>Kailash Nath Trivedi</td>
+                        <td class="label">${uiLabelMap.designation}</td>
+                        <td>EE</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="label">${uiLabelMap.CommonStatus}</td>
+                        <td colspan="5">Approved</td>
+                    </tr>
+                    
             </tbody>
         </table>
     </div>

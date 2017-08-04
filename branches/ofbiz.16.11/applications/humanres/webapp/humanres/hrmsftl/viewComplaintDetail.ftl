@@ -14,6 +14,7 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>${uiLabelMap.viewCompliantDetail}</b></div> 
 			</ul>
 		</div>
@@ -21,15 +22,15 @@
              <tbody>
               
                 <tr>
-                    <td class="label">${uiLabelMap.complaintId}</td>
+                    <td class="label">${uiLabelMap.complaintNo}</td>
                     <td>CID10001</td>
                     
-                     <td class="label">${uiLabelMap.ConsumerId}</td>
+                     <td class="label">${uiLabelMap.customerNo}</td>
                     <td>10001</td>
                   </tr>
                   
                   <tr>
-                  <td class="label">${uiLabelMap.connectionId}</td>
+                  <td class="label">${uiLabelMap.connectionNo}</td>
                   <td>100001</td>
                   
                    <td class="label">${uiLabelMap.complaintType}</td>

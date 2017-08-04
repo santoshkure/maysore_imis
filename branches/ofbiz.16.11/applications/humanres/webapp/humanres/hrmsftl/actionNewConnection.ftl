@@ -10,10 +10,11 @@
 
 <#setting locale="en">
     
-    <form method="post" name="actionNewCustomerDetail" action="" class="basic-form">
+    <form method="post" name="actionNewConnectionDetail" action="" class="basic-form">
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>Action Connection Detail</b></div> 
 			</ul>
 		</div>
@@ -21,11 +22,8 @@
              <tbody>
               
                 <tr>
-                    <td class="label">${uiLabelMap.customerId}</td>
-                    <td colspan="2">10001</td>
-                    
-                     <td class="label">${uiLabelMap.registrationApprovedDate}</td>
-                    <td colspan="2">02/08/2017</td>
+                    <td class="label">${uiLabelMap.customerNo}</td>
+                    <td colspan="5">10001</td>
                   </tr>
                   
                 <tr>
@@ -115,6 +113,17 @@
                         <td>example@gmail.com</td>
                     </tr>
                    
+                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.registrationDetail}</font></td></tr>
+                    
+                    <tr>
+                     	<td class="label">${uiLabelMap.registrationDate}</td>
+                    	<td>02/08/2017</td>
+                    	<td class="label">${uiLabelMap.approveDate}</td>
+                    	<td>02/08/2017</td>
+                    	<td class="label">${uiLabelMap.actionByOfficer}</td>
+                    	<td></td>
+                    <tr>
+                    
                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
                    
                    <tr>
@@ -264,10 +273,12 @@
                   		<tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="Action"   type="submit" value="${uiLabelMap.action}"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:actionConnectionDetail(actionNewConnectionDetail);"/>
+                    	<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:actionConnectionDetail(actionNewConnectionDetail);"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onClick="javascript:javascript:history.go(-1);"/> 
                      	</center>
-                     	</tr>
+                     	</td>
+                    </tr>
                      	
          			</tbody>
        			</table>	
@@ -297,4 +308,17 @@ function getActionDetails(field)
 		
 }	
 
+function actionConnectionDetail(actionNewConnectionDetail)
+   {
+		      var form=document['actionNewConnectionDetail'];
+		      
+		      var sure = confirm("Are you sure, you want to Save the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
 </script>

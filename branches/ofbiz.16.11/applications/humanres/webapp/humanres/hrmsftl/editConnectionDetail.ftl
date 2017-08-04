@@ -14,6 +14,7 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>Edit Connection Detail</b></div> 
 			</ul>
 		</div>
@@ -21,10 +22,10 @@
              <tbody>
               
                 <tr>
-                    <td class="label">${uiLabelMap.ConnectionNo}</td>
+                    <td class="label">${uiLabelMap.connectionNo}</td>
                     <td colspan="2">CNMCC10001</td>
                     
-                     <td class="label">${uiLabelMap.consumerId}</td>
+                     <td class="label">${uiLabelMap.customerNo}</td>
                     <td colspan="2">10001</td>
                   </tr>
                   
@@ -33,7 +34,7 @@
                 </tr>
                
                 <tr>
-                    <td class="label">${uiLabelMap.tital}</td>
+                    <td class="label">${uiLabelMap.CommonTitle}</td>
                     <td>Mr.</td>
                   </tr>
                   
@@ -217,7 +218,7 @@
 						</tr>
 						
                 		<tr>
-                    		<td class="label">${uiLabelMap.officerName}</td>
+                    		<td class="label">${uiLabelMap.commonOfficerName}</td>
                     		<td><input name="actionOfficerName"  type="text" maxlength="40" value=""></td>
                     
                      		<td class="label">${uiLabelMap.designation}</td>
@@ -235,12 +236,29 @@
                   		<tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="update"   type="submit" value="Update"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input name="Update"   type="button" value="${uiLabelMap.CommonUpdate}" onClick="javascript:editConnectionDetailFunc(editConnectionDetail);"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onClick="javascript:editConnectionDetailFunc(editConnectionDetail);"/> 
                      	</center>
-                     	</tr>
+                     	</td>
+                    </tr>
                      	
          			</tbody>
        			</table>	
     	</div>
 </form>
+
+    <script>
+			function editConnectionDetailFunc(editConnectionDetail)
+   			{
+		      var form=document['editConnectionDetail'];
+		      
+		      var sure = confirm("Are you sure, you want to Edit the Form ?");
+                              if( sure == true )
+                             {
+                        		form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            		form.submit();
+		                		disSubmit('disBttn');    
+		                	 } 
+    		}
+    
+    </script>

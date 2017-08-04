@@ -21,18 +21,18 @@
 		 		<table class="basic-table hover-bar" cellspacing="0">
 		 		</thead>
         				<tr class="header-row-2">
-	          				<td>${uiLabelMap.billCorrectionId}</td>
+        					<td>${uiLabelMap.sno}</td>
 	          				<td>${uiLabelMap.billCorrectionNo}</td>
-              				<td>${uiLabelMap.customerId}</td>
+              				<td>${uiLabelMap.customerNo}</td>
               				<td>${uiLabelMap.applyDate}</td>
               				<td>${uiLabelMap.action}</td>
            				</tr>
            		</thead>
        		 	<tbody>
 						<tr>
+							<td>1</td>
         					<td><a href="viewBillCorrectionRequest">BillNo10001</a></td>
-        					<td>KCNO10001</td>
-	          				<td>10001</td>
+	          				<td><a href="viewCustomerRegiApproveDetail">10001</a></td>
               				<td>02/08/2017</td>
               				<td><a href="actionBillCorrection" class="buttontext">${uiLabelMap.action}</a></td>
            				</tr>

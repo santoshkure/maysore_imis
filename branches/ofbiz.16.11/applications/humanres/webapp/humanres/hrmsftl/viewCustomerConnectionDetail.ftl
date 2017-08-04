@@ -14,6 +14,7 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>${uiLabelMap.viewConnectionDetail}</b></div> 
 			</ul>
 		</div>
@@ -21,11 +22,8 @@
              <tbody>
               
                 <tr>
-                    <td class="label">${uiLabelMap.customerId}</td>
-                    <td colspan="2">10001</td>
-                    
-                     <td class="label">${uiLabelMap.registrationApprovedDate}</td>
-                    <td colspan="2">02/08/2017</td>
+                    <td class="label">${uiLabelMap.customerNo}</td>
+                    <td colspan="5">10001</td>
                   </tr>
                   
                 <tr>
@@ -98,11 +96,11 @@
                     </tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.city}</td>
+                        <td class="label">${uiLabelMap.CommonCity}</td>
                         <td>Mysore</td>
-                        <td class="label">${uiLabelMap.state}</td>
+                        <td class="label">${uiLabelMap.CommonState}</td>
                         <td>Karnataka</td>
-                        <td class="label">${uiLabelMap.country}</td>
+                        <td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>India</td>
                     </tr>
                     
@@ -115,6 +113,17 @@
                         <td>example@gmail.com</td>
                     </tr>
                    
+                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.registrationDetail}</font></td></tr>
+                    
+                    <tr>
+                     	<td class="label">${uiLabelMap.registrationDate}</td>
+                    	<td>02/08/2017</td>
+                    	<td class="label">${uiLabelMap.approveDate}</td>
+                    	<td>02/08/2017</td>
+                    	<td class="label">${uiLabelMap.actionByOfficer}</td>
+                    	<td></td>
+                    <tr>
+                    
                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
                    
                    <tr>

@@ -10,10 +10,11 @@
 
 <#setting locale="en">
     
-    <form method="post" name="actionBillCorrection" action="" class="basic-form">
+    <form method="post" name="actionBillCorrectionDetail" action="" class="basic-form">
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>${uiLabelMap.actionBillCorrectionDetail}</b></div> 
 			</ul>
 		</div>
@@ -74,14 +75,31 @@
                      </tr>
                      
                   		<tr>
-                    	<td colspan="6">
+                    	<td colspan="4">
                     	<center>
-                    	<input name="Action"   type="submit" value="${uiLabelMap.action}"/>
+                    	<input name="action"   type="button" value="${uiLabelMap.action}" onClick="javascript:actionBillCorrection();"/>
                     	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
                      	</center>
-                     </tr>
+                     	</tr>
                      	
-        	</tbody>
-       	</table>	
-    </div>
+         			</tbody>
+       			</table>	
+    	</div>
 </form>
+
+<script type="text/javascript" language="javascript">
+
+function actionBillCorrection(actionBillCorrectionDetail)
+   {
+		      var form=document['actionBillCorrectionDetail'];
+		      
+		      var sure = confirm("Are you sure, you want to Save the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+    </script>

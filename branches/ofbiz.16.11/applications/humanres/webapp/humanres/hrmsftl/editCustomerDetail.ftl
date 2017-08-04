@@ -14,6 +14,7 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>${uiLabelMap.updateCustomerDetail}</b></div> 
 			</ul>
 		</div>
@@ -26,11 +27,9 @@
                 </tr>
                 
                 <tr>
-                    <td class="label">${uiLabelMap.customerId}</td>
-                    <td colspan="2">10001</td>
+                    <td class="label">${uiLabelMap.customerNo}</td>
+                    <td colspan="5">10001</td>
                     
-                    <td class="label">Approve Date</td>
-                    <td colspan="2">02/08/2017</td>
                   </tr>
                   
                 <tr>
@@ -160,11 +159,27 @@
                         </td>
                     </tr>
                    
+                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
+                    
+                    <tr>
+                         <td class="label">${uiLabelMap.actionDate}</td>
+                    	 <td>02/08/2017</td>
+                         <td class="label">${uiLabelMap.actionByOfficer}</td>
+                         <td> Kailash Nath Trivedi </td>
+                         <td class="label">${uiLabelMap.designation}</td>
+                         <td> EE </td>
+                    </tr>
+                    
+                    <tr>
+                         <td class="label">${uiLabelMap.CommonStatus}</td>
+                    	 <td> Approved </td>
+                     </tr>
+                     
                     <tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="Update"   type="submit" value="${uiLabelMap.CommonUpdate}"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input name="Update"   type="button" value="${uiLabelMap.CommonUpdate}" onClick="javascript:editCustomerDetailFunction(editCustomerDetail);"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" /> 
                      	</center>
                      	</td>
                     </tr>
@@ -173,3 +188,20 @@
         </table>
     </div>
 </form>
+
+<script type="text/javascript" language="javascript">
+
+function editCustomerDetailFunction(editCustomerDetail)
+   {
+		      var form=document['editCustomerDetail'];
+		      
+		      var sure = confirm("Are you sure, you want to Save the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+    </script>

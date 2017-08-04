@@ -21,7 +21,7 @@
 			<table class="basic-table hover-bar" cellspacing="0">
 			<thead>
         		<tr class="header-row-2">
-        	  		<td>${uiLabelMap.meterId}</td>
+        			<td>${uiLabelMap.sno}</td>
               		<td>${uiLabelMap.meterNo}</td>
 	          		<td>${uiLabelMap.meterCondition}</td>
 	          		<td>${uiLabelMap.meterStatus}</td>
@@ -30,8 +30,8 @@
         
        		 <tbody>
 				<tr>
+				    <td>1</td>
         			<td><a href="viewMeterDetail">10001</a></td>
-        			<td>M1000101</td>
 	          		<td>Good</td>
               		<td>Running</td>
               		<td><a href="editMeterDetail" class="buttontext">${uiLabelMap.CommonEdit}</a></td>

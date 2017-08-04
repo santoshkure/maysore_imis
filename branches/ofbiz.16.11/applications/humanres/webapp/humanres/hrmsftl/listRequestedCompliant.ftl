@@ -21,8 +21,9 @@
 			<table class="basic-table hover-bar" cellspacing="0">
 		 		<thead>
         			<tr class="header-row-2">
-        	  			<td>${uiLabelMap.complaintId}</td>
-              			<td>${uiLabelMap.consumerId}</td>
+        				<td>${uiLabelMap.sno}</td>
+        	  			<td>${uiLabelMap.complaintNo}</td>
+              			<td>${uiLabelMap.customerNo}</td>
 	          			<td>${uiLabelMap.compliantApplyDate}</td>
 	          			<td>${uiLabelMap.complaintType}</td>
             			<td>${uiLabelMap.action}</td>
@@ -31,6 +32,7 @@
            
        		 	<tbody>
 					<tr>
+						<td>1</td>
         				<td><a href="viewComplaintDetail">CID10001</a></td>
         				<td><a href="viewCustomerRegiApproveDetail">10001</a></td>
 	          			<td>02/08/2017</td>

@@ -13,6 +13,7 @@
 <div class="row">
     <div class="alert alert-info">
   		<ul>
+  		<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   		<div class="h3" align="center"><b>${uiLabelMap.searchCustomer}</b></div> 
 		</ul>
 	</div>
@@ -21,8 +22,8 @@
         	 <tr>
               	<td class="label">${uiLabelMap.customerName}</td>
              	<td><input type="text" name="nameOfCustomer" value="" style="width:240px;" maxlength="50"></td>
-             	<td class="label">${uiLabelMap.customerId}</td>
-             	<td><input type="text" name="customerId" value="" style="width:240px;" maxlength="50"></td>
+             	<td class="label">${uiLabelMap.customerNo}</td>
+             	<td><input type="text" name="customerNo" value="" style="width:240px;" maxlength="50"></td>
 			 </tr>
 			 <tr>
               	<td class="label">${uiLabelMap.fromDate}</td>

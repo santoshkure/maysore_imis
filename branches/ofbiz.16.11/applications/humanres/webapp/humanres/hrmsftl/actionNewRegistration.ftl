@@ -14,17 +14,18 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
-  				<div class="h3" align="center"><b>Action Registration Detail</b></div> 
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
+  				<div class="h3" align="center"><b>${uiLabelMap.actionRegistrationDetail}</b></div> 
 			</ul>
 		</div>
         <table cellspacing="0" class="basic-table table-responsive">
              <tbody>
                 <tr>
-	               <td colspan="4"><font color="blue">${uiLabelMap.PersonalDetail}</font></td>
+	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
                 </tr>
                 
                 <tr>
-                    <td class="label">${uiLabelMap.tital}</td>
+                    <td class="label">${uiLabelMap.CommonTitle}</td>
                     <td>Mr.</td>
                   </tr>
                   
@@ -68,7 +69,7 @@
                         <td>Indian</td>
                     </tr>
                     
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.CurrentAddress}</font></td></tr>
+                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
@@ -89,11 +90,11 @@
                     </tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.city}</td>
+                        <td class="label">${uiLabelMap.CommonCity}</td>
                         <td>Mysore</td>
-                        <td class="label">${uiLabelMap.state}</td>
+                        <td class="label">${uiLabelMap.CommonState}</td>
                         <td>Karnataka</td>
-                        <td class="label">${uiLabelMap.country}</td>
+                        <td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>India</td>
                     </tr>
                     
@@ -102,15 +103,16 @@
                         <td>8978789885</td>
                         <td class="label">${uiLabelMap.resContactNo}</td>
                         <td>7878978789</td>
-                        <td class="label">${uiLabelMap.eMail}</td>
+                        <td class="label">${uiLabelMap.CommonEmail}</td>
                         <td>example@gmail.com</td>
                     </tr>
                    
                     <tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="Approve"   type="submit" value="Approve""/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:actionRegistrationDetail(actionNewRegistration);"/>
+                    	<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:actionRegistrationDetail(actionNewRegistration);"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
                      	</center>
                      	</td>
                     </tr>
@@ -119,3 +121,20 @@
         </table>
     </div>
 </form>
+
+<script type="text/javascript" language="javascript">
+
+function actionRegistrationDetail(actionNewRegistration)
+   {
+		      var form=document['actionNewRegistration'];
+		      
+		      var sure = confirm("Are you sure, you want to Save the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+    </script>

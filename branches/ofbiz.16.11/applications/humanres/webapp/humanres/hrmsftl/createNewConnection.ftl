@@ -10,30 +10,32 @@
 <#setting locale="en">
 
     <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.registerNewConnection} </span></div>
-    <form method="post" name="RegisterPerson" action="" class="basic-form">
-    <div class="row">
-    <div class="alert alert-info">
-  <ul>
-  <div class="h3" align="center"><b>${uiLabelMap.registerationDetail}</b></div> 
-</ul>
-</div>
+    	<form method="post" name="connectionCreate" action="" class="basic-form">
+    		<div class="row">
+    			<div class="alert alert-info">
+  					<ul>
+  						<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
+  						<div class="h3" align="center"><b>${uiLabelMap.registerationDetail}</b></div> 
+					</ul>
+				</div>
             <table cellspacing="0" class="basic-table table-responsive">
                 <tbody>
-                <tr>
-                <td colspan="4"><font color="blue"></font></td>
+                	<tr>
+                		<td colspan="4"><font color="blue"></font></td>
 	                	<td colspan="6"><font color="blue"><u><i>${uiLabelMap.noteMandatoryAsterisk}</i></u></font color></td>
                 	</tr>
-                <tr><td class='label'>${uiLabelMap.customerId} *</td>
-                    <td colspan="5">
-                      <@htmlTemplate.lookupField value='' formName="RegisterPerson" name="customerDeatil" id="customerDeatil" fieldFormName="customerDeatil"/>
-                    </td>
-                     </tr>
-                      <tr>
+                	<tr>
+                	<td class='label'>${uiLabelMap.customerNo} *</td>
+                    	<td colspan="5">
+                      	<@htmlTemplate.lookupField value='' formName="connectionCreate" name="customerDeatil" id="customerDeatil" fieldFormName="customerDeatil"/>
+                    	</td>
+                    </tr>
+                    <tr>
                         <td class="label">${uiLabelMap.CommonTitle}</td>
                         <td colspan="5">
                         	<input name="firstName"  type="text" maxlength="60" value="" readonly>
                         </td>
-                         </tr>
+                    </tr>
                     <tr>
                         <td class="label">${uiLabelMap.firstName}</td>
                         <td>
@@ -51,23 +53,23 @@
                     <tr>
                         <td class="label">${uiLabelMap.dateOfBirth}</td>
                         <td>
-                      <@htmlTemplate.renderDateTimeField name="dateOfBirth" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-                    </td>
+                      	<@htmlTemplate.renderDateTimeField name="dateOfBirth" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                    	</td>
                         <td class="label">${uiLabelMap.gender}</td>
-                         <td>
-                         <input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="female"> Female <input type="radio" name="gender" value="other"> Other  
-   </td>
-   <td class="label">${uiLabelMap.maritalStatus}</td>
-   <td><select name="maritalStatus" style="width:90px;">
-                   <option value="">Select</option>
-                   <option value="Select">Single</option>
-                   <option value="Married">Married</option>
-                   </select>
-                   </td>
-   <tr>
-             </td>
-                        </tr>
-                        <tr>
+                        <td>
+                        <input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="female"> Female <input type="radio" name="gender" value="other"> Other  
+   						</td>
+   						<td class="label">${uiLabelMap.maritalStatus}</td>
+   						<td>
+   							<select name="maritalStatus" style="width:90px;">
+                   				<option value="">Select</option>
+                   				<option value="Select">Single</option>
+                   				<option value="Married">Married</option>
+                   			</select>
+                   		</td>
+                      </tr>
+                        
+                      <tr>
                         <td class="label">${uiLabelMap.fatherName}</td>
                         <td>
                         <input name="fatherName"  type="text" maxlength="60" value="" readonly>
@@ -80,8 +82,8 @@
                         <td>
                         <input name="aadharCardNo"  type="text" maxlength="60" value="" readonly>
                         </td>
-                    </tr>
-                    <tr>
+                     </tr>
+                     <tr>
                         <td class="label">${uiLabelMap.cummunity}</td>
                         <td>
                         <input name="cummunity"  type="text" maxlength="25" value="" readonly>
@@ -94,9 +96,9 @@
                         <td>
                         <input name="nationality"  type="text" maxlength="60" value="" readonly>
                         </td>
-                    </tr>
+                     </tr>
                     
-                    <tr>
+                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
                         <td>
                         <input name="address" type="text" maxlength="60" value="" readonly>
@@ -109,9 +111,9 @@
                         <td>
                         <input name="wardNo"  type="text" maxlength="60" value="" readonly>
                         </td>
-                    </tr>
+                     </tr>
                     
-                    <tr>
+                     <tr>
                         <td class="label">${uiLabelMap.mohalla}</td>
                         <td>
                         <input name="mohalla" type="text" maxlength="60" value="" readonly>
@@ -124,9 +126,9 @@
                         <td>
                         <input name="village"  type="text" maxlength="60" value="" readonly>
                         </td>
-                    </tr>
+                     </tr>
                     
-                    <tr>
+                     <tr>
                         <td class="label">${uiLabelMap.CommonCity}</td>
                         <td>
                         <input name="city" type="text" maxlength="25" value="Mysore" readonly>
@@ -139,7 +141,7 @@
                         <td>
                         <input name="country" type="text" maxlength="25" value="India" readonly>
                         </td>
-                    </tr>
+                     </tr>
                         <tr>
                         <td class="label">${uiLabelMap.mobileNo}</td>
                         <td>
@@ -153,10 +155,12 @@
                         <td>
                         <input name="eMail" type="text" maxlength="40" value="" readonly>
                         </td>
-                    </tr>
-                    <tr><td colspan="6" align="left"><font color="blue">Connection Detail</font></td></tr>
+                     </tr>
+                     
+                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
+                    
                     <tr>
-                        <td class="label">Connection Type</td>
+                        <td class="label">${uiLabelMap.connectionType}</td>
                         <td><select name="maritalStatus" style="width:90px;">
                    				<option value="">Select</option>
                    				<option value="Domestic">Domestic</option>
@@ -165,14 +169,14 @@
                     			<option value="Institutional">Institutional</option>
                    			</select>
                    		</td>
-                        <td class="label">Application Type</td>
+                        <td class="label">${uiLabelMap.applicationType}</td>
                         <td><select name="maritalStatus" style="width:90px;">
                    			<option value="">Select</option>
                    			<option value="Permanent">Permanent</option>
                    			<option value="Temporary">Temporary</option>
                    			</select>
                    		</td>
-                        <td class="label">Type of building</td>
+                        <td class="label">${uiLabelMap.typeOfBuilding}</td>
                        <td><select name="maritalStatus" style="width:90px;">
                    			<option value="">Select</option>
                    			<option value="residentialBuildings">Residential buildings etc.</option>
@@ -181,29 +185,29 @@
                    	 </tr>
                     
                     <tr>
-                        <td class="label">Application Date</td>
+                        <td class="label">${uiLabelMap.applicationDate}</td>
                         <td>
                       <@htmlTemplate.renderDateTimeField name="applicationDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="applicationDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
                     </td>
-                        <td class="label">Assential Doccument</td>
+                        <td class="label">${uiLabelMap.assentialDoccument}</td>
                         <td>
                         <input type="file" name="assentialDoccument" id="ddd" type="text" maxlength="25" value="" >
                         </td>
-                        <td class="label">Fee for Connection</td>
+                        <td class="label">${uiLabelMap.feeForConnection}</td>
                         <td>
                         <input name="feeForConnection" type="text" maxlength="40" value="" readonly>
                         </td>
                     </tr>
                     <tr>
-                        <td class="label">Fee status</td>
+                        <td class="label">${uiLabelMap.feeStatus}</td>
                         <td>
                       <input name="status" id="ddd" type="text" maxlength="25" value="" >
                       </td>
                      </tr>
-                   <tr>
+                    <tr>
                     	<td colspan="6"><center>
-                    	<input name="save"   type="submit" value="${uiLabelMap.CommonSave}"/>
-                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
+                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveConnectionDetail(connectionCreate);"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
                      </center></td>
                     </tr>
                     
@@ -212,3 +216,20 @@
         </div>
         </div>
     </form>
+    
+    <script type="text/javascript" language="javascript">
+
+function saveConnectionDetail(connectionCreate)
+   {
+		      var form=document['connectionCreate'];
+		      
+		      var sure = confirm("Are you sure, you want to Save the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+    </script>
