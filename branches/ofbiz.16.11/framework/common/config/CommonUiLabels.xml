@@ -15824,4 +15824,43 @@
         <value xml:lang="en">Customer No</value>
         <value xml:lang="kn">Customer No</value>
     </property>
+    <property key="WebtoolsSqlCommand">
+        <value xml:lang="de">SQL Ausdruck</value>
+        <value xml:lang="en">SQL Command</value>
+        <value xml:lang="fr">Commande SQL</value>
+        <value xml:lang="it">Comando SQL</value>
+        <value xml:lang="ja">SQLコマンド</value>
+        <value xml:lang="pt">Comando SQL</value>
+        <value xml:lang="ro">Comanda SQL</value>
+        <value xml:lang="th">คำสั่ง SQL</value>
+        <value xml:lang="vi">Câu lệnh SQL</value>
+        <value xml:lang="zh">SQL命令</value>
+        <value xml:lang="zh-TW">SQL命令</value>
+    </property>
+    <property key="WebtoolsLimitRowsTo">
+        <value xml:lang="de">Zeilen begrenzen auf</value>
+        <value xml:lang="en">Limit Rows To</value>
+        <value xml:lang="fr">Limiter les lignes à</value>
+        <value xml:lang="it">Limita righe a</value>
+        <value xml:lang="ja">行制限</value>
+        <value xml:lang="pt">Limitar Linhas Para</value>
+        <value xml:lang="ro">Limita Linie la</value>
+        <value xml:lang="th">จำนวนแถวที่กำหนด</value>
+        <value xml:lang="vi">Giới hạn Dòng tói</value>
+        <value xml:lang="zh">把行数限制为</value>
+        <value xml:lang="zh-TW">把行數限制為</value>
+    </property>
+    <property key="WebtoolsResults">
+        <value xml:lang="de">Ergebnisse</value>
+        <value xml:lang="en">Results</value>
+        <value xml:lang="fr">Résultats</value>
+        <value xml:lang="it">Risultati</value>
+        <value xml:lang="ja">結果</value>
+        <value xml:lang="pt">Resultados</value>
+        <value xml:lang="ro">Rezultate</value>
+        <value xml:lang="th">ผลลัพธ์</value>
+        <value xml:lang="vi">Kết quả</value>
+        <value xml:lang="zh">结果</value>
+        <value xml:lang="zh-TW">結果</value>
+    </property>
 </resource>
