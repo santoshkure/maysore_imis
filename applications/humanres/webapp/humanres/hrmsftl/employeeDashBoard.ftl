@@ -21,6 +21,10 @@
 	DIV.row{
 		background:transparent;
 	}
+	.text-right div{
+		font-size: 13px;
+		font-weight: 600;
+	}
 </style>
 	<div class="row" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;">
     	<div class="alert alert-info">
