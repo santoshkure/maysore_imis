@@ -34,52 +34,53 @@
    			<div class="row" style="background:#f5f5f5;">
 				<ul class="arrow-link">
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for New Connection </a>
+						<a href="connectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for New Connection </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Disconnection </a>
+						<a href="disconnectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Disconnection </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request </a>
+						<a href="kattaChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Bill Correction </a>
+						<a href="createcustomerbillcorrection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Bill Correction </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Complaint </a>
+						<a href="searchbillcorrection"><i class="fa fa-arrow-right" aria-hidden="true"></i>Bill Correction Details </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint Details </a>
+						<a href="createregisterComplain"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Complaint </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter Details </a>
+						<a href="searchcomplainregister"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint Details </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill History </a>
+						<a href="billhistory"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill History </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Payment </a>
+						<a href="billpayment"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Payment </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Calculator </a>
+						<a href="billcalculator"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Calculator </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Job </a>
+						<a href="searchapplyforjob"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Job </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application</a>
+						<a href="createRTIapplication"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application</a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application Details </a>
+						<a href="RTIappdetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application Details </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Update Personal Detail </a>
+						<a href="updatecustomerdetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Update Personal Detail </a>
+					</li>
+					
+					<li>
+						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Application Status </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> FAQ </a>
-					</li>
-					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Application Status </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Help </a>
