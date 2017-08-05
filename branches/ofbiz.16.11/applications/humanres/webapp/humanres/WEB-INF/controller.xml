@@ -1430,6 +1430,40 @@ under the License.
     
     <!-- ==========end==================  -->
     
+    <!-- For Office by PRABHU -->
+     <request-map uri="office">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="office"/>
+    </request-map>
+    
+    <request-map uri="newOffice">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newOffice"/>
+    </request-map>
+    
+    <request-map uri="saveoffice">
+        <security https="true" auth="true" />
+        <event type="service" invoke="createoffice"/>
+        <response name="success" type="request-redirect" value="office"/>
+        <response name="error" type="view" value="office" />
+    </request-map>
+    
+     <request-map uri="editOfficeDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editOfficeDetails"/>
+    </request-map>
+    <request-map uri="updateoffice">
+        <security https="true" auth="true" />
+        <event type="service" invoke="updateofficedetail"/>
+        <response name="success" type="request-redirect" value="office"/>
+        <response name="error" type="view" value="office" />
+    </request-map>
+    
+        <request-map uri="searchOffice">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="office"/>
+    </request-map>
+    <!--END  -->
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -1634,5 +1668,10 @@ under the License.
 		 <view-map name="actionBillCorrection" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionBillCorrection"/>
         <view-map name="viewCustomerConnectionActionDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewCustomerConnectionActionDetail"/>
         <view-map name="EntitySQLProcessorEmpDashboard" type="screen" page="component://humanres/widget/EmployeeScreens.xml#EntitySQLProcessorEmpDashboard"/>
-                
+          <!-- For Office by PRABHU -->
+    	<view-map name="office" type="screen" page="component://humanres/widget/OfficeScreens.xml#officeSearch"/>
+     	<view-map name="newOffice" type="screen" page="component://humanres/widget/OfficeScreens.xml#newOffice"/>
+     	<view-map name="editOfficeDetails" type="screen" page="component://humanres/widget/OfficeScreens.xml#editOfficeDetails"/>     
+    
+         <!-- END -->       
 </site-conf>
