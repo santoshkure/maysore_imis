@@ -76,8 +76,8 @@
                      <tr>
                     	<td colspan="4">
                     	<center>
-                    	<input name="edit"   type="button" value="${uiLabelMap.CommonEdit}" onClick="javascript:actionBillCorrection();"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input name="edit"   type="button" value="${uiLabelMap.CommonUpdate}" onClick="javascript:actionBillCorrection();"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/>
                      	</center>
                      	</tr>
                      	

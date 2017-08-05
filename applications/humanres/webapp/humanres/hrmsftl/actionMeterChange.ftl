@@ -99,9 +99,9 @@
                   		<tr>
                     	<td colspan="6">
                     	<center>
-                    	<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:meterChangeAction(actionMeterChange);"/>
-                    	<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:meterChangeAction(actionMeterChange);"/>
-                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onClick="javascript:javascript:history.go(-1);"/> 
+                    	<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:meterChangeAction(this);"/>
+                    	<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:meterChangeAction(this);"/>
+                    	   	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/>
                      	</center>
                      	</td>
                     </tr>
@@ -112,11 +112,12 @@
 </form>
 
 <script>
-function meterChangeAction(actionMeterChange)
+function meterChangeAction(Msg)
    {
 		      var form=document['actionMeterChange'];
 		      
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
+		      var tempMsgCheck = Msg.value;
+		      var sure = confirm("Are you sure, you want to "+tempMsgCheck+" the Form ?");
                               if( sure == true )
                              {
                         form.action = "<@ofbizUrl>main</@ofbizUrl>";
@@ -125,4 +126,4 @@ function meterChangeAction(actionMeterChange)
 		                } 
     }
     
-</script>
+    </script>

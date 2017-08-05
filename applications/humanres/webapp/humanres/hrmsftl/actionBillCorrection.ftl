@@ -61,11 +61,11 @@
                   
                   	<tr>
                      
-                     	<td class='label'>${uiLabelMap.CommonStatus}</td>
+                     	<td class='label'>${uiLabelMap.CommonStatus} *</td>
                     	<td><select name="status" style="width:90px;">
                    				<option value="">Select</option>
-                   				<option value="approve">Approve</option>
-                   				<option value="reject">Reject</option>
+                   				<option value="Approve">Approve</option>
+                   				<option value="Reject">Reject</option>
                    			</select>
                    		 </td>
                     	
@@ -78,7 +78,7 @@
                     	<td colspan="4">
                     	<center>
                     	<input name="action"   type="button" value="${uiLabelMap.action}" onClick="javascript:actionBillCorrection();"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/>
                      	</center>
                      	</tr>
                      	
@@ -92,14 +92,18 @@
 function actionBillCorrection(actionBillCorrectionDetail)
    {
 		      var form=document['actionBillCorrectionDetail'];
+		      var status = form.status.value;
 		      
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
+		      if(notEmptyField(status,"Select Status")) 
+     {
+		      var sure = confirm("Are you sure, you want to "+status+" the Form ?");
                               if( sure == true )
                              {
                         form.action = "<@ofbizUrl>main</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 
+		                }
     }
     
     </script>

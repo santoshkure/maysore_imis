@@ -14,7 +14,7 @@
     <div class="alert alert-info">
   <ul>
   <li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
-  <div class="h3" align="center"><b>Create Meter Detail</b></div> 
+  <div class="h3" align="center"><b>Register Meter Detail</b></div> 
 </ul>
 </div>
             <table cellspacing="0" class="basic-table table-responsive">
@@ -25,31 +25,31 @@
                 	</tr>
                 	<tr>
                 		<td class='label'>${uiLabelMap.meterNo}</td>
-                    	<td><input name="firstName"  type="text" maxlength="60" value="" readonly></td>
+                    	<td><input name="meterNo"  type="text" maxlength="60" value="" readonly></td>
                     
                     	<td class='label'>${uiLabelMap.meterConstant}</td>
-                    	<td><input name="firstName"  type="text" maxlength="60" value="" readonly></td>
+                    	<td><input name="meterConstant"  type="text" maxlength="60" value="" readonly></td>
                      </tr>
                      
                      <tr>
                      	<td class='label'>${uiLabelMap.meterConstant}</td>
-                    	<td><input name="firstName"  type="text" maxlength="60" value="" readonly></td>
+                    	<td><input name="meterConstant"  type="text" maxlength="60" value="" readonly></td>
                     
                      	<td class='label'>${uiLabelMap.meterExisting}</td>
-                    	<td><input name="firstName"  type="text" maxlength="60" value="" readonly></td>
+                    	<td><input name="meterExisting"  type="text" maxlength="60" value="" readonly></td>
                      </tr>
                      
                      <tr>
                      	<td class='label'>${uiLabelMap.meterCost}</td>
-                    	<td><input name="firstName"  type="text" maxlength="60" value="" readonly></td>
+                    	<td><input name="meterCost"  type="text" maxlength="60" value="" readonly></td>
                     
                      	<td class='label'>${uiLabelMap.meterStatus}</td>
-                    	<td><input name="firstName"  type="text" maxlength="60" value="" readonly></td>
+                    	<td><input name="meterStatus"  type="text" maxlength="60" value="" readonly></td>
                      </tr>
                      
                      <tr>
                      	<td class='label'>${uiLabelMap.CommonRemark}</td>
-                    	<td><input name="firstName"  type="text" maxlength="60" value="" readonly></td>
+                    	<td><input name="CommonRemark"  type="text" maxlength="60" value="" readonly></td>
                     
                      	<td class='label'>${uiLabelMap.dateofpurchase}</td>
                     	<td>
@@ -67,7 +67,7 @@
                     	<td colspan="4">
                     	<center>
                     	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveMeterDetail(createNewMeterDetail);"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	</center>
                      	</tr>
                      	

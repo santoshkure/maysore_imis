@@ -55,11 +55,11 @@
                      	<td class="label">${uiLabelMap.designation}</td>
                     	<td><input name="Designation"  type="text" maxlength="60" value=""></td>
                     
-                     	<td class='label'>${uiLabelMap.CommonStatus}</td>
-                    	 <td><select name="Status" style="width:90px;">
+                     	<td class='label'>${uiLabelMap.CommonStatus} *</td>
+                    	 <td><select name="status" style="width:90px;">
                    			<option value="">Select</option>
-                   			<option value="approve">${uiLabelMap.approve}</option>
-                   			<option value="reject">${uiLabelMap.reject}</option>
+                   			<option value="Approve">${uiLabelMap.approve}</option>
+                   			<option value="Reject">${uiLabelMap.reject}</option>
                    			</select>
                    </tr>
                      
@@ -72,7 +72,7 @@
                     	<td colspan="4">
                     	<center>
                     	<input name="action"   type="button" value="${uiLabelMap.action}" onClick="javascript:actionKhataChange(actionKhataChangeDetail);"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/>
                      	</center>
                      	</tr>
                      	
@@ -87,13 +87,18 @@ function actionKhataChange(actionKhataChangeDetail)
    {
 		      var form=document['actionKhataChangeDetail'];
 		      
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
+		      var status = form.status.value;
+		      
+		      if(notEmptyField(status,"Select Status")) 
+     {
+		      var sure = confirm("Are you sure, you want to "+status+" the Form ?");
                               if( sure == true )
                              {
                         form.action = "<@ofbizUrl>main</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 
+		                }
     }
     
     </script>
