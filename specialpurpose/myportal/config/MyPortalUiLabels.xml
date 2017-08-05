@@ -272,7 +272,18 @@
         <value xml:lang="zh">门户页面管理</value>
         <value xml:lang="zh-TW">入口網頁面管理</value>
     </property>
-    
+     <property key="viewHistory">
+        <value xml:lang="en">View History</value>
+    </property>
+     <property key="tariffPlan">
+        <value xml:lang="en">Tariff Plans</value>
+    </property>
+    <property key="selectTariffPlan">
+        <value xml:lang="en">Select Tariff Plan</value>
+    </property>
+    <property key="calculate">
+        <value xml:lang="en">Calculate</value>
+    </property>
      <property key="billhistory">
         <value xml:lang="en">View Bill History</value>
     </property>

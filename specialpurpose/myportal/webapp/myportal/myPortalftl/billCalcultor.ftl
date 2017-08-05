@@ -19,25 +19,29 @@
  	 <table class="basic-table" cellspacing="0">
  	 <td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
  		 <tr>
- 		   <td class="label" >${uiLabelMap.billNo}</td>
-		   <td><input name="billno"  type="text" maxlength="10" value="WT/0417/55860" readonly></td>
-		 </tr>
+ 		   <td class="label" >${uiLabelMap.tariffPlan} <font color="red">*</font></td>
+		   <td><select name="tariffplan" style="width:150px;">
+		   <option value="">${uiLabelMap.selectTariffPlan}</option>
+		   <option value="com">Commercial</option>
+		   <option value="noncom">Non Commercial</option>
+		   <option value="dom">domestic</option></select></td>
+		  </tr>
 		  <tr>
  		   <td class="label" >${uiLabelMap.previousBillReading} <font color="red">*</font></td>
-		   <td><input name="prebillreading"  type="text" maxlength="10" value=""></td>
+		   <td><input name="prebillreading"  type="text" maxlength="10" value="" style="width:150px;"></td>
 		 </tr>
 		  <tr>
  		   <td class="label" >${uiLabelMap.currentBillReading} <font color="red">*</font></td>
-		   <td><input name="curbillreading"  type="text" maxlength="10" value=""></td>
+		   <td><input name="curbillreading"  type="text" maxlength="10" value="" style="width:150px;"></td>
 		 </tr>
 		<tr>
- 		   <td class="label" >${uiLabelMap.unitReading}<font color="red">*</font></td>
-		   <td><input name="unitofreading"  type="text" maxlength="10" value=""></td>
+ 		   <td class="label" >${uiLabelMap.unitReading}</td>
+		   <td><input name="unitofreading"  type="text" maxlength="10" value="" readonly style="width:150px;"></td>
 		 </tr>
 		<tr>
 			<td colspan="4"><center>
 			<div id ="saveBtn">
-				<input name="save" value="Submit" type="button" onClick="validateParameters('')">
+				<input name="save" value="${uiLabelMap.calculate}" type="button" onClick="validateParameters('')">
 				
 			</div></center>
 			</td>
