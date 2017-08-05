@@ -1230,6 +1230,12 @@ under the License.
       <field name="municipalityGeoId" type="id"></field>
       <field name="postalCodeGeoId" type="id"></field>
       <field name="geoPointId" type="id"></field>
+<!-- Added By PRABHU -->      
+       <field name="district" type="short-varchar"></field>
+        <field name="faxNo" type="numeric"></field>
+        <field name="contactNumber" type="numeric"></field>
+        
+        <!-- END -->
       <prim-key field="contactMechId"/>
       <relation type="one" fk-name="POST_ADDR_CMECH" rel-entity-name="ContactMech">
         <key-map field-name="contactMechId"/>
@@ -2055,6 +2061,14 @@ under the License.
       <field name="tickerSymbol" type="very-short"></field>
       <field name="comments" type="comment"></field>
       <field name="logoImageUrl" type="url"></field>
+      <!-- Added By PRABHU -->
+            <field name="partyCode" type="name"></field>      
+            <field name="statusId" type="name"></field>      
+            <field name="remark" type="name"></field>
+            <field name="bcoCode" type="name"></field>
+      	  	<field name="ddoCode" type="name"></field>
+            <field name="isVisible" type="name"></field>
+      <!-- END -->
       <prim-key field="partyId"/>
       <relation type="one" fk-name="PARTY_GRP_PARTY" rel-entity-name="Party">
         <key-map field-name="partyId"/>
