@@ -4,7 +4,8 @@
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Nikhil Pathak   02/08/2017		
+<#---1.0			Nikhil Pathak   02/08/2017
+<#-- 1.1			Pankaj Trivedi						05/08/2017    		
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the application for Edit bill correction.-->
 
@@ -29,19 +30,17 @@
                 	</tr>
                     <tr>
                         <td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input type="text" value="" readonly /></td>
+                        <td><input type="text" name="cusNo" value="CAN101" readonly /></td>
                         <td class="label">${uiLabelMap.connectionNo}</td>
-                        <td><input type="text" value="" readonly /></td>
+                        <td><input type="text" name="conNo" value="CON101" readonly /></td>
                     </tr>
                     <tr>
-                        <td class="label">${uiLabelMap.billId}</td>
-                        <td><input type="text" value="" readonly /></td>
                         <td class="label">${uiLabelMap.billNo}</td>
-                        <td><input type="text" value="" readonly /></td>
+                        <td><input type="text" value="BN101" readonly /></td>
                      </tr>
                      <tr>
                         <td class="label" >${uiLabelMap.billCorrectionApplyDate}</td>
-                        <td><input type="text" name="Bill Correction Apply Date" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
+                        <td><input type="text" name="BillCorrectionApplyDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
                         <td class="label">${uiLabelMap.assentialDocument}</td>
                         <td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
                         <input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
@@ -51,12 +50,12 @@
 					  </tr>
 					  <tr>
 					    <td class="label">${uiLabelMap.issueDetails}</td>
-                        <td colspan="1"><textarea name="Issue Details" value="" maxlength="3500" ></textarea></td>
+                        <td colspan="1"><textarea name="IssueDetails" value="" maxlength="3500" ></textarea></td>
 					  </tr>
                       <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 <input name="save"   type="button" value="Update" onClick="javascript:createBillDetail('BillCorrection');"/>
+                    	 <input name="save"   type="button" value="${uiLabelMap.CommonUpdate}" onClick="javascript:createBillDetail('BillCorrection');"/>
                     	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 </center>
                      	 </td>
@@ -68,11 +67,11 @@
 
   <script type="text/javascript" language="javascript">
 
-  function saveBillDetail(formname)
+  function createBillDetail(formname)
    {
-		   var form=document['BillCorrection'];
+		   var form=document['formname'];
 		      
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
+		      var sure = confirm("Are you sure, you want to Update the Form ?");
                               if( sure == true )
                              {
                         form.action = "<@ofbizUrl>searchbillcorrection</@ofbizUrl>";

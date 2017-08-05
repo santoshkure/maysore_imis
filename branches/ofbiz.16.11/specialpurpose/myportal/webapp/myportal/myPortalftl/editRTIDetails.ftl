@@ -4,7 +4,8 @@
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Nikhil Pathak   04/08/2017		
+<#---1.0			Nikhil Pathak   04/08/2017
+<#-- 1.1			Pankaj Trivedi						05/08/2017    		
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the application for create RTI application.-->
 
@@ -26,19 +27,22 @@
                 		</tr>
                     	<tr>
                         	<td class="label">${uiLabelMap.applicantName}</td>
-                        	<td><input name="Applicant Name"  type="text" maxlength="70" value="Ravi Kumar Sharma" ></td>
+                        	<td><input name="ApplicantName"  type="text" maxlength="70" value="Ravi Kumar Sharma" ></td>
                         	<td class="label">${uiLabelMap.applicantEmail}</td>
-                        	<td><input name="Applicant email"  type="text" maxlength="15" value="ravi.sharma777@gmail.com"></td>
-                        	<td class="label">${uiLabelMap.applicantContactNo}</td>
-                        	<td><input name="Applicant contact No."  type="text" maxlength="60" value="9856235689" ></td>
-                   		</tr>
+                        	<td><input name="Applicantemail"  type="text" maxlength="15" value="ravi.sharma777@gmail.com"></td>
+                        </tr>
                     	<tr>
-                        	<td class="label" >${uiLabelMap.applicationDate}</td>
-                        	<td><input type="text" name="Application Date" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
+	                        <td class="label">${uiLabelMap.applicantContactNo}</td>
+                        	<td><input name="Applicant contact No."  type="text" maxlength="60" value="9856235689" ></td>
+
+                       		<td class="label" >${uiLabelMap.applicationDate}</td>
+                        	<td><input type="text" name="ApplicationDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
+    					</tr>
+    					<tr>
                          	<td class="label">${uiLabelMap.applicantAddress}</td>
-                       	 	<td colspan="1"><textarea name="Applicant address" value="" maxlength="500" >karan plaza</textarea></td>
+                       	 	<td colspan="1"><textarea name="Applicantaddress" value="" maxlength="500" >karan plaza</textarea></td>
                         	<td class="label">${uiLabelMap.neededInformation}</td>
-                        	<td colspan="1"><textarea name="Needed Information" value="" maxlength="5000" ></textarea></td>
+                        	<td colspan="1"><textarea name="NeededInformation" value="" maxlength="5000" ></textarea></td>
 				   		</tr>
 				  		 <tr>
 				        	<td class="label">${uiLabelMap.supportingDocument}</td>
@@ -65,7 +69,7 @@
 						<table cellspacing="0" class="basic-table table-responsive">
 						<tbody>
 			   				<tr>
-			        			<td class="label">${uiLabelMap.modeOfPayment}</td>
+			        			<td class="label">${uiLabelMap.uploadCopyOfBPLCard}</td>
 								<td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
                         		<input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
                         		<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
@@ -106,7 +110,7 @@
 		   						<td class="label">${uiLabelMap.challanRefrenceNo}</td>
                         	    <td><input name="Application Challan Refrence no."  type="text" maxlength="20" value="" ></td>
                         	    
-                        	    <td class="label">${uiLabelMap.applicationChallanAmount}</td>
+                        	    <td class="label">${uiLabelMap.challanAmount}</td>
                         	    <td><input name="Application Challan amount"  type="text" maxlength="10" value="" ></td>
 		   			   		</tr>
 		   			   		<tr>
@@ -133,7 +137,7 @@
 			         <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 <input name="save"   type="button" value="Update" onClick="javascript:saveBillDetail('createApplication');"/>
+                    	 <input name="save"   type="button" value="${uiLabelMap.CommonUpdate}" onClick="javascript:updateRTIDetail('createApplication');"/>
                     	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 </center>
                      	 </td>
@@ -188,5 +192,17 @@ function getPaymentMode(field)
 		}
 		
 }	
+
+function updateRTIDetail(createApplication)
+{
+		var form=document['createApplication'];
+		var sure = confirm("Are you sure, you want to Update the Form ?");
+                    if( sure == true )
+                    {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		            } 
+}
 
 </script>

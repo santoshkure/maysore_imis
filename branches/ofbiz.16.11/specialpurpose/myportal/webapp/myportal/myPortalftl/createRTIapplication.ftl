@@ -4,7 +4,8 @@
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Nikhil Pathak   04/08/2017		
+<#---1.0			Nikhil Pathak   04/08/2017	
+<#-- 1.1			Pankaj Trivedi						05/08/2017    	
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the application for create RTI application.-->
 
@@ -26,17 +27,18 @@
                 		</tr>
                     	<tr>
                         	<td class="label">${uiLabelMap.applicantName}</td>
-                        	<td><input name="Applicant Name"  type="text" maxlength="70" value="" ></td>
+                        	<td><input name="ApplicantName"  type="text" maxlength="70" value="" ></td>
                         	<td class="label">${uiLabelMap.applicantEmail}</td>
-                        	<td><input name="Applicant email"  type="text" maxlength="15" value=""></td>
-                        	<td class="label">${uiLabelMap.applicantContactNo}</td>
-                        	<td><input name="Applicant contact No."  type="text" maxlength="60" value="" ></td>
-                   		</tr>
+                        	<td><input name="Applicantemail"  type="text" maxlength="15" value=""></td>
+                        </tr>
                     	<tr>
+                    		<td class="label">${uiLabelMap.applicantContactNo}</td>
+                        	<td><input name="ApplicantcontactNo"  type="text" maxlength="60" value="" ></td>
                         	<td class="label" >${uiLabelMap.applicationDate}</td>
                         	<td><input type="text" name="Application Date" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
+                        <tr> 	
                          	<td class="label">${uiLabelMap.applicantAddress}</td>
-                       	 	<td colspan="1"><textarea name="Applicant address" value="" maxlength="500" ></textarea></td>
+                       	 	<td colspan="1"><textarea name="Applicanaddress" value="" maxlength="500" ></textarea></td>
                         	<td class="label">${uiLabelMap.neededInformation}</td>
                         	<td colspan="1"><textarea name="Needed Information" value="" maxlength="5000" ></textarea></td>
 				   		</tr>
@@ -65,7 +67,7 @@
 						<table cellspacing="0" class="basic-table table-responsive">
 						<tbody>
 			   				<tr>
-			        			<td class="label">${uiLabelMap.modeOfPayment}</td>
+			        			<td class="label">${uiLabelMap.uploadCopyOfBPLCard}</td>
 								<td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
                         		<input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
                         		<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
@@ -104,27 +106,27 @@
 						<tbody>
 				         	<tr>
 		   						<td class="label">${uiLabelMap.challanRefrenceNo}</td>
-                        	    <td><input name="Application Challan Refrence no."  type="text" maxlength="20" value="" ></td>
+                        	    <td><input name="ChallanRefrenceno"  type="text" maxlength="20" value="" ></td>
                         	    
-                        	    <td class="label">${uiLabelMap.applicationChallanAmount}</td>
-                        	    <td><input name="Application Challan amount"  type="text" maxlength="10" value="" ></td>
+                        	    <td class="label">${uiLabelMap.challanAmount}</td>
+                        	    <td><input name="Challanamount"  type="text" maxlength="10" value="" ></td>
 		   			   		</tr>
 		   			   		<tr>
               	                 <td class="label">${uiLabelMap.fromDate}</td>
                              	 <td><@htmlTemplate.renderDateTimeField name="fromDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
                                  </td>
-                                  <td class="label">${uiLabelMap.applicationPaymentBehalfOf}</td>
-                        	      <td><input name="Application payment behalf of"  type="text" maxlength="50" value="" ></td>
-                            </tr>
+ 								  <td class="label">${uiLabelMap.applicationPaymentBehalfOf}</td>
+                        	      <td><input name="Applicationpaymentbehalfof"  type="text" maxlength="50" value="" ></td>
+							</tr>
                             <tr>
-                                  <td class="label">${uiLabelMap.applicationBank}</td>
-                        	      <td><input name="Application Challan Refrence no."  type="text" maxlength="70" value="" ></td>
+	                            <td class="label">${uiLabelMap.applicationBank}</td>
+                        	     <td><input name="ApplicationChallanRefrenceno"  type="text" maxlength="70" value="" ></td>
+
                                   <td class="label">${uiLabelMap.uploadChallan}</td>
 								  <td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
                         		  <input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
                         		  <input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
                         		  <input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/></td>
-                            
                             </tr>
                             
 						</tbody>
@@ -133,8 +135,8 @@
 			         <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 <input name="save"   type="button" value="Save" onClick="javascript:saveBillDetail('createApplication');"/>
-                    	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
+                    	 	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveBillDetail('createApplication');"/>
+                    	 	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 </center>
                      	 </td>
                      </tr>
@@ -188,5 +190,17 @@ function getPaymentMode(field)
 		}
 		
 }	
+
+  function saveBillDetail(formname)
+   {
+		   var form=document['formname'];
+		    var sure = confirm("Are you sure, you want to Save the Form ?");
+                    if( sure == true )
+                    {
+                        form.action = "<@ofbizUrl>searchapplyforjob</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');  
+		                }  
+    }
 
 </script>

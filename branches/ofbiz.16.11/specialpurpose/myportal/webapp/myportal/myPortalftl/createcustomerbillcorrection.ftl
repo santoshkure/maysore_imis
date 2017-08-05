@@ -1,17 +1,17 @@
 <#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
-<#---Program Name: customerbillcorrection.ftl----->
+<#---Program Name: customerBillCorrection.ftl----->
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
 <#---1.0			Nikhil Pathak   02/08/2017		
+<#-- 1.1			Pankaj Trivedi						05/08/2017    
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the application for create bill correction.-->
 
-
 <#setting locale="en">
    
-    <form method="post" name="BillCorrection" action="" class="basic-form">
+    <form method="post" name="billCorrection" action="" class="basic-form">
     <div class="row">
 	    <div class="alert alert-info">
 		    <ul>
@@ -29,19 +29,17 @@
                 	</tr>
                     <tr>
                         <td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input type="text" value="" readonly /></td>
+                        <td><input type="text" name="cusNo" value="CAN101" readonly /></td>
                         <td class="label">${uiLabelMap.connectionNo}</td>
-                        <td><input type="text" value="" readonly /></td>
+                        <td><input type="text" value="CON101" name="conNo" readonly /></td>
                     </tr>
                     <tr>
-                        <td class="label">${uiLabelMap.billId}</td>
-                        <td><input type="text" value="" readonly /></td>
                         <td class="label">${uiLabelMap.billNo}</td>
-                        <td><input type="text" value="" readonly /></td>
+                        <td><input type="text" name="billNo" value="" readonly /></td>
                      </tr>
                      <tr>
                         <td class="label" >${uiLabelMap.billCorrectionApplyDate}</td>
-                        <td><input type="text" name="Bill Correction Apply Date" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
+                        <td><input type="text" name="BillCorrectionApplyDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
                         <td class="label">${uiLabelMap.assentialDocument}</td>
                         <td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
                         <input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
@@ -51,13 +49,13 @@
 					 </tr>
 					  <tr>
 					    <td class="label">${uiLabelMap.issueDetails}</td>
-                        <td colspan="1"><textarea name="Issue Details" value="" maxlength="3500" ></textarea></td>
+                        <td colspan="1"><textarea name="IssueDetails" value="" maxlength="3500" ></textarea></td>
 					  </tr>
                       <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 <input name="save"   type="button" value="Save" onClick="javascript:createBillDetail('BillCorrection');"/>
-                    	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
+                    	 <input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:createBillDetail('billCorrection');"/>
+                    	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
                      	 </center>
                      	 </td>
                      </tr>
@@ -68,14 +66,14 @@
 
   <script type="text/javascript" language="javascript">
 
-  function saveBillDetail(formname)
+  function createBillDetail(formname)
    {
-		   var form=document['BillCorrection'];
+		   var form=document['formname'];
 		      
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
-                        form.action = "<@ofbizUrl>searchbillcorrection</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 

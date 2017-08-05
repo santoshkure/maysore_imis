@@ -4,7 +4,8 @@
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Nikhil Pathak   02/08/2017		
+<#---1.0			Nikhil Pathak   02/08/2017
+<#-- 1.1			Pankaj Trivedi						05/08/2017    		
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the application for the Complain Registration.-->
 
@@ -33,7 +34,7 @@
                     
                      <tr>
                         <td class="label" >${uiLabelMap.complaintDate}</td>
-                        <td><input type="text" name="Complaint Date" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
+                        <td><input type="text" name="ComplaintDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
                         <td class="label">${uiLabelMap.assentialDocument}</td>
                         <td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
                         <input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
@@ -43,7 +44,7 @@
 					  </tr>
 					  <tr>
 					    <td class="label">${uiLabelMap.complaintDescription}</td>
-                        <td colspan="1"><textarea name="Complaint Description" value="" maxlength="3500" ></textarea></td>
+                        <td colspan="1"><textarea name="ComplaintDescription" value="" maxlength="3500" ></textarea></td>
                         <td class="label">${uiLabelMap.complaintType}</td>
                         <td colspan="5">
 	                        <select name="complaint">
@@ -55,10 +56,14 @@
 	                 		</select>
              			</td>
 					  </tr>
+					  <tr>
+							<td class="label">${uiLabelMap.serviceAddress}</td>
+    	                    <td colspan="1"><textarea name="ComplaintDescription" value="" maxlength="3500" ></textarea></td>
+                      </tr>
                       <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 <input name="save"   type="button" value="Save" onClick="javascript:saveBillDetail('BillCorrection');"/>
+                    	 <input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveBillDetail('BillCorrection');"/>
                     	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 </center>
                      	 </td>
@@ -74,15 +79,15 @@
 
   function saveBillDetail(formname)
    {
-		   var form=document['BillCorrection'];
+		   var form=document['formname'];
 		      
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
-                              if( sure == true )
-                             {
+                    if( sure == true )
+                    {
                         form.action = "<@ofbizUrl>main</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
-		                } 
+		            } 
     }
     </script>
     
