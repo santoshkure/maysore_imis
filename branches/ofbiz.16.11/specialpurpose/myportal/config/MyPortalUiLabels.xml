@@ -306,7 +306,7 @@
         <value xml:lang="en">Unit of Reading</value>
     </property>
      <property key="billAmount">
-        <value xml:lang="en">Bill amount</value>
+        <value xml:lang="en">Bill Amount</value>
     </property>
     <property key="billPayment">
         <value xml:lang="en">Bill Payment</value>
@@ -315,13 +315,13 @@
         <value xml:lang="en">Email id</value>
     </property>
     <property key="paymentAmount">
-        <value xml:lang="en">Payable amount</value>
+        <value xml:lang="en">Payable Amount</value>
     </property>
     <property key="paidAmount">
         <value xml:lang="en">Paid Amount</value>
     </property>
     <property key="paymentRefNo">
-        <value xml:lang="en">Payment refrence No.</value>
+        <value xml:lang="en">Payment Refrence No.</value>
     </property>
     <property key="paymentStatus">
         <value xml:lang="en">Payment Status</value>
@@ -333,7 +333,7 @@
         <value xml:lang="en">Account No./Card No.</value>
     </property>
     <property key="bankWalletName">
-        <value xml:lang="en">Bank/wallet name</value>
+        <value xml:lang="en">Bank/Wallet Name</value>
     </property>
     <property key="dateofPayment">
         <value xml:lang="en">Date of Payment</value>
@@ -355,7 +355,7 @@
     </property>
  <!-- Added By Anubha On 03/08/2017 For Connection Detail -->
     <property key="connectionApply">
-        <value xml:lang="en">Apply Connection</value>
+        <value xml:lang="en">Connection Details</value>
     </property>
     <property key="assentialDocument">
         <value xml:lang="en">Assential Document</value>
@@ -379,10 +379,13 @@
         <value xml:lang="en">Edit Connection</value>
     </property>
     <property key="connectionCategory">
-        <value xml:lang="en">Category of water use</value>
+        <value xml:lang="en">Category Of Water Use</value>
     </property>
      <property key="disconnectionApply">
-        <value xml:lang="en">Apply for Disconnection</value>
+        <value xml:lang="en">Disconnection Details</value>
+    </property>
+    <property key="typeOfDisconnection">
+        <value xml:lang="en">Type Of Disconnection</value>
     </property>
      
      <property key="ConnectionList">
@@ -394,8 +397,8 @@
     <property key="applicationDate">
         <value xml:lang="en">Application Date</value>
     </property>
-     <property key="reasoneForDisconnection">
-        <value xml:lang="en">Reasone For Disconnection</value>
+     <property key="reasonForDisconnection">
+        <value xml:lang="en">Reason For Disconnection</value>
     </property>
     <property key="dueAmount">
         <value xml:lang="en">Due Amount</value>
@@ -410,12 +413,12 @@
         <value xml:lang="en">Apply for Khata Change</value>
     </property>
     <property key="oldConnectionDetail">
-        <value xml:lang="en">Connection Old Details</value>
+        <value xml:lang="en">Old Connection Details</value>
     </property>
     <property key="newchangeKhata">
         <value xml:lang="en">New Khata Information</value>
     </property>
-    <property key="newKhataId">
+    <property key="newKhataNo">
         <value xml:lang="en">New Khata Number</value>
     </property>
     <property key="newKhataId">
@@ -424,11 +427,14 @@
      <property key="khattaList">
         <value xml:lang="en">Khata List</value>
     </property>
-    <property key="changeKhata">
-        <value xml:lang="en">Change Khata</value>
+    <property key="changeKhataRequest">
+        <value xml:lang="en">Khata Change Details</value>
     </property>
     <property key="searchKhata">
         <value xml:lang="en">Search Khata</value>
+    </property>
+    <property key="serviceAddress">
+        <value xml:lang="en">Service Address</value>
     </property>
     <!-- ============End============= -->
  <!-- Added By nikhil On 04/08/2017 -->
@@ -486,18 +492,23 @@
         <value xml:lang="en">Register Complaint List</value>
     </property>
     <property key="applyForJob">
-        <value xml:lang="en">Search Apply For Job Details</value>
+        <value xml:lang="en">Search Job Details</value>
     </property>
     <property key="applyForJobList">
-        <value xml:lang="en">Apply For Job List</value>
+        <value xml:lang="en">Job List</value>
     </property>
     <property key="createApplyForJob">
-        <value xml:lang="en"> Create Apply For Job </value>
+        <value xml:lang="en"> Create Job Details</value>
     </property>
      <property key="typeOfJob">
         <value xml:lang="en"> Type Of Job </value>
     </property>
-    
+    <property key="detailOfJob">
+        <value xml:lang="en"> Job Description </value>
+    </property>
+    <property key="jobNo">
+        <value xml:lang="en">Job Reference  No.</value>
+    </property>
     <property key="feeAmount">
         <value xml:lang="en">Fee Amount</value>
     </property>
@@ -511,7 +522,7 @@
         <value xml:lang="en">Service Time</value>
     </property>
     <property key="editApplyForJob">
-        <value xml:lang="en">Edit Apply For Job</value>
+        <value xml:lang="en">Edit Job Details</value>
     </property>
      <property key="applicantName">
         <value xml:lang="en">Applicant Name</value>
@@ -534,31 +545,37 @@
      <property key="uploadCopyOfBPLCard">
         <value xml:lang="en">Upload Copy Of BPL Card</value>
     </property>
-     <property key="applicationChallanRefrenceNo">
-        <value xml:lang="en">Application Challan Refrence no.</value>
+     <property key="challanRefrenceNo">
+        <value xml:lang="en">Challan Refrence No.</value>
+    </property>
+    <property key="challanAmount">
+        <value xml:lang="en">Challan Amount</value>
     </property>
       <property key="applicationBank">
-        <value xml:lang="en">Application Bank/Postoffice/teasury name</value>
+        <value xml:lang="en">Application Bank / Postoffice / Teasury name</value>
     </property>
      <property key="uploadChallan">
-        <value xml:lang="en">Application copy of challan for upload if available</value>
+        <value xml:lang="en">Upload Challan Copy</value>
     </property>
      <property key="RTIApplication">
         <value xml:lang="en">Create RTI Application</value>
     </property>
      <property key="RTIRefNo">
-        <value xml:lang="en">RTI refrence No</value>
+        <value xml:lang="en">RTI refrence No.</value>
     </property>
      <property key="modeOfPayment">
         <value xml:lang="en">Mode Of Payment</value>
     </property>
     <property key="RTIStatus">
-        <value xml:lang="en">RTI status</value>
+        <value xml:lang="en">RTI Status</value>
     </property>
     <property key="BPLCardNo">
-        <value xml:lang="en">BPL card No.</value>
+        <value xml:lang="en">BPL Card No.</value>
     </property>
     <property key="editRTIApplication">
         <value xml:lang="en">Edit RTI Application</value>
+    </property>
+    <property key="applicationPaymentBehalfOf">
+        <value xml:lang="en">Payment Behalf Of</value>
     </property>
 </resource>
