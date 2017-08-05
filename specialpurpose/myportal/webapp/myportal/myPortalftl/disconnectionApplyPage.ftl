@@ -4,21 +4,21 @@
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		 Date Created 		Date Modified   --->
-<#---1.0			Anubha Saini   02/08/2017         
+<#---1.0			Anubha Saini   02/08/2017    
+<#-- 1.1			Pankaj Trivedi						05/08/2017    
 <#-- #####################################################################################################-->
 <#--This ftl is used to Register New Customer -->
-   <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
-    <script language="javascript" src="/images/jquery/plugins/validate/additional-methods.js"  type="text/javascript"></script>
-
-   		 <form method="post" name="disconnectionApply" action="" class="basic-form">
+   		 
+  <form method="post" name="disconnectionApply" action="" class="basic-form">
    		<#--<div class="col-md-9">-->
    		 
-   		 <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.disconnectionApply}</span></div>
+   		 <#--  <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.disconnectionApply}</span></div> -->
    		 
     			<div class="row" >
     			<div class="alert alert-info">
 				<ul>
     				<li class="back"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
+    				<div class="h3" align="center"><b>${uiLabelMap.disconnectionApply}</b></div>
 	    		</ul>
   				</div>
   					
@@ -35,22 +35,34 @@
                 	</tr>
         			<tr>
                       	<td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input name="customerNo"  type="text" maxlength="10" value="1001" placeholder="${uiLabelMap.customerNo}"></td>
+                        <td><input name="customerNo"  type="text" maxlength="10" readonly value="1001" placeholder="${uiLabelMap.customerNo}"></td>
                         <td class="label">${uiLabelMap.connectionNo}</td>
-                        <td><input name="consumerNo"  type="text" maxlength="10" value="2001" placeholder="${uiLabelMap.connectionNo}"></td>
+                        <td><input name="consumerNo"  type="text" maxlength="10" readonly value="2001" placeholder="${uiLabelMap.connectionNo}"></td>
                         
                     </tr>
-                    
+                    <tr>
+                    	
+                    		<td class="label">${uiLabelMap.typeOfDisconnection}</td>
+                         <td>
+                    		<select name="${uiLabelMap.typeOfDisconnection}" >
+                   				<option value="">Select</option>
+                   				<option value="">Temporary</option>
+                   				<option value="">Permanent</option>
+                   			
+                 			</select>
+             			</td>
+                    	
+                    </tr>
                      <tr>
                       	<td class="label">${uiLabelMap.dueAmount}</td>
-                        <td><input name="consumerNo"  type="text" maxlength="10" value="" placeholder="${uiLabelMap.dueAmount}"></td>
-                        <td class="label">${uiLabelMap.reasoneForDisconnection}<font color="red" >*</font></td>
-                        <td colspan="4"><textarea name="reasoneForDisconnection" value="" maxlength="150" style="width:400px"></textarea></td>
+                        <td><input name="consumerNo"  type="text" maxlength="10" readonly value="5000"></td>
+                        <td class="label">${uiLabelMap.reasonForDisconnection}<font color="red" >*</font></td>
+                        <td colspan="4"><textarea name="reasonForDisconnection" value="" maxlength="3000" style="width:400px"></textarea></td>
                         
                     </tr>
                      <tr>
                       	<td class="label">${uiLabelMap.applicationDate}</td>
-                        <td><input name="applicationDate"  type="date" maxlength="10" value="03/08/2017" placeholder="${uiLabelMap.applicationDate}"></td>
+                        <td><input name="applicationDate"  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy")}"></td>
                         <td class="label">${uiLabelMap.assentialDocument}</td>
                         <td>
 		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
@@ -64,8 +76,8 @@
                     <tr>
                     	<td colspan="4">
                     	<center>
-                    	<input name="save"   type="button" value="${uiLabelMap.save}" onClick="javascript:saveRegistrationDetail(connectionApply);"/>
-                    	 <input type="button" name="Cancel" value="Cancel" onclick="javascript:validateConfirmBack();" >
+                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail(disconnectionApply);"/>
+                    	 <input type="button" name="Cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
                      	</center>
                      	</td>
                     </tr>
@@ -78,11 +90,11 @@
 </form>
 
     <script type="text/javascript" language="javascript">
-<#-- 
-function saveRegistrationDetail(RegisterPerson)
+ 
+function saveRegistrationDetail(disconnectionApply)
    {
-		      var form=document['RegisterPerson'];
-		      var tital =   form.tital.value;
+		      var form=document['disconnectionApply'];
+	<#--	      var tital =   form.tital.value;
 		      var firstName =   form.firstName.value;
 		      var middleName =   form.middleName.value;
 		      var dateOfBirth =   form.dateOfBirth.value;
@@ -98,7 +110,7 @@ function saveRegistrationDetail(RegisterPerson)
 		      var address =   form.address.value;
 		      var mobileNo =   form.mobileNo.value;
 		      var eMail =   form.eMail.value;
-		      
+		-->      
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
@@ -106,6 +118,6 @@ function saveRegistrationDetail(RegisterPerson)
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 
-    }-->
+    }
     
     </script>
