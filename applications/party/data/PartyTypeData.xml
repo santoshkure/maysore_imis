@@ -170,6 +170,9 @@ under the License.
 
     <!-- the groups which are the main roles on he party listing -->
     <RoleType description="Main Role" hasTable="N" parentTypeId="" roleTypeId="MAIN_ROLE"/>
+    
+    <!-- Added By PRABHU For HRMS Office  -->
+    <RoleType description="Office" hasTable="N" parentTypeId="OFFICE" roleTypeId="OFFICE"/>
 
     <!-- top level role types -->
     <RoleType description="Account Lead" hasTable="N" parentTypeId="" roleTypeId="ACCOUNT_LEAD"/>
