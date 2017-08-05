@@ -872,4 +872,96 @@ under the License.
         <auto-attributes mode="IN" include="pk"/>
     </service>
     
+    
+    <!-- Added By Prabhu for Office -->
+    
+ <service name="createoffice" export="true" engine="java" location="org.apache.ofbiz.humanres.HumanResEvents" invoke="createOffice">
+
+		<attribute name="officeName" type="String" mode="IN" optional="false" />
+		<attribute name="hoo" type="String" mode="IN" optional="true" />
+		<attribute name="officeType" type="String" mode="IN" optional="true" />
+		<attribute name="parentOffice" type="String" mode="IN" optional="true" />
+		<attribute name="address" type="String" mode="IN" optional="true" />
+		<attribute name="pinCode" type="String" mode="IN" optional="true" />
+		<attribute name="city" type="String" mode="IN" optional="true" />
+		<attribute name="district" type="String" mode="IN" optional="true" />
+<!--    <attribute name="officeId" type="String" mode="OUT"	optional="false" /> -->
+		<attribute name="faxNo" type="String" mode="IN" optional="true" />
+		<attribute name="contactNumber" type="String" mode="IN" optional="true" />
+		<attribute name="officeCode" type="String" mode="IN" optional="true" />
+		 
+		<attribute type="String" mode="IN" name="longitude" optional="true"/>
+        <attribute type="String" mode="IN" name="latitude" optional="true"/>
+<!-- 		<attribute type="String" mode="INOUT" name="geoPointId" optional="true"/>
+ -->		
+	</service>
+	
+	
+	<service name="updateofficedetail" engine="java"
+        location="org.apache.ofbiz.humanres.HumanResEvents" invoke="updateOfficeDetail">
+        <attribute name="officeId" type="String" mode="INOUT"
+            optional="false" />
+        <attribute name="officeName" type="String" mode="IN"
+            optional="true" />
+        <attribute name="parentOffice" type="String" mode="IN"
+            optional="true" />
+        <attribute name="officeType" type="String" mode="IN"
+            optional="true" />
+        <attribute name="contactMechId" type="String" mode="IN"
+            optional="true" />
+        <attribute name="address" type="String" mode="IN" optional="true"/>
+        <attribute name="city" type="String" mode="IN" optional="true" />
+        <attribute name="pinCode" type="String" mode="IN" optional="true" />
+        <attribute name="district" type="String" mode="IN" optional="true" />
+        <attribute name="tribal" type="String" mode="IN" optional="true" />
+        <attribute name="statusId" type="String" mode="IN" optional="true" />
+        <attribute name="hoo" type="String" mode="IN" optional="true" />
+        <attribute name="faxNo" type="String" mode="IN" optional="true" />
+        <attribute name="contactNumber" type="String" mode="IN" optional="true" />
+        <attribute name="officeCode" type="String" mode="IN" optional="true" />     
+        
+       <attribute type="String" mode="IN" name="longitude" optional="true"/>
+        <attribute type="String" mode="IN" name="latitude" optional="true"/>
+        <attribute type="String" mode="INOUT" name="geoPointId" optional="true"/>
+        
+    </service>
+    
+    
+    <service name="getOfficeDetail" engine="java" location="org.apache.ofbiz.humanres.HumanResEvents" invoke="getOfficeDetail">
+        <attribute name="officeId" type="String" mode="INOUT"
+            optional="false" />
+        <attribute name="officeName" type="String" mode="OUT"
+            optional="true" />
+        <attribute name="partyCode" type="String" mode="OUT"
+            optional="true" />
+        <attribute name="parentOfficeName" type="String" mode="OUT"
+            optional="true" />
+        <attribute name="parentOfficeId" type="String" mode="OUT"
+            optional="true" />
+        <attribute name="parentOfficeType" type="String" mode="OUT"
+            optional="true" />
+        <attribute name="officeType" type="String" mode="OUT"
+            optional="true" />
+        <attribute name="contactMechId" type="String" mode="OUT"
+            optional="true" />
+        <attribute name="address" type="String" mode="OUT" optional="true" />
+        <attribute name="city" type="String" mode="OUT" optional="true" />
+        <attribute name="pinCode" type="String" mode="OUT" optional="true" />
+        <attribute name="district" type="String" mode="OUT" optional="true" />
+   <!-- <attribute name="tribal" type="String" mode="OUT" optional="true" />  -->      
+        <attribute name="createdOn" type="java.sql.Timestamp" mode="OUT"
+            optional="true" />
+  <!--  <attribute name="hodId" type="String" mode="OUT" optional="true" />
+        <attribute name="emplPositionTypeId" type="String" mode="OUT" optional="true" />
+        <attribute name="designation" type="String" mode="OUT" optional="true" />
+        <attribute name="firstName" type="String" mode="OUT" optional="true" />      
+        <attribute name="lastName" type="String" mode="OUT" optional="true" /> -->
+       
+        <attribute name="faxNo" type="String" mode="OUT" optional="true" />
+        <attribute name="contactNumber" type="String" mode="OUT" optional="true" /> 
+        <attribute name="statusId" type="String" mode="OUT" optional="true" />
+       
+    </service>
+    
+    <!-- END -->
 </services>

@@ -1,0 +1,616 @@
+
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+
+   <property key="AddEstablishmentAdmin">
+        <value xml:lang="en">Add Establishment Admin</value>
+   </property>
+    
+    <property key="ADD">
+        <value xml:lang="en">ADD</value>
+    </property>
+    
+    <property key="OfficeSetup">
+        <value xml:lang="en">Office Setup</value>
+    </property>
+
+    <property key="Tribal">
+        <value xml:lang="en">Tribal</value>
+    </property>
+
+     <property key="District">
+        <value xml:lang="en">District</value>
+     </property>
+
+     <property key="City">
+        <value xml:lang="en">City</value>
+     </property>
+
+    <property key="Address">
+        <value xml:lang="en">Address</value>
+    </property>
+
+    <property key="RemoveSelected">
+        <value xml:lang="en">Remove Selected</value>
+	</property>
+
+    <property key="ListOfOffices">
+		<value xml:lang="en">List Of Sub-Offices</value>
+	</property>
+
+     <property key="SearchOffice">
+        <value xml:lang="en">Search Office</value>
+	</property>
+    
+     <property key="ParentOffice">
+        <value xml:lang="en">Head Office</value>
+	 </property>
+    
+    <property key="Office">
+        <value xml:lang="en">Office Name</value>
+	</property>
+	
+	 <property key="HOO">
+        <value xml:lang="en">Head Of Office</value>
+	</property>
+	 <property key="OfficeHOO">
+        <value xml:lang="en">Head Of Officer</value>
+	</property>
+    
+    <property key="AddOffice">
+        <value xml:lang="en">Add New Office</value>
+	</property>
+	
+	 <property key="EditOfficeDetails">
+        <value xml:lang="en">Edit Office Details</value>
+	</property>
+	
+	 <property key="ViewOfficeDetails">
+        <value xml:lang="en">View Office Details</value>
+	</property>
+    
+     <property key="HeadOfDepartment">
+        <value xml:lang="en">Head Of Department</value>
+	</property>
+    
+    <property key="EmployeeSummary">
+        <value xml:lang="en">Employee Summary</value>
+	</property>
+    
+    <property key="DetailedListOfEmployees">
+        <value xml:lang="en">Detailed List Of Employees</value>
+	</property>
+    
+    <property key="SearchEmployee">
+        <value xml:lang="en">Search Employees</value>
+	</property>
+    <property key="SearchedEmployees">
+        <value xml:lang="en">List of Employees</value>
+    </property>
+    <property key="Grade">
+        <value xml:lang="en">Grade</value>
+ 	</property>
+    <property key="NumberOfEmployees">
+        <value xml:lang="en">Number Of Employees</value>
+	</property>
+    
+    <property key="ViewEstablishmentAdmin">
+        <value xml:lang="en">View Establishment Admin</value>
+	</property>
+    
+    <property key="UpdateOffice">
+        <value xml:lang="en">Update Office</value>
+ 	</property>
+    
+    <property key="update">
+        <value xml:lang="en">UPDATE</value>
+	</property>
+    
+    <property key="ViewOffice">
+        <value xml:lang="en">View Office</value>
+	</property>
+    
+    <property key="ViewEstablishmentAdmin">
+        <value xml:lang="en">View Establishment Admin</value>
+	</property>
+    
+    <property key="UpdateEstablishmentAdmin">
+        <value xml:lang="en">Update Establishment Admin</value>
+	</property>
+    <property key="officeCreation.parentoffice_detals_could_not_exists">
+		<value xml:lang="en">parentoffice detals could not exists</value>	
+	</property>	
+	<property key="officeCreation.could_not_retrieve_parentoffice_read_failure">
+		<value xml:lang="en">Could not retrieve parentoffice detals </value>	
+    </property>
+	<property key="parentoffice_detals_could_not_exists">
+		<value xml:lang="en">No parentoffice detals exists</value>	
+</property>
+	<property key="updateOffice.successful_updation_of_office">
+		<value xml:lang="en">Office details updated successfully</value>
+</property>
+	<property key="createOffice.successful_creation_of_office">
+		<value xml:lang="en">Office added successfully</value>
+</property>
+	<property key="createOffice.cant_create_office">
+		<value xml:lang="en">Can not able to add office</value>
+</property>	 
+	<property key="createOffice.cant_create_role_of_office">
+		<value xml:lang="en">Can not able to add role for office</value>
+</property>
+	<property key="createOffice.cant_update_address_of_office">
+		<value xml:lang="en">Can not add the postal address for the office</value>
+</property>
+    <property key="updateOffice.cant_update_address_of_office">
+		<value xml:lang="en">Can not add the postal address for the office</value>
+</property>
+    <property key="updateOffice.cant_update_parent_Office_of_office">
+        <value xml:lang="en">Could not update Head office for the office</value>
+</property>
+    <property key="updateOffice.cant_update_HOD_of_office">
+       <value xml:lang ="en">Could not update Head of the department for the office</value>
+</property>
+    <property key="updateOffice.successful_updation_of_office">
+       <value xml:lang="en">Successfully updated your office</value>
+</property>
+    <property key="No_c  ld_office">
+        <value xml:lang="en">No sub office found</value>
+</property>   
+        <property key="ViewApproveLeaveRequest">
+        <value xml:lang="en">View/Approve Leave Request</value>
+</property>
+     <property key="ViewApproveTransferRequest">
+        <value xml:lang="en">View/Approve Transfer Request</value>
+</property>
+     <property key="ViewApproveAdvancesRequest">
+        <value xml:lang="en">View/Approve Advances Request</value>
+</property>
+     <property key="ViewApproveACRRequest">
+        <value xml:lang="en">View/Approve ACR Request</value>
+</property>
+     <property key="ReviewAttandance">
+        <value xml:lang="en">Review Attendance</value>
+</property>
+    <property key="NA">
+      <value xml:lang="en">NA</value>
+</property>
+     <property key="ListOfActions">
+      <value xml:lang="en">List Of Actions</value>
+     </property>
+     <property key="employeeId">
+    	<value xml:lang="en">Employee ID</value>
+    </property>
+    <property key="AdminDesignation">
+        <value xml:lang="en">Designation</value>
+</property>    
+	 <property key="createEmployee.created_employee_official_details">
+    	<value xml:lang="en">Employee is successfully enrolled with employee id:</value>
+    </property>
+    <property key="createEmployee.cant_create_employee">
+    	<value xml:lang="en">Can not add an employee.</value>
+    </property>
+    
+      <property key="createEmployee.employee_created">
+    	<value xml:lang="en">Employee created successfully.</value>
+    </property>
+    
+      <property key="HrmsMain">
+		<value xml:lang="en">Office Setup</value>
+	</property>
+	<property key="HrmsApplication">
+		<value xml:lang="en">Standard Program Application: Office Setup</value>
+	</property>
+	<property key="HrmsCompanyName">
+		<value xml:lang="en">OFBiz: Standard Program</value>
+	</property>
+	<property key="HrmsCompanySubtitle">
+		<value xml:lang="en">Part of the Standard Program practice group</value>
+	</property>
+
+	<property key="HrmsDisplay">
+		<value xml:lang="en">Displaying</value>
+	</property>
+	<property key="HrmsLast">
+		<value xml:lang="en">Last</value>
+	</property>
+	<property key="HrmsPage">
+		<value xml:lang="en">Page</value>
+	</property>
+	<property key="HrmsFirst">
+		<value xml:lang="en">First</value>
+	</property>
+	<property key="HrmsOfficeId">
+		<value xml:lang="en">Office Id</value>
+	</property>
+	<property key="HrmsOfficeType">
+		<value xml:lang="en">Office Type</value>
+	</property>
+	<property key="HrmsOfficeName">
+		<value xml:lang="en">Office Name</value>
+	</property>
+	<property key="HrmsHeadOfOffice">
+		<value xml:lang="en">Head Of Office</value>
+	</property>
+	<property key="HrmsEmployeeId">
+		<value xml:lang="en">Employee Id</value>
+	</property>
+	<property key="HrmsLookupOffice">
+		<value xml:lang="en">Lookup Office</value>
+	</property>
+	<property key="HrmsStatus">
+		<value xml:lang="en">Office Status</value>
+	</property>
+	<property key="createOffice.successful_creation_of_office">
+		<value xml:lang="en">Office Is created successfully</value>
+	</property>
+	<property key="createOffice.cant_create_office">
+		<value xml:lang="en">Not able to add office</value>
+	</property>
+	<property key="createOffice.cant_create_role_of_office">
+		<value xml:lang="en">Can not able to add role for office</value>
+	</property>
+	<property key="createOffice.cant_update_address_of_office">
+		<value xml:lang="en">Can not add the postal address for the office</value>
+	</property>
+	<property key="createOffice.cant_create_duplicate_office">
+		<value xml:lang="en">Office Already exists with name </value>
+	</property>
+	<property key="createOffice.cant_create_office_withoutparent">
+		<value xml:lang="en">Head Office can not be empty for office type </value>
+	</property>
+	<property key="findOffice.employee_not_exist">
+		<value xml:lang="en">Employee Does not exist </value>
+	</property>
+	<property key="getOfficedetail.officeid_empty">
+		<value xml:lang="en">Office Name is empty</value>
+	</property>
+	<property key="getOfficedetail.error_getting_office_detail">
+		<value xml:lang="en">Office Details cannot be retrieved</value>
+	</property>
+	<property key="updateofficeDetail.error_getting_office_employees">
+		<value xml:lang="en">Office Employees can not be retrieved</value>
+	</property>
+	<property key="updateofficeDetail.cannot_update_office">
+		<value xml:lang="en">Office can not be updated</value>
+	</property>
+	<property key="updateofficeDetail.cant_update_address_of_office">
+		<value xml:lang="en">Can not update the postal address for the office</value>
+	</property>
+	<property key="updateofficeDetail.cannot_create_parent_of_wrdmp">
+		<value xml:lang="en">No Head office can be created for office type</value>
+	</property>
+	<property key="updateofficeDetail.cannot_update_parentoffice">
+		<value xml:lang="en">Can not update Head office as employees are associated with</value>
+	</property>
+	<property key="updateofficeDetail.cannot_update_officetype">
+		<value xml:lang="en">Can not update office type as employees are associated with</value>
+	</property>
+	<property key="updateofficeDetail.cannot_update_officename">
+		<value xml:lang="en">Can not update office name as employees are associated with</value>
+	</property>
+	<property key="deleteOffice.cannot_delete_office">
+		<value xml:lang="en">Can not delete office as employees are associated with it</value>
+	</property>
+	<property key="updateofficeDetail.cannot_Disable_office">
+		<value xml:lang="en">Can not disable office as employees are associated with</value>
+	</property>
+	<property key="deleteOffice.error_delete_office">
+		<value xml:lang="en">Can not delete office</value>
+	</property>
+	<property key="countOfficeEmployees.cannot_count_employee">
+		<value xml:lang="en">Not able to count employees of office</value>
+	</property>
+	<property key="getSubOffices.cannot_find_suboffices">
+		<value xml:lang="en">Not able to find sub offices</value>
+	</property>
+	<property key="HrmsOfficeDetail">
+		<value xml:lang="en">Office Details</value>
+	</property>
+	<property key="HrmsTribal">
+		<value xml:lang="en">Tribal</value>
+	</property>
+	<property key="HrmsPinCode">
+		<value xml:lang="en">Pin Code</value>
+	</property>
+	<property key="HrmsDistrict">
+		<value xml:lang="en">District</value>
+	</property>
+	<property key="HrmsCity">
+		<value xml:lang="en">City</value>
+	</property>
+	<property key="HrmsAddress">
+		<value xml:lang="en">Address</value>
+	</property>
+	<property key="HrmsParentOfficeName">
+		<value xml:lang="en">Head Office Name</value>
+	</property>
+	<property key="HrmsNoOfEmployee">
+		<value xml:lang="en">Number of Employees</value>
+	</property>
+	<property key="HrmsGrade">
+		<value xml:lang="en">Grade</value>
+	</property>
+	<property key="HrmsTotalOfficeSummary">
+        <value xml:lang="en">Employees Including Sub Offices</value>
+    </property>
+	<property key="HrmsCurrentOfficeSummary">
+		<value xml:lang="en">Employees in Present Office</value>
+	</property>
+	<property key="EmployeesDetail">
+		<value xml:lang="en">Number of Employees in Offices</value>
+	</property>
+	<property key="OfficeDetails">
+		<value xml:lang="en">Office Details</value>
+	</property>
+	<property key="HrmsEditOffice">
+		<value xml:lang="en">Edit Office</value>
+	</property>
+	<property key="HrmsCreateOffice">
+		<value xml:lang="en">Add Office</value>
+	</property>
+	<property key="HrmsDesignation">
+		<value xml:lang="en">Post</value>
+	</property>
+	<property key="HrmsSubOffices">
+		<value xml:lang="en">Sub Offices</value>
+	</property>
+	<property key="deleteOffice.office_deleted_successfully">
+		<value xml:lang="en">Office deleted successfully</value>
+	</property>
+	<property key="updateofficeDetail.office_updated">
+		<value xml:lang="en">Office details updated successfully.</value>
+	</property>	
+	<property key="createOffice.office_created">
+		<value xml:lang="en">Office details saved successfully.</value>
+	</property>
+	
+	<!-- Added by Balakrishna -->
+	<property key="OfficeNameEmpty">
+        <value xml:lang="en">Office Name should not be empty</value>
+    </property>
+    <property key="OfficeNameAlphabet">
+        <value xml:lang="en">Enter Only Alphabets in Office Name Field</value>
+    </property>
+    <property key="HooEmpty">
+        <value xml:lang="en">Head Of Office can not be empty</value>
+    </property>
+    <property key="HooNumeric">
+        <value xml:lang="en">Enter Only Numeric in Head Of Office Name Field</value>
+    </property>
+    <property key="OfficeTypeEmpty">
+        <value xml:lang="en"> Select Office Type</value>
+    </property>
+   <property key="AddressEmpty">
+        <value xml:lang="en">Address should not be empty</value>
+    </property>
+    <property key="PinCodeEmpty">
+        <value xml:lang="en">Pin Code should not be empty</value>
+    </property>
+    <property key="PinCodeNumeric">
+        <value xml:lang="en">Enter Only Numeric in Pin Code Field</value>
+    </property>
+    <property key="faxNoNumeric">
+        <value xml:lang="en">Enter Only Numeric in Fax Field</value>
+    </property>
+    <property key="contactNumberNumeric">
+        <value xml:lang="en">Enter Only Numeric in Contact Number Field</value>
+    </property>
+    <property key="CityEmpty">
+        <value xml:lang="en">City should not be empty</value>
+    </property>
+    <property key="CityAlphabet">
+        <value xml:lang="en">Enter Only Alphabets in City Field</value>
+    </property>
+    
+    <property key="ParentOfficeEmpty">
+        <value xml:lang="en">Head Office Name can not be empty</value>
+    </property>
+    <property key="StatusIdEmpty">
+        <value xml:lang="en">Office Status can not be empty</value>
+    </property>
+    <property key="DistrictEmpty">
+        <value xml:lang="en">District can not be empty</value>
+    </property>
+    <property key="TribalEmpty">
+        <value xml:lang="en">Tribal can not be empty</value>
+    </property>
+    <property key="DistrictAlphabet">
+        <value xml:lang="en">Enter Only Alphabets in District Field</value>
+    </property>
+    <property key="Add">
+        <value xml:lang="en">Add</value>
+    </property>
+    <property key="Reset">
+        <value xml:lang="en">Reset</value>
+    </property>
+    <property key="CommonBack">
+        <value xml:lang="en">Back</value>
+    </property>
+    <property key="HrmsViewOfficeDetail">
+        <value xml:lang="en">View Office Detail</value>
+    </property>
+     <property key="HrmsEditOfficeDetail">
+        <value xml:lang="en">Edit Office Detail</value>
+    </property>
+     <property key="CommonEdit">
+        <value xml:lang="en">Edit</value>
+    </property>
+   
+     <property key="CommonSave">
+        <value xml:lang="en">Save</value>
+    </property>
+    <property key="AddressValidation">
+        <value xml:lang="en">Special Characters should not be allowed in Address Field</value>
+    </property>
+    <!-- Employee Related Errors -->
+    <property key="entered.hoo.notan.employee">
+		<value xml:lang="en">HOO is not a Employee</value>
+	</property>	
+	<property key="AdvanceSearch">
+        <value xml:lang="en">Advance Search</value> 
+    </property>
+    <property key="OfficeId">
+        <value xml:lang="en">Office Id</value> 
+    </property>   
+    <property key="CreateIncumbency">
+        <value xml:lang="en">Create Establishment Schedule</value>
+    </property>   
+    <property key="payscaleEmpty">
+        <value xml:lang="en">Pay Scale Empty</value>
+    </property>
+    <property key="NoOfPositionsSanctioned">
+        <value xml:lang="en">No.of Positions Sanctioned</value>
+    </property>   
+    <property key="ManPowerFilled">
+        <value xml:lang="en">No.of Positions Filled</value>
+    </property>       
+    <property key="PayScale">
+        <value xml:lang="en">Pay Scale</value>
+    </property>
+    <property key="postEmpty">
+        <value xml:lang="en">Designation can not be empty.</value>
+    </property>   
+    <property key="payscaleEmpty">
+        <value xml:lang="en">Pay Scale can not be empty</value>
+    </property>   
+    <property key="noofpostsNumeric">
+        <value xml:lang="en">No.Of Posts Should be Numeric</value>
+    </property>
+    <property key="manpowermaster.could_not_create">
+        <value xml:lang="en">Posts could not create </value>
+    </property>
+     <property key="created.incumbency.successful">
+        <value xml:lang="en">Successful creation of establishment schedule </value>
+    </property>   
+    <property key="not_able_to_get_incumbency_detail">
+        <value xml:lang="en">Not able to get establishment schedule  </value>
+    </property>            		
+    
+	<!-- Requesting an office -->
+	<property key="createRequestOffice">
+        <value xml:lang="en">Request Office</value> 
+    </property>
+	<property key="requiredOfficeDetails">
+        <value xml:lang="en">Required Office Details</value>
+    </property>
+	<property key="requiredOfficeContactDetails">
+        <value xml:lang="en">Required Office Contact Details</value> 
+    </property>
+	<property key="requestingOffice">
+        <value xml:lang="en">Requesting Office</value> 
+    </property>
+	<property key="officeHead">
+        <value xml:lang="en">Office Head</value> 
+    </property>
+	<property key="officeHeadName">
+        <value xml:lang="en">Office Head Name</value>
+    </property>
+	<property key="contactNumber">
+        <value xml:lang="en">Contact Number</value>
+    </property>
+	<property key="Fax">
+        <value xml:lang="en">Fax Number</value>
+    </property>
+	<property key="projectName">
+        <value xml:lang="en">Project Name</value> 
+    </property>
+	<property key="projectNameEmpty">
+        <value xml:lang="en">Project name cannot be empty</value>
+    </property>
+	<property key="cannot.get.current.office">
+        <value xml:lang="en">Cannot Get Current Office</value>
+    </property>
+	<property key="requestOfficeList">
+        <value xml:lang="en">Request Offices List</value>
+    </property>
+	<property key="approvedBy">
+        <value xml:lang="en">Approved By</value>
+    </property>
+	<property key="approvedDate">
+        <value xml:lang="en">Approved Date</value>
+    </property>	
+	<property key="parentOfficeId">
+        <value xml:lang="en">Head Office Id</value>
+    </property>	
+	<property key="requestId">
+        <value xml:lang="en">Request Id</value>
+    </property>	
+	<property key="requestedOfficeName">
+        <value xml:lang="en">Requested Office Name</value>
+    </property>
+    <property key="request.id.is.empty">
+        <value xml:lang="en">Request Id is empty </value>
+    </property>		
+	<property key="deleteOffice">
+        <value xml:lang="en">Delete Office</value>
+    </property>
+    <property key="ParentOfficeId">
+        <value xml:lang="en">Head Office Id</value>
+    </property>
+    <property key="SubOfficesDetail">
+        <value xml:lang="en">Search Sub Offices</value>
+    </property>
+    <property key="Total">
+        <value xml:lang="en">Total</value>
+    </property>
+    <property key="SaveDelete">
+        <value xml:lang="en">Save and Delete</value>
+    </property>
+	 <property key="Cancel">
+        <value xml:lang="en">Cancel</value>
+    </property>
+     <property key="RequiredDocument">
+        <value xml:lang="en">Required Document</value>
+    </property>
+     <property key="OrderNumber">
+        <value xml:lang="en">Order Number</value>
+    </property>
+     <property key="OrderDate">
+        <value xml:lang="en">Order Date</value>
+    </property>
+     <property key="ApprovedBy">
+        <value xml:lang="en">Approved By</value>
+    </property>
+    <property key="emailId">
+        <value xml:lang="en">email Id</value>
+    </property>
+    <property key="ContactInformation">
+        <value xml:lang="en">Contact Information</value>
+        </property>
+     <property key="officecontactdetails.not_found">
+        <value xml:lang="en">Contact details not found for the selected office</value> 
+    </property>
+	<property key="viewRequestOffice">
+        <value xml:lang="en">View Requested Office Details</value>
+    </property>
+	<property key="contactNumerEmpty">
+        <value xml:lang="en">Contact Number cannot be empty</value>
+    </property>
+	<property key="contactNumerNumeric">
+        <value xml:lang="en">Enter Only Numbers in Contact Number Field</value>
+    </property>
+	<property key="user.should.be.an.employee">
+        <value xml:lang="en">User should be an Employee</value>
+    </property>
+    
+    <property key="CreateIncumbency">
+        <value xml:lang="en">Create Establishment Schedule</value>
+    </property>   
+    <property key="payscaleEmpty">
+        <value xml:lang="en">Pay Scale Empty</value>
+    </property>
+    
+    <property key="AddOfficeRelations">
+        <value xml:lang="en">Add Office Relations  ps</value>
+    </property>
+    
+     <property key="LookupSchedule">
+        <value xml:lang="en">Lookup Establishment Schedule</value>
+    </property>
+     <property key="Display">
+        <value xml:lang="en">Display</value>           
+    </property>
+	 
+    
+	
+	<!-- End -->
+</resource>
