@@ -54,7 +54,7 @@ import org.apache.ofbiz.service.GenericServiceException;
 import org.apache.ofbiz.service.LocalDispatcher;
 import org.apache.ofbiz.service.ServiceUtil;
 
-import org.apache.ofbiz.officeexception.*;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.*;
 import org.apache.ofbiz.humanres.OfficeSetupConstants;
 import org.apache.ofbiz.humanres.EmployeeConstants;
 import org.apache.ofbiz.ui.messages.UIMessage;
