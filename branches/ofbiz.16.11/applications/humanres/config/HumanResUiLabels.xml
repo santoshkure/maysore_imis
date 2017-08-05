@@ -3809,5 +3809,62 @@
         <value xml:lang="kn">RTI Reply Detail</value>
     </property>
     <!-- End -->
+     <!-- Added For Office By PRABHU -->
+    <property key="HRMSOffice">
+        <value xml:lang="en">Office</value>        
+    </property>
+    <property key="OfficeSearch">
+        <value xml:lang="en">Search Office</value>        
+    </property>
+    <property key="HRMSOfficeId">
+        <value xml:lang="en">Office Id</value>        
+    </property>
+    <property key="Newoffice">
+        <value xml:lang="en">New Office</value>
+    </property>
+    <property key="HrmsParentOfficeName">
+		<value xml:lang="en">Head Office Name</value>
+	</property>
+	<property key="HrmsOfficeName">
+		<value xml:lang="en">Office Name</value>
+	</property>
+	<property key="HrmsOfficeStatus">
+		<value xml:lang="en">Office Status</value>
+	</property>	
+	
+	<property key="HrmsOfficeType">
+		<value xml:lang="en">Office Type</value>
+	</property>
+	
+	<property key="HrmsHeadOfOffice">
+		<value xml:lang="en">Head Of Office</value>
+	</property>
+    <property key="HrmsOfficeDetail">
+		<value xml:lang="en">Office Details</value>
+	</property>
+	<property key="HrmsTribal">
+		<value xml:lang="en">Tribal</value>
+	</property>
+	<property key="HrmsPinCode">
+		<value xml:lang="en">Pin Code</value>
+	</property>
+	<property key="HrmsDistrict">
+		<value xml:lang="en">District</value>
+	</property>
+	<property key="HrmsCity">
+		<value xml:lang="en">City</value>
+	</property>
+	<property key="HrmsAddress">
+		<value xml:lang="en">Address</value>
+	</property>
+		<property key="contactNumber">
+        <value xml:lang="en">Contact Number</value>
+    </property>
+    
+	<property key="Fax">
+        <value xml:lang="en">Fax Number</value>
+    </property>
+    
+    <!-- END -->
     
 </resource>
