@@ -34,14 +34,16 @@
                         <td> Ravi</td>
                         <td class="label">${uiLabelMap.middleName}</td>
                         <td>  Kumar</td>
-                        <td class="label">${uiLabelMap.lastName}</td>
-                        <td> Rai</td>
                    </tr>
                    
                    <tr>
+                   		<td class="label">${uiLabelMap.lastName}</td>
+                        <td> Rai</td>
                         <td class="label">${uiLabelMap.dateOfBirth}</td>
                         <td> 29/04/1994</td>
-                        
+                   </tr>   
+ 
+                   <tr>
                         <td class="label">${uiLabelMap.gender}</td>
                         <td> Male</td>
                         
@@ -55,34 +57,51 @@
                         
                         <td class="label">${uiLabelMap.motherName}</td>
                         <td>Ramkali Rai</td>
-                        
-                        <td class="label">${uiLabelMap.aadharCardNo}</td>
-                        <td>1234 4567 7891 4567</td>
                     </tr>
                     
                     <tr>
+                    	<td class="label">${uiLabelMap.aadharCardNo}</td>
+                        <td>1234 4567 7891 4567</td>
                         <td class="label">${uiLabelMap.cummunity}</td>
                         <td> OBC </td>
+                     </tr>   
+                     
+                     <tr>   
                         <td class="label">${uiLabelMap.cast}</td>
                         <td> Kalar</td>
                         <td class="label">${uiLabelMap.nationality}</td>
                         <td>Indian</td>
                     </tr>
                     
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
+                    <tr>
+                        <td class="label">${uiLabelMap.mobileNo}</td>
+                        <td>8978789885</td>
+                        <td class="label">${uiLabelMap.resContactNo}</td>
+                        <td>7878978789</td>
+                      </tr>
+                   
+                   	  <tr>
+                    	<td class="label">${uiLabelMap.CommonEmail}</td>
+                        <td>example@gmail.com</td>
+                      </tr>
+                     
+                    <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
                         <td> Sector 3, Lane No. 1 Sahu Colony Pune</td>
                         <td class="label">${uiLabelMap.houseNo}</td>
                         <td> 45/ 12</td>
-                        <td class="label">${uiLabelMap.wardNo}</td>
-                        <td> 15 </td>
                     </tr>
                     
                     <tr>
+                    	<td class="label">${uiLabelMap.wardNo}</td>
+                        <td> 15 </td>
                         <td class="label">${uiLabelMap.mohalla}</td>
                         <td> Aajad Ward</td>
+                   </tr>
+                   
+                   <tr>     
                         <td class="label">${uiLabelMap.landMark}</td>
                         <td>Ekshubhit Bungalow</td>
                         <td class="label">${uiLabelMap.village}</td>
@@ -94,19 +113,13 @@
                         <td>Mysore</td>
                         <td class="label">${uiLabelMap.CommonState}</td>
                         <td>Karnataka</td>
-                        <td class="label">${uiLabelMap.CommonCountry}</td>
-                        <td>India</td>
                     </tr>
                     
-                        <tr>
-                        <td class="label">${uiLabelMap.mobileNo}</td>
-                        <td>8978789885</td>
-                        <td class="label">${uiLabelMap.resContactNo}</td>
-                        <td>7878978789</td>
-                        <td class="label">${uiLabelMap.CommonEmail}</td>
-                        <td>example@gmail.com</td>
-                    </tr>
-                   
+                    <tr>
+                    	<td class="label">${uiLabelMap.CommonCountry}</td>
+                        <td>India</td>
+                     </tr>
+                        
             </tbody>
         </table>
     </div>

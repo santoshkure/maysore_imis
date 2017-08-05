@@ -22,13 +22,13 @@
              <tbody>
                   
                 <tr>
-	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
+	               <td colspan="2"><font color="blue">${uiLabelMap.personalDetail}</font></td>
 	               <td colspan="2"><font color="blue"><u><i>${uiLabelMap.noteMandatoryAsterisk}</i></u></font color></td>
                 </tr>
                 
                 <tr>
                     <td class="label">${uiLabelMap.customerNo}</td>
-                    <td colspan="5">10001</td>
+                    <td colspan="3">10001</td>
                     
                   </tr>
                   
@@ -43,11 +43,11 @@
                    			<option value="other">Other</option>
                  		</select>
              		</td>
+             		<td class="label">${uiLabelMap.firstName}</td>
+                    <td><input name="firstName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFirstName}"></td>
                   </tr>
                   
                   <tr>
-                      	<td class="label">${uiLabelMap.firstName}</td>
-                        <td><input name="firstName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFirstName}"></td>
                         <td class="label">${uiLabelMap.middleName}</td>
                         <td><input name="middleName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMiddleName}"></td>
                         <td class="label">${uiLabelMap.lastName}</td>
@@ -61,7 +61,10 @@
                         <td class="label">${uiLabelMap.gender}</td>
                         <td><input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="female"> Female <input type="radio" name="gender" value="other"> Other</td>
    
-   						<td class="label">${uiLabelMap.maritalStatus}</td>
+   					</tr>
+            
+                    <tr>
+                    	<td class="label">${uiLabelMap.maritalStatus}</td>
    						<td>
    							<select name="maritalStatus" style="width:90px;">
                    				<option value="">Select</option>
@@ -69,12 +72,12 @@
                    				<option value="Married">Married</option>
                    			</select>
                    		</td>
-   					</tr>
-            
-                    <tr>
+                   		
                         <td class="label">${uiLabelMap.fatherName}</td>
                         <td><input name="fatherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFatherName}"></td>
-                        
+                     </tr>
+            
+                    <tr>   
                         <td class="label">${uiLabelMap.motherName}</td>
                         <td><input name="motherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMotherName}"></td>
                         
@@ -87,17 +90,36 @@
                         <td>
                         <input name="cummunity"  type="text" maxlength="25" value="" placeholder="${uiLabelMap.yourCummunity}">
                         </td>
+                        
                         <td class="label">${uiLabelMap.cast}</td>
                         <td>
                         <input name="cast"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourCast}">
                         </td>
-                        <td class="label">${uiLabelMap.nationality}</td>
+                    </tr>
+                    
+                    <tr>
+                    <td class="label">${uiLabelMap.nationality}</td>
                         <td>
                         <input name="nationality"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourNationality}">
                         </td>
+                        <td class="label">${uiLabelMap.mobileNo}</td>
+                        <td>
+                        <input name="mobileNo" type="text" maxlength="25" value="" placeholder="${uiLabelMap.yourMobile}">
+                        </td>
+                     </tr>
+                     
+                      <tr>
+                        <td class="label">${uiLabelMap.resContactNo}</td>
+                        <td>
+                        <input name="resContactNo" id="ddd" type="text" maxlength="25" value="" >
+                        </td>
+                        <td class="label">${uiLabelMap.CommonEmail}</td>
+                        <td>
+                        <input name="eMail" type="text" maxlength="40" value="" placeholder="${uiLabelMap.yourEMail}">
+                        </td>
                     </tr>
-                    
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
+                       
+                    <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
@@ -108,17 +130,21 @@
                         <td>
                         <input name="houseNo" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterHouseNo}">
                         </td>
-                        <td class="label">${uiLabelMap.wardNo}</td>
-                        <td>
-                        <input name="wardNo"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourWard}">
-                        </td>
                     </tr>
                     
                     <tr>
+                    	<td class="label">${uiLabelMap.wardNo}</td>
+                        <td>
+                        <input name="wardNo"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourWard}">
+                        </td>
                         <td class="label">${uiLabelMap.mohalla}</td>
                         <td>
                         <input name="mohalla" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMohalla}">
                         </td>
+                   
+                   </tr>
+                   
+                   <tr>     
                         <td class="label">${uiLabelMap.landMark}</td>
                         <td>
                         <input name="landMark" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterLandMark}">
@@ -138,48 +164,38 @@
                         <td>
                         <input name="state" type="text" maxlength="25" value="Karnataka" readonly>
                         </td>
-                        <td class="label">${uiLabelMap.CommonCountry}</td>
+                    </tr>
+                    
+                    <tr>
+                    	<td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>
                         <input name="country" type="text" maxlength="25" value="India" readonly>
                         </td>
                     </tr>
-                    
-                        <tr>
-                        <td class="label">${uiLabelMap.mobileNo}</td>
-                        <td>
-                        <input name="mobileNo" type="text" maxlength="25" value="" placeholder="${uiLabelMap.yourMobile}">
-                        </td>
-                        <td class="label">${uiLabelMap.resContactNo}</td>
-                        <td>
-                        <input name="resContactNo" id="ddd" type="text" maxlength="25" value="" >
-                        </td>
-                        <td class="label">${uiLabelMap.CommonEmail}</td>
-                        <td>
-                        <input name="eMail" type="text" maxlength="40" value="" placeholder="${uiLabelMap.yourEMail}">
-                        </td>
-                    </tr>
-                   
-                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
+                        
+                   <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
                     
                     <tr>
                          <td class="label">${uiLabelMap.actionDate}</td>
                     	 <td>02/08/2017</td>
                          <td class="label">${uiLabelMap.actionByOfficer}</td>
                          <td> Kailash Nath Trivedi </td>
-                         <td class="label">${uiLabelMap.designation}</td>
-                         <td> EE </td>
                     </tr>
                     
                     <tr>
+                    	
+                    	 <td class="label">${uiLabelMap.designation}</td>
+                         <td> EE </td>
+                         
                          <td class="label">${uiLabelMap.CommonStatus}</td>
                     	 <td> Approved </td>
                      </tr>
                      
                     <tr>
-                    	<td colspan="6">
+                    	<td colspan="4">
                     	<center>
                     	<input name="Update"   type="button" value="${uiLabelMap.CommonUpdate}" onClick="javascript:editCustomerDetailFunction(editCustomerDetail);"/>
-                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" /> 
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	</center>
                      	</td>
                     </tr>
@@ -195,7 +211,7 @@ function editCustomerDetailFunction(editCustomerDetail)
    {
 		      var form=document['editCustomerDetail'];
 		      
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
+		      var sure = confirm("Are you sure, you want to Update the Form ?");
                               if( sure == true )
                              {
                         form.action = "<@ofbizUrl>main</@ofbizUrl>";

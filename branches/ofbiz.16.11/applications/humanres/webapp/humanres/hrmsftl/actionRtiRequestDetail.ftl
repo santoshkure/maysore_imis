@@ -105,7 +105,7 @@
                     	<td colspan="4">
                     	<center>
                     	<input name="action"   type="button" value="${uiLabelMap.action}" onClick="javascript:actionRtiReply(actionRtiRequestDetail);"/>
-                    	<input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/> 
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/>
                      	</center>
                      	</tr>
                      	
