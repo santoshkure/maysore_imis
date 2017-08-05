@@ -20,8 +20,6 @@
  		<tr>
  		   <td class="label" >${uiLabelMap.connectionNo}</td>
 		   <td>88267</td>
-		 </tr>
-		 <tr>
 		   <td class="label" >${uiLabelMap.customerName}</td>
 		   <td>Harichandra Pavasha Mhatre</td>
 		 </tr>
@@ -31,11 +29,10 @@
 		 </tr>
 		
 		<tr>
-			<td colspan="1"><center>
-			<div id ="saveBtn">
-				<input name="view" value="View History" type="button" onClick="validateParameters('')">
-				
-			</div>
+			<td colspan="4"><center>
+			<div id ="saveBtn" align="center">
+				<input name="view" value="${uiLabelMap.viewHistory}" type="button" onClick="validateParameters('')">
+			</div></center>
 			</td>
 						
 		</tr>
