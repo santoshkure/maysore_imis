@@ -666,6 +666,19 @@ under the License.
       <field name="emplPositionId" type="id-ne"></field>
       <field name="statusId" type="id"></field>
       <field name="partyId" type="id"></field>
+      
+      <field name="serviceAction" type="id"></field>
+      <field name="serviceActionOrderNumber" type="short-varchar"></field>
+ 	  <field name="officeId" type="id"></field>
+      <field name="cadreOfficeId" type="id"></field>
+      <field name="appointmentTypeId" type="id"></field>
+      <field name="associationId" type="id"></field>
+      <field name="dateOfAppointment" type="date-time"></field><!--
+      <field name="dateOfJoining" type="date-time"></field>
+      --><field name="payScaleId" type="id"></field>
+      <field name="bandPay" type="currency-amount"></field>
+      <field name="location" type="name"></field>
+      <field name="post" type="name"></field>
       <field name="budgetId" type="id"></field>
       <field name="budgetItemSeqId" type="id"></field>
       <field name="emplPositionTypeId" type="id"></field>
@@ -691,6 +704,23 @@ under the License.
       <relation type="one-nofk" fk-name="EMPL_POS_EPSTP" rel-entity-name="EmplPositionType">
         <key-map field-name="emplPositionTypeId"/>
       </relation>
+      
+       <relation type="one" fk-name="EMPL_POS_WO_PG" rel-entity-name="PartyGroup">
+        <key-map field-name="officeId" rel-field-name="partyId"/>
+      </relation>
+     <relation type="one" fk-name="EMPL_POS_CO_PG" rel-entity-name="PartyGroup">
+        <key-map field-name="cadreOfficeId" rel-field-name="partyId"/>
+      </relation>
+     <relation type="one" fk-name="EMPL_POS_APPT" rel-entity-name="AppointmentType">
+        <key-map field-name="appointmentTypeId" />
+      </relation>
+    <relation type="one" fk-name="EMPL_POS_ASSOC" rel-entity-name="Association">
+        <key-map field-name="associationId" />
+      </relation>
+    <relation type="one" fk-name="EMPL_POS_PAYSCL" rel-entity-name="PayScaleMaster">
+        <key-map field-name="payScaleId" />
+      </relation>
+      
     </entity>
     <entity entity-name="EmplPositionClassType"
             package-name="org.apache.ofbiz.humanres.position"
@@ -967,4 +997,114 @@ under the License.
             <key-map field-name="parentTypeId" rel-field-name="emplLeaveReasonTypeId"/>
         </relation>
      </entity>
+     <!--Added By PRABHU for OfficeTypeMaster  -->
+     <entity entity-name="OfficeTypeMaster" package-name="org.apache.ofbiz.humanres"
+		title="Office Type Master">
+		<field name="ofcTypeId" type="id-ne"></field>
+		<field name="ofcTypeName" type="long-varchar"></field>
+		<field name="createdDate" type="date"></field>
+		<field name="status" type="indicator"></field>
+		<field name="remarks" type="long-varchar"></field>
+		<!-- Added by Anil Punase -->
+		<field name="parentTypeId" type="long-varchar"></field>
+		<prim-key field="ofcTypeId" />
+	</entity>
+	
+		<view-entity entity-name="OfficeDetail"
+		package-name="org.apache.ofbiz.humanres" title="Office List View Entity">
+		<member-entity entity-alias="PTY" entity-name="Party" />
+		<member-entity entity-alias="PGC" entity-name="PartyGroup" />
+		<member-entity entity-alias="PCP" entity-name="PartyContactMechPurpose" />
+		<member-entity entity-alias="PA" entity-name="PostalAddress" />
+		<member-entity entity-alias="PRL" entity-name="PartyRelationship" />
+		<member-entity entity-alias="PGP" entity-name="PartyGroup" />
+		<alias entity-alias="PTY" name="partyId" />
+		<alias entity-alias="PTY" name="partyTypeId"/>
+		<alias entity-alias="PTY" name="statusId"/>
+		<alias entity-alias="PGC" name="groupName" />
+		<alias entity-alias="PGC" name="officeSiteName" />
+		<alias entity-alias="PGC" name="partyCode" />
+		<alias entity-alias="PGC" name="tribal" />
+		<alias entity-alias="PCP" name="contactMechPurposeTypeId" />
+		<alias entity-alias="PCP" name="contactMechId" />
+		<alias entity-alias="PCP" name="fromDate" />
+		<alias entity-alias="PCP" name="thruDate" />
+		<alias entity-alias="PA" name="address1" />
+		<alias entity-alias="PA" name="address2" />
+		<alias entity-alias="PA" name="postalCode" />
+		<alias entity-alias="PA" name="city" />
+		<alias entity-alias="PA" name="district" />
+		<alias entity-alias="PA" name="faxNo" />
+		<alias entity-alias="PA" name="contactNumber" />
+		<alias entity-alias="PA" name="geoPointId" />
+		<alias entity-alias="PRL" name="partyIdTo" />
+		<alias entity-alias="PRL" name="partyIdFrom" />		
+		<alias entity-alias="PRL" name="partyRelationshipTypeId" />
+		<alias entity-alias="PRL" name="createdOn" field="fromDate" />
+		<alias entity-alias="PGP" name="parentOfficeType" field="groupName" />
+		<alias entity-alias="PGP" name="parentOfficeName" field="officeSiteName" />
+		<alias entity-alias="PGP" name="parentOfficeId" field="partyId" />
+		<view-link entity-alias="PTY" rel-entity-alias="PGC"
+			rel-optional="false">
+			<key-map field-name="partyId" />
+		</view-link>
+		<view-link entity-alias="PTY" rel-entity-alias="PCP"
+			rel-optional="false">
+			<key-map field-name="partyId" />
+		</view-link>
+		<view-link entity-alias="PCP" rel-entity-alias="PA"
+			rel-optional="false">
+			<key-map field-name="contactMechId" />
+		</view-link>
+		<view-link entity-alias="PTY" rel-entity-alias="PRL"
+			rel-optional="true">
+			<key-map field-name="partyId" rel-field-name="partyIdTo" />
+		</view-link>
+		<view-link entity-alias="PRL" rel-entity-alias="PGP"
+			rel-optional="true">
+			<key-map field-name="partyIdFrom" rel-field-name="partyId" />
+		</view-link>
+		<entity-condition>
+            <condition-list combine="and">
+                <condition-expr field-name="partyCode" entity-alias="PGC" operator="not-equals" ignore-case="true" value=""/>
+            </condition-list>
+        </entity-condition>
+	</view-entity>
+	
+	
+	<entity entity-name="AppointmentType" package-name="org.apache.ofbiz.humanres"
+        title="Appointment Type Master Entity">
+        <field name="appointmentTypeId" type="id-ne"></field>
+        <field name="description" type="description"></field>
+        <prim-key field="appointmentTypeId" />
+    </entity>
+    
+    <entity entity-name="PayScaleMaster" package-name="org.apache.ofbiz.humanres">
+        <field name="payScaleId" type="id-ne"></field>
+        <field name="payScaleName" type="description"></field>
+        <field name="gradePay" type="currency-amount"></field>       
+        <field name="startingSalary" type="currency-amount"></field>
+        <field name="firstLevelIncrement" type="currency-amount"></field>
+        <field name="firstLevelUpperSalary" type="currency-amount"></field>
+        <field name="secondLevelIncrement" type="currency-amount"></field>
+        <field name="secondLevelUpperSalary" type="currency-amount"></field>
+        <field name="thirdLevelIncrement" type="currency-amount"></field>
+        <field name="thirdLevelUpperSalary" type="currency-amount"></field>
+        <field name="endingSalary" type="currency-amount"></field>
+        <field name="otherAllowances" type="description"></field>
+        <field name="classType" type="id-ne"></field>       
+        <field name="statusId" type="indicator"/>
+        <field name="remark" type="short-varchar"/>
+        <prim-key field="payScaleId"/>
+    </entity>
+
+ <entity entity-name="Association" package-name="org.apache.ofbiz.humanres"
+        title="Association Master Entity">
+        <field name="associationId" type="id-ne"></field>
+        <field name="description" type="description"></field>
+        <prim-key field="associationId" />
+    </entity>
+
+
+
 </entitymodel>
