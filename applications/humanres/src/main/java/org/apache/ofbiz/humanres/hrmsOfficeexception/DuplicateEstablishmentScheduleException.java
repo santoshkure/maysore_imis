@@ -1,4 +1,5 @@
-package org.apache.ofbiz.humanres.hrmsOfficeexeption;
+package org.apache.ofbiz.humanres.hrmsOfficeexception;
+
 
 public class DuplicateEstablishmentScheduleException extends OfficeSetUpException {
 	/**
