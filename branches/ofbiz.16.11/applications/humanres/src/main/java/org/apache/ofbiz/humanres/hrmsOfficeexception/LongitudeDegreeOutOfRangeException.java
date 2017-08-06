@@ -8,9 +8,9 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package org.apache.ofbiz.humanres.hrmsOfficeexeption;
+package org.apache.ofbiz.humanres.hrmsOfficeexception;
 
-import org.apache.ofbiz.humanres.hrmsOfficeexeption.FacilityException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.FacilityException;
 
 public class LongitudeDegreeOutOfRangeException extends FacilityException {
 	private static final long serialVersionUID = 1L;
