@@ -1,4 +1,4 @@
-package org.apache.ofbiz.humanres.hrmsOfficeexeption;
+package org.apache.ofbiz.humanres.hrmsOfficeexception;
 
 import org.apache.ofbiz.base.util.GeneralException;
 
