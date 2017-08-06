@@ -31,6 +31,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.ofbiz.base.util.Debug;
 import org.apache.ofbiz.base.util.GeneralException;
 import org.apache.ofbiz.base.util.UtilMisc;
@@ -54,10 +55,28 @@ import org.apache.ofbiz.service.GenericServiceException;
 import org.apache.ofbiz.service.LocalDispatcher;
 import org.apache.ofbiz.service.ServiceUtil;
 
-import org.apache.ofbiz.humanres.hrmsOfficeexception.*;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.CheckEmployeeRoleException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.CheckUserIsEmployeeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.CoordinateFormatException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.DeleteOfficeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.DuplicateEstablishmentScheduleException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.DuplicateOfficeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.EmptyParentOfficeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.FacilityException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.UpdateParentOfficeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.LongitudeDegreeOutOfRangeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.SecondsOutOfRangeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.MinutesOutOfRangeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.ParentOfficeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.LatitudeDegreeOutOfRangeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.OfficeSetUpException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.CheckEmployeeRoleException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.UpdateOfficeTypeException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.UpdateOfficeNameException;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.UIMessages;
 import org.apache.ofbiz.humanres.OfficeSetupConstants;
 import org.apache.ofbiz.humanres.EmployeeConstants;
-//import org.apache.ofbiz.humanres.ui.messages.UIMessages;
+
 
 
 
@@ -400,7 +419,7 @@ public class HumanResEvents {
 		if( anyMissingParamValues != null )
 		{
 			String errMsg =  anyMissingParamValues;
-			return UIMessage.getErrorMessage(errMsg);
+			return UIMessages.getErrorMessage(errMsg);
 		}*/
 
 		try
@@ -428,7 +447,7 @@ public class HumanResEvents {
 			// if party is not created return null
 			// This should (partyId == null) never occur, Party ID cannot be null
 			if (partyId == null) {
-				return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);			
+				return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);			
 				}
 
 			
@@ -509,33 +528,33 @@ public class HumanResEvents {
 
 		}
 		//catch (DuplicateOfficeException e) {
-		//	return UIMessage.getErrorMessage(resource,OfficeSetupConstants.DUPLICATE_OFFICE, officeName, locale);
+		//	return UIMessages.getErrorMessage(resource,OfficeSetupConstants.DUPLICATE_OFFICE, officeName, locale);
 		//}
 
 		catch (CheckEmployeeRoleException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CHECK_EMPLOYEE_ROLE, hoo, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CHECK_EMPLOYEE_ROLE, hoo, locale);
 		}catch (EmptyParentOfficeException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE_WITHOUT_PARENT, officeType, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE_WITHOUT_PARENT, officeType, locale);
 		}catch (ParentOfficeException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_PARENT_OF_WRDMP, officeType, locale);				
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_PARENT_OF_WRDMP, officeType, locale);				
 		}catch(GenericEntityException e) {
 			// All the programatical exceptions related to entity are handled here
 			Debug.log("Entity Exception occured : " + e );
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
 		}catch(GenericServiceException e) {
 			// All the programatical exceptions related to service are handled here
 			Debug.log("Service Exception occured : " + e );
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
 		}catch(GeneralException e) {
 			// It is the mother of all the ofbiz exceptions
 			// All the specific exceptions are handled above
 			// It would be executed in the worst case scenario
 			Debug.log("Exception occured : " + e );
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
 		}
 
 		//result.put("officeId", partyId);
-		result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessage.getSuccessMessage(resource,OfficeSetupConstants.OFFICE_CREATED, officeName, locale));
+		result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.OFFICE_CREATED, officeName, locale));
 		return result;
 	}
 	
@@ -780,7 +799,7 @@ public class HumanResEvents {
 		if( anyMissingParamValues != null )
 		{
 			String errMsg =  anyMissingParamValues;
-			return UIMessage.getErrorMessage(errMsg);
+			return UIMessages.getErrorMessage(errMsg);
 		}*/
 
 		try
@@ -847,7 +866,7 @@ public class HumanResEvents {
 				}
 				// if user is trying to change Status
 				if (!officeStatus.trim().equals(statusId.trim())) {
-					return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CAN_NOT_DISABLE_OFFICE, officeName, locale);
+					return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CAN_NOT_DISABLE_OFFICE, officeName, locale);
 				}
 			}
 			
@@ -1049,34 +1068,34 @@ public class HumanResEvents {
 			 
 
 		}catch (DuplicateOfficeException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.DUPLICATE_OFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.DUPLICATE_OFFICE, officeName, locale);
 		}catch (EmptyParentOfficeException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE_WITHOUT_PARENT, officeType, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE_WITHOUT_PARENT, officeType, locale);
 		}catch (ParentOfficeException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_PARENT_OF_WRDMP, officeType, locale);				
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_PARENT_OF_WRDMP, officeType, locale);				
 		}catch (UpdateParentOfficeException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_PARENTOFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_PARENTOFFICE, officeName, locale);
 		}catch(UpdateOfficeNameException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICENAME, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICENAME, officeName, locale);
 		}catch(UpdateOfficeTypeException e) {
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICETYPE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICETYPE, officeName, locale);
 		}catch(GenericEntityException e) {
 			// All the programatical exceptions related to entity are handled here
 			Debug.log("Entity Exception occured : " + e );
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
 		}catch(GenericServiceException e) {
 			// All the programatical exceptions related to service are handled here
 			Debug.log("Service Exception occured : " + e );
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
 		}catch(GeneralException e) {
 			// It is the mother of all the ofbiz exceptions
 			// All the specific exceptions are handled above
 			// It would be executed in the worst case scenario
 			Debug.log("Exception occured : " + e );
-			return UIMessage.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
+			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
 		}
 
-		result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessage.getSuccessMessage(resource,OfficeSetupConstants.OFFICE_UPDATED, officeName, locale));			
+		result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.OFFICE_UPDATED, officeName, locale));			
 		return result;		
 	}	
 
@@ -1113,7 +1132,7 @@ public class HumanResEvents {
 
         if( officeId == null || "".equals(officeId) )
         {
-            return UIMessage.getErrorMessage(resource,OfficeSetupConstants.OFFICE_ID_EMPTY, "", locale);
+            return UIMessages.getErrorMessage(resource,OfficeSetupConstants.OFFICE_ID_EMPTY, "", locale);
         }
         else
         {
@@ -1142,7 +1161,7 @@ public class HumanResEvents {
             }
             catch(GenericEntityException e)
             {
-                return UIMessage.getErrorMessage(resource,OfficeSetupConstants.ERROR_GETTING_OFFICE_DETAIL,"", locale);
+                return UIMessages.getErrorMessage(resource,OfficeSetupConstants.ERROR_GETTING_OFFICE_DETAIL,"", locale);
             }
 
             //*************************************************************************************************************************
@@ -1164,7 +1183,7 @@ public class HumanResEvents {
             }
             catch(GenericEntityException e)
             {
-                return UIMessage.getErrorMessage(resource,OfficeSetupConstants.ERROR_GETTING_OFFICE_DETAIL,"", locale);
+                return UIMessages.getErrorMessage(resource,OfficeSetupConstants.ERROR_GETTING_OFFICE_DETAIL,"", locale);
             }*/
 
             //Debug.logInfo("In getOfficeDetail officeDetail=" + officeDetail, module);
