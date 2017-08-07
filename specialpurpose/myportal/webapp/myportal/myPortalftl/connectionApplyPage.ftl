@@ -99,7 +99,7 @@
                     <tr>
                     	<td colspan="4">
                     	<center>
-                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail(connectionApply);"/>
+                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail();"/>
                     	 <input type="button" name="Cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
                      	</center>
                      	</td>
@@ -114,33 +114,9 @@
 
     <script type="text/javascript" language="javascript">
  
-function saveRegistrationDetail(RegisterPerson)
+function saveRegistrationDetail()
    {
-		      var form=document['RegisterPerson'];
-		 <#-- var tital =   form.tital.value;
-		      var firstName =   form.firstName.value;
-		      var middleName =   form.middleName.value;
-		      var dateOfBirth =   form.dateOfBirth.value;
-		      var gender =   form.gender.value;
-		      var maritalStatus =   form.maritalStatus.value;
-		      var fatherName =   form.fatherName.value;
-		      var motherName =   form.motherName.value;
-		      var aadharCardNo =   form.aadharCardNo.value;
-		      var cummunity =   form.cummunity.value;
-		      var cast =   form.cast.value;
-		      var nationality =   form.nationality.value;
-		      var cast =   form.cast.value;
-		      var address =   form.address.value;
-		      var mobileNo =   form.mobileNo.value;
-		      var eMail =   form.eMail.value;
-		      
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
-                              if( sure == true )
-                             {
-                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
-			            form.submit();
-		                disSubmit('disBttn');    
-		                } -->
+		      var form=document['connectionApply'];
 		       var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {

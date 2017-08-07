@@ -157,7 +157,7 @@
                     </tr>
                     <tr>
                     	<td colspan="6"><center>
-                    	<input name="save" type="button" value="${uiLabelMap.update}" onClick="javascript:saveRegistrationDetail(RegisterPerson);"/>
+                    	<input name="save" type="button" value="${uiLabelMap.update}" onClick="javascript:updateRegistrationDetail();"/>
                     	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      </center></td>
                     </tr>
@@ -169,5 +169,18 @@
    		  
 </form>
 
- 
+ <script type="text/javascript" language="javascript">
 
+  function updateRegistrationDetail()
+   {
+		   var form=document['updateCustomerdetails'];
+		      
+		      var sure = confirm("Are you sure, you want to Update the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    </script>

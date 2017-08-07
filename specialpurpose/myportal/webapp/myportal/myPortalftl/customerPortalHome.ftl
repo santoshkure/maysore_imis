@@ -4,7 +4,8 @@
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Anubha Saini   02/08/2017		
+<#---1.0			Anubha Saini   	02/08/2017		
+<#-- 1.1           Shubham malviya 	07/08/2017								--->
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the Employee Dash Board of MCC which contain essential information .-->
 
@@ -37,16 +38,25 @@
 						<a href="connectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for New Connection </a>
 					</li>
 					<li>
+						<a href="appliedConnectionDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Applied Connection Detail</a>
+					</li>
+					<li>
 						<a href="disconnectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Disconnection </a>
+					</li>
+					<li>
+						<a href="disconnectionApplyDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Applied Disconnection Detail</a>
 					</li>
 					<li>
 						<a href="kattaChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request </a>
 					</li>
 					<li>
+						<a href="khataChangeDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request Detail</a>
+					</li>
+					<li>
 						<a href="createcustomerbillcorrection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Bill Correction </a>
 					</li>
 					<li>
-						<a href="searchbillcorrection"><i class="fa fa-arrow-right" aria-hidden="true"></i>Bill Correction Details </a>
+						<a href="searchbillcorrection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Correction Details </a>
 					</li>
 					<li>
 						<a href="createregisterComplain"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Complaint </a>

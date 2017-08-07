@@ -31,8 +31,6 @@
 	
 	<div class="screenlet-body">
 	<table class="basic-table" cellspacing="0">
-		
-			<td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
 		 <tr>
 			  <td class="label">${uiLabelMap.jobNo} <font color="red">*</font></td>
 			  <td><input type="text" name="jobNo"  value="" /></td>   
@@ -42,7 +40,6 @@
 				<td colspan="4">
 					<center><div id="submit" align="center">
 						<input type="button" submit="" value="${uiLabelMap.CommonSearch}" onclick="javascript:searchapplyforjob(createapplyforjob);"/>
-					    <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/>
 					</div>
 					</center>
 				</td>
@@ -77,7 +74,7 @@
       </thead> 
        <tr>
 		      	<td align="center">1</td>
-	          	<td><center>1000</center></td>
+	          	<td><center><a href="viewJobDetails">1000</a></center></td>
 			  	<td><center>0987 </center></td>
 			  	<td><center>53536</center></td> 
 			    <td><center>31/07/2017</center></td> 
