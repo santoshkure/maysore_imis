@@ -1574,5 +1574,225 @@ under the License.
     </screen> 
     
     <!-- End -->
+    <!-- Pankaj Trivedi -->
+    <screen name="issueWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchIssueWorkOrder.ftl"/>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/listIssueWorkOrder.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="createIssueWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/createIssueWorkOrder.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="editIssueWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/editIssueWorkOrder.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="viewIssueWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewIssueWorkOrder.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="allotWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchAllotWorkOrder.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/listAllotWorkOrder.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="createAllotWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/createAllotWorkOrder.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="editAllotWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/editAllotWorkOrder.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="viewAllotWorkOrder">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewAllotWorkOrder.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="arrangeWaterSupply">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchArrageWaterSupply.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/listArrageWaterSupply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="createArrangeWaterSupply">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/createArrangeWaterSupply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="editArrangeWaterSupply">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/editArrangeWaterSupply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="viewArrangeWaterSupply">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewArrangeWaterSupply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <!-- End -->
     
 </screens>
