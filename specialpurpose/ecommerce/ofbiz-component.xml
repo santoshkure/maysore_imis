@@ -62,7 +62,8 @@ under the License.
         title="eCommerce"
         server="default-server"
         location="webapp/ecommerce"
-        mount-point="/ecommerce"/>
+        mount-point="/ecommerce"
+        app-bar-display="false"/>
     <webapp name="ecomseo"
         title="SEO enhanced eCommerce"
         server="default-server"
