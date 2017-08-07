@@ -164,6 +164,15 @@
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
 					</li>
 					<li>
+						<a href="issueWorkOrder"><i class="fa fa-arrow-right" aria-hidden="true"></i> Issue Work Order </a>
+					</li>
+					<li>
+						<a href="allotWorkOrder"><i class="fa fa-arrow-right" aria-hidden="true"></i> Allot Work Order to Plumber </a>
+					</li>
+					<li>
+						<a href="arrangeWaterSupply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Arrange Water Supply </a>
+					</li>
+					<li>
 						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change Details</a>
 					</li>
 					<li>

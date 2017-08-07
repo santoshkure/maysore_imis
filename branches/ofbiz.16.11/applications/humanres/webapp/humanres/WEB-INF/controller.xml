@@ -1464,6 +1464,80 @@ under the License.
         <response name="success" type="view" value="office"/>
     </request-map>
     <!--END  -->
+    <!-- Pankaj Trivedi for Work Oreder-->
+    <request-map uri="issueWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="issueWorkOrder"/>
+        <response name="error" type="view" value="issueWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="createIssueWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createIssueWorkOrder"/>
+        <response name="error" type="view" value="createIssueWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="editIssueWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editIssueWorkOrder"/>
+        <response name="error" type="view" value="editIssueWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="viewIssueWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewIssueWorkOrder"/>
+        <response name="error" type="view" value="viewIssueWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="allotWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="allotWorkOrder"/>
+        <response name="error" type="view" value="allotWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="createAllotWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createAllotWorkOrder"/>
+        <response name="error" type="view" value="createAllotWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="editAllotWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editAllotWorkOrder"/>
+        <response name="error" type="view" value="editAllotWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="viewAllotWorkOrder">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewAllotWorkOrder"/>
+        <response name="error" type="view" value="viewAllotWorkOrder"/>
+    </request-map>
+    
+    <request-map uri="arrangeWaterSupply">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="arrangeWaterSupply"/>
+        <response name="error" type="view" value="arrangeWaterSupply"/>
+    </request-map>    
+    
+    <request-map uri="createArrangeWaterSupply">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createArrangeWaterSupply"/>
+        <response name="error" type="view" value="createArrangeWaterSupply"/>
+    </request-map>
+    
+    <request-map uri="editArrangeWaterSupply">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editArrangeWaterSupply"/>
+        <response name="error" type="view" value="editArrangeWaterSupply"/>
+    </request-map>
+    
+    <request-map uri="viewArrangeWaterSupply">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewArrangeWaterSupply"/>
+        <response name="error" type="view" value="viewArrangeWaterSupply"/>
+    </request-map>
+    
+    <!-- End -->
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -1623,16 +1697,13 @@ under the License.
     <view-map name="editcastemaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editcastemaster"/>
     <view-map name="editpincodemaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editpincodemaster"/>
     <!-- End -->
+    
     <!-- ==========Added By Nikhil on 31 July 2017================== -->
 	<view-map name="CommunityMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#CommunityMaster" />
-	<!-- ==========End================== -->
-
-	<!-- ==========Added By Nikhil on 31 July 2017================== -->
 	<view-map name="GenderMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GenderMaster" />
-	<!-- ==========End================== -->
-	<!-- ==========Added By Nikhil on 31 July 2017================== -->
 	<view-map name="MaritalStatusMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#MaritalStatusMaster" />
 	<!-- ==========End================== -->
+	
     <!-- ==========Added By Shubham on 31 July 2017 ==================  -->
     <view-map name="customerDeatil" type="screen" page="component://humanres/widget/EmployeeScreens.xml#customerDeatil"/>
       	 <view-map name="approveCustomerDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveCustomerDetail"/>
@@ -1673,5 +1744,21 @@ under the License.
      	<view-map name="newOffice" type="screen" page="component://humanres/widget/OfficeScreens.xml#newOffice"/>
      	<view-map name="editOfficeDetails" type="screen" page="component://humanres/widget/OfficeScreens.xml#editOfficeDetails"/>     
     
-         <!-- END -->       
+         <!-- END -->  
+      	 
+         
+         <!--  Pankaj Trivedi -->  
+         <view-map name="issueWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#issueWorkOrder"/>
+         <view-map name="createIssueWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createIssueWorkOrder"/>
+         <view-map name="editIssueWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editIssueWorkOrder"/>
+         <view-map name="viewIssueWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewIssueWorkOrder"/>
+      	 <view-map name="allotWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#allotWorkOrder"/>
+      	 <view-map name="createAllotWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createAllotWorkOrder"/>
+      	 <view-map name="editAllotWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editAllotWorkOrder"/>
+      	 <view-map name="viewAllotWorkOrder" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewAllotWorkOrder"/>
+      	 <view-map name="arrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#arrangeWaterSupply"/>
+      	 <view-map name="createArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createArrangeWaterSupply"/>
+      	 <view-map name="editArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editArrangeWaterSupply"/>
+      	 <view-map name="viewArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewArrangeWaterSupply"/>
+         <!--  End  -->   
 </site-conf>
