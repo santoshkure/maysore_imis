@@ -63,7 +63,7 @@
                       <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 <input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveBillDetail('BillCorrection');"/>
+                    	 <input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveBillDetail();"/>
                     	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 </center>
                      	 </td>
@@ -77,9 +77,9 @@
 
   <script type="text/javascript" language="javascript">
 
-  function saveBillDetail(formname)
+  function saveBillDetail()
    {
-		   var form=document['formname'];
+		   var form=document['complainregistration'];
 		      
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
                     if( sure == true )

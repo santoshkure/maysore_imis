@@ -11,7 +11,7 @@
 
 <#setting locale="en">
    
-    <form method="post" name="billCorrection" action="" class="basic-form">
+    <form method="post" name="createBillCorrection" action="" class="basic-form">
     <div class="row">
 	    <div class="alert alert-info">
 		    <ul>
@@ -54,7 +54,7 @@
                       <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 <input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:createBillDetail('billCorrection');"/>
+                    	 <input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:createBillDetail();"/>
                     	 <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
                      	 </center>
                      	 </td>
@@ -66,9 +66,9 @@
 
   <script type="text/javascript" language="javascript">
 
-  function createBillDetail(formname)
+  function createBillDetail()
    {
-		   var form=document['formname'];
+		   var form=document['createBillCorrection'];
 		      
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )

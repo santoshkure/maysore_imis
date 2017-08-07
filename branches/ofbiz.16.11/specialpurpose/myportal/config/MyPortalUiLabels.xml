@@ -473,9 +473,19 @@
      <property key="createBillCorrection">
         <value xml:lang="en">Create Bill Correction Details</value>
     </property>
+    
+    <property key="viewBillCorrection">
+        <value xml:lang="en">View Bill Correction Details</value>
+    </property>
+    
+    <property key="ViewJobDetail">
+        <value xml:lang="en">View Job Details</value>
+    </property>
+    
     <property key="editBillCorrection">
         <value xml:lang="en">Edit Bill Correction Details</value>
     </property>
+    
     <property key="searchBillDetail">
         <value xml:lang="en">Search Bill Correction Details</value>
     </property>
@@ -578,4 +588,58 @@
     <property key="applicationPaymentBehalfOf">
         <value xml:lang="en">Payment Behalf Of</value>
     </property>
+    <!-- Added By shuhbham malviya -->
+    <property key="searchAppliedConnection">
+        <value xml:lang="en">Search Connection Request</value>
+        <value xml:lang="kn">Search Connection Request</value>
+    </property>
+    <property key="connectionRequestNo">
+        <value xml:lang="en">Connection Request No.</value>
+        <value xml:lang="kn">Connection Request No.</value>
+    </property>
+    <property key="listAppliedConnection">
+        <value xml:lang="en">List Connection Request</value>
+        <value xml:lang="kn">List Connection Request</value>
+    </property>
+    <property key="viewDetail">
+        <value xml:lang="en">View Detail</value>
+        <value xml:lang="kn">View Detail</value>
+    </property>
+    <property key="listAppliedDisConnection">
+        <value xml:lang="en">List Disconnection Request</value>
+        <value xml:lang="kn">List Disconnection Request</value>
+    </property>
+    <property key="searchAppliedDisconnection">
+        <value xml:lang="en">Search Disconnection Request</value>
+        <value xml:lang="kn">Search Disconnection Request</value>
+    </property>
+     <property key="disConnectionNo">
+        <value xml:lang="en">Disconnection No.</value>
+        <value xml:lang="kn">Disconnection No.</value>
+    </property>
+    <property key="disconnectionApply">
+        <value xml:lang="en">Disconnection Detail</value>
+        <value xml:lang="kn">Disconnection Detail</value>
+    </property>
+<property key="reasonForDisconnection">
+        <value xml:lang="en">Reason For Disconnection</value>
+        <value xml:lang="kn">Reason For Disconnection</value>
+    </property>
+    <property key="khataChangeApplicationNo">
+        <value xml:lang="en">Khata Change Application No.</value>
+        <value xml:lang="kn">Khata Change Application No.</value>
+    </property>
+    <property key="listKhataChangeRequest">
+        <value xml:lang="en">List Khata Change Request</value>
+        <value xml:lang="kn">List Khata Change Request</value>
+    </property>
+    <property key="searchKhataChangeRequest">
+        <value xml:lang="en">Search Khata Change Request</value>
+        <value xml:lang="kn">Search Khata Change Request</value>
+    </property>
+     <property key="viewComplaintDetail">
+        <value xml:lang="en">View Complaint Detail</value>
+        <value xml:lang="kn">View Complaint Detail</value>
+    </property>
+    
 </resource>

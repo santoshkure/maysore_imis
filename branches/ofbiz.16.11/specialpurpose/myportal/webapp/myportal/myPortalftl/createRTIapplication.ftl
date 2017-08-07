@@ -11,7 +11,7 @@
 
 <#setting locale="en">
    
-    <form method="post" name="createApplication" action="" class="basic-form">
+    <form method="post" name="createRtiApplication" action="" class="basic-form">
    		 <div class="row">
 	    		<div class="alert alert-info">
 		    		<ul>
@@ -135,7 +135,7 @@
 			         <tr>
                     	 <td colspan="4"><center>
                     	 <div id ="saveBtn">
-                    	 	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveBillDetail('createApplication');"/>
+                    	 	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveBillDetail();"/>
                     	 	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 </center>
                      	 </td>
@@ -191,13 +191,13 @@ function getPaymentMode(field)
 		
 }	
 
-  function saveBillDetail(formname)
+  function saveBillDetail()
    {
-		   var form=document['formname'];
+		   var form=document['createRtiApplication'];
 		    var sure = confirm("Are you sure, you want to Save the Form ?");
                     if( sure == true )
                     {
-                        form.action = "<@ofbizUrl>searchapplyforjob</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');  
 		                }  

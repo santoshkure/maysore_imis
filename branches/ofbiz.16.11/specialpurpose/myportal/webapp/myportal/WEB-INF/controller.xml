@@ -155,71 +155,121 @@
    <!--  ================End======================= -->
    <!-- added by Nikhil for search Customer bill Correction -->
     <request-map uri="searchbillcorrection">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="searchbillcorrection"/>
         <response name="error" type="view" value="searchbillcorrection"/>
     </request-map>
       <!-- added by Nikhil for edit Customer bill Correction -->
     <request-map uri="editbillcorrectiondetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="editbillcorrectiondetail"/>
         <response name="error" type="view" value="editbillcorrectiondetail"/>
     </request-map>
     
      <!-- added by Nikhil for Create Customer bill Correction -->
     <request-map uri="createcustomerbillcorrection">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="createcustomerbillcorrection"/>
          <response name="error" type="view" value="createcustomerbillcorrection"/>
     </request-map>
     
      <!-- added by Nikhil for search Customer complain register-->
     <request-map uri="searchcomplainregister">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="searchcomplainregister"/>
         <response name="error" type="view" value="searchcomplainregister"/>
     </request-map>
      <!-- added by Nikhil for Create Customer complain register -->
     <request-map uri="createregisterComplain">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="createregisterComplain"/>
          <response name="error" type="view" value="createregisterComplain"/>
     </request-map>
     
       <!-- added by Nikhil for edit Customer complain register -->
     <request-map uri="editregistercomplain">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="editregistercomplain"/>
          <response name="error" type="view" value="editregistercomplain"/>
     </request-map>
     
      <!-- added by Nikhil for search apply for job -->
     <request-map uri="searchapplyforjob">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="searchapplyforjob"/>
         <response name="error" type="view" value="searchapplyforjob"/>
     </request-map>
     
      <!-- added by Nikhil for Create apply for job -->
     <request-map uri="createapplyforjob">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="createapplyforjob"/>
          <response name="error" type="view" value="createapplyforjob"/>
     </request-map>
     
      <!-- added by Nikhil for edit apply for job -->
     <request-map uri="editapplyforjob">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="editapplyforjob"/>
          <response name="error" type="view" value="editapplyforjob"/>
     </request-map>
     
       <!-- added by Nikhil for Create RTI application -->
     <request-map uri="createRTIapplication">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="createRTIapplication"/>
          <response name="error" type="view" value="createRTIapplication"/>
     </request-map>
+    
+    <!-- added by Shubham -->
+    <request-map uri="appliedConnectionDetail">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="appliedConnectionDetail"/>
+         <response name="error" type="view" value="appliedConnectionDetail"/>
+    </request-map>
+    
+    <request-map uri="viewConnectionDetail">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewConnectionDetail"/>
+         <response name="error" type="view" value="viewConnectionDetail"/>
+    </request-map>
+    
+    <request-map uri="disconnectionApplyDetail">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="disconnectionApplyDetail"/>
+         <response name="error" type="view" value="disconnectionApplyDetail"/>
+    </request-map>
+    
+    <request-map uri="viewDisconnectionDetail">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewDisconnectionDetail"/>
+         <response name="error" type="view" value="viewDisconnectionDetail"/>
+    </request-map>
+    
+     <request-map uri="khataChangeDetail">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="khataChangeDetail"/>
+         <response name="error" type="view" value="khataChangeDetail"/>
+    </request-map>
+    
+<request-map uri="viewBillCorrectionDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewBillCorrectionDetails"/>
+        <response name="error" type="view" value="viewBillCorrectionDetails"/>
+    </request-map>
+    
+    <request-map uri="viewComplaintDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewComplaintDetails"/>
+        <response name="error" type="view" value="viewComplaintDetails"/>
+    </request-map>
+    
+    <request-map uri="viewJobDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewJobDetails"/>
+        <response name="error" type="view" value="viewJobDetails"/>
+    </request-map>
+    
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
     <view-map name="newRegisterLogin" type="screen" page="component://myportal/widget/CommonScreens.xml#newRegisterLogin"/>  
@@ -258,5 +308,13 @@
    <view-map name="createapplyforjob" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createapplyforjob"/>
    <view-map name="editapplyforjob" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#editapplyforjob"/>
    <view-map name="createRTIapplication" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createRTIapplication"/>
+   <view-map name="appliedConnectionDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#appliedConnectionDetail"/>
+    <view-map name="viewConnectionDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewConnectionDetail"/>
+    <view-map name="disconnectionApplyDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#disconnectionApplyDetail"/>
+    <view-map name="viewDisconnectionDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewDisconnectionDetail"/>
+        <view-map name="khataChangeDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#khataChangeDetail"/>
+    <view-map name="viewBillCorrectionDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewBillCorrectionDetails"/>
+   <view-map name="viewComplaintDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewComplaintDetails"/>
+   <view-map name="viewJobDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewJobDetails"/>
    
 </site-conf>
