@@ -99,7 +99,11 @@
              <td><center>${uiLabelMap.Remove}</center></td>
              
          </tr>
-        
+         <#if zoneMasterList?has_content>
+        <#list zoneMasterList as zoneMasterList>
+        ${zoneMasterList}-----------
+        </#list>
+        </#if>
       </thead> 
        <tr>
 		      	<td align="center">1</td>

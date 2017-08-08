@@ -1558,6 +1558,32 @@ under the License.
     </request-map>
     
     <!-- End -->
+    
+    <!--  Prabhu for OfficeT ype Master-->
+    <request-map uri="officemaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="officemaster"/>
+    </request-map>
+    
+     <request-map uri="saveofcTypemaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveofcTypemaster"/>
+        <response name="success" type="request-redirect" value="officemaster"/>
+        <response name="error" type="view" value="officemaster" />
+    </request-map>
+    
+    <request-map uri="editofcMaster">
+        <security https="true" auth="true" />        
+        <response name="success" type="view" value="editofcMaster"/>       
+    </request-map>
+    
+     <request-map uri="editofcTypeMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="editofcTypeMaster"/>
+        <response name="success" type="request-redirect" value="officemaster"/>
+        <response name="error" type="view" value="officemaster" />
+    </request-map>
+    <!-- END -->
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -1780,5 +1806,10 @@ under the License.
       	 <view-map name="createArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createArrangeWaterSupply"/>
       	 <view-map name="editArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editArrangeWaterSupply"/>
       	 <view-map name="viewArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewArrangeWaterSupply"/>
-         <!--  End  -->   
+         <!--  End  -->  
+         
+         <!-- Prabhu for Office Type --> 
+         <view-map name="officemaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#officemasterSearch"/>  
+         <view-map name="editofcMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editofcMaster"/>
+         <!-- END -->
 </site-conf>

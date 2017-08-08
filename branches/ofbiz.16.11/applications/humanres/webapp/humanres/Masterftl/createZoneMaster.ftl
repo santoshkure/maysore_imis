@@ -26,13 +26,13 @@
 			<tr>
 			
 			 <td class="label">${uiLabelMap.zoneName} <font color="red" >*</font></td>
-			 <td><input type="text" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="30" value="" /></td>    	
+			 <td><input type="text" style="width:140px"  name="zoneName" autocomplete="off" id="zoneName" maxlength ="30" value="" /></td>    	
 			 
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
-				<select name="nameOfService" style="width:150px;" onchange="return getDesignation(this);">
+				<select name="cityName" style="width:150px;" onchange="return getDesignation(this);">
 					<option value="">${uiLabelMap.cityName}</option>
-				 	<option value="">Hyderabad</option>
+				 	<option value="Hyderabad">Hyderabad</option>
 				</select>
 			</td>  
 			  
@@ -41,7 +41,7 @@
         	<tr>
 			 <td class="label">${uiLabelMap.officeName}<font color="red" >*</font></td>
 			  <td> 
-				<select name="nameOfService" style="width:150px;" onchange="return getDesignation(this);">
+				<select name="officeName" style="width:150px;" onchange="return getDesignation(this);">
 					<option value="">${uiLabelMap.officeName}</option>
 				 	<option value="">WRD</option>
 					
@@ -50,20 +50,20 @@
 			
 			  <td class="label">${uiLabelMap.remark}</td>
 			 	
-			  <td colspan="4"><textarea name="petiDetails" value="" maxlength="150" style="width:400px"></textarea></td>
+			  <td colspan="4"><textarea name="remark" value="" maxlength="150" style="width:400px"></textarea></td>
         	</tr>
         	<tr>
                     <td width='20%' align='right' class="label">${uiLabelMap.createdate} <font color="red" >*</font></td>
                     <td>
                     <#--  <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
                     -->
-					<input type="date" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="10" value="" />
+					<input type="date" style="width:140px"  name="createdate" autocomplete="off" id="createdate" maxlength ="10" value="" />
 					</td>
                   </tr>
         	<tr>
 				<td colspan="4">
 					<center><div id="submit" align="center">
-						<input type="button" submit="" value="Submit" onclick="javascript:validateTypeMaster();"/>
+						<input type="button" submit="" value="Submit" onclick="javascript:validateTypeMaster('createZoneMaster');"/>
 					    <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:ConfirmBackMaster();"/>
 					</div>
 					</center>
@@ -77,13 +77,13 @@
 		
 
 
-<script type="text/javascript" language="javascript">
-<#--
-	function validateTypeMaster()
+<script>
+
+	function validateTypeMaster(formname)
 	{
-		
-					document.zoneMaster.action= "<@ofbizUrl></@ofbizUrl>";
-					document.zoneMaster.submit();
+			         var form=document[formname];
+					form.action= "<@ofbizUrl>saveZoneMaster</@ofbizUrl>";
+				    form.submit();
 					disSubmit('saveBtn'); 
 					//return true;
 					//alert("submit");
@@ -91,7 +91,7 @@
 				}
 			
 	
-  -->   
+    
 	
 	
 </script>

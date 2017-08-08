@@ -356,6 +356,9 @@
         <menu-item name="pincodemaster" title="${uiLabelMap.pincodemaster}">
             <link target="SearchPincodeMaster"/>
         </menu-item>
+        <menu-item name="officetypemaster" title="${uiLabelMap.HrmsOfficeTypeMaster}">
+            <link target="officemaster"/>
+        </menu-item>
     </menu>
     <menu name="AreaMasterSubTabBar" menu-container-style="button-bar button-style-2" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
         <menu-item name="zonemastertab" title="${uiLabelMap.zonemaster}">
