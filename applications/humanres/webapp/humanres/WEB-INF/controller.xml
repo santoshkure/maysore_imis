@@ -1245,187 +1245,207 @@ under the License.
 	<!-- ==========end================== -->
    <!-- added by shubham for Emp Dash Board on 31 July 2017 ==================  -->
    <request-map uri="customerDeatil">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="customerDeatil"/>
         <response name="error" type="view" value="customerDeatil"/>
     </request-map>
     
     <request-map uri="approveCustomerDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="approveCustomerDetail"/>
         <response name="error" type="view" value="approveCustomerDetail"/>
     </request-map>
     
     <request-map uri="createNewConnection">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="createNewConnection"/>
         <response name="error" type="view" value="createNewConnection"/>
     </request-map>
     
     <request-map uri="empCreateNewCustomer">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="empCreateNewCustomer"/>
         <response name="error" type="view" value="empCreateNewCustomer"/>
     </request-map>
     
      <request-map uri="approveNewConnection">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="approveNewConnection"/>
         <response name="error" type="view" value="approveNewConnection"/>
     </request-map>
     
     <request-map uri="connectionDetails">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="connectionDetails"/>
         <response name="error" type="view" value="connectionDetails"/>
     </request-map>
     
     <request-map uri="registerMeterDetails">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="registerMeterDetails"/>
         <response name="error" type="view" value="registerMeterDetails"/>
     </request-map>
     
     <request-map uri="createNewMeter">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="createNewMeter"/>
         <response name="error" type="view" value="createNewMeter"/>
     </request-map>
     
     <request-map uri="meterChangeReplacement">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="meterChangeReplacement"/>
         <response name="error" type="view" value="meterChangeReplacement"/>
     </request-map>
     
     <request-map uri="complaintRequest">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="complaintRequest"/>
         <response name="error" type="view" value="complaintRequest"/>
     </request-map>
     
     <request-map uri="khataChangeRequest">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="khataChangeRequest"/>
         <response name="error" type="view" value="khataChangeRequest"/>
     </request-map>
     
     <request-map uri="RtiApplyDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="RtiApplyDetail"/>
         <response name="error" type="view" value="RtiApplyDetail"/>
     </request-map>
     
     <request-map uri="billCorrectionRequest">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="billCorrectionRequest"/>
         <response name="error" type="view" value="billCorrectionRequest"/>
     </request-map>
     
     <request-map uri="actionNewRegistration">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="actionNewRegistration"/>
         <response name="error" type="view" value="actionNewRegistration"/>
     </request-map>
     
     <request-map uri="viewCustomerRegistrationDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewCustomerRegistrationDetail"/>
+        <response name="error" type="view" value="viewCustomerRegistrationDetail"/>
     </request-map>
     
     <request-map uri="viewCustomerRegiApproveDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewCustomerRegiApproveDetail"/>
+        <response name="error" type="view" value="viewCustomerRegiApproveDetail"/>
     </request-map>
     
     <request-map uri="editCustomerDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="editCustomerDetail"/>
+        <response name="error" type="view" value="editCustomerDetail"/>
     </request-map>
     
      <request-map uri="viewCustomerConnectionDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewCustomerConnectionDetail"/>
+        <response name="error" type="view" value="viewCustomerConnectionDetail"/>
     </request-map>
     
     <request-map uri="actionNewConnection">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="actionNewConnection"/>
+        <response name="error" type="view" value="actionNewConnection"/>
     </request-map>
     
     <request-map uri="editConnectionDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="editConnectionDetail"/>
+         <response name="error" type="view" value="editConnectionDetail"/>
     </request-map>
     
     <request-map uri="viewMeterDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewMeterDetail"/>
+        <response name="error" type="view" value="viewMeterDetail"/>
     </request-map>
     
     <request-map uri="editMeterDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="editMeterDetail"/>
+        <response name="error" type="view" value="editMeterDetail"/>
     </request-map>
     
     <request-map uri="viewMeterChangeRequest">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewMeterChangeRequest"/>
+        <response name="error" type="view" value="viewMeterChangeRequest"/>
     </request-map>
     
     <request-map uri="actionMeterChange">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="actionMeterChange"/>
+        <response name="error" type="view" value="actionMeterChange"/>
     </request-map>
     
     <request-map uri="actionCompliantRequest">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="actionCompliantRequest"/>
+        <response name="error" type="view" value="actionNewRegistration"/>
     </request-map>
     
     <request-map uri="viewComplaintDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewComplaintDetail"/>
+        <response name="error" type="view" value="viewComplaintDetail"/>
     </request-map>
     
     <request-map uri="viewKhataChangeDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewKhataChangeDetail"/>
+        <response name="error" type="view" value="viewKhataChangeDetail"/>
     </request-map>
     
     <request-map uri="actionKhataChange">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="actionKhataChange"/>
+        <response name="error" type="view" value="actionKhataChange"/>
     </request-map>
     
     <request-map uri="viewRtiDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewRtiDetail"/>
+        <response name="error" type="view" value="viewRtiDetail"/>
     </request-map>
     
     <request-map uri="actionRtiRequestDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="actionRtiRequestDetail"/>
+        <response name="error" type="view" value="actionRtiRequestDetail"/>
     </request-map>
     
     <request-map uri="viewBillCorrectionRequest">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewBillCorrectionRequest"/>
+        <response name="error" type="view" value="viewBillCorrectionRequest"/>
     </request-map>
     
     <request-map uri="actionBillCorrection">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="actionBillCorrection"/>
+        <response name="error" type="view" value="actionBillCorrection"/>
     </request-map>
     
     <request-map uri="viewCustomerConnectionActionDetail">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="viewCustomerConnectionActionDetail"/>
+        <response name="error" type="view" value="viewCustomerConnectionActionDetail"/>
     </request-map>
     
     <request-map uri="EntitySQLProcessorEmpDashboard">
-        <security https="true" auth="false"/>
+        <security https="true" auth="true"/>
         <response name="success" type="view" value="EntitySQLProcessorEmpDashboard"/>
+        <response name="error" type="view" value="EntitySQLProcessorEmpDashboard"/>
     </request-map>
     
     <!-- ==========end==================  -->
