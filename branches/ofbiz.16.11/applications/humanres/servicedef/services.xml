@@ -964,4 +964,31 @@ under the License.
     </service>
     
     <!-- END -->
+    	<service name="saveZoneMaster" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveZoneMaster">
+		<attribute name="zoneName" type="String" mode="IN" optional="false" />
+		<attribute name="cityName" type="String" mode="IN" optional="true" />
+		<attribute name="officeName" type="String" mode="IN" optional="true" />
+		<attribute name="remark" type="String" mode="IN" optional="true" />
+		<attribute name="createdate" type="String" mode="IN" optional="true" />		
+		</service>
+		
+		<service name="saveofcTypemaster" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveofcTypemaster">
+		<attribute name="officeTypeId" type="String" mode="IN" optional="false" />
+		<attribute name="officeTypeName" type="String" mode="IN" optional="true" />
+		<attribute name="parentTypeId" type="String" mode="IN" optional="true" />
+		<attribute name="remark" type="String" mode="IN" optional="true" />
+		</service>
+		
+		<service name="editofcTypeMaster" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editofcTypeMaster">
+		<attribute name="officeTypeId" type="String" mode="IN" optional="false" />
+		<attribute name="officeTypeName" type="String" mode="IN" optional="true" />
+		<attribute name="parentTypeId" type="String" mode="IN" optional="true" />
+		<attribute name="remark" type="String" mode="IN" optional="true" />
+	    <attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
+	    	
+		</service>
 </services>

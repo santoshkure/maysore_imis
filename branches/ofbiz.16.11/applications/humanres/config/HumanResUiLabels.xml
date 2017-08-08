@@ -3866,5 +3866,24 @@
     </property>
     
     <!-- END -->
-    
+    <property key="HrmsOfficeTypeId">
+		<value xml:lang="en">Office Type Id</value>
+	</property>
+	
+	<property key="HrmsOfficeTypeMaster">
+		<value xml:lang="en">Office Type Master</value>
+	</property>
+	<property key="HrmsOfficeTypeName">
+		<value xml:lang="en">Office Type Name</value>
+	</property>
+	
+	<property key="OfficeTypeList">
+		<value xml:lang="en">Office Type List</value>
+	</property>
+	<property key="ParentTypeId">
+		<value xml:lang="en">Parent Type Id</value>
+	</property>
+	<property key="HrmsOfficeTypeEdit">
+		<value xml:lang="en">Edit Office Type</value>
+	</property>
 </resource>
