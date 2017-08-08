@@ -1794,5 +1794,62 @@ under the License.
         </section>
     </screen>
     <!-- End -->
-    
+        <!-- Prabhu for OfficeTypeMaster -->
+    <screen name="officemasterSearch">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="officetypemaster" />
+				 <entity-condition list="officeTypeList" entity-name="OfficeTypeMaster">
+       			 <condition-expr field-name="ofcTypeId" operator="not-equals" value="" />
+		  	   </entity-condition>
+				
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/officeTypeMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+     <screen name="editofcMaster">
+		<section>
+			<actions>
+				<set field="headerItem" value="master" />
+				<set field="tabButtonItem" value="officetypemaster" />
+				 <entity-condition list="officeTypeList" entity-name="OfficeTypeMaster">
+       			 <condition-expr field-name="ofcTypeId" operator="equals" value="${parameters.officeTypeId}" />
+		  	   </entity-condition>
+				
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+						</container>
+						<platform-specific>
+							<html>
+								<html-template
+									location="component:///humanres/webapp/humanres/Masterftl/editOfficeTypeMaster.ftl" />
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+    <!--End  -->
 </screens>

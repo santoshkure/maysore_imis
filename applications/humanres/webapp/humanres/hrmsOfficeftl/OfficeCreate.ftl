@@ -29,8 +29,7 @@
 			<td  width="25%"><input type="text" name="officeName" value="" maxlength="140" style="width:302px;"/></td>
 			<td class="label">${uiLabelMap.HrmsOfficeType}&nbsp;&nbsp;*</td> 
 			<td width="25%"><select name="officeType" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
-             <option value=''>${uiLabelMap.CommonSelect}</option>
-              	    	       	    	        <option value='KUWSDB'>Karnataka urban Water Supply and Drinage Board</option>
+             <option value=''>${uiLabelMap.CommonSelect}</option>             	    	       	    	        
 
 	    	   <#if officeTypeList?exists>
 	    	      <#if officeTypeList?has_content>
