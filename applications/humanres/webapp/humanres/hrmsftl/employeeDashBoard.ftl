@@ -155,15 +155,6 @@
 						<a href="connectionDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Connection Details </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Edit Personal Data </a>
-					</li>
-					<li>
-						<a href="registerMeterDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter Details </a>
-					</li>
-					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
-					</li>
-					<li>
 						<a href="issueWorkOrder"><i class="fa fa-arrow-right" aria-hidden="true"></i> Issue Work Order </a>
 					</li>
 					<li>
@@ -171,6 +162,15 @@
 					</li>
 					<li>
 						<a href="arrangeWaterSupply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Arrange Water Supply </a>
+					</li>
+					<li>
+						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Edit Personal Data </a>
+					</li>
+					<li>
+						<a href="registerMeterDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter Details </a>
+					</li>
+					<li>
+						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
 					</li>
 					<li>
 						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change Details</a>

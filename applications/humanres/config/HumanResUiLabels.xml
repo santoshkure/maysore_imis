@@ -3416,11 +3416,62 @@
         <value xml:lang="en">Customer Name</value>
         <value xml:lang="kn">Customer Name</value>
     </property>
+    <property key="plumberName">
+        <value xml:lang="en">Plumber Name</value>
+        <value xml:lang="kn">Plumber Name</value>
+    </property>
     <property key="customerAddress">
         <value xml:lang="en">Customer Address</value>
         <value xml:lang="kn">Customer Address</value>
     </property>
-    
+    <property key="workOrderNo">
+        <value xml:lang="en">Work Order No.</value>
+        <value xml:lang="kn">Work Order No.</value>
+    </property>
+     <property key="searchPlumberWork">
+        <value xml:lang="en">Search Plumber Work Done Report</value>
+        <value xml:lang="kn">Search Plumber Work Done Report</value>
+    </property>
+    <property key="editPlumberWork">
+        <value xml:lang="en">Update Plumber Work Done Report</value>
+        <value xml:lang="kn">Update Plumber Work Done Report</value>
+    </property>
+     <property key="allotWorkOrderList">
+        <value xml:lang="en">Plumber Work Done List</value>
+        <value xml:lang="kn">Plumber Work Done List</value>
+    </property>
+     <property key="viewWorkOrder">
+        <value xml:lang="en">View Plumber Work Done Report</value>
+        <value xml:lang="kn">View Plumber Work Done Report</value>
+    </property>
+    <property key="createPlumberWorkOrder">
+        <value xml:lang="en">Create Plumber Work Done Report </value>
+        <value xml:lang="kn">Create Plumber Work Done Report </value>
+    </property>
+     <property key="searchArrWaterSupply">
+        <value xml:lang="en">Search Arrange Water Supply</value>
+        <value xml:lang="kn">Search Arrange Water Supply</value>
+    </property>
+      <property key="createArrWaterSupply">
+        <value xml:lang="en">Create Arrange Water Supply</value>
+        <value xml:lang="kn">Create Arrange Water Supply</value>
+    </property>
+     <property key="listArrWaterSupply">
+        <value xml:lang="en">Arrange Water Supply List</value>
+        <value xml:lang="kn">Arrange Water Supply List</value>
+    </property>
+     <property key="viewArrWaterSupply">
+        <value xml:lang="en">View Arrange Water Supply</value>
+        <value xml:lang="kn">View Arrange Water Supply</value>
+    </property>
+     <property key="editArrWaterSupply">
+        <value xml:lang="en">Update Arrange Water Supply</value>
+        <value xml:lang="kn">Update Arrange Water Supply</value>
+    </property>
+    <property key="houseNo">
+        <value xml:lang="en">House No.</value>
+        <value xml:lang="kn">House No.</value>
+    </property>
       <!-- ==========Added By Anubha on 31 July 2017==================  -->
      <property key="zoneName">
         <value xml:lang="en">Zone Name</value>
@@ -3886,4 +3937,126 @@
 	<property key="HrmsOfficeTypeEdit">
 		<value xml:lang="en">Edit Office Type</value>
 	</property>
+	 <property key="searchIssueWorkOrder">
+        <value xml:lang="en">Search Issue Work Order</value>
+    </property>
+    <property key="workOrderNo">
+        <value xml:lang="en">Work Order No.</value>
+    </property>
+    <property key="listIssueWorkOrder">
+        <value xml:lang="en">List Issue Work Order</value>
+    </property>
+    <property key="issueNewWorkOrder">
+        <value xml:lang="en">Issue Work Order</value>
+    </property>
+    <property key="houseOwnerName">
+        <value xml:lang="en">House Owner Name</value>
+    </property>
+    <property key="depositReceiptNo">
+        <value xml:lang="en">Deposit Receipt No.</value>
+        <value xml:lang="kn">Deposit Receipt No.</value>
+    </property>
+    <property key="ofRs">
+        <value xml:lang="en">Of Rs.</value>
+        <value xml:lang="kn">Of Rs.</value>
+    </property>
+    <property key="streetName">
+        <value xml:lang="en">Street Name</value>
+        <value xml:lang="kn">Street Name</value>
+    </property>
+    <property key="roadDiggingChargesOfRs">
+        <value xml:lang="en">Road Digging Charges Of Rs</value>
+        <value xml:lang="kn">Road Digging Charges Of Rs</value>
+    </property>
+    <property key="stNo">
+        <value xml:lang="en">S.T No.</value>
+        <value xml:lang="kn">S.T No.</value>
+    </property>
+    <property key="subject">
+        <value xml:lang="en">Subject</value>
+        <value xml:lang="kn">Subject</value>
+    </property>
+    <property key="nonHousehold">
+        <value xml:lang="en">Non-Household Deposit Payment</value>
+        <value xml:lang="kn">Non-Household Deposit  Payment</value>
+    </property>
+    <property key="receiptNo">
+        <value xml:lang="en">Receipt No.</value>
+        <value xml:lang="kn">Receipt No.</value>
+    </property>
+    <property key="measureEquipmentRate">
+        <value xml:lang="en">Measure Equipment Rate</value>
+        <value xml:lang="kn">Measure Equipment Rate</value>
+    </property>
+     <property key="viewIssueWorkOrder">
+        <value xml:lang="en">View Issue Work Order</value>
+        <value xml:lang="kn">View Issue Work Order</value>
+    </property>
+    <property key="paidtoMysoreNagarapalike">
+        <value xml:lang="en">Paid to Mysore Nagarapalike</value>
+        <value xml:lang="kn">Paid to Mysore Nagarapalike</value>
+    </property>
+    <property key="editIssueWorkOrder">
+        <value xml:lang="en">Update Issue Work Order</value>
+        <value xml:lang="kn">Update Issue Work Order</value>
+    </property>
+    <property key="workOrder">
+        <value xml:lang="en">WORK ORDER</value>
+        <value xml:lang="kn">WORK ORDER</value>
+    </property>
+    <property key="editConnectionDetail">
+        <value xml:lang="en">Edit Connection Detail</value>
+        <value xml:lang="kn">Edit Connection Detail</value>
+    </property>
+    
+    <property key="forOfficeUseOnly">
+        <value xml:lang="en">Office Use</value>
+        <value xml:lang="kn">Office Use</value>
+    </property>
+    
+    <property key="aEE">
+        <value xml:lang="en">Assistant Executive Engineer</value>
+        <value xml:lang="kn">Assistant Executive Engineer</value>
+    </property>
+    
+    <property key="measuringDivision">
+        <value xml:lang="en">Measuring Division</value>
+        <value xml:lang="kn">Measuring Division</value>
+    </property>
+    
+    <property key="aprForSanction">
+        <value xml:lang="en">Water Inspector</value>
+        <value xml:lang="kn">Water Inspector</value>
+    </property>
+    
+    <property key="aprForSanction">
+        <value xml:lang="en">Approval For Sanction</value>
+        <value xml:lang="kn">Approval For Sanction</value>
+    </property>
+    
+   <property key="eE">
+        <value xml:lang="en">Executive Engineer</value>
+        <value xml:lang="kn">Executive Engineer</value>
+    </property>
+    
+    <property key="aprNo">
+        <value xml:lang="en">Approval No.</value>
+        <value xml:lang="kn">Approval No.</value>
+    </property>
+    
+    <property key="aprDate">
+        <value xml:lang="en">Approval Date</value>
+        <value xml:lang="kn">Approval Date</value>
+    </property>
+    
+    <property key="docBookNo">
+        <value xml:lang="en">Document Book No.</value>
+        <value xml:lang="kn">Document Book No.</value>
+    </property>
+    
+    <property key="docPageNo">
+        <value xml:lang="en">Document Page No.</value>
+        <value xml:lang="kn">Document Page No.</value>
+    </property>
+    
 </resource>
