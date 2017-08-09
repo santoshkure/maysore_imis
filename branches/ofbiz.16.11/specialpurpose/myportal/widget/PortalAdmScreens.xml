@@ -669,5 +669,63 @@ under the License.
             </widgets>
         </section>
     </screen>
+<!-- Pankaj Trivedi -->    
+
+    
+    <screen name="createAppForWaterSupply">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createAppForWaterSupply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="viewAppForWaterSupply">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/viewAppForWaterSupply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="createIllegalToLegal">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createIllegalToLegal.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <!-- End -->
 
 </screens>

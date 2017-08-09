@@ -38,19 +38,22 @@
 						<a href="connectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for New Connection </a>
 					</li>
 					<li>
-						<a href="appliedConnectionDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Applied Connection Detail</a>
+						<a href="createIllegalToLegal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Illigal to Legal Connection</a>
+					</li>
+					<li>
+						<a href="appliedConnectionDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Connection Detail</a>
 					</li>
 					<li>
 						<a href="disconnectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Disconnection </a>
 					</li>
 					<li>
-						<a href="disconnectionApplyDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Applied Disconnection Detail</a>
+						<a href="disconnectionApplyDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Disconnection Detail</a>
 					</li>
 					<li>
 						<a href="kattaChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request </a>
 					</li>
 					<li>
-						<a href="khataChangeDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request Detail</a>
+						<a href="khataChangeDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Detail</a>
 					</li>
 					<li>
 						<a href="createcustomerbillcorrection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Bill Correction </a>
@@ -85,7 +88,6 @@
 					<li>
 						<a href="updatecustomerdetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Update Personal Detail </a>
 					</li>
-					
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Application Status </a>
 					</li>
