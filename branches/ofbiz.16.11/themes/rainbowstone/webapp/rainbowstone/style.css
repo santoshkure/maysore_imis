@@ -1584,7 +1584,29 @@ A.linktext:hover {
 }
 
 .buttontextdisabled {
-    color: #333333;
+     color: #a1a1a1;
+	-webkit-appearance: none;
+	-moz-border-radius: 1.1em;
+	-webkit-border-radius: 1.1em;
+	border-radius: 3px;
+	border: 0.1em solid #a1a1a1;
+	background-color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: bold;
+	outline: 0;
+	overflow: visible;
+	padding: 0.4em 1em 0.4em;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: auto;
+	*padding-top: 0.2em;
+	*padding-bottom: 0;
+}
+.buttontextdisabled:hover{
+	text-decoration: none;
+	color:#a1a1a1;
 }
 
 .submenutextinfo {
