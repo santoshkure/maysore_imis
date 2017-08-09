@@ -350,7 +350,7 @@ public interface EmployeeConstants {
 	
 	public static final String TRANCTION_TYPE_ID_MONTHLY_GIS_CONT = "MONTHLY_GIS_CONT";
 	
-	public static final String[] OFFICE_TYPE = {"KUWSDB","EIC","Circle","Division","Sub Division", "Region", "Section", "PWD"};
+	public static final String[] OFFICE_TYPE = {"IMIS","EIC","Circle","Division","Sub Division", "Region", "Section", "PWD"};
 	
 	public static final String CANNOT_UPLOAD_PHOTO = "Can_Not_Upload_Photo";
 	
