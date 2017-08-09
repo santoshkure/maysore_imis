@@ -116,7 +116,7 @@ function validateParameters(formName)
                            <#if std =="A">
                           <a href='<@ofbizUrl>editofcMaster?officeTypeId=${officeTypeList.ofcTypeId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
                           <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.edit}</a>
+                         <a class="buttontextdisabled"  disabled>${uiLabelMap.edit}</a>
                           </#if>
                           </center></td>
                           <td><center>                   
