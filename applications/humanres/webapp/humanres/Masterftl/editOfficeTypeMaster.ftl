@@ -16,7 +16,9 @@
 <div class="row">	
 		    <div class="alert alert-info">
 		      <ul>
-		         <div align="center" style="font-size:12px"><b>${uiLabelMap.HrmsOfficeTypeEdit}</b></div>		         
+		       <li class="back"><a href = ""<@ofbizUrl>officemaster</@ofbizUrl>">${uiLabelMap.CommonBack}</a></li>
+	                <div align="center" style="font-size:12px"><b>${uiLabelMap.HrmsOfficeTypeEdit}</b></div>
+		         		         
 			  </ul>
 		    </div>
  			   <div class="screenlet-body">
@@ -28,11 +30,11 @@
 						   <td class="label" >${uiLabelMap.HrmsOfficeTypeName} <font color="red">*</font></td>
                            <td><input type="text" name="officeTypeName" value=${officeTypeList.ofcTypeName?if_exists} style="width:140px"  /></td>
                             <td class="label" >${uiLabelMap.HrmsOfficeTypeId} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="20" name="officeTypeId" value="${officeTypeList.ofcTypeId?if_exists}" style="width:140px" disabled="disabled" readonly>
-
+					       <td><input type="text" maxlength="20" name="officeTy" value="${officeTypeList.ofcTypeId?if_exists}" style="width:140px" disabled="disabled" readonly />
+						<input type="hidden" maxlength="20" name="officeTypeId" value="${officeTypeList.ofcTypeId?if_exists}" style="width:140px"  />
 					 <tr>
 					 <td class="label" >Parent Type Id <font color="red">*</font></td>
-					       <td><input type="text" maxlength="20" name="parentTypeId" value="${parentId}" style="width:140px" readonly disabled="disabled">
+					       <td><input type="text" maxlength="20" name="parentTypeId" value="${parentId}" style="width:140px" readonly disabled="disabled" />
                            <td class="label" >${uiLabelMap.remark}</td>
                            <td><textarea name="remark" style="width:240px" maxlength ="310">${officeTypeList.remarks?if_exists}</textarea></td>
                      </tr>
@@ -40,7 +42,7 @@
                           <td colspan="4"><center>
                           <div id ="saveBtn">
                           <input name="save" value="${uiLabelMap.CommonUpdate}" type="button" onClick="editofcTypeMaster('editOfficeTypeMaster','edit')">
-                          <input type="button" name="Cancel" value="Cancel" onclick="javascript:validateConfirmBack();" >
+                          <input type="button" name="Cancel" value="Cancel" onclick="<@ofbizUrl>officemaster</@ofbizUrl> >
                       </div>
                     </td>
                   </tr>
@@ -55,7 +57,7 @@
         </div>
     </form>
     
-     <#-----------------------Java Script for Community Master------------->
+     <#-----------------------Java Script for Office Type Master------------->
 <script language="JavaScript" type="text/javascript" />
 
 

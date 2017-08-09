@@ -46,7 +46,7 @@
             </div>
         </div>
     </form>
- <#-----------------------Java Script for Community Master------------->
+     <#-----------------------Java Script for Office Type Master------------->
 <script language="JavaScript" type="text/javascript" />
 
 function validateParameters(formName)
@@ -65,7 +65,7 @@ function validateParameters(formName)
     }
     </script>
    
-<#------------------------------------Community Master List------------------------>
+     <#-----------------------Java Script for Office Type Master------------->
 <form method="post" name="ListofcTypemaster" action="" class="basic-form">
 
        <div class="row">
@@ -96,16 +96,15 @@ function validateParameters(formName)
    <#if officeTypeList?has_content>
    <#assign count= 1>
    <#list officeTypeList as officeTypeList>
-   
-   
+
                    <tr>
                           <td><center>${count}</center></td>
-                          <td><center>${officeTypeList.ofcTypeId}</center></td>
-                          <td><center>${officeTypeList.ofcTypeName}</center></td>
-                          <td><center>${officeTypeList.parentTypeId}</center></td>
-                          <td><center>${officeTypeList.remarks}</center></td>
+                          <td><center>${officeTypeList.ofcTypeId?if_exists}</center></td>
+                          <td><center>${officeTypeList.ofcTypeName?if_exists}</center></td>
+                          <td><center>${officeTypeList.parentTypeId?if_exists}</center></td>
+                          <td><center>${officeTypeList.remarks?if_exists}</center></td>
                            <td><center>
-                           <#assign std = '${officeTypeList.status}'>
+                           <#assign std = '${officeTypeList.status?if_exists}'>
                            <#if std =="A">
                            Active
                            <#else>
@@ -115,14 +114,14 @@ function validateParameters(formName)
                            </center></td>
                           <td><center>
                            <#if std =="A">
-                          <a href='<@ofbizUrl>editofcMaster?officeTypeId=${officeTypeList.ofcTypeId}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                          <a href='<@ofbizUrl>editofcMaster?officeTypeId=${officeTypeList.ofcTypeId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
                           <#else>
                          <a class="buttontext" data-disabled="true">${uiLabelMap.edit}</a>
                           </#if>
                           </center></td>
                           <td><center>                   
                            <#if std =="A">
-                          <a href="javascript:editofcTypeMaster('ListofcTypemaster','delete','${officeTypeList.ofcTypeId}');" class="buttontext">${uiLabelMap.Remove}</a>
+                          <a href="javascript:editofcTypeMaster('ListofcTypemaster','delete','${officeTypeList.ofcTypeId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
                           <#else>
                          <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
                           </#if>
@@ -131,9 +130,9 @@ function validateParameters(formName)
                           
                           <td><center>
                           <#if std =="A">
-                          <a href="javascript:editofcTypeMaster('ListofcTypemaster','status','${officeTypeList.ofcTypeId}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <a href="javascript:editofcTypeMaster('ListofcTypemaster','status','${officeTypeList.ofcTypeId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
                           <#else>
-                          <a href="javascript:editofcTypeMaster('ListofcTypemaster','status','${officeTypeList.ofcTypeId}','A');" class="buttontext">Active</a>
+                          <a href="javascript:editofcTypeMaster('ListofcTypemaster','status','${officeTypeList.ofcTypeId?if_exists}','A');" class="buttontext">Active</a>
 
                           </#if>
                           </center></td>
@@ -151,6 +150,7 @@ function validateParameters(formName)
   </div>
 </div>
  </form>
+      <#-----------------------Java Script for Office Type Master------------->
  
  <script language="JavaScript" type="text/javascript" />
     
