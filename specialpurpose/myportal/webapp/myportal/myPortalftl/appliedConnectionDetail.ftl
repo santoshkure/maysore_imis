@@ -51,23 +51,23 @@
     	<table class="basic-table" cellspacing="0">
     	<thead>
          	<tr class="header-row-2">
-             	<td><center>${uiLabelMap.sno}<center></td>
-	        	<td><center>${uiLabelMap.connectionRequestNo}<center></td>
-             	<td><center>${uiLabelMap.customerNo}</center></td>
-             	<td><center>${uiLabelMap.applicationType}<center></td>
-             	<td><center>${uiLabelMap.connectionType}</center></td>
-             	<td><center>${uiLabelMap.CommonStatus}</center></td>
-             	<td><center>${uiLabelMap.viewDetail}</center></td>
+             	<td>${uiLabelMap.sno}</td>
+	        	<td>${uiLabelMap.connectionRequestNo}</td>
+             	<td>${uiLabelMap.customerNo}</td>
+             	<td>${uiLabelMap.applicationType}</td>
+             	<td>${uiLabelMap.connectionType}</td>
+             	<td>${uiLabelMap.CommonStatus}</td>
+             	<td>${uiLabelMap.applyForWaterSupply}</td>
          	</tr>
       	</thead> 
        		<tr>
-		      	<td align="center">1</td>
-	          	<td><center>CARF1000</center></td>
-			  	<td><center>0987 </center></td>
-			  	<td><center>53536</center></td> 
-			    <td><center>applicationType</center></td> 
-			    <td><center>Approved</center></td>
-			 	<td><center><a href="viewConnectionDetail" class="buttontext" align="center">${uiLabelMap.viewDetail}</a></center></td>
+		      	<td>1</td>
+	          	<td><a href="viewConnectionDetail" align="center">CARF1000</a></td>
+			  	<td>0987 </td>
+			  	<td>53536</td> 
+			    <td>applicationType</td> 
+			    <td>Approved</td>
+			    <td><a href="createAppForWaterSupply" class="buttontext" align="center">${uiLabelMap.applyForWaterSupply}</a></td>
 		   	</tr>    
         </table>
 	</div>

@@ -252,7 +252,7 @@
          <response name="error" type="view" value="khataChangeDetail"/>
     </request-map>
     
-<request-map uri="viewBillCorrectionDetails">
+	<request-map uri="viewBillCorrectionDetails">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="viewBillCorrectionDetails"/>
         <response name="error" type="view" value="viewBillCorrectionDetails"/>
@@ -269,6 +269,30 @@
         <response name="success" type="view" value="viewJobDetails"/>
         <response name="error" type="view" value="viewJobDetails"/>
     </request-map>
+    
+    <!-- Pankaj Trivedi -->
+    
+    <request-map uri="createAppForWaterSupply">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createAppForWaterSupply"/>
+        <response name="error" type="view" value="appForWaterSupply"/>
+    </request-map>
+    
+    <request-map uri="viewAppForWaterSupply">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewAppForWaterSupply"/>
+        <response name="error" type="view" value="appForWaterSupply"/>
+    </request-map>
+    
+    <request-map uri="createIllegalToLegal">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createIllegalToLegal"/>
+        <response name="error" type="view" value="illegalToLegal"/>
+    </request-map>
+    
+    
+    <!-- End -->
+    
     
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
@@ -316,5 +340,12 @@
     <view-map name="viewBillCorrectionDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewBillCorrectionDetails"/>
    <view-map name="viewComplaintDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewComplaintDetails"/>
    <view-map name="viewJobDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewJobDetails"/>
+   <!-- Pankaj Trivedi -->
    
+   <view-map name="createAppForWaterSupply" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createAppForWaterSupply"/>
+   <view-map name="viewAppForWaterSupply" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewAppForWaterSupply"/>
+   <view-map name="createIllegalToLegal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createIllegalToLegal"/>
+   
+   
+   <!-- End -->
 </site-conf>

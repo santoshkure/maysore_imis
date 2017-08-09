@@ -53,19 +53,19 @@
     	<table class="basic-table" cellspacing="0">
     	<thead>
          	<tr class="header-row-2">
-             	<td><center>${uiLabelMap.sno}<center></td>
-	        	<td><center>${uiLabelMap.khataChangeApplicationNo}<center></td>
-             	<td><center>${uiLabelMap.applicationDate}</center></td>
-             	<td><center>${uiLabelMap.assentialDocument}<center></td>
-             	<td><center>${uiLabelMap.CommonStatus}</center></td>
+             	<td>${uiLabelMap.sno}</td>
+	        	<td>${uiLabelMap.khataChangeApplicationNo}</td>
+             	<td>${uiLabelMap.applicationDate}</td>
+             	<td>${uiLabelMap.assentialDocument}</td>
+             	<td>${uiLabelMap.CommonStatus}</td>
          	</tr>
       	</thead> 
        		<tr>
 		      	<td align="center">1</td>
-	          	<td><center>CARF1000</center></td>
-			  	<td><center>02/08/2017</center></td> 
-			    <td><center>Disconnection</center></td> 
-			    <td><center>Approved</center></td> 
+	          	<td>CARF1000</td>
+			  	<td>02/08/2017</td> 
+			    <td>Disconnection</td> 
+			    <td>Approved</td> 
 		   	</tr>    
         </table>
 	</div>

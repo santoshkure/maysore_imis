@@ -54,23 +54,21 @@
     	<table class="basic-table" cellspacing="0">
     	<thead>
          	<tr class="header-row-2">
-             	<td><center>${uiLabelMap.sno}<center></td>
-	        	<td><center>${uiLabelMap.disConnectionNo}<center></td>
-             	<td><center>${uiLabelMap.connectionNo}</center></td>
-             	<td><center>${uiLabelMap.dueAmount}<center></td>
-             	<td><center>${uiLabelMap.reasonForDisconnection}</center></td>
-             	<td><center>${uiLabelMap.CommonStatus}</center></td>
-             	<td><center>${uiLabelMap.viewDetail}</center></td>
+             	<td>${uiLabelMap.sno}</td>
+	        	<td>${uiLabelMap.disConnectionNo}</td>
+             	<td>${uiLabelMap.connectionNo}</td>
+             	<td>${uiLabelMap.dueAmount}</td>
+             	<td>${uiLabelMap.reasonForDisconnection}</td>
+             	<td>${uiLabelMap.CommonStatus}</td>
          	</tr>
       	</thead> 
        		<tr>
-		      	<td align="center">1</td>
-	          	<td><center>CARF1000</center></td>
-			  	<td><center>0987 </center></td>
-			  	<td><center>0</center></td> 
-			    <td><center>reasone For Disconnection</center></td> 
-			    <td><center>Approved</center></td> 
-			 	<td><center><a href="viewDisconnectionDetail" class="buttontext" align="center">${uiLabelMap.viewDetail}</a></center></td>
+		      <td>1</td>
+	          <td><a href="viewDisconnectionDetail">CARF1000</a></td>
+			  	<td>0987 </td>
+			  	<td>0</td> 
+			    <td>reasone For Disconnection</td> 
+			    <td>Approved</td> 
 		   	</tr>    
         </table>
 	</div>
