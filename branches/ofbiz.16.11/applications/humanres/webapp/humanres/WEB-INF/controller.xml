@@ -1557,6 +1557,18 @@ under the License.
         <response name="error" type="view" value="viewArrangeWaterSupply"/>
     </request-map>
     
+    <request-map uri="forOfficeUseOnly">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="forOfficeUseOnly"/>
+        <response name="error" type="view" value="connectionDetails" />
+    </request-map>
+    
+    <request-map uri="aprForSanction">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="aprForSanction"/>
+        <response name="error" type="view" value="connectionDetails" />
+    </request-map>
+    
     <!-- End -->
     
     <!--  Prabhu for OfficeT ype Master-->
@@ -1806,6 +1818,8 @@ under the License.
       	 <view-map name="createArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createArrangeWaterSupply"/>
       	 <view-map name="editArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editArrangeWaterSupply"/>
       	 <view-map name="viewArrangeWaterSupply" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewArrangeWaterSupply"/>
+      	 <view-map name="forOfficeUseOnly" type="screen" page="component://humanres/widget/EmployeeScreens.xml#forOfficeUseOnly"/>
+      	 <view-map name="aprForSanction" type="screen" page="component://humanres/widget/EmployeeScreens.xml#aprForSanction"/>
          <!--  End  -->  
          
          <!-- Prabhu for Office Type --> 

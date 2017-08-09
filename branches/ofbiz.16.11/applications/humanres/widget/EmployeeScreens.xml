@@ -68,7 +68,7 @@ under the License.
                         <screenlet title="${uiLabelMap.HumanResNewEmployee}">
                             <section>
                                 <widgets>
-                                    <include-form name="AddEmployee" location="component://humanres/widget/forms/EmployeeForms.xml"/>
+                                    <include-form name="AddEmployee" location="component:forOfficeUseOnly//humanres/widget/forms/EmployeeForms.xml"/>
                                 </widgets>
                             </section>
                         </screenlet>
@@ -1786,6 +1786,43 @@ under the License.
                         <platform-specific>
                     		<html>
                     		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewArrangeWaterSupply.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="forOfficeUseOnly">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/forOfficeUseOnly.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    
+    <screen name="aprForSanction">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/aprForSanction.ftl"/>	
                     		</html>
                         </platform-specific>
                     </decorator-section>

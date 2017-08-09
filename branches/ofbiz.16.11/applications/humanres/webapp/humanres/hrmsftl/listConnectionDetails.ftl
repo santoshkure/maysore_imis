@@ -24,12 +24,14 @@
         	  			<td>Connection No</td>
               			<td>${uiLabelMap.customerNo}</td>
 	          			<td>${uiLabelMap.customerName}</td>
-	          			<td>Connection Type</td>
+	          			<#-- <td>Connection Type</td>
              			<td>${uiLabelMap.contact}</td>
              			<td>${uiLabelMap.applyDate}</td>
-            			<td>${uiLabelMap.actionDate}</td>
+            			<td>${uiLabelMap.actionDate}</td>-->
             			<td>${uiLabelMap.CommonStatus}</td>
             			<td>${uiLabelMap.CommonEdit}</td>
+            			<td>${uiLabelMap.forOfficeUseOnly}</td>
+            			<td>${uiLabelMap.aprForSanction}</td>
            			</tr>
 				</thead>
 				
@@ -39,12 +41,14 @@
         				<td><a href="viewCustomerConnectionActionDetail">CNMCC10001</a></td>
         				<td>10001</td>
         				<td>Ravi Kumar Rai</td>
-        				<td>permanent</td>
+        				<#--  <td>permanent</td>
               			<td>0123345677</td>
               			<td>02/08/2017</td>
-              			<td>02/08/2017</td>
+              			<td>02/08/2017</td>-->
               			<td>Approved</td>
               			<td><a href="<@ofbizUrl>editConnectionDetail</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
+              			<td><a href="<@ofbizUrl>forOfficeUseOnly</@ofbizUrl>" class="buttontext">${uiLabelMap.forOfficeUseOnly}</a></td>
+              			<td><a href="<@ofbizUrl>aprForSanction</@ofbizUrl>" class="buttontext">${uiLabelMap.aprForSanction}</a></td>
            			</tr>
      		</tbody>
        </table>
