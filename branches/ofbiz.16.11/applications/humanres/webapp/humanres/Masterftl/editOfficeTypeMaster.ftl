@@ -16,7 +16,7 @@
 <div class="row">	
 		    <div class="alert alert-info">
 		      <ul>
-		       <li class="back"><a href = ""<@ofbizUrl>officemaster</@ofbizUrl>">${uiLabelMap.CommonBack}</a></li>
+		       <li class="back"><a href = "<@ofbizUrl>officemaster</@ofbizUrl>">${uiLabelMap.CommonBack}</a></li>
 	                <div align="center" style="font-size:12px"><b>${uiLabelMap.HrmsOfficeTypeEdit}</b></div>
 		         		         
 			  </ul>
@@ -42,7 +42,7 @@
                           <td colspan="4"><center>
                           <div id ="saveBtn">
                           <input name="save" value="${uiLabelMap.CommonUpdate}" type="button" onClick="editofcTypeMaster('editOfficeTypeMaster','edit')">
-                          <input type="button" name="Cancel" value="Cancel" onclick="<@ofbizUrl>officemaster</@ofbizUrl> >
+                          <input type="button" name="Cancel" value="Cancel" onclick="javascript:validateConfirmBack();" >
                       </div>
                     </td>
                   </tr>
