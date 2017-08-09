@@ -97,7 +97,7 @@ public interface OfficeSetupConstants {
 	
 	public static final String HOO_ROLE = "HOO";
 	
-	public static final String OFFICE_TYPE = "KUWSDB";
+	public static final String OFFICE_TYPE = "IMIS";
 		
 	public static final String PARTY_ENABLED = "PARTY_ENABLED";
 	
@@ -107,7 +107,7 @@ public interface OfficeSetupConstants {
 	
 	public static final String PARTY_RELATIONSHIP_TYPE_ID = "CHILD";
 	
-	public static final String[] OFFICE_TYPES = {"PWD","KUWSDB","EIC","Region","Circle","Division","Sub Division","Section"};
+	public static final String[] OFFICE_TYPES = {"PWD","IMIS","EIC","Region","Circle","Division","Sub Division","Section"};
 	/*
 	 *  Pagination section
 	 */

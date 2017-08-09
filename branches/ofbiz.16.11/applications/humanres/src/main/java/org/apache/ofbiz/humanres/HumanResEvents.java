@@ -725,10 +725,10 @@ public class HumanResEvents {
             }
             else {
                 if (parentOffice != null && OfficeSetupConstants.OFFICE_TYPE.equals(officeType)) {
-                    throw new ParentOfficeException("Can not create parent of KUWSDB office");
+                    throw new ParentOfficeException("Can not create parent of IMIS office");
                 }
                 if (!OfficeSetupConstants.OFFICE_TYPE.equals(officeType))
-                    throw new EmptyParentOfficeException("Parent office can not be empty if office type is not KUWSDB");
+                    throw new EmptyParentOfficeException("Parent office can not be empty if office type is not IMIS");
             }
         }
             }

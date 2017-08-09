@@ -84,7 +84,7 @@ public class hrmsMasterEvents {
             //String zoneId = (String) delegator.getNextSeqId("ZoneMaster");
 			
 			Map officeTypDetails = UtilMisc.toMap("ofcTypeId",officeTypeId,
-					"ofcTypeName",officeTypeName,"parentTypeId",parentTypeId,"status","A","remarks",remark);
+					"ofcTypeName",officeTypeName,"parentTypeId",OfficeSetupConstants.OFFICE_TYPE,"status","A","remarks",remark);
 			
 			GenericValue valueToStore = delegator.makeValue("OfficeTypeMaster", officeTypDetails);
 			valueToStore.create();
@@ -138,7 +138,7 @@ public class hrmsMasterEvents {
 			{
            if(status.equals("edit")){
 			officeTypDetails = UtilMisc.toMap("ofcTypeId",officeTypeId,"ofcTypeName",
-					officeTypeName,"parentTypeId",parentTypeId,"status","A","remarks",remark);
+					officeTypeName,"parentTypeId",OfficeSetupConstants.OFFICE_TYPE,"status","A","remarks",remark);
            }else if(status.equals("status")){
 			officeTypDetails = UtilMisc.toMap("status",activestatus);	
 			}
