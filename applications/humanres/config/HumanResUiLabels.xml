@@ -4024,7 +4024,7 @@
         <value xml:lang="kn">Measuring Division</value>
     </property>
     
-    <property key="aprForSanction">
+    <property key="waterInspector">
         <value xml:lang="en">Water Inspector</value>
         <value xml:lang="kn">Water Inspector</value>
     </property>
