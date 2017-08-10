@@ -34,8 +34,8 @@
                 		 	<td colspan="4">
                 		 		<center>
                     	 			<div id ="saveBtn">
-                    	 				<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approve('officeUse');"/>
-                    	 				<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:reject('officeUse');"/>
+                    	 				<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approveWI('officeUse');"/>
+                    	 				<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:rejectWI('officeUse');"/>
                     	 				<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 			</div>
   	                   	 		</center>
@@ -61,8 +61,7 @@
                 		 	<td colspan="4">
                 		 		<center>
                     	 			<div id ="saveBtn">
-                    	 				<input name="approve1"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approve1('officeUse');"/>
-                    	 				<input name="reject1"   type="button" value="${uiLabelMap.reject}" onClick="javascript:reject1('officeUse');"/>
+                    	 				<input name="approve1"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approveMD('officeUse');"/>
                     	 				<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 			</div>
                      	 		</center>
@@ -85,8 +84,8 @@
                 		 	<td colspan="4">
                 		 		<center>
                     	 			<div id ="saveBtn">
-                    	 				<input name="approve2"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approve2('officeUse');"/>
-                     	 				<input name="reject2"   type="button" value="${uiLabelMap.reject}" onClick="javascript:reject2('officeUse');"/>
+                    	 				<input name="approve2"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approveAEE('officeUse');"/>
+                     	 				<input name="reject2"   type="button" value="${uiLabelMap.reject}" onClick="javascript:rejectAEE('officeUse');"/>
                    	 					<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 			</div>
                      	 		</center>
@@ -100,7 +99,35 @@
 
   <script type="text/javascript" language="javascript">
 
-  function approve(officeUse)
+  function approveWI(officeUse)
+   {
+   alert(123);
+		   var form=document['officeUse'];
+		      
+		      var sure = confirm("Are you sure, you want to Approve the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>connectionDetails</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+    function approveMD(officeUse)
+   {
+   alert(123);
+		   var form=document['officeUse'];
+		      
+		      var sure = confirm("Are you sure, you want to Approve the Form ?");
+                              if( sure == true )
+                             {
+                        form.action = "<@ofbizUrl>connectionDetails</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+		                } 
+    }
+    
+    function approveAEE(officeUse)
    {
 		   var form=document['officeUse'];
 		      
@@ -113,33 +140,7 @@
 		                } 
     }
     
-    function approve1(officeUse)
-   {
-		   var form=document['officeUse'];
-		      
-		      var sure = confirm("Are you sure, you want to Approve the Form ?");
-                              if( sure == true )
-                             {
-                        form.action = "<@ofbizUrl>connectionDetails</@ofbizUrl>";
-			            form.submit();
-		                disSubmit('disBttn');    
-		                } 
-    }
-    
-    function approve2(officeUse)
-   {
-		   var form=document['officeUse'];
-		      
-		      var sure = confirm("Are you sure, you want to Approve the Form ?");
-                              if( sure == true )
-                             {
-                        form.action = "<@ofbizUrl>connectionDetails</@ofbizUrl>";
-			            form.submit();
-		                disSubmit('disBttn');    
-		                } 
-    }
-    
-    function reject(officeUse)
+    function rejectWI(officeUse)
    {
 		   var form=document['officeUse'];
 		      
@@ -152,7 +153,7 @@
 		                } 
     }
     
-    function reject1(officeUse)
+    function rejectMD(officeUse)
    {
 		   var form=document['officeUse'];
 		      
@@ -165,7 +166,7 @@
 		                } 
     }
     
-    function reject2(officeUse)
+    function rejectAEE(officeUse)
    {
 		   var form=document['officeUse'];
 		      

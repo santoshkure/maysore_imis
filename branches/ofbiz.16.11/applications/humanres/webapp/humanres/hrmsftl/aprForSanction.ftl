@@ -49,8 +49,8 @@
                 		 	<td colspan="4">
                 		 		<center>
                     	 			<div id ="saveBtn">
-                    	 				<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approve('aprForSanction');"/>
-                    	 				<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:reject('aprForSanction');"/>
+                    	 				<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:approveSan('aprForSanction');"/>
+                    	 				<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:rejectSan('aprForSanction');"/>
                     	 				<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	 			</div>
   	                   	 		</center>
@@ -65,7 +65,7 @@
 
   <script type="text/javascript" language="javascript">
 
-  function approve(aprForSanction)
+  function approveSan(aprForSanction)
    {
 		   var form=document['aprForSanction'];
 		      
@@ -78,7 +78,7 @@
 		                } 
     }
     
-    function reject(aprForSanction)
+    function rejectSan(aprForSanction)
    {
 		   var form=document['aprForSanction'];
 		      
