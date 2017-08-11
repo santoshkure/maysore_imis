@@ -41,7 +41,7 @@
 						<a href="createIllegalToLegal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Illigal to Legal Connection</a>
 					</li>
 					<li>
-						<a href="appliedConnectionDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Connection Detail</a>
+						<a href="searchConnectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Connection Detail</a>
 					</li>
 					<li>
 						<a href="disconnectionApply"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Disconnection </a>

@@ -21,38 +21,54 @@
     <table class="basic-table table-responsive" cellspacing="0">
     <thead>
          <tr class="header-row-2">
-             <td><center>${uiLabelMap.sno}<center></td>
-	         <td><center>${uiLabelMap.customerNo}<center></td>
-             <td><center>${uiLabelMap.connectionNo}</center></td>
-             <td><center>${uiLabelMap.connectionCategory}<center></td>
-             <td><center>${uiLabelMap.applicationType}</center></td>
-             <td><center>${uiLabelMap.typeOfBuilding}</center></td>
+             <td>${uiLabelMap.sno}</td>
+	         <td>${uiLabelMap.customerNo}</td>
+             <td>${uiLabelMap.connectionNo}</td>
+             <td>${uiLabelMap.connectionCategory}</td>
+             <td>${uiLabelMap.applicationType}</td>
+           
              
-             <td><center>${uiLabelMap.applicationDate}</center></td>
-             <td><center>${uiLabelMap.feeForConnection}</center></td>
-             <td><center>${uiLabelMap.feeStatus}</center></td>
-              <td><center>${uiLabelMap.status}</center></td>
-             <td><center>${uiLabelMap.edit}</center></td>
-             <td><center>${uiLabelMap.disconnectionApply}</center></td>
+             <td>${uiLabelMap.applicationDate}</td>
+            
+             <td>${uiLabelMap.feeStatus}</td>
+              <td>${uiLabelMap.status}</td>
+             <td>${uiLabelMap.edit}</td>
+             <td>${uiLabelMap.disconnectionApply}</td>
+             <td>${uiLabelMap.applyForWaterSupply}</td>
+             <td>${uiLabelMap.applyForAgreementLetter}</td>
+             <td>${uiLabelMap.applyForDecleaCerti}</td>
+             <td>${uiLabelMap.applyForAgreementLetter}</td>
              
          </tr>
         
       </thead> 
        <tr>
-		      	<td align="center">1</td>
-	          	<td><center>1001</center></td>
-			  	<td><center><a class="buttontext" align="center">2001</a></center></center></td>
-			  	<td><center>Household</center></td> 
-			 	<td><center>Permanent</center></td> 
-		  	 	<td><center>Residental</center></td> 
-		  	 	<td><center>31/07/2017</center></td>
-		  	 	<td><center>1000</center></td> 
-		  	 	<td><center>paid</center></td> 
-		  	 	<td><center>Submitted</center></td> 
-				<td><center><a href="javascript:editConnection('connectionList');" class="buttontext" align="center">Edit</a></center></td>
-				<td><center><a class="buttontext" align="center" href="<@ofbizUrl>disconnectionApply</@ofbizUrl>">Disconnect</a></center></td>
-		      	
-					     
+		      	<td>1</td>
+	          	<td>CAN101</td>
+			  
+			  	<td><a href="viewConnectionDetail" align="center">CARF1000</a></td>
+			  	<td>Household</td> 
+			 	<td>Permanent</td> 
+		  	 
+		  	 	<td>31/07/2017</td>
+		  	 	
+		  	 	<td>paid</td> 
+		  	 	<td>Submitted</td> 
+				<td><a href="javascript:editConnection('connectionList');" class="buttontext" align="center">${uiLabelMap.edit}</a></td>
+				<td><a class="buttontext" align="center" href="<@ofbizUrl>disconnectionApply</@ofbizUrl>">Disconnect</a></td>
+				<td><a href="createAppForWaterSupply" class="buttontext" align="center">${uiLabelMap.waterSupply}</a>
+				<a href="viewAppForWaterSupply" class="buttontext" align="center">${uiLabelMap.commonVeiw}</a>
+				</td>
+				<td><a href="createForAgreementLetter" class="buttontext" align="center">${uiLabelMap.agreementLetter}</a>
+				<a href="veiwForAgreementLetter" class="buttontext" align="center">${uiLabelMap.commonVeiw}</a>
+				</td>
+				<td><a href="createDeclearationCertificate" class="buttontext" align="center">${uiLabelMap.DecleaCerti}</a>
+				<a href="veiwForDeclearationCerti" class="buttontext" align="center">${uiLabelMap.commonVeiw}</a>
+				</td>
+				<td><a href="createAgreementLetter" class="buttontext" align="center">${uiLabelMap.agreementLetter}</a>
+				<a href="veiwAgreementLetter" class="buttontext" align="center">${uiLabelMap.commonVeiw}</a>
+				</td>
+						     
 		</tr>    
       </table>
     </div>

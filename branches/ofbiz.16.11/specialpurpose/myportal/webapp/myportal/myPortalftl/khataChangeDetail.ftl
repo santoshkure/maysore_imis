@@ -14,6 +14,16 @@
     		<ul>		   			
     			<li class="back"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
     			<li class="h3">${uiLabelMap.searchKhataChangeRequest}</li>
+    			<div class="basic-nav" style="margin-top: -37px;">
+  				<ul>
+    				<li>
+							<a title="Create Zone Master" href="<@ofbizUrl>kattaChangeRequest</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
+    				</li>
+  				</ul>
+ 			 
+  			</div>  
  			</ul>
   		</div>
 	
@@ -58,14 +68,16 @@
              	<td>${uiLabelMap.applicationDate}</td>
              	<td>${uiLabelMap.assentialDocument}</td>
              	<td>${uiLabelMap.CommonStatus}</td>
+             	<td>${uiLabelMap.CommonEdit}</td>
          	</tr>
       	</thead> 
        		<tr>
 		      	<td align="center">1</td>
-	          	<td>CARF1000</td>
+	          	<td><a href="viewKhataChangeDetail" align="center">CARF1000</a></td>
 			  	<td>02/08/2017</td> 
 			    <td>Disconnection</td> 
 			    <td>Approved</td> 
+			    <td><a href="<@ofbizUrl>editKhataDetails</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
 		   	</tr>    
         </table>
 	</div>
@@ -81,6 +93,7 @@
 			   form.submit();
 		       disSubmit('disBttn');    
      }
+    
 </script>
 
 

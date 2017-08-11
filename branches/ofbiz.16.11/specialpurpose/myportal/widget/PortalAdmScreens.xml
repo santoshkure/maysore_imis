@@ -245,7 +245,6 @@ under the License.
                     		<html>
                     		<!-- <html-template location="component:///myportal/webapp/myportal/myPortalftl/commonPage.ftl"/> -->
                     		<html-template location="component:///myportal/webapp/myportal/myPortalftl/connectionApplyPage.ftl"/>
-                    			
                     		</html>
                         </platform-specific>
                     </decorator-section>
@@ -329,17 +328,16 @@ under the License.
             </widgets>
         </section>
     </screen> 
-     <screen name="searchKattaChange">
+    <!--  <screen name="searchKattaChange">
         <section>
             <actions>
-               
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
                     		<html>
-                    		<!-- <html-template location="component:///myportal/webapp/myportal/myPortalftl/commonPage.ftl"/> -->
+                    		<html-template location="component:///myportal/webapp/myportal/myPortalftl/commonPage.ftl"/>
                     		<html-template location="component:///myportal/webapp/myportal/myPortalftl/searchKattaChange.ftl"/>	
                     		<html-template location="component:///myportal/webapp/myportal/myPortalftl/listKattaChange.ftl"/>
                     		</html>
@@ -348,7 +346,7 @@ under the License.
                 </decorator-screen>
             </widgets>
         </section>
-    </screen> 
+    </screen>  -->
    <!--  =============END================== --> 
 
 <!-- Added By Nikhil  For customer bill correction -->
@@ -727,5 +725,164 @@ under the License.
     </screen>
     
     <!-- End -->
+    <!--    ADDED By Anubha -->
+     <screen name="editDisconnection">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/editDisconnection.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+     <screen name="editKhataDetails">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/editKhataDetails.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+ <screen name="viewKhataChangeDetail">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/viewKhataChangeDetail.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="createForAgreementLetter">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createForAgreementLetter.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="veiwForAgreementLetter">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/veiwForAgreementLetter.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+ <screen name="createDeclearationCertificate">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createDeclearationCertificate.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="veiwForDeclearationCerti">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/veiwForDeclearationCerti.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="createAgreementLetter">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/createAgreementLetter.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="veiwAgreementLetter">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/veiwAgreementLetter.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+<!-- END -->
 
 </screens>

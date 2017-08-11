@@ -120,7 +120,7 @@ function saveRegistrationDetail()
 		       var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
-                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>searchConnectionApply</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 
