@@ -1,30 +1,26 @@
 <#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
-<#---Program Name: kattaChangeRequest.ftl----->
+<#---Program Name: editKhataDetails.ftl----->
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		 Date Created 		Date Modified   --->
-<#---1.0			Anubha Saini   04/08/2017 
-<#-- 1.1			Pankaj Trivedi						05/08/2017    
+<#---1.0			Anubha Saini   09/08/2017 
+
 <#-- #####################################################################################################-->
 <#--This ftl is used to Register New Customer -->
-   
-   
-   <form method="post" name="khataChangeReq" action="" class="basic-form">
-   		<#--<div class="col-md-9">-->
-   		 
-   		<#--  <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.changeKhata}</span></div>-->
-   		 
-    			<div class="row" >
+
+<script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
+<form method="post" name="editKhataChange" class="basic-form">
+
+<div class="row" >
     			<div class="alert alert-info">
 				<ul>
     				<li class="back"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
-    				<div class="h3" align="center"><b>${uiLabelMap.changeKhataRequest}</b></div>
+    				<div class="h3" align="center"><b>${uiLabelMap.editKhataChange}</b></div>
 	    		</ul>
   				</div>
-  					
-				
-        		<table cellspacing="0" class="basic-table table-responsive">
+
+<table cellspacing="0" class="basic-table table-responsive">
         		
         					<input type="hidden" name="khataChangeId" value="" <li><a title="This is your khataChange Id"/>
          					<input type="hidden" name="khataChgangeNo" value="" <li><a title="This is your khata Chgange No"/>
@@ -70,8 +66,15 @@
                    			
                  		</select>
              		</td>
-                        <td class="label">${uiLabelMap.applicationType}<font color="red" >*</font></td>
-                         <td>Residential.doc</td>
+                        <td class="label">${uiLabelMap.applicationType}</td>
+                         <td>
+                    	<select disabled name="applicationType" >
+                   			<option value="">Select</option>
+                   			<option value="">Permanent</option>
+                   			<option value="">Temporary</option>
+                   			
+                 		</select>
+             		</td>
              		<tr>
                    <td class="label">${uiLabelMap.typeOfBuilding}</td>
  						<td>
@@ -91,12 +94,7 @@
                     <tr>
 	                         
 	                         <td class="label">${uiLabelMap.assentialDocument}</td>
-							<td>
-		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-		    				<input type="button" onclick="javascript:resetVal(document.connectionApply.fileLoc);" value="Reset"/> 
-		    				<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
-		    				<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
-		 					</td>
+							<td>Residential.doc</td>
                     </tr>
                     
                     	 <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.newchangeKhata}</font></td></tr>
@@ -104,54 +102,37 @@
                      <tr>
 	                         
 	                        <td class="label">${uiLabelMap.newKhataNo}</td>
-	                        <td><input name="newKhataNo"  type="text" maxlength="7" value=""></td>
+	                        <td><input name="newKhataNo"  type="text" maxlength="7" value="CARF1000"></td>
                     </tr>
                    
                     <tr>
                     	<td colspan="4">
                     	<center>
-                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail(khataChangeReq);"/>
-                    	 <input type="button" name="Cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
+                    	<input name="Update"   type="button" value="${uiLabelMap.CommonEdit}" onClick="javascript:editKhataChangeDetail(editKhataChange);"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	</center>
                      	</td>
                     </tr>
         		</table>
  
 	</div>
-   <#--	</div>-->
 
-   
 </form>
 
-    <script type="text/javascript" language="javascript">
- 
-function saveRegistrationDetail(khataChangeReq)
+
+<script type="text/javascript" language="javascript">
+
+function editKhataChangeDetail(editKhataChange)
    {
-		      var form=document['khataChangeReq'];
-		     <#-- var tital =   form.tital.value;
-		      var firstName =   form.firstName.value;
-		      var middleName =   form.middleName.value;
-		      var dateOfBirth =   form.dateOfBirth.value;
-		      var gender =   form.gender.value;
-		      var maritalStatus =   form.maritalStatus.value;
-		      var fatherName =   form.fatherName.value;
-		      var motherName =   form.motherName.value;
-		      var aadharCardNo =   form.aadharCardNo.value;
-		      var cummunity =   form.cummunity.value;
-		      var cast =   form.cast.value;
-		      var nationality =   form.nationality.value;
-		      var cast =   form.cast.value;
-		      var address =   form.address.value;
-		      var mobileNo =   form.mobileNo.value;
-		      var eMail =   form.eMail.value;
-		   -->   
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
+		      var form=document['editKhataChange'];
+		      
+		      var sure = confirm("Are you sure, you want to Edit the Form ?");
                               if( sure == true )
                              {
-                        form.action = "<@ofbizUrl>khataChangeDetail</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>disconnectionApplyDetail</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 
     }
     
-    </script>
+</script>

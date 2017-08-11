@@ -12,6 +12,7 @@
   <div class="row">
   	<div class="alert alert-info">
    		<ul>
+   		<li class="back"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
     		<li class="h3">${uiLabelMap.searchConnection}</li>
     		<div class="basic-nav" style="margin-top: -37px;">
   				<ul>
@@ -47,18 +48,15 @@
 
 <script type="text/javascript" language="javascript">
 
-<#-- 	function validateTypeMaster()
-	{
-					document.zoneMaster.action= "<@ofbizUrl>connectionApply</@ofbizUrl>";
-					document.zoneMaster.submit();
-					disSubmit('saveBtn'); 
-					//return true;
-					//alert("submit");
-					
-	}
-			
-	-->
-     
-	
-	
+function validateDetails(searchConnection)
+   {
+		      var form=document['searchConnection'];
+		      
+		     
+                        form.action = "<@ofbizUrl>searchConnectionApply</@ofbizUrl>";
+			            form.submit();
+		                disSubmit('disBttn');    
+
+    }
+    
 </script>

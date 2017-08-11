@@ -641,5 +641,158 @@
         <value xml:lang="en">View Complaint Detail</value>
         <value xml:lang="kn">View Complaint Detail</value>
     </property>
+    <!-- Added By nikhil On 09/08/2017 -->
+    <property key="applyForWaterSupply">
+        <value xml:lang="en">Apply For Water Supply</value>
+    </property>
+    <property key="waterSupply">
+        <value xml:lang="en">Water Supply</value>
+    </property>
+    <property key="statement">
+        <value xml:lang="en">
+    To,
+	The Executive Engineer,
+	Water Supply Division,
+	Bangalore</value>
+    </property>
+    
+    <property key="line1">
+        <value xml:lang="en">I appointment a authorised departmental contractor for water supply works.</value>
+    </property>
+     <property key="line">
+        <value xml:lang="en">Therefore give me a 5 dia measuring unit for water supply.</value>
+    </property>
+    <property key="line2">
+        <value xml:lang="en">Nagarapalike is fix Rs.</value>
+    </property>
+    <property key="lineTwo">
+        <value xml:lang="en">yearly tax valuation fixed.The same may enclose here with.</value>
+    </property>
+    <property key="line3">
+        <value xml:lang="en">I know rules and conditions and obey its conditions.</value>
+    </property>
+    <property key="line4">
+        <value xml:lang="en">I enclose herewith estimate plan with format as per 7-A submitted.</value>
+    </property>
+     <property key="createAppWaterSupply">
+        <value xml:lang="en">Create App Water Supply</value>
+    </property>
+    <property key="editDisconnection">
+        <value xml:lang="en">edit Disconnection</value>
+    </property>
+    <property key="editKhataChange">
+        <value xml:lang="en">Edit Khata Change Details</value>
+    </property>
+    <property key="commonVeiw">
+        <value xml:lang="en">Veiw Khata Change Details</value>
+    </property>
+    <property key="commonVeiw">
+        <value xml:lang="en">Veiw</value>
+    </property>
+     <property key="createAppForAgreementLetter">
+        <value xml:lang="en">Create Agreement Letter</value>
+    </property>
+    <property key="applyForAgreementLetter">
+        <value xml:lang="en">Apply For Agreement Letter</value>
+    </property>
+    <property key="agreementLetter">
+        <value xml:lang="en">Agreement Letter</value>
+    </property>
+    <property key="shreeSheemati">
+        <value xml:lang="en">
+            I Shree/Shreemati</value>
+    </property>
+    <property key="lineOneForAgreement">
+        <value xml:lang="en">I am submitting for water connection / legal connection 
+        to your office.
+             
+             As per Mysore Mahanagarapalika’s Baila condition and Sub-condition I am assigned. For the 
+        purpose of Household / Non-house hold/ commercial / industrial of water connection as per Baila 
+        condition and Sub condition.I am agree entitle to pay the measuring service tax and current water
+        tax by Government or Mysore Mahanagarapalike.
+        																		
+        																		
+        								Signature of Applicants
+       </value>
+    </property>
+    <property key="veiwAgreementLetter">
+        <value xml:lang="en">Veiw Agreement Letter</value>
+    </property>
+    <property key="createDeclearationCertificate">
+        <value xml:lang="en">Create Declearation Certificate</value>
+    </property>
+    <property key="applyForDecleaCerti">
+        <value xml:lang="en">Apply For Declearation Certificate</value>
+    </property>
+    <property key="DecleaCerti">
+        <value xml:lang="en">Declearation Certificate</value>
+    </property>
+    <property key="declearationHeading">
+        <value xml:lang="en">
+				        DECLEARTAION CERTIFCATE
+				   [ declared 20.00 Bond by notory ]
+				  [ only applicable for revenue site ] 
+		 </value>
+    </property>
+     <property key="decLineOne">
+        <value xml:lang="en"> 
+      		I constructed house/site is</value>
+    </property>
+    <property key="decLineTwo">
+        <value xml:lang="en"> street House No:-</value>
+    </property>
+    <property key="siteNo">
+        <value xml:lang="en"> Site No:-</value>
+    </property>
+    <property key="DecLineFour">
+        <value xml:lang="en">coming 
+        under In Mysore city. I cannot done Khata from Nagara Palike or Mysore Urban Development 
+        Board.</value>
+    </property>
+    <property key="decLineThree">
+        <value xml:lang="en"> 
+     			Therefore I </value>
+    </property>
+    <property key="sonOfOwner">
+        <value xml:lang="en"> S/o </value>
+    </property>
+    <property key="Age">
+        <value xml:lang="en"> Age </value>
+    </property>
+    <property key="decLineFive">
+        <value xml:lang="en"> declared that  any 
+        problems to public, Nagarapalike, urban development board, I am personally attended   and 
+        solve about my house. If I cannot solve the problems you must disconnect water supply and
+        future my deposit amount.
+        
+	This deceleration certificate only for connection of water supply. There no right to 
+	assists. 
+
+	Date:-09/08/2017 							Decelerator
+	Place:- Mysore
+	         </value>
+    </property>
+    <property key="veiwDeclearationCertificate">
+        <value xml:lang="en"> veiw Declearation Certificate </value>
+    </property>
+    <property key="paraOneAgreement">
+        <value xml:lang="en">	I request application for water   supply connection to my 
+        house / plot through Shree Yoganarashimhaswami Plumbing and Sanitary Works your Office. 
+				
+            	I entitled to your Board Baila Terms and Conditions for use of water household /non-household  
+        I.e. water using for constructing the house your Baila 28 Section I pay and promise to the maintenance
+        and service tax regarding water measuring equipment. 
+
+            	If any technical problems or any other problems I co-operate and agree to department. I can not
+        to abuse your Board. When water coming I collect the water. 
+        Witness.
+
+        Shree Yoganarashimhaswami Plumbing and Sanitary Works. 
+
+                 Owner.								Signature of Applicants
+</value>
+</property>
+ 
+     <!-- ============End============= -->
     
 </resource>

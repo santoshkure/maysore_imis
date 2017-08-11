@@ -5,6 +5,7 @@
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		Date Created 		Date Modified   --->
 <#---1.0			Shubham Malviya   07/08/2017
+<#---1.1			Anubha Saini                        09/08/2017
 <#-- #####################################################################################################-->
 <#--This ftl is used to show view Connection Detail -->
 
@@ -20,8 +21,56 @@
   				
   				<table cellspacing="0" class="basic-table table-responsive">
   				
+  					<tr>
+                      	<td class="label">${uiLabelMap.customerNo}</td>
+                        <td>CAN101</td>
+                       
+                	 </tr>
+                    
+                     <tr>
+                    	<td class="label">${uiLabelMap.connectionCategory}</td>
+                         <td>Household</td>
+                        <td class="label">${uiLabelMap.applicationType}</td>
+                         <td>Permanent</td>
+             		<tr>
+                  		 <td class="label">${uiLabelMap.typeOfBuilding}</td>
+ 						<td>Residential</td>   
+   						<td class="label">${uiLabelMap.applicationDate}</td>
+   						<td>0708/2017</td>
+   						
+   					</tr>
+   					 <tr>
+	                         
+	                        <td class="label">${uiLabelMap.feeForConnection}</td>
+	                        <td>1000</td>
+                        	<td class="label">${uiLabelMap.feeStatus}</td>
+	                        <td>Paid</td>
+                    </tr>
+                    <tr>
+	                         
+	                       <td class="label">${uiLabelMap.connectionNo}</td>
+	                        <td>CARF1000</td>
+	                         
+	                         <td class="label">${uiLabelMap.assentialDocument}</td>
+							<td>Residential.doc</td>
+                    </tr>
+                    
+                     <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
+             		 
+             		  <tr>
+                    	 <td class="label">${uiLabelMap.CommonStatus}</td>
+                         <td>Submitted</td>
+                         
+                        	<td class="label">${uiLabelMap.actionDate}</td>
+                         <td>0708/2017</td>
+             		 </tr>
+                   
+        		</table>
+  				
+  			<#--	<table cellspacing="0" class="basic-table table-responsive">
+  				
         			<tr>
-                      	<td class="label">${uiLabelMap.connectionRequestNo}</td>
+                      	<td class="label">${uiLabelMap.connectionNo}</td>
                         <td>CARF1000</td>
                        
                  	</tr>
@@ -60,7 +109,7 @@
                          <td>0708/2017</td>
              		 </tr>
              		 
-        		</table>
+        		</table>-->
  
 	</div>
    <#--	</div>-->

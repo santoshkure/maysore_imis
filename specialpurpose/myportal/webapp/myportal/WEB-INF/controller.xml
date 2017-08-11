@@ -293,6 +293,56 @@
     
     <!-- End -->
     
+    <!--Added by Anubha Saini On 09/08/2017-->
+    
+     <request-map uri="editDisconnection">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editDisconnection"/>
+        <response name="error" type="view" value="editDisconnection"/>
+    </request-map>
+    
+    <request-map uri="editKhataDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editKhataDetails"/>
+        <response name="error" type="view" value="editKhataDetails"/>
+    </request-map>
+    
+    <request-map uri="viewKhataChangeDetail">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewKhataChangeDetail"/>
+        <response name="error" type="view" value="viewKhataChangeDetail"/>
+    </request-map>
+    <request-map uri="createForAgreementLetter">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createForAgreementLetter"/>
+        <response name="error" type="view" value="createForAgreementLetter"/>
+    </request-map>
+    <request-map uri="createDeclearationCertificate">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="veiwForAgreementLetter"/>
+        <response name="error" type="view" value="veiwForAgreementLetter"/>
+    </request-map>
+     <request-map uri="createDeclearationCertificate">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createDeclearationCertificate"/>
+        <response name="error" type="view" value="createDeclearationCertificate"/>
+    </request-map>
+    <request-map uri="veiwForDeclearationCerti">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="veiwForDeclearationCerti"/>
+        <response name="error" type="view" value="veiwForDeclearationCerti"/>
+    </request-map>
+    <request-map uri="createAgreementLetter">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createAgreementLetter"/>
+        <response name="error" type="view" value="createAgreementLetter"/>
+    </request-map>
+    <request-map uri="veiwAgreementLetter">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="veiwAgreementLetter"/>
+        <response name="error" type="view" value="veiwAgreementLetter"/>
+    </request-map>
+     <!-- End -->
     
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
@@ -347,5 +397,16 @@
    <view-map name="createIllegalToLegal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createIllegalToLegal"/>
    
    
+   <!-- End -->
+    <!--Added by Anubha Saini On 09/08/2017-->
+   <view-map name="editDisconnection" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#editDisconnection"/>
+   <view-map name="editKhataDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#editKhataDetails"/>
+   <view-map name="viewKhataChangeDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewKhataChangeDetail"/>
+   <view-map name="createForAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createForAgreementLetter"/>
+   <view-map name="veiwForAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwForAgreementLetter"/>
+    <view-map name="createDeclearationCertificate" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createDeclearationCertificate"/>
+    <view-map name="veiwForDeclearationCerti" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwForDeclearationCerti"/>
+    <view-map name="createAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createAgreementLetter"/>
+    <view-map name="veiwAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwAgreementLetter"/>
    <!-- End -->
 </site-conf>

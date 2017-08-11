@@ -14,6 +14,16 @@
     		<ul>		   			
     			<li class="back"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
     			<li class="h3">${uiLabelMap.searchAppliedDisconnection}</li>
+    			<div class="basic-nav" style="margin-top: -37px;">
+  				<ul>
+    				<li>
+							<a title="Create Zone Master" href="<@ofbizUrl>disconnectionApply</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
+    				</li>
+  				</ul>
+ 			 
+  			</div>  
  			</ul>
   		</div>
 	
@@ -60,6 +70,7 @@
              	<td>${uiLabelMap.dueAmount}</td>
              	<td>${uiLabelMap.reasonForDisconnection}</td>
              	<td>${uiLabelMap.CommonStatus}</td>
+             	 <td>${uiLabelMap.edit}</td>
          	</tr>
       	</thead> 
        		<tr>
@@ -69,6 +80,7 @@
 			  	<td>0</td> 
 			    <td>reasone For Disconnection</td> 
 			    <td>Approved</td> 
+			    <td><a href="javascript:editDisconnection('listAppliedConnection');" class="buttontext" align="center">${uiLabelMap.edit}</a></td>
 		   	</tr>    
         </table>
 	</div>
@@ -84,6 +96,13 @@
 			   form.submit();
 		       disSubmit('disBttn');    
      }
+     
+     function editDisconnection(formname)
+	{
+	     var form =document[formname];	
+        form.action="<@ofbizUrl>editDisconnection</@ofbizUrl>";
+	    form.submit();
+	}
 </script>
 
 
