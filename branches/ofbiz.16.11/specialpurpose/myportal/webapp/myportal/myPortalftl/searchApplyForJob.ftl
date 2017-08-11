@@ -63,22 +63,22 @@
     <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
-             <td><center>${uiLabelMap.sno}<center></td>
-	         <td><center>${uiLabelMap.customerNo}<center></td>
-             <td><center>${uiLabelMap.connectionNo}</center></td>
-             <td><center>${uiLabelMap.billNo}<center></td>
-             <td><center>${uiLabelMap.billCorrectionApplyDate}</center></td>
-             <td><center>${uiLabelMap.CommonStatus}</center></td>
-             <td><center>${uiLabelMap.CommonEdit}</center></td>
+             <td>${uiLabelMap.sno}</td>
+	         <td>${uiLabelMap.customerNo}</td>
+             <td>${uiLabelMap.connectionNo}</td>
+             <td>${uiLabelMap.billNo}<center></td>
+             <td>${uiLabelMap.billCorrectionApplyDate}</td>
+             <td>${uiLabelMap.CommonStatus}</td>
+             <td>${uiLabelMap.CommonEdit}</td>
          </tr>
       </thead> 
        <tr>
-		      	<td align="center">1</td>
-	          	<td><center><a href="viewJobDetails">1000</a></center></td>
-			  	<td><center>0987 </center></td>
-			  	<td><center>53536</center></td> 
-			    <td><center>31/07/2017</center></td> 
-			 	<td><center>approve</center></td> 
+		      	<td>1</td>
+	          	<td><a href="viewJobDetails">1000</a></td>
+			  	<td>0987</td>
+			  	<td>53536</td> 
+			    <td>31/07/2017</td> 
+			 	<td>approve</td> 
 				<td><center><a href="javascript:editapplyforjob('listapplyforjob');" class="buttontext" align="center">${uiLabelMap.CommonEdit}</a></center></td>
 		   </tr>    
         </table>

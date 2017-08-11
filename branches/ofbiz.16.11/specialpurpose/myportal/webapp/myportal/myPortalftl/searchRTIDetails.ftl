@@ -58,28 +58,28 @@
     <table class="basic-table table-responsive" cellspacing="0">
     <thead>
          <tr class="header-row-2">
-             <td><center>${uiLabelMap.sno}<center></td>
-             <td><center>${uiLabelMap.RTIRefNo}<center></td>
-	         <td><center>${uiLabelMap.applicantName}<center></td>
-             <td><center>${uiLabelMap.FormFieldTitle_applicationDate}</center></td>
-             <td><center>${uiLabelMap.modeOfPayment}<center></td>
-             <td><center>${uiLabelMap.challanRefrenceNo}</center></td>
-             <td><center>${uiLabelMap.applicationBank}</center></td>
-             <td><center>${uiLabelMap.RTIStatus}</center></td>
-             <td><center>${uiLabelMap.CommonEdit}</center></td>
+             <td>${uiLabelMap.sno}</td>
+             <td>${uiLabelMap.RTIRefNo}</td>
+	         <td>${uiLabelMap.applicantName}</td>
+             <td>${uiLabelMap.FormFieldTitle_applicationDate}</td>
+             <td>${uiLabelMap.modeOfPayment}</td>
+             <td>${uiLabelMap.challanRefrenceNo}</td>
+             <td>${uiLabelMap.applicationBank}</td>
+             <td>${uiLabelMap.RTIStatus}</td>
+             <td>${uiLabelMap.CommonEdit}</td>
             
          </tr>
         
       </thead> 
        <tr>
 		      	<td align="center">1</td>
-	          	<td><center>RTI101</center></td>
-			  	<td><center>Ravi Sharma</center></td>
-			  	<td><center>04/08/2017</center></td> 
-			 	<td><center>Challan</center></td> 
-		  	 	<td><center>Ref07</center></td> 
-		  	 	<td><center>PNB</center></td>
-		  	 	<td><center>Submitted</center></td> 
+	          	<td>RTI101</td>
+			  	<td>Ravi Sharma</td>
+			  	<td>04/08/2017</td> 
+			 	<td>Challan</td> 
+		  	 	<td>Ref07</td> 
+		  	 	<td>PNB</td>
+		  	 	<td>Submitted</td> 
 				<td><center><a href="javascript:editRTIDetails('searchRTIDetails');" class="buttontext" align="center">${uiLabelMap.CommonEdit}</a></center></td>
 				     
 		</tr>    
