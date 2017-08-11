@@ -616,7 +616,7 @@ under the License.
         </section>
     </screen>
     
-<screen name="viewBillCorrectionDetails">
+<screen name="viewBillCorrection">
         <section>
             <actions>
             </actions>

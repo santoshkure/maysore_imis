@@ -498,6 +498,9 @@
     <property key="complainRegister">
         <value xml:lang="en">Search Complaint Details</value>
     </property>
+     <property key="viewregisterComplaint">
+        <value xml:lang="en">View Complaint Details</value>
+    </property>
      <property key="registerComplainList">
         <value xml:lang="en">Register Complaint List</value>
     </property>

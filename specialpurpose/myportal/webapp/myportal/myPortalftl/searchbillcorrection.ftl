@@ -9,7 +9,7 @@
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the application for the  search bill correction.-->
 
-<form method="post" name="searchBillCorrection" class="basic-form">
+<form method="post" name="createcustomerbillcorrection" class="basic-form">
 
 	<div class="row">
   <div class="alert alert-info">
@@ -36,7 +36,7 @@
 		
 			<tr>
 			
-			 <td class="label">${uiLabelMap.billCorrectionNo} </font></td>
+			 <td class="label">${uiLabelMap.billCorrectionNo} <font color="red">*</font></td>
 			 <td><input type="text" name="billCorrectionNo"  value="" /></td>   
 
 
@@ -68,22 +68,22 @@
     <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
-             <td><center>${uiLabelMap.sno}<center></td>
-	         <td><center>${uiLabelMap.customerNo}<center></td>
-             <td><center>${uiLabelMap.connectionNo}</center></td>
-             <td><center>${uiLabelMap.billNo}<center></td>
-             <td><center>${uiLabelMap.billCorrectionApplyDate}</center></td>
-             <td><center>${uiLabelMap.CommonStatus}</center></td>
-             <td><center>${uiLabelMap.CommonEdit}</center></td>
+             <td>${uiLabelMap.sno}</td>
+	         <td>${uiLabelMap.customerNo}</td>
+             <td>${uiLabelMap.connectionNo}</td>
+             <td>${uiLabelMap.billNo}<center></td>
+             <td>${uiLabelMap.billCorrectionApplyDate}</td>
+             <td>${uiLabelMap.CommonStatus}</td>
+             <td>${uiLabelMap.CommonEdit}</td>
          </tr>
       </thead> 
        <tr>
-		      	<td align="center">1</td>
-	          	<td><center><a href="viewBillCorrectionDetails">10001</a></center></td>
-			  	<td><center>0987 </center></td>
-			  	<td><center>53536</center></td> 
-			    <td><center>31/07/2017</center></td> 
-			 	<td><center>approve</center></td> 
+		      	<td>1</td>
+	          	<td><a href="viewBillCorrection">10001</a></td>
+			  	<td>0987</td>
+			  	<td>53536</td> 
+			    <td>31/07/2017</td> 
+			 	<td>approve</td> 
 				<td><center><a href="javascript:editbillcorrection('listbillcorrection');" class="buttontext" align="center">${uiLabelMap.CommonEdit}</a></center></td>
 		   </tr>    
         </table>
@@ -92,9 +92,9 @@
  </form>
  <script type="text/javascript" language="javascript">
      
-     function searchbilldetail()
+     function searchbilldetail(formname)
      {
-		   var form=document['searchBillCorrection'];
+		   var form=document['createcustomerbillcorrection'];
                form.action = "<@ofbizUrl>searchbillcorrection</@ofbizUrl>";
 			   form.submit();
 		       disSubmit('disBttn');    

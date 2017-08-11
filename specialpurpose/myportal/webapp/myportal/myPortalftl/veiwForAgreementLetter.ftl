@@ -17,9 +17,7 @@
 		    <ul>
 		        <li class="back"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
 		    	<div class="h3" align="center"><b>${uiLabelMap.veiwAgreementLetter}</b></div>
-		    	
 			</ul>
-	     
 		</div>
 		<div class="screenlet-body">
 		
