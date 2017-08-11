@@ -252,10 +252,10 @@
          <response name="error" type="view" value="khataChangeDetail"/>
     </request-map>
     
-	<request-map uri="viewBillCorrectionDetails">
+	<request-map uri="viewBillCorrection">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="viewBillCorrectionDetails"/>
-        <response name="error" type="view" value="viewBillCorrectionDetails"/>
+        <response name="success" type="view" value="viewBillCorrection"/>
+        <response name="error" type="view" value="viewBillCorrection"/>
     </request-map>
     
     <request-map uri="viewComplaintDetails">
@@ -386,8 +386,8 @@
     <view-map name="viewConnectionDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewConnectionDetail"/>
     <view-map name="disconnectionApplyDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#disconnectionApplyDetail"/>
     <view-map name="viewDisconnectionDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewDisconnectionDetail"/>
-        <view-map name="khataChangeDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#khataChangeDetail"/>
-    <view-map name="viewBillCorrectionDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewBillCorrectionDetails"/>
+    <view-map name="khataChangeDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#khataChangeDetail"/>
+    <view-map name="viewBillCorrection" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewBillCorrection"/>
    <view-map name="viewComplaintDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewComplaintDetails"/>
    <view-map name="viewJobDetails" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewJobDetails"/>
    <!-- Pankaj Trivedi -->
