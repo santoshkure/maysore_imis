@@ -589,6 +589,11 @@
         <value xml:lang="en">Payment Behalf Of</value>
     </property>
     <!-- Added By shuhbham malviya -->
+    <property key="createIllegalToLegal">
+        <value xml:lang="en">Create Ill-Legal To Legal Connection</value>
+        <value xml:lang="kn">Create Ill-Legal To Legal Connection</value>
+    </property>
+    
     <property key="searchAppliedConnection">
         <value xml:lang="en">Search Connection Request</value>
         <value xml:lang="kn">Search Connection Request</value>
