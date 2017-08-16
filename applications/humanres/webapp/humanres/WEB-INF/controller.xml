@@ -1595,6 +1595,144 @@ under the License.
         <response name="success" type="request-redirect" value="officemaster"/>
         <response name="error" type="view" value="officemaster" />
     </request-map>
+     <request-map uri="saveZonemasterdet">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveZonemasterdet"/>
+        <response name="success" type="request-redirect" value="ZoneMaster"/>
+        <response name="error" type="view" value="ZoneMaster" />
+    </request-map>
+    <request-map uri="editZoneDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editZoneDetails"/>
+        <response name="error" type="view" value="editZoneDetails"/>
+    </request-map>
+    <request-map uri="updateZoneDet">
+        <security https="true" auth="true" />
+        <event type="service" invoke="updateZoneDet"/>
+        <response name="success" type="request-redirect" value="ZoneMaster"/>
+        <response name="error" type="view" value="ZoneMaster" />
+    </request-map>
+     <request-map uri="saveWardMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveWardMaster"/>
+        <response name="success" type="request-redirect" value="Wardmaster"/>
+        <response name="error" type="view" value="Wardmaster" />
+    </request-map>
+     <request-map uri="updateWardDet">
+        <security https="true" auth="true" />
+        <event type="service" invoke="updateWardDet"/>
+        <response name="success" type="request-redirect" value="Wardmaster"/>
+        <response name="error" type="view" value="Wardmaster" />
+    </request-map>
+    
+    <request-map uri="saveBlockMaster">
+    	<security https="true" auth="true" />
+    	<event type="service" invoke="saveBlockMaster"/>
+    	<response name="success" type="request-redirect" value="blockMaster"/>
+    	<response name="error" type="view" value="blockMaster" />
+	</request-map>
+	<request-map uri="editblockmaster">
+    	<security https="true" auth="true"/>
+    	<response name="success" type="view" value="editblockmaster"/>
+    	<response name="error" type="view" value="editblockmaster" />
+	</request-map>
+	<request-map uri="editBlockTypeMasters">
+    	<security https="true" auth="true" />
+    	<event type="service" invoke="editBlockTypeMasters"/>
+    	<response name="success" type="request-redirect" value="blockMaster"/>
+    	<response name="error" type="view" value="blockMaster" />
+	</request-map>
+	
+	<request-map uri="saveStreetsMaster">
+    	<security https="true" auth="true" />
+    	<event type="service" invoke="saveStreetsMaster"/>
+    	<response name="success" type="request-redirect" value="Streetmaster"/>
+    	<response name="error" type="view" value="Streetmaster" />
+	</request-map>
+	 <request-map uri="editstreetmaster">
+    	<security https="true" auth="true"/>
+    	<response name="success" type="view" value="editstreetmaster"/>
+    	<response name="error" type="view" value="editstreetmaster" />
+	</request-map>
+      
+      <request-map uri="editStreetTypeMasters">
+    	<security https="true" auth="true" />
+    	<event type="service" invoke="editStreetTypeMasters"/>
+    	<response name="success" type="request-redirect" value="Streetmaster"/>
+    	<response name="error" type="view" value="Streetmaster" />
+	</request-map>
+     
+     <request-map uri="saveCasteMaster">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="saveCasteMasterDetails"/>
+        <response name="success" type="request-redirect" value="CasteMaster"/>
+        <response name="error" type="view" value="CasteMaster"/>
+    </request-map> 
+      
+        <request-map uri="editCasteTypeMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="editCasteTypeMaster"/>
+        <response name="success" type="request-redirect" value="CasteMaster"/>
+        <response name="error" type="view" value="CasteMaster" />
+    </request-map>
+    
+    <request-map uri="saveCommunityMaster">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="saveCommunityMaster"/>
+        <response name="success" type="request-redirect" value="CommunityMaster"/>
+        <response name="error" type="view" value="CommunityMaster"/>
+    </request-map> 
+     
+     <request-map uri="editCommunityTypeMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="editCommunityTypeMaster"/>
+        <response name="success" type="request-redirect" value="CommunityMaster"/>
+        <response name="error" type="view" value="CommunityMaster" />
+    </request-map>
+    
+     <request-map uri="saveGenderMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveGenderMaster"/>
+        <response name="success" type="request-redirect" value="GenderMaster"/>
+        <response name="error" type="view" value="GenderMaster" />
+    </request-map>
+    
+   <request-map uri="editofGenderMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="editofGenderMaster"/>
+        <response name="success" type="request-redirect" value="GenderMaster"/>
+        <response name="error" type="view" value="GenderMaster" />
+    </request-map>
+    
+     <request-map uri="savemaritalstatusmaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="savemaritalstatusmaster"/>
+        <response name="success" type="request-redirect" value="MaritalStatusMaster"/>
+        <response name="error" type="view" value="MaritalStatusMaster" />
+    </request-map>
+    
+     <request-map uri="editofMaritalMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="editofMaritalMaster"/>
+        <response name="success" type="request-redirect" value="MaritalStatusMaster"/>
+        <response name="error" type="view" value="MaritalStatusMaster" />
+    </request-map>  
+    
+     <request-map uri="savePincodeMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="savePincodeMaster"/>
+        <response name="success" type="request-redirect" value="SearchPincodeMaster"/>
+        <response name="error" type="view" value="SearchPincodeMaster" />
+    </request-map>
+   
+   
+     <request-map uri="editofPincodemaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="editofPincodemaster"/>
+        <response name="success" type="request-redirect" value="SearchPincodeMaster"/>
+        <response name="error" type="view" value="SearchPincodeMaster" />
+    </request-map>
+
     <!-- END -->
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
@@ -1731,7 +1869,7 @@ under the License.
     <view-map name="PayrollHistory" type="screen" page="component://humanres/widget/EmployeeScreens.xml#PayrollHistory"/>
     
    <!-- ==========Added By Anubha on 31 July 2017==================  -->
-    <view-map name="ZoneMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#ZoneMaster"/>
+    <view-map name="ZoneMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#zoneMasterScreen"/>
     <view-map name="Wardmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#wardMaster"/>
     <view-map name="Streetmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#streetMaster"/>
     <view-map name="blockMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#blockMaster"/>
@@ -1825,5 +1963,6 @@ under the License.
          <!-- Prabhu for Office Type --> 
          <view-map name="officemaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#officemasterSearch"/>  
          <view-map name="editofcMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editofcMaster"/>
+         
          <!-- END -->
 </site-conf>
