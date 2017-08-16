@@ -28,17 +28,126 @@ under the License.
 
   
    <entity entity-name="ZoneMaster" 
-            package-name="org.apache.ofbiz.humanres.master"
-            title="Zone Master Entity">
+            package-name="org.apache.ofbiz.humanres.master" title="Zone Master Entity">
       <field name="zoneId" type="id-ne"></field>
       <field name="zoneName" type="short-varchar"/>
+      <field name="zoneTypeId" type="short-varchar"/>
       <field name="cityName" type="short-varchar"/>
       <field name="officeName" type="short-varchar"/>
       <field name="officeId" type="id-ne"></field>      
-      <field name="remark" type="description"></field>
-      <field name="createdate" type="date"></field>
+      <field name="remark" type="long-varchar"></field>
+      <field name="status" type="short-varchar"/>
+      <field name="activestatus" type="short-varchar"/>
+       <field name="createdate" type="date"></field>
       <prim-key field="zoneId"/>    
      
     </entity>
+    
+     <entity entity-name="WardMaster" 
+            package-name="org.apache.ofbiz.humanres.master" title="Zone Master Entity">
+      <field name="wardId" type="id-ne"></field>
+      <field name="wardName" type="short-varchar"/>
+      <field name="zoneId" type="id-ne"/>
+      <field name="cityName" type="short-varchar"/>
+      <field name="cityId" type="id-ne"></field>    
+      <field name="officeId" type="id-ne"></field>      
+      <field name="wardRemark" type="long-varchar"></field>
+      <field name="status" type="short-varchar"/>
+      <field name="activestatus" type="short-varchar"/>
+       <field name="createdate" type="date"></field>
+      <prim-key field="wardId"/>    
+      <relation type="one" fk-name="zoneId" title="Parent" rel-entity-name="WardMaster">
+            <key-map field-name="zoneId" rel-field-name="zoneId"/>
+        </relation>
+     
+    </entity>
+    
+	<entity entity-name="blockMaster"
+        	package-name="org.apache.ofbiz.humanres.master"
+        	title="Block Master Entity">
+  	<field name="blockId" type="id-ne"></field>
+  	<field name="blockName" type="short-varchar"/>
+  	<field name="wardId" type="id-ne"/>
+  	<field name="cityId" type="id-ne"/>	 
+  	<field name="remark" type="description"></field>
+  	<field name="createdate" type="date"></field>
+  	<field name="status" type="indicator"></field>
+  	<prim-key field="blockId"/>   	 
+	</entity>
+	
+	<entity entity-name="streetMaster"
+        	package-name="org.apache.ofbiz.humanres.master"
+        	title="Street Master Entity">
+  	<field name="streetId" type="id-ne"></field>
+  	<field name="streetName" type="short-varchar"/>
+  	<field name="blockId" type="id-ne"/>
+  	<field name="cityName" type="short-varchar"/>	 
+  	<field name="remark" type="description"></field>
+  	<field name="createdate" type="date"></field>
+  	<field name="status" type="indicator"></field>
+  	<prim-key field="streetId"/>  
+   	<relation type="one" fk-name="BLOCK_ID" title="Parent" rel-entity-name="blockMaster">
+        	<key-map field-name="blockId" rel-field-name="blockId"/>
+    	</relation> 	 
+	</entity>
+	
+	<entity entity-name="casteMaster" 
+            package-name="org.apache.ofbiz.humanres.master"
+            title="Caste Master  Entity">
+      <field name="casteId" type="id-ne"></field>
+      <field name="castename" type="short-varchar"/>
+      <field name="createdate" type="date"/>
+      <field name="remark" type="description"/>
+      <field name="status" type="indicator"></field>     
+      <prim-key field="casteId"/>    
+	</entity>
+
+ 	<entity entity-name="communityMaster" 
+            package-name="org.apache.ofbiz.humanres.master"
+            title="Community Master Entity">
+      <field name="communityId" type="id-ne"></field>
+      <field name="communityname" type="short-varchar"/>
+      <field name="createdate" type="date"/>
+      <field name="remark" type="description"/>
+      <field name="status" type="indicator"></field>     
+      <prim-key field="communityId"/>      
+    </entity>
+    
+    
+    <entity entity-name="genderMaster" 
+            package-name="org.apache.ofbiz.humanres.master"
+            title="Gender Master Entity">
+      <field name="genderId" type="id-ne"></field>
+      <field name="genderName" type="short-varchar"/>
+      <field name="dateOfCreateGender" type="date"/>
+      <field name="genderRemark" type="description"/>
+      <field name="status" type="indicator"></field>     
+      <prim-key field="genderId"/>      
+    </entity>
+    
  
+<entity entity-name="maritalStatusMaster" 
+            package-name="org.apache.ofbiz.humanres.master"
+            title="Marital Status Master Entity">
+      <field name="maritalStatusId" type="id-ne"></field>
+      <field name="maritalStatus" type="short-varchar"/>
+      <field name="dateOfCreateMarital" type="date"/>
+      <field name="maritalRemark" type="description"/>
+      <field name="status" type="indicator"></field>     
+      <prim-key field="maritalStatusId"/>      
+    </entity>
+    
+    <entity entity-name="pinCodeMaster" 
+            package-name="org.apache.ofbiz.humanres.master"
+            title="Pin Code Master Entity">
+      <field name="pinCodeId" type="id-ne"></field>
+      <field name="pinCode" type="short-varchar"/>
+      <field name="dateOfCreatePin" type="date"/>
+      <field name="cityRemark" type="description"/>
+      <field name="status" type="indicator"></field>     
+      <prim-key field="pinCodeId"/>      
+    </entity>
+
+ 
+
 </entitymodel>
