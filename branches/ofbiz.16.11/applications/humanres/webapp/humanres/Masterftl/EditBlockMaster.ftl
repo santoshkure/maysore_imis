@@ -20,56 +20,115 @@
 	
 	<div class="screenlet-body">
 	<table class="basic-table" cellspacing="0">
-		
+		<#if blockTypeList?has_content>
+ 				 <#list blockTypeList as blockTypeList>
+ 				 
 			<td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
 		
 			<tr>
+			
 			 <td class="label">${uiLabelMap.blockName}<font color="red" >*</font></td>
-			 <td><input type="text" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="30" value="Mysore Block" /></td>    	
+			 <td><input type="text" style="width:140px"  name="blockName" onchange="javascript:trimFunction(this)" autocomplete="off" id="remark" maxlength ="30" value="${blockTypeList.blockName?if_exists}" /></td>    	
 			 
 			  <td class="label">${uiLabelMap.wardname}<font color="red" >*</font> </td>
-			  <td> 
-				<select name="nameOfService" style="width:150px;" >
+			 <td> 
+				<select name="wardName" style="width:150px;" onchange="return getDesignation(this);">
 					<option value="">${uiLabelMap.wardname}</option>
-				 	<option value="" selected="true">Mysore Ward</option>
+				 	<option value="${blockTypeList.wardId?if_exists}" selected="true">${blockTypeList.wardId?if_exists}</option>
 				</select>
-			</td>  
+			</td> 
 			  
         	</tr>
         	
+        	
         	<tr>
-			 <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
+        		 <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
-				<select name="nameOfService" style="width:150px;" >
+				<select name="cityName" style="width:150px;" onchange="return getDesignation(this);">
 					<option value="">${uiLabelMap.cityName}</option>
-				 	<option value="" selected="true">Hyderabad</option>
+				 	<option value="${blockTypeList.cityId?if_exists}" selected="true">${blockTypeList.cityId?if_exists}</option>
 				</select>
-			</td>  
+			</td> 
 			
 			<td class="label">${uiLabelMap.remark}</td>
 			 	
-			  <td colspan="4"><textarea name="petiDetails" value="" maxlength="150" style="width:400px">Remark</textarea></td>
+			  <td colspan="4"><textarea name="remark"  onchange="javascript:trimFunction(this)" value="${blockTypeList.remark?if_exists}" maxlength="150" style="width:400px">${blockTypeList.remark?if_exists}</textarea></td>
 		</tr>
         	<tr>
-                    <td width='20%' align='right' class="label">${uiLabelMap.createdate}<font color="red" >*</font></td>
-                    <td><input type="date" style="width:140px"  name="date" autocomplete="off" id="date" maxlength ="30" value="31/07/2017" />
-                    <#--  <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-                    --></td>
+                   <#-- <td width='20%' align='right' class="label">${uiLabelMap.createdate}<font color="red" >*</font></td>
+                    <td><input type="date" style="width:140px"  name="createdate" autocomplete="off" id="date" maxlength ="30" value="${blockTypeList.createdate?if_exists}" />
+                     <#-- <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                   </td> -->
+            <td class="label" >${uiLabelMap.createdate}</td>
+		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
                   </tr>
         	
         	<tr>
 				<td colspan="4">
 					<center><div id="submit" align="center">
-						<input type="button" name="update" value="${uiLabelMap.update}" onclick=""/>
+						<input type="button" name="update" value="${uiLabelMap.update}" onclick="editBlockTypeMaster('editBlockMaster','edit')"/>
 					   <input type="button" name="Cancel" value="Cancel" onclick="javascript:validateConfirmBack();" >
 					</div>
 					</center>
 				</td>
 			</tr>
+			                                 <input type="hidden" name="activestatus" value="${blockTypeList.status?if_exists}" style="width:140px"  />
+						                     <input type="hidden" name="blockId" value="${blockTypeList.blockId?if_exists}" style="width:140px"  />
+			
+			</#list>
+				</#if>
+                 			      <input type="hidden" name="status" value="" style="width:140px"  />
+
 		</table>
 		</div>
 	</div>
-	
 	</form>
+	  <#-----------------------Java Script for Community Master------------->
+<script language="JavaScript" type="text/javascript" />
+	
+	
+	function editBlockTypeMaster(formname,stat)
+	{
+	var form =document[formname];
+	var blockName = form.blockName.value;
+	
+    var wardName = form.wardName.value;
+   
+    var cityName = form.cityName.value;
+    var createdate = form.createdate.value;
+   
+    if(notEmptyField(blockName,"block name should not be empty.")) 
+    {
+    if(notEmptyField(wardName,"ward name should not be empty.")) 
+    {
+	if(notEmptyField(cityName,"city name should not be empty.")) 
+    {
+    if(notEmptyField(createdate,"createdate should not be empty.")) 
+    { 
+    var r=confirm("Are you sure, you want to Update the Form ?")
+        if (r==true)
+        {    	
+	     //alert(""+stat);
+	     form.status.value = stat;
+        form.action="<@ofbizUrl>editBlockTypeMasters</@ofbizUrl>";
+	    form.submit();
+	}
+	}}
+	}}}
+	function validateConfirmBack() {  
+                   var sure = confirm("Are you sure, you want to Cancel the Form ?");
+                   if( sure == true )  
+                   {
+                       history.go(-1);
+                }
+           }
+           
+ function trimFunction(field)
+   {
+   var str = field.value;
+   field.value = str.trim();
+}          
+           
+	 </script>
 		
 

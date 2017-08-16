@@ -32,41 +32,52 @@
 	<table class="basic-table" cellspacing="0">
 		
 			<tr>
-			 <td class="label">${uiLabelMap.zoneName}</td>
-			 <td> 
-				<select name="nameOfService" style="width:150px;" onchange="return getDesignation(this);">
-					<option value="">${uiLabelMap.zoneName}</option>
-				 	<option value="">Mysore Zone</option>
-				</select>
-			</td>    	
-			 
+			 <td class="label">${uiLabelMap.zoneName} <font color="red" >*</font></td>
+			  <td width="25%"><select name="zoneName" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+             <option value=''>${uiLabelMap.CommonSelect}</option>
+	    	   <#if ZoneMasterLists?exists>
+	    	      <#if ZoneMasterLists?has_content>
+	    	       <#list ZoneMasterLists as ZoneMasterLists>
+ 	    	         <option value="${ZoneMasterLists.zoneName?if_exists}">${ZoneMasterLists.zoneName?if_exists}</option>
+ 	    	       </#list>
+	    	     </#if>
+	    	   </#if>
+	    	</select>
+                    </td>
+ 			 
 			  <td class="label">${uiLabelMap.cityName} </td>
 			  <td> 
-				<select name="nameOfService" style="width:150px;" onchange="return getDesignation(this);">
-					<option value="">${uiLabelMap.cityName}</option>
-				 	<option value="">Mysore</option>
+				<select name="cityName" style="width:150px;" onchange="return getDesignation(this);">
+				    <option value=''>Select</option>
+				 	<option value="Hyderabad">Hyderabad</option>
 				</select>
 			</td>  
-			  
+		  
         	</tr>
         	
         	<tr>
 			 <td class="label">${uiLabelMap.officeName} </td>
-			  <td> 
-				<select name="nameOfService" style="width:150px;" onchange="return getDesignation(this);">
-					<option value="">${uiLabelMap.officeName}</option>
-				 	<option value="">WRD</option>
-				</select>
-			</td>  
-			  <td width='20%' align='right' class="label">${uiLabelMap.createdate}</td>
-                    <#--<td>
+ 		 	 <td width="25%"><select name="officeName" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+             <option value=''>${uiLabelMap.CommonSelect}</option>
+	    	   <#if officeMaterLists?exists>
+	    	      <#if officeMaterLists?has_content>
+	    	       <#list officeMaterLists as officeMaterLists>
+ 	    	         <option value="${officeMaterLists.ofcTypeName?if_exists}">${officeMaterLists.ofcTypeName?if_exists}</option>
+ 	    	       </#list>
+	    	     </#if>
+	    	   </#if>
+	    	</select>
+                    </td>
+			
+		  <#--	  <td width='20%' align='right' class="label">${uiLabelMap.createdate}</td>
+                  <td>
                      <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-                    -->
-					<td><input type="date" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="10" value="" /></td> 
-					
+                 
+					<td><input type="date" style="width:140px"  name="createDated" autocomplete="off" id="remark" maxlength ="10" value="" /></td> 
+					   -->
         	</tr>
        		<tr>
-				<td colspan="8"><center><div id="saveBtn" align="center"><input type="button"  name="search" value="Search" onclick="javascript:validateDetails('searchPetitionDetails');"></center></td>
+				<td colspan="8"><center><div id="saveBtn" align="center"><input type="button"  name="search" value="Search" onclick="javascript:validateFields1('zoneMaster');"></center></td>
 			</tr>
 			</tr>
 		</table>
@@ -81,73 +92,106 @@
     <ul>
       <li class="h3">${uiLabelMap.zoneNameList}</li>
     </ul>
-    
+
   </div>
    <div class="screenlet-body min-scroll-div">
+     <#assign commonUrl="ZoneMaster?searchOptions_collapsed=${(parameters.searchOptions_collapsed)?default(\"false\")}&amp;" />
+    <#assign messageMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("lowCount", lowIndex, "highCount", highIndex, "total", listSize)/>
+    <#assign commonDisplaying = Static["org.apache.ofbiz.base.util.UtilProperties"].getMessage("CommonUiLabels", "CommonDisplaying", messageMap, locale)/>
+    <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
     <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
-             <td><center>${uiLabelMap.sno}<center></td>
-	         <td><center>${uiLabelMap.zoneName}<center></td>
+             <td><center>${uiLabelMap.sno}</center></td>
+	         <td><center>${uiLabelMap.zoneName}</center></td>
              <td><center>${uiLabelMap.cityName}</center></td>
              <td><center>${uiLabelMap.officeName}<center></td>
              <td><center>${uiLabelMap.remark}</center></td>
-             <td><center>${uiLabelMap.createdate}</center></td>
-             
+              <td><center>${uiLabelMap.Status}</center></td>
+          <#--    <td><center>${uiLabelMap.createdate}</center></td>-->
              <td><center>${uiLabelMap.Edit}</center></td>
+              <td><center>${uiLabelMap.Remove}</center></td>
              <td><center>${uiLabelMap.enableDisable}</center></td>
-             <td><center>${uiLabelMap.Remove}</center></td>
-             
-         </tr>
-         <#if zoneMasterList?has_content>
-        <#list zoneMasterList as zoneMasterList>
-        ${zoneMasterList}-----------
-        </#list>
-        </#if>
-      </thead> 
-       <tr>
-		      	<td align="center">1</td>
-	          	<td><center>Mysore Zone</center></td>
-			  	<td><center>Hyderabad </center></td>
-			  	<td><center>WRD</center></td> 
-			 	<td><center>Remarks</center></td> 
-		  	 	<td><center>31/07/2017</center></td> 
-				<td><center><a href="javascript:editZoneMaster('listzoneMaster');" class="buttontext" align="center">Edit</a></center></td>
-		      	<td><center><a class="buttontext" align="center">Disable</a></center></td>
-		      	<td><center><a class="buttontext" align="center">Remove</a></center></td>
-					     
-		</tr>    
+           
+          </tr>
+         <#if (allOfficeZoneListed)?has_content>
+		<#assign count = 1>
+		<#list allOfficeZoneListed as allOfficeZoneListed>
+		 
+             <tr> <td><center>${count?if_exists}</center></td>
+            <td><center>${allOfficeZoneListed.zoneName}</center></td>
+            <td><center>${allOfficeZoneListed.cityName?if_exists}</center></td>
+            <td><center>${allOfficeZoneListed.officeName}</center></td>
+            <td><center>${allOfficeZoneListed.remark}</center></td>
+           
+        <td><center>
+            <#assign std = '${allOfficeZoneListed.status?if_exists}'>
+                           <#if std =="A">
+                           Active
+                           <#else>
+                           Deactive
+                           </#if>
+                           
+                           </center></td>
+                          <td><center>
+                           <#if std =="A">
+                          <a href='<@ofbizUrl>editzonemaster?zoneId=${allOfficeZoneListed.zoneId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                          <#else>
+                         <a class="buttontext" data-disabled="true">${uiLabelMap.edit}</a>
+                          </#if>
+                          </center></td>
+                          <td><center>                   
+                           <#if std =="A">
+                          <a href="javascript:editzonemastervalidate('listzoneMaster','delete','${allOfficeZoneListed.zoneId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                          <#else>
+                         <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                          </#if>
+                          </center></td>
+                          
+                          
+                          <td><center>
+                          <#if std =="A">
+                          <a href="javascript:editzonemastervalidate('listzoneMaster','status','${allOfficeZoneListed.zoneId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <#else>
+                          <a href="javascript:editzonemastervalidate('listzoneMaster','status','${allOfficeZoneListed.zoneId?if_exists}','A');" class="buttontext">Active</a>
+
+                          </#if>
+                          </center></td>
+                  </tr> 
+         <#assign count = count + 1>
+						</#list>
+						</#if>
+          
+                 <input type="hidden" name="zoneId" value="" style="width:140px"  />
+                  <input type="hidden" name="activestatus" value="" style="width:140px"  />
+  			      <input type="hidden" name="status" value="" style="width:140px"  />	
       </table>
-    </div>
+            <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
+  
   </div>
+</div>        
 
- </form>
- 
- 
+</from>
+ <script language="JavaScript" type="text/javascript" />
 
-<script type="text/javascript" language="javascript">
-
-	function validateTypeMaster()
-	{
-		
-		
-		
-					
-					document.zoneMaster.action= "<@ofbizUrl>saveZoneMaster</@ofbizUrl>";
-					document.zoneMaster.submit();
-					disSubmit('saveBtn'); 
-					//return true;
-					//alert("submit");
-					
-	}
-			
-	function editZoneMaster(formname)
+ function editzonemastervalidate(formname,stat,id,activestd)
 	{
 	     var form =document[formname];	
-        form.action="<@ofbizUrl>editzonemaster</@ofbizUrl>";
+	    // alert(""+stat);
+	     form.status.value = stat;
+	     form.zoneId.value=id;
+	     form.activestatus.value = activestd;
+
+        form.action="<@ofbizUrl>updateZoneDet</@ofbizUrl>";
 	    form.submit();
 	}
-     
-	
-	
+	function validateFields1(formname)
+ {
+ var form=document[formname];
+ var zoneName = form.zoneName.value;
+  if(notEmptyField(zoneName,"Select Zone Name.")) 
+		     {
+         form.action = "<@ofbizUrl>ZoneMaster</@ofbizUrl>";
+                   form.submit();
+}}
 </script>

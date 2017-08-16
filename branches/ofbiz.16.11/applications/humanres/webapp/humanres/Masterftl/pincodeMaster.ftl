@@ -20,13 +20,13 @@
 		<tr><td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
  		<tr>
 		   <td class="label" >${uiLabelMap.pincode} <font color="red">*</font></td>
-		   <td><input type="text" name="pincode" style="width:140px" maxlength ="7"/></td>
+		   <td><input type="text" name="pinCode" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="7"/></td>
 		   <td class="label" >${uiLabelMap.createdate}</td>
-		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
+		   <td><input type="text" name="dateOfCreatePin" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
 	    </tr>
 		<tr>
 		   <td class="label" >${uiLabelMap.remark}</td>
-		   <td><textarea name="remark" style="width:140px" maxlength ="150"></textarea></td>
+		   <td><textarea name="cityRemark" onchange="javascript:trimFunction(this)"  style="width:140px" maxlength ="150"></textarea></td>
 	    </tr>
 	   
 		<tr>
@@ -47,13 +47,17 @@
 function validateParameters(formName)
 {
   var form=document[formName];
-  var pincode = form.pincode.value;
-    if(notEmptyField(pincode,"Pin Code should not be empty.")) 
+  var pinCode = form.pinCode.value;
+    if(notEmptyField(pinCode,"Pin Code should not be empty.")) 
      {
+     var r=confirm("Are you sure, you want to Save the Form ?")
+        if (r==true)
+        { 
 	  form.action = "<@ofbizUrl>savePincodeMaster</@ofbizUrl>";
 	  form.submit();
 	  disSubmit('saveBtn');
      }
-     
+   }  
 }
+
 </script>
