@@ -359,7 +359,7 @@ under the License.
         </section>
     </screen>
      <!--Added by siddhi  -->
-    <screen name="ZoneMaster">
+  <!--   <screen name="ZoneMaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
@@ -382,23 +382,27 @@ under the License.
                 </decorator-screen>
             </widgets>
         </section>
-    </screen> 
+    </screen>  -->
     <screen name="CasteMaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="castemaster"/>
+               <entity-condition list="casteTypeList" entity-name="casteMaster">
+                    <condition-expr field-name="casteId" operator="not-equals" value="" />
+                 </entity-condition>               
+               
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                        <container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
-							</container>    
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            </container>   
                         <platform-specific>
-                    		<html>
-                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/castMaster.ftl"/>	
-                    		</html>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/castMaster.ftl"/>   
+                            </html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -427,22 +431,24 @@ under the License.
             </widgets>
         </section>
     </screen>
-    <screen name="SearchPincodeMaster">
+   <screen name="SearchPincodeMaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="pincodemaster"/>
-            </actions>
+                <script location="component://humanres/groovyScripts/pincode/PinCodeSearchList.groovy"/>        
+                 </actions>
+                
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                        <container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
-							</container>    
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            </container>   
                         <platform-specific>
-                    		<html>
-                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/searchpincodeMaster.ftl"/>	
-                    		</html>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/searchpincodeMaster.ftl"/>   
+                            </html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -455,6 +461,12 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="zonemastertab"/>
+                 <entity-condition list="ZoneMasterLists" entity-name="ZoneMaster">
+       			 <condition-expr field-name="zoneId" operator="equals" value="${parameters.zoneId}" />
+		  	   </entity-condition>
+		  	   <entity-condition list="officeMasterLists" entity-name="OfficeTypeMaster">
+ 					<condition-expr field-name="status" operator="equals" value="A" />
+			   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -480,6 +492,12 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="wardmastertab"/>
+                 <entity-condition list="WardMasterLists" entity-name="WardMaster">
+       			 <condition-expr field-name="wardId" operator="equals" value="${parameters.wardId}" />
+		  	   </entity-condition>
+		  	    <entity-condition list="ZoneMasterList" entity-name="ZoneMaster">
+       			 <condition-expr field-name="status" operator="equals" value="A" />
+		  	   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -498,24 +516,32 @@ under the License.
             </widgets>
         </section>
     </screen> 
+    
     <screen name="editblockmaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="blockmastertab"/>
+               
+                <entity-condition list="blockTypeList" entity-name="blockMaster">
+                    <condition-expr field-name="blockId" operator="equals" value="${parameters.blockId}" />
+                 </entity-condition>
+              <!--  <entity-condition list="WardMasterLists" entity-name="WardMaster">
+                    <condition-expr field-name="wardId" operator="not-equals" value="" />
+                 </entity-condition> -->  
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                             <container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
-							</container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+                            </container>
                         <platform-specific>
-                    		<html>
-                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditBlockMaster.ftl"/>	
-                    		</html>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/EditBlockMaster.ftl"/>   
+                            </html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -523,220 +549,259 @@ under the License.
         </section>
     </screen> 
     
-    <screen name="editstreetmaster">
+   <screen name="editstreetmaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="streetmastertab"/>
+               
+                 <entity-condition list="streetTypeList" entity-name="streetMaster">
+                    <condition-expr field-name="streetId" operator="equals" value="${parameters.streetId}" />
+                 </entity-condition>
+                
+                 <entity-condition list="blockTypeList" entity-name="blockMaster">
+                    <condition-expr field-name="blockId" operator="not-equals" value="" />
+                 </entity-condition> 
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                             <container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
-							</container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+                            </container>
                         <platform-specific>
-                    		<html>
-                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditStreetMaster.ftl"/>	
-                    		</html>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/EditStreetMaster.ftl"/>   
+                            </html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
     </screen> 
+    
     <screen name="editcommunitymaster">
-		<section>
-			<actions>
-				<set field="headerItem" value="master" />
-				<set field="tabButtonItem" value="communitymaster" />
-			</actions>
-			<widgets>
-				<decorator-screen name="main-decorator"
-					location="${parameters.mainDecoratorLocation}">
-					<decorator-section name="body">
-						<container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
-						</container>
-						<platform-specific>
-							<html>
-								<html-template
-									location="component:///humanres/webapp/humanres/Masterftl/EditCommunityMaster.ftl" />
-							</html>
-						</platform-specific>
-					</decorator-section>
-				</decorator-screen>
-			</widgets>
-		</section>
-	</screen>
-	<screen name="editgendermaster">
-		<section>
-			<actions>
-				<set field="headerItem" value="master" />
-				<set field="tabButtonItem" value="gendermaster" />
-			</actions>
-			<widgets>
-				<decorator-screen name="main-decorator"
-					location="${parameters.mainDecoratorLocation}">
-					<decorator-section name="body">
-						<container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
-						</container>
-						<platform-specific>
-							<html>
-								<html-template
-									location="component:///humanres/webapp/humanres/Masterftl/EditGenderMaster.ftl" />
-							</html>
-						</platform-specific>
-					</decorator-section>
-				</decorator-screen>
-			</widgets>
-		</section>
-	</screen>
+        <section>
+            <actions>
+                <set field="headerItem" value="master" />
+                <set field="tabButtonItem" value="communitymaster" />
+                <entity-condition list="communityTypeList" entity-name="communityMaster">
+                    <condition-expr field-name="communityId" operator="equals" value="${parameters.communityId}" />
+                   </entity-condition>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator"
+                    location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+                        </container>
+                        <platform-specific>
+                            <html>
+                                <html-template
+                                    location="component:///humanres/webapp/humanres/Masterftl/EditCommunityMaster.ftl" />
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+	 <screen name="editgendermaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master" />
+                <set field="tabButtonItem" value="gendermaster" />
+                <entity-condition list="genderMasterList" entity-name="genderMaster">
+                    <condition-expr field-name="genderId" operator="equals" value="${parameters.genderId}" />
+                 </entity-condition>
+               
+                </actions>
+            <widgets>
+                <decorator-screen name="main-decorator"
+                    location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+                        </container>
+                        <platform-specific>
+                            <html>
+                                <html-template
+                                    location="component:///humanres/webapp/humanres/Masterftl/EditGenderMaster.ftl" />
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 	<screen name="editmaritalmaster">
-		<section>
-			<actions>
-				<set field="headerItem" value="master" />
-				<set field="tabButtonItem" value="maritalstatusmaster" />
-			</actions>
-			<widgets>
-				<decorator-screen name="main-decorator"
-					location="${parameters.mainDecoratorLocation}">
-					<decorator-section name="body">
-						<container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
-						</container>
-						<platform-specific>
-							<html>
-								<html-template
-									location="component:///humanres/webapp/humanres/Masterftl/EditMaritalStatusMaster.ftl" />
-							</html>
-						</platform-specific>
-					</decorator-section>
-				</decorator-screen>
-			</widgets>
-		</section>
-	</screen>
+        <section>
+            <actions>
+                <set field="headerItem" value="master" />
+                <set field="tabButtonItem" value="maritalstatusmaster" />
+                <entity-condition list="maritalStatusMasterList" entity-name="maritalStatusMaster">
+                    <condition-expr field-name="maritalStatusId" operator="equals" value="${parameters.maritalStatusId}" />
+                 </entity-condition>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator"
+                    location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+                        </container>
+                        <platform-specific>
+                            <html>
+                                <html-template
+                                    location="component:///humanres/webapp/humanres/Masterftl/EditMaritalStatusMaster.ftl" />
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 	<screen name="editcastemaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="castemaster"/>
+                 <entity-condition list="casteTypeList" entity-name="casteMaster">
+                    <condition-expr field-name="casteId" operator="equals" value="${parameters.casteId}" />
+                 </entity-condition>
+               
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                        <container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
-							</container>    
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            </container>   
                         <platform-specific>
-                    		<html>
-                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditCasteMaster.ftl"/>	
-                    		</html>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/EditCasteMaster.ftl"/>   
+                            </html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
     </screen>
+
      <screen name="editpincodemaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="pincodemaster"/>
+                <entity-condition list="pinCodeMasterList" entity-name="pinCodeMaster">
+                    <condition-expr field-name="pinCodeId" operator="equals" value="${parameters.pinCodeId}" />
+                 </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                        <container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
-							</container>    
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            </container>   
                         <platform-specific>
-                    		<html>
-                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/EditPincodeMaster.ftl"/>	
-                    		</html>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/EditPincodeMaster.ftl"/>   
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    <!-- End -->
+    <!-- ==========Added By Nikhil on 31 July 2017================== -->
+   <screen name="CommunityMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master" />
+                <set field="tabButtonItem" value="communitymaster" />
+                <entity-condition list="communityTypeList" entity-name="communityMaster">
+                    <condition-expr field-name="communityId" operator="not-equals" value="" />
+                 </entity-condition>
+                
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator"
+                    location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+                        </container>
+                        <platform-specific>
+                            <html>
+                                <html-template
+                                    location="component:///humanres/webapp/humanres/Masterftl/communityMaster.ftl" />
+                            </html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
     </screen>
-    <!-- End -->
-    <!-- ==========Added By Nikhil on 31 July 2017================== -->
-    <screen name="CommunityMaster">
-		<section>
-			<actions>
-				<set field="headerItem" value="master" />
-				<set field="tabButtonItem" value="communitymaster" />
-			</actions>
-			<widgets>
-				<decorator-screen name="main-decorator"
-					location="${parameters.mainDecoratorLocation}">
-					<decorator-section name="body">
-						<container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
-						</container>
-						<platform-specific>
-							<html>
-								<html-template
-									location="component:///humanres/webapp/humanres/Masterftl/communityMaster.ftl" />
-							</html>
-						</platform-specific>
-					</decorator-section>
-				</decorator-screen>
-			</widgets>
-		</section>
-	</screen>
 	<screen name="GenderMaster">
-		<section>
-			<actions>
-				<set field="headerItem" value="master" />
-				<set field="tabButtonItem" value="gendermaster" />
-			</actions>
-			<widgets>
-				<decorator-screen name="main-decorator"
-					location="${parameters.mainDecoratorLocation}">
-					<decorator-section name="body">
-						<container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
-						</container>
-						<platform-specific>
-							<html>
-								<html-template
-									location="component:///humanres/webapp/humanres/Masterftl/genderMaster.ftl" />
-							</html>
-						</platform-specific>
-					</decorator-section>
-				</decorator-screen>
-			</widgets>
-		</section>
-	</screen>
-	<screen name="MaritalStatusMaster">
-		<section>
-			<actions>
-				<set field="headerItem" value="master" />
-				<set field="tabButtonItem" value="maritalstatusmaster" />
-			</actions>
-			<widgets>
-				<decorator-screen name="main-decorator"
-					location="${parameters.mainDecoratorLocation}">
-					<decorator-section name="body">
-						<container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
-						</container>
-						<platform-specific>
-							<html>
-								<html-template
-									location="component:///humanres/webapp/humanres/Masterftl/maritalStatusMaster.ftl" />
-							</html>
-						</platform-specific>
-					</decorator-section>
-				</decorator-screen>
-			</widgets>
-		</section>
-	</screen>
+        <section>
+            <actions>
+                <set field="headerItem" value="master" />
+                <set field="tabButtonItem" value="gendermaster" />
+                <entity-condition list="genderMasterList" entity-name="genderMaster">
+                    <condition-expr field-name="genderId" operator="not-equals" value="" />
+                 </entity-condition>
+               
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator"
+                    location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+                        </container>
+                        <platform-specific>
+                            <html>
+                                <html-template
+                                    location="component:///humanres/webapp/humanres/Masterftl/genderMaster.ftl" />
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+	 <screen name="MaritalStatusMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master" />
+                <set field="tabButtonItem" value="maritalstatusmaster" />
+                <entity-condition list="maritalStatusMasterList" entity-name="maritalStatusMaster">
+                    <condition-expr field-name="maritalStatusId" operator="not-equals" value="" />
+                 </entity-condition>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator"
+                    location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar"/>
+                        </container>
+                        <platform-specific>
+                            <html>
+                                <html-template
+                                    location="component:///humanres/webapp/humanres/Masterftl/maritalStatusMaster.ftl" />
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 
     <!-- Added By Shubham Malviya For Emp Dash Board Service -->
     <screen name="customerDeatil">
@@ -834,12 +899,24 @@ under the License.
     <!-- End -->
     
     <!-- ==========Added By Anubha on 31 July 2017 For Create Master==================  -->
-    <screen name="ZoneMaster">
+    <screen name="zoneMasterScreen">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="zonemastertab"/>
+                 <script location="component://humanres/groovyScripts/office/ZoneSearchlist.groovy"/>
+                 
+              <entity-condition list="ZoneMasterLists" entity-name="ZoneMaster">
+                <condition-list combine="and">
+			<condition-expr field-name="status" operator="equals" value="A" />
+			 <condition-expr field-name="zoneId" operator="not-equals" value="" />
+			   </condition-list>
+            </entity-condition>
+               <entity-condition list="officeMaterLists" entity-name="OfficeTypeMaster">
+ 					<condition-expr field-name="status" operator="equals" value="A" />
+			   </entity-condition>			
+		  	  
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -858,13 +935,24 @@ under the License.
             </widgets>
         </section>
     </screen> 
-    
+  
     <screen name="wardMaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="wardmastertab"/>
+               <script location="component://humanres/groovyScripts/office/WardSearchlist.groovy"/>
+              <entity-condition list="WardMasterLists" entity-name="WardMaster">
+             <condition-list combine="and">
+			      <condition-expr field-name="status" operator="equals" value="A" />
+			      <condition-expr field-name="wardId" operator="not-equals" value="" />
+             </condition-list>
+ 		  	 </entity-condition>
+		  	   
+		  	    <entity-condition list="ZoneMasterList" entity-name="ZoneMaster">
+       			 <condition-expr field-name="status" operator="equals" value="A" />
+		  	   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -940,6 +1028,9 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="zonemastertab"/>
+                <entity-condition list="officeMasterLists" entity-name="OfficeTypeMaster">
+ 					<condition-expr field-name="status" operator="equals" value="A" />
+			   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -965,6 +1056,9 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="wardmastertab"/>
+                <entity-condition list="ZoneMasterList" entity-name="ZoneMaster">
+       			 <condition-expr field-name="status" operator="equals" value="A" />
+		  	   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1009,30 +1103,36 @@ under the License.
         </section>
     </screen> 
     
-    <screen name="createStreetMaster">
+     <screen name="createStreetMaster">
         <section>
             <actions>
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="streetmastertab"/>
+               
+                 <entity-condition list="blockTypeList" entity-name="blockMaster">
+                 <condition-expr field-name="blockId" operator="not-equals" value="" />
+                 </entity-condition>   
+               
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                             <container>
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
-							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
-							</container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+                            </container>
                         <platform-specific>
-                    		<html>
-                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/createStreetMaster.ftl"/>	
-                    		</html>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/createStreetMaster.ftl"/>   
+                            </html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
-    </screen> 
+    </screen>
+    
     <!-- ==========End==================  -->
     
     <!-- Added by Shubham Malviya -->
@@ -1887,6 +1987,73 @@ under the License.
 				</decorator-screen>
 			</widgets>
 		</section>
+	</screen>
+	
+ 	<screen name="blockMaster">
+    	<section>
+        	<actions>
+            	<set field="headerItem" value="master"/>
+            	<set field="tabButtonItem" value="areamastertab"/>          	 
+            	<set field="subTabButtonItem" value="blockmastertab"/>
+            	<script location="component://humanres/groovyScripts/block/blockSearchList.groovy"/>   
+          	 
+                       	 
+            	<entity-condition list="blockList" entity-name="blockMaster">
+                	<condition-expr field-name="blockId" operator="not-equals" value=""/>
+             	</entity-condition>
+            	 
+           	 
+               	 
+        	</actions>
+        	<widgets>
+            	<decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                	<decorator-section name="body">
+                        	<container>
+   						 <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+   						 <include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+   						 </container>
+                    	<platform-specific>
+               			 <html>
+               			 <html-template location="component:///humanres/webapp/humanres/Masterftl/blockMaster.ftl"/>    
+               			 </html>
+                    	</platform-specific>
+                	</decorator-section>
+            	</decorator-screen>
+        	</widgets>
+    	</section>
+	</screen>
+	<screen name="streetMaster">
+    	<section>
+        	<actions>
+            	<set field="headerItem" value="master"/>
+            	<set field="tabButtonItem" value="areamastertab"/>
+            	<set field="subTabButtonItem" value="streetmastertab"/>
+            	<script location="component://humanres/groovyScripts/street/StreetMasterList.groovy"/>           	 
+           	 
+            	<entity-condition list="blockTypeList" entity-name="blockMaster">
+                	<condition-expr field-name="blockId" operator="not-equals" value="" />
+             	</entity-condition>
+              	<entity-condition list="streetList" entity-name="streetMaster">
+  				   <condition-expr field-name="status" operator="equals" value="A" />
+   	  	   	   </entity-condition>
+           	 
+        	</actions>
+        	<widgets>
+            	<decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                	<decorator-section name="body">
+                        	<container>
+   						 <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+   						 <include-menu location="component://humanres/widget/HumanresMenus.xml" name="AreaMasterSubTabBar" />
+   						 </container>
+                    	<platform-specific>
+               			 <html>
+               			 <html-template location="component:///humanres/webapp/humanres/Masterftl/streetMaster.ftl"/>    
+               			 </html>
+                    	</platform-specific>
+                	</decorator-section>
+            	</decorator-screen>
+        	</widgets>
+    	</section>
 	</screen>
     <!--End  -->
 </screens>
