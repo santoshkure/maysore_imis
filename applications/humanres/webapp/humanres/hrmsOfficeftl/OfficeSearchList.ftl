@@ -32,7 +32,7 @@
         <#assign alt_row = false>
         <#list allOfficeList as allOfficeList>
          
-            <tr<#if alt_row> class="alternate-row"</#if>>
+            <tr><#if alt_row> class="alternate-row"</#if>
             <td>${allOfficeList.partyId}</td>
             <td>${allOfficeList.officeSiteName?if_exists}</td>
             <td>${allOfficeList.groupName}</td>
@@ -48,7 +48,7 @@
             <td></td>
             </#if>
             <td class="button-col">
-                            <a href='<@ofbizUrl>editOfficeDetails?officeId=${allOfficeList.partyId}</@ofbizUrl>'>${uiLabelMap.CommonEdit}</a>
+            <a href='<@ofbizUrl>editOfficeDetails?officeId=${allOfficeList.partyId}</@ofbizUrl>'>${uiLabelMap.CommonEdit}</a>
                         
                         </td>
             </tr>
