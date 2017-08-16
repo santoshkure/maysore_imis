@@ -3494,7 +3494,7 @@
         <value xml:lang="en">Ward Name</value>
     </property>
     <property key="wardMasterList">
-        <value xml:lang="en">ward Master List</value>
+        <value xml:lang="en">Ward Master List</value>
     </property>
     <property key="streetMasterList">
         <value xml:lang="en">Street Master List</value>
@@ -3515,7 +3515,7 @@
         <value xml:lang="en">Create Zone Master</value>
     </property>
      <property key="enableDisable">
-        <value xml:lang="en">Diable/Enable</value>
+        <value xml:lang="en">Enable/Disable</value>
     </property>
     <property key="createWardMaster">
         <value xml:lang="en">Create Ward Master</value>
@@ -3937,7 +3937,7 @@
 	<property key="HrmsOfficeTypeEdit">
 		<value xml:lang="en">Edit Office Type</value>
 	</property>
-	 <property key="searchIssueWorkOrder">
+     <property key="searchIssueWorkOrder">
         <value xml:lang="en">Search Issue Work Order</value>
     </property>
     <property key="workOrderNo">
@@ -4058,5 +4058,9 @@
         <value xml:lang="en">Document Page No.</value>
         <value xml:lang="kn">Document Page No.</value>
     </property>
-    
+     <property key="alphabetical">
+        <value xml:lang="en">should be alphabetical</value>
+        <value xml:lang="Hi"></value>
+    </property> 
+
 </resource>
