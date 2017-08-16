@@ -36,31 +36,43 @@
 			<tr>
 			 <td class="label">${uiLabelMap.streetName}</td>
 			<td> 
-				<select name="" style="width:150px;" onchange="return getDesignation(this);">
-					<option value="">${uiLabelMap.streetName}</option>
-				 	<option value="">Mysore Street</option>
+				<select name="streetId" style="width:150px;" onchange="return getDesignation(this);">
+					<option value="">${uiLabelMap.CommonSelect}</option>
+				 	<#--<option value="">Mysore Street</option>-->
+                    <#if streetList?has_content>
+					<#list streetList as streetList>	
+					<option value="${streetList.streetId}">${streetList.streetName}</option>				 	
+				 	</#list>
+					</#if> 
 				</select>
 			</td>  			 
 			  <td class="label">${uiLabelMap.blockName} </td>
 			  <td> 
-				<select name="" style="width:150px;" onchange="return getDesignation(this);">
-					<option value="">${uiLabelMap.blockName}</option>
-				 	<option value="">Mysore Block</option>
+				<select name="blockId" style="width:150px;" onchange="return getDesignation(this);">
+					<option value="">${uiLabelMap.CommonSelect}</option>
+				 	<#if blockTypeList?has_content>
+					<#list blockTypeList as blockTypeList>		
+					
+				 	<option value="${blockTypeList.blockId}">${blockTypeList.blockName}</option>
+				 	
+				 	</#list>
+					</#if>
 				</select>
 			</td>  
 			  
         	</tr>
         	
-        	<tr>
+        	 <#--<tr>
                     <td width='20%' align='right' class="label">${uiLabelMap.createdate}</td>
-                    <#--<td>
-                     <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-                    -->
-					<td><input type="date" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="10" value="" /></td> 
+                    <td><input type="date" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="10" value="" />
+                  
+                    <#-- <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                -->
 					
-                  </tr>
+					
+                  </tr> 
         	<tr>
-				<td colspan="8"><center><div id="saveBtn" align="center"><input type="button"  name="search" value="Search" onclick="javascript:validateDetails('searchPetitionDetails');"></center></td>
+				<td colspan="8"><center><div id="saveBtn" align="center"><input type="button"  name="search" value="Search" onclick="javascript:validateDetails('StreetMaster');"></center></td>
 			</tr>
 		</table>
 		</div>
@@ -76,6 +88,10 @@
     
   </div>
    <div class="screenlet-body min-scroll-div">
+    <#assign commonUrl="StreetMaster?searchOptions_collapsed=${(parameters.searchOptions_collapsed)?default(\"false\")}&amp;" />
+    <#assign messageMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("lowCount", lowIndex, "highCount", highIndex, "total", listSize)/>
+    <#assign commonDisplaying = Static["org.apache.ofbiz.base.util.UtilProperties"].getMessage("CommonUiLabels", "CommonDisplaying", messageMap, locale)/>
+    <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
     <table class="basic-table" cellspacing="0">
        <thead>  <tr class="header-row-2">
              <td><center>S.No<center></td>
@@ -84,28 +100,109 @@
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.remark}</center></td>
              <td><center>${uiLabelMap.createdate}</center></td>
-             
+               <td><center>${uiLabelMap.status}</center></td>
              <td><center>${uiLabelMap.edit}</center></td>
              <td><center>${uiLabelMap.enableDisable}</center></td>
              <td><center>${uiLabelMap.Remove}</center></td>
          </tr></thead>
-          
+                </thead>
+     <#if streetTypeList?has_content>
+     <#assign count= 1>
+     <#list streetTypeList as streetTypeList>
+   
             <tr>
-		      	<td align="center">1</td>
-	          	<td><center>Mysore Street</center></td>
-			  	<td><center>Mysore block </center></td>
-			  	
-			 	<td><center>Hyderabad</center></td> 
-			 	<td><center>Remark</center></td> 
-		  	 	<td><center>31/07/2017</center></td> 
-				<td><center><a href="javascript:editStreetMaster('listStreetMaster');"  class="buttontext" align="center">Edit</a></center></td>
-		      	<td><center><a class="buttontext" align="center">Disable</a></center></td>
-		      	<td><center><a class="buttontext" align="center">Remove</a></center></td>
-					     
+		      	<td align="center">${count}</td>
+	          	<td><center>${streetTypeList.streetName?if_exists}</center></td>	          		          	
+	          	
+	          	
+	          	<td><center>
+                   
+                         <#if blockTypeList?has_content>
+                            <#list blockTypeList as blockTypeList>
+                              <#if blockTypeList.blockId?if_exists == streetTypeList.blockId?if_exists>
+                               ${blockTypeList.blockName?if_exists}
+                              </#if></#list>
+                        </#if>   
+              </center></td>
+	          	
+	          	
+	          	
+	          	
+	     	 <#--   <td><center>	         
+					<#if streetTypeList?has_content>
+					<#assign blockId = '${streetTypeList.blockId?if_exists}'>
+					</#if>
+					<#if blockTypeList?has_content>
+					<#list blockTypeList as blockTypeList>		
+					<#if blockId == blockTypeList.blockId?if_exists>
+				 	${blockTypeList.blockName?if_exists}
+				 	</#if>
+				 	</#list>
+					</#if></center>				
+			    </td> -->
+			
+	       <#-- <td><center>${streetTypeList.blockName?if_exists}</center></td> -->
+			 
+			 	<td><center>${streetTypeList.cityName?if_exists}</center></td> 
+			 	<td><center>${streetTypeList.remark?if_exists}</center></td> 
+		  	 	<td><center>${streetTypeList.createdate?if_exists}</center></td> 
+		  	 	<td><center>
+                           <#assign std = '${streetTypeList.status}'>
+                           <#if std =="A">
+                           Active
+                           <#else>
+                           Deactive
+                           </#if>
+                           
+                           </center></td>
+			 
+		  	 	
+				 <#--<td><center><a href="javascript:editStreetMaster('listStreetMaster');"  class="buttontext" align="center">Edit</a></center></td>-->
+
+				<td><center>
+				<#if std =="A">
+				<a href='<@ofbizUrl>editstreetmaster?streetId=${streetTypeList.streetId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+				<#else>
+                <a class="buttontext" data-disabled="true">${uiLabelMap.edit}</a>
+                </#if>
+				</center></td>
+
+		      <#--	<td><center><a class="buttontext" align="center">Disable</a></center></td>
+
+		      	<td><center><a class="buttontext" align="center">Remove</a></center></td>-->
+
+
+				 <td><center>
+				   <#assign std = '${streetTypeList.status}'>
+				 
+                          <#if std =="A">
+                          <a href="javascript:editofStreetTypeMaster('listStreetMaster','status','${streetTypeList.streetId}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <#else>
+                          <a href="javascript:editofStreetTypeMaster('listStreetMaster','status','${streetTypeList.streetId}','A');" class="buttontext">Active</a>
+
+                          </#if>
+                          </center></td>
+                          
+                          
+		                 <td><center>                   
+                           <#if std =="A">
+                          <a href="javascript:editofStreetTypeMaster('listStreetMaster','delete','${streetTypeList.streetId}');" class="buttontext">${uiLabelMap.Remove}</a>
+                          <#else>
+                          <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                          </#if>
+                          </center></td>
+		      	      	     
 		</tr>    
             
-               
+           <#assign count=count+ 1>
+             </#list>
+           </#if>
+                       <input type="hidden" name="streetId" value="" style="width:140px"  />
+                       <input type="hidden" name="activestatus" value="" style="width:140px"  />
+  			           <input type="hidden" name="status" value="" style="width:140px"  />	   
       </table>
+             <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>      
+      
        </div>
       </div>
  </form>
@@ -135,4 +232,22 @@
 	    form.submit();
 	}
 	
+	
+	 function editofStreetTypeMaster(formname,stat,id,activestd)
+	{
+	     var form =document[formname];	
+	     //alert(""+id);
+	     form.status.value = stat;
+	     form.streetId.value=id;
+	     form.activestatus.value = activestd;
+
+        form.action="<@ofbizUrl>editStreetTypeMasters</@ofbizUrl>";
+	    form.submit();
+	}
+	
+	function validateDetails(formname)
+	{
+	     var form =document[formname];	
+	    form.submit();
+	}
 </script>
