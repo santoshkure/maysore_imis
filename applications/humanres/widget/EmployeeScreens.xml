@@ -530,6 +530,9 @@ under the License.
               <!--  <entity-condition list="WardMasterLists" entity-name="WardMaster">
                     <condition-expr field-name="wardId" operator="not-equals" value="" />
                  </entity-condition> -->  
+                 <entity-condition list="WardMasterList" entity-name="WardMaster">
+       			 <condition-expr field-name="status" operator="equals" value="A" />
+		  	   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1003,6 +1006,13 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="blockmastertab"/>
+              	<script location="component://humanres/groovyScripts/block/blockSearchList.groovy"/>   
+              	<entity-condition list="blockList" entity-name="blockMaster">
+                	<condition-expr field-name="blockId" operator="not-equals" value=""/>
+             	</entity-condition>
+            	 <entity-condition list="WardMasterList" entity-name="WardMaster">
+       			 <condition-expr field-name="status" operator="equals" value="A" />
+		  	   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1084,6 +1094,9 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="blockmastertab"/>
+                 <entity-condition list="WardMasterList" entity-name="WardMaster">
+       			 <condition-expr field-name="status" operator="equals" value="A" />
+		  	   </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -2001,7 +2014,9 @@ under the License.
             	<entity-condition list="blockList" entity-name="blockMaster">
                 	<condition-expr field-name="blockId" operator="not-equals" value=""/>
              	</entity-condition>
-            	 
+            	  <entity-condition list="WardMasterList" entity-name="WardMaster">
+       			 <condition-expr field-name="status" operator="equals" value="A" />
+		  	   </entity-condition>
            	 
                	 
         	</actions>

@@ -106,6 +106,7 @@
 	         <td><center>${uiLabelMap.zoneName}</center></td>
              <td><center>${uiLabelMap.cityName}</center></td>
              <td><center>${uiLabelMap.officeName}<center></td>
+             <td><center>${uiLabelMap.createdate}</center></td>
              <td><center>${uiLabelMap.remark}</center></td>
               <td><center>${uiLabelMap.Status}</center></td>
           <#--    <td><center>${uiLabelMap.createdate}</center></td>-->
@@ -122,6 +123,8 @@
             <td><center>${allOfficeZoneListed.zoneName}</center></td>
             <td><center>${allOfficeZoneListed.cityName?if_exists}</center></td>
             <td><center>${allOfficeZoneListed.officeName}</center></td>
+ 			<td><center><#if allOfficeZoneListed.createdate?has_content>${allOfficeZoneListed.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+
             <td><center>${allOfficeZoneListed.remark}</center></td>
            
         <td><center>

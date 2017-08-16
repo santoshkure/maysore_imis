@@ -39,10 +39,7 @@ List<EntityCondition> andExprs = new LinkedList<EntityCondition>();
 						EntityOperator.EQUALS,wardName));
 				}
 
-				andExprs.add(EntityCondition.makeCondition("status",
-					EntityOperator.EQUALS,"A"));
-						
-mainCond = EntityCondition.makeCondition(andExprs,
+ mainCond = EntityCondition.makeCondition(andExprs,
 						EntityOperator.AND);
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+zoneId);
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+wardName);

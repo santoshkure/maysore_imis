@@ -27,7 +27,7 @@
 						   <td class="label" >${uiLabelMap.gendername} <font color="red">*</font></td>
 					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="" style="width:140px">
 					       <td class="label" >${uiLabelMap.createdate}</td>
-                           <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
+                           <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>
 					 
 					     <#--<td class="label" >${uiLabelMap.createdate}</td>
                            <td><input type="text" name="dateOfCreateGender" value="" style="width:140px" readonly /></td>-->
@@ -88,8 +88,8 @@
                           
                          <td><center>${count}</center></td>
                           <td><center>${genderMasterList.genderName?if_exists}</center></td>
-                          <td><center>${genderMasterList.dateOfCreateGender?if_exists}</center></td>
-                          <td><center>${genderMasterList.genderRemark?if_exists}</center></td>
+               		       <td><center><#if genderMasterList.dateOfCreateGender?has_content>${genderMasterList.dateOfCreateGender?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+                           <td><center>${genderMasterList.genderRemark?if_exists}</center></td>
                             <td><center>
                            <#assign std = '${genderMasterList.status}'>
                            <#if std =="A">

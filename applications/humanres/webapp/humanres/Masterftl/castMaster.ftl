@@ -72,8 +72,9 @@
 		     <tr>
 	            <td><center>${count}</center></td>
 	            <td><center>${casteTypeList.castename?if_exists}</center></td>
-	            <td><center>${casteTypeList.createdate?if_exists}</center></td>
-	              <td><center>${casteTypeList.remark?if_exists}</center></td>
+	            <td><center><#if casteTypeList.createdate?has_content>${casteTypeList.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+	            
+ 	              <td><center>${casteTypeList.remark?if_exists}</center></td>
 	            <td><center>
                            <#assign std = '${casteTypeList.status?if_exists}'>
                            <#if std =="A">

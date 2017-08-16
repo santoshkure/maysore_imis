@@ -40,7 +40,7 @@
 		
 			<tr>
 			 <td class="label">${uiLabelMap.blockName}</td>
-			<td><select name="blockId" style="width:150px;" onchange="return getDesignation(this);">
+			<td><select name="blockId" style="width:150px;" >
 				 <option value="">${uiLabelMap.blockName}</option>
 				<#-- <option value="">Mysore Block</option>-->
                     <#if blockList?has_content>
@@ -53,19 +53,19 @@
 				</select>
 			  </td>   	
 			 
+  			 
 			  <td class="label">${uiLabelMap.wardname} </td>
-			  <td><select name="wardId" style="width:150px;" onchange="return getDesignation(this);">
-					<option value="">${uiLabelMap.wardname}</option>
-					<option value="">Mysore Ward</option>
-					
-					<#--<#if WardMasterLists?has_content>
-					<#list WardMasterLists as WardMasterLists>	
-				 <option value="${blockTypeList.blockId}">${blockTypeList.blockName}</option>
+			 <td> 
+				<select name="wardName" style="width:150px;">
+					<option value="">${uiLabelMap.CommonSelect}</option>
+				 
+					<#if WardMasterList?has_content>
+					<#list WardMasterList as WardMasterList>	
+				 <option value="${WardMasterList.wardName}">${WardMasterList.wardName}</option>
 				 </#list>
-					</#if>-->
-
+					</#if>
 				</select>
-			 </td>  
+			</td>  
 			  
         	</tr>
         	
@@ -104,7 +104,7 @@
              <td><center>${uiLabelMap.sno}<center></td>
 	         <td><center>${uiLabelMap.blockName}<center></td>
              <td><center>${uiLabelMap.wardname}</center></td>
-             <td><center>${uiLabelMap.zoneName}</center></td>
+         <#--    <td><center>${uiLabelMap.zoneName}</center></td>   -->
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.Remark}</center></td>
              <td><center>${uiLabelMap.createdate}</center></td>
@@ -121,11 +121,22 @@
          <tr>
 		      	<td align="center">${count}</td>
 	          	<td><center>${blockTypeList.blockName?if_exists}</center></td>
-			  	<td><center>${blockTypeList.wardId?if_exists} </center></td>
-			  	<td><center></center></td>
+	          	 <td><center> 
+                   
+                         <#if WardMasterList?has_content>
+                            <#list WardMasterList as WardMasterList>
+                              <#if WardMasterList.wardId?if_exists == blockTypeList.wardId?if_exists>
+                               ${WardMasterList.wardName?if_exists}
+                              </#if></#list>
+                        </#if>   
+              </center></td>
+		 
+			<#--   	<td><center></center></td>   -->
 			  	<td><center>${blockTypeList.cityId?if_exists}</center></td> 
 			 	<td><center>${blockTypeList.remark?if_exists}</center></td> 
-			 	<td><center>${blockTypeList.createdate?if_exists}</center></td> 
+			 	
+ 			<td><center><#if blockTypeList.createdate?has_content>${blockTypeList.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+			 
 			 	<td><center>
                            <#assign std = '${blockTypeList.status}'>
                            <#if std =="A">
@@ -174,7 +185,7 @@
                        <input type="hidden" name="activestatus" value="" style="width:140px"  />
   			           <input type="hidden" name="status" value="" style="width:140px"  />	
       </table>
-       <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>   
+              <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>   
            </div>
       </div>
 

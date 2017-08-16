@@ -29,8 +29,10 @@
 						   <td class="label" >${uiLabelMap.statusname} <font color="red">*</font></td>
 					       <td><input type="text" maxlength="11" name="maritalStatus" onchange="javascript:trimFunction(this)" value="${maritalStatusMasterList.maritalStatus?if_exists}" style="width:140px">
 					       <td class="label" >${uiLabelMap.createdate}
-                          <td><input type="text" name="dateOfCreateMarital" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
-                          <#--<@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>-->
+                       <#--    <td><input type="text" name="dateOfCreateMarital" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
+                         <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>-->
+	 		             <td><input type="text" name="dateOfCreateMarital" value="<#if maritalStatusMasterList.dateOfCreateMarital?has_content>${maritalStatusMasterList.dateOfCreateMarital?if_exists?string("dd/MM/yyyy")}</#if>" style="width:140px" readonly /></td>
+					
 					</tr>
 					
 					<tr>

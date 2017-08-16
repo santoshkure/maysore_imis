@@ -79,8 +79,9 @@
                    <tr>
                           <td><center>${count}</center></td>
                           <td><center>${maritalStatusMasterList.maritalStatus?if_exists}</center></td>
-                          <td><center>${maritalStatusMasterList.dateOfCreateMarital?if_exists}</center></td>
-                          <td><center>${maritalStatusMasterList.maritalRemark?if_exists}</center></td>
+         		          <td><center><#if maritalStatusMasterList.dateOfCreateMarital?has_content>${maritalStatusMasterList.dateOfCreateMarital?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+  
+                           <td><center>${maritalStatusMasterList.maritalRemark?if_exists}</center></td>
                            <#--<td><center>Act</center></td>--->
                             <td><center>
                            <#assign std = '${maritalStatusMasterList.status}'>

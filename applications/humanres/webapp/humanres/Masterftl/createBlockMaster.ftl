@@ -32,12 +32,12 @@
 			 
 			  <td class="label">${uiLabelMap.wardname}<font color="red" >*</font> </td>
 			  <td> 
-				<select name="wardName" style="width:150px;" onchange="return getDesignation(this);">
+				<select name="wardName" style="width:150px;">
 					<option value="">${uiLabelMap.CommonSelect}</option>
-					<option value="MysoreWard">Mysore Ward</option>
-					<#if WardMasterLists?has_content>
-					<#list WardMasterLists as WardMasterLists>	
-				 <option value="${blockTypeList.blockId}">${blockTypeList.blockName}</option>
+				 
+					<#if WardMasterList?has_content>
+					<#list WardMasterList as WardMasterList>	
+				 <option value="${WardMasterList.wardId}">${WardMasterList.wardName}</option>
 				 </#list>
 					</#if>
 				</select>

@@ -31,15 +31,21 @@
 			 <td><input type="text" style="width:140px"  name="blockName" onchange="javascript:trimFunction(this)" autocomplete="off" id="remark" maxlength ="30" value="${blockTypeList.blockName?if_exists}" /></td>    	
 			 
 			  <td class="label">${uiLabelMap.wardname}<font color="red" >*</font> </td>
-			 <td> 
-				<select name="wardName" style="width:150px;" onchange="return getDesignation(this);">
-					<option value="">${uiLabelMap.wardname}</option>
-				 	<option value="${blockTypeList.wardId?if_exists}" selected="true">${blockTypeList.wardId?if_exists}</option>
-				</select>
-			</td> 
-			  
+			 <td><select name="wardName" autocomplete="off" style="width:152px;margin:5px 0 5px 0;">
+              <option value="">${uiLabelMap.CommonSelect}</option>
+                <#assign wardNamevar  = "${blockTypeList.wardId?if_exists}">
+                         <#if WardMasterList?has_content>
+                            <#list WardMasterList as WardMasterList>
+                             <#if "${WardMasterList.wardId?if_exists}" == "${wardNamevar?if_exists}">
+                               <option value="${WardMasterList.wardId?if_exists}" selected>${WardMasterList.wardName?if_exists}</option>
+                            <#else>
+                                <option value="${WardMasterList.wardId?if_exists}">${WardMasterList.wardName?if_exists}</option>
+                              </#if>
+                            </#list>
+                        </#if>   
+                 </select></td> 
         	</tr>
-        	
+    	
         	
         	<tr>
         		 <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
