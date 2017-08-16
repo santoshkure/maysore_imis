@@ -33,7 +33,7 @@
 		
 		<tr>
 			<td class="label" width="25%">${uiLabelMap.HrmsOfficeName} &nbsp;</td> 
-			<td  width="25%"><input type="text" name="officeName" value="" maxlength="140" style="width:302px;"/></td>
+			<td  width="25%"><input type="text" name="officeName" onchange="javascript:trimFunction(this)" value="" maxlength="140" style="width:302px;"/></td>
 			<td class="label">&nbsp;&nbsp;${uiLabelMap.HrmsOfficeType}&nbsp;&nbsp;</td> 
 			<td width="25%"><select name="officeType" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
              <option value=''>${uiLabelMap.CommonSelect}</option>
