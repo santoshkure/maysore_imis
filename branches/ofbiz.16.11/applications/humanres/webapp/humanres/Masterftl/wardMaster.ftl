@@ -34,7 +34,7 @@
 		
 			<tr>
 			 <td class="label">${uiLabelMap.zoneName} </td>
-			<td width="25%"><select name="zoneId" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+			<td width="25%"><select name="zoneId" style="width:132px;margin:5px 0 5px 0;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>             	    	       	    	        
 
 	    	   <#if ZoneMasterList?exists>
@@ -48,7 +48,7 @@
 	    	</select>
                     </td>
  			 <td class="label">${uiLabelMap.wardname}</td>
- 			 <td width="25%"><select name="wardName" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+ 			 <td width="25%"><select name="wardName" style="width:132px;margin:5px 0 5px 0;" >
 			 
      			<option value=''>${uiLabelMap.CommonSelect}</option>     
 				<#if WardMasterLists?exists>
@@ -68,7 +68,7 @@
         	<tr>
 			 <td class="label">${uiLabelMap.cityName} </td>
 			  <td> 
-				<select name="cityName" style="width:150px;" onchange="return getDesignation(this);">
+				<select name="cityName" style="width:150px;" >
 					<option value="">${uiLabelMap.cityName}</option>
 				 	<option value="Hyderabad">Hyderabad</option>
 				</select>
@@ -113,7 +113,7 @@
              <td><center>${uiLabelMap.zoneName}</center></td>
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.Remark}</center></td>
-         <#--    <td><center>${uiLabelMap.createdate}</center></td>-->
+             <td><center>${uiLabelMap.createdate}</center></td>
              <td><center>${uiLabelMap.Status}</center></td>
               <td><center>${uiLabelMap.edit}</center></td>
             <td><center>${uiLabelMap.Remove}</center></td>
@@ -139,6 +139,8 @@
               </center></td>
             <td><center>${allOfficeWardListed.cityName}</center></td>
              <td><center>${allOfficeWardListed.wardRemark}</center></td>
+ 			<td><center><#if allOfficeWardListed.createdate?has_content>${allOfficeWardListed.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+             
          <#--   <td><center><#if allOfficeWardListed.wardRemark?if_exists>
             ${allOfficeWardListed.wardRemark?if_exists}<#else>NA</#if></center></td> -->
        

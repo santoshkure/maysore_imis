@@ -219,7 +219,7 @@ public class hrmsMasterEvents {
 			String remark =(String) context.get("remark");
 			String status =(String) context.get("status");
 			String activestatus =(String) context.get("activestatus");
-			String createDated =(String) context.get("createDated");
+			String createDated =(String) context.get("createdate");
   		    String zoneId = (String) delegator.getNextSeqId("ZoneMaster");
  		 
  		    java.sql.Date dateofcreatevar = getConvertedDate(createDated);
@@ -268,6 +268,8 @@ public class hrmsMasterEvents {
 			String status =(String) context.get("status");
 			String activestatus =(String) context.get("activestatus");
 			String zoneId =(String) context.get("zoneId");
+			String createDated =(String) context.get("createdate");
+			java.sql.Date dateofcreatevar = getConvertedDate(createDated);
 			
 			Map officeZoneDetails = null;
 			try{
@@ -279,7 +281,8 @@ public class hrmsMasterEvents {
 			if (UtilValidate.isNotEmpty(zoneId))
 			{
            if(status.equals("edit")){
-			officeZoneDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneName,"zoneTypeId",zoneTypeIdUpper,"cityName",cityName,"officeName",officeName,"status","A","remark",remark);
+			officeZoneDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneName,"createdate",dateofcreatevar,
+					"zoneTypeId",zoneTypeIdUpper,"cityName",cityName,"officeName",officeName,"status","A","remark",remark);
            }else if(status.equals("status")){
 			officeZoneDetails = UtilMisc.toMap("status",activestatus);	
 			}
@@ -325,12 +328,12 @@ public class hrmsMasterEvents {
 			String remark =(String) context.get("remark");
 			String status =(String) context.get("status");
 			String activestatus =(String) context.get("activestatus");
-			String createDated =(String) context.get("createDated");
+			String createDated =(String) context.get("createdate");
 			
  		    String wardId = (String) delegator.getNextSeqId("WardMaster");
  		    
  		   java.sql.Date dateofcreatevar = getConvertedDate(createDated);
- 			
+ 		     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~"+dateofcreatevar);	
  			try{
  				if(UtilValidate.isNotEmpty(cityName))
  					{

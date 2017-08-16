@@ -41,7 +41,7 @@
                     </td> -->
                 
             <td class="label">${uiLabelMap.zoneName}&nbsp;*</td>
-             <td><select name="zoneName" autocomplete="off" style="width:152px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+             <td><select name="zoneName" autocomplete="off" style="width:152px;margin:5px 0 5px 0;">
               <option value="">${uiLabelMap.CommonSelect}</option>
                 <#assign zoneNamevar  = "${WardMasterLists.zoneId?if_exists}">
                          <#if ZoneMasterList?has_content>
@@ -57,7 +57,7 @@
             
                     
 			  <td class="label">${uiLabelMap.wardname}<font color="red" >*</font></td>
-             <td><input type="text" name="wardName" value="${WardMasterLists.wardName?if_exists}" style="width:140px"  /></td>
+             <td><input type="text" name="wardName" onchange="javascript:trimFunction(this)" value="${WardMasterLists.wardName?if_exists}" style="width:140px"  /></td>
         	</tr>
         	 
         	<tr>
@@ -70,12 +70,12 @@
 			</td>  
 			
 			  <td class="label">${uiLabelMap.remark}</td>
-            <td><input type="text" textarea name="wardRemark" value="${WardMasterLists.wardRemark?if_exists}" style="width:140px" maxlength="150" /></td>
+            <td><input type="text" textarea name="wardRemark" onchange="javascript:trimFunction(this)" value="${WardMasterLists.wardRemark?if_exists}" style="width:140px" maxlength="150" /></td>
 			 	
          	</tr>
         	<tr>
                     <td width='20%' align='right' class="label">${uiLabelMap.createdate}<font color="red" >*</font></td>
-                    <td><input type="text" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="10" value="31/07/2017" /></td>    	
+		             <td><input type="text" name="createdate" value="<#if WardMasterLists.createdate?has_content>${WardMasterLists.createdate?if_exists?string("dd/MM/yyyy")}</#if>" style="width:140px" readonly /></td>
              
                   </tr>
         	<tr>
@@ -98,7 +98,7 @@
 	</form>
 		 <script language="JavaScript" type="text/javascript" />
    function ConfirmBack() {
-    var sure = confirm("Are you sure you want to Cancel?, data will be lost!");
+    var sure = confirm("Are you sure you want to Cancel? data will be lost!");
        if( sure == true )  {
       
              document.editWardMaster.action="<@ofbizUrl>Wardmaster</@ofbizUrl>";

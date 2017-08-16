@@ -28,7 +28,7 @@
 			<tr>
 			
 			 <td class="label">${uiLabelMap.zoneName} <font color="red" >*</font></td>
-             <td><input type="text" name="zoneName" value="${ZoneMasterLists.zoneName?if_exists}" style="width:140px"  /></td>
+             <td><input type="text" name="zoneName" onchange="javascript:trimFunction(this)" value="${ZoneMasterLists.zoneName?if_exists}" style="width:140px"  /></td>
 			 
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
@@ -58,16 +58,13 @@
                  </select></td>   
 			
  			  <td class="label">${uiLabelMap.remark}</td>
-           <td><input type="text" textarea name="remark" value=${ZoneMasterLists.remark?if_exists} style="width:140px"  /></td>
-			 	
-         	</tr>
+           <td><input type="text" textarea name="remark" onchange="javascript:trimFunction(this)" value="${ZoneMasterLists.remark?if_exists}" style="width:140px"  /></td>
+          	</tr>
         	<tr>
-                    <td width='20%' align='right' class="label">${uiLabelMap.createdate} <font color="red" >*</font></td>
-                    <td>
-                    <#--  <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-                    -->
-					<input type="date" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="10" value="31/07/2017" />
-					</td>
+                     <td class="label" >${uiLabelMap.createdate}</td>
+		             <td><input type="text" name="createdate" value="<#if ZoneMasterLists.createdate?has_content>${ZoneMasterLists.createdate?if_exists?string("dd/MM/yyyy")}</#if>" style="width:140px" readonly /></td>
+                  <#-- <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                -->   </td> 
                   </tr>
         	<tr>
 				<td colspan="4">

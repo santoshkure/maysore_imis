@@ -30,7 +30,7 @@
 			     	
 			 
 			  <td class="label">${uiLabelMap.zoneName}<font color="red" >*</font> </td>
-			  <td width="25%"><select name="zoneName" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+			  <td width="25%"><select name="zoneName" style="width:132px;margin:5px 0 5px 0;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>             	    	       	    	        
 
 	    	   <#if ZoneMasterList?exists>
@@ -48,12 +48,12 @@
 	    	</select>
                     </td>
 			 <td class="label">${uiLabelMap.wardname}<font color="red" >*</font></td>
-			 <td><input type="text" style="width:140px"  name="wardName" autocomplete="off" id="wardName" maxlength ="30" value="" /></td> 
+			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="wardName" autocomplete="off" id="wardName" maxlength ="30" value="" /></td> 
          	</tr>
          	<tr>
 			 <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
-				<select name="cityName" style="width:150px;" onchange="return getDesignation(this);">
+				<select name="cityName" style="width:150px;" >
 					    <option value=''>Select</option>
 				 	<option value="Hyderabad">Hyderabad</option>
 				</select>
@@ -61,13 +61,13 @@
 			
 			  <td class="label">${uiLabelMap.remark}</td>
 			 	
-			  <td colspan="4"><textarea name="remark" value="" maxlength="150" style="width:400px"></textarea></td>
+			  <td colspan="4"><textarea name="remark" value="" onchange="javascript:trimFunction(this)" maxlength="150" style="width:400px"></textarea></td>
         	</tr>
         	<tr>
                     <td width='20%' align='right' class="label">${uiLabelMap.createdate}<font color="red" >*</font></td>
-                    <td><input type="text" style="width:140px"  name="description" autocomplete="off" id="remark" maxlength ="10" value="" />	
-                     <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>     
-                     </td>    
+                   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>
+              <#--       <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>     
+                     </td>  -->  
                   </tr>
         	<tr>
 				<td colspan="4">
@@ -83,7 +83,7 @@
 	</div>
 	
 	</form>
-		
+	
 
 <script type="text/javascript" language="javascript">
 function ConfirmBack() {
@@ -100,6 +100,9 @@ function ConfirmBack() {
 		   var wardName = form.wardName.value;
 		   var zoneName = form.zoneName.value;
    		   var cityName = form.cityName.value;
+   		   var createdate = form.createdate.value;
+   		 //  alert(""+createdate);
+   		   
  		   if(notEmptyField(zoneName,"Select Zone Name.")) 
 	         {
 	         if(notEmptyField(wardName,"Ward Name should not be empty.")) 

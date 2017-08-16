@@ -30,8 +30,8 @@
 			 
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
-				<select name="cityName" style="width:150px;" >
-				    <option value=''>${uiLabelMap.CommonSelect}</option>
+				<select name="cityName" style="width:150px;" onchange="return getDesignation(this);">
+				    <option value=''>Select</option>
  				 	<option value="Hyderabad">Hyderabad</option>
 				</select>
 			</td>  
@@ -40,7 +40,7 @@
     	
         	<tr>
 			 <td class="label">${uiLabelMap.officeName}<font color="red" >*</font></td>
-			  <td width="25%"><select name="officeName" style="width:132px;margin:5px 0 5px 0;" >
+			  <td width="25%"><select name="officeName" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
              <option value=''>${uiLabelMap.CommonSelect}</option>
 	    	   <#if officeMasterLists?exists>
 	    	      <#if officeMasterLists?has_content>
@@ -57,18 +57,16 @@
 			  <td colspan="4"><textarea name="remark" onchange="javascript:trimFunction(this)" value="" maxlength="150" style="width:400px"></textarea></td>
         	</tr>
         	<tr>
-                    <td width='20%' align='right' class="label">${uiLabelMap.createdate} <font color="red" >*</font></td>
-                    <td><input type="text" name="createDated" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly />                    
-
-          <#--    <@htmlTemplate.renderDateTimeField name="createDated" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="" size="25" maxlength="30" id="createDated" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>-->
- 					</td>
-                  </tr>
+           <td class="label" >${uiLabelMap.createdate}</td>
+		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>
+                  <#-- <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                -->   </td>   
         	<tr>
 				<td colspan="4">
 					<center><div id="submit" align="center">
 						<input type="button" submit="" value="Submit" onclick="javascript:validateParameters('createZoneMaster');"/>
 				        <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:ConfirmBack();"/>
-						
+				
  					</div>
 					</center>
 				</td>
@@ -96,7 +94,8 @@
 		   var zoneName = form.zoneName.value;
 		   var cityName = form.cityName.value;
    		   var officeName = form.officeName.value;
- 		  // alert(+officeName);
+   		      var createdate = form.createdate.value;
+ 		  // alert(""+createdate);
 		    if(notEmptyField(zoneName,"Zone Name should not be empty.")) 
 		     {
 		     if(alphabhetValidation1(zoneName,"Zone Name ${uiLabelMap.alphabetical}"))

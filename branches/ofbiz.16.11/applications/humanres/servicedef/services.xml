@@ -997,7 +997,7 @@ under the License.
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="officeName" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
-		<attribute name="createDated" type="String" mode="IN" optional="true" />	
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
 	    <attribute name="status" type="String" mode="IN" optional="true" />	
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
 	    	
@@ -1008,6 +1008,7 @@ under the License.
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="officeName" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
 	    <attribute name="status" type="String" mode="IN" optional="true" />	
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
 	    <attribute name="zoneId" type="String" mode="IN" optional="true" />			
@@ -1018,7 +1019,7 @@ under the License.
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
-		<attribute name="createDated" type="String" mode="IN" optional="true" />	
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
 	    <attribute name="status" type="String" mode="IN" optional="true" />	
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
 	    	
@@ -1029,7 +1030,7 @@ under the License.
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="wardRemark" type="String" mode="IN" optional="true" />
-		<attribute name="createDated" type="String" mode="IN" optional="true" />	
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
 	    <attribute name="status" type="String" mode="IN" optional="true" />	
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
         <attribute name="wardId" type="String" mode="IN" optional="true" />				
@@ -1098,7 +1099,7 @@ under the License.
    	 <service name="saveCommunityMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveCommunityMaster">
 	    <attribute name="communityname" type="String" mode="IN" optional="true" />
-		<attribute name="createdate" type="java.sql.Date" mode="IN" optional="true" />
+		<attribute name="createdate" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
 		</service>
 		

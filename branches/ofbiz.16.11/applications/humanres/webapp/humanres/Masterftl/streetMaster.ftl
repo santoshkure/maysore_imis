@@ -145,7 +145,9 @@
 			 
 			 	<td><center>${streetTypeList.cityName?if_exists}</center></td> 
 			 	<td><center>${streetTypeList.remark?if_exists}</center></td> 
-		  	 	<td><center>${streetTypeList.createdate?if_exists}</center></td> 
+ 	 			<td><center><#if streetTypeList.createdate?has_content>${streetTypeList.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+			 	
+		  	 
 		  	 	<td><center>
                            <#assign std = '${streetTypeList.status}'>
                            <#if std =="A">

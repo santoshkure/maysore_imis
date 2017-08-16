@@ -82,8 +82,9 @@
              <tr>
                 <td><center>${count}</center></td>
                 <td><center>${pinCodeMasterList.pinCode?if_exists}</center></td>
-                <td><center>${pinCodeMasterList.dateOfCreatePin?if_exists}</center></td>
-                <td><center>${pinCodeMasterList.cityRemark?if_exists}</center></td>
+	            <td><center><#if pinCodeMasterList.dateOfCreatePin?has_content>${pinCodeMasterList.dateOfCreatePin?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+                
+                 <td><center>${pinCodeMasterList.cityRemark?if_exists}</center></td>
                 <#--<td><center>Active</center></td>--->
                  <td><center>
 	             <#assign std = '${pinCodeMasterList.status?if_exists}'>
