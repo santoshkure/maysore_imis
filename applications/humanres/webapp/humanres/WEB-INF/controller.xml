@@ -1624,18 +1624,24 @@ under the License.
         <response name="success" type="request-redirect" value="Wardmaster"/>
         <response name="error" type="view" value="Wardmaster" />
     </request-map>
-    
+   
+   <!-- added by Gaurav for Block Master ==================  -->
     <request-map uri="saveBlockMaster">
     	<security https="true" auth="true" />
     	<event type="service" invoke="saveBlockMaster"/>
     	<response name="success" type="request-redirect" value="blockMaster"/>
     	<response name="error" type="view" value="blockMaster" />
 	</request-map>
+	 <!-- ==========end================== -->
+	 
+	 
 	<request-map uri="editblockmaster">
     	<security https="true" auth="true"/>
     	<response name="success" type="view" value="editblockmaster"/>
     	<response name="error" type="view" value="editblockmaster" />
 	</request-map>
+	
+	<!-- added by Gaurav for Block Master ==================  -->
 	<request-map uri="editBlockTypeMasters">
     	<security https="true" auth="true" />
     	<event type="service" invoke="editBlockTypeMasters"/>
@@ -1643,24 +1649,34 @@ under the License.
     	<response name="error" type="view" value="blockMaster" />
 	</request-map>
 	
+	<!-- ==========end================== -->
+	
+	<!-- added by Gaurav for Street Master ==================  -->
 	<request-map uri="saveStreetsMaster">
     	<security https="true" auth="true" />
     	<event type="service" invoke="saveStreetsMaster"/>
     	<response name="success" type="request-redirect" value="Streetmaster"/>
     	<response name="error" type="view" value="Streetmaster" />
 	</request-map>
+	<!-- ==========end================== -->
+	
+	
 	 <request-map uri="editstreetmaster">
     	<security https="true" auth="true"/>
     	<response name="success" type="view" value="editstreetmaster"/>
     	<response name="error" type="view" value="editstreetmaster" />
 	</request-map>
-      
+	
+	
+      <!-- added by Gaurav for Street Master ==================  -->
       <request-map uri="editStreetTypeMasters">
     	<security https="true" auth="true" />
     	<event type="service" invoke="editStreetTypeMasters"/>
     	<response name="success" type="request-redirect" value="Streetmaster"/>
     	<response name="error" type="view" value="Streetmaster" />
 	</request-map>
+     <!-- ==========end================== -->
+     
      
      <request-map uri="saveCasteMaster">
         <security https="true" auth="true"/>
