@@ -2,9 +2,8 @@
 
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Siddhi    	    03 Aug 2017    -->
-
+<#--- Author          	Date Created   Modified By  Date Modified-->
+<#--- Siddhi    	    03 Aug 2017      Ganesh       17/08/2017-->
 <#-- #####################################################################################################-->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
 <form method="post" name="editCommunityMaster" class="basic-form">
@@ -31,8 +30,8 @@
 			         <tr>
 						   <td class="label" >${uiLabelMap.communityname} <font color="red">*</font></td>
 					       <td><input type="text" maxlength="20" name="communityname" onchange="javascript:trimFunction(this)" value="${communityTypeList.communityname?if_exists}" style="width:140px">
-					       <td class="label" >${uiLabelMap.createdate}</td>
-                           <td><input type="text" name="createdate" value="${communityTypeList.createdate?if_exists}" style="width:140px" readonly /></td>
+					      <#-- <td class="label" >${uiLabelMap.createdate}</td>
+                           <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
 					 <tr>
                            <td class="label" >${uiLabelMap.remark}</td>
                            <td><textarea name="remark" onchange="javascript:trimFunction(this)" value="${communityTypeList.remark?if_exists}" style="width:140px" maxlength ="150">${communityTypeList.remark?if_exists}</textarea></td>
@@ -47,19 +46,19 @@
 					</center>
 				</td>
 			</tr>
-					   <input type="hidden" name="communityId" value="${communityTypeList.communityId?if_exists}" style="width:140px"/>
- 	     <input type="hidden" name="status" value="" style="width:140px"/>
+		  <input type="hidden" name="communityId" value="${communityTypeList.communityId?if_exists}" style="width:140px"/>
+ 	      <input type="hidden" name="status" value="" style="width:140px"/>
 			</#list>
 		    </#if>
 	
 		</table>
 		</div>
 	</div>
+</form>
 	
-	</form>
-	
-	
-	<script language="JavaScript" type="text/javascript" />
+<#-----------------------Java Script for Community Master------------->	
+
+ <script language="JavaScript" type="text/javascript" />
 
 
     
@@ -68,11 +67,12 @@
 	var form =document[formname];
 	var communityname = form.communityname.value;
    //var createdate = form.createdate.value;
-   var r=confirm("Are you sure, you want to Update the Form ?")
+   
+    if(notEmptyField(communityname,"Community Name should not be empty.")) 
+    {
+    var r=confirm("Are you sure, you want to Update the Form ?")
         if (r==true)
         { 
-    if(notEmptyField(communityname,"community name should not be empty.")) 
-    {
     
 	     	
 	     //alert(""+stat);

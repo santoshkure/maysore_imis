@@ -1,7 +1,7 @@
 <#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
 <#---Program Name: castMaster.ftl----->
-<#--- Author             	Date Created      --->
-<#--- Siddhi Rajput      	31/07/2017	  --->
+<#--- Author             	Date Created   Modified By  Date Modified--->
+<#--- Siddhi Rajput      	31/07/2017	    Ganesh        17/08/2017--->
 <#-- #####################################################################################################-->
 <#assign checkLocale = "${locale?if_exists}">
 <#setting locale="en_US">
@@ -20,8 +20,8 @@
  		<tr>
 		   <td class="label" >${uiLabelMap.castename} <font color="red">*</font></td>
 		   <td><input type="text" name="castename" onchange="javascript:trimFunction(this)" id="castename" style="width:140px" maxlength ="20" onchange="javascript:checkCasteName();"/></td>
-		   <td class="label" >${uiLabelMap.createdate}</td>
-		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
+		  <#-- <td class="label" >${uiLabelMap.createdate}</td>
+		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
 	    </tr>
 		<tr>
 		   <td class="label" >${uiLabelMap.remark}</td>
@@ -41,6 +41,9 @@
   </div>
 </div>
 </form>
+
+<#------------------------------------Caste Master List------------------------>
+
 <form method="post" name="Listcastemaster" action="" class="basic-form">
 	
       <div class="row">
@@ -73,53 +76,56 @@
 	            <td><center>${count}</center></td>
 	            <td><center>${casteTypeList.castename?if_exists}</center></td>
 	            <td><center><#if casteTypeList.createdate?has_content>${casteTypeList.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+	            <td><center>${casteTypeList.remark?if_exists}</center></td>
 	            
- 	              <td><center>${casteTypeList.remark?if_exists}</center></td>
 	            <td><center>
-                           <#assign std = '${casteTypeList.status?if_exists}'>
-                           <#if std =="A">
-                           Active
-                           <#else>
-                           Deactive
-                           </#if>
-                           </center></td>
-                       
-                           
-                           
+                <#assign std = '${casteTypeList.status?if_exists}'>
+                <#if std =="A">
+                Active
+                <#else>
+                Deactive
+                </#if>
+                </center></td>
                           
-	            <td align="center"><center>
-	            <a href='<@ofbizUrl>editcastemaster?casteId=${casteTypeList.casteId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+	            <td><center>
+	            <#if std =="A">
+	            <a title="Edit" href='<@ofbizUrl>editcastemaster?casteId=${casteTypeList.casteId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+	             <#else>
+                <a class="buttontextdisabled"  disabled>${uiLabelMap.edit}</a>
+                </#if>
+                </center></td>
 	            
-	             <td><center>                   
-                           <#if std =="A">
-                          <a href="javascript:editcastemaster('Listcastemaster','delete','${casteTypeList.casteId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
-                          <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
-                          </#if>
-                          </center></td>
+	            
+	            <td><center>                   
+                <#if std =="D">
+                <a title="Remove" href="javascript:editcastemaster('Listcastemaster','delete','${casteTypeList.casteId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                <#else>
+                <a class="buttontextdisabled"  disabled>${uiLabelMap.Remove}</a>
+                </#if>
+                </center></td>
                           
-                          
-                          <td><center>
-                          <#if std =="A">
-                          <a href="javascript:editcastemaster('Listcastemaster','status','${casteTypeList.casteId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
-                          <#else>
-                          <a href="javascript:editcastemaster('Listcastemaster','status','${casteTypeList.casteId?if_exists}','A');" class="buttontext">Active</a>
-
-                          </#if>
-                          </center></td>
+                <td><center>
+                <#if std =="A">
+                <a title="Deactive" href="javascript:editcastemaster('Listcastemaster','status','${casteTypeList.casteId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                <#else>
+                <a title="Active" href="javascript:editcastemaster('Listcastemaster','status','${casteTypeList.casteId?if_exists}','A');" class="buttontext">Active</a>
+                </#if>
+                </center></td>
 	            
             </tr>
             <#assign count=count+ 1>
             </#list>
             </#if>
             
-               <input type="hidden" name="casteId" value="" style="width:140px"  />
+                  <input type="hidden" name="casteId" value="" style="width:140px"  />
                   <input type="hidden" name="activestatus" value="" style="width:140px"  />
   			      <input type="hidden" name="status" value="" style="width:140px"  />
         </table>    
        </div>
-       </div>
+      </div>
 	 </form> 
+	 
+<#-----------------------Java Script for Caste Master------------->	 
 
 <script language="JavaScript" type="text/javascript" />
 
@@ -128,20 +134,47 @@ function validateParameters(formName)
   var form=document[formName];
   var castename = form.castename.value;
  
-    if(notEmptyField(castename,"Caste Name should not be empty.")) 
+  if(notEmptyField(castename,"Caste Name should not be empty.")) 
      {
-      var r=confirm("Are you sure, you want to save the Form ?")
-        if (r==true)
-        { 
+  var r=confirm("Are you sure, you want to save the Form ?")
+  if (r==true)
+     { 
 	  form.action = "<@ofbizUrl>saveCasteMaster</@ofbizUrl>";
 	  form.submit();
 	  disSubmit('saveBtn');
      }
-     
-}
+     }
 }
 
- function editcastemaster(formname,stat,id,activestd)
+function editcastemaster(formname,stat,id,activestd)
+	{
+	     var form =document[formname];	
+	     //alert(""+id);
+	     form.status.value = stat;
+	     form.casteId.value=id;
+	     form.activestatus.value = activestd;
+	      if(stat == "delete")
+	      {
+	      var r=confirm("Are you sure, you want to Remove the Form ?")
+	      if (r==true)
+	      {
+	      
+          form.action="<@ofbizUrl>editCasteTypeMaster</@ofbizUrl>";
+	      form.submit();
+	      }
+	    
+	      }else if(stat == "status")
+	      {
+          var r=confirm("Are you sure, you want to Active/Deactive the Form ?")
+          if (r==true)
+          { 
+          form.action="<@ofbizUrl>editCasteTypeMaster</@ofbizUrl>";
+	      form.submit();
+	      }
+	      }
+     }	
+
+ <#--function editcastemaster(formname,stat,id,activestd)
 	{
 	     var form =document[formname];	
 	     //alert(""+id);
@@ -151,7 +184,7 @@ function validateParameters(formName)
 
         form.action="<@ofbizUrl>editCasteTypeMaster</@ofbizUrl>";
 	    form.submit();
-	}
+	}-->
 	
  <#--function editCasteMaster(formname)
 	{

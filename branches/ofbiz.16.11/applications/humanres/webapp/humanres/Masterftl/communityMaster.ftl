@@ -3,10 +3,11 @@
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
-<#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Nikhil Pathak   31/07/2016		
+<#---Version Number		Author 		Date Created  Modified By	Date Modified--->
+<#---1.0			Nikhil Pathak   31/07/2016		Ganesh        17/08/2017--->
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the community name -->
+
 
 <#assign checkLocale = "${locale?if_exists}">
 <#setting locale="en">
@@ -25,9 +26,9 @@
  				    <tr>
 						   <td class="label" >${uiLabelMap.communityname} <font color="red">*</font></td>
 					       <td><input type="text" maxlength="20" name="communityname" onchange="javascript:trimFunction(this)" value="" style="width:140px">
-					       <td class="label" >${uiLabelMap.createdate}</td>
-                          <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
-                          <#--<@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>-->
+					      <#-- <td class="label" >${uiLabelMap.createdate}</td>
+                          <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
+                         <#--<@htmlTemplate.renderDateTimeField name="createdate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>-->
                            
 					 <tr>
                            <td class="label" >${uiLabelMap.remark}</td>
@@ -54,7 +55,7 @@
              <ul>
                 <li class="h3">${uiLabelMap.communityNameList}</li>
              </ul>
-          <br class="clear"/>
+           <br class="clear"/>
        </div>
        
          <div class="screenlet-body min-scroll-div">
@@ -77,52 +78,59 @@
    </thead>
    
    
-     <#if communityTypeList?has_content>
+      <#if communityTypeList?has_content>
       <#assign count= 1>
       <#list communityTypeList as communityTypeList>
       
 	     <tr>
             <td><center>${count}</center></td>
             <td><center>${communityTypeList.communityname?if_exists}</center></td>
-            <td><center>${communityTypeList.createdate?if_exists}</center></td>
-              <td><center>${communityTypeList.remark?if_exists}</center></td>
+           <#-- <td><center><#if communityTypeList.createdate?has_content>${communityTypeList.createdate?if_exists?string("dd/MM/yyyy")}</center></td>-->
+           <td><center><#if communityTypeList.createdate?has_content>${communityTypeList.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
+            
+            <td><center>${communityTypeList.remark?if_exists}</center></td>
            
-            <td><center>
-                       <#assign std = '${communityTypeList.status?if_exists}'>
-                       <#if std =="A">
-                       Active
-                       <#else>
-                       Deactive
-                       </#if>
-                       </center></td>
+                   <td><center>
+                   <#assign std = '${communityTypeList.status?if_exists}'>
+                   <#if std =="A">
+                    Active
+                   <#else>
+                    Deactive
+                   </#if>
+                   </center></td>
                    
                        
                        
-                   <td align="center"><center> 
-                   <a href='<@ofbizUrl>editcommunitymaster?communityId=${communityTypeList.communityId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                   <td><center>
+	               <#if std =="A">
+                   <a title="Edit" href='<@ofbizUrl>editcommunitymaster?communityId=${communityTypeList.communityId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                   <#else>
+                   <a class="buttontextdisabled"  disabled>${uiLabelMap.edit}</a>
+                   </#if>
+                   </center></td>
+                  
+                  
                     <td><center>                   
-                           <#if std =="A">
-                          <a href="javascript:editofcTypeMaster('Listcommunity','delete','${communityTypeList.communityId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
-                          <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
-                          </#if>
-                          </center></td>
+                    <#if std =="D">
+                    <a title="Remove" href="javascript:editofcTypeMaster('Listcommunity','delete','${communityTypeList.communityId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                    <#else>
+                    <a class="buttontextdisabled"  disabled>${uiLabelMap.Remove}</a>
+                    </#if>
+                    </center></td>
                         
-                       <td><center>
-                      <#if std =="A">
-                      <a href="javascript:editofcTypeMaster('Listcommunity','status','${communityTypeList.communityId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
-                      <#else>
-                      <a href="javascript:editofcTypeMaster('Listcommunity','status','${communityTypeList.communityId?if_exists}','A');" class="buttontext">Active</a>
-
-                      </#if>
-                      </center></td>
-            
-                  </tr>    
+                    <td><center>
+                    <#if std =="A">
+                    <a title="Deactive" href="javascript:editofcTypeMaster('Listcommunity','status','${communityTypeList.communityId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                    <#else>
+                    <a title="Active" href="javascript:editofcTypeMaster('Listcommunity','status','${communityTypeList.communityId?if_exists}','A');" class="buttontext">Active</a>
+                    </#if>
+                    </center></td>
+                    </tr>    
                   
              
-         <#assign count=count+ 1>
-        </#list>
-        </#if> 
+                 <#assign count=count+ 1>
+                 </#list>
+                 </#if> 
                     <input type="hidden" name="communityId" value="" style="width:140px"  />
               <input type="hidden" name="activestatus" value="" style="width:140px"  />
 		      <input type="hidden" name="status" value="" style="width:140px"  />  
@@ -146,21 +154,21 @@ function validateParametered(formName)
 {
   var form=document[formName];
   var communityname = form.communityname.value;
-    var createdate = form.createdate.value;
+  //var createdate = form.createdate.value;
   //alert(""+createdate);
   
-    if(notEmptyField(communityname,"community name should not be empty.")) 
+    if(notEmptyField(communityname,"Community Name should not be empty.")) 
      {
      var r=confirm("Are you sure, you want to save the Form ?")
-        if (r==true)
-        { 
+     if (r==true)
+     { 
 	  form.action = "<@ofbizUrl>saveCommunityMaster</@ofbizUrl>";
 	  form.submit();
 	  disSubmit('saveBtn');
      }
-     
+     }
 }
-}
+
 
  function editofcTypeMaster(formname,stat,id,activestd)
 	{
@@ -171,11 +179,40 @@ function validateParametered(formName)
 	     form.status.value = stat;
 	     form.communityId.value=id;
 	     form.activestatus.value = activestd;
+	     if(stat == "delete")
+	     {
+	      var r=confirm("Are you sure, you want to Remove the Form ?")
+	      if (r==true)
+	      {
+          form.action="<@ofbizUrl>editCommunityTypeMaster</@ofbizUrl>";
+          form.submit();
+          }
+          }else if(stat == "status")
+          {
+          var r=confirm("Are you sure, you want to Active/Deactive the Form ?")
+          if (r==true)
+          {
+      form.action="<@ofbizUrl>editCommunityTypeMaster</@ofbizUrl>";
+      form.submit();
+      }
+      }
+   }
+
+
+ <#--function editofcTypeMaster(formname,stat,id,activestd)
+	{
+	     var form =document[formname];	
+	     //alert(""+id);
+	     
+       
+	     form.status.value = stat;
+	     form.communityId.value=id;
+	     form.activestatus.value = activestd;
 
         form.action="<@ofbizUrl>editCommunityTypeMaster</@ofbizUrl>";
-	    form.submit();
-	}
-	
+    form.submit();
+}-->
+
 	
 	
 	
