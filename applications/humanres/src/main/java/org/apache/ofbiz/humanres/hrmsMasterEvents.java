@@ -850,10 +850,22 @@ public class hrmsMasterEvents {
 				
 				return result;		
 			}
+	    
+	
 	        
 	        
-	        
-	        
+
+			/**
+			 * Method Name :  saveGenderMaster
+			 * @Version 1.0
+			 * @Description creates Gender Master 
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning the gender Id created
+			 *  Transaction is handled by service engine
+			 *  
+			 *  
+			 */	
 	        public static Map<String, Object> saveGenderMaster(DispatchContext dctx,
 	                Map<String, ? extends Object> context) {
 	            Map<String, Object> result = ServiceUtil.returnSuccess();
@@ -862,10 +874,11 @@ public class hrmsMasterEvents {
 	            GenericValue userLogin = (GenericValue) context.get("userLogin");
 	            final Locale locale = (Locale) context.get("locale");
 	            String genderName =(String) context.get("genderName");
-	            String dateOfCreateGender =(String) context.get("dateOfCreateGender");   
-	            java.sql.Date dateOfCreateGender1 = getConvertedDate(dateOfCreateGender);
-	            String genderRemark =(String) context.get("genderRemark");
-	           
+               /* String dateOfCreateGender =(String) context.get("dateOfCreateGender");  
+	            java.sql.Date dateOfCreateGender1 = getConvertedDate(dateOfCreateGender);*/
+                String genderRemark =(String) context.get("genderRemark");
+                long sysdate=System.currentTimeMillis();                 
+                java.sql.Date dateOfCreateGender1=new java.sql.Date(sysdate);
 	               
 	            //System.out.println("~~~~~~~~~~~~~~~~~~~~~~~"+officeTypeId+officeTypeName+parentTypeId+remark);
 
@@ -897,8 +910,18 @@ public class hrmsMasterEvents {
 	        
 	        
 	        
-	        
-	      public static Map<String, Object> editofGenderMaster(DispatchContext dctx,
+	        /**
+			 * Method Name :  editofGenderMaster
+			 * @Version 1.0
+			 * @Description Edit Gender Master
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning Success Message
+			 *  Transaction is handled by service engine
+			 *    
+			 *  
+			 */	  
+	        public static Map<String, Object> editofGenderMaster(DispatchContext dctx,
 	                Map<String, ? extends Object> context) {
 	            Map<String, Object> result = ServiceUtil.returnSuccess();
 	            GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
@@ -907,12 +930,14 @@ public class hrmsMasterEvents {
 	            final Locale locale = (Locale) context.get("locale");
 	            String genderId =(String) context.get("genderId");
 	            String genderName =(String) context.get("genderName");
-	            String dateOfCreateGender =(String) context.get("dateOfCreateGender");
-	            java.sql.Date dateOfCreateGender1 = getConvertedDate(dateOfCreateGender);
+	            /*String dateOfCreateGender =(String) context.get("dateOfCreateGender");
+	            java.sql.Date dateOfCreateGender1 = getConvertedDate(dateOfCreateGender);*/
 	            String genderRemark =(String) context.get("genderRemark");           
-	            String genderStatus =(String) context.get("genderStatus");
-	            String status =(String) context.get("status");
+/*	            String genderStatus =(String) context.get("genderStatus");
+*/	            String status =(String) context.get("status");
 	            String activestatus =(String) context.get("activestatus");
+	            long sysdate=System.currentTimeMillis();                 
+                java.sql.Date dateOfCreateGender1=new java.sql.Date(sysdate);
 	           
 	            System.out.println("genderId="+genderId);
 	            System.out.println("status="+status);
@@ -955,9 +980,20 @@ public class hrmsMasterEvents {
 	           
 	            return result;       
 	        }
+	    
 	      
-	      
-	      
+	        
+	        /**
+			 * Method Name :  savemaritalstatusmaster
+			 * @Version 1.0
+			 * @Description creates Marital Status Master
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning the maritalStatus Id created
+			 *  Transaction is handled by service engine
+			 *    
+			 *  
+			 */	   
 	       public static Map<String, Object> savemaritalstatusmaster(DispatchContext dctx,
 					Map<String, ? extends Object> context) {
 				Map<String, Object> result = ServiceUtil.returnSuccess();
@@ -966,9 +1002,12 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String maritalStatus =(String) context.get("maritalStatus");
-				String dateOfCreateMarital =(String) context.get("dateOfCreateMarital");
-	            java.sql.Date dateOfCreateMarital1 = getConvertedDate(dateOfCreateMarital);			
-	            String maritalRemark =(String) context.get("maritalRemark");			
+				/*String dateOfCreateMarital =(String) context.get("dateOfCreateMarital");
+	            java.sql.Date dateOfCreateMarital1 = getConvertedDate(dateOfCreateMarital);	*/		
+	            String maritalRemark =(String) context.get("maritalRemark");		
+	            long sysdate=System.currentTimeMillis();                 
+                java.sql.Date dateOfCreateMarital1=new java.sql.Date(sysdate);
+	               
 		
 				//System.out.println("~~~~~~~~~~~~~~~~~~~~~~~"+officeTypeId+officeTypeName+parentTypeId+remark);
 
@@ -999,7 +1038,17 @@ public class hrmsMasterEvents {
 			}
 	       
 	       
-	       
+	       /**
+			 * Method Name :  editofMaritalMaster
+			 * @Version 1.0
+			 * @Description Edit Marital Status Master
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning Success Message
+			 *  Transaction is handled by service engine
+			 *   
+			 *  
+			 */	  
 	        public static Map<String, Object> editofMaritalMaster(DispatchContext dctx,
 					Map<String, ? extends Object> context) {
 				Map<String, Object> result = ServiceUtil.returnSuccess();
@@ -1009,12 +1058,14 @@ public class hrmsMasterEvents {
 				final Locale locale = (Locale) context.get("locale");
 				String maritalStatusId =(String) context.get("maritalStatusId");
 	            String maritalStatus =(String) context.get("maritalStatus");
-				String dateOfCreateMarital =(String) context.get("dateOfCreateMarital");
-				java.sql.Date dateOfCreateMarital1 = getConvertedDate(dateOfCreateMarital);
+				/*String dateOfCreateMarital =(String) context.get("dateOfCreateMarital");
+				java.sql.Date dateOfCreateMarital1 = getConvertedDate(dateOfCreateMarital);*/
 				String maritalRemark =(String) context.get("maritalRemark");			
-				String maritalStatusEn =(String) context.get("maritalStatusEn");
-			    String status =(String) context.get("status");
+/*				String maritalStatusEn =(String) context.get("maritalStatusEn");
+*/			    String status =(String) context.get("status");
 	            String activestatus =(String) context.get("activestatus");
+	            long sysdate=System.currentTimeMillis();                 
+                java.sql.Date dateOfCreateMarital1=new java.sql.Date(sysdate);
 
 				
 				Map maritalStatusMasterDetails = null;
@@ -1055,8 +1106,20 @@ public class hrmsMasterEvents {
 				return result;		
 			}
 	        
+
+		     
 	        
-	        
+	        /**
+			 * Method Name :  savePincodeMaster
+			 * @Version 1.0
+			 * @Description creates Pin-codeMaster
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning the pinCode Id created
+			 *  Transaction is handled by service engine
+			 *   
+			 *  
+			 */	
 	        public static Map<String, Object> savePincodeMaster(DispatchContext dctx, 
 					Map<String, ? extends Object> context) { 
 				Map<String, Object> result = ServiceUtil.returnSuccess(); 
@@ -1065,9 +1128,12 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin"); 
 				final Locale locale = (Locale) context.get("locale"); 
 				String pinCode =(String) context.get("pinCode"); 
-				String dateOfCreatePin =(String) context.get("dateOfCreatePin"); 
-	            java.sql.Date dateOfCreatePin1 = getConvertedDate(dateOfCreatePin);			 
-	            String cityRemark =(String) context.get("cityRemark");			 
+				/*String dateOfCreatePin =(String) context.get("dateOfCreatePin"); 
+	            java.sql.Date dateOfCreatePin1 = getConvertedDate(dateOfCreatePin);		*/	 
+	            String cityRemark =(String) context.get("cityRemark");		
+	            long sysdate=System.currentTimeMillis();                 
+                java.sql.Date dateOfCreatePin1=new java.sql.Date(sysdate);
+	               
 		 
 				//System.out.println("~~~~~~~~~~~~~~~~~~~~~~~"+pinCode+dateOfCreatePin+cityRemark); 
 
@@ -1098,7 +1164,17 @@ public class hrmsMasterEvents {
 			} 
 	        
 	        
-	        
+	        /**
+			 * Method Name :  editofPincodemaster
+			 * @Version 1.0
+			 * @Description Edit Pincode Master
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning Success Message
+			 *  Transaction is handled by service engine
+			 *    
+			 *  
+			 */	  
 	        public static Map<String, Object> editofPincodemaster(DispatchContext dctx, 
 					Map<String, ? extends Object> context) { 
 				Map<String, Object> result = ServiceUtil.returnSuccess(); 
@@ -1108,12 +1184,14 @@ public class hrmsMasterEvents {
 				final Locale locale = (Locale) context.get("locale"); 
 				String pinCodeId =(String) context.get("pinCodeId"); 
 	            String pinCode =(String) context.get("pinCode"); 
-				String dateOfCreatePin =(String) context.get("dateOfCreatePin");	 
-	            java.sql.Date dateOfCreatePin1 = getConvertedDate(dateOfCreatePin);			 
+				/*String dateOfCreatePin =(String) context.get("dateOfCreatePin");	 
+	            java.sql.Date dateOfCreatePin1 = getConvertedDate(dateOfCreatePin);			*/ 
 	            String cityRemark =(String) context.get("cityRemark");			 
-				String maritalStatusEn =(String) context.get("maritalStatusEn"); 
-			    String status =(String) context.get("status"); 
+/*				String maritalStatusEn =(String) context.get("maritalStatusEn"); 
+*/			    String status =(String) context.get("status"); 
 	            String activestatus =(String) context.get("activestatus"); 
+	            long sysdate=System.currentTimeMillis();                 
+                java.sql.Date dateOfCreatePin1=new java.sql.Date(sysdate);
 
 				 
 				Map pinCodeMasterDetails = null; 
