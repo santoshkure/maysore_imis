@@ -414,6 +414,21 @@ public class hrmsMasterEvents {
 			
 			return result;		
 		} 
+		
+		
+		
+		
+		 
+		/**
+		 * Method Name :  saveBlockMaster
+		 * @Version 1.0
+		 * @Description Create Block Master
+		 * @param DispatchContext dctx
+		 * @param Map<String, ? extends Object> context
+		 * @return Map - Map returning the block Id created
+		 *  Transaction is handled by service engine  
+		 *  
+		 */		
 		  public static Map<String, Object> saveBlockMaster(DispatchContext dctx,
 	                Map<String, ? extends Object> context) {
 	            Map<String, Object> result = ServiceUtil.returnSuccess();
@@ -424,17 +439,18 @@ public class hrmsMasterEvents {
 	            String blockName =(String) context.get("blockName");
 	            String wardName =(String) context.get("wardName");   
 	            String cityName =(String) context.get("cityName");       
-	            String remark =(String) context.get("remark");
-	            String createdate =(String) context.get("createdate");
-	            java.sql.Date createdate1 = getConvertedDate(createdate);
-	           
+	            String remark =(String) context.get("remark");  
+	  		  
+	            long sysdate=System.currentTimeMillis(); 	            
+	            java.sql.Date date=new java.sql.Date(sysdate); 	          
+
 	          
 	            try{
 	            //if (UtilValidate.isNotEmpty(blockId)){
 	            String blockId = (String) delegator.getNextSeqId("blockMaster");
 
 	            Map blockMasterDetail = UtilMisc.toMap("blockName",blockName,
-	                    "wardId",wardName,"cityId",cityName,"remark",remark,"createdate",createdate1,"status","A","blockId",blockId);
+	                    "wardId",wardName,"cityId",cityName,"remark",remark,"createdate",date,"status","A","blockId",blockId);
 	           
 	            GenericValue valueToStore = delegator.makeValue("blockMaster", blockMasterDetail);
 	            valueToStore.create();
@@ -458,13 +474,11 @@ public class hrmsMasterEvents {
 	        /**
 	         * Method Name :  editBlockTypeMaster
 	         * @Version 1.0
-	         * @Description Edit Office Type Master
+	         * @Description  Edit Block Type Master
 	         * @param DispatchContext dctx
 	         * @param Map<String, ? extends Object> context
 	         * @return Map - Map returning Success Message
-	         *  Transaction is handled by service engine
-	         *  If there is a failure in one table, nothing will be committed, taken care by service engine. 
-	         * 
+	         *  Transaction is handled by service engine	         * 
 	         */       
 	        public static Map<String, Object> editBlockTypeMasters(DispatchContext dctx,
 	                Map<String, ? extends Object> context) {
@@ -480,9 +494,10 @@ public class hrmsMasterEvents {
 	            String status =(String) context.get("status");
 	            String activestatus =(String) context.get("activestatus");
 	            String blockId =(String) context.get("blockId");
-	            String createdate =(String) context.get("createdate");
-	            java.sql.Date createdate1 = getConvertedDate(createdate);
-
+	            //java.sql.Date createdate1 = (java.sql.Date) context.get("createdate");
+	            long sysdate=System.currentTimeMillis(); 	            
+	            java.sql.Date createdate1=new java.sql.Date(sysdate); 
+	            
 	            Map blockMasterDetail = null;
 	            try{
 	            if (UtilValidate.isNotEmpty(blockId))
@@ -526,13 +541,11 @@ public class hrmsMasterEvents {
 	        /**
 	         * Method Name :  saveStreetsMaster
 	         * @Version 1.0
-	         * @Description creates Office Type Master
+	         * @Description create Streets Master
 	         * @param DispatchContext dctx
 	         * @param Map<String, ? extends Object> context
-	         * @return Map - Map returning the office Id created
-	         *  Transaction is handled by service engine
-	         *  If there is a failure in one table, nothing will be committed, taken care by service engine. 
-	         * 
+	         * @return Map - Map returning the street Id created
+	         *  Transaction is handled by service engine	         * 
 	         */       
 	        public static Map<String, Object> saveStreetsMaster(DispatchContext dctx,
 	                Map<String, ? extends Object> context) {
@@ -545,9 +558,10 @@ public class hrmsMasterEvents {
 	            String blockName =(String) context.get("blockName");   
 	            String cityName =(String) context.get("cityName");       
 	            String remark =(String) context.get("remark");
-	            String createdate =(String) context.get("createdate");
-	            java.sql.Date createdate1 = getConvertedDate(createdate);
-	           
+
+	            long sysdate=System.currentTimeMillis(); 	            
+	            java.sql.Date createdate1=new java.sql.Date(sysdate);
+	          
 	       
 	            try{
 	            //if (UtilValidate.isNotEmpty(blockId)){
@@ -579,13 +593,11 @@ public class hrmsMasterEvents {
 	        /**
 	         * Method Name :  editStreetTypeMasters
 	         * @Version 1.0
-	         * @Description Edit Office Type Master
+	         * @Description Edit Street Type Masters
 	         * @param DispatchContext dctx
 	         * @param Map<String, ? extends Object> context
 	         * @return Map - Map returning Success Message
-	         *  Transaction is handled by service engine
-	         *  If there is a failure in one table, nothing will be committed, taken care by service engine. 
-	         * 
+	         *  Transaction is handled by service engine	         * 
 	         */       
 	        public static Map<String, Object> editStreetTypeMasters(DispatchContext dctx,
 	                Map<String, ? extends Object> context) {
@@ -601,9 +613,9 @@ public class hrmsMasterEvents {
 	            String status =(String) context.get("status");
 	            String activestatus =(String) context.get("activestatus");
 	            String streetId =(String) context.get("streetId");
-	            String createdate =(String) context.get("createdate");
-	            java.sql.Date createdate1 = getConvertedDate(createdate);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-
+	            long sysdate=System.currentTimeMillis(); 	            
+	            java.sql.Date createdate1=new java.sql.Date(sysdate);
+	          
 	            Map  streetMasterDetail = null;
 	            try{
 	            if (UtilValidate.isNotEmpty(streetId))
