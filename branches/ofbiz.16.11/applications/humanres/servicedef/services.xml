@@ -1084,7 +1084,7 @@ under the License.
 <!--     	<attribute name="createdate" type="java.sql.Date" mode="IN" optional="true" />    
  -->    	</service>
     	<!-- END -->	
-    	
+    	<!-- By Ganesh for Cast MAster -->
     	<service name="saveCasteMasterDetails" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveCasteMasterDetails">
 	    <attribute name="castename" type="String" mode="IN" optional="true" />
@@ -1101,7 +1101,9 @@ under the License.
 	    <attribute name="status" type="String" mode="IN" optional="true" />	
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
 	    </service>
+	    <!-- END -->
 	    
+	    <!-- By Ganesh fro Community Master -->
    	 <service name="saveCommunityMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveCommunityMaster">
 	    <attribute name="communityname" type="String" mode="IN" optional="true" />
@@ -1118,7 +1120,7 @@ under the License.
 	    <attribute name="status" type="String" mode="IN" optional="true" />	
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
 	    </service>
-	    
+	    <!-- END -->
 	    <!-- Added By Anil Kumar for Gender Master -->
 	   
 	    <service name="saveGenderMaster" export="true" engine="java" 
