@@ -1036,14 +1036,18 @@ under the License.
         <attribute name="wardId" type="String" mode="IN" optional="true" />				
 	    	
 		</service>
+		
+		
+		
+		<!-- Added By Gaurav for Block Master -->
 		<service name="saveBlockMaster" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveBlockMaster">
    	 <attribute name="blockName" type="String" mode="IN" optional="false" />
    	 <attribute name="wardName" type="String" mode="IN" optional="true" />
    	 <attribute name="cityName" type="String" mode="IN" optional="true" />
    	 <attribute name="remark" type="String" mode="IN" optional="true" />
-   	 <attribute name="createdate" type="String" mode="IN" optional="true" />   	 
-   	 </service>
+<!--    	 <attribute name="createdate" type="java.sql.Date" mode="IN" optional="true" />   	 
+ -->   	 </service>
    	 
    	 <service name="editBlockTypeMasters" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editBlockTypeMasters">
@@ -1054,17 +1058,19 @@ under the License.
     	<attribute name="status" type="String" mode="IN" optional="true" />    
     	<attribute name="activestatus" type="String" mode="IN" optional="true" />   	 
     	<attribute name="blockId" type="String" mode="IN" optional="true" />
-    	<attribute name="createdate" type="String" mode="IN" optional="true" />    
-    	</service>
-    	
+<!--     	<attribute name="createdate" type="java.sql.Date" mode="IN" optional="true" />    
+ -->    	</service>
+     <!-- END -->	
+     
+     <!-- Added By Gaurav for Street Master -->
     	<service name="saveStreetsMaster" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveStreetsMaster">
    	 <attribute name="streetName" type="String" mode="IN" optional="false" />
    	 <attribute name="blockName" type="String" mode="IN" optional="true" />
    	 <attribute name="cityName" type="String" mode="IN" optional="true" />
    	 <attribute name="remark" type="String" mode="IN" optional="true" />
-   	 <attribute name="createdate" type="String" mode="IN" optional="true" />   	 
-   	 </service>	
+<!--    	 <attribute name="createdate" type="java.sql.Date" mode="IN" optional="true" />   	 
+ -->   	 </service>	
    	 
    	 <service name="editStreetTypeMasters" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editStreetTypeMasters">
@@ -1075,9 +1081,9 @@ under the License.
     	<attribute name="status" type="String" mode="IN" optional="true" />    
     	<attribute name="activestatus" type="String" mode="IN" optional="true" />   	 
     	<attribute name="streetId" type="String" mode="IN" optional="true" />
-    	<attribute name="createdate" type="String" mode="IN" optional="true" />    
-    	</service>
-    	
+<!--     	<attribute name="createdate" type="java.sql.Date" mode="IN" optional="true" />    
+ -->    	</service>
+    	<!-- END -->	
     	
     	<service name="saveCasteMasterDetails" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveCasteMasterDetails">
