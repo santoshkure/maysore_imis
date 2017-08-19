@@ -117,7 +117,7 @@ under the License.
       <prim-key field="communityId"/>      
     </entity>
     
-    
+     <!-- Added By Anil Kumar for Gender Master -->
     <entity entity-name="genderMaster" 
             package-name="org.apache.ofbiz.humanres.master"
             title="Gender Master Entity">
@@ -128,9 +128,10 @@ under the License.
       <field name="status" type="indicator"></field>     
       <prim-key field="genderId"/>      
     </entity>
+   	 <!-- END -->
     
- 
-<entity entity-name="maritalStatusMaster" 
+  <!-- Added By Anil Kumar for Marital Status  Master -->
+ <entity entity-name="maritalStatusMaster" 
             package-name="org.apache.ofbiz.humanres.master"
             title="Marital Status Master Entity">
       <field name="maritalStatusId" type="id-ne"></field>
@@ -140,7 +141,9 @@ under the License.
       <field name="status" type="indicator"></field>     
       <prim-key field="maritalStatusId"/>      
     </entity>
+   <!-- END -->
     
+      <!-- Added By Anil Kumar for PinCode  Master -->
     <entity entity-name="pinCodeMaster" 
             package-name="org.apache.ofbiz.humanres.master"
             title="Pin Code Master Entity">
@@ -151,6 +154,7 @@ under the License.
       <field name="status" type="indicator"></field>     
       <prim-key field="pinCodeId"/>      
     </entity>
+	 <!-- END -->
 
  
 
