@@ -655,10 +655,20 @@ public class hrmsMasterEvents {
 	            return result;       
 	        }
 	        
+
+	        /**
+	         * Method Name :  saveCasteMasterDetails
+	         * @Version 1.0
+	         * @Description Create Caste Master
+	         * @param DispatchContext dctx
+	         * @param Map<String, ? extends Object> context
+	         * @return Map - Map returning the Caste Id created
+	         *  Transaction is handled by service engine
+	         *   
+	         * 
+	         */       
 	        
-	        
-	        
-	        public static Map<String, Object> saveCasteMasterDetails(DispatchContext dctx,
+	         public static Map<String, Object> saveCasteMasterDetails(DispatchContext dctx,
 	        		Map<String, ? extends Object> context) {
 	        	Map<String, Object> result = ServiceUtil.returnSuccess();
 	        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
@@ -666,10 +676,12 @@ public class hrmsMasterEvents {
 	        	GenericValue userLogin = (GenericValue) context.get("userLogin");
 	        	final Locale locale = (Locale) context.get("locale");
 	        	String castename =(String) context.get("castename");
-	        	String createdate =(String) context.get("createdate");	
-	            java.sql.Date createdate1 = getConvertedDate(createdate);
-
+	        	//String createdate =(String) context.get("createdate");	
+	            //java.sql.Date createdate1 = getConvertedDate(createdate);
+               
 	        	String remark =(String) context.get("remark");	
+	        	long sysdate=System.currentTimeMillis();                 
+                java.sql.Date createdate1=new java.sql.Date(sysdate); 
 	        	
 	        	
 	        	
@@ -700,7 +712,17 @@ public class hrmsMasterEvents {
 	        }
 	        
 	        
-	        
+	         /**
+		         * Method Name :  editCasteTypeMaster
+		         * @Version 1.0
+		         * @Description edit Caste Type Master
+		         * @param DispatchContext dctx
+		         * @param Map<String, ? extends Object> context
+		         * @return Map - Map returning Success Message
+		         *  Transaction is handled by service engine
+		         *  
+		         * 
+		         */     
 	        public static Map<String, Object> editCasteTypeMaster(DispatchContext dctx,
 					Map<String, ? extends Object> context) {
 				Map<String, Object> result = ServiceUtil.returnSuccess();
@@ -709,12 +731,15 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String castename =(String) context.get("castename");
-				String createdate =(String) context.get("createdate");	
-	            java.sql.Date createdate1 = getConvertedDate(createdate);
+				//String createdate =(String) context.get("createdate");	
+	            //java.sql.Date createdate1 = getConvertedDate(createdate);
 				String remark =(String) context.get("remark");			
 				String casteId =(String) context.get("casteId");			
 				String status =(String) context.get("status");
 				String activestatus =(String) context.get("activestatus");
+				
+				long sysdate=System.currentTimeMillis();                 
+                java.sql.Date createdate1=new java.sql.Date(sysdate); 
 				
 				
 				Map casteTypDetails = null;
@@ -757,7 +782,17 @@ public class hrmsMasterEvents {
 			}
 	        
 	        
-	        
+	        /**
+	         * Method Name :  saveCommunityMaster
+	         * @Version 1.0
+	         * @Description Create Community Master
+	         * @param DispatchContext dctx
+	         * @param Map<String, ? extends Object> context
+	         * @return Map - Map returning the Community Id created
+	         *  Transaction is handled by service engine
+	         *  
+	         * 
+	         */     
 	        public static Map<String, Object> saveCommunityMaster(DispatchContext dctx,
 					Map<String, ? extends Object> context) {
 				Map<String, Object> result = ServiceUtil.returnSuccess();
@@ -766,18 +801,20 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String communityname =(String) context.get("communityname");
-				String createdate =(String) context.get("createdate");	
+				//String createdate =(String) context.get("createdate");
+				//java.sql.Date createdate1 = getConvertedDate(createdate);
 				String remark =(String) context.get("remark");	
 				String communityId =(String) context.get("communityId");
 				
-	            java.sql.Date createdate1 = getConvertedDate(createdate);
+				long sysdate=System.currentTimeMillis();                 
+                java.sql.Date date=new java.sql.Date(sysdate); 
   				
 
 				try{
 			    String CSC = (String) delegator.getNextSeqId("communityMaster");
 				
 				Map communityTypDetails = UtilMisc.toMap("communityId",CSC,
-						"communityname",communityname,"createdate",createdate1,"status","A","remark",remark);
+						"communityname",communityname,"createdate",date,"status","A","remark",remark);
 				
 				GenericValue valueToStore = delegator.makeValue("communityMaster", communityTypDetails);
 				valueToStore.create();
@@ -797,7 +834,21 @@ public class hrmsMasterEvents {
 				
 				return result;		
 			}
-
+	        
+	        
+	        
+	        
+	        /**
+	         * Method Name :  editCommunityTypeMaster
+	         * @Version 1.0
+	         * @Description edit Community Type Master
+	         * @param DispatchContext dctx
+	         * @param Map<String, ? extends Object> context
+	         * @return Map - Map returning Success Message
+	         *  Transaction is handled by service engine
+	         * 
+	         * 
+	         */        
 	        public static Map<String, Object> editCommunityTypeMaster(DispatchContext dctx,
 					Map<String, ? extends Object> context) {
 				Map<String, Object> result = ServiceUtil.returnSuccess();
@@ -806,11 +857,16 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String communityname =(String) context.get("communityname");
-				String createdate =(String) context.get("createdate");	
+				//String createdate =(String) context.get("createdate");
+				//java.sql.Date createdate1 = getConvertedDate(createdate);
 				String remark =(String) context.get("remark");			
 				String communityId =(String) context.get("communityId");			
 				String status =(String) context.get("status");
-				String activestatus =(String) context.get("activestatus");			
+				String activestatus =(String) context.get("activestatus");	
+				
+				long sysdate=System.currentTimeMillis();                 
+                java.sql.Date date=new java.sql.Date(sysdate); 
+  				
 				
 				Map communityTypDetails = null;
 				try{
@@ -818,7 +874,7 @@ public class hrmsMasterEvents {
 				{
 	           if(status.equals("edit")){
 	        	   communityTypDetails = UtilMisc.toMap("communityId",communityId,"communityname",
-	        			   communityname,"createdate",createdate,"status","A","remark",remark);
+	        			   communityname,"createdate",date,"status","A","remark",remark);
 	           }else if(status.equals("status")){
 	        	   communityTypDetails = UtilMisc.toMap("status",activestatus);	
 				}
