@@ -2,8 +2,8 @@
 <#---Program Name: wardMaster.ftl----->
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Anubha Saini    	31 July 2017    -->
+<#--- Author          	Date Created       Modified By     Modified Date-->
+<#--- Anubha Saini    	31 July 2017       Gaurav         17 August 2017-->
 
 <#-- #####################################################################################################-->
 
@@ -85,6 +85,10 @@
 	</div>
 	
 	</form>
+	<#--END -->
+	
+	
+	<#-- listblockMaster.ftl -->
 <form method="post" name="listblockMaster" class="basic-form">
  <div class="row">
   <div class="alert alert-info">
@@ -149,9 +153,9 @@
 			 	
 			 	<td><center>
 			 	<#if std =="A">
-			 	<a href='<@ofbizUrl>editblockmaster?blockId=${blockTypeList.blockId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+			 	<a title="Edit" href='<@ofbizUrl>editblockmaster?blockId=${blockTypeList.blockId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
 			 	<#else>
-                <a class="buttontext" data-disabled="true">${uiLabelMap.edit}</a>
+                <a class="buttontextdisabled" disabled>${uiLabelMap.edit}</a>
                 </#if>
 			 	</center></td>
 				
@@ -161,9 +165,9 @@
 
                          <td><center>          
                           <#if std =="A">
-                          <a href="javascript:editofBlockTypeMaster('listblockMaster','status','${blockTypeList.blockId}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <a title="Deactive" href="javascript:editofBlockTypeMaster('listblockMaster','status','${blockTypeList.blockId}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
                           <#else>
-                          <a href="javascript:editofBlockTypeMaster('listblockMaster','status','${blockTypeList.blockId}','A');" class="buttontext">Active</a>
+                          <a title="Active" href="javascript:editofBlockTypeMaster('listblockMaster','status','${blockTypeList.blockId}','A');" class="buttontext">Active</a>
                           </#if>
                           </center></td>
                           
@@ -171,9 +175,11 @@
                           
 		                  <td><center>                   
                            <#if std =="A">
-                          <a href="javascript:editofBlockTypeMaster('listblockMaster','delete','${blockTypeList.blockId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                            <a class="buttontextdisabled"  disabled>${uiLabelMap.Remove}</a>
+                           
                           <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                           <a title="Remove" href="javascript:editofBlockTypeMaster('listblockMaster','delete','${blockTypeList.blockId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                          
                           </#if>
                           </center></td>
 		</tr>    
@@ -190,6 +196,8 @@
       </div>
 
  </form>
+ 
+ <#-----------------------Java Script for Block Master------------->
 
 <script type="text/javascript" language="javascript">
 
@@ -215,6 +223,8 @@
 	    form.submit();
 	}
 	
+	
+	
 	 function editofBlockTypeMaster(formname,stat,id,activestd)
 	{
 	     var form =document[formname];	
@@ -222,10 +232,28 @@
 	     form.status.value = stat;
 	     form.blockId.value=id;
 	     form.activestatus.value = activestd;
-
+        if(stat == "delete")
+         {
+         var r=confirm("Are you sure, you want to Remove the Form ?")
+         if (r==true)
+         {
+      
+          form.action="<@ofbizUrl>editBlockTypeMasters</@ofbizUrl>";
+         form.submit();
+         }
+    
+         }
+        else if(stat == "status")
+        {
+           var r=confirm("Are you sure, you want to Active/Deactive the Form ?")
+          if (r==true)
+          { 
         form.action="<@ofbizUrl>editBlockTypeMasters</@ofbizUrl>";
 	    form.submit();
-	}
+	}}}
+	
+	
+	
 	
 	function validateDetails(formname)
 	{
