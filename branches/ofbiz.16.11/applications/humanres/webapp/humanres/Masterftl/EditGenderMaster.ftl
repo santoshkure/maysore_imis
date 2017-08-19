@@ -2,8 +2,8 @@
 
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Siddhi    	    03 Aug 2017    -->
+<#--- Author          	Date Created    Modified By   Date Modified --->
+<#--- Siddhi    	    03 Aug 2017     Anil Kumar    17/08/2017    --->
 
 <#-- #####################################################################################################-->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
@@ -29,9 +29,9 @@
 			        <tr>
 						   <td class="label" >${uiLabelMap.gendername} <font color="red">*</font></td>
 					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="${genderMasterList.genderName?if_exists}" style="width:140px">
-					        <td class="label" >${uiLabelMap.createdate}</td>
+					        <#--<td class="label" >${uiLabelMap.createdate}</td>--->
                         <#--   <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td> -->
-	 		             <td><input type="text" name="dateOfCreateGender" value="<#if genderMasterList.dateOfCreateGender?has_content>${genderMasterList.dateOfCreateGender?if_exists?string("dd/MM/yyyy")}</#if>" style="width:140px" readonly /></td>
+	 		             <#--<td><input type="text" name="dateOfCreateGender" value="<#if genderMasterList.dateOfCreateGender?has_content>${genderMasterList.dateOfCreateGender?if_exists?string("dd/MM/yyyy")}</#if>" style="width:140px" readonly /></td>------>
 					 
 					   </tr>
 					     <tr>
@@ -55,17 +55,15 @@
 			
 				</#list>
 				</#if>
-                   <input type="hidden" name="status" value="" style="width:140px"/>				
-		</table>
-		</div>
-	</div>
-	
-	</form>
-	   <#-----------------------Java Script for Gender Master------------->
-	<script language="JavaScript" type="text/javascript" />
+             <input type="hidden" name="status" value="" style="width:140px"/>				
+	</table>
+  </div>
+</div>
+ </form>
+ <#-----------------------Java Script for Gender Master------------->
+	   
+<script language="JavaScript" type="text/javascript" />
 
-
-    
     function editofGenderMaster(formname,stat)
 	{
 	var form =document[formname];
@@ -81,10 +79,11 @@
 	     form.status.value = stat;
         form.action="<@ofbizUrl>editofGenderMaster</@ofbizUrl>";
 	    form.submit();
-	}   }
+	    }
+	}
 	}
 	
 	
- </script>
+</script>
 		
 

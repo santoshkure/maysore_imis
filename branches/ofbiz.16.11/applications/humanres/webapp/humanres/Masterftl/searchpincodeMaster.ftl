@@ -1,8 +1,9 @@
 <#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
-<#---Program Name: castMaster.ftl----->
-<#--- Author                 Date Created      --->
-<#--- Siddhi Rajput          01/08/2017      --->
+<#---Program Name: searchpincodeMaster.ftl----->
+<#--- Author                 Date Created      Modified By   Date Modified  --->
+<#--- Siddhi Rajput          01/08/2017        Anil Kumar    17/08/2017 --->
 <#-- #####################################################################################################-->
+
 <#assign checkLocale = "${locale?if_exists}">
 <#setting locale="en_US">
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
@@ -45,6 +46,8 @@
   </div>
 </div>
 </form>
+<#------------------------------------PinCode Master List------------------------>
+
 <form method="post" name="Listpincodemaster" action="" class="basic-form">
    
       <div class="row">
@@ -75,8 +78,8 @@
         </thead>  
         
 	    <#if pinCodeMasterList?has_content>
-   <#assign count= 1>
-   <#list pinCodeMasterList as pinCodeMasterList>
+       <#assign count= 1>
+       <#list pinCodeMasterList as pinCodeMasterList>
    
 	     
              <tr>
@@ -95,44 +98,48 @@
                            </#if>
 	            </center></td>
                 <#--<td align="center"><center><a href="javascript:editpincodeMaster('Listpincodemaster');" class="buttontext">${uiLabelMap.edit}</a></center></td>-->
-                
-                  <td><center>
-                          <a href='<@ofbizUrl>editpincodemaster?pinCodeId=${pinCodeMasterList.pinCodeId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a></center></td>
-                            <td><center>                   
-                           <#if std =="A">
-                          <a href="javascript:editofPincodemaster('Listpincodemaster','delete','${pinCodeMasterList.pinCodeId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
-                          <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
-                          </#if>
-                          </center></td>
-                          
-                          <#--<td><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>--->
-                             <td><center>
-                          <#if std =="A">
-                          <a href="javascript:editofPincodemaster('Listpincodemaster','status','${pinCodeMasterList.pinCodeId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
-                          <#else>
-                          <a href="javascript:editofPincodemaster('Listpincodemaster','status','${pinCodeMasterList.pinCodeId?if_exists}','A');" class="buttontext">Active</a>
-
-                          </#if>
-                          </center></td>
+                <td><center>
+                 <#if std =="A">
+                 <a title="Edit" href='<@ofbizUrl>editpincodemaster?pinCodeId=${pinCodeMasterList.pinCodeId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                 <#else>
+                 <a class="buttontextdisabled"  disabled>${uiLabelMap.edit}</a>
+                 </#if>
+                </center></td>
+                <td><center>                   
+                 <#if std =="D">
+                 <a title="Remove" href="javascript:editofPincodemaster('Listpincodemaster','delete','${pinCodeMasterList.pinCodeId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                 <#else>
+                 <a class="buttontextdisabled" disabled>${uiLabelMap.Remove}</a>
+                 </#if>
+                </center></td>
+                <#--<td><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>--->
+                <td><center>
+                 <#if std =="A">
+                 <a title="Deactive" href="javascript:editofPincodemaster('Listpincodemaster','status','${pinCodeMasterList.pinCodeId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                 <#else>
+                 <a title="Active" href="javascript:editofPincodemaster('Listpincodemaster','status','${pinCodeMasterList.pinCodeId?if_exists}','A');" class="buttontext">Active</a>
+                 </#if>
+                </center></td>
                 <#--<td align="center"><center><a class="buttontext">${uiLabelMap.Remove}</a></center></td>-->
-               <#-- <td align="center"><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>--->
+                <#-- <td align="center"><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>--->
             </tr>
          
-              <#assign count=count+ 1>
+                     <#assign count=count+ 1>
                      </#list>
                      </#if>      
                         <input type="hidden" name="pinCodeId" value="" style="width:140px"  />
-                  <input type="hidden" name="activestatus" value="" style="width:140px"  />
-                    <input type="hidden" name="status" value="" style="width:140px"  />
+                        <input type="hidden" name="activestatus" value="" style="width:140px"  />
+                        <input type="hidden" name="status" value="" style="width:140px"  />
                       
-        </table> 
+     </table> 
          <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>  
-       </div>
-       </div>
-     </form>
-     <#-----------------------Java Script for PinCode Master------------->
-    <script language="JavaScript" type="text/javascript" />
+   </div>
+</div>
+ </form>
+     
+<#-----------------------Java Script for PinCode Master------------->
+     
+<script language="JavaScript" type="text/javascript" />
      function editpincodeMaster(formname)
     {
          var form =document[formname];   
@@ -148,10 +155,25 @@
 	     form.status.value = stat;
 	     form.pinCodeId.value=id;
 	     form.activestatus.value = activestd;
+	       if(stat == "delete")
+      {
+      var r=confirm("Are you sure, you want to Remove the Form ?")
+      if (r==true)
+      {
 
         form.action="<@ofbizUrl>editofPincodemaster</@ofbizUrl>";
 	    form.submit();
 	}
+	}else if(stat == "status")
+      {
+          var r=confirm("Are you sure, you want to Active/Deactive the Form ?")
+          if (r==true)
+          { 
+          form.action="<@ofbizUrl>editofPincodemaster</@ofbizUrl>";
+      form.submit();
+      }
+      }
+     }
 	
 	function validateParameters(formname)
  {
@@ -159,4 +181,4 @@
                    form.submit();
 }
 	
-    </script>
+</script>

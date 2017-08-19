@@ -28,8 +28,8 @@
 	  <tr>
 		   <td class="label" >${uiLabelMap.pincode} <font color="red">*</font></td>
 		   <td><input type="text" name="pinCode" onchange="javascript:trimFunction(this)" style="width:140px" value="${pinCodeMasterList.pinCode?if_exists}" maxlength ="7"/></td>
-		   <td class="label" >${uiLabelMap.createdate}</td>
-		   <td><input type="text" name="dateOfCreatePin" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
+		   <#--<td class="label" >${uiLabelMap.createdate}</td>
+		   <td><input type="text" name="dateOfCreatePin" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
 	    </tr>
 		<tr>
 		   <td class="label" >${uiLabelMap.remark}</td>
