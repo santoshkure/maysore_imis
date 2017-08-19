@@ -2,8 +2,8 @@
 <#---Program Name: streetMaster.ftl----->
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Anubha Saini    	31 July 2017    -->
+<#--- Author          	Date Created    Modified By     Modified Date -->
+<#--- Anubha Saini    	31 July 2017     Gaurav         17 August 2017-->
 
 <#-- #####################################################################################################-->
 
@@ -19,7 +19,7 @@
         <div class="basic-nav" style="margin-top: -80px;">
   				<ul>
     				<li>
-						<a title="Create Zone Master" href="<@ofbizUrl>createStreetMaster</@ofbizUrl>">
+						<a title="Create Street Master" href="<@ofbizUrl>createStreetMaster</@ofbizUrl>">
 							<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
 						</a>
     				</li>
@@ -163,9 +163,9 @@
 
 				<td><center>
 				<#if std =="A">
-				<a href='<@ofbizUrl>editstreetmaster?streetId=${streetTypeList.streetId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+				<a title="Edit" href='<@ofbizUrl>editstreetmaster?streetId=${streetTypeList.streetId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
 				<#else>
-                <a class="buttontext" data-disabled="true">${uiLabelMap.edit}</a>
+                <a class="buttontextdisabled" disabled>${uiLabelMap.edit}</a>
                 </#if>
 				</center></td>
 
@@ -178,9 +178,9 @@
 				   <#assign std = '${streetTypeList.status}'>
 				 
                           <#if std =="A">
-                          <a href="javascript:editofStreetTypeMaster('listStreetMaster','status','${streetTypeList.streetId}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <a title="Deactive" href="javascript:editofStreetTypeMaster('listStreetMaster','status','${streetTypeList.streetId}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
                           <#else>
-                          <a href="javascript:editofStreetTypeMaster('listStreetMaster','status','${streetTypeList.streetId}','A');" class="buttontext">Active</a>
+                          <a title="Active" href="javascript:editofStreetTypeMaster('listStreetMaster','status','${streetTypeList.streetId}','A');" class="buttontext">Active</a>
 
                           </#if>
                           </center></td>
@@ -188,9 +188,11 @@
                           
 		                 <td><center>                   
                            <#if std =="A">
-                          <a href="javascript:editofStreetTypeMaster('listStreetMaster','delete','${streetTypeList.streetId}');" class="buttontext">${uiLabelMap.Remove}</a>
+                         <a class="buttontextdisabled"  disabled>${uiLabelMap.Remove}</a>
+                           
                           <#else>
-                          <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                         <a title="Remove" href="javascript:editofStreetTypeMaster('listStreetMaster','delete','${streetTypeList.streetId}');" class="buttontext">${uiLabelMap.Remove}</a>
+                          
                           </#if>
                           </center></td>
 		      	      	     
@@ -208,6 +210,10 @@
        </div>
       </div>
  </form>
+
+
+
+<#-----------------------Java Script for Street Master------------->
 
 <script type="text/javascript" language="javascript">
 
@@ -242,10 +248,27 @@
 	     form.status.value = stat;
 	     form.streetId.value=id;
 	     form.activestatus.value = activestd;
+	      if(stat == "delete")
+         {
+         var r=confirm("Are you sure, you want to Remove the Form ?")
+         if (r==true)
+         {
+      
+          form.action="<@ofbizUrl>editStreetTypeMasters</@ofbizUrl>";
+         form.submit();
+         }
+    
+         }
+        else if(stat == "status")
+        {
+           var r=confirm("Are you sure, you want to Active/Deactive the Form ?")
+          if (r==true)
+          { 
+       
 
         form.action="<@ofbizUrl>editStreetTypeMasters</@ofbizUrl>";
 	    form.submit();
-	}
+	}}}
 	
 	function validateDetails(formname)
 	{
