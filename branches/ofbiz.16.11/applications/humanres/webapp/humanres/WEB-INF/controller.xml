@@ -1706,6 +1706,8 @@ under the License.
         <response name="error" type="view" value="CommunityMaster" />
     </request-map>
     
+   
+     <!-- Added By Anil Kumar for Gender Master -->
      <request-map uri="saveGenderMaster">
         <security https="true" auth="true" />
         <event type="service" invoke="saveGenderMaster"/>
@@ -1720,6 +1722,10 @@ under the License.
         <response name="error" type="view" value="GenderMaster" />
     </request-map>
     
+    <!-- END -->
+     
+           
+     <!-- Added By Anil Kumar for Marital Status  Master -->
      <request-map uri="savemaritalstatusmaster">
         <security https="true" auth="true" />
         <event type="service" invoke="savemaritalstatusmaster"/>
@@ -1734,6 +1740,10 @@ under the License.
         <response name="error" type="view" value="MaritalStatusMaster" />
     </request-map>  
     
+    <!-- END -->
+    
+     	 
+     <!-- Added By Anil Kumar for Pin-Code  Master -->
      <request-map uri="savePincodeMaster">
         <security https="true" auth="true" />
         <event type="service" invoke="savePincodeMaster"/>
