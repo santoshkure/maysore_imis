@@ -1,10 +1,10 @@
 <#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
-<#---Program Name: communityMaster.ftl----->
+<#---Program Name: genderMaster.ftl----->
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
-<#---Version Number		Author 		Date Created 		Date Modified   --->
-<#---1.0			Nikhil Pathak   31/07/2016		
+<#---Version Number	 Author 		Date Created 		Modified By   Date Modified --->
+<#---1.0			 Nikhil Pathak   31/07/2016		    Anil Kumar    17/08/2017    --->
 <#-- #####################################################################################################-->
 <#--This ftl is used to show the  Gender of a person-->
 
@@ -26,8 +26,9 @@
  				       <tr>
 						   <td class="label" >${uiLabelMap.gendername} <font color="red">*</font></td>
 					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="" style="width:140px">
-					       <td class="label" >${uiLabelMap.createdate}</td>
-                           <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>
+					      
+					       <#--<td class="label" >${uiLabelMap.createdate}</td>
+                           <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>--->
 					 
 					     <#--<td class="label" >${uiLabelMap.createdate}</td>
                            <td><input type="text" name="dateOfCreateGender" value="" style="width:140px" readonly /></td>-->
@@ -51,6 +52,7 @@
 
 
 <#------------------------------------Gender Master List------------------------>
+
 <form method="post" name="Listgendermaster" action="" class="basic-form">
 
         <div class="row">
@@ -82,9 +84,7 @@
    <#list genderMasterList	 as genderMasterList>
    
   
-   
-  
-                  <tr>
+                    <tr>
                           
                          <td><center>${count}</center></td>
                           <td><center>${genderMasterList.genderName?if_exists}</center></td>
@@ -97,47 +97,47 @@
                            <#else>
                            Deactive
                            </#if>
-                           
                            </center></td>
-                          
                           <td><center>
-                          <a href='<@ofbizUrl>editgendermaster?genderId=${genderMasterList.genderId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a></center></td>
+                          <#if std =="A">
+                          <a title="Edit" href='<@ofbizUrl>editgendermaster?genderId=${genderMasterList.genderId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                           <#else>
+                         <a class="buttontextdisabled"  disabled>${uiLabelMap.edit}</a>
+                          </#if>
+                          </center></td>
                           <td><center>                   
-                           <#if std =="A">
-                          <a href="javascript:editofGenderMaster('Listgendermaster','delete','${genderMasterList.genderId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                           <#if std =="D">
+                          <a title="Remove" href="javascript:editofGenderMaster('Listgendermaster','delete','${genderMasterList.genderId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
                           <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                         <a class="buttontextdisabled" disabled>${uiLabelMap.Remove}</a>
                           </#if>
                           </center></td>
                           
                         <#---<td><center><a class="buttontext">${uiLabelMap.Deactive}</a></center></td>--->
                           <td><center>
                           <#if std =="A">
-                          <a href="javascript:editofGenderMaster('Listgendermaster','status','${genderMasterList.genderId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <a title="Deactive" href="javascript:editofGenderMaster('Listgendermaster','status','${genderMasterList.genderId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
                           <#else>
-                          <a href="javascript:editofGenderMaster('Listgendermaster','status','${genderMasterList.genderId?if_exists}','A');" class="buttontext">${uiLabelMap.Active}</a>
-
+                          <a title="Active" href="javascript:editofGenderMaster('Listgendermaster','status','${genderMasterList.genderId?if_exists}','A');" class="buttontext">${uiLabelMap.Active}</a>
                           </#if>
                           </center></td>
-                        
-                          
-                          
-                          
-                   </tr>
+               </tr>
                     <#assign count=count+ 1>
                    </#list>
                    </#if>   
-                    <input type="hidden" name="genderId" value="" style="width:140px"  />
+                  <input type="hidden" name="genderId" value="" style="width:140px"  />
                   <input type="hidden" name="activestatus" value="" style="width:140px"  />
                   <input type="hidden" name="status" value="" style="width:140px"  />
                    
       </table>
-      
-     </div>
-   </div>
- </div>
+    </div>
+  </div>
+</div>
+ </form>
+
  <#-----------------------Java Script for Gender Master------------->
-    <script language="JavaScript" type="text/javascript" />
+ 
+<script language="JavaScript" type="text/javascript" />
 
     function validateParameters(formName)
     {
@@ -162,14 +162,52 @@
 	     form.status.value = stat;
 	     form.genderId.value=id;
 	     form.activestatus.value = activestd;
+	     if(stat == "delete")
+      {
+      var r=confirm("Are you sure, you want to Remove the Form ?")
+      if (r==true)
+      {
+      
 	     form.action="<@ofbizUrl>editofGenderMaster</@ofbizUrl>";
 	    form.submit();
 	}
 	
-	
-	
-	
-	
-	
- 
- </script>
+      }else if(stat == "status")
+      {
+          var r=confirm("Are you sure, you want to Active/Deactive the Form ?")
+          if (r==true)
+          { 
+          form.action="<@ofbizUrl>editofGenderMaster</@ofbizUrl>";
+      form.submit();
+      }
+      }
+     }
+     
+	<#----function editofGenderMaster(formname,stat,id,activestd)
+{
+     var form =document[formname];	
+     //alert(""+id);
+     form.status.value = stat;
+     form.genderId.value=id;
+     form.activestatus.value = activestd;
+      if(stat == "delete")
+      {
+      var r=confirm("Are you sure, you want to Remove the Form ?")
+      if (r==true)
+      {
+      
+          form.action="<@ofbizUrl>editofGenderMaster</@ofbizUrl>";
+      form.submit();
+      }
+    
+      }else if(stat == "status")
+      {
+          var r=confirm("Are you sure, you want to Active/Deactive the Form ?")
+          if (r==true)
+          { 
+          form.action="<@ofbizUrl>editofGenderMaster</@ofbizUrl>";
+      form.submit();
+      }
+      }
+     }---->
+</script>
