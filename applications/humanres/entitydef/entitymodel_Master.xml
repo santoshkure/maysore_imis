@@ -62,6 +62,8 @@ under the License.
      
     </entity>
     
+    
+      <!-- Added By Gaurav for Block Master -->
 	<entity entity-name="blockMaster"
         	package-name="org.apache.ofbiz.humanres.master"
         	title="Block Master Entity">
@@ -75,6 +77,8 @@ under the License.
   	<prim-key field="blockId"/>   	 
 	</entity>
 	
+	
+	  <!-- Added By Gaurav for Street Master -->
 	<entity entity-name="streetMaster"
         	package-name="org.apache.ofbiz.humanres.master"
         	title="Street Master Entity">
