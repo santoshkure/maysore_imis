@@ -1119,60 +1119,77 @@ under the License.
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
 	    </service>
 	    
+	    <!-- Added By Anil Kumar for Gender Master -->
+	   
 	    <service name="saveGenderMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveGenderMaster">
 	    <attribute name="genderName" type="String" mode="IN" optional="true" />
-		<attribute name="dateOfCreateGender" type="String" mode="IN" optional="true" />
-		<attribute name="genderRemark" type="String" mode="IN" optional="true" />
+<!-- 		<attribute name="dateOfCreateGender" type="String" mode="IN" optional="true" />
+ -->		<attribute name="genderRemark" type="String" mode="IN" optional="true" />
 		</service>
 		
 		<service name="editofGenderMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editofGenderMaster">
 		<attribute name="genderName" type="String" mode="IN" optional="true" />
 	    <attribute name="genderId" type="String" mode="IN" optional="true" />
-		<attribute name="dateOfCreateGender" type="String" mode="IN" optional="true" />
-		<attribute name="genderRemark" type="String" mode="IN" optional="true" />
-	    <attribute name="genderStatus" type="String" mode="IN" optional="true" />	
-	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
-	     <attribute name="status" type="String" mode="IN" optional="true" />	    
+<!-- 		<attribute name="dateOfCreateGender" type="String" mode="IN" optional="true" />
+ -->		<attribute name="genderRemark" type="String" mode="IN" optional="true" />
+ 	    <attribute name="genderStatus" type="String" mode="IN" optional="true" />	
+ 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	    <attribute name="status" type="String" mode="IN" optional="true" />	    
 	    </service>
+	    
+	  <!-- END -->
+	  
+	  
+	  
+      <!-- Added By Anil Kumar for Marital Status  Master -->
 		
 		<service name="savemaritalstatusmaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="savemaritalstatusmaster">
 	    <attribute name="maritalStatus" type="String" mode="IN" optional="true" />
-		<attribute name="dateOfCreateMarital" type="String" mode="IN" optional="true" />
-		<attribute name="maritalRemark" type="String" mode="IN" optional="true" />
+<!-- 		<attribute name="dateOfCreateMarital" type="String" mode="IN" optional="true" />
+ -->		<attribute name="maritalRemark" type="String" mode="IN" optional="true" />
 		</service>
 		
 		<service name="editofMaritalMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editofMaritalMaster">
 		<attribute name="maritalStatus" type="String" mode="IN" optional="true" />
 	    <attribute name="maritalStatusId" type="String" mode="IN" optional="true" />
-		<attribute name="dateOfCreateMarital" type="String" mode="IN" optional="true" />
-		<attribute name="maritalRemark" type="String" mode="IN" optional="true" />
-	    <attribute name="genderStatus" type="String" mode="IN" optional="true" />
-	    <attribute name="maritalStatusEn" type="String" mode="IN" optional="true" />	  	    	
-	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
-	     <attribute name="status" type="String" mode="IN" optional="true" />	    
+<!-- 		<attribute name="dateOfCreateMarital" type="String" mode="IN" optional="true" />
+ -->		<attribute name="maritalRemark" type="String" mode="IN" optional="true" />
+ 	    <attribute name="genderStatus" type="String" mode="IN" optional="true" />
+  	    <attribute name="maritalStatusEn" type="String" mode="IN" optional="true" />	  	    	
+ 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	    <attribute name="status" type="String" mode="IN" optional="true" />	    
 	    </service>
+	    
+	 <!-- END -->
+	 
+	 
+	 
+	 <!-- Added By Anil Kumar for Pin-Code  Master -->
+	 
 		
 		<service name="savePincodeMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="savePincodeMaster">
 	    <attribute name="pinCode" type="String" mode="IN" optional="true" />
-		<attribute name="dateOfCreatePin" type="String" mode="IN" optional="true" />
-		<attribute name="cityRemark" type="String" mode="IN" optional="true" />
+<!-- 		<attribute name="dateOfCreatePin" type="String" mode="IN" optional="true" />
+ -->		<attribute name="cityRemark" type="String" mode="IN" optional="true" />
 		</service>
 
 		<service name="editofPincodemaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editofPincodemaster">
 		<attribute name="pinCodeId" type="String" mode="IN" optional="true" />
 	    <attribute name="pinCode" type="String" mode="IN" optional="true" />
-		<attribute name="dateOfCreatePin" type="String" mode="IN" optional="true" />
-		<attribute name="cityRemark" type="String" mode="IN" optional="true" />
+<!-- 		<attribute name="dateOfCreatePin" type="String" mode="IN" optional="true" />
+ -->		<attribute name="cityRemark" type="String" mode="IN" optional="true" />
 	    <attribute name="maritalStatusEn" type="String" mode="IN" optional="true" />	  	    	
-	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
-	     <attribute name="status" type="String" mode="IN" optional="true" />	    
+ 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	    <attribute name="status" type="String" mode="IN" optional="true" />	    
 	    </service>
+	    
+	<!-- END -->
 	    
 
 </services>
