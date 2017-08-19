@@ -496,7 +496,7 @@ public class hrmsMasterEvents {
 	            String blockId =(String) context.get("blockId");
 	            //java.sql.Date createdate1 = (java.sql.Date) context.get("createdate");
 	            long sysdate=System.currentTimeMillis(); 	            
-	            java.sql.Date createdate1=new java.sql.Date(sysdate); 
+	            java.sql.Date date=new java.sql.Date(sysdate); 
 	            
 	            Map blockMasterDetail = null;
 	            try{
@@ -504,7 +504,7 @@ public class hrmsMasterEvents {
 	            {
 	           if(status.equals("edit")){
 	               blockMasterDetail = UtilMisc.toMap("blockName",blockName,"wardId",
-	                    wardName,"cityId",cityName,"status","A","remark",remark,"createdate",createdate1);
+	                    wardName,"cityId",cityName,"status","A","remark",remark,"createdate",date);
 	           }else if(status.equals("status")){
 	               blockMasterDetail = UtilMisc.toMap("status",activestatus);   
 	            }
