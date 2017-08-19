@@ -95,6 +95,8 @@ under the License.
     	</relation> 	 
 	</entity>
 	
+	 <!-- Added By Ganesh for Caste Master -->
+	
 	<entity entity-name="casteMaster" 
             package-name="org.apache.ofbiz.humanres.master"
             title="Caste Master  Entity">
@@ -105,7 +107,11 @@ under the License.
       <field name="status" type="indicator"></field>     
       <prim-key field="casteId"/>    
 	</entity>
-
+	
+	 <!-- End -->
+	 
+     <!-- Added By Ganesh for Community Master -->
+     
  	<entity entity-name="communityMaster" 
             package-name="org.apache.ofbiz.humanres.master"
             title="Community Master Entity">
@@ -116,7 +122,7 @@ under the License.
       <field name="status" type="indicator"></field>     
       <prim-key field="communityId"/>      
     </entity>
-    
+    <!-- End -->
      <!-- Added By Anil Kumar for Gender Master -->
     <entity entity-name="genderMaster" 
             package-name="org.apache.ofbiz.humanres.master"
