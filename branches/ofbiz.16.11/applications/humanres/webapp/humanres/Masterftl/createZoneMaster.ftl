@@ -30,23 +30,22 @@
 			 
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
-				<select name="cityName" style="width:150px;" onchange="return getDesignation(this);">
+				<select name="cityName" style="width:150px;" >
 				    <option value=''>Select</option>
- 				 	<option value="Hyderabad">Hyderabad</option>
+ 				 	<option value="Mysore">Mysore</option>
 				</select>
 			</td>  
 		  
         	</tr>
-    	
+	
         	<tr>
 			 <td class="label">${uiLabelMap.officeName}<font color="red" >*</font></td>
-			  <td width="25%"><select name="officeName" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+			  <td width="25%"><select name="officeName" style="width:132px;margin:5px 0 5px 0;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>
-	    	   <#if officeMasterLists?exists>
-	    	      <#if officeMasterLists?has_content>
-	    	       <#list officeMasterLists as officeMasterLists>
-	    	       ${officeMasterLists?if_exists}
- 	    	         <option value="${officeMasterLists.ofcTypeName?if_exists}">${officeMasterLists.ofcTypeName?if_exists}</option>
+	    	   <#if officeMaterListed?exists>
+	    	      <#if officeMaterListed?has_content>
+	    	       <#list officeMaterListed as officeMaterListed>
+ 	    	         <option value="${officeMaterListed.officeSiteName?if_exists}">${officeMaterListed.officeSiteName?if_exists}</option>
  	    	       </#list>
 	    	     </#if>
 	    	   </#if>

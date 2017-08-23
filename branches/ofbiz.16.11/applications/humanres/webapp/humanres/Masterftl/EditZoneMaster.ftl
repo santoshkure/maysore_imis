@@ -2,8 +2,8 @@
 
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Siddhi    	    03 Aug 2017    -->
+<#--- Author          	Date Created   modified by    Date   -->
+<#--- Siddhi    	    03 Aug 2017    Saurabh Gupta    14 Aug 2017     -->
 
 <#-- #####################################################################################################-->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
@@ -29,29 +29,28 @@
 			
 			 <td class="label">${uiLabelMap.zoneName} <font color="red" >*</font></td>
              <td><input type="text" name="zoneName" onchange="javascript:trimFunction(this)" value="${ZoneMasterLists.zoneName?if_exists}" style="width:140px"  /></td>
-			 
+			
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
 				<select name="cityName" style="width:150px;">
 				    <option value=''>Select</option>
-				 	<option value="Hyderabad" selected="true">Hyderabad</option>
-				    <option value="Mysore" selected="true">Mysore</option>
+ 				    <option value="Mysore" selected="true">Mysore</option>
 				</select>
 			</td>  
 			  
         	</tr>
         	
         	<tr>
-  			  <td class="label">${uiLabelMap.officeName}&nbsp;*</td>
+  			  <td class="label">${uiLabelMap.officeName}<font color="red" >*</font></td>
              <td><select name="officeName" autocomplete="off" style="width:152px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
               <option value="">${uiLabelMap.CommonSelect}</option>
                 <#assign zoneNamevar  = "${ZoneMasterLists.officeName?if_exists}">
                          <#if officeMasterLists?has_content>
                             <#list officeMasterLists as officeMasterLists>
-                             <#if "${officeMasterLists.ofcTypeName?if_exists}" == "${zoneNamevar?if_exists}">
-                               <option value="${officeMasterLists.ofcTypeName?if_exists}" selected>${officeMasterLists.ofcTypeName?if_exists}</option>
+                             <#if "${officeMasterLists.officeSiteName?if_exists}" == "${zoneNamevar?if_exists}">
+                               <option value="${officeMasterLists.officeSiteName?if_exists}" selected>${officeMasterLists.officeSiteName?if_exists}</option>
                             <#else>
-                                <option value="${officeMasterLists.ofcTypeName?if_exists}">${officeMasterLists.ofcTypeName?if_exists}</option>
+                                <option value="${officeMasterLists.officeSiteName?if_exists}">${officeMasterLists.officeSiteName?if_exists}</option>
                               </#if>
                             </#list>
                         </#if>   
@@ -86,7 +85,7 @@
 	</form>
    <script language="JavaScript" type="text/javascript" />
    
-	
+
 	
 	 function updateZoneDetails(formName,stat)
       {
@@ -97,8 +96,8 @@
  		   
 		    if(notEmptyField(zoneName,"Zone Name should not be empty.")) 
 		     {
-		      if(alphabhetValidation1(zoneName,"Zone Name ${uiLabelMap.alphabetical}"))
-               {
+		  <#--  if(alphabhetValidation1(zoneName,"Zone Name ${uiLabelMap.alphabetical}"))
+               { -->
 		       if(notEmptyField(cityName,"Select City Name.")) 
 		         {
 	             if(notEmptyField(officeName,"Select Office Name")) 
@@ -114,7 +113,7 @@
 		          }
 		         }
 		     }}}
-        }
+      //  }
 	
  </script>	
 

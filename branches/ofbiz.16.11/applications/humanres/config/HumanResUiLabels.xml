@@ -4154,4 +4154,8 @@
         <value xml:lang="en">Approve/Reject Meter Reading Detail</value>
         <value xml:lang="kn">Approve/Reject Meter Reading Detail</value>
     </property>
+    <property key="ActiveDeactive">
+        <value xml:lang="en">Active/Deactive</value>
+        <value xml:lang="kn">Active/Deactive</value>
+    </property> 
 </resource>
