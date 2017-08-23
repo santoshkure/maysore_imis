@@ -15863,4 +15863,40 @@
         <value xml:lang="zh">结果</value>
         <value xml:lang="zh-TW">結果</value>
     </property>
+    
+<!-- Added by anubha -->
+   <property key="createGrievance">
+        <value xml:lang="en"> Create Grievance Detail </value>
+    </property>
+    <property key="grievanceReceipt">
+        <value xml:lang="en">  Grievance Receipt Detail </value>
+    </property>
+     <property key="receiptNo">
+        <value xml:lang="en">  Receipt No. </value>
+    </property>
+    <property key="grievanceDetail">
+        <value xml:lang="en">  Grievance Detail </value>
+    </property>
+    <property key="grievanceDate">
+        <value xml:lang="en">  Date of Grievance </value>
+    </property>
+    <property key="grievancePetitionDate">
+        <value xml:lang="en">Grievance Petition Date </value>
+    </property>
+     <property key="typeOfGrievance">
+        <value xml:lang="en">Type Of Grievance </value>
+    </property>
+    <property key="name">
+        <value xml:lang="en">Name</value>
+    </property>
+    <property key="editGrievance">
+        <value xml:lang="en"> Edit Grievance Detail </value>
+    </property>
+    <property key="grievanceList">
+        <value xml:lang="en">  Grievance List </value>
+    </property>
+     <property key="veiwGrievance">
+        <value xml:lang="en"> Veiw Grievance Detail </value>
+    </property>
+    <!-- -->
 </resource>
