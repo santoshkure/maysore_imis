@@ -4062,5 +4062,7 @@
         <value xml:lang="en">should be alphabetical</value>
         <value xml:lang="Hi"></value>
     </property> 
-
+      <property key="approveRejectGrievance">
+        <value xml:lang="en">approve/Reject Grievance</value>
+      </property> 
 </resource>
