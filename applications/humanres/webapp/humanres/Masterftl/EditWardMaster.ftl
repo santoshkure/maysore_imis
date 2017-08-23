@@ -19,7 +19,8 @@
   </div>
 	
 	<div class="screenlet-body">
-	<table class="basic-table" cellspacing="0">
+    <td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
+ 	<table class="basic-table" cellspacing="0">
 		<#if WardMasterLists?has_content>
  				 <#list WardMasterLists as WardMasterLists>
 		 		<input type="hidden" name="wardId" value="${WardMasterLists.wardId?if_exists}" style="width:140px"  />
@@ -40,7 +41,7 @@
 	    	</select>
                     </td> -->
                 
-            <td class="label">${uiLabelMap.zoneName}&nbsp;*</td>
+            <td class="label">${uiLabelMap.zoneName}<font color="red" >*</font></td>
              <td><select name="zoneName" autocomplete="off" style="width:152px;margin:5px 0 5px 0;">
               <option value="">${uiLabelMap.CommonSelect}</option>
                 <#assign zoneNamevar  = "${WardMasterLists.zoneId?if_exists}">
@@ -64,8 +65,8 @@
 			 <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
 				<select name="cityName" style="width:150px;" >
-					<option value="">${uiLabelMap.cityName}</option>
-				 	<option value="Hyderabad" selected="true">Hyderabad</option>
+				  <option value=''>Select</option>
+				 	<option value="Mysore" selected="true">Mysore</option>
 				</select>
 			</td>  
 			
@@ -123,7 +124,7 @@
 		          {
 		          // alert(""+stat);
 		            form.status.value = stat;
-	               var r=confirm("Are you sure, you want to Save the Form ?")
+	               var r=confirm("Are you sure, you want to Update the Form ?")
                     if (r==true)
                        {
  				  form.action = "<@ofbizUrl>updateWardDet</@ofbizUrl>";

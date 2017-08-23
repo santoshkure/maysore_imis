@@ -2,14 +2,10 @@
 <#---Program Name: wardMaster.ftl----->
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Anubha Saini    	31 July 2017    -->
+<#--- Author          	Date Created    Modify by       Modify date -->
+<#--- Anubha Saini    	31 July 2017    Saurabh Gupta    14 aug 2017          -->
 
 <#-- #####################################################################################################-->
-
-
-
-
 <form method="post" name="wardMaster" class="basic-form">
 
 	<div class="row">
@@ -19,22 +15,21 @@
       <div class="basic-nav" style="margin-top: -80px;">
   				<ul>
     				<li>
-						<a title="Create Zone Master" href="<@ofbizUrl>createWardMaster</@ofbizUrl>">
+						<a title="Create Ward Master" href="<@ofbizUrl>createWardMaster</@ofbizUrl>">
 							<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
 						</a>
     				</li>
   				</ul>
  			</div> 
     </ul>
-    
-  </div>
+   </div>
 	<br/>
 	<div class="screenlet-body">
 		<table class="basic-table" cellspacing="0">
 		
 			<tr>
 			 <td class="label">${uiLabelMap.zoneName} </td>
-			<td width="25%"><select name="zoneId" style="width:132px;margin:5px 0 5px 0;" >
+			<td width="25%"><select name="zoneId" style="width:150px;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>             	    	       	    	        
 
 	    	   <#if ZoneMasterList?exists>
@@ -48,7 +43,7 @@
 	    	</select>
                     </td>
  			 <td class="label">${uiLabelMap.wardname}</td>
- 			 <td width="25%"><select name="wardName" style="width:132px;margin:5px 0 5px 0;" >
+ 			 <td width="25%"><select name="wardName" style="width:150px;" >
 			 
      			<option value=''>${uiLabelMap.CommonSelect}</option>     
 				<#if WardMasterLists?exists>
@@ -69,8 +64,8 @@
 			 <td class="label">${uiLabelMap.cityName} </td>
 			  <td> 
 				<select name="cityName" style="width:150px;" >
-					<option value="">${uiLabelMap.cityName}</option>
-				 	<option value="Hyderabad">Hyderabad</option>
+				  <option value=''>Select</option>
+				 	<option value="Mysore">Mysore</option>
 				</select>
 			</td> 
 			
@@ -82,7 +77,7 @@
              </tr>
         	
         	<tr>
-				<td colspan="8"><center><div id="saveBtn" align="center"><input type="button"  name="search" value="Search" onclick="javascript:validateFieldvar('wardMaster');"></center></td>
+				<td colspan="8"><center><div id="saveBtn" align="center"><input type="button" title="Search" name="search" value="Search" onclick="javascript:validateFieldvar('wardMaster');"></center></td>
 			</tr>
 		</table>
 		</div>
@@ -117,7 +112,7 @@
              <td><center>${uiLabelMap.Status}</center></td>
               <td><center>${uiLabelMap.edit}</center></td>
             <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.enableDisable}</center></td>
+             <td><center>${uiLabelMap.ActiveDeactive}</center></td>
            
          </tr>
        </thead>  
@@ -155,30 +150,31 @@
                            </center></td>
                           <td><center>
                            <#if std =="A">
-                          <a href='<@ofbizUrl>editwardmaster?wardId=${allOfficeWardListed.wardId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                          <a title="Edit Ward Master" href='<@ofbizUrl>editwardmaster?wardId=${allOfficeWardListed.wardId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
                           <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.edit}</a>
+                           <a class="buttontextdisabled" title="Disabled">${uiLabelMap.edit}</a>
                           </#if>
                           </center></td>
                           <td><center>                   
-                           <#if std =="A">
-                          <a href="javascript:editWardvalidate('listwardMaster','delete','${allOfficeWardListed.wardId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                           <#if std =="A" || std =="D">
+                          <a title="Remove" href="javascript:editWard('listwardMaster','delete','${allOfficeWardListed.wardId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
                           <#else>
-                         <a class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                        <#--   <a class="buttontextdisabled" title="Disabled">${uiLabelMap.Remove}</a>-->
+                           <a title="Disabled"class="buttontext" data-disabled="">${uiLabelMap.Remove}</a>
                           </#if>
                           </center></td>
                           
                           
                           <td><center>
                           <#if std =="A">
-                          <a href="javascript:editWardvalidate('listwardMaster','status','${allOfficeWardListed.wardId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <a title="Deactive" href="javascript:editWardForm('listwardMaster','status','${allOfficeWardListed.wardId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
                           <#else>
-                          <a href="javascript:editWardvalidate('listwardMaster','status','${allOfficeWardListed.wardId?if_exists}','A');" class="buttontext">Active</a>
+                          <a title="Active" href="javascript:editWardForm('listwardMaster','status','${allOfficeWardListed.wardId?if_exists}','A');" class="buttontext">Active</a>
 
                           </#if>
                           </center></td>
                   </tr> 
-         <#assign count = count + 1>
+                  <#assign count = count + 1>
 						</#list>
 						</#if>
           
@@ -193,7 +189,7 @@
 
 </from>
  <script language="JavaScript" type="text/javascript" />
-
+//code is added by saurabh
  function editWardvalidate(formname,stat,id,activestd)
 	{
 	     var form =document[formname];	
@@ -205,6 +201,36 @@
         form.action="<@ofbizUrl>updateWardDet</@ofbizUrl>";
 	    form.submit();
 	}
+	function editWard(formname,stat,id,activestd)
+	{
+	     var form =document[formname];	
+	    // alert(""+stat);
+	     form.status.value = stat;
+	     form.wardId.value=id;
+	     form.activestatus.value = activestd;
+            var r=confirm("Are you sure, you want to Remove the Record ?")
+            if (r==true)
+               {
+        form.action="<@ofbizUrl>updateWardDet</@ofbizUrl>";
+	    form.submit();
+	}          }
+	
+	function editWardForm(formname,stat,id,activestd)
+	{
+	     var form =document[formname];	
+	    // alert(""+activestd);
+	     form.status.value = stat;
+	     form.wardId.value=id;
+	     form.activestatus.value = activestd;
+	       
+	     if((activestd=="D") ||(activestd=="A"))
+	     {
+            var r=confirm("Are you sure, you want to Active/Deactive the Record ?")
+            if (r==true)
+               {
+        form.action="<@ofbizUrl>updateWardDet</@ofbizUrl>";
+	    form.submit();
+	}          }}
 	function validateFieldvar(formname)
  {
  var form=document[formname];

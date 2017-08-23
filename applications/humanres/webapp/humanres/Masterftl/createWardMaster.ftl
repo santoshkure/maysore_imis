@@ -55,7 +55,7 @@
 			  <td> 
 				<select name="cityName" style="width:150px;" >
 					    <option value=''>Select</option>
-				 	<option value="Hyderabad">Hyderabad</option>
+				 	<option value="Mysore">Mysore</option>
 				</select>
 			</td>  
 			

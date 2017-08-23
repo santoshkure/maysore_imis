@@ -991,7 +991,7 @@ under the License.
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
 	    	
 		</service>
-		
+		<!-- code is added by saurabh for save zone details -->
 		<service name="saveZonemasterdet" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveZonemasterdet">
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
@@ -1002,7 +1002,8 @@ under the License.
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
 	    	
 		</service>
-		<service name="updateZoneDet" export="true" engine="java" 
+		<!-- code is added by saurabh for Update zone details -->
+ 		<service name="updateZoneDet" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateZoneDet">
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
@@ -1014,6 +1015,7 @@ under the License.
 	    <attribute name="zoneId" type="String" mode="IN" optional="true" />			
 	    	
 		</service>
+			<!-- code is added by saurabh for save ward details -->
 		<service name="saveWardMaster" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveWardMaster">
 		<attribute name="wardName" type="String" mode="IN" optional="true" />
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
@@ -1024,6 +1026,7 @@ under the License.
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
 	    	
 		</service>
+			<!-- code is added by saurabh for Update Ward details -->
 		<service name="updateWardDet" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateWardDet">
 		<attribute name="wardName" type="String" mode="IN" optional="true" />
