@@ -21,9 +21,18 @@
     				<li class="back"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
     				<div class="h3" align="center"><b>${uiLabelMap.veiwKhataChange}</b></div>
 	    		</ul>
+	    		<div class="basic-nav" style="margin-top: -37px;">
+  						<ul>
+    					<li>
+							<a>
+								<a href="javascript:commonPS('printId1');" title="${uiLabelMap.CommonPrint}"><align="right"><img src="/images/img/Print.ico" width="25px" height="25px" width="25px" height="25px"/></a>
+							</a>
+    					</li>
+  						</ul>
+ 			 		</div>  
   				</div>
   					
-				
+				<div id="printId1">
         		<table cellspacing="0" class="basic-table table-responsive">
         		
         					<input type="hidden" name="khataChangeId" value="" <li><a title="This is your khataChange Id"/>
@@ -77,7 +86,7 @@
                     </tr>
                    
         		</table>
- 
+ </div>
 	</div>
    <#--	</div>-->
 

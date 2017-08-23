@@ -342,6 +342,28 @@
         <response name="success" type="view" value="veiwAgreementLetter"/>
         <response name="error" type="view" value="veiwAgreementLetter"/>
     </request-map>
+    
+    
+     <request-map uri="createGrievanceCusPortal">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createGrievanceCusPortal"/>
+        <response name="error" type="view" value="createGrievanceCusPortal"/>
+    </request-map>
+    <request-map uri="searchGrievanceCusPortal">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="searchGrievanceCusPortal"/>
+        <response name="error" type="view" value="searchGrievanceCusPortal"/>
+    </request-map>
+     <request-map uri="editGrievanceCusPortal">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editGrievanceCusPortal"/>
+        <response name="error" type="view" value="editGrievanceCusPortal"/>
+    </request-map>
+    <request-map uri="veiwGrievanceCusPortal">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="veiwGrievanceCusPortal"/>
+        <response name="error" type="view" value="veiwGrievanceCusPortal"/>
+    </request-map>
      <!-- End -->
     
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
@@ -404,9 +426,14 @@
    <view-map name="viewKhataChangeDetail" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#viewKhataChangeDetail"/>
    <view-map name="createForAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createForAgreementLetter"/>
    <view-map name="veiwForAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwForAgreementLetter"/>
-    <view-map name="createDeclearationCertificate" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createDeclearationCertificate"/>
-    <view-map name="veiwForDeclearationCerti" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwForDeclearationCerti"/>
-    <view-map name="createAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createAgreementLetter"/>
-    <view-map name="veiwAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwAgreementLetter"/>
+   <view-map name="createDeclearationCertificate" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createDeclearationCertificate"/>
+   <view-map name="veiwForDeclearationCerti" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwForDeclearationCerti"/>
+   <view-map name="createAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createAgreementLetter"/>
+   <view-map name="veiwAgreementLetter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwAgreementLetter"/>
+    
+    <view-map name="createGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createGrievanceCusPortal"/>
+    <view-map name="searchGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#searchGrievanceCusPortal"/>
+    <view-map name="editGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#editGrievanceCusPortal"/>
+     <view-map name="veiwGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwGrievanceCusPortal"/>
    <!-- End -->
 </site-conf>
