@@ -15899,4 +15899,45 @@
         <value xml:lang="en"> Veiw Grievance Detail </value>
     </property>
     <!-- -->
+    <!-- Added by siddhi -->
+     <property key="jobNo">
+        <value xml:lang="en">Job Reference No</value>
+        <value xml:lang="kn">Job Reference No</value>
+    </property>
+    <property key="applyForJob">
+        <value xml:lang="en">Search Job Details</value>
+        <value xml:lang="kn">Search Job Details</value>
+    </property>
+    <property key="applyForJobList">
+        <value xml:lang="en">Job List</value>
+        <value xml:lang="kn">Job List</value>
+    </property>
+    <property key="typeOfJob">
+        <value xml:lang="en">Type of Job</value>
+        <value xml:lang="kn">Type of Job</value>
+    </property>
+     <property key="serviceDate">
+        <value xml:lang="en">Service Date</value>
+        <value xml:lang="kn">Service Date</value>
+    </property>
+     <property key="serviceTime">
+        <value xml:lang="en">Service Time</value>
+        <value xml:lang="kn">Service Time</value>
+    </property>
+     <property key="detailOfJob">
+        <value xml:lang="en">Details of Job</value>
+        <value xml:lang="kn">Details of Job</value>
+    </property>
+     <property key="serviceAddress">
+        <value xml:lang="en">Service Address</value>
+        <value xml:lang="kn">Service Address</value>
+    </property>
+    <property key="assentialDocument">
+        <value xml:lang="en">Essential Document</value>
+        <value xml:lang="kn">Essential Document</value>
+    </property>
+    <property key="ViewJobDetail">
+        <value xml:lang="en">View Job Detail</value>
+        <value xml:lang="kn">View Job Detail</value>
+    </property>
 </resource>
