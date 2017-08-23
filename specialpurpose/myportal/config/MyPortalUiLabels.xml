@@ -358,7 +358,7 @@
         <value xml:lang="en">Connection Details</value>
     </property>
     <property key="assentialDocument">
-        <value xml:lang="en">Assential Document</value>
+        <value xml:lang="en">assential Document</value>
     </property>
     <property key="feeForConnection">
         <value xml:lang="en">Fee For Connection</value>
@@ -800,7 +800,6 @@
                  Owner.								Signature of Applicants
 </value>
 </property>
- 
      <!-- ============End============= -->
     
 </resource>

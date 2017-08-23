@@ -28,6 +28,7 @@
   	</div>
 	<div class="screenlet-body">
 	<table class="basic-table" cellspacing="0">
+
 		<tr>
             <td class="label">${uiLabelMap.connectionNo}</td>
              <td><input name="consumerNo"  type="text" maxlength="10" value="" placeholder="${uiLabelMap.connectionNo}"></td>

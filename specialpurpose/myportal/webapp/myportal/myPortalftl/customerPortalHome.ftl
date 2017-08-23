@@ -89,6 +89,12 @@
 						<a href="updatecustomerdetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Update Personal Detail </a>
 					</li>
 					<li>
+						<a href="createGrievanceCusPortal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply Grievance </a>
+					</li>
+					<li>
+						<a href="searchGrievanceCusPortal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance Detail </a>
+					</li>
+					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Application Status </a>
 					</li>
 					<li>

@@ -13,11 +13,23 @@
   <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.ConnectionList}</li>
+      <div class="basic-nav" style="margin-top: -37px;">
+  				<ul>
+    				<li>
+							<a title="Create Zone Master" href="<@ofbizUrl>connectionApply</@ofbizUrl>">
+								<a href="javascript:commonPS('printId1');" title="${uiLabelMap.CommonPrint}"><align="right"><img src="/images/img/Print.ico" width="25px" height="25px" width="25px" height="25px"/></a>
+							</a>
+    				</li>
+  				</ul>
+ 			 
+  			</div>  
     </ul>
     
   </div>
+  <div id="printId1">
    <div class="screenlet-body min-scroll-div">
    <div class="">
+   	
     <table class="basic-table table-responsive" cellspacing="0">
     <thead>
          <tr class="header-row-2">
@@ -74,6 +86,7 @@
     </div>
   </div>
 </div>
+</div>
 </form>
 
 <script type="text/javascript" language="javascript">
@@ -85,7 +98,19 @@
 	    form.submit();
 	}
 	
-     
-	
+    	<#--  	 function commonPS(divId)
+         {
+		   	var html="<html>";
+					html+= document.getElementById(divId).innerHTML;
+				html+="</html>";
+				
+				var printWin = window.open('','','left=0,top=0,width=10,height=5,toolbar=0,scrollbars=0,status=0');
+				printWin.document.write(html);
+				printWin.document.close();
+				printWin.focus();
+				printWin.print();
+				printWin.close();
+         } 
+	-->
 	
 </script>
