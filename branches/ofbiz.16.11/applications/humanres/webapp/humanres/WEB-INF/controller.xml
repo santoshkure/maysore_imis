@@ -1777,6 +1777,47 @@ under the License.
         <response name="error" type="view" value="veiwGrievanceEmpPortal"/>
     </request-map>
       <!-- END -->
+      <!--Added by siddhi -->
+    <request-map uri="jobDetails">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="jobDetails"/>
+        <response name="error" type="view" value="jobDetails" />
+    </request-map>
+     <request-map uri="viewJobDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewJobDetails"/>
+        <response name="error" type="view" value="viewJobDetails"/>
+    </request-map>
+    <request-map uri="actionJobDetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="actionJobDetails"/>
+        <response name="error" type="view" value="actionJobDetails"/>
+    </request-map>
+    <request-map uri="searchMeterReading">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="searchMeterReading"/>
+        <response name="error" type="view" value="searchMeterReading"/>
+    </request-map>
+     <request-map uri="createMeterReading">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createMeterReading"/>
+        <response name="error" type="view" value="createMeterReading"/>
+    </request-map>
+    <request-map uri="editmeterreading">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editmeterreading"/>
+        <response name="error" type="view" value="editmeterreading"/>
+    </request-map>
+     <request-map uri="viewreadingdetails">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewreadingdetails"/>
+        <response name="error" type="view" value="viewreadingdetails"/>
+    </request-map>
+     <request-map uri="actionmeterreading">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="actionmeterreading"/>
+        <response name="error" type="view" value="actionmeterreading"/>
+    </request-map>
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -2012,4 +2053,14 @@ under the License.
           <view-map name="GrievanceDetailEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceDetailEmpPortal"/>
            <view-map name="GrievanceActionEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceActionEmpPortal"/>
            <view-map name="veiwGrievanceEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#veiwGrievanceEmpPortal"/>
+           <!--Added by siddhi -->
+         <view-map name="jobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#jobDetails"/>
+         <view-map name="viewJobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewJobDetails"/>
+         <view-map name="actionJobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionJobDetails"/>
+         <view-map name="searchMeterReading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#searchMeterReading"/>
+         <view-map name="createMeterReading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createMeterReading"/>
+         <view-map name="editmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editmeterreading"/>
+         <view-map name="viewreadingdetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewreadingdetails"/>
+         <view-map name="actionmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionmeterreading"/>
+</site-conf>
 </site-conf>

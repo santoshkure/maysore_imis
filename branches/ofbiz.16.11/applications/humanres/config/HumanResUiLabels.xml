@@ -4065,4 +4065,93 @@
       <property key="approveRejectGrievance">
         <value xml:lang="en">approve/Reject Grievance</value>
       </property> 
+      <!-- added by Siddhi -->
+    <property key="actionJobDetail">
+        <value xml:lang="en">Approve/Reject Job details</value>
+        <value xml:lang="kn">Approve/Reject Job details</value>
+    </property>
+    <property key="meterReadingDetails">
+        <value xml:lang="en">Search Meter Reading Details</value>
+        <value xml:lang="kn">Search Meter Reading Details</value>
+    </property>
+    <property key="createMeterReading">
+        <value xml:lang="en">Create Meter Reading Details</value>
+        <value xml:lang="kn">Create Meter Reading Details</value>
+    </property>
+     <property key="readingDate">
+        <value xml:lang="en">Reading Date</value>
+        <value xml:lang="kn">Reading Date</value>
+    </property>
+    <property key="connectionId">
+        <value xml:lang="en">Connection Id</value>
+        <value xml:lang="kn">Connection Id</value>
+    </property>
+    <property key="previousReading">
+        <value xml:lang="en">Previous Reading</value>
+        <value xml:lang="kn">Previous Reading</value>
+    </property>
+     <property key="currentReading">
+        <value xml:lang="en">Current Reading</value>
+        <value xml:lang="kn">Current Reading</value>
+    </property>
+    <property key="totalpayableUnit">
+        <value xml:lang="en">Total payable Unit</value>
+        <value xml:lang="kn">Total payable Unit</value>
+    </property>
+    <property key="previousBalance">
+        <value xml:lang="en">Previous Balance(if any)</value>
+        <value xml:lang="kn">Previous Balance(if any)</value>
+    </property>
+     <property key="surcharges">
+        <value xml:lang="en">Surcharges (if any)</value>
+        <value xml:lang="kn">Surcharges (if any)</value>
+    </property>
+    <property key="tariffTaxDetails">
+        <value xml:lang="en">Tariff and Tax Details</value>
+        <value xml:lang="kn">Tariff and Tax Details</value>
+    </property>
+    <property key="totalPayableAmount">
+        <value xml:lang="en">Total Payable Amount</value>
+        <value xml:lang="kn">Total Payable Amount</value>
+    </property>
+    <property key="billgenerationDate">
+        <value xml:lang="en">Bill generation Date</value>
+        <value xml:lang="kn">Bill generation Date</value>
+    </property>
+    <property key="lastDateSubmission">
+        <value xml:lang="en">Last Date of Bill Submission</value>
+        <value xml:lang="kn">Last Date of Bill Submission</value>
+    </property>
+    <property key="amountAftDueDate">
+        <value xml:lang="en">Amount after Due Date</value>
+        <value xml:lang="kn">Amount after Due Date</value>
+    </property>
+     <property key="readingDate">
+        <value xml:lang="en">Reading Date</value>
+        <value xml:lang="kn">Reading Date</value>
+    </property>
+     <property key="readingDetail">
+        <value xml:lang="en">Reading Detail</value>
+        <value xml:lang="kn">Reading Detail</value>
+    </property>
+    <property key="customerDetail">
+        <value xml:lang="en">Customer Detail</value>
+        <value xml:lang="kn">Customer Detail</value>
+    </property>
+     <property key="listofMeterReading">
+        <value xml:lang="en">List Of Meter Reading</value>
+        <value xml:lang="kn">List Of Meter Reading</value>
+    </property>
+     <property key="editMeterReading">
+        <value xml:lang="en">Edit Meter Reading Detail</value>
+        <value xml:lang="kn">Edit Meter Reading Detail</value>
+    </property>
+    <property key="viewMeterReading">
+        <value xml:lang="en">View Meter Reading Detail</value>
+        <value xml:lang="kn">View Meter Reading Detail</value>
+    </property>
+    <property key="apprejMeterReading">
+        <value xml:lang="en">Approve/Reject Meter Reading Detail</value>
+        <value xml:lang="kn">Approve/Reject Meter Reading Detail</value>
+    </property>
 </resource>

@@ -2123,4 +2123,145 @@ under the License.
         </section>
     </screen>
     <!--End  -->
+     <!--Added by siddhi -->
+    <screen name="jobDetails">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchJobDetails.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/listOfJobDetails.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="viewJobDetails">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/ViewJobDetailsForEMP.ftl"/>	
+                    		
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="actionJobDetails">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/ActionJobDetailsForEMP.ftl"/>	
+                    		
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="searchMeterReading">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchMeterReading.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchMeterReadingList.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="createMeterReading">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/createMeterReading.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="editmeterreading">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/editMeterReading.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="viewreadingdetails">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewMeterReading.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="actionmeterreading">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/actionMeterReading.ftl"/>
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 </screens>

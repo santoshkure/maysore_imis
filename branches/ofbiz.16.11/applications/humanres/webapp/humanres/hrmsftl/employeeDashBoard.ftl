@@ -170,7 +170,7 @@
 						<a href="registerMeterDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter Details </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
+						<a href="searchMeterReading"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
 					</li>
 					<li>
 						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change Details</a>
@@ -180,6 +180,9 @@
 					</li>
 					<li>
 						<a href="complaintRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint Details</a>
+					</li>
+					<li>
+						<a href="jobDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Job Details</a>
 					</li>
 					<li>
 						<a href="khataChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Details </a>
