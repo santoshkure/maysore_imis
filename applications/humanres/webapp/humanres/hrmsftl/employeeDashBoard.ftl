@@ -176,7 +176,7 @@
 						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change Details</a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance Details </a>
+						<a href="GrievanceDetailEmpPortal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance Details </a>
 					</li>
 					<li>
 						<a href="complaintRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint Details</a>

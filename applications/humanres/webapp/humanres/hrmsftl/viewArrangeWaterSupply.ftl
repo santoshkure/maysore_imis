@@ -15,7 +15,18 @@
   				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center">${uiLabelMap.viewArrWaterSupply}</div>
 			</ul>
+			<div class="basic-nav" style="margin-top: -37px;">
+  				<ul>
+    				<li>
+							<a title="Create Zone Master" href="<@ofbizUrl>connectionApply</@ofbizUrl>">
+								<a href="javascript:commonPS('printId1');" title="${uiLabelMap.CommonPrint}"><align="right"><img src="/images/img/Print.ico" width="25px" height="25px" width="25px" height="25px"/></a>
+							</a>
+    				</li>
+  				</ul>
+ 			 
+  			</div> 
 	</div>
+	<div id="printId1">
        <pre>
               MYSORE MAHANAGARAPALIKE,
               MYSORE
@@ -38,6 +49,6 @@
                                                                                   
                                                                                   Yours faithfully
          </pre>
-      </div>
+      </div> </div>
     </div>
  </form>
