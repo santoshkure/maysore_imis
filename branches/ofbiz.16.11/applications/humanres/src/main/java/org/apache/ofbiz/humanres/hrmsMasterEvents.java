@@ -287,7 +287,7 @@ public class hrmsMasterEvents {
 		 *  If there is a failure in one table, nothing will be committed, taken care by service engine.  
 		 *  Code added by saurabh on 14 aug 2017
 		 */		
-		public static Map<String, Object> updateZoneDet(DispatchContext dctx,
+	/*	public static Map<String, Object> updateZoneDet(DispatchContext dctx,
 				Map<String, ? extends Object> context) {
 			Map<String, Object> result = ServiceUtil.returnSuccess();
 			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
@@ -316,7 +316,7 @@ public class hrmsMasterEvents {
 
 					try {
 					    List<EntityExpr> expList = new LinkedList<EntityExpr>();
-	 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+	 					List<EntityExpr> expList = FastList.newInstance();
 						EntityCondition mainCondition = null;
 
 						if (UtilValidate.isNotEmpty(zoneNameUPPER)) {
@@ -353,9 +353,9 @@ public class hrmsMasterEvents {
 				}	
 				
 				
-          /* if(status.equals("edit")){
+           if(status.equals("edit")){
         	   officeZoneDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneName,"cityName",cityName,"officeName",officeName,"status","A","remark",remark,
-        			   "createdate",dateofcreatevari,"zoneTypeId",zoneNameUPPER);*/
+        			   "createdate",dateofcreatevari,"zoneTypeId",zoneNameUPPER);
            }else if(status.equals("status")){
         	   officeZoneDetails = UtilMisc.toMap("status",activestatus);	
 			}
@@ -385,7 +385,108 @@ public class hrmsMasterEvents {
 			
 			
 			return result;		
-		} 
+		} */
+ 		  public static Map<String, Object> updateZoneDet(DispatchContext dctx,
+ 					Map<String, ? extends Object> context) {
+ 				Map<String, Object> result = ServiceUtil.returnSuccess();
+ 				GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+ 				LocalDispatcher dispatcher = dctx.getDispatcher();
+ 				GenericValue userLogin = (GenericValue) context.get("userLogin");
+ 				final Locale locale = (Locale) context.get("locale");
+ 				String zoneName =(String) context.get("zoneName");
+ 				String cityName =(String) context.get("cityName");	
+ 				String officeName =(String) context.get("officeName");			
+ 				String remark =(String) context.get("remark");
+ 				String status =(String) context.get("status");
+ 				String activestatus =(String) context.get("activestatus");
+ 				String zoneId =(String) context.get("zoneId");
+ 				String createDated =(String) context.get("createdate");
+ 				java.sql.Date dateofcreatevari = getConvertedDate(createDated);
+ 			    System.out.println("~~~~~~~~~~~status~~~~~~-----------------------------------~~~~~~"+status);	
+ 			    System.out.println("~~~~~~~~~~~zoneId~~~~~~-----------------------------------~~~~~~"+zoneId);	
+
+ 			    System.out.println("~~~~~~~~~~~activestatus~~~~~~-----------------------------------~~~~~~"+activestatus);	
+ 			    System.out.println("~~~~~~~~~~~zoneName~~~~~~-----------------------------------~~~~~~"+zoneName);	
+ 			    String zoneTypeIdUpper = zoneName.toUpperCase();
+ 			   /* Map officeWardDetails = null;
+ 				try{
+ 				if (UtilValidate.isNotEmpty(zoneId))
+ 				{
+ 					   System.out.println("~~~~~~~~~~~hellotttttttttttt~~~~~~-----------------------------------~~~~~~"+status);	
+ 	           if(status.equals("edit")){
+ 	        	   officeWardDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneName,"cityName",cityName,"officeName",officeName,"status","A","remark",remark,
+ 	        			   "createDated",dateofcreatevar,"zoneTypeId",zoneId);
+ 	           }else if(status.equals("status")){
+ 	        	   
+ 	        	   System.out.println("~~~~~~~~~~~hello~~~~~~-----------------------------------~~~~~~"+status);	 
+ 	        	   officeWardDetails = UtilMisc.toMap("status",activestatus);	
+ 				}
+ 	           if(status.equals("delete")){
+ 	               GenericValue officeType = EntityQuery.use(delegator).from("ZoneMaster").where("zoneId", zoneId).queryOne();
+
+ 	        	   //GenericValue officeType= delegator.findByPrimaryKey(
+ 	        		//	   "OfficeTypeMaster",UtilMisc.toMap("ofcTypeId",officeTypeId,"ofcTypeName",officeTypeName));
+ 	        	   officeType.remove();
+ 	      			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, zoneName, locale));   
+
+ 	           }else{
+ 	        	   Integer valueToStore = delegator.storeByCondition("ZoneMaster", officeWardDetails
+ 	   					,EntityCondition.makeCondition("zoneId",EntityOperator.EQUALS,zoneId));
+ 	   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, zoneName, locale));   
+ 	                 }
+ 				
+ 	             }	
+ 				
+
+ 				}catch(GeneralException e) {
+ 					// It is the mother of all the ofbiz exceptions
+ 					// All the specific exceptions are handled above
+ 					// It would be executed in the worst case scenario
+ 					Debug.log("Exception occured : " + e );
+ 					//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+ 				}			
+ 				
+ 				
+ 				return result;		
+ 			} */
+ 			    Map officeWardDetails = null;
+ 				try{
+ 				if (UtilValidate.isNotEmpty(zoneId))
+ 				{
+ 	           if(status.equals("edit")){
+ 	        	   officeWardDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneName,"cityName",cityName,"officeName",officeName,"status","A","remark",remark,
+ 	        			   "createDated",dateofcreatevari,"zoneTypeId",zoneId);
+ 	           }else if(status.equals("status")){
+ 	        	   officeWardDetails = UtilMisc.toMap("status",activestatus);	
+ 				}
+ 	           if(status.equals("delete")){
+ 	               GenericValue officeType = EntityQuery.use(delegator).from("ZoneMaster").where("zoneId", zoneId).queryOne();
+
+ 	        	   //GenericValue officeType= delegator.findByPrimaryKey(
+ 	        		//	   "OfficeTypeMaster",UtilMisc.toMap("ofcTypeId",officeTypeId,"ofcTypeName",officeTypeName));
+ 	        	   officeType.remove();
+ 	      			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, zoneName, locale));   
+
+ 	           }else{
+ 	        	   Integer valueToStore = delegator.storeByCondition("ZoneMaster", officeWardDetails
+ 	   					,EntityCondition.makeCondition("zoneId",EntityOperator.EQUALS,zoneId));
+ 	   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, zoneName, locale));   
+ 	                 }
+ 				
+ 	             }	
+ 				
+
+ 				}catch(GeneralException e) {
+ 					// It is the mother of all the ofbiz exceptions
+ 					// All the specific exceptions are handled above
+ 					// It would be executed in the worst case scenario
+ 					Debug.log("Exception occured : " + e );
+ 					//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+ 				}			
+ 				
+ 				
+ 				return result;		
+ 			} 
 		/**
 		 * Method Name :  saveWardmaster
 		 * @Version 1.0
@@ -479,7 +580,7 @@ public class hrmsMasterEvents {
 		 *  If there is a failure in one table, nothing will be committed, taken care by service engine.  
 		 *  Code added by saurabh on 14 aug 2017
 		 */		
-		public static Map<String, Object> updateWardDet(DispatchContext dctx,
+		/*public static Map<String, Object> updateWardDet(DispatchContext dctx,
 				Map<String, ? extends Object> context) {
 			Map<String, Object> result = ServiceUtil.returnSuccess();
 			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
@@ -508,7 +609,7 @@ public class hrmsMasterEvents {
 
 						try {
 						    List<EntityExpr> expList = new LinkedList<EntityExpr>();
-		 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+		 					List<EntityExpr> expList = FastList.newInstance();
 							EntityCondition mainCondition = null;
 
 							if (UtilValidate.isNotEmpty(wardNameUPPER)) {
@@ -543,7 +644,7 @@ public class hrmsMasterEvents {
 						}
 					}	
 
-        	  /* officeWardDetails = UtilMisc.toMap("wardId",wardId,"wardName",wardName,"cityName",cityName,"zoneId",zoneName,"status","A","wardRemark",wardRemark);*/
+        	   officeWardDetails = UtilMisc.toMap("wardId",wardId,"wardName",wardName,"cityName",cityName,"zoneId",zoneName,"status","A","wardRemark",wardRemark);
            }else if(status.equals("status")){
         	   officeWardDetails = UtilMisc.toMap("status",activestatus);	
 			}
@@ -563,6 +664,58 @@ public class hrmsMasterEvents {
 			
              }	
  			catch(GeneralException e) {
+				// It is the mother of all the ofbiz exceptions
+				// All the specific exceptions are handled above
+				// It would be executed in the worst case scenario
+				Debug.log("Exception occured : " + e );
+				//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+			}			
+			
+			
+			return result;		
+		} */
+		public static Map<String, Object> updateWardDet(DispatchContext dctx,
+				Map<String, ? extends Object> context) {
+			Map<String, Object> result = ServiceUtil.returnSuccess();
+			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			LocalDispatcher dispatcher = dctx.getDispatcher();
+			GenericValue userLogin = (GenericValue) context.get("userLogin");
+			final Locale locale = (Locale) context.get("locale");
+			String wardName =(String) context.get("wardName");
+			String zoneName =(String) context.get("zoneName");	
+			String cityName =(String) context.get("cityName");			
+			String wardRemark =(String) context.get("wardRemark");
+			String status =(String) context.get("status");
+			String activestatus =(String) context.get("activestatus");
+			String wardId =(String) context.get("wardId");
+		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~"+status);	
+			Map officeWardDetails = null;
+			try{
+			if (UtilValidate.isNotEmpty(wardId))
+			{
+           if(status.equals("edit")){
+        	   officeWardDetails = UtilMisc.toMap("wardId",wardId,"wardName",wardName,"cityName",cityName,"zoneId",zoneName,"status","A","wardRemark",wardRemark);
+           }else if(status.equals("status")){
+        	   officeWardDetails = UtilMisc.toMap("status",activestatus);	
+			}
+           if(status.equals("delete")){
+               GenericValue officeType = EntityQuery.use(delegator).from("WardMaster").where("wardId", wardId).queryOne();
+
+        	   //GenericValue officeType= delegator.findByPrimaryKey(
+        		//	   "OfficeTypeMaster",UtilMisc.toMap("ofcTypeId",officeTypeId,"ofcTypeName",officeTypeName));
+        	   officeType.remove();
+      			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, wardName, locale));   
+
+           }else{
+        	   Integer valueToStore = delegator.storeByCondition("WardMaster", officeWardDetails
+   					,EntityCondition.makeCondition("wardId",EntityOperator.EQUALS,wardId));
+   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, wardName, locale));   
+                 }
+			
+             }	
+			
+
+			}catch(GeneralException e) {
 				// It is the mother of all the ofbiz exceptions
 				// All the specific exceptions are handled above
 				// It would be executed in the worst case scenario
