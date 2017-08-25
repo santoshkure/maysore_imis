@@ -2051,8 +2051,8 @@ under the License.
          <!-- END -->
          
           <view-map name="GrievanceDetailEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceDetailEmpPortal"/>
-           <view-map name="GrievanceActionEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceActionEmpPortal"/>
-           <view-map name="veiwGrievanceEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#veiwGrievanceEmpPortal"/>
+          <view-map name="GrievanceActionEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceActionEmpPortal"/>
+          <view-map name="veiwGrievanceEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#veiwGrievanceEmpPortal"/>
            <!--Added by siddhi -->
          <view-map name="jobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#jobDetails"/>
          <view-map name="viewJobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewJobDetails"/>
@@ -2062,5 +2062,4 @@ under the License.
          <view-map name="editmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editmeterreading"/>
          <view-map name="viewreadingdetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewreadingdetails"/>
          <view-map name="actionmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionmeterreading"/>
-</site-conf>
 </site-conf>
