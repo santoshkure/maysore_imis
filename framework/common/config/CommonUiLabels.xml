@@ -15534,38 +15534,49 @@
     <!-- Added By Siddhi -->
     <property key="CommonMandatoryNote">
         <value xml:lang="en">Note: Fields marked with asterisk ( * ) are mandatory</value>
+        <value xml:lang="kn">Note: Fields marked with asterisk ( * ) are mandatory</value>
     </property>
     
     <property key="master">
         <value xml:lang="en">Master</value>
+        <value xml:lang="kn">Master</value>
     </property>
     
     <property key="remark">
         <value xml:lang="en">Remark</value>
+        <value xml:lang="kn">Remark</value>
     </property>
      <property key="createdate">
         <value xml:lang="en">Date of Creation</value>
+        <value xml:lang="kn">Date of Creation</value>
     </property>
      <property key="sno">
         <value xml:lang="en">S.No.</value>
+        <value xml:lang="kn">S.No.</value>
     </property>
     <property key="Status">
         <value xml:lang="en">Status</value>
+        <value xml:lang="kn">Status</value>
     </property>
      <property key="edit">
         <value xml:lang="en">Edit</value>
+        <value xml:lang="kn">Edit</value>
     </property>
     <property key="Remove">
         <value xml:lang="en">Remove</value>
+        <value xml:lang="kn">Remove</value>
     </property>
     <property key="activeDeactive">
         <value xml:lang="en">Active/Deactive</value>
+        <value xml:lang="kn">Active/Deactive</value>
     </property>
     <property key="Deactive">
         <value xml:lang="en">Deactive</value>
+        <value xml:lang="kn">Deactive</value>
     </property>
      <property key="search">
         <value xml:lang="en">Search</value>
+        <value xml:lang="kn">Search</value>
     </property>
 
 <!-- added by shubham Malviya for common UiLable on 31/07/2017 -->
@@ -15866,37 +15877,48 @@
     
 <!-- Added by anubha -->
    <property key="createGrievance">
-        <value xml:lang="en"> Create Grievance Detail </value>
+        <value xml:lang="en">Create Grievance Detail</value>
+        <value xml:lang="kn">Create Grievance Detail</value>
     </property>
     <property key="grievanceReceipt">
-        <value xml:lang="en">  Grievance Receipt Detail </value>
+        <value xml:lang="en">Grievance Receipt Detail</value>
+        <value xml:lang="kn">Grievance Receipt Detail</value>
     </property>
      <property key="receiptNo">
-        <value xml:lang="en">  Receipt No. </value>
+        <value xml:lang="en">Receipt No.</value>
+        <value xml:lang="kn">Receipt No.</value>
     </property>
     <property key="grievanceDetail">
-        <value xml:lang="en">  Grievance Detail </value>
+        <value xml:lang="en">Grievance Detail</value>
+        <value xml:lang="kn">Grievance Detail</value>
     </property>
     <property key="grievanceDate">
-        <value xml:lang="en">  Date of Grievance </value>
+        <value xml:lang="en">Date of Grievance</value>
+        <value xml:lang="kn">Date of Grievance</value>
     </property>
     <property key="grievancePetitionDate">
-        <value xml:lang="en">Grievance Petition Date </value>
+        <value xml:lang="en">Grievance Petition Date</value>
+        <value xml:lang="kn">Grievance Petition Date</value>
     </property>
      <property key="typeOfGrievance">
-        <value xml:lang="en">Type Of Grievance </value>
+        <value xml:lang="en">Type Of Grievance</value>
+        <value xml:lang="kn">Type Of Grievance</value>
     </property>
     <property key="name">
         <value xml:lang="en">Name</value>
+        <value xml:lang="kn">Name</value>
     </property>
     <property key="editGrievance">
-        <value xml:lang="en"> Edit Grievance Detail </value>
+        <value xml:lang="en">Edit Grievance Detail</value>
+        <value xml:lang="kn">Edit Grievance Detail</value>
     </property>
     <property key="grievanceList">
-        <value xml:lang="en">  Grievance List </value>
+        <value xml:lang="en">Grievance List</value>
+        <value xml:lang="kn">Grievance List</value>
     </property>
      <property key="veiwGrievance">
-        <value xml:lang="en"> Veiw Grievance Detail </value>
+        <value xml:lang="en">Veiw Grievance Detail</value>
+        <value xml:lang="kn">Veiw Grievance Detail</value>
     </property>
     <!-- -->
     <!-- Added by siddhi -->
