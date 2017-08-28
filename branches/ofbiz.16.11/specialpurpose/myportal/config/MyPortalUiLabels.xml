@@ -274,322 +274,425 @@
     </property>
      <property key="viewHistory">
         <value xml:lang="en">View History</value>
+        <value xml:lang="kn">View History</value>
     </property>
      <property key="tariffPlan">
         <value xml:lang="en">Tariff Plans</value>
+        <value xml:lang="kn">Tariff Plans</value>
     </property>
     <property key="selectTariffPlan">
         <value xml:lang="en">Select Tariff Plan</value>
+        <value xml:lang="kn">Select Tariff Plan</value>
     </property>
     <property key="calculate">
         <value xml:lang="en">Calculate</value>
+        <value xml:lang="kn">Calculate</value>
     </property>
      <property key="billhistory">
         <value xml:lang="en">View Bill History</value>
+        <value xml:lang="kn">View Bill History</value>
     </property>
     <property key="searchRTIApp">
         <value xml:lang="en">Search RTI Application Details</value>
+        <value xml:lang="kn">Search RTI Application Details</value>
     </property>
     <property key="updatePersonalDetails">
         <value xml:lang="en">Update Personal Details</value>
+        <value xml:lang="kn">Update Personal Details</value>
     </property>
      <property key="meterNumber">
         <value xml:lang="en">Meter Number</value>
+        <value xml:lang="kn">Meter Number</value>
     </property>
      <property key="billDate">
         <value xml:lang="en">Bill Date</value>
+        <value xml:lang="kn">Bill Date</value>
     </property>
      <property key="billReading">
         <value xml:lang="en">Bill Reading</value>
+        <value xml:lang="kn">Bill Reading</value>
     </property>
      <property key="unitReading">
         <value xml:lang="en">Unit of Reading</value>
+        <value xml:lang="kn">Unit of Reading</value>
     </property>
      <property key="billAmount">
         <value xml:lang="en">Bill Amount</value>
+        <value xml:lang="kn">Bill Amount</value>
     </property>
     <property key="billPayment">
         <value xml:lang="en">Bill Payment</value>
+        <value xml:lang="kn">Bill Payment</value>
     </property>
      <property key="emailId">
         <value xml:lang="en">Email id</value>
+        <value xml:lang="kn">Email id</value>
     </property>
     <property key="paymentAmount">
         <value xml:lang="en">Payable Amount</value>
+        <value xml:lang="kn">Payable Amount</value>
     </property>
     <property key="paidAmount">
         <value xml:lang="en">Paid Amount</value>
+        <value xml:lang="kn">Paid Amount</value>
     </property>
     <property key="paymentRefNo">
         <value xml:lang="en">Payment Refrence No.</value>
+         <value xml:lang="kn">Payment Refrence No.</value>
     </property>
     <property key="paymentStatus">
         <value xml:lang="en">Payment Status</value>
+        <value xml:lang="kn">Payment Status</value>
     </property>
     <property key="paymentMode">
         <value xml:lang="en">Payment Mode</value>
+        <value xml:lang="kn">Payment Mode</value>
     </property>
     <property key="accountCardNo">
         <value xml:lang="en">Account No./Card No.</value>
+        <value xml:lang="kn">Account No./Card No.</value>
     </property>
     <property key="bankWalletName">
         <value xml:lang="en">Bank/Wallet Name</value>
+        <value xml:lang="kn">Bank/Wallet Name</value>
     </property>
     <property key="dateofPayment">
         <value xml:lang="en">Date of Payment</value>
+        <value xml:lang="kn">Date of Payment</value>
     </property>
      <property key="makePayment">
         <value xml:lang="en">Make Payment</value>
+        <value xml:lang="kn">Make Payment</value>
     </property>
     <property key="billCalculator">
         <value xml:lang="en">Bill Calculator</value>
+        <value xml:lang="kn">Bill Calculator</value>
     </property>
     <property key="previousBillReading">
         <value xml:lang="en">Previous Bill Reading</value>
+        <value xml:lang="kn">Previous Bill Reading</value>
     </property>
     <property key="currentBillReading">
         <value xml:lang="en">Current Bill Reading</value>
+        <value xml:lang="kn">Current Bill Reading</value>
     </property>
     <property key="RTIApplicationList">
         <value xml:lang="en">RTI Application List</value>
+        <value xml:lang="kn">RTI Application List</value>
     </property>
  <!-- Added By Anubha On 03/08/2017 For Connection Detail -->
     <property key="connectionApply">
         <value xml:lang="en">Connection Details</value>
+         <value xml:lang="kn">Connection Details</value>
     </property>
     <property key="assentialDocument">
         <value xml:lang="en">assential Document</value>
+        <value xml:lang="kn">assential Document</value>
     </property>
     <property key="feeForConnection">
         <value xml:lang="en">Fee For Connection</value>
+        <value xml:lang="kn">Fee For Connection</value>
     </property>
     <property key="feeStatus">
         <value xml:lang="en">Fee Status</value>
+        <value xml:lang="kn">Fee Status</value>
     </property>
     <property key="connectionNo">
         <value xml:lang="en">Connection No.</value>
+        <value xml:lang="kn">Connection No.</value>
     </property>
     <property key="customerNo">
         <value xml:lang="en">Customer No.</value>
+        <value xml:lang="kn">Customer No.</value>
     </property>
      <property key="connectionStatus">
         <value xml:lang="en">Connection Status</value>
+        <value xml:lang="kn">Connection Status</value>
     </property>
     <property key="editConnection">
         <value xml:lang="en">Edit Connection</value>
+        <value xml:lang="kn">Edit Connection</value>
     </property>
     <property key="connectionCategory">
         <value xml:lang="en">Category Of Water Use</value>
+        <value xml:lang="kn">Category Of Water Use</value>
     </property>
      <property key="disconnectionApply">
         <value xml:lang="en">Disconnection Details</value>
+        <value xml:lang="kn">Disconnection Details</value>
     </property>
     <property key="typeOfDisconnection">
         <value xml:lang="en">Type Of Disconnection</value>
+        <value xml:lang="kn">Type Of Disconnection</value>
     </property>
      
      <property key="ConnectionList">
         <value xml:lang="en">Connection List</value>
+        <value xml:lang="kn">Connection List</value>
     </property>
     <property key="searchConnection">
         <value xml:lang="en">Search Connection</value>
+        <value xml:lang="kn">Search Connection</value>
     </property>
     <property key="applicationDate">
         <value xml:lang="en">Application Date</value>
+        <value xml:lang="kn">Application Date</value>
     </property>
      <property key="reasonForDisconnection">
         <value xml:lang="en">Reason For Disconnection</value>
+        <value xml:lang="kn">Reason For Disconnection</value>
     </property>
     <property key="dueAmount">
         <value xml:lang="en">Due Amount</value>
+        <value xml:lang="kn">Due Amount</value>
     </property>
      <property key="applicationType">
         <value xml:lang="en">Application Type</value>
+        <value xml:lang="kn">Application Type</value>
     </property>
     <property key="typeOfBuilding">
         <value xml:lang="en">Type Of Building</value>
+        <value xml:lang="kn">Type Of Building</value>
     </property>
      <property key="changeKhata">
         <value xml:lang="en">Apply for Khata Change</value>
+        <value xml:lang="kn">Apply for Khata Change</value>
     </property>
     <property key="oldConnectionDetail">
         <value xml:lang="en">Old Connection Details</value>
+        <value xml:lang="kn">Old Connection Details</value>
     </property>
     <property key="newchangeKhata">
         <value xml:lang="en">New Khata Information</value>
+        <value xml:lang="kn">New Khata Information</value>
     </property>
     <property key="newKhataNo">
         <value xml:lang="en">New Khata Number</value>
+        <value xml:lang="kn">New Khata Number</value>
     </property>
     <property key="newKhataId">
         <value xml:lang="en">New Khata ID</value>
+        <value xml:lang="kn">New Khata ID</value>
     </property>
      <property key="khattaList">
         <value xml:lang="en">Khata List</value>
+        <value xml:lang="kn">Khata List</value>
     </property>
     <property key="changeKhataRequest">
         <value xml:lang="en">Khata Change Details</value>
+        <value xml:lang="kn">Khata Change Details</value>
     </property>
     <property key="searchKhata">
         <value xml:lang="en">Search Khata</value>
+        <value xml:lang="kn">Search Khata</value>
     </property>
     <property key="serviceAddress">
         <value xml:lang="en">Service Address</value>
+        <value xml:lang="kn">Service Address</value>
     </property>
     <!-- ============End============= -->
  <!-- Added By nikhil On 04/08/2017 -->
    <property key="billDetail">
         <value xml:lang="en">Bill Correction Details</value>
+        <value xml:lang="kn">Bill Correction Details</value>
     </property>
      <property key="billCorrectionNo">
         <value xml:lang="en">Bill Correction No.</value>
+        <value xml:lang="kn">Bill Correction No.</value>
     </property>
     
      <property key="billId">
         <value xml:lang="en">Bill Id</value>
+        <value xml:lang="kn">Bill Id</value>
     </property>
     
       <property key="issueDetails">
         <value xml:lang="en">Issue Details</value>
+        <value xml:lang="kn">Issue Details</value>
     </property>
       <property key="billCorrectionApplyDate">
         <value xml:lang="en">Bill Correction Apply Date</value>
+        <value xml:lang="kn">Bill Correction Apply Date</value>
     </property>
       <property key="complaintDescription">
         <value xml:lang="en">Complaint Description</value>
+        <value xml:lang="kn">Complaint Description</value>
     </property>
     <property key="complaintDate">
         <value xml:lang="en">Complaint Date</value>
+        <value xml:lang="kn">Complaint Date</value>
     </property>
      <property key="complaintType">
         <value xml:lang="en">Complaint Type</value>
+        <value xml:lang="kn">Complaint Type</value>
     </property>
      <property key="registerComplaint">
         <value xml:lang="en">Register Complaint Details</value>
+        <value xml:lang="kn">Register Complaint Details</value>
     </property>
     <property key="editRegisterComplaint">
         <value xml:lang="en">Edit Complaint Details</value>
+        <value xml:lang="kn">Edit Complaint Details</value>
     </property>
      <property key="createBillCorrection">
         <value xml:lang="en">Create Bill Correction Details</value>
+        <value xml:lang="kn">Create Bill Correction Details</value>
     </property>
     
     <property key="viewBillCorrection">
         <value xml:lang="en">View Bill Correction Details</value>
+        <value xml:lang="kn">View Bill Correction Details</value>
     </property>
     
     <property key="ViewJobDetail">
         <value xml:lang="en">View Job Details</value>
+        <value xml:lang="kn">View Job Details</value>
     </property>
     
     <property key="editBillCorrection">
         <value xml:lang="en">Edit Bill Correction Details</value>
+        <value xml:lang="kn">Edit Bill Correction Details</value>
     </property>
     
     <property key="searchBillDetail">
         <value xml:lang="en">Search Bill Correction Details</value>
+        <value xml:lang="kn">Search Bill Correction Details</value>
     </property>
      <property key="billCorrectionList">
         <value xml:lang="en"> Bill Correction List</value>
+        <value xml:lang="kn"> Bill Correction List</value>
     </property>
     <property key="complaintNo">
         <value xml:lang="en">Complaint No.</value>
+        <value xml:lang="kn">Complaint No.</value>
     </property>
     <property key="complainRegister">
         <value xml:lang="en">Search Complaint Details</value>
+        <value xml:lang="kn">Search Complaint Details</value>
     </property>
      <property key="viewregisterComplaint">
         <value xml:lang="en">View Complaint Details</value>
+        <value xml:lang="kn">View Complaint Details</value>
     </property>
      <property key="registerComplainList">
         <value xml:lang="en">Register Complaint List</value>
+        <value xml:lang="kn">Register Complaint List</value>
     </property>
     <property key="applyForJob">
         <value xml:lang="en">Search Job Details</value>
+        <value xml:lang="kn">Search Job Details</value>
     </property>
     <property key="applyForJobList">
         <value xml:lang="en">Job List</value>
+        <value xml:lang="kn">Job List</value>
     </property>
     <property key="createApplyForJob">
         <value xml:lang="en"> Create Job Details</value>
+        <value xml:lang="kn"> Create Job Details</value>
     </property>
      <property key="typeOfJob">
         <value xml:lang="en"> Type Of Job </value>
+        <value xml:lang="kn"> Create Job Details</value>
     </property>
     <property key="detailOfJob">
         <value xml:lang="en"> Job Description </value>
+        <value xml:lang="kn"> Job Description </value>
     </property>
     <property key="jobNo">
         <value xml:lang="en">Job Reference  No.</value>
+        <value xml:lang="kn">Job Reference  No.</value>
     </property>
     <property key="feeAmount">
         <value xml:lang="en">Fee Amount</value>
+        <value xml:lang="kn">Fee Amount</value>
     </property>
      <property key="serviceAddress">
         <value xml:lang="en">Service Address</value>
+        <value xml:lang="kn">Service Address</value>
     </property>
      <property key="serviceDate">
         <value xml:lang="en">Service Date</value>
+        <value xml:lang="kn">Service Date</value>
     </property>
      <property key="serviceTime">
         <value xml:lang="en">Service Time</value>
+        <value xml:lang="kn">Service Time</value>
     </property>
     <property key="editApplyForJob">
         <value xml:lang="en">Edit Job Details</value>
+        <value xml:lang="kn">Edit Job Details</value>
     </property>
      <property key="applicantName">
         <value xml:lang="en">Applicant Name</value>
+        <value xml:lang="kn">Applicant Name</value>
     </property>
      <property key="applicantEmail">
         <value xml:lang="en">Applicant Email</value>
+        <value xml:lang="kn">Applicant Email</value>
     </property>
      <property key="applicantContactNo">
         <value xml:lang="en">Applicant Contact No.</value>
+        <value xml:lang="kn">Applicant Contact No.</value>
     </property>
     <property key="applicantAddress">
         <value xml:lang="en">Applicant Address</value>
+        <value xml:lang="kn">Applicant Address</value>
     </property>
     <property key="neededInformation">
         <value xml:lang="en">Nedded Information</value>
+        <value xml:lang="kn">Nedded Information</value>
     </property>
     <property key="supportingDocument">
         <value xml:lang="en">Supporting Document if any</value>
+        <value xml:lang="kn">Supporting Document if any</value>
     </property>
      <property key="uploadCopyOfBPLCard">
         <value xml:lang="en">Upload Copy Of BPL Card</value>
+        <value xml:lang="kn">Upload Copy Of BPL Card</value>
     </property>
      <property key="challanRefrenceNo">
         <value xml:lang="en">Challan Refrence No.</value>
+        <value xml:lang="kn">Challan Refrence No.</value>
     </property>
     <property key="challanAmount">
         <value xml:lang="en">Challan Amount</value>
+        <value xml:lang="kn">Challan Amount</value>
     </property>
       <property key="applicationBank">
         <value xml:lang="en">Application Bank / Postoffice / Teasury name</value>
+        <value xml:lang="kn">Application Bank / Postoffice / Teasury name</value>
     </property>
      <property key="uploadChallan">
         <value xml:lang="en">Upload Challan Copy</value>
+        <value xml:lang="kn">Upload Challan Copy</value>
     </property>
      <property key="RTIApplication">
         <value xml:lang="en">Create RTI Application</value>
+        <value xml:lang="kn">Create RTI Application</value>
     </property>
      <property key="RTIRefNo">
         <value xml:lang="en">RTI refrence No.</value>
+        <value xml:lang="kn">RTI refrence No.</value>
     </property>
      <property key="modeOfPayment">
         <value xml:lang="en">Mode Of Payment</value>
+        <value xml:lang="kn">Mode Of Payment</value>
     </property>
     <property key="RTIStatus">
         <value xml:lang="en">RTI Status</value>
+        <value xml:lang="kn">RTI Status</value>
     </property>
     <property key="BPLCardNo">
         <value xml:lang="en">BPL Card No.</value>
+        <value xml:lang="kn">BPL Card No.</value>
     </property>
     <property key="editRTIApplication">
         <value xml:lang="en">Edit RTI Application</value>
+        <value xml:lang="kn">Edit RTI Application</value>
     </property>
     <property key="applicationPaymentBehalfOf">
         <value xml:lang="en">Payment Behalf Of</value>
+        <value xml:lang="kn">Payment Behalf Of</value>
     </property>
     <!-- Added By shuhbham malviya -->
     <property key="createIllegalToLegal">
@@ -652,12 +755,19 @@
     <!-- Added By nikhil On 09/08/2017 -->
     <property key="applyForWaterSupply">
         <value xml:lang="en">Apply For Water Supply</value>
+        <value xml:lang="kn">Apply For Water Supply</value>
     </property>
     <property key="waterSupply">
         <value xml:lang="en">Water Supply</value>
+        <value xml:lang="kn">Water Supply</value>
     </property>
     <property key="statement">
         <value xml:lang="en">
+    To,
+	The Executive Engineer,
+	Water Supply Division,
+	Bangalore</value>
+	<value xml:lang="kn">
     To,
 	The Executive Engineer,
 	Water Supply Division,
@@ -666,48 +776,64 @@
     
     <property key="line1">
         <value xml:lang="en">I appointment a authorised departmental contractor for water supply works.</value>
+        <value xml:lang="kn">I appointment a authorised departmental contractor for water supply works.</value>
     </property>
      <property key="line">
         <value xml:lang="en">Therefore give me a 5 dia measuring unit for water supply.</value>
+        <value xml:lang="kn">Therefore give me a 5 dia measuring unit for water supply.</value>
     </property>
     <property key="line2">
         <value xml:lang="en">Nagarapalike is fix Rs.</value>
+        <value xml:lang="kn">Nagarapalike is fix Rs.</value>
     </property>
     <property key="lineTwo">
         <value xml:lang="en">yearly tax valuation fixed.The same may enclose here with.</value>
+        <value xml:lang="kn">yearly tax valuation fixed.The same may enclose here with.</value>
     </property>
     <property key="line3">
         <value xml:lang="en">I know rules and conditions and obey its conditions.</value>
+        <value xml:lang="kn">I know rules and conditions and obey its conditions.</value>
     </property>
     <property key="line4">
         <value xml:lang="en">I enclose herewith estimate plan with format as per 7-A submitted.</value>
+        <value xml:lang="kn">I enclose herewith estimate plan with format as per 7-A submitted.</value>
     </property>
      <property key="createAppWaterSupply">
         <value xml:lang="en">Create App Water Supply</value>
+        <value xml:lang="kn">Create App Water Supply</value>
     </property>
     <property key="editDisconnection">
         <value xml:lang="en">edit Disconnection</value>
+        <value xml:lang="kn">edit Disconnection</value>
     </property>
     <property key="editKhataChange">
         <value xml:lang="en">Edit Khata Change Details</value>
+        <value xml:lang="kn">Edit Khata Change Details</value>
     </property>
     <property key="commonVeiw">
         <value xml:lang="en">Veiw Khata Change Details</value>
+        <value xml:lang="kn">Veiw Khata Change Details</value>
     </property>
     <property key="commonVeiw">
         <value xml:lang="en">Veiw</value>
+        <value xml:lang="kn">Veiw</value>
     </property>
      <property key="createAppForAgreementLetter">
         <value xml:lang="en">Create Agreement Letter</value>
+        <value xml:lang="kn">Create Agreement Letter</value>
     </property>
     <property key="applyForAgreementLetter">
         <value xml:lang="en">Apply For Agreement Letter</value>
+        <value xml:lang="kn">Apply For Agreement Letter</value>
     </property>
     <property key="agreementLetter">
         <value xml:lang="en">Agreement Letter</value>
+        <value xml:lang="kn">Agreement Letter</value>
     </property>
     <property key="shreeSheemati">
         <value xml:lang="en">
+            I Shree/Shreemati</value>
+        <value xml:lang="kn">
             I Shree/Shreemati</value>
     </property>
     <property key="lineOneForAgreement">
@@ -722,21 +848,41 @@
         																		
         								Signature of Applicants
        </value>
+       <value xml:lang="kn">I am submitting for water connection / legal connection 
+        to your office.
+             
+             As per Mysore Mahanagarapalika’s Baila condition and Sub-condition I am assigned. For the 
+        purpose of Household / Non-house hold/ commercial / industrial of water connection as per Baila 
+        condition and Sub condition.I am agree entitle to pay the measuring service tax and current water
+        tax by Government or Mysore Mahanagarapalike.
+        																		
+        																		
+        								Signature of Applicants
+       </value>
     </property>
     <property key="veiwAgreementLetter">
         <value xml:lang="en">Veiw Agreement Letter</value>
+        <value xml:lang="kn">Veiw Agreement Letter</value>
     </property>
     <property key="createDeclearationCertificate">
         <value xml:lang="en">Create Declearation Certificate</value>
+        <value xml:lang="kn">Create Declearation Certificate</value>
     </property>
     <property key="applyForDecleaCerti">
         <value xml:lang="en">Apply For Declearation Certificate</value>
+        <value xml:lang="kn">Apply For Declearation Certificate</value>
     </property>
     <property key="DecleaCerti">
         <value xml:lang="en">Declearation Certificate</value>
+        <value xml:lang="kn">Declearation Certificate</value>
     </property>
     <property key="declearationHeading">
         <value xml:lang="en">
+				        DECLEARTAION CERTIFCATE
+				   [ declared 20.00 Bond by notory ]
+				  [ only applicable for revenue site ] 
+		 </value>
+		 <value xml:lang="kn">
 				        DECLEARTAION CERTIFCATE
 				   [ declared 20.00 Bond by notory ]
 				  [ only applicable for revenue site ] 
@@ -745,27 +891,38 @@
      <property key="decLineOne">
         <value xml:lang="en"> 
       		I constructed house/site is</value>
+      	<value xml:lang="kn"> 
+      		I constructed house/site is</value>
     </property>
     <property key="decLineTwo">
         <value xml:lang="en"> street House No:-</value>
+        <value xml:lang="kn"> street House No:-</value>
     </property>
     <property key="siteNo">
         <value xml:lang="en"> Site No:-</value>
+        <value xml:lang="kn"> Site No:-</value>
     </property>
     <property key="DecLineFour">
         <value xml:lang="en">coming 
+        under In Mysore city. I cannot done Khata from Nagara Palike or Mysore Urban Development 
+        Board.</value>
+        <value xml:lang="kn">coming 
         under In Mysore city. I cannot done Khata from Nagara Palike or Mysore Urban Development 
         Board.</value>
     </property>
     <property key="decLineThree">
         <value xml:lang="en"> 
      			Therefore I </value>
+     	<value xml:lang="kn"> 
+     			Therefore I </value>
     </property>
     <property key="sonOfOwner">
         <value xml:lang="en"> S/o </value>
+        <value xml:lang="kn"> S/o </value>
     </property>
     <property key="Age">
         <value xml:lang="en"> Age </value>
+        <value xml:lang="kn"> Age </value>
     </property>
     <property key="decLineFive">
         <value xml:lang="en"> declared that  any 
@@ -779,12 +936,39 @@
 	Date:-09/08/2017 							Decelerator
 	Place:- Mysore
 	         </value>
+	      <value xml:lang="kn"> declared that  any 
+        problems to public, Nagarapalike, urban development board, I am personally attended   and 
+        solve about my house. If I cannot solve the problems you must disconnect water supply and
+        future my deposit amount.
+        
+	This deceleration certificate only for connection of water supply. There no right to 
+	assists. 
+
+	Date:-09/08/2017 							Decelerator
+	Place:- Mysore
+	         </value>
     </property>
     <property key="veiwDeclearationCertificate">
         <value xml:lang="en"> veiw Declearation Certificate </value>
+        <value xml:lang="kn"> veiw Declearation Certificate </value>
     </property>
     <property key="paraOneAgreement">
         <value xml:lang="en">	I request application for water   supply connection to my 
+        house / plot through Shree Yoganarashimhaswami Plumbing and Sanitary Works your Office. 
+				
+            	I entitled to your Board Baila Terms and Conditions for use of water household /non-household  
+        I.e. water using for constructing the house your Baila 28 Section I pay and promise to the maintenance
+        and service tax regarding water measuring equipment. 
+
+            	If any technical problems or any other problems I co-operate and agree to department. I can not
+        to abuse your Board. When water coming I collect the water. 
+        Witness.
+
+        Shree Yoganarashimhaswami Plumbing and Sanitary Works. 
+
+                 Owner.								Signature of Applicants
+</value>
+ <value xml:lang="kn">	I request application for water   supply connection to my 
         house / plot through Shree Yoganarashimhaswami Plumbing and Sanitary Works your Office. 
 				
             	I entitled to your Board Baila Terms and Conditions for use of water household /non-household  
