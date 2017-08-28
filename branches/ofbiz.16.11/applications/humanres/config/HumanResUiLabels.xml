@@ -3308,105 +3308,137 @@
     <!--Added by siddhi on 28 July 2017 -->
     <property key="areamaster">
         <value xml:lang="en">Area Master</value>
+        <value xml:lang="kn">Area Master</value>
     </property>
     <property key="zonemaster">
         <value xml:lang="en">Zone Master</value>
+        <value xml:lang="kn">Zone Master</value>
     </property>
     <property key="wardmaster">
         <value xml:lang="en">Ward Master</value>
+        <value xml:lang="kn">Ward Master</value>
     </property>
     <property key="streetmaster">
         <value xml:lang="en">Street Master</value>
+        <value xml:lang="kn">Street Master</value>
     </property>
     <property key="castemaster">
         <value xml:lang="en">Caste Master</value>
+        <value xml:lang="kn">Caste Master</value>
     </property>
     <property key="castename">
         <value xml:lang="en">Caste Name</value>
+        <value xml:lang="kn">Caste Name</value>
     </property>
     <property key="castemasterlist">
         <value xml:lang="en">Cast Master List</value>
+        <value xml:lang="kn">Cast Master List</value>
     </property>
     <property key="pincodemaster">
         <value xml:lang="en">Pin-Code Master</value>
+        <value xml:lang="kn">Pin-Code Master</value>
     </property>
     <property key="createpincodemaster">
         <value xml:lang="en">Create Pin-Code Master</value>
+        <value xml:lang="kn">Create Pin-Code Master</value>
     </property>
     <property key="pincode">
         <value xml:lang="en">Pin Code</value>
+        <value xml:lang="kn">Pin Code</value>
     </property>
     <property key="pinmasterlist">
         <value xml:lang="en">Pin-Code Master List</value>
+        <value xml:lang="kn">Pin-Code Master List</value>
     </property>
      <property key="update">
         <value xml:lang="en">Update</value>
+        <value xml:lang="kn">Update</value>
     </property>
     <property key="editZone">
         <value xml:lang="en">Edit Zone Master</value>
+        <value xml:lang="kn">Edit Zone Master</value>
     </property>
     <property key="editWard">
         <value xml:lang="en">Edit Ward Master</value>
+        <value xml:lang="kn">Edit Ward Master</value>
     </property>
     <property key="editBlock">
         <value xml:lang="en">Edit Block Master</value>
+        <value xml:lang="kn">Edit Block Master</value>
     </property>
     <property key="editStreet">
         <value xml:lang="en">Edit Street Master</value>
+        <value xml:lang="kn">Edit Street Master</value>
     </property>
     <property key="editCommunity">
         <value xml:lang="en">Edit Community Master</value>
+        <value xml:lang="kn">Edit Community Master</value>
     </property>
     <property key="editGender">
         <value xml:lang="en">Edit Gender Master</value>
+        <value xml:lang="kn">Edit Community Master</value>
     </property>
      <property key="editMarital">
         <value xml:lang="en">Edit Marital Status Master</value>
+        <value xml:lang="kn">Edit Marital Status Master</value>
     </property>
     <property key="editCaste">
         <value xml:lang="en">Edit Caste Master</value>
+         <value xml:lang="kn">Edit Caste Master</value>
     </property>
     <property key="editpincode">
         <value xml:lang="en">Edit Pin-Code Master</value>
+        <value xml:lang="kn">Edit Pin-Code Master</value>
     </property>
      <!-- End -->
      <!-- ==========Added By Nikhil on 31 July 2017================== -->
      <property key="communitymaster">
 		<value xml:lang="en">Community Master</value>
+		<value xml:lang="kn">Community Master</value>
 	</property>
 	<property key="communityname">
 		<value xml:lang="en">Community Name</value>
+		<value xml:lang="kn">Community Name</value>
 	</property>
 	<property key="gendermaster">
 		<value xml:lang="en">Gender Master</value>
+		<value xml:lang="kn">Gender Master</value>
 	</property>
 
-		<property key="gendername">
+	<property key="gendername">
 		<value xml:lang="en">Gender Name</value>
+		<value xml:lang="kn">Gender Name</value>
 	</property>
 	<property key="maritalstatusmaster">
 		<value xml:lang="en">Marital Status Master</value>
+		<value xml:lang="kn">Marital Status Master</value>
 	</property>
 	<property key="communityNameList">
 		<value xml:lang="en">Community Master List</value>
+		<value xml:lang="kn">Community Master List</value>
 	</property>
 
 	<property key="genderNameList">
 		<value xml:lang="en">Gender Master List</value>
+		<value xml:lang="kn">Gender Master List</value>
 	</property>
 	<property key="maritalStatus">
 		<value xml:lang="en">Marital Status Master List</value>
+		<value xml:lang="kn">Marital Status Master List</value>
 	</property>
 	<property key="statusname">
 		<value xml:lang="en">Marital Status</value>
+		<value xml:lang="kn">Marital Status</value>
 	</property>
       <!-- End -->
      <!-- Added By Shubham Malviya on Date 01/08/2017 -->
      <property key="customerDetails">
         <value xml:lang="en">Customer Detail Search</value>
+        <value xml:lang="kn">Customer Detail Search</value>
     </property>
     <property key="searchCustomer">
         <value xml:lang="en">Search Customer</value>
+         <value xml:lang="kn">Search Customer</value>
     </property>
     <property key="customerId">
         <value xml:lang="en">Customer Id</value>
@@ -3475,56 +3507,71 @@
       <!-- ==========Added By Anubha on 31 July 2017==================  -->
      <property key="zoneName">
         <value xml:lang="en">Zone Name</value>
+        <value xml:lang="kn">Zone Name</value>
     </property>
     <property key="zoneNameList">
         <value xml:lang="en">Zone Master List</value>
+        <value xml:lang="kn">Zone Master List</value>
     </property>
     <property key="cityName">
         <value xml:lang="en">City Name</value>
+        <value xml:lang="kn">City Name</value>
     </property>
     <property key="officeName">
         <value xml:lang="en">Office Name</value>
+        <value xml:lang="kn">Office Name</value>
     </property>
-    
-   
     <property key="zoneStatus">
         <value xml:lang="en">Zone Status</value>
+        <value xml:lang="kn">Zone Status</value>
     </property>
     <property key="wardname">
         <value xml:lang="en">Ward Name</value>
+        <value xml:lang="kn">Ward Name</value>
     </property>
     <property key="wardMasterList">
         <value xml:lang="en">Ward Master List</value>
+        <value xml:lang="kn">Ward Master List</value>
     </property>
     <property key="streetMasterList">
         <value xml:lang="en">Street Master List</value>
+        <value xml:lang="kn">Street Master List</value>
     </property>
     <property key="blockMaster">
         <value xml:lang="en">Block Master</value>
+        <value xml:lang="kn">Block Master</value>
     </property>
     <property key="blockMasterList">
         <value xml:lang="en">Block Master List</value>
+        <value xml:lang="kn">Block Master List</value>
     </property>
     <property key="blockName">
         <value xml:lang="en">Block Name</value>
+        <value xml:lang="kn">Block Name</value>
     </property>
     <property key="streetName">
         <value xml:lang="en">Street Name</value>
+        <value xml:lang="kn">Street Name</value>
     </property>
     <property key="createZone">
         <value xml:lang="en">Create Zone Master</value>
+        <value xml:lang="kn">Create Zone Master</value>
     </property>
      <property key="enableDisable">
         <value xml:lang="en">Enable/Disable</value>
+        <value xml:lang="kn">Enable/Disable</value>
     </property>
     <property key="createWardMaster">
         <value xml:lang="en">Create Ward Master</value>
+        <value xml:lang="kn">Create Ward Master</value>
     </property>
      <property key="createStreetMaster">
         <value xml:lang="en">Create Street Master</value>
+        <value xml:lang="kn">Create Street Master</value>
     </property>
     <property key="createBlockMaster">
         <value xml:lang="en">Create Block Master</value>
+        <value xml:lang="kn">Create Block Master</value>
     </property>
       <!-- ==========End==================  -->
       
@@ -3862,95 +3909,123 @@
     <!-- End -->
      <!-- Added For Office By PRABHU -->
     <property key="HRMSOffice">
-        <value xml:lang="en">Office</value>        
+        <value xml:lang="en">Office</value>
+        <value xml:lang="kn">Office</value>            
     </property>
     <property key="OfficeSearch">
-        <value xml:lang="en">Search Office</value>        
+        <value xml:lang="en">Search Office</value> 
+        <value xml:lang="kn">Search Office</value>         
     </property>
     <property key="HRMSOfficeId">
-        <value xml:lang="en">Office Id</value>        
+        <value xml:lang="en">Office Id</value>
+        <value xml:lang="kn">Office Id</value>               
     </property>
     <property key="Newoffice">
         <value xml:lang="en">New Office</value>
+         <value xml:lang="kn">New Office</value>
     </property>
     <property key="HrmsParentOfficeName">
 		<value xml:lang="en">Head Office Name</value>
+		<value xml:lang="kn">Head Office Name</value>
 	</property>
 	<property key="HrmsOfficeName">
 		<value xml:lang="en">Office Name</value>
+		<value xml:lang="kn">Office Name</value>
 	</property>
 	<property key="HrmsOfficeStatus">
 		<value xml:lang="en">Office Status</value>
+		<value xml:lang="kn">Office Status</value>
 	</property>	
 	
 	<property key="HrmsOfficeType">
 		<value xml:lang="en">Office Type</value>
+		<value xml:lang="kn">Office Type</value>
 	</property>
 	
 	<property key="HrmsHeadOfOffice">
 		<value xml:lang="en">Head Of Office</value>
+		<value xml:lang="kn">Head Of Office</value>
 	</property>
     <property key="HrmsOfficeDetail">
 		<value xml:lang="en">Office Details</value>
+		<value xml:lang="kn">Office Details</value>
 	</property>
 	<property key="HrmsTribal">
 		<value xml:lang="en">Tribal</value>
+		<value xml:lang="kn">Tribal</value>
 	</property>
 	<property key="HrmsPinCode">
 		<value xml:lang="en">Pin Code</value>
+		<value xml:lang="kn">Pin Code</value>
 	</property>
 	<property key="HrmsDistrict">
 		<value xml:lang="en">District</value>
+		<value xml:lang="kn">District</value>
 	</property>
 	<property key="HrmsCity">
 		<value xml:lang="en">City</value>
+		<value xml:lang="kn">City</value>
 	</property>
 	<property key="HrmsAddress">
 		<value xml:lang="en">Address</value>
+		<value xml:lang="kn">Address</value>
 	</property>
 		<property key="contactNumber">
         <value xml:lang="en">Contact Number</value>
+        <value xml:lang="kn">Contact Number</value>
     </property>
     
 	<property key="Fax">
         <value xml:lang="en">Fax Number</value>
+        <value xml:lang="kn">Fax Number</value>
     </property>
     
     <!-- END -->
     <property key="HrmsOfficeTypeId">
 		<value xml:lang="en">Office Type Id</value>
+		<value xml:lang="kn">Office Type Id</value>
 	</property>
 	
 	<property key="HrmsOfficeTypeMaster">
 		<value xml:lang="en">Office Type Master</value>
+		<value xml:lang="kn">Office Type Master</value>
 	</property>
 	<property key="HrmsOfficeTypeName">
 		<value xml:lang="en">Office Type Name</value>
+		<value xml:lang="kn">Office Type Name</value>
 	</property>
 	
 	<property key="OfficeTypeList">
 		<value xml:lang="en">Office Type List</value>
+		<value xml:lang="kn">Office Type List</value>
 	</property>
 	<property key="ParentTypeId">
 		<value xml:lang="en">Parent Type Id</value>
+		<value xml:lang="kn">Parent Type Id</value>
 	</property>
 	<property key="HrmsOfficeTypeEdit">
 		<value xml:lang="en">Edit Office Type</value>
+		<value xml:lang="kn">Edit Office Type</value>
 	</property>
      <property key="searchIssueWorkOrder">
         <value xml:lang="en">Search Issue Work Order</value>
+        <value xml:lang="kn">Search Issue Work Order</value>
     </property>
     <property key="workOrderNo">
         <value xml:lang="en">Work Order No.</value>
+        <value xml:lang="kn">Work Order No.</value>
     </property>
     <property key="listIssueWorkOrder">
         <value xml:lang="en">List Issue Work Order</value>
+        <value xml:lang="kn">List Issue Work Order</value>
     </property>
     <property key="issueNewWorkOrder">
         <value xml:lang="en">Issue Work Order</value>
+        <value xml:lang="kn">Issue Work Order</value>
     </property>
     <property key="houseOwnerName">
         <value xml:lang="en">House Owner Name</value>
+        <value xml:lang="kn">House Owner Name</value>
     </property>
     <property key="depositReceiptNo">
         <value xml:lang="en">Deposit Receipt No.</value>
@@ -4060,10 +4135,11 @@
     </property>
      <property key="alphabetical">
         <value xml:lang="en">should be alphabetical</value>
-        <value xml:lang="Hi"></value>
+        <value xml:lang="kn">should be alphabetical</value>
     </property> 
       <property key="approveRejectGrievance">
         <value xml:lang="en">approve/Reject Grievance</value>
+        <value xml:lang="kn">approve/Reject Grievance</value>
       </property> 
       <!-- added by Siddhi -->
     <property key="actionJobDetail">
