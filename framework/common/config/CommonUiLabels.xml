@@ -15962,4 +15962,91 @@
         <value xml:lang="en">View Job Detail</value>
         <value xml:lang="kn">View Job Detail</value>
     </property>
+<!-- Added By Shubham Malviya -->
+ <property key="previousReding">
+        <value xml:lang="en">Previous Reding</value>
+        <value xml:lang="kn">Previous Reding</value>
+    </property>
+     <property key="totalUsed">
+        <value xml:lang="en">Total Used</value>
+        <value xml:lang="kn">Total Used</value>
+    </property>
+    <property key="totalcurrentbillamount">
+        <value xml:lang="en">Current Bill Amount</value>
+        <value xml:lang="kn">Current Bill Amount</value>
+    </property>
+    <property key="tariffPlan">
+        <value xml:lang="en">Tariff Plan</value>
+        <value xml:lang="kn">Tariff Plan</value>
+    </property>
+    <property key="billingPeriod">
+        <value xml:lang="en">Billing Period</value>
+        <value xml:lang="kn">Billing Period</value>
+    </property>
+    <property key="billDate">
+        <value xml:lang="en">Bill Date</value>
+        <value xml:lang="kn">Bill Date</value>
+    </property>
+     <property key="dueDate">
+        <value xml:lang="en">Due Date</value>
+        <value xml:lang="kn">Due Date</value>
+    </property>
+    <property key="billAmount">
+        <value xml:lang="en">Bill Amount</value>
+        <value xml:lang="kn">Bill Amount</value>
+    </property>
+    <property key="penaltyCharge">
+        <value xml:lang="en">Penalty Charge</value>
+        <value xml:lang="kn">Penalty Charge</value>
+    </property>
+    <property key="previousBill">
+        <value xml:lang="en">Previous Bill</value>
+        <value xml:lang="kn">Previous Bill</value>
+    </property>
+    <property key="previousPayments">
+        <value xml:lang="en">Previous Payments</value>
+        <value xml:lang="kn">Previous Payments</value>
+    </property>
+    <property key="balanceAmount">
+        <value xml:lang="en">Balance Amount</value>
+        <value xml:lang="kn">Balance Amount</value>
+    </property>
+    <property key="currentCharges">
+        <value xml:lang="en">Current Charges</value>
+        <value xml:lang="kn">Current Charges</value>
+    </property>
+    <property key="totalAmountDue">
+        <value xml:lang="en">Total Amount Due</value>
+        <value xml:lang="kn">Total Amount Due</value>
+    </property>
+    <property key="payableAfterDueDate">
+        <value xml:lang="en">Payable After Due Date</value>
+        <value xml:lang="kn">Payable After Due Date</value>
+    </property>
+     <property key="summaryofCurrentCharges">
+        <value xml:lang="en">Summary of Current Charges</value>
+        <value xml:lang="kn">Summary of Current Charges</value>
+    </property>
+    <property key="billNote">
+        <value xml:lang="en">Note:- Bill generated as per tariff plan and unit cunsumption.</value>
+        <value xml:lang="kn">Note:- Bill generated as per tariff plan and unit cunsumption.</value>
+    </property>
+    <property key="transactionId">
+        <value xml:lang="en">Transaction Id</value>
+        <value xml:lang="kn">Transaction Id</value>
+    </property>
+    <property key="paymentDate">
+        <value xml:lang="en">Payment Date</value>
+        <value xml:lang="kn">Payment Date</value>
+    </property>
+    <property key="paidAmount">
+        <value xml:lang="en">Paid Amount</value>
+        <value xml:lang="kn">Paid Amount</value>
+    </property>
+    <property key="paymentHistory">
+        <value xml:lang="en">Payment History</value>
+        <value xml:lang="kn">Payment History</value>
+    </property>
+    <!-- End -->
 </resource>
+
