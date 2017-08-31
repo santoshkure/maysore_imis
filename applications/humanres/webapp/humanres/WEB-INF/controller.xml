@@ -1818,6 +1818,32 @@ under the License.
         <response name="success" type="view" value="actionmeterreading"/>
         <response name="error" type="view" value="actionmeterreading"/>
     </request-map>
+    
+     <!-- added By shubham malviya for show all current Bill -->
+	<request-map uri="currentBillDetail">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="currentBillDetail"/>
+        <response name="error" type="view" value="currentBillDetail" />
+    </request-map>
+	
+	<request-map uri="viewBillDetail">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="viewBillDetail"/>
+        <response name="error" type="view" value="viewBillDetail" />
+    </request-map>
+    
+    <request-map uri="viewBillDetailpdf">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="viewBillDetailpdf"/>
+        <response name="error" type="view" value="viewBillDetail" />
+    </request-map>
+    
+    <request-map uri="billpaymentHistory">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="billpaymentHistory"/>
+        <response name="error" type="view" value="billpaymentHistory" />
+    </request-map>
+    
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -2062,4 +2088,8 @@ under the License.
          <view-map name="editmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editmeterreading"/>
          <view-map name="viewreadingdetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewreadingdetails"/>
          <view-map name="actionmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionmeterreading"/>
+         <view-map name="currentBillDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#currentBillDetail"/>  
+         <view-map name="viewBillDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetail"/>  
+         <view-map name="viewBillDetailpdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetailpdf" content-type="application/pdf" encoding="none" />  
+		 <view-map name="billpaymentHistory" type="screen" page="component://humanres/widget/EmployeeScreens.xml#billpaymentHistory"/>  
 </site-conf>

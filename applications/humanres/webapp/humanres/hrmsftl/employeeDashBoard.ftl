@@ -206,7 +206,7 @@
 						<a href="billCorrectionRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Correction </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Details </a>
+						<a href="currentBillDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Details </a>
 					</li>
    				</ul>
 			</div>	
