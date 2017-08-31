@@ -28,14 +28,6 @@
 		   <td>2030657</td>
 		 </tr>
 		
-		<tr>
-			<td colspan="4"><center>
-			<div id ="saveBtn" align="center">
-				<input name="view" value="${uiLabelMap.viewHistory}" type="button" onClick="validateParameters('')">
-			</div></center>
-			</td>
-						
-		</tr>
 		 </table>
      </div>  
    	</div>	
@@ -51,10 +43,11 @@
         <tr class="header-row-2">
 	         <td><center>${uiLabelMap.billNo}</center></td>
 	         <td><center>${uiLabelMap.billDate}<center></td>
-             <td><center>${uiLabelMap.billReading}</center></td> 
-             <td><center>${uiLabelMap.unitReading}</center></td> 
-             <td><center>${uiLabelMap.billAmount}</center></td>
-             <td><center>${uiLabelMap.CommonStatus}</center></td>
+             <td><center>Used Unit</center></td> 
+             <td><center>${uiLabelMap.dueDate}</center></td> 
+             <td><center>${uiLabelMap.totalAmountDue}</center></td>
+             <td><center>${uiLabelMap.viewBill}</center></td>
+             <td>${uiLabelMap.pdf}</td>
         </tr>
 	    </thead>   
 		     <tr>
@@ -63,7 +56,8 @@
              <td><center>150</center></td> 
              <td><center>5</center></td> 
              <td><center>750</center></td>
-             <td><center>Paid</center></td>
+             <td><center><a href="viewBillDetail" class="buttontext">${uiLabelMap.viewBill}</a></center></td>
+             <td><a href="viewBillDetailpdf"><img src="/rainbowstone/images/pdf.png" width="24px"></img></a></td>
             </tr>
         </table>
    		</div>

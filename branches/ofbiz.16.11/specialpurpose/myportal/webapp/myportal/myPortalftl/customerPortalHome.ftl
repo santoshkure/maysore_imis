@@ -74,6 +74,9 @@
 						<a href="billpayment"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Payment </a>
 					</li>
 					<li>
+						<a href="billpaymentHistory"><i class="fa fa-arrow-right" aria-hidden="true"></i> Payment History </a>
+					</li>
+					<li>
 						<a href="billcalculator"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Calculator </a>
 					</li>
 					<li>
