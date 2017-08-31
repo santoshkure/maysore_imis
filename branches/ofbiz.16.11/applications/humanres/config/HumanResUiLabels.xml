@@ -4234,4 +4234,21 @@
         <value xml:lang="en">Active/Deactive</value>
         <value xml:lang="kn">Active/Deactive</value>
     </property> 
+    <property key="searchBillDetail">
+        <value xml:lang="en">Search Bill Detail</value>
+        <value xml:lang="kn">Search Bill Detail</value>
+    </property> 
+    <property key="billDetailList">
+        <value xml:lang="en"> Bill Detail List</value>
+        <value xml:lang="kn"> Bill Detail List</value>
+    </property> 
+    <property key="viewBill">
+        <value xml:lang="en"> View Bill </value>
+        <value xml:lang="kn"> View Bill </value>
+    </property> 
+    <property key="previouseMonthDetail">
+        <value xml:lang="en">Previouse Month Detail</value>
+        <value xml:lang="kn">Previouse Month Detail</value>
+    </property>
+    
 </resource>
