@@ -25,7 +25,9 @@
 	<div class="screenlet-body">
 	
 		<table class="basic-table" cellspacing="0">
+		
 		<td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
+		
 			<tr>
 			     	
 			 
@@ -63,12 +65,14 @@
 			 	
 			  <td colspan="4"><textarea name="remark" value="" onchange="javascript:trimFunction(this)" maxlength="150" style="width:400px"></textarea></td>
         	</tr>
+        	<input type="hidden" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  />
+        	<#-- 
         	<tr>
                     <td width='20%' align='right' class="label">${uiLabelMap.createdate}<font color="red" >*</font></td>
                    <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>
               <#--       <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>     
-                     </td>  -->  
-                  </tr>
+                     </td>   
+                  </tr>--> 
         	<tr>
 				<td colspan="4">
 					<center><div id="submit" align="center">
