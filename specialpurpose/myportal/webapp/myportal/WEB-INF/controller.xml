@@ -317,7 +317,7 @@
         <response name="success" type="view" value="createForAgreementLetter"/>
         <response name="error" type="view" value="createForAgreementLetter"/>
     </request-map>
-    <request-map uri="createDeclearationCertificate">
+    <request-map uri="veiwForAgreementLetter">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="veiwForAgreementLetter"/>
         <response name="error" type="view" value="veiwForAgreementLetter"/>

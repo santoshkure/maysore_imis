@@ -56,7 +56,7 @@
 <div class="row">
   <div class="alert alert-info">
     <ul>
-      <li class="h3">${uiLabelMap.registerComplainList}</li>
+      <li class="h3">${uiLabelMap.ComplainList}</li>
     </ul>
     
   </div>

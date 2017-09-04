@@ -199,7 +199,7 @@ function updateRTIDetail(createApplication)
 		var sure = confirm("Are you sure, you want to Update the Form ?");
                     if( sure == true )
                     {
-                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>RTIappdetails</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		            } 
