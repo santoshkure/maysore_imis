@@ -69,7 +69,8 @@
                    		</td>
                     	
                      	<td class='label'>Remark</td>
-                    	<td><input name="dmaNo"  type="text" maxlength="60" value=""></td>
+                     	<td><textarea name="remark" maxlength ="500"></textarea></td>
+                    	
                     
                      </tr>
                      
