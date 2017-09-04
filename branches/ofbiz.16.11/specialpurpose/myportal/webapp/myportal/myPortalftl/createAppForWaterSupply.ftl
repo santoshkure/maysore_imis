@@ -32,19 +32,12 @@
 		<div class="screenlet-body">
 		<div id="printId1">
 <pre>
-	To,
-	The Executive Engineer,
-	Water Supply Division,
-	Bangalore
+${uiLabelMap.statement}
 	
-		1] I Shree/Shreemati <b>Name of Customer</b> I appointment a authorised departmental contractor for water supply works.
-		   Therefore give me a <b>5</b> dia measuring unit for water supply.
-			
-		2] Nagarapalike is fix Rs. <b>5000</b> yearly tax valuation fixed.The same may enclose here with.
-			
-		3] I know rules and conditions and obey its conditions.
-		
-		4] I enclose herewith estimate plan with format as per 7-A submitted.
+		1] ${uiLabelMap.shreeSheemati} <b>Name of Customer</b> ${uiLabelMap.line1}
+		   ${uiLabelMap.line} <b>5</b> ${uiLabelMap.line2}    <b>5000</b> ${uiLabelMap.lineTwo}
+		3] ${uiLabelMap.line3}
+		4] ${uiLabelMap.line4}
 		
 </pre>
 

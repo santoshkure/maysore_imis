@@ -741,8 +741,8 @@
         <value xml:lang="kn">Khata Change Application No.</value>
     </property>
     <property key="listKhataChangeRequest">
-        <value xml:lang="en">List Khata Change Request</value>
-        <value xml:lang="kn">List Khata Change Request</value>
+        <value xml:lang="en">Khata Change Request List</value>
+        <value xml:lang="kn">Khata Change Request List</value>
     </property>
     <property key="searchKhataChangeRequest">
         <value xml:lang="en">Search Khata Change Request</value>
@@ -779,13 +779,10 @@
         <value xml:lang="kn">I appointment a authorised departmental contractor for water supply works.</value>
     </property>
      <property key="line">
-        <value xml:lang="en">Therefore give me a 5 dia measuring unit for water supply.</value>
-        <value xml:lang="kn">Therefore give me a 5 dia measuring unit for water supply.</value>
+        <value xml:lang="en">Therefore give me a </value>
+        <value xml:lang="kn">Therefore give me a </value>
     </property>
-    <property key="line2">
-        <value xml:lang="en">Nagarapalike is fix Rs.</value>
-        <value xml:lang="kn">Nagarapalike is fix Rs.</value>
-    </property>
+   
     <property key="lineTwo">
         <value xml:lang="en">yearly tax valuation fixed.The same may enclose here with.</value>
         <value xml:lang="kn">yearly tax valuation fixed.The same may enclose here with.</value>
@@ -831,10 +828,14 @@
         <value xml:lang="kn">Agreement Letter</value>
     </property>
     <property key="shreeSheemati">
-        <value xml:lang="en">
-            I Shree/Shreemati</value>
-        <value xml:lang="kn">
-            I Shree/Shreemati</value>
+        <value xml:lang="en">I Shree/Shreemati</value>
+        <value xml:lang="kn">I Shree/Shreemati</value>
+    </property>
+     <property key="line2">
+        <value xml:lang="en">dia measuring unit for water supply.
+        	2] Nagarapalike is fix Rs.</value>
+        <value xml:lang="kn">dia measuring unit for water supply.
+       		2] Nagarapalike is fix Rs.</value>
     </property>
     <property key="lineOneForAgreement">
         <value xml:lang="en">I am submitting for water connection / legal connection 
@@ -984,6 +985,19 @@
                  Owner.								Signature of Applicants
 </value>
 </property>
+
+<property key="veiwAppWaterSupply">
+        <value xml:lang="en"> veiw Water Supply</value>
+        <value xml:lang="kn"> veiw Water Supply </value>
+    </property>
+    <property key="veiwKhataChange">
+        <value xml:lang="en"> veiw Khata Change</value>
+        <value xml:lang="kn"> veiw Khata Change </value>
+    </property>
+    <property key="ComplainList">
+        <value xml:lang="en"> Complaint List</value>
+        <value xml:lang="kn"> Complaint List </value>
+    </property>
      <!-- ============End============= -->
     
 </resource>
