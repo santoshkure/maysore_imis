@@ -161,100 +161,99 @@
            			<tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.connectionActionDetail}</font></td></tr>
                     
                     <tr>
-		   					<td class="label">Connection Status</td>
+		   					<td class="label">${uiLabelMap.connectionStatus}</td>
 					       	<td colspan="3">Approved</td>
 					       	
 		   			</tr>
 		   
 						<tr>
-							<td class="label">DMA No.</td>  
+							<td class="label">${uiLabelMap.dMANo}</td>  
 							<td><input name="dmaNo"  type="text" maxlength="60" value=""></td>
-							<td class="label">Connection Date</td>  
+							<td class="label"> ${uiLabelMap.connectionDate}</td>  
 							<td><@htmlTemplate.renderDateTimeField name="connectionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="connectionDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
 						</tr>  
 						
 						<tr>
-							<td class="label">Meter No.</td>  
+							<td class="label">${uiLabelMap.MeterNo}</td>  
 							<td><input name="meterNo"  type="text" maxlength="60" value=""></td>
-							<td class="label">Ref file No.</td>  
+							<td class="label">${uiLabelMap.refFileNo}</td>  
 							<td><input name="refFileNo"  type="text" maxlength="60" value=""></td>
 						</tr>  
 						
 						<tr>	
-							<td class="label">Book No.</td>  
+							<td class="label">${uiLabelMap.bookNo}</td>  
 							<td><input name="bookNo"  type="text" maxlength="60" value=""></td>
-							<td class="label">Leaf No.</td>  
+							<td class="label">${uiLabelMap.leafNo}</td>  
 							<td><input name="leafNo"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>
-							<td class="label">Pipe Size</td>  
+							<td class="label">${uiLabelMap.pipeSize}</td>  
 							<td><input name="pipeSize"  type="text" maxlength="60" value=""></td>
-							<td class="label">Drinking Water</td>  
+							<td class="label">${uiLabelMap.drinkingWater}</td>  
 							<td><input name="dmaNo"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>
-							<td class="label">Constituency</td>  
+							<td class="label">${uiLabelMap.constituency}</td>  
 							<td><input name="constituency"  type="text" maxlength="60" value=""></td>
-							<td class="label">Zone</td>  
+							<td class="label"> ${uiLabelMap.zone}</td>  
 							<td><input name="zone"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>	
-							<td class="label">Mcc Zone</td>  
+							<td class="label"> ${uiLabelMap.mccZone}</td>  
 							<td><input name="mccZone"  type="text" maxlength="60" value=""></td>
-							<td class="label">Division</td>  
+							<td class="label">${uiLabelMap.division}</td>  
 							<td><input name="division"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>
-							<td class="label">Survey number</td>  
+							<td class="label">${uiLabelMap.surveyNumber}</td>  
 							<td><input name="surveyNumber"  type="text" maxlength="60" value=""></td>
-							<td class="label">EE Name</td>  
+							<td class="label">${uiLabelMap.eeName}</td>  
 							<td><input name="eeName"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>
-							<td class="label">Old Ward</td>  
+							<td class="label">${uiLabelMap.oldWard}</td>  
 							<td><input name="oldWard"  type="text" maxlength="60" value=""></td>
-							<td class="label">Ref Consumer No.</td>  
+							<td class="label">${uiLabelMap.refConsumerNo}</td>  
 							<td><input name="refConsumerNo"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>	
-							<td class="label">Remark</td>  
-							<td><input name="remark"  type="text" maxlength="60" value=""></td>
-							<td class="label">MR Name</td>  
+							<#--  <td class="label">Remark</td>  
+							<td><input name="remark"  type="text" maxlength="60" value=""></td>-->
+							<td class="label">${uiLabelMap.mrName}</td>  
 							<td><input name="mrName"  type="text" maxlength="60" value=""></td>
+							<td class="label">${uiLabelMap.areaCoordinator}</td>  
+							<td><input name="areaCoordinator"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>
-							<td class="label">Area Co-ordinator</td>  
-							<td><input name="areaCoordinator"  type="text" maxlength="60" value=""></td>
-							<td class="label">logitude</td>  
+							<td class="label">${uiLabelMap.lattitude}</td>  
+							<td><input name="lattitude"  type="text" maxlength="60" value=""></td>
+							<td class="label">${uiLabelMap.logitude}</td>  
 							<td><input name="logitude"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>
-							<td class="label">lattitude</td>  
-							<td><input name="lattitude"  type="text" maxlength="60" value=""></td>
-							<td class="label">Connection stauts</td>  
+							<td class="label">${uiLabelMap.commonOfficerName}</td>
+                    		<td><input name="actionOfficerName"  type="text" maxlength="40" value=""></td>
+							<td class="label">${uiLabelMap.connectionStatus}</td>  
 							<td><input name="connectionStatus"  type="text" maxlength="60" value=""></td>
 						</tr>
 						
                 		<tr>
-                    		<td class="label">${uiLabelMap.commonOfficerName}</td>
-                    		<td><input name="actionOfficerName"  type="text" maxlength="40" value=""></td>
-                    
-                     		<td class="label">${uiLabelMap.designation}</td>
+                    		<td class="label">${uiLabelMap.actionDate}</td>
+                    		<td><@htmlTemplate.renderDateTimeField name="actionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="actionDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
+                  			<td class="label">${uiLabelMap.designation}</td>
                     		<td><input name="designation"  type="text" maxlength="40" value=""></td>
                     	</tr>
                   		
                   		<tr>	
-                    		<td class="label">${uiLabelMap.actionDate}</td>
-                    		<td><@htmlTemplate.renderDateTimeField name="actionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="actionDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
-                  		
+                    		
                     		<td class="label">${uiLabelMap.Remark}</td>
                     		<td><textarea name="remark" maxlength ="500"></textarea></td>
                   		</tr>
