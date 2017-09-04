@@ -4251,4 +4251,83 @@
         <value xml:lang="kn">Previouse Month Detail</value>
     </property>
     
+
+  <!--   Addedv By Anubha Saini  -->
+     <property key="connectionStatus">
+        <value xml:lang="en">Connection Status</value>
+        <value xml:lang="kn">Connection Status</value>
+    </property> 
+     <property key="dMANo">
+        <value xml:lang="en">DMA No.</value>
+        <value xml:lang="kn">DMA No.</value>
+    </property> 
+    <property key="connectionDate">
+        <value xml:lang="en">Connection Date</value>
+        <value xml:lang="kn">Connection Date</value>
+    </property> 
+    <property key="MeterNo">
+        <value xml:lang="en">Meter No.</value>
+        <value xml:lang="kn">Meter No.</value>
+    </property> 
+    <property key="refFileNo">
+        <value xml:lang="en">Ref file No.</value>
+        <value xml:lang="kn">Ref file No.</value>
+    </property> 
+    <property key="leafNo">
+        <value xml:lang="en">Leaf No.</value>
+        <value xml:lang="kn">Leaf No.</value>
+    </property> 
+    <property key="pipeSize">
+        <value xml:lang="en">Pipe Size</value>
+        <value xml:lang="kn">Pipe Size</value>
+    </property>
+     <property key="drinkingWater">
+        <value xml:lang="en">Drinking Water</value>
+        <value xml:lang="kn">Drinking Water</value>
+    </property>
+    <property key="Constituency">
+        <value xml:lang="en">Constituency</value>
+        <value xml:lang="kn">Constituency</value>
+    </property>
+     <property key="zone">
+        <value xml:lang="en">Zone</value>
+        <value xml:lang="kn">Zone</value>
+    </property>
+     <property key="mccZone">
+        <value xml:lang="en">Mcc Zone</value>
+        <value xml:lang="kn">Mcc Zone</value>
+    </property>
+     <property key="division">
+        <value xml:lang="en">Division</value>
+        <value xml:lang="kn">Division</value>
+    </property>
+    <property key="surveyNumber">
+        <value xml:lang="en">Survey Number</value>
+        <value xml:lang="kn">Survey Number</value>
+    </property>
+     <property key="eeName">
+        <value xml:lang="en">EE Name</value>
+        <value xml:lang="kn">EE Name</value>
+    </property>
+    <property key="oldWard">
+        <value xml:lang="en">Old Ward</value>
+        <value xml:lang="kn">Old Ward</value>
+    </property>
+     <property key="refConsumerNo">
+        <value xml:lang="en">Ref Consumer No.</value>
+        <value xml:lang="kn">Ref Consumer No.</value>
+    </property>
+    <property key="logitude">
+        <value xml:lang="en">Logitude</value>
+        <value xml:lang="kn">Logitude</value>
+    </property>
+    <property key="lattitude">
+        <value xml:lang="en">Lattitude</value>
+        <value xml:lang="kn">Lattitude</value>
+    </property>
+    <property key="areaCoordinator">
+        <value xml:lang="en">Area Co-ordinator</value>
+        <value xml:lang="kn">Area Co-ordinator</value>
+    </property>
+    <!-- END -->
 </resource>
