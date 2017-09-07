@@ -3758,8 +3758,8 @@
         <value xml:lang="kn">Create Meter Detail</value>
     </property>
     <property key="searchRequestCompliant">
-        <value xml:lang="en">Search Compliant Request</value>
-        <value xml:lang="kn">Search Compliant Request</value>
+        <value xml:lang="en">Search Complaint Request</value>
+        <value xml:lang="kn">Search Complaint Request</value>
     </property>
     <property key="compliantApplyDate">
         <value xml:lang="en">Complaint Apply Date</value>
@@ -3806,8 +3806,8 @@
         <value xml:lang="kn">Search RTI Request</value>
     </property>
     <property key="rtiRefrenceNo">
-        <value xml:lang="en">RTI Refrence No</value>
-        <value xml:lang="kn">RTI Refrence No</value>
+        <value xml:lang="en">RTI Reference No.</value>
+        <value xml:lang="kn">RTI Reference No.</value>
     </property>
     <property key="listRtiRequest">
         <value xml:lang="en">List RTI Request</value>
@@ -3842,8 +3842,8 @@
         <value xml:lang="kn">Bill Correction  Id</value>
     </property>
     <property key="billCorrectionNo">
-        <value xml:lang="en">Bill Correction  No</value>
-        <value xml:lang="kn">Bill Correction  No</value>
+        <value xml:lang="en">Bill Correction  No.</value>
+        <value xml:lang="kn">Bill Correction  No.</value>
     </property>
      <property key="listBillCorrectionRequest">
         <value xml:lang="en">List Bill Correction Request</value>
@@ -3871,16 +3871,16 @@
         <value xml:lang="kn">List Connection Detail</value>
     </property>
     <property key="complaintNo">
-        <value xml:lang="en">Complaint No</value>
-        <value xml:lang="kn">Complaint No</value>
+        <value xml:lang="en">Complaint No.</value>
+        <value xml:lang="kn">Complaint No.</value>
     </property>
     <property key="complaintDescription">
         <value xml:lang="en">Complaint Description</value>
         <value xml:lang="kn">Complaint Description</value>
     </property>
     <property key="correctionNo">
-        <value xml:lang="en">Correction No</value>
-        <value xml:lang="kn">Correction No</value>
+        <value xml:lang="en">Correction No.</value>
+        <value xml:lang="kn">Correction No.</value>
     </property>
      <property key="replyDetail">
         <value xml:lang="en">Reply Detail</value>
@@ -4330,4 +4330,17 @@
         <value xml:lang="kn">Area Co-ordinator</value>
     </property>
     <!-- END -->
+    
+    <property key="connectionMasterList">
+        <value xml:lang="en">Connection Type List</value>
+        <value xml:lang="kn">Connection Type List</value>
+    </property>
+      <property key="createConnectionMaster">
+        <value xml:lang="en">Create Connection Type</value>
+        <value xml:lang="kn">Create Connection Type</value>
+    </property>
+    <property key="editConnectionMaster">
+        <value xml:lang="en">Edit Connection Type</value>
+        <value xml:lang="kn">Edit Connection Type</value>
+    </property>
 </resource>
