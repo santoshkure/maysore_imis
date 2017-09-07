@@ -15,7 +15,7 @@
     	<div class="alert alert-info">
   			<ul>
   				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
-  				<div class="h3" align="center"><b>Action Compliant Request Detail</b></div> 
+  				<div class="h3" align="center"><b>Action Complaint Request Detail</b></div> 
 			</ul>
 		</div>
         <table cellspacing="0" class="basic-table table-responsive">

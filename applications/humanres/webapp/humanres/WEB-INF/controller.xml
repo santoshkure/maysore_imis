@@ -1843,7 +1843,55 @@ under the License.
         <response name="success" type="view" value="billpaymentHistory"/>
         <response name="error" type="view" value="billpaymentHistory" />
     </request-map>
+    <!-- ==========Added By Nikhil on 23Aug2017 For Type Master ==================  -->
+  
+   <request-map uri="ConnectionMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="ConnectionMaster"/>
+          <response name="error" type="view" value="ConnectionMaster"/>
+    </request-map>
+    <request-map uri="ApplicationMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="ApplicationMaster"/>
+          <response name="error" type="view" value="ApplicationMaster"/>
+    </request-map>
+    <request-map uri="BuildingMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="BuildingMaster"/>
+          <response name="error" type="view" value="BuildingMaster"/>
+    </request-map>
+    <request-map uri="createConnectionMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createConnectionMaster"/>
+          <response name="error" type="view" value="createConnectionMaster"/>
+    </request-map>
+    <request-map uri="createApplicationMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createApplicationMaster"/>
+          <response name="error" type="view" value="createApplicationMaster"/>
+     </request-map>
+     <request-map uri="createBuildingMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createBuildingMaster"/>
+          <response name="error" type="view" value="createBuildingMaster"/>
+     </request-map>
+    <request-map uri="editConnectionMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editConnectionMaster"/>
+          <response name="error" type="view" value="editConnectionMaster"/>
+    </request-map>
+     <request-map uri="editApplicationMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editApplicationMaster"/>
+          <response name="error" type="view" value="editApplicationMaster"/>
+    </request-map>
+     <request-map uri="editBuildingMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editBuildingMaster"/>
+          <response name="error" type="view" value="editBuildingMaster"/>
+    </request-map>
     
+  <!-- ==========end==================  --> 
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -2092,4 +2140,15 @@ under the License.
          <view-map name="viewBillDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetail"/>  
          <view-map name="viewBillDetailpdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetailpdf" content-type="application/pdf" encoding="none" />  
 		 <view-map name="billpaymentHistory" type="screen" page="component://humanres/widget/EmployeeScreens.xml#billpaymentHistory"/>  
+          <!-- ==========Added By Nikhil on 23Aug2017 for Type Master================== -->
+     <view-map name="BuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#buildingMasterScreen"/>
+     <view-map name="ApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#applicationMasterScreen"/>
+     <view-map name="ConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#connectionMasterScreen"/>
+     <view-map name="createApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createApplicationMaster"/>
+     <view-map name="createConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createConnectionMaster"/>
+     <view-map name="createBuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createBuildingMaster"/>
+     <view-map name="editConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editConnectionMaster"/>
+     <view-map name="editApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editApplicationMaster"/>
+     <view-map name="editBuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editBuildingMaster"/>
+      <!-- End -->
 </site-conf>
