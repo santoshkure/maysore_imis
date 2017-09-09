@@ -3609,6 +3609,10 @@
         <value xml:lang="en">Connection Type</value>
         <value xml:lang="kn">Connection Type</value>
     </property>
+     <property key="buildingType">
+        <value xml:lang="en">Building Type</value>
+        <value xml:lang="kn">Building Type</value>
+    </property>
     <property key="applicationType">
         <value xml:lang="en">Application Type</value>
         <value xml:lang="kn">Application Type</value>
@@ -4330,7 +4334,7 @@
         <value xml:lang="kn">Area Co-ordinator</value>
     </property>
     <!-- END -->
-    
+    <!--   Added by Nikhil  -->
     <property key="connectionMasterList">
         <value xml:lang="en">Connection Type List</value>
         <value xml:lang="kn">Connection Type List</value>
@@ -4339,8 +4343,53 @@
         <value xml:lang="en">Create Connection Type</value>
         <value xml:lang="kn">Create Connection Type</value>
     </property>
+     <property key="connectionmaster">
+        <value xml:lang="en">Connection Type</value>
+        <value xml:lang="kn">Connection Type</value>
+    </property>
     <property key="editConnectionMaster">
         <value xml:lang="en">Edit Connection Type</value>
         <value xml:lang="kn">Edit Connection Type</value>
     </property>
+      <property key="buildingmaster">
+        <value xml:lang="en">Building Type</value>
+        <value xml:lang="kn">Building Type</value>
+    </property>
+      <property key="buildingMasterList">
+        <value xml:lang="en">Building Type List</value>
+        <value xml:lang="kn">Building Type List</value>
+    </property>
+     <property key="applicationmaster">
+        <value xml:lang="en">Application Type</value>
+        <value xml:lang="kn">Application Type</value>
+    </property>
+     <property key="applicationMasterList">
+        <value xml:lang="en">Application Type List</value>
+        <value xml:lang="kn">Application Type List</value>
+    </property>
+      <property key="editApplicationMaster">
+        <value xml:lang="en">Edit Application Type</value>
+        <value xml:lang="kn">Edit Application Type</value>
+    </property>
+      <property key="editBuildingmaster">
+        <value xml:lang="en">Edit Building Type</value>
+        <value xml:lang="kn">Edit Building Type</value>
+    </property>
+      <property key="createApplicationMaster">
+        <value xml:lang="en">Create Application Type</value>
+        <value xml:lang="kn">Create Application Type</value>
+    </property>
+      <property key="createBuildingMaster">
+        <value xml:lang="en">Create Building Type</value>
+        <value xml:lang="kn">Create Building Type</value>
+    </property>
+      <property key="typemaster">
+        <value xml:lang="en">Type Master</value>
+        <value xml:lang="kn">Type Master</value>
+    </property>
+     <property key="description">
+        <value xml:lang="en">Description</value>
+        <value xml:lang="kn">Description</value>
+    </property>
+      <!-- END -->
 </resource>
