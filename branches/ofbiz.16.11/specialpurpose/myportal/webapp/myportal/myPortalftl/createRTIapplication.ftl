@@ -27,20 +27,26 @@
                 		</tr>
                     	<tr>
                         	<td class="label">${uiLabelMap.applicantName}</td>
-                        	<td><input name="ApplicantName"  type="text" maxlength="70" value="" ></td>
+                        	<td><input name="ApplicantNameEn" type="text" maxlength="70" value="" >${uiLabelMap.InEnglish}
+                        	<br><input name="ApplicantNamekn" type="text" maxlength="70" value="" >${uiLabelMap.Inkannada}</br>
+                        	</td>
                         	<td class="label">${uiLabelMap.applicantEmail}</td>
-                        	<td><input name="Applicantemail"  type="text" maxlength="15" value=""></td>
+                        	<td><input name="Applicantemail" type="text" maxlength="15" value=""></td>
                         </tr>
                     	<tr>
                     		<td class="label">${uiLabelMap.applicantContactNo}</td>
-                        	<td><input name="ApplicantcontactNo"  type="text" maxlength="60" value="" ></td>
+                        	<td><input name="ApplicantcontactNo" type="text" maxlength="60" value="" ></td>
                         	<td class="label" >${uiLabelMap.applicationDate}</td>
-                        	<td><input type="text" name="Application Date" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
+                        	<td><input type="text" name="ApplicationDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
                         <tr> 	
                          	<td class="label">${uiLabelMap.applicantAddress}</td>
-                       	 	<td colspan="1"><textarea name="Applicanaddress" value="" maxlength="500" ></textarea></td>
+                       	 	<td colspan="1"><textarea name="ApplicanaddressEn" value="" maxlength="500" ></textarea>${uiLabelMap.InEnglish}
+                       	 	            <br><textarea name="ApplicanaddressKn" value="" maxlength="500" ></textarea>${uiLabelMap.Inkannada}
+                       	 	            </br></td>
                         	<td class="label">${uiLabelMap.neededInformation}</td>
-                        	<td colspan="1"><textarea name="Needed Information" value="" maxlength="5000" ></textarea></td>
+                        	<td colspan="1"><textarea name="NeededInformationEn" value="" maxlength="5000" ></textarea>${uiLabelMap.InEnglish}
+                        	            <br><textarea name="NeededInformationKn" value="" maxlength="5000" ></textarea>${uiLabelMap.Inkannada}
+                        	            </br></td>
 				   		</tr>
 				  		 <tr>
 				        	<td class="label">${uiLabelMap.supportingDocument}</td>
@@ -50,12 +56,10 @@
                         	<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
                         	</td>
                         
-                        
-        <#------------------------------Radio Button For BPL Card Holder ---------------------->	     
                         	<td class="label">${uiLabelMap.BPLCardNo}</td>
 					       	<td> 
-					       		<input type="radio" name="BPL card No." id="BPL card No._Y"  value="approve" onchange="javascript:getActionDetails(this)"/> Yes
-								<input type="radio" name="BPL card No." id="BPL card No._N" value="reject"  onchange="javascript:getActionDetails(this)"/> No
+					       		<input type="radio" name="BPLcardNo" id="BPLcardId_Y"  value="approve" onchange="javascript:getActionDetails(this)"/> Yes
+								<input type="radio" name="BPLcardNo" id="BPLcardId_N" value="reject"  onchange="javascript:getActionDetails(this)"/> No
 							</td>
 				         </tr>
                     </tbody>
@@ -69,7 +73,7 @@
 			   				<tr>
 			        			<td class="label">${uiLabelMap.uploadCopyOfBPLCard}</td>
 								<td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        		<input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
+                        		<input type="button" onclick="javascript:resetVal(document.createRtiApplication.fileLoc);" value="Reset"/>
                         		<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
                         		<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/></td>
 	    					</tr> 
@@ -197,10 +201,10 @@ function getPaymentMode(field)
 		    var sure = confirm("Are you sure, you want to Save the Form ?");
                     if( sure == true )
                     {
-                        form.action = "<@ofbizUrl>RTIappdetails</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>RTISavedetails</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');  
-		                }  
+		            }  
     }
 
 </script>
