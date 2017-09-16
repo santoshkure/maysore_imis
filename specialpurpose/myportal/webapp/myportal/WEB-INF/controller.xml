@@ -366,6 +366,12 @@
     </request-map>
      <!-- End -->
     
+     <request-map uri="RTIGrievancedetails">
+        <security https="true" auth="true" />
+        <event type="service" invoke="createGrievanceDetails"/>
+        <response name="success" type="request-redirect" value="searchGrievanceCusPortal"/>
+        <response name="error" type="view" value="createGrievanceCusPortal" />
+    </request-map>
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
     <view-map name="newRegisterLogin" type="screen" page="component://myportal/widget/CommonScreens.xml#newRegisterLogin"/>  

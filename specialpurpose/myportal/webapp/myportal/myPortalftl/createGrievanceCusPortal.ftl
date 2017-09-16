@@ -10,10 +10,7 @@
 
 
    		 <form method="post" name="createGrievanceCustomer" action="" class="basic-form">
-   		<#--<div class="col-md-9">-->
-   		 
-   		<#--  <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.createIllegalToLegal}</span></div> -->
-   		 
+   		
     			<div class="row" >
     			<div class="alert alert-info">
 				<ul>
@@ -26,10 +23,11 @@
   				
   							
         			<tr>
-        			<td colspan="4" align="left"><font color="blue"><b>${uiLabelMap.grievanceReceipt}</b></font></td>
-	              		<td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
+	              	<td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
                 	</tr>
-                	
+                	<tr>
+                	<td colspan="4" align="left"><font color="blue"><b>${uiLabelMap.grievanceReceipt}</b></font></td>
+                	</tr>
         			<tr>
                       	<td class="label">${uiLabelMap.receiptNo}</td>
                         <td colspan="12"><input name="receiptNo"  type="text" maxlength="10" value="RECP1001" readonly></td>
@@ -39,21 +37,23 @@
                  <tr>
                  		<td class="label">${uiLabelMap.grievanceDate}</td>
    						<td colspan="12">
-						<@htmlTemplate.renderDateTimeField name="grievanceDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="grievanceDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-						<#--<input name=""  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy")}"></td>-->
+       				       <input type="text" name="grievanceDate" autocomplete="off" id="grievanceDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
+        			       <a href="javascript:call_cal(document.createGrievanceCustomer.grievanceDate);">
+       				       <img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a>
+      			        </td>
 				</tr>
 					<tr>	
 						<td class="label" >${uiLabelMap.grievancePetitionDate}</td>
    						<td>
 						<@htmlTemplate.renderDateTimeField name="grievancePetitionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="grievancePetitionDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-						<#--<input name=""  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy")}"></td>-->
+						
                   
                     	<td class="label" >${uiLabelMap.typeOfGrievance}</td>
  						<td colspan="4">
-                    	<select name="typeOfGrievance" >
+                    	<select name="typeOfGrievance">
                    			<option value="">Select</option>
-                   			<option value="">Internal</option>
-                   			<option value="">External</option>
+                   			<option value="Internal">Internal</option>
+                   			<option value="External">External</option>
                    			
                  		</select>
              			</td> 
@@ -63,9 +63,11 @@
                   
                   	<tr>
                     		<td class="label">${uiLabelMap.name}</td>
-                         	<td ><input name="receiptNo"  type="text" maxlength="10" value="" readonly></td>
-                       		<td class="label">${uiLabelMap.OrderAddress}<font color="red" >*</font></td>
-                        	<td colspan="4"><textarea name="reasonForDisconnection" value="" maxlength="300" style="width:400px"></textarea></td> 
+                         	<td><input name="grevNameEn"  type="text" maxlength="50" value="">${uiLabelMap.InEnglish}
+                         	<br><input name="grevNameKn"  type="text" maxlength="50" value="">${uiLabelMap.Inkannada}</br></td>
+                       		<td class="label">${uiLabelMap.OrderAddress}</td>
+                        	<td colspan="4"><textarea name="grevAddEn" value="" maxlength="300" style="width:400px"></textarea>${uiLabelMap.InEnglish}
+                        	<br><textarea name="grevAddKn" value="" maxlength="300" style="width:400px"></textarea>${uiLabelMap.Inkannada}</br></td> 
                   	</tr>
                     <tr>
                     		<td class="label">${uiLabelMap.mobileNo}</td>
@@ -79,10 +81,11 @@
                     </tr>
                     <tr>
                     		<td class="label">${uiLabelMap.grievanceDetail}</td>
-                       	 	<td colspan="1"><textarea name="grievanceDetail" value="" maxlength="500" ></textarea></td>
+                       	 	<td colspan="1"><textarea name="grievanceDetailEn" value="" maxlength="500" ></textarea>${uiLabelMap.InEnglish}
+                       	 	<br><textarea name="grievanceDetailKn" value="" maxlength="500" ></textarea>${uiLabelMap.Inkannada}</br></td>
                     		<td class="label">${uiLabelMap.assentialDocument}</td>
 				        	<td colspan="4"><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        	<input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
+                        	<input type="button" onclick="javascript:resetVal(document.createGrievanceCustomer.fileLoc);" value="Reset"/>
                         	<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
                         	<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
                         	</td>
@@ -90,33 +93,96 @@
                     
                     <tr>
                     	<td colspan="12">
-                    	<center>
-                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail();"/>
-                    	 <input type="button" name="Cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
-                     	</center>
+                    	<div id="saveBtn"><center>
+                    	<input name="save" type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail();"/>
+                    	<input type="button" name="Cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
+                     	</div></center>
                      	</td>
                     </tr>
         		</table>
  
 	</div>
-   <#--	</div>-->
+  
 
    
 </form>
 
     <script type="text/javascript" language="javascript">
  
-function saveRegistrationDetail()
+ function saveRegistrationDetail()
    {
-		      var form=document['createGrievanceCustomer'];
+		       var form=document['createGrievanceCustomer'];
 		       var sure = confirm("Are you sure, you want to Save the Form ?");
-                              if( sure == true )
-                             {
-                        form.action = "<@ofbizUrl>searchGrievanceCusPortal</@ofbizUrl>";
+                       if( sure == true )
+                       {
+                        form.action = "<@ofbizUrl>RTIGrievancedetails</@ofbizUrl>";
 			            form.submit();
-		                disSubmit('disBttn');    
+		                disSubmit('saveBtn');    
 		                } 
     }
     
+function resetVal(field)
+  {
+ 	field.value = "";
+  }
     
+function validateFile(obj,fileNameTB,fileTypeTB)
+{
+
+var form=document['prepareAllCasesQW'];     
+var extensions = new Array("doc");
+
+// Alternative way to create the array
+ 
+var extensions = new Array();
+ 
+extensions[1] = "doc";
+extensions[2] = "pdf";
+extensions[3] = "xls";
+extensions[4] = "docx";
+extensions[5] = "xlsx";
+
+var image_file = obj.value;
+var files =  image_file.replace('&', 'and');
+var image_length = obj.value.length;
+
+fileNameTB.value=files;
+
+ 
+var pos = image_file.lastIndexOf('.') + 1;
+var ext = image_file.substring(pos, image_length);
+var final_ext = ext.toLowerCase();
+for (i = 0; i < extensions.length; i++)
+{
+    if(extensions[i] == final_ext){
+        var fileType = "";
+        
+           if(final_ext == "doc"){
+              fileType = "application/msword";
+           }
+           
+           if(final_ext == "docx"){
+              fileType = "application/msword";
+           }
+           
+            if(final_ext == "pdf"){
+              fileType = "application/pdf";
+           }
+           
+           if(final_ext == "xls"){
+              fileType = "application/vnd.ms-excel";
+           }
+           
+           if(final_ext == "xlsx"){
+              fileType = "application/vnd.ms-excel";
+           }
+           
+           fileTypeTB.value = fileType;
+           return true;
+    }
+}
+ 
+alert("You must upload a file with one of the following extensions: "+ extensions.join(', ') +".");
+return false;
+}
     </script>
