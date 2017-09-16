@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+
+
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <title>Entity of an Apache OFBiz Component</title>
+    <description>None</description>
+    <version>1.0</version>
+    
+     <entity entity-name="GrievanceDetails" package-name="org.apache.ofbiz.myportal" title="Save Grievance Details">
+		  <field name="sequenceId" type="id-ne"/>
+		  <field name="receiptNo" type="short-varchar"/>
+		  <field name="grievanceDate" type="date"/>
+          <field name="grievancePetitionDate" type="date"/> 
+		  <field name="typeOfGrievance" type="short-varchar"/>
+		  <field name="grievanceNameEN" type="short-varchar"/>
+		  <field name="grievanceNameKN" type="short-varchar"/>
+		  <field name="grievanceAddEn" type="long-varchar"/>
+		  <field name="grievanceAddKn" type="long-varchar"/>
+		  <field name="mobileNo" type="short-varchar"/>
+		  <field name="eMail" type="short-varchar"/>
+		  <field name="grievanceDetailEn" type="long-varchar"/>
+		  <field name="grievanceDetailKn" type="long-varchar"/>
+  	      <field name="status" type="short-varchar"/>
+  	      <field name="createdBy" type="short-varchar"/>
+  	      <prim-key field="sequenceId"/>
+	      <!-- <field name="cmDocId" type="short-varchar"/>
+	      <field name="cmcellReplyDocId" type="short-varchar"/>
+	     
+	     <relation type="one" rel-entity-name="DocumentReference" fk-name="img_fk">
+			<key-map field-name="cmDocId" rel-field-name="referenceId" />
+		 </relation>  
+		
+		  <relation type="one" rel-entity-name="DocumentReference" fk-name="cmcellReplyDocId">
+			<key-map field-name="cmcellReplyDocId" rel-field-name="referenceId" />
+		</relation> -->
+   </entity>
+</entitymodel>
