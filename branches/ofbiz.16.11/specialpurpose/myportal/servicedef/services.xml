@@ -31,4 +31,22 @@ under the License.
         location="component://myportal/minilang/MyPortalServices.xml" invoke="portalPermissionIsCustomer">
         <implements service="permissionInterface"/>
     </service>
+     <service name="createGrievanceDetails" export="true" engine="java" location="org.apache.ofbiz.myportal.MyportalServices" invoke="createGrievanceDetails">
+     <attribute name="receiptNo" type="String" mode="IN" optional="false" />
+     <attribute name="grievanceDate" type="String" mode="IN" optional="true" />
+     <attribute name="grievancePetitionDate" type="String" mode="IN" optional="true" />
+     <attribute name="typeOfGrievance" type="String" mode="IN" optional="true" />
+     <attribute name="grevNameEn" type="String" mode="IN" optional="true" />
+     <attribute name="grevNameKn" type="String" mode="IN" optional="true" />
+     <attribute name="grevAddEn" type="String" mode="IN" optional="true" />
+     <attribute name="grevAddKn" type="String" mode="IN" optional="true" />
+     <attribute name="mobileNo" type="String" mode="IN" optional="true" />
+     <attribute name="eMail" type="String" mode="IN" optional="true" />
+     <attribute name="grievanceDetailEn" type="String" mode="IN" optional="true" />
+     <attribute name="grievanceDetailKn" type="String" mode="IN" optional="true" />
+     <!-- <attribute name="fileLoc" type="java.nio.ByteBuffer" mode="IN" optional="true"/>
+	 <attribute name="fileLocFileName" type="String" mode="IN" optional="true"/>
+	 <attribute name="fileLocFileType" type="String" mode="IN" optional="true"/> -->
+		
+	</service> 
 </services>
