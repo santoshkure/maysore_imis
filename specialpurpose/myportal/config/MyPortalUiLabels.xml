@@ -999,5 +999,12 @@
         <value xml:lang="kn"> Complaint List </value>
     </property>
      <!-- ============End============= -->
-    
+     <property key="InEnglish">
+        <value xml:lang="en">(In English)</value>
+        <value xml:lang="kn">(In English)</value>
+    </property>
+    <property key="Inkannada">
+        <value xml:lang="en">(In Kannada)</value>
+        <value xml:lang="kn">(In Kannada)</value>
+    </property>
 </resource>
