@@ -28,7 +28,7 @@
     <entity-resource type="data" reader-name="demo" loader="main" location="data/MyPortalSecurityGroupDemoData.xml"/>
     <entity-resource type="data" reader-name="demo" loader="main" location="data/MyPortalPageDemoData.xml"/>
     <entity-resource type="data" reader-name="demo" loader="main" location="data/MyPortalDemoData.xml"/>
-
+    <entity-resource type="model" reader-name="main" loader="main" location="entitydef/entitymodel.xml"/>
     <service-resource type="model" loader="main" location="servicedef/services.xml"/>
 
     <webapp name="myportal" title="Customer Portal" app-bar-display="true" base-permission="MYPORTALBASE"
