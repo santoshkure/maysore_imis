@@ -218,6 +218,8 @@ public class hrmsMasterEvents {
 			/*	List<GenericValue> caseList = FastList.newInstance();*/
 			    List<GenericValue> caseList = new LinkedList<GenericValue>();
 				String zoneName =(String) context.get("zoneName");
+				   //Add by by Anubha Saini
+				String zoneNameKan =(String) context.get("zoneNameKan");
 				String cityName =(String) context.get("cityName");	
 				String officeName =(String) context.get("officeName");			
 				String remark =(String) context.get("remark");
@@ -225,6 +227,8 @@ public class hrmsMasterEvents {
 				String activestatus =(String) context.get("activestatus");
 				String createDated =(String) context.get("createdate");
 	  		    String zoneId = (String) delegator.getNextSeqId("ZoneMaster");
+	  		    
+	  		    
 	  		    java.sql.Date dateofcreatevar = getConvertedDate(createDated);
 	  		    
 				if (UtilValidate.isEmpty(zoneId)) {
@@ -258,7 +262,7 @@ public class hrmsMasterEvents {
 						}
 
 						if (UtilValidate.isEmpty(resultList)) {
-							Map officeZoneDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneNameUPPER,"zoneTypeId",zoneName,
+							Map officeZoneDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneNameUPPER,"zoneTypeId",zoneName,"zoneNameKan",zoneNameKan,
 									"cityName",cityName,"officeName",officeName,"remark",remark,"createdate",dateofcreatevar,"status","A","activestatus","Active");
 							
 							GenericValue valueToStore = delegator.makeValue("ZoneMaster", officeZoneDetails);
@@ -394,6 +398,8 @@ public class hrmsMasterEvents {
  				GenericValue userLogin = (GenericValue) context.get("userLogin");
  				final Locale locale = (Locale) context.get("locale");
  				String zoneName =(String) context.get("zoneName");
+ 				 //Add by by Anubha Saini
+ 				String zoneNameKan =(String) context.get("zoneNameKan");
  				String cityName =(String) context.get("cityName");	
  				String officeName =(String) context.get("officeName");			
  				String remark =(String) context.get("remark");
@@ -454,7 +460,7 @@ public class hrmsMasterEvents {
  				if (UtilValidate.isNotEmpty(zoneId))
  				{
  	           if(status.equals("edit")){
- 	        	   officeWardDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneName,"cityName",cityName,"officeName",officeName,"status","A","remark",remark,
+ 	        	   officeWardDetails = UtilMisc.toMap("zoneId",zoneId,"zoneName",zoneName,"zoneNameKan",zoneNameKan,"cityName",cityName,"officeName",officeName,"status","A","remark",remark,
  	        			   "createDated",dateofcreatevari,"zoneTypeId",zoneId);
  	           }else if(status.equals("status")){
  	        	   officeWardDetails = UtilMisc.toMap("status",activestatus);	
@@ -507,6 +513,8 @@ public class hrmsMasterEvents {
 			GenericValue userLogin = (GenericValue) context.get("userLogin");
 			final Locale locale = (Locale) context.get("locale");
 			String wardName =(String) context.get("wardName");
+			 //Add by by Anubha Saini
+			String wardNameKan =(String) context.get("wardNameKan");
 			String zoneName =(String) context.get("zoneName");	
 			String cityName =(String) context.get("cityName");			
 			String remark =(String) context.get("remark");
@@ -549,7 +557,7 @@ public class hrmsMasterEvents {
  					}
 
  					if (UtilValidate.isEmpty(resultList)) {
- 						Map officeWardDetails = UtilMisc.toMap("wardId",wardId,"zoneId",zoneName,"wardName",wardNameUPPER,"cityId",cityUpper,
+ 						Map officeWardDetails = UtilMisc.toMap("wardId",wardId,"zoneId",zoneName,"wardName",wardNameUPPER,"wardNameKan",wardNameKan,"cityId",cityUpper,
  						"cityName",cityName,"wardRemark",remark,"createdate",dateofcreatevar,"status","A","activestatus","Active");
  				
  				          GenericValue valueToStore = delegator.makeValue("WardMaster", officeWardDetails);
@@ -682,6 +690,8 @@ public class hrmsMasterEvents {
 			GenericValue userLogin = (GenericValue) context.get("userLogin");
 			final Locale locale = (Locale) context.get("locale");
 			String wardName =(String) context.get("wardName");
+			 //Add by by Anubha Saini
+			String wardNameKan =(String) context.get("wardNameKan");
 			String zoneName =(String) context.get("zoneName");	
 			String cityName =(String) context.get("cityName");			
 			String wardRemark =(String) context.get("wardRemark");
@@ -694,7 +704,7 @@ public class hrmsMasterEvents {
 			if (UtilValidate.isNotEmpty(wardId))
 			{
            if(status.equals("edit")){
-        	   officeWardDetails = UtilMisc.toMap("wardId",wardId,"wardName",wardName,"cityName",cityName,"zoneId",zoneName,"status","A","wardRemark",wardRemark);
+        	   officeWardDetails = UtilMisc.toMap("wardId",wardId,"wardName",wardName,"wardNameKan",wardNameKan,"cityName",cityName,"zoneId",zoneName,"status","A","wardRemark",wardRemark);
            }else if(status.equals("status")){
         	   officeWardDetails = UtilMisc.toMap("status",activestatus);	
 			}
@@ -744,6 +754,8 @@ public class hrmsMasterEvents {
 	            GenericValue userLogin = (GenericValue) context.get("userLogin");
 	            final Locale locale = (Locale) context.get("locale");       
 	            String blockName =(String) context.get("blockName");
+	            //Add by by Anubha Saini
+	            String blockNameKan =(String) context.get("blockNameKan");
 	            String wardName =(String) context.get("wardName");   
 	            String cityName =(String) context.get("cityName");       
 	            String remark =(String) context.get("remark");  
@@ -756,7 +768,7 @@ public class hrmsMasterEvents {
 	            //if (UtilValidate.isNotEmpty(blockId)){
 	            String blockId = (String) delegator.getNextSeqId("blockMaster");
 
-	            Map blockMasterDetail = UtilMisc.toMap("blockName",blockName,
+	            Map blockMasterDetail = UtilMisc.toMap("blockName",blockName,"blockNameKan",blockNameKan,
 	                    "wardId",wardName,"cityId",cityName,"remark",remark,"createdate",date,"status","A","blockId",blockId);
 	           
 	            GenericValue valueToStore = delegator.makeValue("blockMaster", blockMasterDetail);
@@ -795,6 +807,7 @@ public class hrmsMasterEvents {
 	            GenericValue userLogin = (GenericValue) context.get("userLogin");
 	            final Locale locale = (Locale) context.get("locale");
 	            String blockName =(String) context.get("blockName");
+	            String blockNameKan =(String) context.get("blockNameKan");
 	            String wardName =(String) context.get("wardName");   
 	            String cityName =(String) context.get("cityName");           
 	            String remark =(String) context.get("remark");
@@ -810,7 +823,7 @@ public class hrmsMasterEvents {
 	            if (UtilValidate.isNotEmpty(blockId))
 	            {
 	           if(status.equals("edit")){
-	               blockMasterDetail = UtilMisc.toMap("blockName",blockName,"wardId",
+	               blockMasterDetail = UtilMisc.toMap("blockName",blockName,"blockNameKan",blockNameKan,"wardId",
 	                    wardName,"cityId",cityName,"status","A","remark",remark,"createdate",date);
 	           }else if(status.equals("status")){
 	               blockMasterDetail = UtilMisc.toMap("status",activestatus);   
@@ -862,6 +875,7 @@ public class hrmsMasterEvents {
 	            GenericValue userLogin = (GenericValue) context.get("userLogin");
 	            final Locale locale = (Locale) context.get("locale");       
 	            String streetName =(String) context.get("streetName");
+	            String streetNameKan =(String) context.get("streetNameKan");
 	            String blockName =(String) context.get("blockName");   
 	            String cityName =(String) context.get("cityName");       
 	            String remark =(String) context.get("remark");
@@ -874,7 +888,7 @@ public class hrmsMasterEvents {
 	            //if (UtilValidate.isNotEmpty(blockId)){
 	            String streetId = (String) delegator.getNextSeqId("streetMaster");
 
-	            Map streetMasterDetail = UtilMisc.toMap("streetName",streetName,
+	            Map streetMasterDetail = UtilMisc.toMap("streetName",streetName,"streetNameKan",streetNameKan,
 	                    "blockId",blockName,"cityName",cityName,"remark",remark,"createdate",createdate1,"status","A","streetId",streetId);
 	           
 	            GenericValue valueToStore = delegator.makeValue("streetMaster", streetMasterDetail);
@@ -914,6 +928,8 @@ public class hrmsMasterEvents {
 	            GenericValue userLogin = (GenericValue) context.get("userLogin");
 	            final Locale locale = (Locale) context.get("locale");
 	            String streetName =(String) context.get("streetName");
+	            //Add by by Anubha Saini
+	            String streetNameKan =(String) context.get("streetNameKan");
 	            String blockName =(String) context.get("blockName");   
 	            String cityName =(String) context.get("cityName");           
 	            String remark =(String) context.get("remark");
@@ -928,7 +944,7 @@ public class hrmsMasterEvents {
 	            if (UtilValidate.isNotEmpty(streetId))
 	            {
 	           if(status.equals("edit")){
-	               streetMasterDetail = UtilMisc.toMap("streetName",streetName,"blockId",
+	               streetMasterDetail = UtilMisc.toMap("streetName",streetName,"streetNameKan",streetNameKan,"blockId",
 	                       blockName,"cityName",cityName,"status","A","remark",remark,"createdate",createdate1);
 	           }else if(status.equals("status")){
 	               streetMasterDetail = UtilMisc.toMap("status",activestatus);   

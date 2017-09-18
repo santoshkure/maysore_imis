@@ -4,9 +4,11 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created   modified by    Date   -->
 <#--- Siddhi    	    03 Aug 2017    Saurabh Gupta    14 Aug 2017     -->
-
+<#---                                   Anubha Saini    	16 Sep 2017 -->
 <#-- #####################################################################################################-->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
+<#-- Add by Anubha -->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
 <form method="post" name="editZoneMaster" class="basic-form">
 
 	<div class="row">
@@ -28,7 +30,9 @@
 			<tr>
 			
 			 <td class="label">${uiLabelMap.zoneName} <font color="red" >*</font></td>
-             <td><input type="text" name="zoneName" onchange="javascript:trimFunction(this)" value="${ZoneMasterLists.zoneName?if_exists}" style="width:140px"  /></td>
+             <td><input type="text" name="zoneName" onchange="javascript:trimFunction(this)" value="${ZoneMasterLists.zoneName?if_exists}" style="width:140px"  />(${uiLabelMap.inEnglish})<br> 
+               	<#-- Add by Anubha -->
+               	<input type="text" style="width:150px" maxlength="50" name="zoneNameKan" id="zoneNameKan" value="${ZoneMasterLists.zoneNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>
 			
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
@@ -45,7 +49,7 @@
              <td><select name="officeName" autocomplete="off" style="width:152px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
               <option value="">${uiLabelMap.CommonSelect}</option>
                 <#assign zoneNamevar  = "${ZoneMasterLists.officeName?if_exists}">
-                         <#if officeMasterLists?has_content>
+                        <#if officeMasterLists?has_content>
                             <#list officeMasterLists as officeMasterLists>
                              <#if "${officeMasterLists.officeSiteName?if_exists}" == "${zoneNamevar?if_exists}">
                                <option value="${officeMasterLists.officeSiteName?if_exists}" selected>${officeMasterLists.officeSiteName?if_exists}</option>

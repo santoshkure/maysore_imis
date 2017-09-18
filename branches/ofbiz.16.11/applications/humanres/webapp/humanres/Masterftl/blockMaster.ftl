@@ -4,7 +4,7 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created       Modified By     Modified Date-->
 <#--- Anubha Saini    	31 July 2017       Gaurav         17 August 2017-->
-
+<#---                                    Anubha Saini        16 September 2017 -->
 <#-- #####################################################################################################-->
 
 
@@ -16,17 +16,16 @@
   <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.blockMaster}</li>
-      
-      
-       <div class="basic-nav" style="margin-top: -80px;">
+      <div class="basic-nav" style="margin-top: -37px;">
   				<ul>
     				<li>
-						<a title="Create Block Master" href="<@ofbizUrl>createBlockMaster</@ofbizUrl>">
-							<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
-						</a>
+							<a title="Create Zone Master" href="<@ofbizUrl>createBlockMaster</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
     				</li>
   				</ul>
- 			</div> 
+ 			 
+  			</div>  
     </ul>
   
   </div>
@@ -107,6 +106,9 @@
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
 	         <td><center>${uiLabelMap.blockName}<center></td>
+	         <#--Add by anubha for kannad conversation -->
+	         <td><center>${uiLabelMap.blockNameKan}<center></td>
+            <#-- End -->
              <td><center>${uiLabelMap.wardname}</center></td>
          <#--    <td><center>${uiLabelMap.zoneName}</center></td>   -->
              <td><center>${uiLabelMap.cityName}<center></td>
@@ -125,6 +127,9 @@
          <tr>
 		      	<td align="center">${count}</td>
 	          	<td><center>${blockTypeList.blockName?if_exists}</center></td>
+	          	  <#--Add by anubha for kannad conversation -->
+	          	<td><center>${blockTypeList.blockNameKan?if_exists}</center></td>
+                 <#-- End-->
 	          	 <td><center> 
                    
                          <#if WardMasterList?has_content>

@@ -4,10 +4,12 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created   Modified By     Modified Date  -->
 <#--- Anubha Saini    	31 July 2017   Gaurav         17 August 2017 -->
-
+<#---                                  Anubha Saini    	16 Sep 2017 -->
 <#-- #####################################################################################################-->
 
-
+<script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
+<#-- Kannad language conversation -->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
 
 
 <form method="post" name="createStreetMaster" class="basic-form">
@@ -27,7 +29,9 @@
 		<tr><td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
 			<tr>
 			 <td class="label">${uiLabelMap.streetName}<font color="red" >*</font></td>
-			 <td><input type="text" style="width:140px"  name="streetName" onchange="javascript:trimFunction(this)" autocomplete="off" id="remark" maxlength ="30" value="" /></td>    	
+			 <td><input type="text" style="width:140px"  name="streetName" onchange="javascript:trimFunction(this)" autocomplete="off" id="remark" maxlength ="30" value="" />${uiLabelMap.inEnglish})<br> 
+              <#-- Kannad language conversation -->
+               	<input type="text" style="width:150px" maxlength="50" name="streetNameKan" id="streetNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>    	    	
 			 
 			  <td class="label">${uiLabelMap.blockName}<font color="red" >*</font> </td>
 			  <td> 

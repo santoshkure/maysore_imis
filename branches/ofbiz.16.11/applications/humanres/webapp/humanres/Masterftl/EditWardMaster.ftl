@@ -2,11 +2,13 @@
 
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Siddhi    	    03 Aug 2017    -->
+<#--- Author          	Date Created      Modify by-->
+<#--- Siddhi    	    03 Aug 2017       Anubha Saini on 16sep2017-->
 
 <#-- #####################################################################################################-->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
+<#-- Add by Anubha -->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
 <form method="post" name="editWardMaster" class="basic-form">
 
 	<div class="row">
@@ -58,7 +60,9 @@
             
                     
 			  <td class="label">${uiLabelMap.wardname}<font color="red" >*</font></td>
-             <td><input type="text" name="wardName" onchange="javascript:trimFunction(this)" value="${WardMasterLists.wardName?if_exists}" style="width:140px"  /></td>
+             <td><input type="text" name="wardName" onchange="javascript:trimFunction(this)" value="${WardMasterLists.wardName?if_exists}" style="width:140px"  />${uiLabelMap.inEnglish})<br> 
+               	<#-- Add by Anubha -->
+               	<input type="text" style="width:150px" maxlength="50" name="wardNameKan" id="wardNameKan" value="${WardMasterLists.wardNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>
         	</tr>
         	 
         	<tr>

@@ -93,6 +93,8 @@ function validateParameters(formName)
              <td><center>${uiLabelMap.activeDeactive}</center></td>
          </tr>
    </thead>
+
+   
    <#if officeTypeList?has_content>
    <#assign count= 1>
    <#list officeTypeList as officeTypeList>

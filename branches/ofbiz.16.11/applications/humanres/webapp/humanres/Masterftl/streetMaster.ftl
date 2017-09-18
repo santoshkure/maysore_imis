@@ -4,7 +4,7 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created    Modified By     Modified Date -->
 <#--- Anubha Saini    	31 July 2017     Gaurav         17 August 2017-->
-
+<#---                                   Anubha Saini    	16 Sep 2017 -->
 <#-- #####################################################################################################-->
 
 
@@ -16,15 +16,16 @@
   <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.streetmaster}</li>
-        <div class="basic-nav" style="margin-top: -80px;">
+       <div class="basic-nav" style="margin-top: -37px;">
   				<ul>
     				<li>
-						<a title="Create Street Master" href="<@ofbizUrl>createStreetMaster</@ofbizUrl>">
-							<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
-						</a>
+							<a title="Create Zone Master" href="<@ofbizUrl>createStreetMaster</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
     				</li>
   				</ul>
- 			</div> 
+ 			 
+  			</div>  
     </ul>
     
   </div>
@@ -96,6 +97,8 @@
        <thead>  <tr class="header-row-2">
              <td><center>S.No<center></td>
 	         <td><center>${uiLabelMap.streetName}<center></td>
+	        <#-- Add by Anubha -->
+	         <td><center>${uiLabelMap.streetNameKan}<center></td>
              <td><center>${uiLabelMap.blockName}</center></td>
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.remark}</center></td>
@@ -113,7 +116,8 @@
             <tr>
 		      	<td align="center">${count}</td>
 	          	<td><center>${streetTypeList.streetName?if_exists}</center></td>	          		          	
-	          	
+	          	<#-- Add by Anubha -->
+	          	<td><center>${streetTypeList.streetNameKan?if_exists}</center></td>	    
 	          	
 	          	<td><center>
                    
