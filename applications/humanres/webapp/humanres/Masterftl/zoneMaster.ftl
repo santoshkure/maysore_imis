@@ -4,7 +4,7 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created    Updated on     By -->
 <#--- Anubha Saini    	31 July 2017    18Aug 2017      Saurabh Gupta       -->
-
+ <#---                                  16 Sep 2017      Anubha Saini  -->
 <#-- #####################################################################################################-->
 <form method="post" name="zoneMaster" class="basic-form">
 
@@ -12,15 +12,16 @@
   	<div class="alert alert-info">
    		<ul>
     		<li class="h3">${uiLabelMap.zonemaster}</li>
-    		<div class="basic-nav" style="margin-top: -80px;">
+    		<div class="basic-nav" style="margin-top: -37px;">
   				<ul>
     				<li>
-					<a title="Create Zone Master" href="<@ofbizUrl>createZoneMaster</@ofbizUrl>">
-						<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
-					</a>
+							<a title="Create Zone Master" href="<@ofbizUrl>createZoneMaster</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
     				</li>
   				</ul>
-   			</div>  
+ 			 
+  			</div>  
     	</ul>
   	</div>
 	<div class="screenlet-body">
@@ -98,6 +99,8 @@
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}</center></td>
 	         <td><center>${uiLabelMap.zoneName}</center></td>
+	            <#-- Add by Anubha -->
+	           <td><center>${uiLabelMap. zoneNameKan}</center></td>
              <td><center>${uiLabelMap.cityName}</center></td>
              <td><center>${uiLabelMap.officeName}<center></td>
              <td><center>${uiLabelMap.createdate}</center></td>
@@ -115,6 +118,8 @@
 		 
             <tr> <td><center>${count?if_exists}</center></td>
             <td><center>${allOfficeZoneListed.zoneName}</center></td>
+              <#-- Add by Anubha -->
+             <td><center>${allOfficeZoneListed.zoneNameKan}</center></td>
             <td><center>${allOfficeZoneListed.cityName?if_exists}</center></td>
             <td><center>${allOfficeZoneListed.officeName}</center></td>
  			<td><center><#if allOfficeZoneListed.createdate?has_content>${allOfficeZoneListed.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	

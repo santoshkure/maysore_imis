@@ -4,9 +4,10 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created     Updated by -->
 <#--- Anubha Saini    	01 August 2017    Saurabh Gupta on 09 Aug 2017 -->
-
+<#---                                     Anubha Saini    	16 Sep 2017 -->
 <#-- #####################################################################################################-->
-
+<#-- Add JavaScript for Kannad language conversation -->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
 <form method="post" name="createZoneMaster" class="basic-form">
 
 	<div class="row">
@@ -26,8 +27,10 @@
 			<tr>
 			
 			 <td class="label">${uiLabelMap.zoneName} <font color="red" >*</font></td>
-			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="zoneName" autocomplete="off" id="zoneName" maxlength ="30" value="" /></td>    	
-			 
+			 <td><input type="text" style="width:150px" maxlength="50" name="zoneName" id="zoneName" value="" onchange="javascript:validateName(this);"/>(${uiLabelMap.inEnglish})<br> 
+               	<#-- Kannad language conversation -->
+               	<input type="text" style="width:150px" maxlength="50" name="zoneNameKan" id="zoneNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+             </td>
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
 				<select name="cityName" style="width:150px;" >
@@ -42,7 +45,7 @@
 			 <td class="label">${uiLabelMap.officeName}<font color="red" >*</font></td>
 			  <td width="25%"><select name="officeName" style="width:132px;margin:5px 0 5px 0;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>
-	    	   <#if officeMaterListed?exists>
+	    	     <#if officeMaterListed?exists>
 	    	      <#if officeMaterListed?has_content>
 	    	       <#list officeMaterListed as officeMaterListed>
  	    	         <option value="${officeMaterListed.officeSiteName?if_exists}">${officeMaterListed.officeSiteName?if_exists}</option>

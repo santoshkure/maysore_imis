@@ -994,18 +994,25 @@ under the License.
 		<!-- code is added by saurabh for save zone details -->
 		<service name="saveZonemasterdet" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveZonemasterdet">
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
+		<!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+		<attribute name="zoneNameKan" type="String" mode="IN" optional="true" />
+		<!-- End -->
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="officeName" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
 		<attribute name="createdate" type="String" mode="IN" optional="true" />	
 	    <attribute name="status" type="String" mode="IN" optional="true" />	
-	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
-	    	
+	   <!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />
+	    <!-- End -->	
 		</service>
 		<!-- code is added by saurabh for Update zone details -->
  		<service name="updateZoneDet" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateZoneDet">
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
+		<!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+		<attribute name="zoneNameKan" type="String" mode="IN" optional="true" />
+		<!-- End -->
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="officeName" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
@@ -1018,6 +1025,9 @@ under the License.
 			<!-- code is added by saurabh for save ward details -->
 		<service name="saveWardMaster" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveWardMaster">
 		<attribute name="wardName" type="String" mode="IN" optional="true" />
+		<!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+		<attribute name="wardNameKan" type="String" mode="IN" optional="true" />
+		   <!-- END -->
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
@@ -1030,6 +1040,9 @@ under the License.
 		<service name="updateWardDet" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateWardDet">
 		<attribute name="wardName" type="String" mode="IN" optional="true" />
+		<!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+		<attribute name="wardNameKan" type="String" mode="IN" optional="true" />
+		<!-- End -->
 		<attribute name="zoneName" type="String" mode="IN" optional="true" />
 		<attribute name="cityName" type="String" mode="IN" optional="true" />
 		<attribute name="wardRemark" type="String" mode="IN" optional="true" />
@@ -1046,6 +1059,9 @@ under the License.
 		<service name="saveBlockMaster" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveBlockMaster">
    	 <attribute name="blockName" type="String" mode="IN" optional="false" />
+   	<!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+   	 <attribute name="blockNameKan" type="String" mode="IN" optional="true" />
+   	   <!-- END -->
    	 <attribute name="wardName" type="String" mode="IN" optional="true" />
    	 <attribute name="cityName" type="String" mode="IN" optional="true" />
    	 <attribute name="remark" type="String" mode="IN" optional="true" />
@@ -1055,6 +1071,9 @@ under the License.
    	 <service name="editBlockTypeMasters" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editBlockTypeMasters">
    	 <attribute name="blockName" type="String" mode="IN" optional="true" />
+   	  <!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+   	  <attribute name="blockNameKan" type="String" mode="IN" optional="true" />
+   	    <!-- END -->
    	 <attribute name="wardName" type="String" mode="IN" optional="true" />
    	 <attribute name="cityName" type="String" mode="IN" optional="true" />
    	 <attribute name="remark" type="String" mode="IN" optional="true" />
@@ -1069,6 +1088,9 @@ under the License.
     	<service name="saveStreetsMaster" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveStreetsMaster">
    	 <attribute name="streetName" type="String" mode="IN" optional="false" />
+   	 <!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+   	 <attribute name="streetNameKan" type="String" mode="IN" optional="true" />
+   	    <!-- END -->
    	 <attribute name="blockName" type="String" mode="IN" optional="true" />
    	 <attribute name="cityName" type="String" mode="IN" optional="true" />
    	 <attribute name="remark" type="String" mode="IN" optional="true" />
@@ -1078,6 +1100,9 @@ under the License.
    	 <service name="editStreetTypeMasters" export="true" engine="java"
    	 location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editStreetTypeMasters">
    	  	<attribute name="streetName" type="String" mode="IN" optional="true" />
+   	  	<!--Added Anubha on 16/09/2017 for Kannad Language Conversation -->
+   	  	<attribute name="streetNameKan" type="String" mode="IN" optional="true" />
+   	 	   <!-- END -->
    	 	<attribute name="blockName" type="String" mode="IN" optional="true" />
    	 	<attribute name="cityName" type="String" mode="IN" optional="true" />
    	 	<attribute name="remark" type="String" mode="IN" optional="true" />

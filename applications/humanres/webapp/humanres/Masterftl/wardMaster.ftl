@@ -4,7 +4,7 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created    Modify by       Modify date -->
 <#--- Anubha Saini    	31 July 2017    Saurabh Gupta    14 aug 2017          -->
-
+<#---                                   Anubha Saini    	16 Sep 2017 -->
 <#-- #####################################################################################################-->
 <form method="post" name="wardMaster" class="basic-form">
 
@@ -12,15 +12,16 @@
   <div class="alert alert-info">
     <ul>
       <li class="h3">${uiLabelMap.wardmaster}</li>
-      <div class="basic-nav" style="margin-top: -80px;">
+     <div class="basic-nav" style="margin-top: -37px;">
   				<ul>
     				<li>
-						<a title="Create Ward Master" href="<@ofbizUrl>createWardMaster</@ofbizUrl>">
-							<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
-						</a>
+							<a title="Create Zone Master" href="<@ofbizUrl>createWardMaster</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
     				</li>
   				</ul>
- 			</div> 
+ 			 
+  			</div>  
     </ul>
    </div>
 	<br/>
@@ -105,6 +106,8 @@
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
 	         <td><center>${uiLabelMap.wardname}<center></td>
+	         <#-- Add by Anubha -->
+	          <td><center>${uiLabelMap.wardNameKan}<center></td>
              <td><center>${uiLabelMap.zoneName}</center></td>
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.Remark}</center></td>
@@ -123,6 +126,8 @@
 		 
              <tr> <td><center>${count?if_exists}</center></td>
             <td><center>${allOfficeWardListed.wardName?if_exists}</center></td>
+           <#-- Add by Anubha -->
+             <td><center>${allOfficeWardListed.wardNameKan?if_exists}</center></td>
             <td><center> 
                    
                          <#if ZoneMasterList?has_content>

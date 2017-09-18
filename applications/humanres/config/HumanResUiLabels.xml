@@ -4333,6 +4333,22 @@
         <value xml:lang="en">Area Co-ordinator</value>
         <value xml:lang="kn">Area Co-ordinator</value>
     </property>
+      <property key="streetNameKan">
+        <value xml:lang="en">Street Name in Kannad</value>
+        <value xml:lang="kn">Street Name in Kannad</value>
+    </property>
+     <property key="blockNameKan">
+        <value xml:lang="en">Block Name in Kannad</value>
+        <value xml:lang="kn">Block Name in Kannad</value>
+    </property>
+     <property key="wardNameKan">
+        <value xml:lang="en">Ward Name in Kannad</value>
+        <value xml:lang="kn">Ward Name in Kannad</value>
+    </property>
+     <property key="zoneNameKan">
+        <value xml:lang="en">Zone Namein Kannad</value>
+        <value xml:lang="kn">Zone Namein Kannad</value>
+    </property>
     <!-- END -->
     <!--   Added by Nikhil  -->
     <property key="connectionMasterList">
@@ -4392,4 +4408,6 @@
         <value xml:lang="kn">Description</value>
     </property>
       <!-- END -->
+    
+       
 </resource>

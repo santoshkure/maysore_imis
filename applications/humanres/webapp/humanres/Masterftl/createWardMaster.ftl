@@ -2,13 +2,14 @@
 <#---Program Name: createWardMaster.ftl----->
 <#---Description: --->
 <#---Version Number    1.0 --->
-<#--- Author          	Date Created     -->
-<#--- Anubha Saini    	31 July 2017    -->
+<#--- Author          	Date Created       Modified By   Date Modify  -->
+<#--- Anubha Saini    	31 July 2017      Anubha Saini     15 September 2017-->
 
 <#-- #####################################################################################################-->
 
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
-
+<#-- Kannad language conversation -->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
  <form method="post" name="createWardMaster" class="basic-form">
 
 	<div class="row">
@@ -50,7 +51,9 @@
 	    	</select>
                     </td>
 			 <td class="label">${uiLabelMap.wardname}<font color="red" >*</font></td>
-			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="wardName" autocomplete="off" id="wardName" maxlength ="30" value="" /></td> 
+			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="wardName" autocomplete="off" id="wardName" maxlength ="30" value="" />(${uiLabelMap.inEnglish})<br> 
+               <#-- Kannad language conversation -->
+               	<input type="text" style="width:150px" maxlength="50" name="wardNameKan" id="wardNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td> 
          	</tr>
          	<tr>
 			 <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>

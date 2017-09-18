@@ -31,6 +31,7 @@ under the License.
             package-name="org.apache.ofbiz.humanres.master" title="Zone Master Entity">
       <field name="zoneId" type="id-ne"></field>
       <field name="zoneName" type="short-varchar"/>
+      <field name="zoneNameKan" type="short-varchar"/>
       <field name="zoneTypeId" type="short-varchar"/>
       <field name="cityName" type="short-varchar"/>
       <field name="officeName" type="short-varchar"/>
@@ -47,6 +48,7 @@ under the License.
             package-name="org.apache.ofbiz.humanres.master" title="Zone Master Entity">
       <field name="wardId" type="id-ne"></field>
       <field name="wardName" type="short-varchar"/>
+      <field name="wardNameKan" type="short-varchar"/>
       <field name="zoneId" type="id-ne"/>
       <field name="cityName" type="short-varchar"/>
       <field name="cityId" type="id-ne"></field>    
@@ -69,6 +71,7 @@ under the License.
         	title="Block Master Entity">
   	<field name="blockId" type="id-ne"></field>
   	<field name="blockName" type="short-varchar"/>
+  	<field name="blockNameKan" type="short-varchar"/>
   	<field name="wardId" type="id-ne"/>
   	<field name="cityId" type="id-ne"/>	 
   	<field name="remark" type="description"></field>
@@ -84,6 +87,7 @@ under the License.
         	title="Street Master Entity">
   	<field name="streetId" type="id-ne"></field>
   	<field name="streetName" type="short-varchar"/>
+  	<field name="streetNameKan" type="short-varchar"/>
   	<field name="blockId" type="id-ne"/>
   	<field name="cityName" type="short-varchar"/>	 
   	<field name="remark" type="description"></field>
