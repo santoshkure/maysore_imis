@@ -5,6 +5,9 @@
 <#--- Author          	Date Created   Modified By  Date Modified-->
 <#--- Siddhi    	    03 Aug 2017      Ganesh       17/08/2017-->
 <#-- #####################################################################################################-->
+<#---added by nikhil for language change to kannada ---->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
+<#-- ----end -->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
 <form method="post" name="editCommunityMaster" class="basic-form">
 
@@ -29,10 +32,11 @@
 		
 			         <tr>
 						   <td class="label" >${uiLabelMap.communityname} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="20" name="communityname" onchange="javascript:trimFunction(this)" value="${communityTypeList.communityname?if_exists}" style="width:140px">
+					       <td><input type="text" maxlength="20" name="communityname" onchange="javascript:trimFunction(this)" value="${communityTypeList.communityname?if_exists}" style="width:140px">(${uiLabelMap.inEnglish})<br>
+					       <input type="text" style="width:140px" maxlength="20" name="communityNameKan" id="communityNameKan" value="${communityTypeList.communityNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
 					      <#-- <td class="label" >${uiLabelMap.createdate}</td>
                            <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
-					 <tr>
+					 
                            <td class="label" >${uiLabelMap.remark}</td>
                            <td><textarea name="remark" onchange="javascript:trimFunction(this)" value="${communityTypeList.remark?if_exists}" style="width:140px" maxlength ="150">${communityTypeList.remark?if_exists}</textarea></td>
                      </tr>

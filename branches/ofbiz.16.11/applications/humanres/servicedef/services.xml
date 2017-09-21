@@ -1116,6 +1116,8 @@ under the License.
     	<service name="saveCasteMasterDetails" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveCasteMasterDetails">
 	    <attribute name="castename" type="String" mode="IN" optional="true" />
+	   <!-- Added by nikhil -->
+	    <attribute name="castenameKan" type="String" mode="IN" optional="true" />
 		<attribute name="createdate" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
 		</service>
@@ -1123,6 +1125,8 @@ under the License.
 		<service name="editCasteTypeMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editCasteTypeMaster">
 		<attribute name="castename" type="String" mode="IN" optional="true" />
+		<!-- Added by nikhil -->
+		<attribute name="castenameKan" type="String" mode="IN" optional="true" />
 	    <attribute name="casteId" type="String" mode="IN" optional="true" />
 		<attribute name="createdate" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
@@ -1135,6 +1139,8 @@ under the License.
    	 <service name="saveCommunityMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveCommunityMaster">
 	    <attribute name="communityname" type="String" mode="IN" optional="true" />
+	   <!-- Added by nikhil -->
+	    <attribute name="communityNameKan" type="String" mode="IN" optional="true" />
 		<attribute name="createdate" type="String" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
 		</service>
@@ -1142,6 +1148,8 @@ under the License.
 		<service name="editCommunityTypeMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editCommunityTypeMaster">
 		<attribute name="communityname" type="String" mode="IN" optional="true" />
+		<!-- Added by nikhil -->
+		<attribute name="communityNameKan" type="String" mode="IN" optional="true" />
 	    <attribute name="communityId" type="String" mode="IN" optional="true" />
 		<attribute name="createdate" type="java.sql.Date" mode="IN" optional="true" />
 		<attribute name="remark" type="String" mode="IN" optional="true" />
@@ -1154,6 +1162,8 @@ under the License.
 	    <service name="saveGenderMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveGenderMaster">
 	    <attribute name="genderName" type="String" mode="IN" optional="true" />
+	   <!-- Added by nikhil -->
+	    <attribute name="genderNameKan" type="String" mode="IN" optional="true" />
 <!-- 		<attribute name="dateOfCreateGender" type="String" mode="IN" optional="true" />
  -->		<attribute name="genderRemark" type="String" mode="IN" optional="true" />
 		</service>
@@ -1161,6 +1171,8 @@ under the License.
 		<service name="editofGenderMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editofGenderMaster">
 		<attribute name="genderName" type="String" mode="IN" optional="true" />
+		<!-- Added by nikhil -->
+		<attribute name="genderNameKan" type="String" mode="IN" optional="true" />
 	    <attribute name="genderId" type="String" mode="IN" optional="true" />
 <!-- 		<attribute name="dateOfCreateGender" type="String" mode="IN" optional="true" />
  -->		<attribute name="genderRemark" type="String" mode="IN" optional="true" />
@@ -1178,6 +1190,8 @@ under the License.
 		<service name="savemaritalstatusmaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="savemaritalstatusmaster">
 	    <attribute name="maritalStatus" type="String" mode="IN" optional="true" />
+	   <!-- Added by nikhil -->
+	    <attribute name="maritalStatusKan" type="String" mode="IN" optional="true" />
 <!-- 		<attribute name="dateOfCreateMarital" type="String" mode="IN" optional="true" />
  -->		<attribute name="maritalRemark" type="String" mode="IN" optional="true" />
 		</service>
@@ -1185,6 +1199,8 @@ under the License.
 		<service name="editofMaritalMaster" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editofMaritalMaster">
 		<attribute name="maritalStatus" type="String" mode="IN" optional="true" />
+		<!-- Added by nikhil -->
+		<attribute name="maritalStatusKan" type="String" mode="IN" optional="true" />
 	    <attribute name="maritalStatusId" type="String" mode="IN" optional="true" />
 <!-- 		<attribute name="dateOfCreateMarital" type="String" mode="IN" optional="true" />
  -->		<attribute name="maritalRemark" type="String" mode="IN" optional="true" />

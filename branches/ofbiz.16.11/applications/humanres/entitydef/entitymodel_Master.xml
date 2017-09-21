@@ -106,6 +106,8 @@ under the License.
             title="Caste Master  Entity">
       <field name="casteId" type="id-ne"></field>
       <field name="castename" type="short-varchar"/>
+      <!-- added by nikhil for kannada language -->
+      <field name="castenameKan" type="short-varchar"/>
       <field name="createdate" type="date"/>
       <field name="remark" type="description"/>
       <field name="status" type="indicator"></field>     
@@ -121,6 +123,8 @@ under the License.
             title="Community Master Entity">
       <field name="communityId" type="id-ne"></field>
       <field name="communityname" type="short-varchar"/>
+      <!-- added by nikhil for kannada language -->
+      <field name="communityNameKan" type="short-varchar"/>
       <field name="createdate" type="date"/>
       <field name="remark" type="description"/>
       <field name="status" type="indicator"></field>     
@@ -133,6 +137,8 @@ under the License.
             title="Gender Master Entity">
       <field name="genderId" type="id-ne"></field>
       <field name="genderName" type="short-varchar"/>
+      <!-- added by nikhil for kannada language -->
+      <field name="genderNameKan" type="short-varchar"/>
       <field name="dateOfCreateGender" type="date"/>
       <field name="genderRemark" type="description"/>
       <field name="status" type="indicator"></field>     
@@ -146,6 +152,8 @@ under the License.
             title="Marital Status Master Entity">
       <field name="maritalStatusId" type="id-ne"></field>
       <field name="maritalStatus" type="short-varchar"/>
+      <!-- added by nikhil for kannada language -->
+      <field name="maritalStatusKan" type="short-varchar"/>
       <field name="dateOfCreateMarital" type="date"/>
       <field name="maritalRemark" type="description"/>
       <field name="status" type="indicator"></field>     

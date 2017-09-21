@@ -30,8 +30,7 @@
        
          <tr>
            <td class="label" >${uiLabelMap.pincode}</td>
-           <td><input type="text" name="pinCode" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="7"/></td>
-        </tr>
+           <td><input type="text" name="pinCode" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="7"/></tr>
       
         <tr>
             <td colspan="4"><center>

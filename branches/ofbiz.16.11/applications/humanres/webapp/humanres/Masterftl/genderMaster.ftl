@@ -10,7 +10,9 @@
 
 <#assign checkLocale = "${locale?if_exists}">
 <#setting locale="en">
- 
+<#---added by nikhil for language change to kannada ---->
+ <script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
+ <#-- ---end -->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
  <form method="post" name="genderMaster" action="" class="basic-form">
 	      <div class="row">	
@@ -25,19 +27,20 @@
 				
  				       <tr>
 						   <td class="label" >${uiLabelMap.gendername} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="" style="width:140px">
-					      
+					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="" style="width:140px">(${uiLabelMap.inEnglish})<br>
+					       <input type="text" style="width:140px" maxlength="11" name="genderNameKan" id="genderNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
 					       <#--<td class="label" >${uiLabelMap.createdate}</td>
                            <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>--->
 					 
 					     <#--<td class="label" >${uiLabelMap.createdate}</td>
                            <td><input type="text" name="dateOfCreateGender" value="" style="width:140px" readonly /></td>-->
                           <#--<@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>-->
-					   </tr>
-					     <tr>
+					  
+					     
                            <td class="label" >${uiLabelMap.remark}</td>
-                           <td><textarea name="genderRemark" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="150"></textarea></td>
-                     <tr>
+                          <td><textarea name="genderRemark" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="150"></textarea></td>
+                    </tr> 
+                      <tr>
                           <td colspan="4"><center>
                           <div id ="saveBtn">
                           <input name="save" value="${uiLabelMap.CommonSave}" type="button" onClick="validateParameters('genderMaster')">
@@ -69,7 +72,8 @@
    <thead>
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
-             <td><center>${uiLabelMap.gendername} </center></td>
+             <td><center>${uiLabelMap.gendername}</center></td>
+             <td><center>${uiLabelMap.gendernameKan}</center></td>
 		     <td><center>${uiLabelMap.createdate}</center></td> 
 		     <td><center>${uiLabelMap.remark}</center></td> 
              <td><center>${uiLabelMap.Status}</center></td>
@@ -87,7 +91,8 @@
                     <tr>
                           
                          <td><center>${count}</center></td>
-                          <td><center>${genderMasterList.genderName?if_exists}</center></td>
+                           <td><center>${genderMasterList.genderName?if_exists}</center></td>
+                           <td><center>${genderMasterList.genderNameKan?if_exists}</center></td>
                		       <td><center><#if genderMasterList.dateOfCreateGender?has_content>${genderMasterList.dateOfCreateGender?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
                            <td><center>${genderMasterList.genderRemark?if_exists}</center></td>
                             <td><center>
