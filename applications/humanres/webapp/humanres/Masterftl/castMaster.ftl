@@ -5,7 +5,10 @@
 <#-- #####################################################################################################-->
 <#assign checkLocale = "${locale?if_exists}">
 <#setting locale="en_US">
+<#---added by nikhil for language change to kannada --->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
+<#-- --end -->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
 <form method="post" class="basic-form" name="castemaster" action="">
 <div class="row">	
  <div class="alert alert-info">
@@ -19,11 +22,12 @@
 		<tr><td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
  		<tr>
 		   <td class="label" >${uiLabelMap.castename} <font color="red">*</font></td>
-		   <td><input type="text" name="castename" onchange="javascript:trimFunction(this)" id="castename" style="width:140px" maxlength ="20" onchange="javascript:checkCasteName();"/></td>
+		   <td><input type="text" name="castename" onchange="javascript:trimFunction(this)" id="castename" style="width:140px" maxlength ="20" onchange="javascript:checkCasteName();"/>(${uiLabelMap.inEnglish})<br>
+		       <input type="text" style="width:140px" maxlength="20" name="castenameKan" id="casteMasterKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"/>(${uiLabelMap.inKannada})<br>
 		  <#-- <td class="label" >${uiLabelMap.createdate}</td>
 		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
-	    </tr>
-		<tr>
+	  
+		
 		   <td class="label" >${uiLabelMap.remark}</td>
 		   <td><textarea name="remark" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="150"></textarea></td>
 	    </tr>
@@ -58,6 +62,7 @@
         <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}</center></td>
 	         <td><center>${uiLabelMap.castename}</center></td>
+	         <td><center>${uiLabelMap.castenameKan}</center></td>
 	         <td><center>${uiLabelMap.createdate}<center></td>
 	         <td><center>${uiLabelMap.remark}<center></td>
 	         
@@ -75,6 +80,7 @@
 		     <tr>
 	            <td><center>${count}</center></td>
 	            <td><center>${casteTypeList.castename?if_exists}</center></td>
+	            <td><center>${casteTypeList.castenameKan?if_exists}</center></td>
 	            <td><center><#if casteTypeList.createdate?has_content>${casteTypeList.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
 	            <td><center>${casteTypeList.remark?if_exists}</center></td>
 	            

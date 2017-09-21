@@ -3330,6 +3330,10 @@
         <value xml:lang="en">Caste Name</value>
         <value xml:lang="kn">Caste Name</value>
     </property>
+      <property key="castenameKan">
+        <value xml:lang="en">Caste Name(in kannada)</value>
+        <value xml:lang="kn">Caste Name(in kannada)</value>
+    </property>
     <property key="castemasterlist">
         <value xml:lang="en">Cast Master List</value>
         <value xml:lang="kn">Cast Master List</value>
@@ -3400,6 +3404,10 @@
 		<value xml:lang="en">Community Name</value>
 		<value xml:lang="kn">Community Name</value>
 	</property>
+	<property key="communitynameKan">
+		<value xml:lang="en">Community Name(in kannada)</value>
+		<value xml:lang="kn">Community Name(in kannada)</value>
+	</property>
 	<property key="gendermaster">
 		<value xml:lang="en">Gender Master</value>
 		<value xml:lang="kn">Gender Master</value>
@@ -3408,6 +3416,10 @@
 	<property key="gendername">
 		<value xml:lang="en">Gender Name</value>
 		<value xml:lang="kn">Gender Name</value>
+	</property>
+	<property key="gendernameKan">
+		<value xml:lang="en">Gender Name(in kannada)</value>
+		<value xml:lang="kn">Gender Name(in kannada)</value>
 	</property>
 	<property key="maritalstatusmaster">
 		<value xml:lang="en">Marital Status Master</value>
@@ -3429,6 +3441,10 @@
 	<property key="statusname">
 		<value xml:lang="en">Marital Status</value>
 		<value xml:lang="kn">Marital Status</value>
+	</property>
+	<property key="statusnameKan">
+		<value xml:lang="en">Marital Status(in kannada)</value>
+		<value xml:lang="kn">Marital Status(in kannada)</value>
 	</property>
       <!-- End -->
      <!-- Added By Shubham Malviya on Date 01/08/2017 -->

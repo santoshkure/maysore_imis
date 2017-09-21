@@ -999,6 +999,7 @@ public class hrmsMasterEvents {
 	        	GenericValue userLogin = (GenericValue) context.get("userLogin");
 	        	final Locale locale = (Locale) context.get("locale");
 	        	String castename =(String) context.get("castename");
+	        	String castenameK =(String) context.get("castenameKan");
 	        	//String createdate =(String) context.get("createdate");	
 	            //java.sql.Date createdate1 = getConvertedDate(createdate);
                
@@ -1013,7 +1014,7 @@ public class hrmsMasterEvents {
 	            String casteId = (String) delegator.getNextSeqId("casteMaster");
 	        	
 	        	Map casteTypDetails = UtilMisc.toMap("casteId",casteId,
-	        			"castename",castename,"createdate",createdate1,"status","A","remark",remark);
+	        			"castename",castename,"createdate",createdate1,"castenameKan",castenameK,"status","A","remark",remark);
 	        	
 	        	GenericValue valueToStore = delegator.makeValue("casteMaster", casteTypDetails);
 	        	valueToStore.create();
@@ -1054,6 +1055,7 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String castename =(String) context.get("castename");
+				String castenameK =(String) context.get("castenameKan");
 				//String createdate =(String) context.get("createdate");	
 	            //java.sql.Date createdate1 = getConvertedDate(createdate);
 				String remark =(String) context.get("remark");			
@@ -1071,7 +1073,7 @@ public class hrmsMasterEvents {
 				{
 	           if(status.equals("edit")){
 	        	   casteTypDetails = UtilMisc.toMap("casteId",casteId,"castename",
-	        			   castename,"createdate",createdate1,"status","A","remark",remark);
+	        			   castename,"createdate",createdate1,"status","A","remark",remark,"castenameKan",castenameK);
 	           }else if(status.equals("status")){
 	        	   casteTypDetails = UtilMisc.toMap("status",activestatus);	
 				}
@@ -1124,6 +1126,7 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String communityname =(String) context.get("communityname");
+				String communitynameK =(String) context.get("communityNameKan");
 				//String createdate =(String) context.get("createdate");
 				//java.sql.Date createdate1 = getConvertedDate(createdate);
 				String remark =(String) context.get("remark");	
@@ -1137,7 +1140,7 @@ public class hrmsMasterEvents {
 			    String CSC = (String) delegator.getNextSeqId("communityMaster");
 				
 				Map communityTypDetails = UtilMisc.toMap("communityId",CSC,
-						"communityname",communityname,"createdate",date,"status","A","remark",remark);
+						"communityname",communityname,"communityNameKan",communitynameK,"createdate",date,"status","A","remark",remark);
 				
 				GenericValue valueToStore = delegator.makeValue("communityMaster", communityTypDetails);
 				valueToStore.create();
@@ -1180,6 +1183,7 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String communityname =(String) context.get("communityname");
+				String communitynameK =(String) context.get("communityNameKan");
 				//String createdate =(String) context.get("createdate");
 				//java.sql.Date createdate1 = getConvertedDate(createdate);
 				String remark =(String) context.get("remark");			
@@ -1197,7 +1201,7 @@ public class hrmsMasterEvents {
 				{
 	           if(status.equals("edit")){
 	        	   communityTypDetails = UtilMisc.toMap("communityId",communityId,"communityname",
-	        			   communityname,"createdate",date,"status","A","remark",remark);
+	        			   communityname,"createdate",date,"communityNameKan",communitynameK,"status","A","remark",remark);
 	           }else if(status.equals("status")){
 	        	   communityTypDetails = UtilMisc.toMap("status",activestatus);	
 				}
@@ -1253,6 +1257,7 @@ public class hrmsMasterEvents {
 	            GenericValue userLogin = (GenericValue) context.get("userLogin");
 	            final Locale locale = (Locale) context.get("locale");
 	            String genderName =(String) context.get("genderName");
+	            String genderNameK =(String) context.get("genderNameKan");
                /* String dateOfCreateGender =(String) context.get("dateOfCreateGender");  
 	            java.sql.Date dateOfCreateGender1 = getConvertedDate(dateOfCreateGender);*/
                 String genderRemark =(String) context.get("genderRemark");
@@ -1266,7 +1271,7 @@ public class hrmsMasterEvents {
 	            String genderId = (String) delegator.getNextSeqId("genderMaster");
 	           
 	            Map genderMasterDetails = UtilMisc.toMap("genderId",genderId,
-	                    "genderName",genderName,"dateOfCreateGender",dateOfCreateGender1,"status","A","genderRemark",genderRemark);
+	                    "genderName",genderName,"dateOfCreateGender",dateOfCreateGender1,"genderNameKan",genderNameK,"status","A","genderRemark",genderRemark);
 	           
 	            GenericValue valueToStore = delegator.makeValue("genderMaster", genderMasterDetails);
 	            valueToStore.create();
@@ -1309,6 +1314,7 @@ public class hrmsMasterEvents {
 	            final Locale locale = (Locale) context.get("locale");
 	            String genderId =(String) context.get("genderId");
 	            String genderName =(String) context.get("genderName");
+	            String genderNameK =(String) context.get("genderNameKan");
 	            /*String dateOfCreateGender =(String) context.get("dateOfCreateGender");
 	            java.sql.Date dateOfCreateGender1 = getConvertedDate(dateOfCreateGender);*/
 	            String genderRemark =(String) context.get("genderRemark");           
@@ -1327,7 +1333,7 @@ public class hrmsMasterEvents {
 	            if (UtilValidate.isNotEmpty(genderId))
 	            {
 	           if(status.equals("edit")){
-	               genderMasterDetails = UtilMisc.toMap("genderId",genderId,"genderName",genderName,"dateOfCreateGender",dateOfCreateGender1,"genderRemark",genderRemark,"status","A");
+	               genderMasterDetails = UtilMisc.toMap("genderId",genderId,"genderName",genderName,"genderNameKan",genderNameK,"dateOfCreateGender",dateOfCreateGender1,"genderRemark",genderRemark,"status","A");
 	           }else if(status.equals("status")){
 	               genderMasterDetails = UtilMisc.toMap("status",activestatus);   
 	            }
@@ -1381,6 +1387,7 @@ public class hrmsMasterEvents {
 				GenericValue userLogin = (GenericValue) context.get("userLogin");
 				final Locale locale = (Locale) context.get("locale");
 				String maritalStatus =(String) context.get("maritalStatus");
+				String maritalStatusK =(String) context.get("maritalStatusKan");
 				/*String dateOfCreateMarital =(String) context.get("dateOfCreateMarital");
 	            java.sql.Date dateOfCreateMarital1 = getConvertedDate(dateOfCreateMarital);	*/		
 	            String maritalRemark =(String) context.get("maritalRemark");		
@@ -1395,7 +1402,7 @@ public class hrmsMasterEvents {
 	            String maritalStatusId = (String) delegator.getNextSeqId("maritalStatusMaster");
 				
 				Map maritalStatusMasterDetails = UtilMisc.toMap("maritalStatusId",maritalStatusId,
-						"maritalStatus",maritalStatus,"dateOfCreateMarital",dateOfCreateMarital1,"status","A","maritalRemark",maritalRemark);
+						"maritalStatus",maritalStatus,"dateOfCreateMarital",dateOfCreateMarital1,"maritalStatusKan",maritalStatusK,"status","A","maritalRemark",maritalRemark);
 				
 				GenericValue valueToStore = delegator.makeValue("maritalStatusMaster", maritalStatusMasterDetails);
 				valueToStore.create();
@@ -1437,6 +1444,7 @@ public class hrmsMasterEvents {
 				final Locale locale = (Locale) context.get("locale");
 				String maritalStatusId =(String) context.get("maritalStatusId");
 	            String maritalStatus =(String) context.get("maritalStatus");
+	            String maritalStatusK =(String) context.get("maritalStatusKan");
 				/*String dateOfCreateMarital =(String) context.get("dateOfCreateMarital");
 				java.sql.Date dateOfCreateMarital1 = getConvertedDate(dateOfCreateMarital);*/
 				String maritalRemark =(String) context.get("maritalRemark");			
@@ -1452,7 +1460,7 @@ public class hrmsMasterEvents {
 				if (UtilValidate.isNotEmpty(maritalStatusId))
 				{
 	           if(status.equals("edit")){
-	        	   maritalStatusMasterDetails = UtilMisc.toMap("maritalStatusId",maritalStatusId,"maritalStatus",maritalStatus,"dateOfCreateMarital",dateOfCreateMarital1,"maritalRemark",maritalRemark,"status","A");
+	        	   maritalStatusMasterDetails = UtilMisc.toMap("maritalStatusId",maritalStatusId,"maritalStatus",maritalStatus,"maritalStatusKan",maritalStatusK,"dateOfCreateMarital",dateOfCreateMarital1,"maritalRemark",maritalRemark,"status","A");
 	           }else if(status.equals("status")){
 	        	   maritalStatusMasterDetails = UtilMisc.toMap("status",activestatus);	
 				}

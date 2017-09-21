@@ -6,6 +6,9 @@
 <#--- Siddhi    	    03 Aug 2017     Anil Kumar    17/08/2017    --->
 
 <#-- #####################################################################################################-->
+<#---added by nikhil for language change to kannada ---->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
+<#-- ----End -->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
 <form method="post" name="editGenderMaster" class="basic-form">
 
@@ -28,13 +31,13 @@
 		
 			        <tr>
 						   <td class="label" >${uiLabelMap.gendername} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="${genderMasterList.genderName?if_exists}" style="width:140px">
-					        <#--<td class="label" >${uiLabelMap.createdate}</td>--->
+					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="${genderMasterList.genderName?if_exists}" style="width:140px">(${uiLabelMap.inEnglish})<br>
+					           <input type="text" style="width:140px" maxlength="11" name="genderNameKan" id="genderNameKan" value="${genderMasterList.genderNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+					          <#--<td class="label" >${uiLabelMap.createdate}</td>--->
                         <#--   <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td> -->
 	 		             <#--<td><input type="text" name="dateOfCreateGender" value="<#if genderMasterList.dateOfCreateGender?has_content>${genderMasterList.dateOfCreateGender?if_exists?string("dd/MM/yyyy")}</#if>" style="width:140px" readonly /></td>------>
 					 
-					   </tr>
-					     <tr>
+					  
                            <td class="label" >${uiLabelMap.remark}</td>
                            <td><textarea name="genderRemark" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="150">${genderMasterList.genderRemark?if_exists}</textarea></td>
                      </tr>

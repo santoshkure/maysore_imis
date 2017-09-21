@@ -6,6 +6,9 @@
 <#--- Siddhi    	    03 Aug 2017      Anil Kumar    17/08/2017 -->
 
 <#-- #####################################################################################################-->
+<#---added by nikhil for language change to kannada ---->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
+<#-- --end -->
 <script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
 <form method="post" name="editMaritalMaster" class="basic-form">
 
@@ -27,7 +30,8 @@
 		
 			         <tr>
 						   <td class="label" >${uiLabelMap.statusname} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="11" name="maritalStatus" onchange="javascript:trimFunction(this)" value="${maritalStatusMasterList.maritalStatus?if_exists}" style="width:140px">
+					       <td><input type="text" maxlength="11" name="maritalStatus" onchange="javascript:trimFunction(this)" value="${maritalStatusMasterList.maritalStatus?if_exists}" style="width:140px">(${uiLabelMap.inEnglish})<br>
+					        <input type="text" style="width:140px" maxlength="11" name="maritalStatusKan" id="maritalStatusKan" value="${maritalStatusMasterList.maritalStatusKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
 					       <#--<td class="label" >${uiLabelMap.createdate}-->
                        <#--    <td><input type="text" name="dateOfCreateMarital" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
                          <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>-->

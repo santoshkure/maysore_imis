@@ -30,8 +30,7 @@
 		   <td><input type="text" name="pinCode" onchange="javascript:trimFunction(this)" style="width:140px" value="${pinCodeMasterList.pinCode?if_exists}" maxlength ="7"/></td>
 		   <#--<td class="label" >${uiLabelMap.createdate}</td>
 		   <td><input type="text" name="dateOfCreatePin" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
-	    </tr>
-		<tr>
+	    
 		   <td class="label" >${uiLabelMap.remark}</td>
 		   <td><textarea name="cityRemark" onchange="javascript:trimFunction(this)" style="width:140px" maxlength ="150">${pinCodeMasterList.cityRemark?if_exists}</textarea></td>
 	    </tr>
