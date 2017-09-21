@@ -604,7 +604,7 @@ public class CommonServices {
     		String encoded_message=null;
     		String encoded_number=null;
     		
-    		// code for SMS Services
+    		/*// code for SMS Services
     		// encode Your Message and Number in UTF-8
     		try
     		{
@@ -648,7 +648,7 @@ public class CommonServices {
     			ex.printStackTrace();
     	    }
     		// end SMS code
-    		
+*/    		
     		 // Save SMS SEND Detail in table smsSendHistory
     		String smsId = null;
     		
