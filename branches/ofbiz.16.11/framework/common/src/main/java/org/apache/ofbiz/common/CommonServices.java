@@ -38,9 +38,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 import java.util.TreeSet;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.ofbiz.base.metrics.Metrics;
@@ -52,6 +59,7 @@ import org.apache.ofbiz.base.util.UtilMisc;
 import org.apache.ofbiz.base.util.UtilProperties;
 import org.apache.ofbiz.base.util.UtilValidate;
 import org.apache.ofbiz.entity.Delegator;
+import org.apache.ofbiz.entity.GenericDelegator;
 import org.apache.ofbiz.entity.GenericEntityException;
 import org.apache.ofbiz.entity.GenericValue;
 import org.apache.ofbiz.entity.model.ModelEntity;
@@ -64,6 +72,27 @@ import org.apache.ofbiz.service.ModelService;
 import org.apache.ofbiz.service.ServiceSynchronization;
 import org.apache.ofbiz.service.ServiceUtil;
 import org.apache.ofbiz.service.mail.MimeMessageWrapper;
+
+import javolution.util.FastMap;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 /**
  * Common Services
@@ -551,4 +580,171 @@ public class CommonServices {
         }
         return ServiceUtil.returnError(UtilProperties.getMessage(resource, "CommonMetricNotFound", UtilMisc.toMap("name", name), locale));
     }
+    
+    // Code Added by Shubham Malviya and Pankaj Trivedi For SMS Service
+    // Save Detail in smsSendHistory table
+    
+    public static Map<String, Object> smsServiceCall(DispatchContext ctx,
+    		Map<String, ? extends Object> context) throws GenericEntityException
+    	{
+    		Map<String, Object> result = FastMap.newInstance();
+    		
+    		LocalDispatcher dispatcher = ctx.getDispatcher();
+
+    		GenericDelegator delegator = (GenericDelegator) ctx.getDelegator();
+
+    		String mobNumber = (String) context.get("mobNumber");
+    		String textMessage = (String) context.get("textMessage");
+    		String consumerId = (String) context.get("consumerId");
+    		String tabName = (String) context.get("tabName");
+    		String discription = (String) context.get("discription");
+    		
+    		String smsStatus = "OK";
+    		
+    		String encoded_message=null;
+    		String encoded_number=null;
+    		
+    		// code for SMS Services
+    		// encode Your Message and Number in UTF-8
+    		try
+    		{
+    			encoded_message=URLEncoder.encode(textMessage,"UTF-8");
+    			encoded_number=URLEncoder.encode(mobNumber,"UTF-8");
+    		}
+    		catch(Exception ex)
+    		{
+    			System.out.println(ex);
+    		}
+    		
+    		try 
+    		{
+    			// URL Change According to the SMS Service Provider
+    			// Mobile No.
+    			// Message 
+    			// Sender Id
+    			String requestUrl  = "https://alerts.solutionsinfini.com/api/v4/?api_key=A4be82e445bc46ac6aaffafe4736dee0f&method=sms&"
+    				+ "message="+encoded_message+"&to="+encoded_number+"&sender=SIDEMO";   					
+
+    	        URL url = new URL(requestUrl);
+    	        HttpURLConnection uc = (HttpURLConnection)url.openConnection();
+    	        
+    	        // Return OK on success
+    	        System.out.println(uc.getResponseMessage());
+    	       
+    	        if(smsStatus.equals(uc.getResponseMessage()))
+    	        {
+    	        	smsStatus = "Send";
+    	        }
+    	        else
+    	        {
+    	        	smsStatus = "Error";
+    	        }
+    	        uc.disconnect();
+
+    	    } 
+    		catch(Exception ex) 
+    		{
+    			smsStatus = "error";
+    			ex.printStackTrace();
+    	    }
+    		// end SMS code
+    		
+    		 // Save SMS SEND Detail in table smsSendHistory
+    		String smsId = null;
+    		
+    		try
+    		{
+    			smsId = delegator.getNextSeqId("smsSendHistory",1);
+    			
+    			Map<String, ? extends Object> smsLogDetail = UtilMisc.toMap("smsId", smsId,"mobNumber", mobNumber,
+    					"massage", textMessage, "consumerId",consumerId, 
+    					"tabName", tabName, "description", discription,
+    					"smsStatus",smsStatus);
+    			GenericValue smsLog = delegator.makeValue("smsSendHistory", smsLogDetail);
+    			smsLog.create();
+    		}
+    		
+    		catch (GenericEntityException e)
+    		{
+    			e.printStackTrace();
+    		}
+    		
+    		result.put("smsId", smsId);
+    		return result;
+    	}
+
+ // Code Added by Shubham Malviya and Pankaj Trivedi For Email Service
+// Save Detail in emailLogDetails table
+    
+    public static Map<String, Object> emailServiceCall(DispatchContext ctx,
+    		Map<String, ? extends Object> context) throws GenericEntityException
+    	{
+    		Map<String, Object> result = FastMap.newInstance();
+    		
+    		LocalDispatcher dispatcher = ctx.getDispatcher();
+
+    		GenericDelegator delegator = (GenericDelegator) ctx.getDelegator();
+
+    		String emailId = (String) context.get("emailId");
+            String textMessage = (String) context.get("textMessage");
+            String consumerId = (String) context.get("consumerId");
+            String tabName = (String) context.get("tabName");
+            String discription = (String) context.get("discription");
+            String subject = (String) context.get("subject");
+            
+            String emailSendId = null;
+            // Recipient's email ID needs to be mentioned.
+            Properties props = new Properties();
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.socketFactory.port", "465");
+            props.put("mail.smtp.socketFactory.class",
+                    "javax.net.ssl.SSLSocketFactory");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.port", "465");
+
+            Session session = Session.getDefaultInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication("imismysore","welcome12345");
+                    }
+                });
+
+            try {
+
+                Message message = new MimeMessage(session);
+                message.setFrom(new InternetAddress("imismysore@gmail.com"));
+                message.setRecipients(Message.RecipientType.TO,
+                        InternetAddress.parse(emailId));
+                message.setSubject(subject);
+                message.setText(textMessage);
+
+                Transport.send(message);
+
+                System.out.println("Done");
+
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }
+    		
+    	    try
+    		{
+    	    	emailSendId = delegator.getNextSeqId("emailLogDetails",1);
+    			
+    			Map<String, ? extends Object> emailLogDetail = UtilMisc.toMap("emailSendId", emailSendId,"emailId", emailId,
+    					"textMessage", textMessage, "consumerId", consumerId, 
+    					"tabName", tabName, "discription", discription,"subject","subject");
+    			GenericValue emailLog = delegator.makeValue("emailLogDetails", emailLogDetail);
+    			emailLog.create();
+    		}
+    		
+    		catch (GenericEntityException e)
+    		{
+    			e.printStackTrace();
+    		}
+    		
+    		result.put("emailSendId", emailSendId);
+    		
+    		return result;
+    	}
+    
 }
