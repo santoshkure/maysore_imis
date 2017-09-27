@@ -37,6 +37,7 @@ under the License.
 
                 <set field="layoutSettings.companyName" from-field="uiLabelMap.MyPortalInformation" global="true"/>
                 <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.PartyCompanySubtitle" global="true"/>
+                <set field="layoutSettings.javaScripts[]" value="/images/calendarDateSelect/calendar_date_select.js" global="true"/>
                 <set field="applicationMenuName" value="MyPortalAppBar" global="true"/>
                 <set field="applicationMenuLocation" value="component://myportal/widget/MyPortalMenus.xml" global="true"/>
                 <set field="parameters.parentPortalPageId" from-field="parameters.parentPortalPageId" default-value="MYPORTAL" global="true"/>
@@ -67,6 +68,7 @@ under the License.
 
                 <set field="layoutSettings.companyName" from-field="uiLabelMap.MyPortalInformation" global="true"/>
                 <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.PartyCompanySubtitle" global="true"/>
+                <set field="layoutSettings.javaScripts[]" value="/images/calendarDateSelect/calendar_date_select.js" global="true"/>
                 <set field="applicationMenuName" value="MyPortalAppBar" global="true"/>
                 <set field="applicationMenuLocation" value="component://myportal/widget/MyPortalMenus.xml" global="true"/>
                 <!-- 
