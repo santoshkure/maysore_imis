@@ -189,9 +189,9 @@ border-radius: 4px 4px 0 0;
 /* ------------------------------- */
 
 .alert {
-	padding: 8px 0;
+	padding: 6px 0;
 	text-align: center;
-	height: auto;
+	height: 30px;
 	border-radius: 4px 4px 0 0;
 }
 
@@ -525,6 +525,11 @@ text-decoration: underline;
     min-height: 1.1em;
     min-width: 1.1em;
 }
+.screenlet-title-bar ul li select{
+	font-size: 11px;
+	width: 60px;
+	margin-top: -3px;
+}
 
 .screenlet-title-bar ul .expanded,
 .screenlet-title-bar ul .expanded:hover {
@@ -538,6 +543,99 @@ text-decoration: underline;
     /* IE fix */
     cursor: default;
 }
+
+.alert-info ul {
+display: inline; /* IE Fix */   
+}
+.h3{
+	float:none !important;
+}
+.h3-bottom{
+	float:left !important;
+}
+.alert-info ul li {
+background: none;
+border-left: 0.1em solid #5f9fcf;
+color: #31708f;
+float: right;
+font-size: 1em;
+font-weight: bold;
+padding: 0.1em 0.5em 0.2em 0.5em;
+height:17px;
+}
+
+.alert-info ul li select{
+	font-size: 11px;
+	width: 60px;
+	margin-top: -3px;
+}
+
+.alert-info ul h1,
+.alert-info ul h2,
+.alert-info ul h3,
+.alert-info ul .h1,
+.alert-info ul .h2,
+.alert-info ul .h3 {
+border-left: none;
+float: left;
+}
+
+.alert-info .h1 {
+font-size: 1.6em;
+}
+
+.alert-info .h2 {
+font-size: 1.3em;
+}
+
+.alert-info .h3,
+.alert-info .head4 {
+font-size: 1.1em;
+}
+
+.alert-info .h3 a {
+color: #0078D0;
+display: inline;
+}
+
+.alert-info ul a {
+color: #000099;
+display: block;
+}
+
+.alert-info ul a:visited {
+color: #000099;
+}
+
+.alert-info ul a:hover {
+color: #000099;
+text-decoration: none;
+}
+
+.alert-info ul .disabled {
+color: #5e5e5e;
+}
+
+.alert-info ul .collapsed,
+.alert-info ul .collapsed:hover {
+background: url(/images/expand.gif) no-repeat center center;
+min-height: 1.1em;
+min-width: 1.1em;
+}
+
+.alert-info ul .expanded,
+.alert-info ul .expanded:hover {
+background: url(/images/collapse.gif) no-repeat center center;
+min-height: 1.1em;
+min-width: 1.1em;
+}
+
+.alert-info ul .collapsed a,
+.alert-info ul .expanded a {
+/* IE fix */
+cursor: pointer;
+}
+
 
 /* ------------------------------------------------ */
 /*      Basic Navigation (Vertical Menu) Style      */
@@ -576,7 +674,7 @@ text-decoration: underline;
 
 }
 .back{
-	float: left;
+	float: left !important;
 	padding-left: 15px;	
 }
 .back a{
@@ -1959,3 +2057,149 @@ html > /**/ body .jstree-default a {
 }
 
 /*end addon modification generic-portlet*/
+
+/* ================================= */
+/* ===== Calendar Date Select ====== */
+/* ================================= */
+
+.calendar_date_select {
+  color: #fff;
+  border: #777 1px solid;
+  display: block;
+  width: 200px;
+  z-index: 1000;
+}
+/* this is a fun ie6 hack to get drop downs to stay behind the popup window.  This should always be just underneath .calendar_date_select */
+iframe.ie6_blocker {
+  position: absolute;
+  z-index: 999;
+}
+
+.calendar_date_select thead th {
+  font-weight:bold;
+  background-color: #4682B4;
+  border-top:1px solid #777;
+  border-bottom:2px solid #777;
+  color: white !important;
+}
+
+.calendar_date_select .cds_buttons {
+  text-align:center;
+  padding:5px 0px;
+  background-color: #4682B4;
+}
+
+.calendar_date_select .cds_footer {
+  background-color: #4682B4;
+  padding:3px;
+  font-size:12px;
+  text-align:center;
+}
+
+.calendar_date_select table {
+  margin: 0px;
+  padding: 0px;
+}
+
+.calendar_date_select .cds_header {
+  background-color: #87CEEB;
+  border-bottom: 2px solid #87CEEB;
+  text-align:center;
+}
+
+.calendar_date_select .cds_header span {
+  font-size:15px;
+  color: #1F1F1F;
+  font-weight: bold;
+}
+
+.calendar_date_select select { 
+	font-size:11px;
+	background-color: #ffffff;
+	border: #999999 solid 0.1em;
+	font-size: 1.1em;
+	height: 1.6em;
+	margin: 0.1em;
+	padding:0 5px;
+}
+
+.calendar_date_select .cds_header a:hover {
+  color: #fff;
+}
+.calendar_date_select .cds_header a {
+  width:22px;
+  height:20px;
+  text-decoration: none;
+  font-size:14px;
+  color: #1F1F1F !important;
+}
+
+.calendar_date_select .cds_header a.prev {
+  float:left;
+}
+.calendar_date_select .cds_header a.next {
+  float:right;
+}
+.calendar_date_select .cds_header a.close {
+  float:right;
+  display:none;
+}
+
+.calendar_date_select .cds_header select.month {
+  width:102px;
+}
+
+.calendar_date_select .cds_header select.year {
+  width:70px;
+}
+
+.calendar_date_select .cds_buttons a {
+  color: #fff;
+  font-size: 9px;
+}
+.calendar_date_select td {
+  font-size:12px;
+  width: 24px;
+  height: 21px;
+  text-align:center;
+  vertical-align: middle;
+  background-color: #87CEEB;
+}
+.calendar_date_select td.weekend {
+  background-color: #ADD8E6;
+}
+
+.calendar_date_select td div {
+  color: #fff;
+}
+.calendar_date_select td div.other {
+  color: #888;
+}
+.calendar_date_select td.selected div {
+  color: #1F1F1F;
+}
+
+.calendar_date_select tbody td {
+  border-bottom: 1px solid #FFD700;
+}
+.calendar_date_select td.selected {
+  background-color: #fff;
+}
+
+.calendar_date_select td:hover {
+  background-color:#00BFFF;
+}
+
+.calendar_date_select td.today {
+  border: 1px dashed #FFFF00;
+}
+
+.calendar_date_select td.disabled div {
+  color: #454545;
+}
+
+
+.fieldWithErrors .calendar_date_select {
+  border: 2px solid #FF0000;
+}
+
