@@ -905,6 +905,7 @@ under the License.
     <screen name="searchGrievanceCusPortal">
         <section>
             <actions>
+            <service service-name="searchgrievanceDetail" auto-field-map="parameters" />  
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -922,6 +923,9 @@ under the License.
     <screen name="editGrievanceCusPortal">
         <section>
             <actions>
+            <entity-condition list="grievanceDetailsList" entity-name="GrievanceDetails">
+				<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -939,6 +943,9 @@ under the License.
     <screen name="veiwGrievanceCusPortal">
         <section>
             <actions>
+            <entity-condition list="grievanceDetailsList" entity-name="GrievanceDetails">
+				<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -954,5 +961,27 @@ under the License.
         </section>
     </screen>
 <!-- END -->
+  <screen name="grievancePDF">
+        <section>
+            <actions>
+             <set field="title" value="Order"/>
+                <property-map resource="MyPortalUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+              
+            
+               <service service-name="searchgrievanceDetail" auto-field-map="true"/>
+            </actions>
+            
+             <widgets>
+                <platform-specific>
+                     <xsl-fo><html-template location="component://myportal/webapp/myportal/myPortalftl/grievanceDetailsPDF.fo.ftl"/></xsl-fo>
+                </platform-specific>               
+            </widgets>
+           
+        </section>
+    </screen>
 
 </screens>
