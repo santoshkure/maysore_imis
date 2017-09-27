@@ -15892,6 +15892,10 @@
         <value xml:lang="en">Grievance Detail</value>
         <value xml:lang="kn">Grievance Detail</value>
     </property>
+    <property key="searchGrievanceDetail">
+        <value xml:lang="en">Search Grievance Detail</value>
+        <value xml:lang="kn">Search Grievance Detail</value>
+    </property>
     <property key="grievanceDate">
         <value xml:lang="en">Date of Grievance</value>
         <value xml:lang="kn">Date of Grievance</value>
@@ -16048,5 +16052,9 @@
         <value xml:lang="kn">Payment History</value>
     </property>
     <!-- End -->
+    <property key="NoRecordsFound">
+        <value xml:lang="en">No Records Found</value>
+        <value xml:lang="kn">No Records Found</value>
+    </property>
 </resource>
 

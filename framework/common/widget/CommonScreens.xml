@@ -165,6 +165,7 @@ under the License.
                 <include-screen name="GlobalActions" />
                 <section>
                     <actions>
+                        <set field="layoutSettings.javaScripts[+0]" value="/images/prototypejs/prototype.js" global="true"/>
                         <set field="layoutSettings.commonHeaderImageLinkUrl" from-field="layoutSettings.commonHeaderImageLinkUrl" default-value="main" global="true" />
                         <set field="iconsLocation" from-field="layoutSettings.VT_ICONS_LOC[0]" default-value="/images/icons/famfamfam" global="true" />
                         <set field="headerTemplateLocation" from-field="layoutSettings.VT_HDR_TMPLT_LOC[0]" />
