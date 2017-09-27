@@ -365,13 +365,27 @@
         <response name="error" type="view" value="veiwGrievanceCusPortal"/>
     </request-map>
      <!-- End -->
-    
-     <request-map uri="RTIGrievancedetails">
+    <!--Added by Siddhi-->
+     <request-map uri="Grievancedetails">
         <security https="true" auth="true" />
         <event type="service" invoke="createGrievanceDetails"/>
-        <response name="success" type="request-redirect" value="searchGrievanceCusPortal"/>
+        <response name="success" type="request-redirect" value="searchGrievanceCusPortal">
+        <redirect-parameter name="ErrorMessage"/></response>
         <response name="error" type="view" value="createGrievanceCusPortal" />
     </request-map>
+    <request-map uri="updateGrievanceCusPortal">
+		<security https="true" auth="true"/>
+		 <event type="service" invoke="updateGrievanceDetails"/>
+		<response name="success" type="request-redirect" value="searchGrievanceCusPortal">
+		 <redirect-parameter name="ErrorMessage1"/></response>
+		<response name="error" type="view" value="editGrievanceCusPortal" />
+    </request-map>
+    <request-map uri="grievancePDF">
+      <security https="true" auth="true"/>
+      <response name="success" type="view" value="grievancePDF"/>
+      <response name="error" type="view" value="grievancePDF"/>
+   </request-map>
+   <!-- end -->
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
     <view-map name="newRegisterLogin" type="screen" page="component://myportal/widget/CommonScreens.xml#newRegisterLogin"/>  
@@ -440,6 +454,8 @@
     <view-map name="createGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#createGrievanceCusPortal"/>
     <view-map name="searchGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#searchGrievanceCusPortal"/>
     <view-map name="editGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#editGrievanceCusPortal"/>
-     <view-map name="veiwGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwGrievanceCusPortal"/>
+    <view-map name="veiwGrievanceCusPortal" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#veiwGrievanceCusPortal"/>
+     
    <!-- End -->
+    <view-map name="grievancePDF" type="screenfop" page="component://myportal/widget/PortalAdmScreens.xml#grievancePDF" content-type="application/pdf"/>
 </site-conf>
