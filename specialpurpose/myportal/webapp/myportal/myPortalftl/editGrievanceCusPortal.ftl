@@ -3,17 +3,14 @@
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
-<#---Version Number		Author 		 Date Created 		Date Modified   --->
-<#-- 1.0			Anubha Saini	  19/08/2017         
+<#---Version Number		Author 		 Date Created 		Modified by --->
+<#-- 1.0			Anubha Saini	  19/08/2017         Siddhi
 <#-- #####################################################################################################-->
 <#--This ftl is used to Register New Customer -->
 
 
    		 <form method="post" name="editGrievanceCustomer" action="" class="basic-form">
-   		<#--<div class="col-md-9">-->
-   		 
-   		<#--  <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.createIllegalToLegal}</span></div> -->
-   		 
+   		
     			<div class="row" >
     			<div class="alert alert-info">
 				<ul>
@@ -23,66 +20,84 @@
   				</div>
   				
   				<table cellspacing="0" class="basic-table table-responsive">
-  				
+  			<#if grievanceDetailsList?exists>     
+             <#if grievanceDetailsList?has_content>
+               <#list grievanceDetailsList as grievanceDetailsList>   
   							
         			<tr>
         			<td colspan="12" align="left"><font color="blue"><b>${uiLabelMap.grievanceReceipt}</b></font></td>
 	              		
                 	</tr>
-                	
+                	 <input type="hidden" name="sequenceId" value="${grievanceDetailsList.sequenceId?if_exists}">
         			<tr>
                       	<td class="label">${uiLabelMap.receiptNo}</td>
-                        <td colspan="12"><input name="receiptNo"  type="text" maxlength="10" value="RECP1001" readonly></td>
+                        <td colspan="12"><input name="receiptNo"  type="text" maxlength="10" value="${grievanceDetailsList.receiptNo?if_exists}" readonly></td>
                        
                  </tr>
                  <tr><td colspan="12" align="left"><font color="blue"><b>${uiLabelMap.grievanceDetail}</b></font></td></tr>
                  <tr>
                  		<td class="label">${uiLabelMap.grievanceDate}</td>
    						<td colspan="12">
-						<@htmlTemplate.renderDateTimeField name="grievanceDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="grievanceDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-						<#--<input name=""  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy")}"></td>-->
+   						   <input type="text" name="grievanceDate" autocomplete="off" value="<#if grievanceDetailsList.grievanceDate?has_content>${grievanceDetailsList.grievanceDate?if_exists?string('dd/MM/yyyy')}</#if>" id="grievanceDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
+        			       <a href="javascript:call_cal(document.editGrievanceCustomer.grievanceDate);">
+       				       <img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a>
+   						</td>
+						
 				</tr>
 					<tr>	
 						<td class="label" >${uiLabelMap.grievancePetitionDate}</td>
    						<td>
-						<@htmlTemplate.renderDateTimeField name="grievancePetitionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="grievancePetitionDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-						<#--<input name=""  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy")}"></td>-->
+						<input type="text" name="grievancePetitionDate" autocomplete="off" value="<#if grievanceDetailsList.grievancePetitionDate?has_content>${grievanceDetailsList.grievancePetitionDate?if_exists?string('dd/MM/yyyy')}</#if>" id="grievancePetitionDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
+        			    <a href="javascript:call_cal(document.editGrievanceCustomer.grievancePetitionDate);">
+       				    <img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a></td>
                   
                     	<td class="label" >${uiLabelMap.typeOfGrievance}</td>
  						<td colspan="4">
-                    	<select name="typeOfGrievance" >
-                   			<option value="">Select</option>
-                   			<option value="">Internal</option>
-                   			<option value="">External</option>
-                   			
+ 						<#assign TypeofGrivance = "${grievanceDetailsList.typeOfGrievance?if_exists}" />
+                    	<select name="typeOfGrievance" id="typeOfGrievance">
+                    	<#if TypeofGrivance=="Internal">
+		                <option value=''>Select</option>
+                        <option value="Internal" selected="true">Internal</option> 
+                        <option value="External">External</option>
+                        <#elseif TypeofGrivance == "External">
+                   		<option value=''>Select</option>
+                   		<option value="Internal">Internal</option>
+                   		<option value="External" selected="true">External</option>
+                   		<#else>	
+                   		<option value=''>Select</option>
+                   		<option value="Internal">Internal</option>
+                   		<option value="External">External</option>
+                   		</#if>
                  		</select>
              			</td> 
+             			
                   	</tr>  
                   
-                 
-                  
-                  	<tr>
+                  	 <tr>
                     		<td class="label">${uiLabelMap.name}</td>
-                         	<td ><input name="receiptNo"  type="text" maxlength="10" value="RECP1001" readonly></td>
-                       		<td class="label">${uiLabelMap.OrderAddress}<font color="red" >*</font></td>
-                        	<td colspan="4"><textarea name="reasonForDisconnection" value="" maxlength="300" style="width:400px"></textarea></td> 
-                  	</tr>
-                    <tr>
+                         	<td><input name="grevNameEn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameEN?if_exists}">${uiLabelMap.InEnglish}
+                         	<br><input name="grevNameKn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameKN?if_exists}">${uiLabelMap.Inkannada}</br></td>
+                       		<td class="label">${uiLabelMap.OrderAddress}</td>
+                        	<td colspan="4"><textarea name="grevAddEn"  maxlength="300" style="width:400px">${grievanceDetailsList.grievanceAddEn?if_exists}</textarea>${uiLabelMap.InEnglish}
+                        	<br><textarea name="grevAddKn" maxlength="300" style="width:400px">${grievanceDetailsList.grievanceAddKn?if_exists}</textarea>${uiLabelMap.Inkannada}</br></td> 
+                      </tr>  	
+                     <tr>
                     		<td class="label">${uiLabelMap.mobileNo}</td>
                         	<td>
-                        	<input name="mobileNo" type="text" maxlength="25" value="" placeholder="${uiLabelMap.yourMobile}">
+                        	<input name="mobileNo" type="text" maxlength="25" value="${grievanceDetailsList.mobileNo?if_exists}" placeholder="${uiLabelMap.yourMobile}">
                         	</td>
                         	<td class="label">${uiLabelMap.CommonEmail}</td>
                         	<td colspan="4">
-                        	<input name="eMail" type="text" maxlength="40" value="" placeholder="${uiLabelMap.yourEMail}">
+                        	<input name="eMail" type="text" maxlength="40" value="${grievanceDetailsList.eMail?if_exists}" placeholder="${uiLabelMap.yourEMail}">
                         	</td>
                     </tr>
                     <tr>
                     		<td class="label">${uiLabelMap.grievanceDetail}</td>
-                       	 	<td colspan="1"><textarea name="grievanceDetail" value="" maxlength="500" ></textarea></td>
+                       	 	<td colspan="1"><textarea name="grievanceDetailEn"  maxlength="500" >${grievanceDetailsList.grievanceDetailEn?if_exists}</textarea>${uiLabelMap.InEnglish}
+                       	 	<br><textarea name="grievanceDetailKn"  maxlength="500" >${grievanceDetailsList.grievanceDetailKn?if_exists}</textarea>${uiLabelMap.Inkannada}</br></td>
                     		<td class="label">${uiLabelMap.assentialDocument}</td>
 				        	<td colspan="4"><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        	<input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
+                        	<input type="button" onclick="javascript:resetVal(document.editGrievanceCustomer.fileLoc);" value="Reset"/>
                         	<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
                         	<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
                         	</td>
@@ -90,31 +105,31 @@
                     
                     <tr>
                     	<td colspan="12">
-                    	<center>
-                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail();"/>
+                    	<div id="saveBtn"><center>
+                    	<input name="Update" type="button" value="${uiLabelMap.update}" onClick="javascript:updateGrievanceDetails();"/>
                     	 <input type="button" name="Cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
-                     	</center>
+                     	</div></center>
                      	</td>
                     </tr>
         		</table>
- 
+           </#list>
+         </#if>
+      </#if>
 	</div>
-   <#--	</div>-->
-
-   
+ 
 </form>
 
     <script type="text/javascript" language="javascript">
  
-function saveRegistrationDetail()
+function updateGrievanceDetails()
    {
-		      var form=document['createGrievanceCustomer'];
-		       var sure = confirm("Are you sure, you want to Save the Form ?");
-                              if( sure == true )
-                             {
-                        form.action = "<@ofbizUrl>searchGrievanceCusPortal</@ofbizUrl>";
+	var form=document['editGrievanceCustomer'];
+    var sure = confirm("Are you sure, you want to Update the Form ?");
+                     if( sure == true )
+                        {
+                        form.action = "<@ofbizUrl>updateGrievanceCusPortal</@ofbizUrl>";
 			            form.submit();
-		                disSubmit('disBttn');    
+		                disSubmit('saveBtn');    
 		                } 
     }
     

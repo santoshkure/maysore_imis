@@ -3,8 +3,8 @@
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
-<#---Version Number		Author 		 Date Created 		Date Modified   --->
-<#-- 1.0			Anubha Saini	  19/08/2017         
+<#---Version Number		Author 		 Date Created 		Modified by  --->
+<#-- 1.0			Anubha Saini	  19/08/2017         Siddhi
 <#-- #####################################################################################################-->
 <#--This ftl is used to Register New Customer -->
 
@@ -30,7 +30,7 @@
                 	</tr>
         			<tr>
                       	<td class="label">${uiLabelMap.receiptNo}</td>
-                        <td colspan="12"><input name="receiptNo"  type="text" maxlength="10" value="RECP1001" readonly></td>
+                        <td colspan="12"><input name="receiptNo"  type="text" maxlength="10" value="RECP1002" readonly></td>
                        
                  </tr>
                  <tr><td colspan="12" align="left"><font color="blue"><b>${uiLabelMap.grievanceDetail}</b></font></td></tr>
@@ -45,8 +45,10 @@
 					<tr>	
 						<td class="label" >${uiLabelMap.grievancePetitionDate}</td>
    						<td>
-						<@htmlTemplate.renderDateTimeField name="grievancePetitionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="grievancePetitionDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-						
+						   <input type="text" name="grievancePetitionDate" autocomplete="off" id="grievancePetitionDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
+        			       <a href="javascript:call_cal(document.createGrievanceCustomer.grievancePetitionDate);">
+       				       <img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a>
+      			        </td>
                   
                     	<td class="label" >${uiLabelMap.typeOfGrievance}</td>
  						<td colspan="4">
@@ -115,7 +117,7 @@
 		       var sure = confirm("Are you sure, you want to Save the Form ?");
                        if( sure == true )
                        {
-                        form.action = "<@ofbizUrl>RTIGrievancedetails</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>Grievancedetails</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('saveBtn');    
 		                } 
