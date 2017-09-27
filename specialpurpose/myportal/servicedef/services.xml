@@ -31,7 +31,8 @@ under the License.
         location="component://myportal/minilang/MyPortalServices.xml" invoke="portalPermissionIsCustomer">
         <implements service="permissionInterface"/>
     </service>
-     <service name="createGrievanceDetails" export="true" engine="java" location="org.apache.ofbiz.myportal.MyportalServices" invoke="createGrievanceDetails">
+    <!-- Added by siddhi -->
+   <service name="createGrievanceDetails" export="true" engine="java" location="org.apache.ofbiz.myportal.MyportalServices" invoke="createGrievanceDetails">
      <attribute name="receiptNo" type="String" mode="IN" optional="false" />
      <attribute name="grievanceDate" type="String" mode="IN" optional="true" />
      <attribute name="grievancePetitionDate" type="String" mode="IN" optional="true" />
@@ -44,9 +45,46 @@ under the License.
      <attribute name="eMail" type="String" mode="IN" optional="true" />
      <attribute name="grievanceDetailEn" type="String" mode="IN" optional="true" />
      <attribute name="grievanceDetailKn" type="String" mode="IN" optional="true" />
+     <attribute name="ErrorMessage" type="String" mode="OUT" optional="true" />
      <!-- <attribute name="fileLoc" type="java.nio.ByteBuffer" mode="IN" optional="true"/>
 	 <attribute name="fileLocFileName" type="String" mode="IN" optional="true"/>
 	 <attribute name="fileLocFileType" type="String" mode="IN" optional="true"/> -->
 		
-	</service> 
+  </service> 
+  
+  <service name="searchgrievanceDetail" engine="java" location="org.apache.ofbiz.myportal.MyportalServices" invoke="searchgrievanceDetail">
+		<attribute name="receiptno" type="String" mode="IN" optional="true"/>
+		<attribute name="typeOfGrievance" type="String" mode="IN" optional="true"/>
+		<attribute name="sortType" type="String" mode="INOUT" optional="true"/>
+		<attribute name="VIEW_INDEX" type="String" mode="IN" optional="true"/>
+		<attribute name="VIEW_SIZE" type="String" mode="IN" optional="true"/>
+		<attribute name="lookupFlag" type="String" mode="IN" optional="true"/>
+		<attribute name="orderField" type="String" mode="INOUT" optional="true"/>
+		<attribute name="viewIndex" type="Integer" mode="OUT" optional="false"/>
+		<attribute name="viewSize" type="Integer" mode="OUT" optional="false"/>
+		<attribute name="requestListSize" type="Integer" mode="OUT" optional="false"/>
+		<attribute name="requestList" type="List" mode="OUT" optional="false"/>
+		<attribute name="paramList" type="String" mode="OUT" optional="false"/>
+		<attribute name="highIndex" type="Integer" mode="OUT" optional="false"/>
+		<attribute name="lowIndex" type="Integer" mode="OUT" optional="false"/>
+		<attribute name="indexNumbers" type="Integer" mode="OUT" optional="false"/>
+		<attribute name="pdfList" type="List" mode="OUT" optional="false"/>
+ </service>
+ <service name="updateGrievanceDetails" engine="java" location="org.apache.ofbiz.myportal.MyportalServices" invoke="updateGrievanceDetails">
+         <attribute name="sequenceId" type="String" mode="IN" optional="true"/>
+         <attribute name="receiptNo" type="String" mode="IN" optional="true" />
+         <attribute name="grievanceDate" type="String" mode="IN" optional="true" />
+         <attribute name="grievancePetitionDate" type="String" mode="IN" optional="true" />
+         <attribute name="typeOfGrievance" type="String" mode="IN" optional="true" />
+         <attribute name="grevNameEn" type="String" mode="IN" optional="true" />
+         <attribute name="grevNameKn" type="String" mode="IN" optional="true" />
+         <attribute name="grevAddEn" type="String" mode="IN" optional="true" />
+         <attribute name="grevAddKn" type="String" mode="IN" optional="true" />
+         <attribute name="mobileNo" type="String" mode="IN" optional="true" />
+         <attribute name="eMail" type="String" mode="IN" optional="true" />
+         <attribute name="grievanceDetailEn" type="String" mode="IN" optional="true" />
+         <attribute name="grievanceDetailKn" type="String" mode="IN" optional="true" />
+          <attribute name="ErrorMessage1" type="String" mode="OUT" optional="true" />
+	</service>
+	<!-- End -->
 </services>
