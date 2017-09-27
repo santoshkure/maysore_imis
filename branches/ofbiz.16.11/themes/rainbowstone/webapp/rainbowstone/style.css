@@ -552,6 +552,7 @@ display: inline; /* IE Fix */
 }
 .h3-bottom{
 	float:left !important;
+	border-left: none !important;
 }
 .alert-info ul li {
 background: none;
@@ -652,6 +653,9 @@ cursor: pointer;
     color: #3d87ac;
     font-size: 1.1em;
 }
+.basic-nav ul li{
+	border-left: none !important;
+}
 
 .basic-nav ul .selected,
 .basic-nav ul .selected a {
@@ -676,6 +680,7 @@ cursor: pointer;
 .back{
 	float: left !important;
 	padding-left: 15px;	
+	border-left: none !important;
 }
 .back a{
 	color: #31708f;
