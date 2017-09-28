@@ -1236,6 +1236,108 @@ under the License.
 	    </service>
 	    
 	<!-- END -->
+	
+	<!-- Added By Prabhu For Employee Registration -->
+	  <service name="createEmployee" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.HumanResEvents" invoke="registerEmployee">
+	   	  <attribute name="employeeCode" type="String" mode="IN" optional="true" />
+	   	  <attribute name="title" mode="IN" type="String" optional="true"></attribute>
+	      <attribute name="firstName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="middleName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="lastName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="gender" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="dateOfBirth" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="meritalStatus" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="fatherName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="motherName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="contactNumber" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="emailAddress" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="permanentAddress" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="city" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="state" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="village" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="nationality" mode="IN" type="String" optional="true"/>
+		  <attribute name="community" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="currentAddress" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="pincode" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="mobileNo" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="officeId" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="designation" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="appointmentType" mode="IN" type="String" optional="true"></attribute>
+		  
+		  <attribute name="dateOfJoining" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="payScaleId" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="basicPay" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="remarks" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="aadharCardNumber" mode="IN" type="String" optional="true"></attribute>
+	   
+		</service>
+		
+		<service name="approveRegistration" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.HumanResEvents" invoke="approveRegistration">
+	   	    <attribute name="registrationId" type="String" mode="IN" optional="true" />
+	   	   	    <attribute name="actionFlag" type="String" mode="IN" optional="true" />
+	   	</service>
+	   	
+	   	<service name="updateRegistration" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.HumanResEvents" invoke="updateRegistration">
+	   	  <attribute name="employeeCode" type="String" mode="IN" optional="true" />
+	   	  <attribute name="registrationId" mode="IN" type="String" optional="true"></attribute>
+	   	  <attribute name="title" mode="IN" type="String" optional="true"></attribute>
+	      <attribute name="firstName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="middleName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="lastName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="gender" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="dateOfBirth" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="meritalStatus" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="fatherName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="motherName" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="contactNumber" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="emailAddress" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="permanentAddress" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="city" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="state" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="village" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="nationality" mode="IN" type="String" optional="true"/>
+		  <attribute name="community" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="currentAddress" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="pincode" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="mobileNo" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="officeId" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="designation" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="appointmentType" mode="IN" type="String" optional="true"></attribute>
+		  
+		  <attribute name="dateOfJoining" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="payScaleId" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="basicPay" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="remarks" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="aadharCardNumber" mode="IN" type="String" optional="true"></attribute>
+		  <attribute name="status" mode="IN" type="String" optional="true"></attribute>
+	   
+		</service>  
+	    <!-- END -->
 	    
+	    <!--Code is Added by Anil Kumar on 26 Aug 2017 for Designation Master-->
+	    <service name="saveDesignationMaster" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveDesignationMaster">
+	    <attribute name="designationName" type="String" mode="IN" optional="true" />
+     	<attribute name="designationId" type="String" mode="IN" optional="true" />
+     	<attribute name="designationTypeId" type="String" mode="IN" optional="true" />
+         <attribute name="designationRemark" type="String" mode="IN" optional="true" />
+        <attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		
+        
+       </service>
+       
+       <service name="editofDesignationMaster" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editofDesignationMaster">
+		<attribute name="designationId" type="String" mode="IN" optional="true" />
+	    <attribute name="designationName" type="String" mode="IN" optional="true" />
+ 	    <attribute name="designationTypeId" type="String" mode="IN" optional="true" />
+ 	    <attribute name="designationRemark" type="String" mode="IN" optional="true" />
+ 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	    <attribute name="status" type="String" mode="IN" optional="true" />	    
+	    </service>
+	 	<!-- END -->
 
 </services>
