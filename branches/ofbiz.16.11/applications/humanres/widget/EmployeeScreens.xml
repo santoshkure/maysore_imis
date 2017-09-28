@@ -20,6 +20,7 @@ under the License.
 
 <screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://ofbiz.apache.org/Widget-Screen" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
+   <!--   Employee Registration -->
     <screen name="FindEmployee">
         <section>
             <actions>
@@ -31,52 +32,259 @@ under the License.
                     <decorator-section name="body">
                         <section>
                             <actions>
-                                <service service-name="findParty" auto-field-map="true"/>
+                  <script location="component://humanres/groovyScripts/Employee/searchEmployee.groovy"/> 
+                  <entity-condition list="designationMasterList" entity-name="designationMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="designationName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>  
+                  <entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="genderName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+							<entity-condition list="communityList" entity-name="communityMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="communityname" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+		  	   				<entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+		  	   			
+		  	   				<entity-condition list="maritalStatusList" entity-name="maritalStatusMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="maritalStatus" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
                                 <set field="tabButtonItem" value="Employee"/>
                             </actions>
                             <widgets>
-                                <container style="button-bar">
-                                    <link target="NewEmployee" text="${uiLabelMap.HumanResNewEmployee}" style="buttontext create"/>
-                                </container>
                                 <section>
                                     <widgets>
                                         <platform-specific>
-                                            <html><html-template location="component://humanres/template/FindEmployee.ftl"/></html>
+                                            <html><html-template location="component://humanres/webapp/humanres/hrmsftl/SearchEmployee.ftl"/></html>
                                         </platform-specific>
                                     </widgets>
                                 </section>
                             </widgets>
-                            <fail-widgets>
+                           </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+     <screen name="viewEmployee">
+        <section>
+            <actions>
+                <set field="titleProperty" value="${uiLabelMap.CommonFind} ${uiLabelMap.HumanResEmployee}"/>
+                <set field="headerItem" value="Employees"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                     <entity-condition list="designationMasterList" entity-name="designationMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="designationName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+		  	   				
+		  	   				<entity-condition list="communityList" entity-name="communityMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="communityname" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+		  	   				<entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+		  	   			<entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="genderName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+		  	   				<entity-condition list="maritalStatusList" entity-name="maritalStatusMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="maritalStatus" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+ 							<entity-condition list="approveEmployeeList" entity-name="EmplRegistration">
+       			 				<condition-expr field-name="registrationId" operator="equals" value="${parameters.regId}" />
+		  	   				</entity-condition>
+ 							<entity-condition list="viewEmployeeList" entity-name="EmplRegistration">
+       			 				<condition-expr field-name="registrationId" operator="equals" value="${parameters.regId}" />
+		  	   				</entity-condition>
+                                <set field="tabButtonItem" value="Employee"/>
+                            </actions>
+                            <widgets>
+                               <!--  <container style="button-bar">
+                                    <link target="NewEmployee" text="${uiLabelMap.HumanResNewEmployee}" style="buttontext create"/>
+                                </container> -->
+                                <section>
+                                    <widgets>
+                                        <platform-specific>
+                                            <html><html-template location="component://humanres/webapp/humanres/hrmsftl/viewEmployee.ftl"/></html>
+                                        </platform-specific>
+                                    </widgets>
+                                </section>
+                            </widgets>
+                            <!-- <fail-widgets>
                                 <label style="h3">${uiLabelMap.PartyMgrViewPermissionError}</label>
-                            </fail-widgets>
+                            </fail-widgets> -->
                         </section>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
     </screen>
-    <screen name="NewEmployee">
+    
+    <screen name="editview">
         <section>
             <actions>
-                <set field="titleProperty" value="PartyCreateNewEmployee"/>
+                <set field="titleProperty" value="${uiLabelMap.CommonFind} ${uiLabelMap.HumanResEmployee}"/>
                 <set field="headerItem" value="Employees"/>
-                <property-to-field field="defaultCountryGeoId" resource="general" property="country.geo.id.default" default="USA"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
-                        <screenlet title="${uiLabelMap.HumanResNewEmployee}">
-                            <section>
-                                <widgets>
-                                    <include-form name="AddEmployee" location="component://humanres/widget/forms/EmployeeForms.xml"/>
-                                </widgets>
+                        <section>
+                            <actions>
+                            <entity-condition list="designationMasterList" entity-name="designationMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="designationName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+                            <entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="genderName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+                            <entity-condition list="communityList" entity-name="communityMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="communityname" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+		  	   				<entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+		  	   			
+		  	   				<entity-condition list="maritalStatusList" entity-name="maritalStatusMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="maritalStatus" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+ 							<entity-condition list="approveEmployeeList" entity-name="EmplRegistration">
+       			 				<condition-expr field-name="registrationId" operator="equals" value="${parameters.regId}" />
+		  	   				</entity-condition>
+                                <set field="tabButtonItem" value="Employee"/>
+                            </actions>
+                            <widgets>                          
+                                <section>
+                                    <widgets>
+                                        <platform-specific>
+                                            <html><html-template location="component://humanres/webapp/humanres/hrmsftl/editEmployeeReg.ftl"/></html>
+                                        </platform-specific>
+                                    </widgets>
+                                </section>
+                            </widgets>
                             </section>
-                        </screenlet>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
     </screen>
+       
+    
+    <screen name="NewEmployee">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PartyCreateNewEmployee"/>
+                <set field="headerItem" value="Employees"/>
+                <entity-condition list="designationMasterList" entity-name="designationMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="designationName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+                		<entity-condition list="communityList" entity-name="communityMaster">
+                		<condition-list combine="and">
+       			 				<condition-expr field-name="communityname" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+		  	   				<entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+		  	   			
+		  	   				<entity-condition list="maritalStatusList" entity-name="maritalStatusMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="maritalStatus" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+		  	   				<entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				<condition-list combine="and">
+       			 				<condition-expr field-name="genderName" operator="not-equals" value="" />
+       			 				<condition-expr field-name="status" operator="equals" value="A" />
+       			 				</condition-list>
+		  	   				</entity-condition>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       
+                            <section>
+                                <widgets>
+ 								<platform-specific>
+                                    <html><html-template location="component://humanres/webapp/humanres/hrmsftl/createEmployee.ftl"/></html>
+                               </platform-specific>      
+                               </widgets>
+                            </section>                       
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <!-- END -->
     <screen name="EmployeeProfile">
         <section>
             <actions>
@@ -2562,5 +2770,82 @@ under the License.
         </section>
     </screen> 
       <!--End  -->
+      
+      <!--Code is Added by Anil Kumar on 26 Aug 2017 for Designation Master-->
+	
+	 <screen name="searchDesignationMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="designationmaster"/>
+                <script location="component://humanres/groovyScripts/designation/DesignationSearchList.groovy"/>        
+                 </actions>
+                
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            </container>   
+                        <platform-specific>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/searchdesignationMaster.ftl"/>   
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="designationMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="designationmaster"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+							<include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+							</container>    
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component:///humanres/webapp/humanres/Masterftl/createDesignationMaster.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+ 
+  <screen name="editDesignationMaster">
+        <section>
+            <actions>
+                <set field="headerItem" value="master"/>
+                <set field="tabButtonItem" value="designationmaster"/>
+                <entity-condition list="designationMasterList" entity-name="designationMaster">
+                    <condition-expr field-name="designationId" operator="equals" value="${parameters.designationId}" />
+                 </entity-condition>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                       <container>
+                            <include-menu location="component://humanres/widget/HumanresMenus.xml" name="MasterTabBar" />
+                            </container>   
+                        <platform-specific>
+                            <html>
+                            <html-template location="component:///humanres/webapp/humanres/Masterftl/editDesignationMaster.ftl"/>   
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+ <!-- END -->
     
 </screens>

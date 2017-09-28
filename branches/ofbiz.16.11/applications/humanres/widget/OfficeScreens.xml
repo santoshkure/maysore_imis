@@ -39,9 +39,9 @@ under the License.
 		  	   					 </entity-condition>
                             </actions>
                             <widgets>
-                               	 <container style="button-bar">
+                               	<!--  <container style="button-bar">
                                     <link target="newOffice" text="${uiLabelMap.Newoffice}" style="buttontext create"/>
-                                </container>
+                                </container> -->
                                 <section>
                                     <widgets>
                                         <platform-specific>
