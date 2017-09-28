@@ -176,4 +176,18 @@ under the License.
 
  
 
+<!--Code is Added by Anil Kumar on 26 Aug 2017 for Designation Master-->
+  <entity entity-name="designationMaster" 
+            package-name="org.apache.ofbiz.humanres.master"
+            title="Designation Master Entity">
+      <field name="designationId" type="id-ne"></field>
+      <field name="designationName" type="short-varchar"/>
+       <field name="designationTypeId" type="short-varchar"/>
+      <field name="createdDate" type="date"/>
+      <field name="description" type="long-varchar"/>
+      <field name="status" type="indicator"></field> 
+      <field name="activestatus" type="short-varchar"/>
+      <prim-key field="designationId"/>      
+    </entity>
+<!-- END -->
 </entitymodel>
