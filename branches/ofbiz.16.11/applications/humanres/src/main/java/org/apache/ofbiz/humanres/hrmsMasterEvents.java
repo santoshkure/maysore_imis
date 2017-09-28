@@ -1619,6 +1619,206 @@ public class hrmsMasterEvents {
 				return result;		 
 			}	 
 			 
-			
+		
+	        
+	        /**
+			 * Method Name :  saveDesignationMaster
+			 * @Version 1.0
+			 * @Description creates Designation Master
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning the designation Id created
+			 *  Transaction is handled by service engine
+			 *   
+			 *  
+			 */	 
+
+
+   public static Map<String, Object> saveDesignationMaster(DispatchContext dctx,
+	                Map<String, ? extends Object> context) {
+	            Map<String, Object> result = ServiceUtil.returnSuccess();
+	            GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+	            LocalDispatcher dispatcher = dctx.getDispatcher();
+	            List<GenericValue> caseList = new LinkedList<GenericValue>();
+	            GenericValue userLogin = (GenericValue) context.get("userLogin");
+	            final Locale locale = (Locale) context.get("locale");
+	            String designationName =(String) context.get("designationName");
+                String designationRemark =(String) context.get("designationRemark");
+                String status =(String) context.get("status");
+    			String activestatus =(String) context.get("activestatus");
+    			String designationTypeId =(String) context.get("designationTypeId");
+
+	            long sysdate=System.currentTimeMillis();                 
+                java.sql.Date createdDate=new java.sql.Date(sysdate);
+	            String designationId = (String) delegator.getNextSeqId("designationMaster");
+	            List<GenericValue> resultLists = new LinkedList<GenericValue>();
+	            List<GenericValue> resultList = new LinkedList<GenericValue>();
+	              
+	                
+	                 String designationNameUPPER = designationName.toUpperCase();
+	                 String designationTypeIdUPPER = designationTypeId.toUpperCase();
+
+	          
+	            // if (UtilValidate.isNotEmpty(designationNameUPPER )) {
+
+	             try {
+	                 List<EntityExpr> expList = new LinkedList<EntityExpr>();
+	                 List<EntityExpr> expLists = new LinkedList<EntityExpr>();
+
+/*	                 List<EntityExpr> expList = FastList.newInstance();
+*/	                 EntityCondition mainCondition = null;
+					EntityCondition mainConditions = null;
+
+	                 if (UtilValidate.isNotEmpty(designationNameUPPER)) {
+	                     expList.add(EntityCondition.makeCondition("designationName",EntityOperator.EQUALS, designationNameUPPER));
+	                     mainCondition = EntityCondition.makeCondition(expList,EntityOperator.AND);
+	                       
+	                     //List<GenericValue> resultList = FastList.newInstance();
+	                     try {
+	                         resultList = delegator.findList("designationMaster",
+	                                 mainCondition, UtilMisc.toSet("designationName"), null,
+	                                 null, false);
+	                         if (UtilValidate.isNotEmpty(resultList)) {
+	                             return ServiceUtil
+	                                     .returnSuccess("Designation Name already exists.");
+	                         }
+	                     }  catch (GenericEntityException e1) {
+	    	                 e1.printStackTrace();
+	    	             }
+
+	                 } 
+	                     if (UtilValidate.isNotEmpty(designationTypeIdUPPER)) {
+	                    	 expLists.add(EntityCondition.makeCondition("designationTypeId",EntityOperator.EQUALS, designationTypeIdUPPER));
+    	                     mainConditions = EntityCondition.makeCondition(expLists,EntityOperator.AND);
+    	                       
+    	                     //List<GenericValue> resultList = FastList.newInstance();
+    	                       
+    	                      // System.out.println("~~~~~designationTypeIdUPPER~~~~"+designationTypeIdUPPER);
+    	                       //System.out.println("~~~~~mainConditions~~~~"+mainConditions);
+
+    	                     try {
+    	                    	 resultLists = delegator.findList("designationMaster",
+    	                                 mainConditions, UtilMisc.toSet("designationTypeId"), null,
+    	                                 null, false);
+      	                       //System.out.println("~~~~~resultLists~~~~"+resultLists);
+
+    	                         if (UtilValidate.isNotEmpty(resultLists)) {
+    	                             return ServiceUtil
+    	                                     .returnSuccess("Designation Type Id already exists.");
+    	                         }
+    	                     } catch (GenericEntityException e1) {
+    	                         e1.printStackTrace();
+    	                     }
+	                     }
+	                     
+	                     
+
+	                     if (UtilValidate.isEmpty(resultList) && UtilValidate.isEmpty(resultLists)) {
+	                         Map designationMasterDetails = UtilMisc.toMap("designationId",designationId,"designationTypeId",designationTypeIdUPPER,
+	         						"designationName",designationNameUPPER,"createdDate",createdDate,"status","A","description",designationRemark,"activestatus","Active"
+	                         );
+	                
+	                           GenericValue valueToStore = delegator.makeValue("designationMaster", designationMasterDetails);
+	                          valueToStore.create();
+	                          
+	                          Map emplPositionTypeMap = UtilMisc.toMap("emplPositionTypeId",designationTypeId,"description",designationName);
+		                
+		                           GenericValue saveEmplPositionType = delegator.makeValue("EmplPositionType", emplPositionTypeMap);
+		                           saveEmplPositionType.create();
+	                          }
+
+	                     result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, designationName, locale));
+	                    
+	                 }
+	    	             
+	                 
+	              catch (GenericEntityException e) {
+	                 e.printStackTrace();
+	             }
+	         
+	       	             
+	            // }
+	         return result;
+	     }
+
+
+
+	        
+	        
+	        /**
+			 * Method Name :  editofDesignationMaster
+			 * @Version 1.0
+			 * @Description Edit DesignationMaster
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning Success Message
+			 *  Transaction is handled by service engine
+			 *   
+			 *  
+			 */	  
+	        public static Map<String, Object> editofDesignationMaster(DispatchContext dctx,
+					Map<String, ? extends Object> context) {
+				Map<String, Object> result = ServiceUtil.returnSuccess();
+				GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+				LocalDispatcher dispatcher = dctx.getDispatcher();
+				GenericValue userLogin = (GenericValue) context.get("userLogin");
+				final Locale locale = (Locale) context.get("locale");
+				 String designationId =(String) context.get("designationId");
+                 String designationName =(String) context.get("designationName");
+	             String designationRemark =(String) context.get("designationRemark");
+	             String status =(String) context.get("status");
+	    	     String activestatus =(String) context.get("activestatus");
+	    	     String designationTypeId =(String) context.get("designationTypeId");
+                 long sysdate=System.currentTimeMillis();                 
+	             java.sql.Date createdDate=new java.sql.Date(sysdate);
+				
+				Map designationMasterDetails = null;
+				Map emplPositionTypeMap = null;
+				try{
+				if (UtilValidate.isNotEmpty(designationId))
+				{
+	           if(status.equals("edit")){
+	        	   designationMasterDetails = UtilMisc.toMap("designationId",designationId,"designationTypeId",designationTypeId,
+    						"designationName",designationName,"createdDate",createdDate,"status","A","description",designationRemark
+    						);
+	        	    emplPositionTypeMap = UtilMisc.toMap("emplPositionTypeId",designationTypeId,"description",designationName);
+	                
+                  
+	           }else if(status.equals("status")){
+	        	   designationMasterDetails = UtilMisc.toMap("status",activestatus);	
+				}
+	           if(status.equals("delete")){
+	               GenericValue  designationMaster= EntityQuery.use(delegator).from("designationMaster").where("designationId", designationId).queryOne();
+
+	        	   //GenericValue officeType= delegator.findByPrimaryKey(
+	        		//	   "OfficeTypeMaster",UtilMisc.toMap("ofcTypeId",officeTypeId,"ofcTypeName",officeTypeName));
+	               designationMaster.remove();
+	      			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, designationName, locale));   
+
+	           }else{
+	        	   Integer valueToStore = delegator.storeByCondition("designationMaster", designationMasterDetails
+	   					,EntityCondition.makeCondition("designationId",EntityOperator.EQUALS,designationId));
+	        	   
+	        	   Integer saveEmplPositionType = delegator.storeByCondition("EmplPositionType", emplPositionTypeMap
+	        			   ,EntityCondition.makeCondition("emplPositionTypeId",EntityOperator.EQUALS,designationTypeId));
+                  
+	   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, designationName, locale));   
+	                 }
+				
+	             }
+				
+
+				}catch(GeneralException e) {
+					// It is the mother of all the ofbiz exceptions
+					// All the specific exceptions are handled above
+					// It would be executed in the worst case scenario
+					Debug.log("Exception occured : " + e );
+					//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+				}			
+				
+				
+				return result;		
+			}
+
 
 }
