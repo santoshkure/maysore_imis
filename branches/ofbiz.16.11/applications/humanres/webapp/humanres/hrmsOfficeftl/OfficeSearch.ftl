@@ -12,17 +12,26 @@
 <form method="post" name="officeSearch" action="" class="basic-form">
 <div class="row">
    
-  <div class="alert alert-info">
-    <ul>
-      <li class="h3">${uiLabelMap.OfficeSearch}    
-      
-						<#-- <div align="right"><a title="Create Office" href="<@ofbizUrl>newOffice</@ofbizUrl>">
-							<i class="fa fa-plus-circle" aria-hidden="true"   style="font-size: 35px;color: #2f87c6;"></i>
-						</a><div> --></li> 			
-    				
-  				</ul>
-  </div>
-	<br/>
+ 
+	
+	<div class="alert alert-info">
+				<ul>
+					
+			      <div class="h3" align="center"><b>${uiLabelMap.OfficeSearch}</b></div> 
+			        <div class="basic-nav" style="margin-top: -36px;">
+			                       <li> <a title="" href="<@ofbizUrl>newOffice</@ofbizUrl>"></li>
+			
+			          <ul>
+			            <li>
+			                <a title="Create Office" href="<@ofbizUrl>newOffice</@ofbizUrl>">
+			                    <i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+			                </a>
+			            </li>
+			          </ul>
+			        </div>
+				</ul>
+			    
+			  </div>
 
 
 <div class="screenlet-body">
