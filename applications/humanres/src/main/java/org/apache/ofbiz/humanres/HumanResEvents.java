@@ -31,11 +31,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import org.apache.ofbiz.base.util.Debug;
 import org.apache.ofbiz.base.util.GeneralException;
 import org.apache.ofbiz.base.util.UtilMisc;
-import org.apache.ofbiz.base.util.UtilValidate;
+import org.apache.ofbiz.base.util.UtilDateTime;
 import org.apache.ofbiz.entity.Delegator;
 import org.apache.ofbiz.base.util.UtilProperties;
 import org.apache.ofbiz.base.util.UtilValidate;
@@ -44,6 +52,7 @@ import org.apache.ofbiz.entity.GenericDelegator;
 import org.apache.ofbiz.entity.GenericEntityException;
 import org.apache.ofbiz.entity.GenericValue;
 import org.apache.ofbiz.entity.condition.EntityExpr;
+import org.apache.ofbiz.entity.condition.EntityFunction;
 import org.apache.ofbiz.entity.condition.EntityCondition;
 import org.apache.ofbiz.entity.condition.EntityOperator;
 import org.apache.ofbiz.entity.util.EntityQuery;
@@ -505,8 +514,8 @@ public class HumanResEvents {
 
 
 			//System.out.println("======================geoPointID===================================="+geoPointID);
-			System.out.println("======================longitude===================================="+longitude);
-			System.out.println("======================latitude===================================="+latitude);
+			//System.out.println("======================longitude===================================="+longitude);
+			//System.out.println("======================latitude===================================="+latitude);
 			
 			String geoPointId = (String) delegator.getNextSeqId("GeoPoint");
 			
@@ -594,7 +603,7 @@ public class HumanResEvents {
             throws CheckEmployeeRoleException, GenericEntityException
             {   
         // Before creating the partyRelationShip, create the partyRoles if they don't exist
-        System.out.println("~~~~~~~~partyRole~~~~~~~~~~~~~~~~~"+employeeId);
+        //System.out.println("~~~~~~~~partyRole~~~~~~~~~~~~~~~~~"+employeeId);
 
         GenericValue partyRole = null;      
         EntityExpr condition = EntityCondition.makeCondition("partyId", EntityOperator.EQUALS, employeeId);
@@ -781,7 +790,6 @@ public class HumanResEvents {
 		String district =(String) context.get("district");
 		String tribal =(String) context.get("tribal");
 		String hoo =(String) context.get("hoo");
-		// Added By Ankit Solanki
 		String faxNo =(String) context.get("faxNo");
 		String contactNumber =(String) context.get("contactNumber");
 		String officeCode =(String) context.get("officeCode");
@@ -814,7 +822,7 @@ public class HumanResEvents {
 			officeCondition = EntityCondition.makeCondition(andCondition,
 					EntityOperator.AND);
 			employees = delegator.findList("EmplPosition", officeCondition, fields, orderBy, findOptions,false);	
-//System.out.println("~~~~~~~~~~employees.size()~~~~~~~~~~~~~~~"+employees.size());
+			//System.out.println("~~~~~~~~~~employees.size()~~~~~~~~~~~~~~~"+employees.size());
 			// Getting the previous details of office
 			previousDetail = dispatcher.runSync("getOfficeDetail", UtilMisc.toMap("officeId", officeId));
 
@@ -1423,6 +1431,729 @@ public class HumanResEvents {
 			}
 
 
+	   /** Name of the Method: registerEmployee
+     * Version:@1.0
+     * Date:12/08/2017     
+     * Author:PRABHU.S
+     * Modified By:         Date:
+     * Purpose of this Program: Employee registration.
+     */
 
+    public static Map<String, Object> registerEmployee(DispatchContext dctx,
+            Map<String, ? extends Object> context) throws IOException {
+        Map<String, Object> result = ServiceUtil.returnSuccess();
+
+        GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+        GenericValue userLogin = (GenericValue) context.get("userLogin");
+        Locale locale = (Locale) context.get("locale");
+        LocalDispatcher dispatcher = dctx.getDispatcher();
+        String partyId = userLogin.getString("partyId");
+        
+        
+        String title = (String) context.get("title");
+		String firstName = (String) context.get("firstName");
+		String middleName = (String) context.get("middleName");
+		String lastName = (String) context.get("lastName");
+		String gender = (String) context.get("gender");
+		String dateOfBirth = (String) context.get("dateOfBirth");
+		String meritalStatus = (String) context.get("meritalStatus");
+		String fatherName = (String) context.get("fatherName");
+		String motherName = (String) context.get("motherName");
+		String nationality = (String) context.get("nationality");
+		String village = (String) context.get("village");
+		String contactNumber = (String) context.get("contactNumber");
+		String emailAddress = (String) context.get("emailAddress");
+		String permanentAddress = (String) context.get("permanentAddress");
+		String city = (String) context.get("city");
+		String state = (String) context.get("state");
+		String currentAddress = (String) context.get("currentAddress");
+		String pincode = (String) context.get("pincode");
+		String mobileNo = (String) context.get("mobileNo");
+		String community = (String) context.get("community");		
+		String employeeCode = (String) context.get("employeeCode");
+		String officeId = (String) context.get("officeId");
+		String designation = (String) context.get("designation");
+		String appointmentType = (String) context.get("appointmentType");		
+		String dateOfJoining = (String) context.get("dateOfJoining");
+		String payScaleId = (String) context.get("payScaleId");
+		String basicPay = (String) context.get("basicPay");	
+		String remarks = (String) context.get("remarks");
+		String aadharCardNumber = (String) context.get("aadharCardNumber");
 	
+        String workOption = "IMIS";
+       
+        
+        System.out.println("~~~~~~~~~~~~~~~~~"
+        		+ "~~employeeCode~~~~~~~~~~~~~~~~~~~"+employeeCode+dateOfBirth
+        		+meritalStatus+fatherName+motherName+nationality+village+contactNumber+emailAddress+permanentAddress+city+state
+        		+currentAddress+pincode+mobileNo+community+
+        		employeeCode+officeId+designation+appointmentType+dateOfJoining+payScaleId+basicPay+remarks+aadharCardNumber);
+       
+        String status = "REGISTERED";
+        String message = null;
+
+        java.sql.Date birthDate = null;        
+        birthDate = java.sql.Date.valueOf(dateOfBirth);
+        System.out.println("--------"+birthDate);
+        
+        java.sql.Date dateOfJoin = null;        
+        dateOfJoin = java.sql.Date.valueOf(dateOfJoining);
+        System.out.println("--------"+dateOfJoin);
+        
+        java.math.BigDecimal bandPay = null;
+        if(UtilValidate.isNotEmpty(basicPay)) {
+            bandPay = new BigDecimal(basicPay);
+        }
+
+        java.sql.Timestamp now = new java.sql.Timestamp( (new java.util.Date()).getTime());
+        List<EntityCondition> andCond = new LinkedList<EntityCondition>();
+        //List<EntityCondition> andCond = FastList.newInstance();
+        //List<EntityCondition> orCond = FastList.newInstance();
+        List<EntityCondition> orCond = new LinkedList<EntityCondition>();
+
+        EntityCondition cond =null;
+        EntityCondition mainOR =null;
+        String printName = null;
+
+        try
+        {
+            if(UtilValidate.isNotEmpty(employeeCode)) {
+
+                orCond.add(EntityCondition.makeCondition("status", EntityOperator.EQUALS,"REGISTERED"));
+                //orCond.add(EntityCondition.makeCondition("status", EntityOperator.EQUALS,"REVERTED"));
+                orCond.add(EntityCondition.makeCondition("status", EntityOperator.EQUALS,"APPROVE"));
+                mainOR = EntityCondition.makeCondition(orCond, EntityOperator.OR);
+                andCond.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("employeeCode"), EntityOperator.EQUALS, EntityFunction.UPPER(employeeCode)));
+                andCond.add(mainOR);
+
+                cond = EntityCondition.makeCondition(andCond, EntityOperator.AND);
+
+                List<GenericValue> checkInfo=delegator.findList("EmplRegistration", cond, null, null, null, false);   
+
+                if(UtilValidate.isNotEmpty(checkInfo)) {
+                    return UIMessages.getErrorMessage(resource,"Employee with this Employee Code already registered - "+employeeCode, null,    locale);
+                }
+            }
+
+            if(UtilValidate.isNotEmpty(firstName)) {
+                String registrationId = delegator.getNextSeqId("EmplRegistration", 1);
+                Map empDetails = UtilMisc.toMap("registrationId", registrationId,"title", title,"firstName", firstName,"middleName", middleName,"lastName", lastName,
+                        "gender", gender,"dateOfBirth", birthDate,"fatherName", fatherName,"motherName", motherName,
+                        "contactNumber",contactNumber,"emailAddress", emailAddress,"permanentAddress", permanentAddress,"city", city,"state",
+                        state,"village",village,"nationality", nationality,"community", community,
+                        "employeeCode",employeeCode, "officeId", officeId, "designation", designation, "status", status, "createdDate",now,"createdBy", partyId,
+                        "appointmentType", appointmentType,"dateOfJoining", dateOfJoin,
+                        "pincode", pincode, "mobileNo", mobileNo, "remarks", remarks, "payScaleId", payScaleId, "basicPay", bandPay, 
+                        "aadharCardNumber",aadharCardNumber,"currentAddress",currentAddress,
+                        "optionToWork",workOption);
+                GenericValue register = delegator.makeValue("EmplRegistration", empDetails);
+                register.create();
+
+                if((middleName== null) &&(lastName== null))
+                    printName = firstName;
+                if(((middleName== null)||(middleName== "")) && (lastName!= null))
+                    printName = firstName + " " + lastName;
+                if(((lastName== null)||(lastName== "") ) && (middleName!= null))
+                    printName = firstName + " " + middleName;
+                if((middleName!= null) &&(lastName!= null) && (firstName!= null))
+                    printName = firstName + " " + middleName+ " " + lastName;
+                if(title != null)
+                    printName = title+" "+printName;
+
+                message = printName+" has been "+EmployeeConstants.Registered_Successfully+".";
+            }
+        }       
+        catch (GenericEntityException e) {
+            return UIMessages.getErrorMessage(resource,"Unable to register.", null,    locale);
+        }
+        result.put(EmployeeConstants.SUCCESS_MESSAGE,UIMessages.getSuccessMessage(resource,message, employeeCode, locale));
+        return result;
+    }
+    
+    
+    
+    
+	/**
+	 * 
+	 * @Method :updateRegistration
+	 * @Description:To Update Employee Information details.
+	 * @param dctx
+	 *            The DispatchContext that this service is operating in.
+	 * @param context
+	 *            Map containing the input parameters.
+	 * @return Map with the result of the service, the output parameters.
+	 * @Dependency :--
+	 * @BusinessExceptions :--.
+	 * 
+	 */
+
+
+	public static Map<String, Object> updateRegistration(DispatchContext dctx,
+			Map<String, ? extends Object> context) {
+		Map<String, Object> result = ServiceUtil.returnSuccess();
+		LocalDispatcher dispatcher = dctx.getDispatcher();
+		GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+		GenericValue userLogin = (GenericValue) context.get("userLogin");
+		Locale locale = (Locale) context.get("locale");
+
+		//String listOfselectedIds = (String) context.get("selectedItem");
+		//List<GenericValue> listofpaybills = null;
+		//EntityCondition getEmployeePayBill = null;
+		//ArrayList payBillIDList = new ArrayList();
+		//List<EntityExpr> ConditionList = FastList.newInstance();
+		List<GenericValue> ConditionList = new LinkedList<GenericValue>();
+
+		EntityCondition cond = null;
+		String partyId = userLogin.getString("partyId");
+
+		   String registrationId = (String) context.get("registrationId");
+		    String title = (String) context.get("title");
+			String firstName = (String) context.get("firstName");
+			String middleName = (String) context.get("middleName");
+			String lastName = (String) context.get("lastName");
+			String gender = (String) context.get("gender");
+			String dateOfBirth = (String) context.get("dateOfBirth");
+			String meritalStatus = (String) context.get("meritalStatus");
+			String fatherName = (String) context.get("fatherName");
+			String motherName = (String) context.get("motherName");
+			String nationality = (String) context.get("nationality");
+			String village = (String) context.get("village");
+			String contactNumber = (String) context.get("contactNumber");
+			String emailAddress = (String) context.get("emailAddress");
+			String permanentAddress = (String) context.get("permanentAddress");
+			String city = (String) context.get("city");
+			String state = (String) context.get("state");
+			String currentAddress = (String) context.get("currentAddress");
+			String pincode = (String) context.get("pincode");
+			String mobileNo = (String) context.get("mobileNo");
+			String community = (String) context.get("community");		
+			String employeeCode = (String) context.get("employeeCode");
+			String officeId = (String) context.get("officeId");
+			String designation = (String) context.get("designation");
+			String appointmentType = (String) context.get("appointmentType");		
+			String dateOfJoining = (String) context.get("dateOfJoining");
+			String payScaleId = (String) context.get("payScaleId");
+			String basicPay = (String) context.get("basicPay");	
+			String remarks = (String) context.get("remarks");
+			String aadharCardNumber = (String) context.get("aadharCardNumber");   
+
+		String Status = null;
+		
+		Status = (String) context.get("status");		
+		String workOption = (String) context.get("workOption");
+		
+		
+		  java.sql.Date birthDate = null;        
+	        birthDate = java.sql.Date.valueOf(dateOfBirth);
+	        System.out.println("--------"+birthDate);
+	        
+	        java.sql.Date dateOfJoin = null;        
+	        dateOfJoin = java.sql.Date.valueOf(dateOfJoining);
+	        System.out.println("--------"+dateOfJoin);
+
+		
+
+		java.math.BigDecimal bandPay = null;
+		if(UtilValidate.isNotEmpty(basicPay)) {
+			bandPay = new BigDecimal(basicPay);
+		}
+		if(UtilValidate.isNotEmpty(registrationId))
+		{
+			try
+			{
+				if(UtilValidate.isNotEmpty(registrationId))
+				{
+					//Map<String, Object> update = FastMap.newInstance();
+			        Map<String,Object> update = new HashMap<String, Object>();
+
+					update.put("title",title);
+					update.put("firstName",firstName);
+					update.put("middleName",middleName);
+					update.put("lastName",lastName);
+					update.put("gender",gender);
+					update.put("dateOfBirth",birthDate);					
+					update.put("fatherName",fatherName);
+					update.put("motherName",motherName);				
+					//update.put("placeofBirth",birthDate);
+					update.put("contactNumber",contactNumber);
+					update.put("emailAddress",emailAddress);
+					update.put("permanentAddress",permanentAddress);
+					update.put("city",city);
+					update.put("state",state);
+					update.put("employeeCode",employeeCode);
+					update.put("designation",designation);
+					update.put("appointmentType",appointmentType);
+					update.put("meritalStatus",meritalStatus);
+					update.put("nationality",nationality);
+					update.put("village",village);
+					update.put("currentAddress",currentAddress);
+					update.put("pincode",pincode);
+					update.put("mobileNo",mobileNo);
+					update.put("community",community);
+					update.put("currentAddress",currentAddress);
+					update.put("dateOfJoining", dateOfJoin);
+					update.put("remarks", remarks);
+					update.put("officeId", officeId);
+					update.put("payScaleId", payScaleId);
+					update.put("basicPay", bandPay);			
+					update.put("aadharCardNumber",aadharCardNumber);					
+					update.put("optionToWork",workOption);
+		           
+					
+					//List<EntityCondition> andExprs = FastList.newInstance();
+					List<EntityCondition> andExprs = new LinkedList<EntityCondition>();
+
+					andExprs.add(EntityCondition.makeCondition("registrationId", EntityOperator.EQUALS,registrationId));
+					andExprs.add(EntityCondition.makeCondition("status", EntityOperator.EQUALS, "REGISTERED"));
+
+					EntityCondition conds = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+					int updateCircular = delegator.storeByCondition("EmplRegistration", update, conds);
+
+					if(updateCircular > 0)
+					{
+						result.put(EmployeeConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,	EmployeeConstants.UPDATED_SUCCESS,"", locale));
+					}
+				}
+			}
+			catch (GenericEntityException e) {
+				e.printStackTrace();
+				// TODO: handle exception
+				return UIMessages.getErrorMessage(resource,EmployeeConstants.UNABLE_TO_UPDATE,"", locale);
+			}catch (Exception e) {
+				e.printStackTrace();
+				// TODO: handle exception
+				return UIMessages.getErrorMessage(resource,EmployeeConstants.UNABLE_TO_UPDATE,"", locale);
+			}
+		}
+
+		return result;
+	}
+    
+    /** Name of the Method: approveRegistration
+     * Version:@1.0
+     * Date:12/08/2017     
+     * Author:PRABHU.S
+     * Modified By:         Date:
+     * Purpose of this Program: Approve Employee registration.
+     */
+    public static Map<String, Object> approveRegistration(DispatchContext dctx,
+			Map<String, ? extends Object> context) {
+		Map<String, Object> result = ServiceUtil.returnSuccess();
+
+		GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+		GenericValue userLogin = (GenericValue) context.get("userLogin");
+		Locale locale = (Locale) context.get("locale");
+		LocalDispatcher dispatcher = dctx.getDispatcher();
+		//Map<String, Object> inMap = FastMap.newInstance();
+        Map<String,Object> inMap = new HashMap<String, Object>();
+
+		String registrationId = (String) context.get("registrationId");
+		String actionFlag = (String) context.get("actionFlag");
+		String title = null;
+		String firstName = null;
+		String middleName = null;
+		String lastName = null;
+		String gender = null;
+		java.sql.Date dateOfBirth = null;
+		String meritalStatus = null;
+		String fatherName = null;
+		String motherName = null;
+		String placeofBirth = null;
+		String contactNumber = null;
+		String emailAddress = null;
+		String permanentAddress = null;
+		String currentAddress = null;
+		String city = null;
+		String state = null;
+		String pincode = null;
+		String mobileNo = null;
+		String community = null;		
+		String nationality = null;
+		String village = null;
+		String aadharCardNumber = null;	
+		String employeeCode = null;
+		String officeId = null;
+		String designation = null;
+		String employeeId = null;
+		String appointmentType = null;		
+		java.sql.Date dateOfJoining = null;		
+		String payScaleId = null;
+		java.math.BigDecimal basicPay = null;
+		String remarks = (String) context.get("remarks");	
+
+		//List<GenericValue> getEmployeeDetail= FastList.newInstance();
+		List<GenericValue> getEmployeeDetail = new LinkedList<GenericValue>();
+
+
+		if(UtilValidate.isNotEmpty(registrationId) && UtilValidate.isNotEmpty(actionFlag))	{      
+
+			try
+			{/*
+				if("N".equals(actionFlag)) {      
+					if(UtilValidate.isNotEmpty(registrationId)) {
+						Map empDetails = UtilMisc.toMap("status","REVERTED","remarks",remarks);
+						int update = delegator.storeByCondition("EmplRegistration",
+								empDetails, EntityCondition.makeCondition(
+										"registrationId", EntityOperator.EQUALS,
+										registrationId));
+
+						result.put(EmployeeConstants.SUCCESS_MESSAGE,UIMessage.getSuccessMessage(
+								resource,EmployeeConstants.REGISTRATION_REVERTED_SUCCESSFULLY + " For ", registrationId, locale));
+                    Added by saurabh gupta on 04.11.2014 bug no 1405
+						result.put(EmployeeConstants.SUCCESS_MESSAGE,UIMessages.getSuccessMessage(
+								resource,EmployeeConstants.REGISTRATION_REVERTED_SUCCESSFULLY,"", locale));
+   					}
+				}*/ if("Y".equals(actionFlag)) {
+					if(UtilValidate.isNotEmpty(registrationId)) {
+						getEmployeeDetail=delegator.findList("EmplRegistration", EntityCondition.makeCondition(
+								"registrationId", EntityOperator.EQUALS, registrationId), null, null, null, false);
+
+						if(UtilValidate.isNotEmpty(getEmployeeDetail)) {
+
+							title = getEmployeeDetail.get(0).getString("title");
+							firstName = getEmployeeDetail.get(0).getString("firstName");
+							middleName = getEmployeeDetail.get(0).getString("middleName");
+							lastName = getEmployeeDetail.get(0).getString("lastName");
+							gender = getEmployeeDetail.get(0).getString("gender");
+							dateOfBirth = getEmployeeDetail.get(0).getDate("dateOfBirth");
+							community = getEmployeeDetail.get(0).getString("community");
+							fatherName = getEmployeeDetail.get(0).getString("fatherName");
+							motherName = getEmployeeDetail.get(0).getString("motherName");							
+							aadharCardNumber = getEmployeeDetail.get(0).getString("aadharCardNumber");
+							contactNumber = getEmployeeDetail.get(0).getString("contactNumber");
+							emailAddress = getEmployeeDetail.get(0).getString("emailAddress");
+							permanentAddress = getEmployeeDetail.get(0).getString("permanentAddress");
+							currentAddress = getEmployeeDetail.get(0).getString("currentAddress");
+							city = getEmployeeDetail.get(0).getString("city");
+							state = getEmployeeDetail.get(0).getString("state");
+							pincode = getEmployeeDetail.get(0).getString("pincode");
+							village = getEmployeeDetail.get(0).getString("village");
+							nationality = getEmployeeDetail.get(0).getString("nationality");
+							mobileNo = getEmployeeDetail.get(0).getString("mobileNo");
+							meritalStatus = getEmployeeDetail.get(0).getString("meritalStatus");
+							employeeCode = getEmployeeDetail.get(0).getString("employeeCode");
+							officeId = getEmployeeDetail.get(0).getString("officeId");
+							designation = getEmployeeDetail.get(0).getString("designation");
+							appointmentType = getEmployeeDetail.get(0).getString("appointmentType");
+							dateOfJoining = getEmployeeDetail.get(0).getDate("dateOfJoining");
+							payScaleId = getEmployeeDetail.get(0).getString("payScaleId");
+							basicPay = getEmployeeDetail.get(0).getBigDecimal("basicPay");
+							
+						}
+
+						inMap.put("personalTitle", title);
+						inMap.put("firstName", firstName);
+						inMap.put("middleName", middleName);
+						inMap.put("lastName", lastName);
+						inMap.put("gender", gender);
+						inMap.put("birthDate", dateOfBirth);
+						inMap.put("userLogin", userLogin);
+						
+
+						Map party = dispatcher.runSync("createPerson", inMap);
+
+						if(UtilValidate.isNotEmpty(party)) {
+							employeeId = (String) party.get("partyId");
+
+							inMap.clear();
+							inMap.put("userLogin", userLogin);
+							inMap.put("partyId", employeeId);
+							inMap.put("roleTypeId", "EMPLOYEE");
+						}
+
+						Map empDetails = UtilMisc.toMap("status","APPROVED", "partyId", employeeId,"remarks",remarks);
+
+						int update = delegator.storeByCondition("EmplRegistration",
+								empDetails, EntityCondition.makeCondition(
+										"registrationId", EntityOperator.EQUALS, registrationId));
+
+						if(UtilValidate.isNotEmpty(employeeId)) {
+							Map roleMap = dispatcher.runSync("createPartyRole", inMap);
+					        							
+
+							if(UtilValidate.isNotEmpty(permanentAddress)){
+								Map postalAddress = dispatcher.runSync("createPartyPostalAddress",
+										UtilMisc.toMap("partyId", employeeId,"contactMechPurposeTypeId","GENERAL_LOCATION","address1", permanentAddress,
+												"city","NA","postalCode","NA","userLogin", userLogin));
+							}
+
+							if(UtilValidate.isNotEmpty(contactNumber)){
+								inMap.clear();
+								inMap.put("partyId", employeeId);
+								inMap.put("userLogin", userLogin);
+								inMap.put("roleTypeId", "EMPLOYEE");
+								inMap.put("contactMechPurposeTypeId", "PHONE_MOBILE");
+								inMap.put("countryCode", "91");
+								inMap.put("contactNumber", contactNumber);
+
+								Map contactMap = dispatcher.runSync("createPartyTelecomNumber", inMap);
+								inMap.clear();
+							}
+
+							if(UtilValidate.isNotEmpty(emailAddress))
+							{
+								inMap.put("userLogin", userLogin);
+								inMap.put("partyId", employeeId);
+								inMap.put("contactMechPurposeTypeId", "PRIMARY_EMAIL");
+								inMap.put("emailAddress", emailAddress);
+								Map emailMap = dispatcher.runSync("createPartyEmailAddress",inMap);
+								inMap.clear();
+							}
+								
+							List<EntityExpr> expList = new LinkedList<EntityExpr>();
+			 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+								EntityCondition mainCondition = null;
+
+								
+									expList.add(EntityCondition.makeCondition("appointmentTypeId",EntityOperator.EQUALS, appointmentType));
+									mainCondition = EntityCondition.makeCondition(expList,EntityOperator.AND);
+									  List<GenericValue> resultList = new LinkedList<GenericValue>();
+									//List<GenericValue> resultList = FastList.newInstance();
+									try {
+										resultList = delegator.findList("AppointmentType",
+												mainCondition, UtilMisc.toSet("appointmentTypeId"), null,
+												null, false);
+										if (UtilValidate.isEmpty(resultList)) {
+											 Map appointmentTypemap = UtilMisc.toMap(					
+														"appointmentTypeId", appointmentType 
+																					
+														);
+												GenericValue saveAppointmentType = delegator.makeValue("AppointmentType", appointmentTypemap);
+												saveAppointmentType.create();
+										}
+									} catch (GenericEntityException e1) {
+										e1.printStackTrace();
+									}
+
+							
+								
+							String printName = null;
+							java.sql.Timestamp fromDate1 = UtilDateTime.nowTimestamp();
+							java.sql.Timestamp fromDate2 = UtilDateTime.nowTimestamp();
+							String emplPositionId =delegator.getNextSeqId("EmplPosition");
+							
+							java.sql.Timestamp dateOfJoiningTimestamp = new java.sql.Timestamp(dateOfJoining.getTime());
+
+					        Map EmployeeDetails = UtilMisc.toMap(
+									"emplPositionId",emplPositionId,
+									"statusId", "EMPL_POS_ACTIVE",
+									"partyId", employeeId,																
+									"emplPositionTypeId",designation,
+									"officeId", officeId,
+									"appointmentTypeId", appointmentType, 
+									"actualFromDate", dateOfJoiningTimestamp,
+									"serviceAction", "Joining",
+									"dateOfAppointment", dateOfJoiningTimestamp,
+									"cadreOfficeId", officeId, 
+									"bandPay", basicPay, 
+									"payScaleId", payScaleId,
+									"estimatedFromDate", fromDate1,
+									"estimatedThruDate", fromDate2									
+									);
+							GenericValue saveEmployeePosition = delegator.makeValue("EmplPosition", EmployeeDetails);
+							saveEmployeePosition.create();
+
+							if((middleName== null) &&(lastName== null))
+								printName = firstName;
+							if(((middleName== null)||(middleName== "")) && (lastName!= null))
+								printName = firstName + " " + lastName;
+							if(((lastName== null)||(lastName== "") ) && (middleName!= null))
+								printName = firstName + " " + middleName;
+							if((middleName!= null) &&(lastName!= null) && (firstName!= null))
+								printName = firstName + " " + middleName+ " " + lastName;
+							if(title != null)
+								printName = title+" "+printName;
+							
+							List<EntityExpr> expList1 = new LinkedList<EntityExpr>();
+			 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+								EntityCondition mainCondition1 = null;
+
+								
+								expList1.add(EntityCondition.makeCondition("statusId",EntityOperator.EQUALS, "PARTY_REL_ACTIVE"));
+								mainCondition1 = EntityCondition.makeCondition(expList1,EntityOperator.AND);
+									  List<GenericValue> resultList1 = new LinkedList<GenericValue>();
+									//List<GenericValue> resultList = FastList.newInstance();
+									try {
+										resultList1 = delegator.findList("StatusItem",
+												mainCondition1, UtilMisc.toSet("statusId"), null,
+												null, false);
+										if (UtilValidate.isEmpty(resultList1)) {
+											 Map StatusItemmap = UtilMisc.toMap("statusId", "PARTY_REL_ACTIVE");
+												GenericValue saveStatusItem = delegator.makeValue("StatusItem", StatusItemmap);
+												saveStatusItem.create();
+										}
+									} catch (GenericEntityException e2) {
+										e2.printStackTrace();
+									}
+
+
+							/*Map employeepersonalDetails = dispatcher.runSync(
+									"createPersonalDetails", UtilMisc.toMap("partyId", employeeId,"employeeCode", employeeCode,
+											"fatherHusbandName", fatherName,"motherName", motherName,"contactNumber2", contactNumber,
+											"printName", printName, "dateOfSuperannuation", dateOfRetirement, "userLogin", userLogin));*/
+							java.sql.Timestamp fromDate = UtilDateTime.nowTimestamp();
+
+							if(UtilValidate.isNotEmpty(officeId))
+							{
+															
+								List<EntityExpr> expList2 = new LinkedList<EntityExpr>();
+				 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+									EntityCondition mainCondition2 = null;
+
+									
+									expList2.add(EntityCondition.makeCondition("partyRelationshipTypeId",EntityOperator.EQUALS, "OFFICE_TO_EMPLOYEE"));
+									mainCondition2 = EntityCondition.makeCondition(expList2,EntityOperator.AND);
+										  List<GenericValue> resultList2 = new LinkedList<GenericValue>();
+										//List<GenericValue> resultList = FastList.newInstance();
+										try {
+											resultList2 = delegator.findList("PartyRelationshipType",
+													mainCondition2, UtilMisc.toSet("partyRelationshipTypeId"), null,
+													null, false);
+											if (UtilValidate.isEmpty(resultList2)) {
+												 Map RelationshipTypeIdMap = UtilMisc.toMap("partyRelationshipTypeId", "OFFICE_TO_EMPLOYEE");
+													GenericValue saveRelationshipTypeId = delegator.makeValue("PartyRelationshipType", RelationshipTypeIdMap);
+													saveRelationshipTypeId.create();
+											}
+										} catch (GenericEntityException e3) {
+											e3.printStackTrace();
+										}
+
+								 
+								 
+								 Map officeParent = dispatcher.runSync("createPartyRelationship", UtilMisc.toMap("partyIdFrom",
+										 officeId, "partyIdTo", employeeId, "roleTypeIdFrom",
+										 "OFFICE", "roleTypeIdTo","EMPLOYEE", "partyRelationshipTypeId", "OFFICE_TO_EMPLOYEE", "userLogin", userLogin));
+							}	
+							
+							/*if(UtilValidate.isNotEmpty(permanentAddress)){
+								Map postalAddress = dispatcher.runSync("createPartyPostalAddress",
+										UtilMisc.toMap("partyId", employeeId,"contactMechPurposeTypeId","GENERAL_LOCATION","address1", permanentAddress,
+												"city","NA","postalCode","NA","userLogin", userLogin));
+							}*/
+							//Map emplReportsToDetails = dispatcher.runSync("createReportsToDetails", UtilMisc.toMap("selectedItem", officeId, "userLogin", userLogin));
+
+							result.put(EmployeeConstants.SUCCESS_MESSAGE,UIMessages.getSuccessMessage(
+									resource,EmployeeConstants.REGISTRATION_APPROVED_SUCCESSFULLY + " For ", printName, locale));	
+						}
+					} 
+				}
+			}catch (GenericServiceException e) {
+				// Returning the result map with error message.
+
+				result.put(EmployeeConstants.ERROR_MESSAGE, UIMessages
+						.getErrorMessage(resource,
+								EmployeeConstants.ERROR_MESSAGE, "",locale));
+
+			}	
+			catch (GenericEntityException e) {
+				// Returning the result map with error message.
+
+				result.put(EmployeeConstants.ERROR_MESSAGE, UIMessages
+						.getErrorMessage(resource,
+								EmployeeConstants.ERROR_MESSAGE, "",locale));
+			}	
+		}
+		return result;
+	}
+
+    private static java.sql.Date getConvertedDate(String inputDate) {
+
+        java.sql.Date outputDate = null;
+        if(UtilValidate.isNotEmpty(inputDate))
+        {
+        String subStringDates[] = inputDate.split("/");
+
+        String dateAfterSpliting = (String) subStringDates[0];
+
+        String monthAfterSpliting = (String) subStringDates[1];
+
+        String dayAfterSpliting = (String) subStringDates[2];
+
+        String convertedDate = dayAfterSpliting + "-" + monthAfterSpliting
+                + "-" + dateAfterSpliting;
+
+        outputDate = java.sql.Date.valueOf(convertedDate);
+        }
+        return outputDate;
+
+    }
+    
+    
+    
+	/*
+	 * Should be moved to Framework util
+	 * Need to check if already exist in framework
+	 * 
+	 */
+	
+	private static java.sql.Date convertToDate(String toBeConvertedDate) {
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		java.util.Date d = null;
+		try {
+			d = df.parse(toBeConvertedDate);
+		} catch (ParseException e1) {
+		}
+		// need to handle here if there is an exception
+		// what should be the defalut value ??
+		java.sql.Date sqlDate = new java.sql.Date(d.getTime());
+		return sqlDate;
+	}
+	
+	
+	// Converts date from "dd/MM/yyyy" format to "yyyy-MM-dd hh:mm:ss.SSS" format. - Used when date is taken from UI and needs to be updated to database.
+	private static java.sql.Timestamp convertToTimeStampDate(String toBeConvertedDate)
+	{
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		java.util.Date d = null;
+		java.sql.Timestamp sqlDate = null;
+		try {
+			d = df.parse(toBeConvertedDate);
+		} catch (ParseException e1) {
+		}
+		// need to handle here if there is an exception
+		// what should be the defalut value ??
+		if(UtilValidate.isNotEmpty(d.getTime()))
+		{
+		sqlDate = new java.sql.Timestamp(d.getTime());
+		}
+		return sqlDate;
+	}
+	
+	
+	//Converts date from "yyyy-MM-dd hh:mm:ss.SSS" format to the same format - Used when current Timestamp is used as Date. 
+	//Current timestamp behaviour is unpredictable. It takes 2 digits for seconds sometimes and 3 digits at times.
+	// To overcome this we are using this conversion.
+	private static java.sql.Timestamp convertStringToTimeStamp(String toBeConvertedDate) {
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
+		java.util.Date d = null;
+		try {
+			d = df.parse(toBeConvertedDate);
+		} catch (ParseException e1) {
+		}
+		// need to handle here if there is an exception
+		// what should be the defalut value ??
+		java.sql.Timestamp sqlDate = new java.sql.Timestamp(d.getTime());
+		return sqlDate;
+	}
+	
+	
+	
+	// Converts the first letter of every word in a sentence, to upper case.
+	
+	private static String convertFirstLetterToUpper(String value) {
+
+		final StringTokenizer st = new StringTokenizer(value, " ", true);
+		final StringBuilder sb = new StringBuilder();
+
+		while (st.hasMoreTokens()) {
+			String token = st.nextToken();
+			token = String.format("%s%s", Character
+					.toUpperCase(token.charAt(0)), token.substring(1));
+			sb.append(token);
+		}
+
+		return sb.toString();
+
+	}
+    
 }
