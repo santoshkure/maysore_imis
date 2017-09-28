@@ -552,20 +552,53 @@ under the License.
         <response name="success" type="view" value="EditSkillTypes"/>
     </request-map>
     <!--====================Employee Requests==================-->
-    <request-map uri="findEmployees">
+     <request-map uri="findEmployees">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="FindEmployee"/>
+        <response name="success" type="view" value="findEmployees"/>
     </request-map>
+    
     <request-map uri="NewEmployee">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="NewEmployee"/>
     </request-map>
+    
     <request-map uri="createEmployee">
         <security https="true" auth="true"/>
         <event type="service" invoke="createEmployee"/>
-        <response name="success" type="request" value="EmployeeProfile"/>
+        <response name="success" type="request" value="findEmployees"/>
         <response name="error" type="view" value="NewEmployee"/>
     </request-map>
+    
+    <request-map uri="viewEmployee">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewEmployee"/>
+    </request-map>
+    
+    <request-map uri="editview">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editview"/>
+    </request-map>
+   
+     <request-map uri="approveView">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewEmployee"/>
+    </request-map>
+    
+     <request-map uri="approveEmployee">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="approveRegistration"/>
+        <response name="success" type="request" value="findEmployees"/>
+        <response name="error" type="request" value="findEmployees"/>
+    </request-map>
+
+ <request-map uri="updateEmployee">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateRegistration"/>
+        <response name="success" type="request" value="findEmployees"/>
+        <response name="error" type="view" value="findEmployees"/>
+    </request-map>
+    
+     <!-- END -->
     <request-map uri="EditEmployeeSkills">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="EditEmployeeSkills"/>
@@ -1891,6 +1924,40 @@ under the License.
           <response name="error" type="view" value="editBuildingMaster"/>
     </request-map>
     
+     <!--Code is Added by Anil Kumar on 26 Aug 2017 for Designation Master-->
+    <request-map uri="searchDesignationMaster">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="searchDesignationMaster" />
+		<response name="error" type="view" value="searchDesignationMaster" />
+	</request-map>
+	
+	 <request-map uri="designationMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="designationMaster"/>
+        <response name="error" type="view" value="designationMaster" />
+    </request-map>
+    
+     <request-map uri="editDesignationMaster">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editDesignationMaster"/>
+        <response name="error" type="view" value="editDesignationMaster" />
+    </request-map>
+
+      <request-map uri="saveDesignationMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveDesignationMaster"/>
+        <response name="success" type="request-redirect" value="searchDesignationMaster"/>
+        <response name="error" type="view" value="searchDesignationMaster" />
+      </request-map>
+      
+      
+     <request-map uri="editofDesignationMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="editofDesignationMaster"/>
+        <response name="success" type="request-redirect" value="searchDesignationMaster"/>
+        <response name="error" type="view" value="searchDesignationMaster" />
+    </request-map>
+     <!-- END -->
   <!-- ==========end==================  --> 
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
@@ -1939,7 +2006,7 @@ under the License.
     <view-map name="EditUnemploymentClaims" type="screen" page="component://humanres/widget/EmploymentScreens.xml#EditUnemploymentClaims"/>
     <view-map name="EditAgreementEmploymentAppls" type="screen" page="component://humanres/widget/EmploymentScreens.xml#EditAgreementEmploymentAppls"/>
 
-    <view-map name="FindEmployee" type="screen" page="component://humanres/widget/EmployeeScreens.xml#FindEmployee"/>
+    <view-map name="findEmployees" type="screen" page="component://humanres/widget/EmployeeScreens.xml#FindEmployee"/>
     <view-map name="NewEmployee" type="screen" page="component://humanres/widget/EmployeeScreens.xml#NewEmployee"/>
     <view-map name="EmployeeProfile" type="screen" page="component://humanres/widget/EmployeeScreens.xml#EmployeeProfile"/>
     <view-map name="EditEmployeeSkills" type="screen" page="component://humanres/widget/EmployeeScreens.xml#EditEmployeeSkills"/>
@@ -2124,6 +2191,11 @@ under the License.
          
          <!-- END -->
          
+         <!-- Employee -->
+          <view-map name="viewEmployee" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewEmployee"/>
+          <view-map name="editview" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editview"/>        
+         <!--END  -->
+         
           <view-map name="GrievanceDetailEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceDetailEmpPortal"/>
           <view-map name="GrievanceActionEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceActionEmpPortal"/>
           <view-map name="veiwGrievanceEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#veiwGrievanceEmpPortal"/>
@@ -2151,4 +2223,10 @@ under the License.
      <view-map name="editApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editApplicationMaster"/>
      <view-map name="editBuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editBuildingMaster"/>
       <!-- End -->
+      
+      <!--Code is Added by Anil Kumar on 26 Aug 2017 for Designation Master-->
+         <view-map name="searchDesignationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#searchDesignationMaster" />
+         <view-map name="designationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#designationMaster"/>
+         <view-map name="editDesignationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editDesignationMaster"/>
+         <!-- END -->
 </site-conf>
