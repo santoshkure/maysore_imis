@@ -1104,7 +1104,53 @@ under the License.
         <field name="description" type="description"></field>
         <prim-key field="associationId" />
     </entity>
+    
+  <!-- ========================================================= -->
+  <!-- By PRABHU For Employee Registration -->
+  <!-- ========================================================= -->
 
-
-
+<entity entity-name="EmplRegistration" package-name="org.apache.ofbiz.humanres" title="Employee Registration">
+   
+      <field name="registrationId" type="id-ne"></field>
+      <field name="employeeCode" type="short-varchar"></field>      
+      <field name="title" type="short-varchar"></field>
+      <field name="firstName" type="short-varchar"></field>
+      <field name="middleName" type="short-varchar"></field>
+      <field name="lastName" type="short-varchar"></field>
+      <field name="gender" type="short-varchar"></field>
+      <field name="dateOfBirth" type="date"></field>
+      <field name="category" type="short-varchar"></field>
+      <field name="community" type="short-varchar"></field>      
+      <field name="meritalStatus" type="short-varchar"></field>     
+      <field name="fatherName" type="short-varchar"></field>
+      <field name="motherName" type="short-varchar"></field>
+      <field name="placeofBirth" type="short-varchar"></field>
+      <field name="mothertonque" type="short-varchar"></field>
+      <field name="contactNumber" type="short-varchar"></field>
+      <field name="emailAddress" type="short-varchar"></field>
+      <field name="mobileNo" type="short-varchar"></field>
+      <field name="aadharCardNumber" type="short-varchar"></field>   
+      <field name="city" type="short-varchar"></field>
+      <field name="state" type="short-varchar"></field>
+      <field name="currentAddress" type="short-varchar"></field>
+      <field name="permanentAddress" type="short-varchar"></field>      
+      <field name="pincode" type="short-varchar"></field>
+      <field name="village" type="short-varchar"></field>
+      <field name="nationality" type="short-varchar"></field>      
+      <field name="officeId" type="short-varchar"></field>
+      <field name="designation" type="short-varchar"></field>
+      <field name="createdBy" type="short-varchar"></field>
+      <field name="createdDate" type="date-time"></field>
+      <field name="partyId" type="short-varchar"></field>
+      <field name="remarks" type="short-varchar"></field>
+      <field name="status" type="short-varchar"></field>
+      <field name="appointmentType" type="short-varchar"></field>
+      <field name="dateOfRetirement" type="date"></field>
+      <field name="dateOfJoining" type="date"></field>
+      <field name="payScaleId" type="short-varchar"></field>
+      <field name="basicPay" type="currency-amount"></field>        
+      <field name="optionToWork" type="id"></field>
+     
+      <prim-key field="registrationId" />
+    </entity>
 </entitymodel>
