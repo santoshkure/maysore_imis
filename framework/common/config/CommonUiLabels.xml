@@ -15654,9 +15654,9 @@
         <value xml:lang="en">Cummunity</value>
         <value xml:lang="kn">Cummunity</value>
     </property>
-    <property key="cast">
-        <value xml:lang="en">Cast</value>
-        <value xml:lang="kn">Cast</value>
+    <property key="caste">
+        <value xml:lang="en">Caste</value>
+        <value xml:lang="kn">Caste</value>
     </property>
     <property key="nationality">
         <value xml:lang="en">Nationality</value>
@@ -15727,8 +15727,8 @@
         <value xml:lang="kn">Your Nationality</value>
     </property>
     <property key="yourCast">
-        <value xml:lang="en">Your Cast</value>
-        <value xml:lang="kn">Your Cast</value>
+        <value xml:lang="en">Your Caste</value>
+        <value xml:lang="kn">Your Caste</value>
     </property>
     <property key="yourCity">
         <value xml:lang="en">Your City</value>
@@ -16056,5 +16056,27 @@
         <value xml:lang="en">No Records Found</value>
         <value xml:lang="kn">No Records Found</value>
     </property>
+    <!-- Added By Shubham Malviya For Validation Alert -->
+    <property key="alphabetical">
+        <value xml:lang="en">should be alphabetical.</value>
+        <value xml:lang="kn">should be alphabetical.</value>
+    </property> 
+    <property key="notEmpty">
+        <value xml:lang="en">should not be empty.</value>
+        <value xml:lang="kn">should not be empty.</value>
+    </property> 
+    <property key="saveConfirmMsg">
+        <value xml:lang="en">Are you sure, you want to Save the Form</value>
+        <value xml:lang="kn">Are you sure, you want to Save the Form</value>
+    </property> 
+    <property key="shouldBeNumericMsg">
+        <value xml:lang="en">should be numeric.</value>
+        <value xml:lang="kn">should be numeric.</value>
+    </property>
+    <property key="registrationNo">
+        <value xml:lang="en">Registration No.</value>
+        <value xml:lang="kn">Registration No.</value>
+    </property>
+    <!-- End -->
 </resource>
 

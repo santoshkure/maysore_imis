@@ -941,23 +941,27 @@ under the License.
         <auto-attributes include="pk" mode="IN"/>
     </service>
     
+    <!-- Added by shubham malviya for SMS services -->
+    <!-- Service Call from Ftl -->
     <service name="smsServiceCall" engine="java"
 		location="org.apache.ofbiz.common.CommonServices" invoke="smsServiceCall">
 		
 		<attribute name="mobNumber" mode="IN" type="String" optional="true"/>
 		<attribute name="textMessage" mode="IN" type="String" optional="true"/>
-		<attribute name="consumerId" mode="IN" type="String" optional="true"/>
+		<attribute name="customerId" mode="IN" type="String" optional="true"/>
 		<attribute name="discription" mode="IN" type="String" optional="true"/>
 		<attribute name="tabName" mode="IN" type="String" optional="true"/>
 		<attribute name="smsId" mode="OUT" type="String" optional="true"/>
 </service>
 
+<!-- Added by shubham malviya for Email services -->
+    <!-- Service Call from Ftl -->
 <service name="emailServiceCall" engine="java"
 		location="org.apache.ofbiz.common.CommonServices" invoke="emailServiceCall">
 		
 		<attribute name="emailId" mode="IN" type="String" optional="true"/>
 		<attribute name="textMessage" mode="IN" type="String" optional="true"/>
-		<attribute name="consumerId" mode="IN" type="String" optional="true"/>
+		<attribute name="customerId" mode="IN" type="String" optional="true"/>
 		<attribute name="discription" mode="IN" type="String" optional="true"/>
 		<attribute name="tabName" mode="IN" type="String" optional="true"/>
 		<attribute name="subject" mode="IN" type="String" optional="true"/>
