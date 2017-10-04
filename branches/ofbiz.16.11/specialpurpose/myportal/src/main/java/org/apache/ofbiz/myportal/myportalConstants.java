@@ -12,5 +12,7 @@ public interface myportalConstants {
 	public static final String SUCCESS_UPLOADING_DOCUMENT = "File Uploaded Successfully";
 	public static final String ERROR_FILE_UPLOAD_SIZE = "Unable to Upload file maximum file is 20 MB";
 	
-	
+	public static String RECORD_SUBMITTED_SUCCESSFULLY = "Your Detail's Submitted Successfully.";
+	public static String RECORD_APPROVE_SUCCESSFULLY = "Your Detail's Approved Successfully.";
+	public static String CONNECTION_SUBMITTED_SUCCESSFULLY = "Your Connection Detail's Submitted Successfully.";
 }

@@ -31,7 +31,7 @@
   				<table cellspacing="0" class="basic-table table-responsive">
   				
   					<tr>
-                      	<td class="label">${uiLabelMap.customerNo}</td>
+                      	<td class="label">${uiLabelMap.customerId}</td>
                         <td>CAN101</td>
                        
                 	 </tr>

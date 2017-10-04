@@ -1,5 +1,8 @@
 package org.apache.ofbiz.myportal;
 
+import javolution.util.FastMap;
+import java.text.DateFormat;
+import java.util.Date;
 import java.nio.ByteBuffer;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -7,9 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-
 import javolution.util.FastList;
-
+import java.util.Calendar;
+import java.text.SimpleDateFormat; 
 import org.apache.ofbiz.base.util.GeneralException;
 import org.apache.ofbiz.base.util.UtilMisc;
 import org.apache.ofbiz.base.util.UtilProperties;
@@ -21,6 +24,8 @@ import org.apache.ofbiz.entity.condition.EntityCondition;
 import org.apache.ofbiz.entity.condition.EntityOperator;
 import org.apache.ofbiz.entity.util.EntityFindOptions;
 import org.apache.ofbiz.entity.util.EntityListIterator;
+import org.apache.ofbiz.humanres.OfficeSetupConstants;
+import org.apache.ofbiz.humanres.hrmsOfficeexception.UIMessages;
 import org.apache.ofbiz.myportal.myportalConstants;
 import org.apache.ofbiz.service.DispatchContext;
 import org.apache.ofbiz.service.GenericServiceException;
@@ -315,4 +320,175 @@ public class MyportalServices {
 		 return result;	
 	}
 
+	/**
+     * Create By : Shubham Malviya
+	 * Method Name :  saveConsumerRegistration
+	 * @Version 1.0
+	 * @Description New Consumer Registration
+	 * @param DispatchContext dctx
+	 * @param Map<String, ? extends Object> context
+	 * @return Map - Map returning Success Message
+	 *  Transaction is handled by service engine
+	 *    
+	 *  
+	 */	 
+	public static Map<String, Object> saveConsumerRegistration(DispatchContext dctx,Map<String, ? extends Object> context) {
+  		Map<String, Object> result = ServiceUtil.returnSuccess();
+  		GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+  		LocalDispatcher dispatcher = dctx.getDispatcher();
+  		GenericValue userLogin = (GenericValue) context.get("userLogin");
+  		Locale locale = (Locale) context.get("locale");
+       Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
+       DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+       Date date = new Date();
+       
+      	String title = (String) context.get("title");
+         String firstName = (String) context.get("firstName");
+  		String middleName = (String) context.get("middleName");
+  		String lastName = (String) context.get("lastName");
+  		String dateOfBirth = (String) context.get("dateOfBirth");
+  		String gender = (String) context.get("gender");
+  		String maritalStatus = (String) context.get("maritalStatus");
+  		String fatherName = (String) context.get("fatherName");
+  		String motherName = (String) context.get("motherName");
+  		String aadharCardNo = (String) context.get("aadharCardNo");
+  		String nationality = (String) context.get("nationality");
+  		String cummunityName = (String) context.get("cummunityName");
+  		String consumerCast = (String) context.get("consumerCast");
+  		String contactNo = (String) context.get("contactNo");
+  		String resContactNo = (String) context.get("resContactNo");
+  		String eMail = (String) context.get("eMail");
+  		String address = (String) context.get("address");
+  		String houseNo = (String) context.get("houseNo");
+  		String wardNo = (String) context.get("wardNo");
+  		String mohalla = (String) context.get("mohalla");
+  		String landMark = (String) context.get("landMark");
+  		String village = (String) context.get("village");
+  		String registerdBy = (String) context.get("registerdBy");
+  		
+  		try{     
+  			GenericValue saveRegistrationDetail = null;
+  			String sequenceId = delegator.getNextSeqId("consumerRegistrationDetails");
+  			String registrationId = "CUSR"+sequenceId;
+  			
+  			Map<String, ? extends Object> RegistrationDetail = UtilMisc.toMap("sequenceId",sequenceId,"registrationId",registrationId,"title",title,"firstName",firstName,"middleName",middleName,"lastName",lastName
+  					,"dateOfBirth",dateOfBirth,"genderId",gender,"maritalStatusId",maritalStatus,"fatherName",fatherName,"motherName",motherName,"aadharCardNo",aadharCardNo,"cummunityNameId",cummunityName
+  					,"nationality",nationality,"consumerCastId",consumerCast,"mobileNumber",contactNo,"resContactNo",resContactNo,"eMail",eMail,"address",address,"houseNo",houseNo,"wardNo",wardNo,"mohalla",mohalla
+  					,"landMark",landMark,"village",village,"submittedDate",dateFormat.format(date),"registerdBy",registerdBy);
+  			
+  			saveRegistrationDetail = delegator.makeValue("consumerRegistrationDetails", RegistrationDetail);
+  			saveRegistrationDetail.create();
+  			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, "", locale));
+  			
+  				// code to call Service for SMS
+     				try {
+     						Map smsLogMap = FastMap.newInstance();
+     						Map LogMap = FastMap.newInstance();
+     						smsLogMap.putAll(UtilMisc.toMap("mobNumber", contactNo, "textMessage", "Dear Customer you are Sucessfully Registered.Thankyou", "customerId", registrationId, "tabName", "Registration", "discription", "Registration Confirmation"));
+     						smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
+     					}
+     				catch(GenericServiceException e)
+     					{
+     						e.printStackTrace();
+     					}
+     			//End
+     			
+     			// code to call Service for Mail
+     				try {     
+     						Map emailLogMap = FastMap.newInstance();
+     						Map LogMap = FastMap.newInstance();
+     						emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage","Dear Customer you are Sucessfully Registered. Thankyou.", "customerId", registrationId, "tabName", "Registration", "discription", "Registration Confirmation","subject", "Email From IMIS"));
+     						emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
+     					}
+     				catch(GenericServiceException e)
+     					{
+     						e.printStackTrace();
+     					}
+     			//End
+  			
+  		}
+  		catch(GenericEntityException e)
+  		{
+  			System.out.println("Exception occured : " + e ); 
+  		}
+  		
+  	
+  		 return result;	
+  	}
+	
+	public static Map<String, Object> applyForConnection(DispatchContext dctx,Map<String, ? extends Object> context) {
+  		Map<String, Object> result = ServiceUtil.returnSuccess();
+  		GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+  		LocalDispatcher dispatcher = dctx.getDispatcher();
+  		GenericValue userLogin = (GenericValue) context.get("userLogin");
+  		Locale locale = (Locale) context.get("locale");
+       Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
+       DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+       Date date = new Date();
+       
+      	String costomerNo = (String) context.get("costomerNo");
+        String connectionCategory = (String) context.get("connectionCategory");
+  		String applicationType = (String) context.get("applicationType");
+  		String typeOfBuilding = (String) context.get("typeOfBuilding");
+  		String applicationDate = (String) context.get("applicationDate");
+  		String feeForConnection = (String) context.get("feeForConnection");
+  		String paymentStatus = (String) context.get("paymentStatus");
+  		
+  		try{     
+  			GenericValue saveConnectionDetail = null;
+  			String sequenceId = delegator.getNextSeqId("saveConnectionDetail");
+  			//String connectionNo = "CONN"+sequenceId;
+  			
+  			Map<String, ? extends Object> connectionDetail = UtilMisc.toMap("sequenceId",sequenceId,"customerId",costomerNo,"connectionCategory",connectionCategory
+  					,"applicationType",applicationType,"typeOfBuilding",typeOfBuilding,"applicationDate",applicationDate,"feeForConnection",feeForConnection,"paymentStatus",paymentStatus);
+  			
+  			saveConnectionDetail = delegator.makeValue("saveConnectionDetail", connectionDetail);
+  			saveConnectionDetail.create();
+  			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, "", locale));
+  			
+  			// get mob no and email
+  			EntityCondition condition2 = EntityCondition.makeCondition("customerId", EntityOperator.EQUALS,costomerNo);
+			List<GenericValue> consumerRegistrationList = delegator.findList("consumerRegistrationDetails", condition2, null, null, null, false);
+  				//List<GenericValue> consumerRegistrationList = delegator.findList("consumerRegistrationDetails",EntityCondition.makeCondition("consumerId",EntityOperator.EQUALS,costomerNo));
+				String mobileNo = consumerRegistrationList.get(0).getString("mobileNumber");
+				String eMail = consumerRegistrationList.get(0).getString("eMail");
+  			//End
+  			
+  				// code to call Service for SMS
+     				try {
+     						Map smsLogMap = FastMap.newInstance();
+     						Map LogMap = FastMap.newInstance();
+     						smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNo, "textMessage", "Dear Customer your Connection Applied Successfully.Thankyou", "customerId", costomerNo, "tabName", "Apply Connection", "discription", "apply for new connection"));
+     						smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
+     					}
+     				catch(GenericServiceException e)
+     					{
+     						e.printStackTrace();
+     					}
+     			//End
+     			
+     			// code to call Service for Mail
+     				try {     
+     						Map emailLogMap = FastMap.newInstance();
+     						Map LogMap = FastMap.newInstance();
+     						emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage","Dear Customer your Connection Applied Successfully.Thankyou", "customerId", costomerNo, "tabName", "Apply Connection", "discription", "apply for new connection","subject", "Email From IMIS"));
+     						emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
+     					}
+     				catch(GenericServiceException e)
+     					{
+     						e.printStackTrace();
+     					}
+     			//End
+  			
+  		}
+  		catch(GenericEntityException e)
+  		{
+  			System.out.println("Exception occured : " + e ); 
+  		}
+  		
+  	
+  		 return result;	
+  	}
+	//End
+	
 }

@@ -15,20 +15,21 @@
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
+  				<li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li>
   				<div class="h3" align="center"><b>${uiLabelMap.registerationDetail}</b></div> 
 			</ul>
 		</div>
         <table cellspacing="0" class="basic-table table-responsive">
              <tbody>
                 <tr>
-	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
-	               <td colspan="2"><font color="blue"><u><i>${uiLabelMap.NoteMandatoryAsterisk}</i></u></font color></td>
+	               <td colspan="3"><font color="blue">${uiLabelMap.personalDetail}</font></td>
+	               <td colspan="1"><h4 align="right"><i><b><font color="blue">${uiLabelMap.noteMandatoryAsterisk}</font></b></i></a></td></tr>
                 </tr>
                 
                 <tr>
-                    <td class="label">${uiLabelMap.CommonTitle}</td>
+                    <td class="label">${uiLabelMap.CommonTitle} <font color="red">*</td>
                     <td>
-                    	<select name="tital" style="width:90px;">
+                    	<select name="title" style="width:90px;">
                    			<option value="">Select</option>
                    			<option value="mr">Mr.</option>
                    			<option value="ms">Ms.</option>
@@ -36,127 +37,162 @@
                    			<option value="other">Other</option>
                  		</select>
              		</td>
+             		<td class="label">${uiLabelMap.firstName} <font color="red">*</td>
+                    <td><input name="firstName"  type="text" maxlength="60" value="" title="First Name should be alphabatic." placeholder="${uiLabelMap.enterFirstName}" onchange="javascript:trimFunction(this)"></td>
                   </tr>
                   
                   <tr>
-                      	<td class="label">${uiLabelMap.firstName}</td>
-                        <td><input name="firstName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFirstName}"></td>
                         <td class="label">${uiLabelMap.middleName}</td>
-                        <td><input name="middleName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMiddleName}"></td>
-                        <td class="label">${uiLabelMap.lastName}</td>
-                        <td><input name="lastName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterlastName}"></td>
+                        <td><input name="middleName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMiddleName}" onchange="javascript:trimFunction(this)"></td>
+                        <td class="label">${uiLabelMap.lastName} <font color="red">*</td>
+                        <td><input name="lastName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterlastName}" onchange="javascript:trimFunction(this)"></td>
                    </tr>
                    
                    <tr>
-                        <td class="label">${uiLabelMap.dateOfBirth}</td>
-                        <td><@htmlTemplate.renderDateTimeField name="dateOfBirth" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
+                        <td class="label">${uiLabelMap.dateOfBirth} <font color="red">*</td>
+                        <td><@htmlTemplate.renderDateTimeField name="dateOfBirth" event="" action="" className="" alert="" title="Format: dd/mm/yyyy" value="" size="15" maxlength="30" id="dateOfBirth" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
                         
-                        <td class="label">${uiLabelMap.gender}</td>
-                        <td><input type="radio" name="gender" value="male"> ${uiLabelMap.CommonMale} <input type="radio" name="gender" value="female"> ${uiLabelMap.CommonFemale} <input type="radio" name="gender" value="other"> Other</td>
-   
-   						<td class="label">${uiLabelMap.maritalStatusOption}</td>
+                        <td class="label">${uiLabelMap.gender} <font color="red">*</td>
    						<td>
-   							<select name="maritalStatus" style="width:90px;">
+   							<select name="gender" style="width:90px;">
                    				<option value="">Select</option>
-                   				<option value="single">${uiLabelMap.PartyMaritalStatusSingle}</option>
-                   				<option value="married">${uiLabelMap.PartyMaritalStatusMarried}</option>
+                   				<#if genderMasterList?has_content>
+                            		<#list genderMasterList as genderMasterList>
+                                		<option value="${genderMasterList.genderId?if_exists}">${genderMasterList.genderName?if_exists}</option>
+                            		</#list>
+                            	</#if>
                    			</select>
                    		</td>
    					</tr>
             
                     <tr>
-                        <td class="label">${uiLabelMap.fatherName}</td>
-                        <td><input name="fatherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFatherName}"></td>
+                    
+                    	<td class="label">${uiLabelMap.maritalStatusOption} <font color="red">*</td>
+   						<td>
+   							<select name="maritalStatus" style="width:90px;">
+                   				<option value="">Select</option>
+                   				<#if maritalMasterList?has_content>
+                            		<#list maritalMasterList as maritalMasterList>
+                                		<option value="${maritalMasterList.maritalStatusId?if_exists}">${maritalMasterList.maritalStatus?if_exists}</option>
+                            		</#list>
+                            	</#if>
+                   			</select>
+                   		</td>
+                        <td class="label">${uiLabelMap.fatherName} <font color="red">*</td>
+                        <td><input name="fatherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFatherName}" onchange="javascript:trimFunction(this)"></td>
+                     
+                    </tr>
+            
+                    <tr>   
+                        <td class="label">${uiLabelMap.motherName} <font color="red">*</td>
+                        <td><input name="motherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMotherName}" onchange="javascript:trimFunction(this)"></td>
                         
-                        <td class="label">${uiLabelMap.motherName}</td>
-                        <td><input name="motherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMotherName}"></td>
-                        
-                        <td class="label">${uiLabelMap.aadharCardNo}</td>
-                        <td><input name="aadharCardNo"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.EnterAadharCard}"></td>
+                        <td class="label">${uiLabelMap.aadharCardNo} <font color="red">*</td>
+                        <td><input name="aadharCardNo"  type="text" maxlength="16" value="" placeholder="${uiLabelMap.EnterAadharCard}" onchange="javascript:allnumeric(this,'${uiLabelMap.aadharCardNo} ${uiLabelMap.shouldBeNumericMsg}')" onKeyUp="javascript:trimFunction(this)"></td>
                     </tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.cummunity}</td>
+                        <td class="label">${uiLabelMap.cummunity} <font color="red">*</td>
                         <td>
-                        <input name="cummunity"  type="text" maxlength="25" value="" placeholder="${uiLabelMap.yourCummunity}">
+                        <select name="cummunityName" style="width:90px;">
+                   				<option value="">Select</option>
+                   				<#if communityMasterList?has_content>
+                            		<#list communityMasterList as communityMasterList>
+                                		<option value="${communityMasterList.communityId?if_exists}">${communityMasterList.communityname?if_exists}</option>
+                            		</#list>
+                            	</#if>
+                   			</select>
                         </td>
-                        <td class="label">${uiLabelMap.cast}</td>
+                        <td class="label">${uiLabelMap.caste} <font color="red">*</td>
                         <td>
-                        <input name="cast"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourCast}">
+                        	<select name="consumerCast" style="width:90px;">
+                   				<option value="">Select</option>
+                   				<#if casteMasterList?has_content>
+                            		<#list casteMasterList as casteMasterList>
+                                		<option value="${casteMasterList.casteId?if_exists}">${casteMasterList.castename?if_exists}</option>
+                            		</#list>
+                            	</#if>
+                   			</select>
                         </td>
-                        <td class="label">${uiLabelMap.nationality}</td>
+                        
+                      </tr>
+                    
+                    <tr>
+                        <td class="label">${uiLabelMap.nationality} <font color="red">*</td>
                         <td>
-                        <input name="nationality"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourNationality}">
+                        <input name="nationality"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourNationality}" onchange="javascript:trimFunction(this)">
+                        </td>
+                        
+                        <td class="label">${uiLabelMap.mobileNo} (+91) <font color="red">*</td>
+                        <td>
+                        <input name="contactNo" type="text" maxlength="10" value="" placeholder="${uiLabelMap.yourMobile}" onchange="javascript:allnumeric(this,'${uiLabelMap.mobileNo} ${uiLabelMap.shouldBeNumericMsg}')" onKeyUp="javascript:trimFunction(this)"></td>
                         </td>
                     </tr>
                     
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
+                    <tr>    
+                        <td class="label">${uiLabelMap.resContactNo}</td>
+                        <td>
+                        <input name="resContactNo" type="text" maxlength="25" value="" >
+                        </td>
+                        <td class="label">${uiLabelMap.CommonEmail} <font color="red">*</td>
+                        <td>
+                        <input name="eMail" type="email" maxlength="40" value="" placeholder="${uiLabelMap.yourEMail}">
+                        </td>
+                    </tr>
+                   
+                    <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.OrderAddress}</td>
+                        <td class="label">${uiLabelMap.OrderAddress} <font color="red">*</td>
                         <td>
-                        <input name="address" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterAddress}">
+                        <textarea name="address" type="text" maxlength="150" value="" placeholder="${uiLabelMap.enterAddress}" onchange="javascript:trimFunction(this)"></textarea>
                         </td>
                         <td class="label">${uiLabelMap.houseNo}</td>
                         <td>
-                        <input name="houseNo" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterHouseNo}">
-                        </td>
-                        <td class="label">${uiLabelMap.wardNo}</td>
-                        <td>
-                        <input name="wardNo"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourWard}">
+                        <input name="houseNo" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterHouseNo}" onchange="javascript:trimFunction(this)">
                         </td>
                     </tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.mohalla}</td>
+                    	<td class="label">${uiLabelMap.wardNo} <font color="red">*</td>
                         <td>
-                        <input name="mohalla" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMohalla}">
+                        <input name="wardNo"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourWard}" onchange="javascript:trimFunction(this)">
                         </td>
+                        <td class="label">${uiLabelMap.mohalla} <font color="red">*</td>
+                        <td>
+                        <input name="mohalla" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMohalla}" onchange="javascript:trimFunction(this)">
+                        </td>
+                   </tr>
+                    
+                    <tr>     
                         <td class="label">${uiLabelMap.landMark}</td>
                         <td>
-                        <input name="landMark" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterLandMark}">
+                        <input name="landMark" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterLandMark}" onchange="javascript:trimFunction(this)">
                         </td>
                         <td class="label">${uiLabelMap.village}</td>
                         <td>
-                        <input name="village"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourVillage}">
+                        <input name="village"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.yourVillage}" onchange="javascript:trimFunction(this)">
                         </td>
                     </tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.CommonCity}</td>
-                        <td>
-                        <input name="city" type="text" maxlength="25" value="Mysore" readonly>
-                        </td>
+                        <td><b>Mysore</b></td>
                         <td class="label">${uiLabelMap.CommonState}</td>
-                        <td>
-                        <input name="state" type="text" maxlength="25" value="Karnataka" readonly>
-                        </td>
-                        <td class="label">${uiLabelMap.CommonCountry}</td>
-                        <td>
-                        <input name="country" type="text" maxlength="25" value="India" readonly>
-                        </td>
+                        <td><b>Karnataka</b></td>
+                        
                     </tr>
                     
                         <tr>
-                        <td class="label">${uiLabelMap.mobileNo}</td>
-                        <td>
-                        <input name="mobileNo" type="text" maxlength="25" value="" placeholder="${uiLabelMap.yourMobile}">
-                        </td>
-                        <td class="label">${uiLabelMap.resContactNo}</td>
-                        <td>
-                        <input name="resContactNo" id="ddd" type="text" maxlength="25" value="" >
-                        </td>
-                        <td class="label">${uiLabelMap.CommonEmail}</td>
-                        <td>
-                        <input name="eMail" type="text" maxlength="40" value="" placeholder="${uiLabelMap.yourEMail}">
-                        </td>
+                        <td class="label">${uiLabelMap.CommonCountry}</td>
+                        <td><b>India</b></td>
                     </tr>
-                   
+                    
                     <tr>
-                    	<td colspan="6">
+                    	<td colspan="4">
                     	<center>
-                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail(RegisterPerson);"/>
-                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:javascript:history.go(-1);"/> 
+                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveRegistrationDetail();"/>
+                    	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();" >
                      	</center>
                      	</td>
                     </tr>
@@ -164,37 +200,93 @@
             </tbody>
         </table>
     </div>
+    <input name="registerdBy"  type="hidden" value="Customer">
 </form>
 
-    <script type="text/javascript" language="javascript">
+<script type="text/javascript" language="javascript">
 
-function saveRegistrationDetail(RegisterPerson)
-   {
-		      var form=document['RegisterPerson'];
-		      var tital =   form.tital.value;
+	function saveRegistrationDetail()
+   			{
+		      var form = document['RegisterPerson'];
+		      
+		      var title = form.title.value;
 		      var firstName =   form.firstName.value;
-		      var middleName =   form.middleName.value;
+		      var lastName = form.lastName.value;
 		      var dateOfBirth =   form.dateOfBirth.value;
 		      var gender =   form.gender.value;
 		      var maritalStatus =   form.maritalStatus.value;
 		      var fatherName =   form.fatherName.value;
 		      var motherName =   form.motherName.value;
 		      var aadharCardNo =   form.aadharCardNo.value;
-		      var cummunity =   form.cummunity.value;
-		      var cast =   form.cast.value;
+		      var cummunityName =   form.cummunityName.value;
+		      var consumerCast =   form.consumerCast.value;
 		      var nationality =   form.nationality.value;
-		      var cast =   form.cast.value;
 		      var address =   form.address.value;
-		      var mobileNo =   form.mobileNo.value;
+		      var wardNo =   form.wardNo.value;
+		      var contactNo =   form.contactNo.value;
 		      var eMail =   form.eMail.value;
+		      var mohalla =   form.mohalla.value;
 		      
-		      var sure = confirm("Are you sure, you want to Save the Form ?");
+		      	if(notEmptyField(title,"${uiLabelMap.CommonSelect} ${uiLabelMap.CommonTitle}"))
+     				{
+     			if((notEmptyField(firstName,"${uiLabelMap.firstName} ${uiLabelMap.notEmpty}")) && (alphabhetValidation1(firstName,"${uiLabelMap.firstName} ${uiLabelMap.alphabetical}")))
+     				{
+     			if((notEmptyField(lastName,"${uiLabelMap.lastName} ${uiLabelMap.notEmpty}")) && (alphabhetValidation1(lastName,"${uiLabelMap.lastName} ${uiLabelMap.alphabetical}")))
+     				{	
+     			if(notEmptyField(dateOfBirth,"${uiLabelMap.dateOfBirth} ${uiLabelMap.notEmpty}"))
+     				{	
+     			if(notEmptyField(gender,"${uiLabelMap.CommonSelect} ${uiLabelMap.gender}"))
+     				{
+     			if(notEmptyField(maritalStatus,"${uiLabelMap.maritalStatusOption} ${uiLabelMap.notEmpty}"))
+     				{	
+     			if((notEmptyField(fatherName,"${uiLabelMap.fatherName} ${uiLabelMap.notEmpty}")) && (alphabhetValidation1(fatherName,"${uiLabelMap.fatherName} ${uiLabelMap.alphabetical}")))
+     				{	
+     			if((notEmptyField(motherName,"${uiLabelMap.motherName} ${uiLabelMap.notEmpty}")) && (alphabhetValidation1(motherName,"${uiLabelMap.motherName} ${uiLabelMap.alphabetical}")))
+     				{
+     			if(notEmptyField(aadharCardNo,"${uiLabelMap.aadharCardNo} ${uiLabelMap.notEmpty}"))
+     				{
+     			if(notEmptyField(cummunityName,"${uiLabelMap.cummunityName} ${uiLabelMap.notEmpty}"))
+     				{
+     			if((notEmptyField(nationality,"${uiLabelMap.nationality} ${uiLabelMap.notEmpty}")) && (alphabhetValidation1(nationality,"${uiLabelMap.nationality} ${uiLabelMap.alphabetical}")))
+     				{	
+     			if(notEmptyField(consumerCast,"${uiLabelMap.cast} ${uiLabelMap.notEmpty}"))
+     				{
+     			if(notEmptyField(address,"${uiLabelMap.address} ${uiLabelMap.notEmpty}"))
+     				{
+     			if(notEmptyField(wardNo,"${uiLabelMap.wardNo} ${uiLabelMap.notEmpty}"))
+     				{
+     			if(notEmptyField(mohalla,"${uiLabelMap.mohalla} ${uiLabelMap.notEmpty}"))
+     				{	
+     			if(notEmptyField(contactNo,"${uiLabelMap.mobileNo} ${uiLabelMap.notEmpty}"))
+     				{
+     			if(notEmptyField(eMail,"${uiLabelMap.CommonEmail} ${uiLabelMap.notEmpty}"))
+     				{
+     				
+     						var sure = confirm("${uiLabelMap.saveConfirmMsg} ?");
                               if( sure == true )
-                             {
-                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
-			            form.submit();
-		                disSubmit('disBttn');    
-		                } 
-    }
-    
-    </script>
+                             	{
+                        			form.action = "<@ofbizUrl>saveConsumerRegistration</@ofbizUrl>";
+			            			form.submit();
+		                			disSubmit('disBttn');    
+		                		} 
+		                		
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+		           	}
+    		}
+
+</script>
