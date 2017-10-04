@@ -33,69 +33,60 @@
                 	</tr>
         			<tr>
                       	<td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input name="consumerNo"  type="text" maxlength="10" value="CAN101" readonly></td>
+                        <td><input name="costomerNo"  type="text" maxlength="10" value="${userLogin.userLoginId}" readonly></td>
                        
                  </tr>
                     
                      <tr>
-                    <td class="label">${uiLabelMap.connectionCategory}</td>
+                    <td class="label">${uiLabelMap.connectionCategory} <font color="red">*</td></td>
                          <td>
-                    	<select name="${uiLabelMap.connectionCategory}" >
+                    	<select name="connectionCategory" >
                    			<option value="">Select</option>
-                   			<option value="">Household</option>
-                   			<option value="">Non-household</option>
-                   			<option value="">Commercial</option>
+                   			<option value="Household">Household</option>
+                   			<option value="household">Non-household</option>
+                   			<option value="Commercial">Commercial</option>
                    			
                  		</select>
              		</td>
-                        <td class="label">${uiLabelMap.applicationType}</td>
+                        <td class="label">${uiLabelMap.applicationType} <font color="red">*</td></td>
                          <td>
                     	<select name="applicationType" >
                    			<option value="">Select</option>
-                   			<option value="">Permanent</option>
-                   			<option value="">Temporary</option>
+                   			<option value="Permanent">Permanent</option>
+                   			<option value="Temporary">Temporary</option>
                    			
                  		</select>
              		</td>
              		<tr>
-                   <td class="label">${uiLabelMap.typeOfBuilding}</td>
+                   <td class="label">${uiLabelMap.typeOfBuilding} <font color="red">*</td></td>
  						<td>
                     	<select name="typeOfBuilding" >
                    			<option value="">Select</option>
-                   			<option value="">Residential</option>
-                   			<option value="">Industrial</option>
+                   			<option value="Residential">Residential</option>
+                   			<option value="Industrial">Industrial</option>
                    			
                  		</select>
              			</td>   
    						<td class="label">${uiLabelMap.applicationDate}</td>
    						<td>
 						<#--<@htmlTemplate.renderDateTimeField name="dateOfBirth" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-						--><input name=""  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy")}"></td>
+						--><input name="applicationDate"  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy hh:mm:ss a")}"></td>
    						
    					</tr>
    					 <tr>
 	                         
 	                        <td class="label">${uiLabelMap.feeForConnection}</td>
 	                        <td><input name="feeForConnection"  type="text" maxlength="7" readonly value="500" ></td>
-                        	<td class="label">${uiLabelMap.feeStatus}</td>
-	                        <td><input name="feeStatus"  type="text" maxlength="15" readonly value="Unpaid"</td>
-                    </tr>
-                    <tr>
-	                         
-	                       <td class="label">${uiLabelMap.connectionNo}<font color="red" >*</font></td>
-	                        <td>
-	                        <input name="connectionNo"  type="text" maxlength="10" readonly value="CON101" >
-	                        </td>
-	                         
-	                         <td class="label">${uiLabelMap.assentialDocument}</td>
-							<td>
+
+                    <td class="label">${uiLabelMap.assentialDocument}</td>
+							<td colspan="3">
 		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
 		    				<input type="button" onclick="javascript:resetVal(document.connectionApply.fileLoc);" value="Reset"/> 
 		    				<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
 		    				<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
 		 					</td>
-                    </tr>
-                    
+                    <tr>
+	                     
                     <tr>
                     	<td colspan="4">
                     	<center>
@@ -117,13 +108,26 @@
 function saveRegistrationDetail()
    {
 		      var form=document['connectionApply'];
+		      var connectionCategory = form.connectionCategory.value;
+		      var applicationType = form.applicationType.value;
+		      var typeOfBuilding = form.typeOfBuilding.value;
+		      
+		      if(notEmptyField(connectionCategory,"${uiLabelMap.CommonSelect} ${uiLabelMap.connectionCategory}"))
+     				{
+     			if(notEmptyField(applicationType,"${uiLabelMap.CommonSelect} ${uiLabelMap.applicationType}"))
+     				{
+     			if(notEmptyField(typeOfBuilding,"${uiLabelMap.CommonSelect} ${uiLabelMap.typeOfBuilding}"))
+     				{		
 		       var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
-                        form.action = "<@ofbizUrl>searchConnectionApply</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>applyConnection</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 
+		             } 
+		             }
+		             }  
     }
     
     

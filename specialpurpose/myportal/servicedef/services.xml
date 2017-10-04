@@ -87,4 +87,47 @@ under the License.
           <attribute name="ErrorMessage1" type="String" mode="OUT" optional="true" />
 	</service>
 	<!-- End -->
+
+<!-- Added By shubham malviya for New Consumer Registration -->
+	<service name="saveConsumerRegistration" export="true" engine="java" 
+    	location="org.apache.ofbiz.myportal.MyportalServices" invoke="saveConsumerRegistration">
+    	
+     <attribute name="title" type="String" mode="IN" optional="true" />
+     <attribute name="firstName" type="String" mode="IN" optional="true" />
+     <attribute name="middleName" type="String" mode="IN" optional="true" />
+     <attribute name="lastName" type="String" mode="IN" optional="true" />
+     <attribute name="dateOfBirth" type="String" mode="IN" optional="true" />
+     <attribute name="gender" type="String" mode="IN" optional="true" />
+     <attribute name="maritalStatus" type="String" mode="IN" optional="true" />
+     <attribute name="fatherName" type="String" mode="IN" optional="true" />
+     <attribute name="motherName" type="String" mode="IN" optional="true" />
+     <attribute name="aadharCardNo" type="String" mode="IN" optional="true" />
+     <attribute name="nationality" type="String" mode="IN" optional="true" />
+     <attribute name="cummunityName" type="String" mode="IN" optional="true" />
+     <attribute name="consumerCast" type="String" mode="IN" optional="true" />
+      <attribute name="contactNo" type="String" mode="IN" optional="true" />
+      <attribute name="resContactNo" type="String" mode="IN" optional="true" />
+     <attribute name="eMail" type="String" mode="IN" optional="true" />
+     <attribute name="address" type="String" mode="IN" optional="true" />
+     <attribute name="houseNo" type="String" mode="IN" optional="true" />
+     <attribute name="wardNo" type="String" mode="IN" optional="true" />
+     <attribute name="mohalla" type="String" mode="IN" optional="true" />
+     <attribute name="landMark" type="String" mode="IN" optional="true" />
+     <attribute name="village" type="String" mode="IN" optional="true" />
+     <attribute name="registerdBy" type="String" mode="IN" optional="true" />
+     
+	</service> 
+	
+	<service name="applyForConnection" export="true" engine="java" 
+    	location="org.apache.ofbiz.myportal.MyportalServices" invoke="applyForConnection">
+    	
+     <attribute name="costomerNo" type="String" mode="IN" optional="true" />
+     <attribute name="connectionCategory" type="String" mode="IN" optional="true" />
+     <attribute name="applicationType" type="String" mode="IN" optional="true" />
+     <attribute name="typeOfBuilding" type="String" mode="IN" optional="true" />
+     <attribute name="applicationDate" type="String" mode="IN" optional="true" />
+     <attribute name="feeForConnection" type="String" mode="IN" optional="true" />
+     
+	</service> 
+	
 </services>

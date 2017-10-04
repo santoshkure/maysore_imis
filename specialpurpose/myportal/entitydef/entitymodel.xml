@@ -54,4 +54,87 @@ under the License.
 			<key-map field-name="myportalReplyDocId" rel-field-name="referenceId" />
 		</relation> -->
    </entity>
+
+<!-- Added By Shubham Malviya For Save Consumer Registration Detail's -->
+
+<entity entity-name="consumerRegistrationDetails" package-name="org.apache.ofbiz.myportal" title="Registration Details">
+   		<field name="sequenceId" type="id-ne"/>
+		  <field name="registrationId" type="id-ne"/>
+		  <field name="title" type="short-varchar"/>
+		  <field name="firstName" type="short-varchar"/>
+		  <field name="middleName" type="short-varchar"/>
+		  <field name="lastName" type="short-varchar"/>
+		  <field name="genderId" type="short-varchar"/>
+		  <field name="maritalStatusId" type="short-varchar"/>
+		  <field name="dateOfBirth" type="short-varchar"/>
+		  <field name="fatherName" type="short-varchar"/>
+		  <field name="motherName" type="short-varchar"/>
+		  <field name="aadharCardNo" type="short-varchar"/>
+		  <field name="cummunityNameId" type="short-varchar"/>
+		  <field name="consumerCastId" type="short-varchar"/>
+		  <field name="mobileNumber" type="short-varchar"/>
+		  <field name="resContactNo" type="short-varchar"/>
+		  <field name="nationality" type="short-varchar"/>
+		  <field name="eMail" type="short-varchar"/>
+		  <field name="address" type="long-varchar"/>
+		  <field name="houseNo" type="short-varchar"/>
+		  <field name="wardNo" type="short-varchar"/>
+		  <field name="mohalla" type="short-varchar"/>
+		  <field name="landMark" type="short-varchar"/>
+		  <field name="village" type="short-varchar"/>
+		  <field name="submittedDate" type="short-varchar"/>
+		  <field name="registerdBy" type="short-varchar"/>
+		  <field name="actionStatus" type="short-varchar"/>
+		  <field name="appRejRemark" type="short-varchar"/>
+		  <field name="actionDate" type="short-varchar"/>
+		  <field name="customerId" type="short-varchar"/>
+		  <field name="actionByOfficerName" type="short-varchar"/>
+		  
+  	      <prim-key field="sequenceId"/>
+   </entity>
+<!-- End -->
+
+<!-- Added By Shubham Malviya For Save Connection Detail's -->
+<entity entity-name="saveConnectionDetail" package-name="org.apache.ofbiz.myportal" title="Connection Details">
+   		<field name="sequenceId" type="id-ne"/>
+		  <field name="customerId" type="short-varchar"/>
+		  <field name="connectionCategory" type="short-varchar"/>
+		  <field name="applicationType" type="short-varchar"/>
+		  <field name="typeOfBuilding" type="short-varchar"/>
+		  <field name="applicationDate" type="short-varchar"/>
+		  <field name="feeForConnection" type="short-varchar"/>
+		  <field name="paymentStatus" type="short-varchar"/>
+		  <field name="actionStatus" type="short-varchar"/>
+		  <field name="connectionNo" type="short-varchar"/>
+		  <field name="dmaNo" type="short-varchar"/>
+		   <field name="connectionDate" type="short-varchar"/>
+		  <field name="meterNo" type="short-varchar"/>
+		  <field name="refFileNo" type="short-varchar"/>
+		  <field name="bookNo" type="short-varchar"/>
+		  <field name="leafNo" type="short-varchar"/>
+		  <field name="pipeSize" type="short-varchar"/>
+		  <field name="constituency" type="short-varchar"/>
+		  <field name="drinkingWater" type="short-varchar"/>
+		  <field name="zone" type="short-varchar"/>
+		  <field name="mccZone" type="short-varchar"/>
+		  <field name="division" type="short-varchar"/>
+		  <field name="surveyNumber" type="short-varchar"/>
+		  <field name="eeName" type="short-varchar"/>
+		  <field name="oldWard" type="short-varchar"/>
+		  <field name="mrName" type="short-varchar"/>
+		  <field name="areaCoordinator" type="short-varchar"/>
+		  <field name="logitude" type="short-varchar"/>
+		  <field name="lattitude" type="short-varchar"/>
+		  <field name="connectionStatus" type="short-varchar"/>
+		  <field name="refConsumerNo" type="short-varchar"/>
+		  <field name="resoneForReject" type="short-varchar"/>
+		  <field name="actionOfficerName" type="short-varchar"/>
+		  <field name="designation" type="short-varchar"/>
+		  <field name="actionDate" type="short-varchar"/>
+		  <field name="remark" type="short-varchar"/>
+		  
+  	      <prim-key field="sequenceId"/>
+   </entity>
+   <!-- End -->
+   
 </entitymodel>

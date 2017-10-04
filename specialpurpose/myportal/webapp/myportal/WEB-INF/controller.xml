@@ -385,6 +385,21 @@
       <response name="success" type="view" value="grievancePDF"/>
       <response name="error" type="view" value="grievancePDF"/>
    </request-map>
+   
+   <request-map uri="saveConsumerRegistration">
+        <security https="true" auth="false"/>
+        <event type="service" invoke="saveConsumerRegistration"/>
+        <response name="success" type="request-redirect" value="main"/>
+        <response name="error" type="view" value="createIllegalToLegal" />
+    </request-map>
+
+	<request-map uri="applyConnection">
+        <security https="true" auth="true" />
+        <event type="service" invoke="applyForConnection"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="connectionApply" />
+    </request-map>
+    
    <!-- end -->
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>

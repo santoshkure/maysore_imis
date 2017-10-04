@@ -258,6 +258,23 @@ under the License.
     <!-- Added by Shubham Malviya For New Customer Registration -->
     <screen name="registerNewCustomer">
         <section>
+             <actions>
+        <entity-condition list="genderMasterList" entity-name="genderMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="maritalMasterList" entity-name="maritalStatusMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="communityMasterList" entity-name="communityMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="casteMasterList" entity-name="casteMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
