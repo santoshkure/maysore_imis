@@ -1018,6 +1018,10 @@ under the License.
     <screen name="customerDeatil">
         <section>
             <actions>
+           <entity-condition list="actionConsumerList" entity-name="consumerRegistrationDetails">
+            <condition-expr field-name="actionStatus" operator="equals" value="Approve" />
+            <order-by field-name="createdStamp"/>
+            </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1033,10 +1037,15 @@ under the License.
             </widgets>
         </section>
     </screen> 
+
     
     <screen name="approveCustomerDetail">
         <section>
             <actions>
+            <entity-condition list="registeredConsumerList" entity-name="consumerRegistrationDetails">
+            <condition-expr field-name="actionStatus" operator="equals" value="" />
+            <order-by field-name="createdStamp"/>
+            </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1073,8 +1082,23 @@ under the License.
     
     <screen name="empCreateNewCustomer">
         <section>
-            <actions>
-            </actions>
+             <actions>
+        <entity-condition list="genderMasterList" entity-name="genderMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="maritalMasterList" entity-name="maritalStatusMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="communityMasterList" entity-name="communityMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="casteMasterList" entity-name="casteMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
@@ -1092,6 +1116,9 @@ under the License.
     <screen name="approveNewConnection">
         <section>
             <actions>
+            <entity-condition list="actionConnectionList" entity-name="saveConnectionDetail">
+        		<condition-expr field-name="actionStatus" operator="equals" value=""/>
+        	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1360,6 +1387,9 @@ under the License.
     <screen name="connectionDetails">
         <section>
             <actions>
+            <entity-condition list="connectionList" entity-name="saveConnectionDetail">
+        		<condition-expr field-name="actionStatus" operator="equals" value="approve"/>
+        	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1511,6 +1541,24 @@ under the License.
     <screen name="actionNewRegistration">
         <section>
             <actions>
+             <entity-condition list="actionDetailList" entity-name="consumerRegistrationDetails">
+                	<condition-expr field-name="registrationId" operator="equals" value="${parameters.regis}" />
+             	</entity-condition>
+            <entity-condition list="genderMasterList" entity-name="genderMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="maritalMasterList" entity-name="maritalStatusMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="communityMasterList" entity-name="communityMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="casteMasterList" entity-name="casteMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1529,6 +1577,24 @@ under the License.
      <screen name="viewCustomerRegistrationDetail">
         <section>
             <actions>
+            <entity-condition list="registrationDetailList" entity-name="consumerRegistrationDetails">
+                	<condition-expr field-name="registrationId" operator="equals" value="${parameters.regis}" />
+             	</entity-condition>
+             	<entity-condition list="genderMasterList" entity-name="genderMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="maritalMasterList" entity-name="maritalStatusMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="communityMasterList" entity-name="communityMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="casteMasterList" entity-name="casteMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1547,6 +1613,26 @@ under the License.
     <screen name="viewCustomerRegiApproveDetail">
         <section>
             <actions>
+            <entity-condition list="viewActionConsumerList" entity-name="consumerRegistrationDetails">
+            <condition-expr field-name="customerId" operator="equals" value="${parameters.conId}" />
+            <order-by field-name="createdStamp"/>
+            </entity-condition>
+            
+            <entity-condition list="genderMasterList" entity-name="genderMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="maritalMasterList" entity-name="maritalStatusMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="communityMasterList" entity-name="communityMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="casteMasterList" entity-name="casteMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1565,6 +1651,27 @@ under the License.
     <screen name="editCustomerDetail">
         <section>
             <actions>
+            <entity-condition list="editConsumerDetail" entity-name="consumerRegistrationDetails">
+            <condition-expr field-name="customerId" operator="equals" value="${parameters.conId}" />
+            <order-by field-name="createdStamp"/>
+            </entity-condition>
+            
+        <entity-condition list="genderMasterList" entity-name="genderMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="maritalMasterList" entity-name="maritalStatusMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="communityMasterList" entity-name="communityMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="casteMasterList" entity-name="casteMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1583,6 +1690,15 @@ under the License.
      <screen name="viewCustomerConnectionDetail">
         <section>
             <actions>
+            
+            <entity-condition list="viewConnectionDetail" entity-name="saveConnectionDetail">
+        		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
+        	</entity-condition>
+        
+        	<entity-condition list="registrationDetailList" entity-name="consumerRegistrationDetails">
+                	<condition-expr field-name="customerId" operator="equals" value="${parameters.regId}" />
+            </entity-condition>
+             	
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1601,6 +1717,13 @@ under the License.
     <screen name="actionNewConnection">
         <section>
             <actions>
+            <entity-condition list="viewConnectionDetail" entity-name="saveConnectionDetail">
+        		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
+        	</entity-condition>
+        
+        	<entity-condition list="registrationDetailList" entity-name="consumerRegistrationDetails">
+                	<condition-expr field-name="customerId" operator="equals" value="${parameters.regId}" />
+            </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1619,6 +1742,13 @@ under the License.
     <screen name="editConnectionDetail">
         <section>
             <actions>
+            <entity-condition list="registrationDetailList" entity-name="consumerRegistrationDetails">
+                	<condition-expr field-name="customerId" operator="equals" value="${parameters.validId}" />
+            </entity-condition>
+            
+            <entity-condition list="viewConnectionList" entity-name="saveConnectionDetail">
+        		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
+        	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1853,6 +1983,13 @@ under the License.
     <screen name="viewCustomerConnectionActionDetail">
         <section>
             <actions>
+            <entity-condition list="registrationDetailList" entity-name="consumerRegistrationDetails">
+                	<condition-expr field-name="customerId" operator="equals" value="${parameters.validId}" />
+            </entity-condition>
+            
+            <entity-condition list="viewConnectionList" entity-name="saveConnectionDetail">
+        		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
+        	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">

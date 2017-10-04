@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="alert alert-info">
 		    	<ul>
-		 	 		<div class="h3" align="center"><b>${uiLabelMap.listCustomerDetail}</b></div> 
+		 	 		<div class="h3" align="center"><b>${uiLabelMap.listCustomerDetail}</b></div>
 		   		</ul>
 	   		</div>
 	   		<div class="screenlet-body">
@@ -22,22 +22,34 @@
 		 		<thead>
         			<tr class="header-row-2">
         				<td>${uiLabelMap.sno}</td>
-	          			<td>${uiLabelMap.customerName}</td>
+        				<td>${uiLabelMap.registrationNo}</td>
+	          			<td>${uiLabelMap.firstName}</td>
+	          			<td>${uiLabelMap.lastName}</td>
+	          			<td>${uiLabelMap.gender}</td>
 	          			<td>${uiLabelMap.customerAddress}</td>
-              			<td>${uiLabelMap.Contact}</td>
+              			<td>${uiLabelMap.mobileNo}</td>
               			<td>${uiLabelMap.registrationDate}</td>
               			<td>${uiLabelMap.action}</td>
            			</tr>
            		</thead>
            		<tbody>
+        			<#assign i=1>
+            <#if registeredConsumerList?exists>
+            <#list registeredConsumerList as registeredConsumerList>
         			<tr>
-        				<td>1</td>
-        				<td><a href="viewCustomerRegistrationDetail">Ravi Kuamr Rai</a></td>
-	          			<td>Sahu Colony</td>
-              			<td>4545454554</td>
-              			<td>02/08/2017</td>
-              			<td><a href="actionNewRegistration" class="buttontext">${uiLabelMap.action}</a></td>
-           			</tr>
+        				<td>${i?if_exists}</td>
+        				<td title="View Details"><a href="viewCustomerRegistrationDetail?regis=${registeredConsumerList.registrationId?if_exists}">${registeredConsumerList.registrationId?if_exists}</a></td>
+	          			<td>${registeredConsumerList.firstName?if_exists}</td>
+	          			<td>${registeredConsumerList.lastName?if_exists}</td>
+	          			<td>${registeredConsumerList.genderId?if_exists}</td>
+	          			<td>${registeredConsumerList.address?if_exists}</td>
+              			<td>${registeredConsumerList.mobileNumber?if_exists}</td>
+              			<td>${registeredConsumerList.submittedDate?if_exists}</td>
+              			<td><a href="actionNewRegistration?regis=${registeredConsumerList.registrationId?if_exists}" class="buttontext">${uiLabelMap.action}</a></td>
+              			</tr>
+              			<#assign i = i+1>      
+    		</#list>
+    		</#if>
            		</tbody>
         		</table>
 	  		

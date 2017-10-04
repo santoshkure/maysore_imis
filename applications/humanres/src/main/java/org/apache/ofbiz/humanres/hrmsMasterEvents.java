@@ -1,6 +1,12 @@
 package org.apache.ofbiz.humanres;
 
-
+import java.util.Date;
+import javolution.util.FastMap;
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.text.SimpleDateFormat; 
+import java.text.DateFormat;
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.io.Serializable;
 import org.apache.ofbiz.base.util.Debug;
 import org.apache.ofbiz.base.util.GeneralException;
 import org.apache.ofbiz.base.util.UtilMisc;
@@ -44,6 +50,10 @@ import org.apache.ofbiz.humanres.hrmsOfficeexception.*;
 import org.apache.ofbiz.humanres.OfficeSetupConstants;
 import org.apache.ofbiz.humanres.EmployeeConstants;
 import org.apache.ofbiz.minilang.method.envops.StringAppend;
+// added by shubham malviya for password encryption
+import org.apache.ofbiz.base.crypto.HashCrypt;
+import org.apache.ofbiz.entity.util.EntityUtilProperties;
+
 import java.io.*;
 
 public class hrmsMasterEvents {
@@ -1820,5 +1830,470 @@ public class hrmsMasterEvents {
 				return result;		
 			}
 
+	        /**
+	         * Create By : shubham malviya
+			 * Method Name :  actionConsumerRegistration
+			 * entity Name : consumerRegistrationDetails
+			 * @Version 1.0
+			 * @Description Action Consumer Registration
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning Success Message
+			 *  Transaction is handled by service engine
+			 *    
+			 *  
+			 */	 
+	        public static Map<String, Object> actionConsumerRegistration(DispatchContext dctx,Map<String, ? extends Object> context) {
+	        	Map<String, Object> result = ServiceUtil.returnSuccess();
+	        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+	        	LocalDispatcher dispatcher = dctx.getDispatcher();
+	        	GenericValue userLogin = (GenericValue) context.get("userLogin");
+	        	Locale locale = (Locale) context.get("locale");
+	        	
+	        	String sequenceId = (String) context.get("sequenceId"); 
+	        	String mobileNumber = (String) context.get("mobileNumber"); 
+	        	String eMail = (String) context.get("eMail"); 
+	        	String actionStatus = (String) context.get("actionStatus"); 
+	        	String approveRemark = (String) context.get("approveRemark"); 
+	        	String resoneForReject = (String) context.get("resoneForReject");
+	        	String actionByOfficerName = (String) context.get("actionByOfficerName");
+	        	String createdByLoginId = (String) context.get("createdByLoginId");
+	        	String firstName = (String) context.get("firstName");
+	        	String lastName = (String) context.get("lastName");
+	        	String appRejRemark;
+	        	String customerId =null;
+	        	String encryPass =null;
+	        	
+	        	boolean useEncryption = "true".equals(EntityUtilProperties.getPropertyValue("security", "password.encrypt", delegator));
+	        	
+	        	if(actionStatus.equals("Approve"))
+	        	{
+	        		appRejRemark = approveRemark;
+	        	}
+	        	else
+	        	{
+	        		appRejRemark = resoneForReject;
+	        	}
+	        	
+	        	Calendar cal = Calendar.getInstance();
+	        	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	        	String currentDate = sdf.format(cal.getTime());
+	        	
+	        	java.util.Date utilDate = new java.util.Date();
+	        	cal.setTime(utilDate);
+	        	cal.set(Calendar.MILLISECOND, 0);
+	        	//System.out.println("new java.sql.Timestamp(utilDate.getTime())==============="+new java.sql.Timestamp(utilDate.getTime()));
+	        	
+	     try{
+	        		
+	        			Map actionRegistrationDetails = null; 
+					
+	        		// Code for Create Unique Id
+	        	if(UtilValidate.isNotEmpty(sequenceId))
+	        	 {
+	        		String PS = new String(); 
+	        		if(actionStatus.equals("Approve"))
+	        		{
+	        				    	String s = "";
+	        				    	double d;
+	        				    	for (int i = 1; i <= 4; i++)
+	        				    	{
+	        				    		d = Math.random() * 10;
+	        				    		s = s + ((int)d);
+	        				    		customerId = sequenceId +"MCC"+s;
+	        				    	}
+	        				    	
+	        				    	// code for Password Ganerate
+	       							int length= 8;
+	       							String alphabet = new String("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"); //9
+	       							int n = alphabet.length(); // n=62 length of alphabet
+	       							Random r = new Random();
+	       							for (int i=0; i<length; i++)
+	       							{
+	       								PS = PS + alphabet.charAt(r.nextInt(n));// call nextInt() Method
+	       							}
+	       							encryPass = useEncryption ? HashCrypt.cryptUTF8(getHashType(), null, PS) : PS;
+	       						// End
+	        		}
+	        		else
+	        		{
+	        			customerId = null;
+	        			encryPass = null;
+	        		}
+	        			//end
+	        				    	
+			        	   actionRegistrationDetails = UtilMisc.toMap("actionStatus",actionStatus,"appRejRemark",appRejRemark,"actionDate",currentDate,"customerId",customerId,"actionByOfficerName",actionByOfficerName); 
+			        	   
+			        	   Integer valueToStore = delegator.storeByCondition("consumerRegistrationDetails", actionRegistrationDetails 
+				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
+			        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY, "", locale));    
+   						
+   							//String message = "This is a system generated mail. Please do not reply to this email ID. Ifyou have a query or need any clarification you may: \n Call our 24-hour Customer Care.\n \n"
+   		        					//+ "Dear Customer,\n         Welcome. We thank you for your registration. \n \n Your Id:" +customerId+ "\n Password: "+PS+"\n \n Thankyou";
+   							String message=null;
+   							if(actionStatus.equals("Approve")){
+   							message = "Welcome, your password "+PS+" Thankyou";
+   							}
+   							else
+   							{
+   								message = "Sorry, your registration Detail have been Rejected";
+   							}
+   							
+   							if(actionStatus.equals("Approve"))
+   							{
+			   			//Code for save Costomer Party Id in Party Table
+			   				GenericValue PartyDetailSave = null;
+			   	  			String partyId = delegator.getNextSeqId("Party",1);
+			   	  			Map<String, ? extends Object> PartyDetail = UtilMisc.toMap("partyId",partyId,"partyTypeId","PERSON","statusId","PARTY_ENABLED","createdByUserLogin",createdByLoginId);
+			   	  			PartyDetailSave = delegator.makeValue("Party", PartyDetail);
+			   	  			PartyDetailSave.create();
+			   	  		//End
+			   	  			
+			   	  		// Code for save login and password in UserLogin Table
+   							Map<String, ? extends Object> UserLoginDetails = UtilMisc.toMap("userLoginId",customerId,"currentPassword",encryPass,"enabled","Y","partyId",partyId);
+			   				GenericValue UserLoginSave = delegator.makeValue("UserLogin", UserLoginDetails);
+			   				UserLoginSave.create();
+   						//End
+			   				
+			   	  		//Code for save Costomer Party Id in Person Table
+			   				GenericValue personDetailSave = null;
+			   	  			Map<String, ? extends Object> personDetail = UtilMisc.toMap("partyId",partyId,"firstName",firstName,"lastName",lastName);
+			   	  			personDetailSave = delegator.makeValue("Person", personDetail);
+			   	  			personDetailSave.create();
+			   	  		//End
+   							}
+			   	  		/*//Code for save Costomer Party Id in Party ProductStoreRole Table
+			   				GenericValue PartyRole = null;
+			   	  			Map<String, ? extends Object> PartyRoleSave = UtilMisc.toMap("partyId",partyId,"roleTypeId","CUSTOMER");
+			   	  			PartyRole = delegator.makeValue("PartyRole", PartyRoleSave);
+			   	  			PartyRole.create();
+			   	  		//End
+			   	  			
+			   	  		//Code for save Costomer Party Id in Party ProductStoreRole Table
+			   				GenericValue ProductStore = null;
+			   	  			Map<String, ? extends Object> ProductStoreRoleSave = UtilMisc.toMap("partyId",partyId,"roleTypeId","CUSTOMER","productStoreId","9000","fromDate",new java.sql.Timestamp(utilDate.getTime()));
+			   	  			ProductStore = delegator.makeValue("ProductStoreRole", ProductStoreRoleSave);
+			   	  			ProductStore.create();
+			   	  		//End
+*/			   	  			
+			        	// code to call Service for SMS
+			   			try {
+			   					Map smsLogMap = FastMap.newInstance();
+			   					Map LogMap = FastMap.newInstance();
+			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNumber, "textMessage", message, "customerId", customerId, "tabName", "Registration Action", "discription", "Action Confirmation"));
+			   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
+			   				}
+			   			catch(GenericServiceException e)
+			   				{
+			   					e.printStackTrace();
+			   				}
+			   			//End
+			   			
+			   			// code to call Service for Mail
+			   			try {
+			   					Map emailLogMap = FastMap.newInstance();
+			   					Map LogMap = FastMap.newInstance();
+			   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",message, "customerId", customerId, "tabName", "Action Registration", "discription", "Action Confirmation","subject", "Email From IMIS"));
+			   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
+			   				}
+			   			catch(GenericServiceException e)
+			   				{
+			   				e.printStackTrace();
+			   				}
+			   			//End
+			   			
+	        	}
+	        }
+	        	
+	      catch(GenericEntityException e)
+	        {
+	        	System.out.println("Exception occured : " + e ); 
+	        }
 
+	        	 return result;	
+	  }
+
+	        public static String getHashType() {
+	            String hashType = UtilProperties.getPropertyValue("security", "password.encrypt.hash.type");
+
+	            if (UtilValidate.isEmpty(hashType)) {
+	                Debug.logWarning("Password encrypt hash type is not specified in security.properties, use SHA", module);
+	                hashType = "SHA";
+	            }
+
+	            return hashType;
+	        }
+	        
+	        /**
+	         * Create By : Shubham Malviya
+	    	 * Method Name :  editCostomerDetail
+	    	 * entity Name : consumerRegistrationDetails
+	    	 * Service : editCostomerDetail
+	    	 * @Version 1.0
+	    	 */	 
+	    	public static Map<String, Object> editCostomerDetail(DispatchContext dctx,Map<String, ? extends Object> context) {
+	      		Map<String, Object> result = ServiceUtil.returnSuccess();
+	      		GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+	      		LocalDispatcher dispatcher = dctx.getDispatcher();
+	      		GenericValue userLogin = (GenericValue) context.get("userLogin");
+	      		Locale locale = (Locale) context.get("locale");
+	           Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
+	           DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	           Date date = new Date();
+	           
+	           String seqId = (String) context.get("seqId");
+	          	String title = (String) context.get("title");
+	             String firstName = (String) context.get("firstName");
+	      		String middleName = (String) context.get("middleName");
+	      		String lastName = (String) context.get("lastName");
+	      		String dateOfBirth = (String) context.get("dateOfBirth");
+	      		String gender = (String) context.get("gender");
+	      		String maritalStatus = (String) context.get("maritalStatus");
+	      		String fatherName = (String) context.get("fatherName");
+	      		String motherName = (String) context.get("motherName");
+	      		String aadharCardNo = (String) context.get("aadharCardNo");
+	      		String nationality = (String) context.get("nationality");
+	      		String cummunityName = (String) context.get("cummunityName");
+	      		String consumerCast = (String) context.get("consumerCast");
+	      		String contactNo = (String) context.get("contactNo");
+	      		String resContactNo = (String) context.get("resContactNo");
+	      		String eMail = (String) context.get("eMail");
+	      		String address = (String) context.get("address");
+	      		String houseNo = (String) context.get("houseNo");
+	      		String wardNo = (String) context.get("wardNo");
+	      		String mohalla = (String) context.get("mohalla");
+	      		String landMark = (String) context.get("landMark");
+	      		String village = (String) context.get("village");
+	      		
+	      		try{
+	      			if (UtilValidate.isNotEmpty(seqId))
+	      			{
+	      				Map editCostomerDetail = UtilMisc.toMap("title",title,"firstName",firstName,"middleName",middleName,"lastName",lastName
+	      	  					,"dateOfBirth",dateOfBirth,"genderId",gender,"maritalStatusId",maritalStatus,"fatherName",fatherName,"motherName",motherName,"aadharCardNo",aadharCardNo,"cummunityNameId",cummunityName
+	      	  					,"nationality",nationality,"consumerCastId",consumerCast,"mobileNumber",contactNo,"resContactNo",resContactNo,"eMail",eMail,"address",address,"houseNo",houseNo,"wardNo",wardNo,"mohalla",mohalla
+	      	  					,"landMark",landMark,"village",village); 
+			        	   
+			        	   Integer valueToStore = delegator.storeByCondition("consumerRegistrationDetails", editCostomerDetail
+				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,seqId));
+			        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, "", locale));    
+	        			
+	      			}
+	      		}
+	      		catch(GenericEntityException e)
+	      		{
+	      			System.out.println("Exception occured : " + e ); 
+	      		}
+	      		
+	      	
+	      		 return result;	
+	      	}
+	    	
+	    	/**
+	         * Create By : shubham malviya
+			 * Method Name :  actionConnectionDetail
+			 * entity Name : saveConnectionDetail
+			 * @Version 1.0
+			 * @Description Action Connection Detail
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning Success Message
+			 *  Transaction is handled by service engine
+			 *    
+			 *  
+			 */	 
+	    	
+	    	public static Map<String, Object> actionConnectionDetail(DispatchContext dctx,Map<String, ? extends Object> context) {
+	        	Map<String, Object> result = ServiceUtil.returnSuccess();
+	        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+	        	LocalDispatcher dispatcher = dctx.getDispatcher();
+	        	GenericValue userLogin = (GenericValue) context.get("userLogin");
+	        	Locale locale = (Locale) context.get("locale");
+	        	
+	        	String sequenceId = (String) context.get("sequenceId");
+	        	String connectionStatus = (String) context.get("connectionStatus");
+	        	String dmaNo = (String) context.get("dmaNo");
+	        	String connectionDate = (String) context.get("connectionDate");
+	        	String meterNo = (String) context.get("meterNo");
+	        	String refFileNo = (String) context.get("refFileNo");
+	        	String bookNo = (String) context.get("bookNo");
+	        	String pipeSize = (String) context.get("pipeSize");
+	        	String constituency = (String) context.get("constituency");
+	        	String zone = (String) context.get("zone");
+	        	String surveyNumber = (String) context.get("surveyNumber");
+	        	String eeName = (String) context.get("eeName");
+	        	String oldWard = (String) context.get("oldWard");
+	        	String mrName = (String) context.get("mrName");
+	        	String areaCoordinator = (String) context.get("areaCoordinator");
+	        	String logitude = (String) context.get("logitude");
+	        	String lattitude = (String) context.get("lattitude");
+	        	String conneStatus = (String) context.get("conneStatus");
+	        	String refConsumerNo = (String) context.get("refConsumerNo");
+	        	String resoneForReject = (String) context.get("resoneForReject");
+	        	String actionByOfficerName = (String) context.get("actionByOfficerName");
+	        	String remark = (String) context.get("remark");
+	        	String leafNo = (String) context.get("leafNo");
+	        	String drinkingWater = (String) context.get("drinkingWater");
+	        	String mccZone = (String) context.get("mccZone");
+	        	String division = (String) context.get("division");
+	        	String customerNo = (String) context.get("customerNo");
+	        	
+	        	Calendar cal = Calendar.getInstance();
+	        	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	        	String currentDate = sdf.format(cal.getTime());
+	        	
+	        	java.util.Date utilDate = new java.util.Date();
+	        	cal.setTime(utilDate);
+	        	cal.set(Calendar.MILLISECOND, 0);
+	        	
+	     try{
+	        		
+	    	 if (UtilValidate.isNotEmpty(sequenceId))
+   				{
+	    		 String connectionNo = null;
+	    		 if(connectionStatus.equals("approve"))
+	    		 {
+	    		  connectionNo = "CON"+sequenceId+"M";
+	    		 }
+	    		 System.out.println("connectionNo======================================="+connectionNo);
+	    		 
+	        				Map actionConnectionDetails = null;
+	        				actionConnectionDetails = UtilMisc.toMap("actionStatus",connectionStatus,"connectionNo",connectionNo,"dmaNo",dmaNo,"meterNo",meterNo,"refFileNo",refFileNo,"bookNo",bookNo
+	        						,"pipeSize",pipeSize,"constituency",constituency,"zone",zone,"surveyNumber",surveyNumber,"eeName",eeName,"oldWard",oldWard,"mrName",mrName,"areaCoordinator",areaCoordinator
+	        						,"logitude",logitude,"lattitude",lattitude,"connectionStatus",conneStatus,"refConsumerNo",refConsumerNo,"resoneForReject",resoneForReject,"actionOfficerName",actionByOfficerName
+	        						,"actionDate",currentDate,"mccZone",mccZone,"division",division,"remark",remark,"connectionDate",connectionDate,"leafNo",leafNo,"drinkingWater",drinkingWater); 
+			        	   
+			        	   Integer valueToStore = delegator.storeByCondition("saveConnectionDetail", actionConnectionDetails 
+				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
+			        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY, "", locale));    
+			   	  		
+			        	// get mob no and email
+			     			EntityCondition condition2 = EntityCondition.makeCondition("customerId", EntityOperator.EQUALS,customerNo);
+			     			List<GenericValue> consumerRegistrationList = delegator.findList("consumerRegistrationDetails", condition2, null, null, null, false);
+			     				//List<GenericValue> consumerRegistrationList = delegator.findList("consumerRegistrationDetails",EntityCondition.makeCondition("customerId",EntityOperator.EQUALS,costomerNo));
+			   				String mobileNo = consumerRegistrationList.get(0).getString("mobileNumber");
+			   				String eMail = consumerRegistrationList.get(0).getString("eMail");
+			     			//End
+
+			   				String message=null;
+   							if(connectionStatus.equals("approve")){
+   							message = "your Connection Detail have been Approved.";
+   							}
+   							else
+   							{
+   								message = "Sorry, your Connection Detail have been Rejected";
+   							}
+   							
+			   			// code to call Service for SMS
+				   			try {
+				   					Map smsLogMap = FastMap.newInstance();
+				   					Map LogMap = FastMap.newInstance();
+				   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNo, "textMessage", message, "customerId", customerNo, "tabName", "Action Connection", "discription", "Action Confirmation"));
+				   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
+				   				}
+				   			catch(GenericServiceException e)
+				   				{
+				   					e.printStackTrace();
+				   				}
+				   			//End
+				   			
+				   			// code to call Service for Mail
+				   			try {
+				   					Map emailLogMap = FastMap.newInstance();
+				   					Map LogMap = FastMap.newInstance();
+				   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",message, "customerId", customerNo, "tabName", "Action Connection", "discription", "Action Confirmation","subject", "Email From IMIS"));
+				   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
+				   				}
+				   			catch(GenericServiceException e)
+				   				{
+				   				e.printStackTrace();
+				   				}
+				   			//End
+				   			
+   				}	   
+	     	}
+	     catch(GenericEntityException e)
+   			{
+   			System.out.println("Exception occured : " + e ); 
+   			}
+   		
+   	
+   		 return result;	
+   	}
+	    	/**
+	         * Create By : shubham malviya
+			 * Method Name :  updateConnectionDetails
+			 * entity Name : saveConnectionDetail
+			 * @Version 1.0
+			 * @Description is use for update Connection Detail
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning Success Message
+			 *  Transaction is handled by service engine
+			 *    
+			 *  
+			 */	 
+	    	
+	    	public static Map<String, Object> updateConnectionDetails(DispatchContext dctx,Map<String, ? extends Object> context) {
+	        	Map<String, Object> result = ServiceUtil.returnSuccess();
+	        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+	        	LocalDispatcher dispatcher = dctx.getDispatcher();
+	        	GenericValue userLogin = (GenericValue) context.get("userLogin");
+	        	Locale locale = (Locale) context.get("locale");
+	        	
+	        	String sequenceId = (String) context.get("sequenceId");
+	        	String dmaNo = (String) context.get("dmaNo");
+	        	String connectionDate = (String) context.get("connectionDate");
+	        	String meterNo = (String) context.get("meterNo");
+	        	String refFileNo = (String) context.get("refFileNo");
+	        	String bookNo = (String) context.get("bookNo");
+	        	String pipeSize = (String) context.get("pipeSize");
+	        	String constituency = (String) context.get("constituency");
+	        	String zone = (String) context.get("zone");
+	        	String surveyNumber = (String) context.get("surveyNumber");
+	        	String eeName = (String) context.get("eeName");
+	        	String oldWard = (String) context.get("oldWard");
+	        	String mrName = (String) context.get("mrName");
+	        	String areaCoordinator = (String) context.get("areaCoordinator");
+	        	String logitude = (String) context.get("logitude");
+	        	String lattitude = (String) context.get("lattitude");
+	        	String conneStatus = (String) context.get("conneStatus");
+	        	String refConsumerNo = (String) context.get("refConsumerNo");
+	        	String leafNo = (String) context.get("leafNo");
+	        	String drinkingWater = (String) context.get("drinkingWater");
+	        	String mccZone = (String) context.get("mccZone");
+	        	String division = (String) context.get("division");
+	        	
+	        	Calendar cal = Calendar.getInstance();
+	        	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	        	String currentDate = sdf.format(cal.getTime());
+	        	
+	        	java.util.Date utilDate = new java.util.Date();
+	        	cal.setTime(utilDate);
+	        	cal.set(Calendar.MILLISECOND, 0);
+	        	
+	        	try{
+	      			if (UtilValidate.isNotEmpty(sequenceId))
+	      			{
+	      				Map editConnectionDetail = UtilMisc.toMap("dmaNo",dmaNo,"meterNo",meterNo,"refFileNo",refFileNo,"bookNo",bookNo
+        						,"pipeSize",pipeSize,"constituency",constituency,"zone",zone,"surveyNumber",surveyNumber,"eeName",eeName,"oldWard",oldWard,"mrName",mrName,"areaCoordinator",areaCoordinator
+        						,"logitude",logitude,"lattitude",lattitude,"connectionStatus",conneStatus,"refConsumerNo",refConsumerNo
+        						,"mccZone",mccZone,"division",division,"connectionDate",connectionDate,"leafNo",leafNo,"drinkingWater",drinkingWater); 
+			        	   
+			        	   Integer valueToStore = delegator.storeByCondition("saveConnectionDetail", editConnectionDetail
+				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
+			        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, "", locale));    
+	        			
+	      			}
+	      		}
+	        	
+	     catch(GenericEntityException e)
+   			{
+   			System.out.println("Exception occured : " + e ); 
+   			}
+   		
+   	
+   		 return result;	
+   	}
+	// End
+	    	
 }
