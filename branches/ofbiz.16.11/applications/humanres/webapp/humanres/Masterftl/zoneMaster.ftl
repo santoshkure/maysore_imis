@@ -55,10 +55,10 @@
 			 <td class="label">${uiLabelMap.officeName} </td>
  		 	 <td width="25%"><select name="officeName" style="width:150px;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>
-	    	   <#if officeMaterLists?exists>
-	    	      <#if officeMaterLists?has_content>
-	    	       <#list officeMaterLists as officeMaterLists>
- 	    	         <option value="${officeMaterLists.officeSiteName?if_exists}">${officeMaterLists.officeSiteName?if_exists}</option>
+	    	   <#if officeMasterLists?exists>
+	    	      <#if officeMasterLists?has_content>
+	    	       <#list officeMasterLists as officeMasterLists>
+ 	    	         <option value="${officeMasterLists.officeSiteName?if_exists}">${officeMasterLists.officeSiteName?if_exists}</option>
  	    	       </#list>
 	    	     </#if>
 	    	   </#if>
