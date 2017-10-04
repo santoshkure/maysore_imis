@@ -63,10 +63,12 @@
 		         }    
 		       }  
 		     }
+		    
 		    function trimFunction(field)
 		    {
 		    var str = field.value;
-		    field.value = str.trim();
+		    var str1 = str.replace( /\s\s+/g, ' ' );
+		    field.value = str1.trim();
 		    }
 		    
 		    function commonPS(divId)
@@ -82,3 +84,19 @@
 	                printWin.print();
 	                printWin.close();
 	         } 
+		    
+		    // added by shubham malviya for Accept Only Numeric Value
+		    function allnumeric(field,msg)  
+		    {  
+		       var numbers = /^[0-9]+$/;  
+		       if(field.value.match(numbers))  
+		       {  
+		       return true;  
+		       }  
+		       else  
+		       {  
+		       alert(msg);
+		       field.value="";
+		       return false;  
+		       }  
+		    }  

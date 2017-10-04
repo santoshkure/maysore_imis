@@ -595,7 +595,7 @@ public class CommonServices {
 
     		String mobNumber = (String) context.get("mobNumber");
     		String textMessage = (String) context.get("textMessage");
-    		String consumerId = (String) context.get("consumerId");
+    		String customerId = (String) context.get("customerId");
     		String tabName = (String) context.get("tabName");
     		String discription = (String) context.get("discription");
     		
@@ -657,7 +657,7 @@ public class CommonServices {
     			smsId = delegator.getNextSeqId("smsSendHistory",1);
     			
     			Map<String, ? extends Object> smsLogDetail = UtilMisc.toMap("smsId", smsId,"mobNumber", mobNumber,
-    					"massage", textMessage, "consumerId",consumerId, 
+    					"massage", textMessage, "customerId",customerId, 
     					"tabName", tabName, "description", discription,
     					"smsStatus",smsStatus);
     			GenericValue smsLog = delegator.makeValue("smsSendHistory", smsLogDetail);
@@ -687,7 +687,7 @@ public class CommonServices {
 
     		String emailId = (String) context.get("emailId");
             String textMessage = (String) context.get("textMessage");
-            String consumerId = (String) context.get("consumerId");
+            String customerId = (String) context.get("customerId");
             String tabName = (String) context.get("tabName");
             String discription = (String) context.get("discription");
             String subject = (String) context.get("subject");
@@ -731,8 +731,8 @@ public class CommonServices {
     	    	emailSendId = delegator.getNextSeqId("emailLogDetails",1);
     			
     			Map<String, ? extends Object> emailLogDetail = UtilMisc.toMap("emailSendId", emailSendId,"emailId", emailId,
-    					"textMessage", textMessage, "consumerId", consumerId, 
-    					"tabName", tabName, "discription", discription,"subject","subject");
+    					"textMessage", textMessage, "customerId", customerId, 
+    					"tabName", tabName, "discription", discription,"subject",subject);
     			GenericValue emailLog = delegator.makeValue("emailLogDetails", emailLogDetail);
     			emailLog.create();
     		}

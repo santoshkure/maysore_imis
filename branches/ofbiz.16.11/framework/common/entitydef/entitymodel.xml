@@ -863,10 +863,10 @@ under the License.
     <entity entity-name="smsSendHistory" package-name="org.apache.ofbiz.common.property" title="sms Send History Detail">
         <field name="smsId" type="id-ne"></field>
         <field name="mobNumber" type="short-varchar"></field>
-        <field name="massage" type="short-varchar"></field>
+        <field name="massage" type="long-varchar"></field>
         <field name="tabName" type="short-varchar"></field>
-        <field name="description" type="short-varchar"></field>
-        <field name="consumerId" type="short-varchar"></field>
+        <field name="description" type="long-varchar"></field>
+        <field name="customerId" type="short-varchar"></field>
         <field name="smsStatus" type="short-varchar"></field>
         
         <prim-key field="smsId"/>
@@ -877,10 +877,10 @@ under the License.
     <entity entity-name="emailLogDetails" package-name="org.apache.ofbiz.common.property" title="email Send History Detail">
         <field name="emailSendId" type="id-ne"></field>
         <field name="emailId" type="short-varchar"></field>
-        <field name="textMessage" type="short-varchar"></field>
-        <field name="consumerId" type="short-varchar"></field>
+        <field name="textMessage" type="long-varchar"></field>
+        <field name="customerId" type="short-varchar"></field>
         <field name="tabName" type="short-varchar"></field>
-        <field name="discription" type="short-varchar"></field>
+        <field name="discription" type="long-varchar"></field>
         <field name="nameOfFile" type="short-varchar"></field>
         <field name="subject" type="short-varchar"></field>
         
