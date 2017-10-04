@@ -123,7 +123,7 @@
             <td><center>${allOfficeZoneListed.cityName?if_exists}</center></td>
             <td><center>${allOfficeZoneListed.officeName}</center></td>
  			<td><center><#if allOfficeZoneListed.createdate?has_content>${allOfficeZoneListed.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
-            <td><center>${allOfficeZoneListed.remark}</center></td>
+            <td><center>${allOfficeZoneListed.remark?if_exists}</center></td>
            
             <td><center>
             <#assign std = '${allOfficeZoneListed.status?if_exists}'>
