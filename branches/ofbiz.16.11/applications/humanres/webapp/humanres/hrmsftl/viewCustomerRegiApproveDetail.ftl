@@ -30,80 +30,127 @@
 		<div id="printId1">
         <table cellspacing="0" class="basic-table table-responsive">
              <tbody>
-              
+              <#if viewActionConsumerList?exists>
+              <#list viewActionConsumerList as viewActionConsumerList>
                 <tr>
                     <td class="label">${uiLabelMap.customerNo}</td>
-                    <td colspan="2">10001</td>
+                    <td colspan="2">${viewActionConsumerList.customerId?if_exists}</td>
                     
                   </tr>
                   
                 <tr>
-	               <td colspan="6"><font color="blue">${uiLabelMap.personalDetail}</font></td>
+	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
                 </tr>
                
                 <tr>
                     <td class="label">${uiLabelMap.CommonTitle}</td>
-                    <td>Mr.</td>
+                    <td>${viewActionConsumerList.title?if_exists}</td>
+                    <td class="label">${uiLabelMap.firstName}</td>
+                        <td>${viewActionConsumerList.firstName?if_exists}</td>
                   </tr>
                   
                   <tr>
-                      	<td class="label">${uiLabelMap.firstName}</td>
-                        <td> Ravi</td>
                         <td class="label">${uiLabelMap.middleName}</td>
-                        <td>  Kumar</td>
+                        <td>${viewActionConsumerList.middleName?if_exists}</td>
                         <td class="label">${uiLabelMap.lastName}</td>
-                        <td> Rai</td>
+                        <td>${viewActionConsumerList.lastName?if_exists}</td>
                    </tr>
                    
                    <tr>
                         <td class="label">${uiLabelMap.dateOfBirth}</td>
-                        <td> 29/04/1994</td>
+                        <td>${viewActionConsumerList.dateOfBirth?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.gender}</td>
-                        <td> Male</td>
-                        
-   						<td class="label">${uiLabelMap.maritalStatus}</td>
-   						<td>Single</td>
+                        <td>
+                        <#if genderMasterList?exists>
+                        <#list genderMasterList as genderMasterList>
+                       	<#if '${genderMasterList.genderId?if_exists}' == '${viewActionConsumerList.genderId?if_exists}'>${genderMasterList.genderName?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
    					</tr>
             
                     <tr>
+                    
+   						<td class="label">${uiLabelMap.maritalStatusOption}</td>
+   						<td>
+   						<#if maritalMasterList?exists>
+                        <#list maritalMasterList as maritalMasterList>
+                       	<#if '${maritalMasterList.maritalStatusId?if_exists}' == '${viewActionConsumerList.maritalStatusId?if_exists}'>${maritalMasterList.maritalStatus?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
                         <td class="label">${uiLabelMap.fatherName}</td>
-                        <td>RajKumar Rai</td>
-                        
+                        <td>${viewActionConsumerList.fatherName?if_exists}</td>
+                      </tr>
+            
+                    <tr>  
                         <td class="label">${uiLabelMap.motherName}</td>
-                        <td>Ramkali Rai</td>
+                        <td>${viewActionConsumerList.motherName?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.aadharCardNo}</td>
-                        <td>1234 4567 7891 4567</td>
+                        <td>${viewActionConsumerList.aadharCardNo?if_exists}</td>
                     </tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.cummunity}</td>
-                        <td> OBC </td>
-                        <td class="label">${uiLabelMap.cast}</td>
-                        <td> Kalar</td>
-                        <td class="label">${uiLabelMap.nationality}</td>
-                        <td>Indian</td>
+                        <td>
+                        <#if communityMasterList?exists>
+                        <#list communityMasterList as communityMasterList>
+                       	<#if '${communityMasterList.communityId?if_exists}' == '${viewActionConsumerList.cummunityNameId?if_exists}'>${communityMasterList.communityname?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
+                        <td class="label">${uiLabelMap.caste}</td>
+                        <td>
+                        <#if casteMasterList?exists>
+                        <#list casteMasterList as casteMasterList>
+                       	<#if '${casteMasterList.casteId?if_exists}' == '${viewActionConsumerList.consumerCastId?if_exists}'>${casteMasterList.castename?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
                     </tr>
                     
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
+                     <tr>
+                      <td class="label">${uiLabelMap.nationality}</td>
+                        <td>${viewActionConsumerList.nationality?if_exists}</td>
+                        
+                        <td class="label">${uiLabelMap.mobileNo}</td>
+                        <td>${viewActionConsumerList.mobileNumber?if_exists}</td>
+                        </tr>
+                    
+                     <tr>
+                        <td class="label">${uiLabelMap.resContactNo}</td>
+                       <td>${viewActionConsumerList.resContactNo?if_exists}</td>
+                        <td class="label">${uiLabelMap.CommonEmail}</td>
+                        <td>${viewActionConsumerList.eMail?if_exists}</td>
+                    </tr>
+                    
+                    <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.OrderAddress}</td>
-                        <td> Sector 3, Lane No. 1 Sahu Colony Pune</td>
+                        <td>${viewActionConsumerList.address?if_exists}</td>
                         <td class="label">${uiLabelMap.houseNo}</td>
-                        <td> 45/ 12</td>
-                        <td class="label">${uiLabelMap.wardNo}</td>
-                        <td> 15 </td>
+                        <td>${viewActionConsumerList.houseNo?if_exists}</td>
                     </tr>
                     
                     <tr>
+                    <td class="label">${uiLabelMap.wardNo}</td>
+                        <td>${viewActionConsumerList.wardNo?if_exists}</td>
                         <td class="label">${uiLabelMap.mohalla}</td>
-                        <td> Aajad Ward</td>
+                        <td>${viewActionConsumerList.mohalla?if_exists}</td>
+                         </tr>
+                    
+                    <tr>
                         <td class="label">${uiLabelMap.landMark}</td>
-                        <td>Ekshubhit Bungalow</td>
+                        <td>${viewActionConsumerList.landMark?if_exists}</td>
                         <td class="label">${uiLabelMap.village}</td>
-                        <td>Bhainsdehi</td>
+                        <td>${viewActionConsumerList.village?if_exists}</td>
                     </tr>
                     
                     <tr>
@@ -111,35 +158,33 @@
                         <td>Mysore</td>
                         <td class="label">${uiLabelMap.CommonState}</td>
                         <td>Karnataka</td>
-                        <td class="label">${uiLabelMap.CommonCountry}</td>
+                    </tr>
+                    <tr>
+                    <td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>India</td>
-                    </tr>
-                    
-                        <tr>
-                        <td class="label">${uiLabelMap.mobileNo}</td>
-                        <td>8978789885</td>
-                        <td class="label">${uiLabelMap.resContactNo}</td>
-                        <td>7878978789</td>
-                        <td class="label">${uiLabelMap.CommonEmail}</td>
-                        <td>example@gmail.com</td>
-                    </tr>
-                   
-                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
+                        </tr>
+                   <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
                     
                     <tr>
                          <td class="label">${uiLabelMap.actionDate}</td>
-                    	 <td>02/08/2017</td>
+                    	 <td>${viewActionConsumerList.actionDate?if_exists}</td>
                          <td class="label">${uiLabelMap.actionByOfficer}</td>
-                         <td> Kailash Nath Trivedi </td>
-                         <td class="label">${uiLabelMap.designation}</td>
-                         <td> EE </td>
+                         <td>${viewActionConsumerList.actionDate?if_exists}</td>
                     </tr>
                     
                      <tr>
+                     <td class="label">${uiLabelMap.designation}</td>
+                         <td>${viewActionConsumerList.actionDate?if_exists}</td>
+                     	 <td class="label">${uiLabelMap.AppRejremark}</td>
+                     	 <td>${viewActionConsumerList.appRejRemark?if_exists}</td>
+                     	  </tr>
+                    
+                     <tr>
                          <td class="label">${uiLabelMap.CommonStatus}</td>
-                    	 <td> Approved </td>
+                    	 <td>${viewActionConsumerList.actionStatus?if_exists}</td>
                      </tr>
-                    	 
+                    </#list>
+                    </#if>	 
             </tbody>
         </table>
     </div></div>

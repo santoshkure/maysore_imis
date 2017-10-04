@@ -20,92 +20,121 @@
 		</div>
         <table cellspacing="0" class="basic-table table-responsive">
              <tbody>
+             <#if registrationDetailList?exists>
+             <#list registrationDetailList as registrationDetailList>
                 <tr>
 	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
                 </tr>
-                
                 <tr>
                     <td class="label">${uiLabelMap.CommonTitle}</td>
-                    <td>Mr.</td>
+                    <td>${registrationDetailList.title?if_exists}</td>
                   </tr>
                   
                   <tr>
                       	<td class="label">${uiLabelMap.firstName}</td>
-                        <td> Ravi</td>
+                        <td>${registrationDetailList.firstName?if_exists}</td>
                         <td class="label">${uiLabelMap.middleName}</td>
-                        <td>  Kumar</td>
+                        <td>${registrationDetailList.middleName?if_exists}</td>
                    </tr>
                    
                    <tr>
                    		<td class="label">${uiLabelMap.lastName}</td>
-                        <td> Rai</td>
+                        <td>${registrationDetailList.lastName?if_exists}</td>
                         <td class="label">${uiLabelMap.dateOfBirth}</td>
-                        <td> 29/04/1994</td>
+                        <td>${registrationDetailList.dateOfBirth?if_exists}</td>
                    </tr>   
  
                    <tr>
                         <td class="label">${uiLabelMap.gender}</td>
-                        <td> Male</td>
+                        <td>
+                        <#if genderMasterList?exists>
+                        <#list genderMasterList as genderMasterList>
+                       	<#if '${genderMasterList.genderId?if_exists}' == '${registrationDetailList.genderId?if_exists}'>${genderMasterList.genderName?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
                         
    						<td class="label">${uiLabelMap.maritalStatusOption}</td>
-   						<td>Single</td>
+   						<td>
+   						<#if maritalMasterList?exists>
+                        <#list maritalMasterList as maritalMasterList>
+                       	<#if '${maritalMasterList.maritalStatusId?if_exists}' == '${registrationDetailList.maritalStatusId?if_exists}'>${maritalMasterList.maritalStatus?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
    					</tr>
             
                     <tr>
                         <td class="label">${uiLabelMap.fatherName}</td>
-                        <td>RajKumar Rai</td>
+                        <td>${registrationDetailList.fatherName?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.motherName}</td>
-                        <td>Ramkali Rai</td>
+                        <td>${registrationDetailList.motherName?if_exists}</td>
                     </tr>
                     
                     <tr>
                     	<td class="label">${uiLabelMap.aadharCardNo}</td>
-                        <td>1234 4567 7891 4567</td>
+                        <td>${registrationDetailList.aadharCardNo?if_exists}</td>
                         <td class="label">${uiLabelMap.cummunity}</td>
-                        <td> OBC </td>
+                        <td>
+                        <#if communityMasterList?exists>
+                        <#list communityMasterList as communityMasterList>
+                       	<#if '${communityMasterList.communityId?if_exists}' == '${registrationDetailList.cummunityNameId?if_exists}'>${communityMasterList.communityname?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
                      </tr>   
                      
                      <tr>   
-                        <td class="label">${uiLabelMap.cast}</td>
-                        <td> Kalar</td>
+                        <td class="label">${uiLabelMap.caste}</td>
+                        <td>
+                        <#if casteMasterList?exists>
+                        <#list casteMasterList as casteMasterList>
+                       	<#if '${casteMasterList.casteId?if_exists}' == '${registrationDetailList.consumerCastId?if_exists}'>${casteMasterList.castename?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
                         <td class="label">${uiLabelMap.nationality}</td>
-                        <td>Indian</td>
+                        <td>${registrationDetailList.nationality?if_exists}</td>
                     </tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.mobileNo}</td>
-                        <td>8978789885</td>
+                        <td>${registrationDetailList.mobileNumber?if_exists}</td>
                         <td class="label">${uiLabelMap.resContactNo}</td>
-                        <td>7878978789</td>
+                        <td>${registrationDetailList.resContactNo?if_exists}</td>
                       </tr>
                    
                    	  <tr>
                     	<td class="label">${uiLabelMap.CommonEmail}</td>
-                        <td>example@gmail.com</td>
+                        <td>${registrationDetailList.eMail?if_exists}</td>
                       </tr>
                      
                     <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
-                        <td> Sector 3, Lane No. 1 Sahu Colony Pune</td>
+                        <td>${registrationDetailList.address?if_exists}</td>
                         <td class="label">${uiLabelMap.houseNo}</td>
-                        <td> 45/ 12</td>
+                        <td>${registrationDetailList.houseNo?if_exists}</td>
                     </tr>
                     
                     <tr>
                     	<td class="label">${uiLabelMap.wardNo}</td>
-                        <td> 15 </td>
+                        <td>${registrationDetailList.wardNo?if_exists}</td>
                         <td class="label">${uiLabelMap.mohalla}</td>
-                        <td> Aajad Ward</td>
+                        <td>${registrationDetailList.mohalla?if_exists}</td>
                    </tr>
                    
                    <tr>     
                         <td class="label">${uiLabelMap.landMark}</td>
-                        <td>Ekshubhit Bungalow</td>
+                        <td>${registrationDetailList.landMark?if_exists}</td>
                         <td class="label">${uiLabelMap.village}</td>
-                        <td>Bhainsdehi</td>
+                        <td>${registrationDetailList.village?if_exists}</td>
                     </tr>
                     
                     <tr>
@@ -119,6 +148,8 @@
                     	<td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>India</td>
                      </tr>
+                     </#list>
+                        </#if>
                         
             </tbody>
         </table>

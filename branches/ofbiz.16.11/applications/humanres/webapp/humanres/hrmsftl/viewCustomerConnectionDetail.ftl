@@ -20,79 +20,100 @@
 		</div>
         <table cellspacing="0" class="basic-table table-responsive">
              <tbody>
-              
+             <#if registrationDetailList?exists>
+             <#list registrationDetailList as registrationDetailList>
+             
                 <tr>
-                    <td class="label">${uiLabelMap.customerNo}</td>
-                    <td colspan="5">10001</td>
+                    <td class="label">${uiLabelMap.customerId}</td>
+                    <td colspan="5">${registrationDetailList.customerId?if_exists}</td>
                   </tr>
                   
                 <tr>
-	               <td colspan="6"><font color="blue">${uiLabelMap.personalDetail}</font></td>
+	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
                 </tr>
                
                 <tr>
                     <td class="label">${uiLabelMap.CommonTitle}</td>
-                    <td>Mr.</td>
+                    <td>${registrationDetailList.title?if_exists}</td>
+                    <td class="label">${uiLabelMap.firstName}</td>
+                        <td>${registrationDetailList.firstName?if_exists}</td>
                   </tr>
                   
                   <tr>
-                      	<td class="label">${uiLabelMap.firstName}</td>
-                        <td> Ravi</td>
-                        <td class="label">${uiLabelMap.middleName}</td>
-                        <td>  Kumar</td>
+                         <td class="label">${uiLabelMap.middleName}</td>
+                        <td>${registrationDetailList.middleName?if_exists}</td>
                         <td class="label">${uiLabelMap.lastName}</td>
-                        <td> Rai</td>
+                        <td>${registrationDetailList.lastName?if_exists}</td>
                    </tr>
                    
                    <tr>
                         <td class="label">${uiLabelMap.dateOfBirth}</td>
-                        <td> 29/04/1994</td>
+                        <td>${registrationDetailList.dateOfBirth?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.gender}</td>
-                        <td> Male</td>
+                        <td>${registrationDetailList.genderId?if_exists}</td>
                         
-   						<td class="label">${uiLabelMap.maritalStatus}</td>
-   						<td>Single</td>
    					</tr>
             
                     <tr>
+                    <td class="label">${uiLabelMap.maritalStatus}</td>
+   						<td>${registrationDetailList.maritalStatusId?if_exists}</td>
                         <td class="label">${uiLabelMap.fatherName}</td>
-                        <td>RajKumar Rai</td>
-                        
+                        <td>${registrationDetailList.fatherName?if_exists}</td>
+                      
+                        </tr>
+            
+                    <tr>  
                         <td class="label">${uiLabelMap.motherName}</td>
-                        <td>Ramkali Rai</td>
+                       	<td>${registrationDetailList.motherName?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.aadharCardNo}</td>
-                        <td>1234 4567 7891 4567</td>
+                        <td>${registrationDetailList.aadharCardNo?if_exists}</td>
                     </tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.cummunity}</td>
-                        <td> OBC </td>
-                        <td class="label">${uiLabelMap.cast}</td>
-                        <td> Kalar</td>
-                        <td class="label">${uiLabelMap.nationality}</td>
-                        <td>Indian</td>
+                        <td>${registrationDetailList.cummunityNameId?if_exists}</td>
+                        <td class="label">${uiLabelMap.caste}</td>
+                        <td>${registrationDetailList.consumerCastId?if_exists}</td>
                     </tr>
                     
-                    <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
+                    <tr>
+                    	<td class="label">${uiLabelMap.mobileNo}</td>
+                        <td>${registrationDetailList.mobileNumber?if_exists}</td>
+                        <td class="label">${uiLabelMap.CommonEmail}</td>
+                        <td>${registrationDetailList.eMail?if_exists}</td>
+                     </tr>
+                        
+                     <tr>
+                        <td class="label">${uiLabelMap.resContactNo}</td>
+                        <td>${registrationDetailList.resContactNo?if_exists}</td>
+                         <td class="label">${uiLabelMap.nationality}</td>
+                        <td>Indian</td>
+                    </tr>
+                        
+                    <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
-                        <td> Sector 3, Lane No. 1 Sahu Colony Pune</td>
+                         <td>${registrationDetailList.address?if_exists}</td>
                         <td class="label">${uiLabelMap.houseNo}</td>
-                        <td> 45/ 12</td>
-                        <td class="label">${uiLabelMap.wardNo}</td>
-                        <td> 15 </td>
+                         <td>${registrationDetailList.houseNo?if_exists}</td>
                     </tr>
                     
                     <tr>
+                     <td class="label">${uiLabelMap.wardNo}</td>
+                        <td>${registrationDetailList.wardNo?if_exists}</td>
                         <td class="label">${uiLabelMap.mohalla}</td>
-                        <td> Aajad Ward</td>
+                         <td>${registrationDetailList.mohalla?if_exists}</td>
+                        
+                        </tr>
+                    
+                    <tr>
                         <td class="label">${uiLabelMap.landMark}</td>
-                        <td>Ekshubhit Bungalow</td>
+                         <td>${registrationDetailList.landMark?if_exists}</td>
                         <td class="label">${uiLabelMap.village}</td>
-                        <td>Bhainsdehi</td>
+                         <td>${registrationDetailList.village?if_exists}</td>
                     </tr>
                     
                     <tr>
@@ -100,44 +121,49 @@
                         <td>Mysore</td>
                         <td class="label">${uiLabelMap.CommonState}</td>
                         <td>Karnataka</td>
-                        <td class="label">${uiLabelMap.CommonCountry}</td>
-                        <td>India</td>
                     </tr>
                     
                         <tr>
-                        <td class="label">${uiLabelMap.mobileNo}</td>
-                        <td>8978789885</td>
-                        <td class="label">${uiLabelMap.resContactNo}</td>
-                        <td>7878978789</td>
-                        <td class="label">${uiLabelMap.CommonEmail}</td>
-                        <td>example@gmail.com</td>
-                    </tr>
-                   
-                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.registrationDetail}</font></td></tr>
+                        
+                        <td class="label">${uiLabelMap.CommonCountry}</td>
+                        <td>India</td>
+                        </tr>
+                    
+                   <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.registrationDetail}</font></td></tr>
                     
                     <tr>
                      	<td class="label">${uiLabelMap.registrationDate}</td>
-                    	<td>02/08/2017</td>
+                    	<td>${registrationDetailList.submittedDate?if_exists}</td>
                     	<td class="label">${uiLabelMap.approveDate}</td>
-                    	<td>02/08/2017</td>
-                    	<td class="label">${uiLabelMap.actionByOfficer}</td>
-                    	<td></td>
-                    <tr>
+                    	<td>${registrationDetailList.actionDate?if_exists}</td>
+                    </tr>
                     
-                   <tr><td colspan="6" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
-                   
+                     <tr>
+                    <td class="label">${uiLabelMap.actionByOfficer}</td>
+                    <td>${registrationDetailList.actionByOfficerName?if_exists}</td>
+                     </tr>
+                  </#list>
+                    </#if>	 
+    
+                   <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
+                   <#if viewConnectionDetail?exists>
+              <#list viewConnectionDetail as viewConnectionDetail>
                    <tr>
                         <td class="label">${uiLabelMap.connectionType}</td>
-                        <td>Domestic</td>
+                        <td>${viewConnectionDetail.connectionCategory?if_exists}</td>
                         <td class="label">${uiLabelMap.applicationType}</td>
-                        <td>Permanent</td>
-                        <td class="label">${uiLabelMap.typeOfBuilding}</td>
-                        <td>Residential buildings etc.</td>
+                        <td>${viewConnectionDetail.applicationType?if_exists}</td>
                     </tr>
                     
                     <tr>
+                    <td class="label">${uiLabelMap.typeOfBuilding}</td>
+                        <td>${viewConnectionDetail.typeOfBuilding?if_exists}</td>
                         <td class="label">${uiLabelMap.applicationDate}</td>
-                        <td>02/08/2017</td>
+                        <td>${viewConnectionDetail.applicationDate?if_exists}</td>
+                        
+                        </tr>
+                    
+                    <tr>
                         <td class="label">${uiLabelMap.assentialDoccument}</td>
                         <td>Example.Doc</td>
                         <td class="label">${uiLabelMap.feeForConnection}</td>
@@ -148,7 +174,8 @@
                         <td class="label">${uiLabelMap.feeStatus}</td>
                         <td colspan="5">Paid</td>
                     </tr>
-                    
+                    </#list>
+                    </#if>	 
             </tbody>
         </table>
     </div>

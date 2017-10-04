@@ -22,11 +22,10 @@
 			<thead>
         		<tr class="header-row-2">
         			<td>${uiLabelMap.sno}</td>
-              		<td>${uiLabelMap.customerNo}</td>
+              		<td>${uiLabelMap.customerId}</td>
 	          		<td>${uiLabelMap.customerName}</td>
+	          		<td>${uiLabelMap.contact}</td>
 	          		<td>${uiLabelMap.customerAddress}</td>
-             		<td>${uiLabelMap.contact}</td>
-             		<td>${uiLabelMap.registrationDate}</td>
             		<td>${uiLabelMap.actionDate}</td>
             		<td>${uiLabelMap.CommonStatus}</td>
             		<td>${uiLabelMap.CommonEdit}</td>
@@ -34,17 +33,22 @@
            </thead>
         
         <tbody>
-        		<tr>
-        			<td>1</td>
-        			<td><a href="viewCustomerRegiApproveDetail">10001</a></td>
-        			<td>Ravi Kumar Rai</td>
-	          		<td>Sector 3, Lane No. 1 Sahu Colony Pune</td>
-              		<td>0123345677</td>
-              		<td>02/08/2017</td>
-              		<td>02/08/2017</td>
-              		<td>Approved</td>
-              		<td><a href="<@ofbizUrl>editCustomerDetail</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
-           		</tr>
+        		<#assign i=1>
+        		<#if actionConsumerList?exists>
+        		<#list actionConsumerList as actionConsumerList>
+        			<tr>
+        				<td>${i?if_exists}</td>
+        				<td><a href="viewCustomerRegiApproveDetail?conId=${actionConsumerList.customerId?if_exists}">${actionConsumerList.customerId?if_exists}</a></td>
+	          			<td>${actionConsumerList.firstName?if_exists}</td>
+              			<td>${actionConsumerList.mobileNumber?if_exists}</td>
+              			<td>${actionConsumerList.address?if_exists}</td>
+              			<td>${actionConsumerList.actionDate?if_exists}</td>
+              			<td>${actionConsumerList.actionStatus?if_exists}</td>
+              			<td><a href="<@ofbizUrl>editCustomerDetail?conId=${actionConsumerList.customerId?if_exists}</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
+           			</tr>
+           			<#assign i = i+1>      
+           		</#list>
+           		</#if>
      	</tbody>
        </table>
 	  </div>

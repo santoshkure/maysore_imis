@@ -24,78 +24,118 @@
 	               <td colspan="4"><font color="blue">${uiLabelMap.personalDetail}</font></td>
                 </tr>
                 
+                <#if actionDetailList?exists>
+             	<#list actionDetailList as actionDetailList>
                 <tr>
                     <td class="label">${uiLabelMap.CommonTitle}</td>
-                    <td>Mr.</td>
+                    <td>${actionDetailList.title?if_exists}</td>
                   </tr>
                   
                   <tr>
                       	<td class="label">${uiLabelMap.firstName}</td>
-                        <td> Ravi</td>
+                        <td>${actionDetailList.firstName?if_exists}</td>
                         <td class="label">${uiLabelMap.middleName}</td>
-                        <td>  Kumar</td>
+                        <td>${actionDetailList.middleName?if_exists}</td>
                    </tr>
                    
                    <tr>
                    		<td class="label">${uiLabelMap.lastName}</td>
-                        <td> Rai</td>
+                        <td>${actionDetailList.lastName?if_exists}</td>
                         <td class="label">${uiLabelMap.dateOfBirth}</td>
-                        <td> 29/04/1994</td>
+                        <td>${actionDetailList.dateOfBirth?if_exists}</td>
+                   </tr>   
+ 
+                   <tr>
+                        <td class="label">${uiLabelMap.gender}</td>
+                       <td>
+                        <#if genderMasterList?exists>
+                        <#list genderMasterList as genderMasterList>
+                       	<#if '${genderMasterList.genderId?if_exists}' == '${actionDetailList.genderId?if_exists}'>${genderMasterList.genderName?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
                         
+   						<td class="label">${uiLabelMap.maritalStatusOption}</td>
+   						<td>
+   						<#if maritalMasterList?exists>
+                        <#list maritalMasterList as maritalMasterList>
+                       	<#if '${maritalMasterList.maritalStatusId?if_exists}' == '${actionDetailList.maritalStatusId?if_exists}'>${maritalMasterList.maritalStatus?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
    					</tr>
-   					
-            		<tr>
-            			<td class="label">${uiLabelMap.gender}</td>
-                        <td> Male</td>
-                        
-   						<td class="label">${uiLabelMap.maritalStatus}</td>
-   						<td>Single</td>
-            		</tr>
-            		
+            
                     <tr>
                         <td class="label">${uiLabelMap.fatherName}</td>
-                        <td>RajKumar Rai</td>
+                        <td>${actionDetailList.fatherName?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.motherName}</td>
-                        <td>Ramkali Rai</td>
-                        
+                        <td>${actionDetailList.motherName?if_exists}</td>
                     </tr>
                     
                     <tr>
                     	<td class="label">${uiLabelMap.aadharCardNo}</td>
-                        <td>1234 4567 7891 4567</td>
-                        <td class="label">${uiLabelMap.cummunity}</td>
-                        <td> OBC </td>
+                        <td>${actionDetailList.aadharCardNo?if_exists}</td>
+                       <td class="label">${uiLabelMap.cummunity}</td>
+                        <td>
+                        <#if communityMasterList?exists>
+                        <#list communityMasterList as communityMasterList>
+                       	<#if '${communityMasterList.communityId?if_exists}' == '${actionDetailList.cummunityNameId?if_exists}'>${communityMasterList.communityname?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
+                     </tr>   
+                     
+                     <tr>   
+                        <td class="label">${uiLabelMap.caste}</td>
+                        <td>
+                         <#if casteMasterList?exists>
+                        <#list casteMasterList as casteMasterList>
+                       	<#if '${casteMasterList.casteId?if_exists}' == '${actionDetailList.consumerCastId?if_exists}'>${casteMasterList.castename?if_exists}
+                        </#if>
+                        </#list>
+                        </#if>
+                        </td>
+                        <td class="label">${uiLabelMap.nationality}</td>
+                        <td>${actionDetailList.nationality?if_exists}</td>
                     </tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.cast}</td>
-                        <td> Kalar</td>
-                        <td class="label">${uiLabelMap.nationality}</td>
-                        <td>Indian</td>
-                    </tr>
-                    
+                        <td class="label">${uiLabelMap.mobileNo}</td>
+                        <td>${actionDetailList.mobileNumber?if_exists}</td>
+                        <td class="label">${uiLabelMap.resContactNo}</td>
+                        <td>${actionDetailList.resContactNo?if_exists}</td>
+                      </tr>
+                   
+                   	  <tr>
+                    	<td class="label">${uiLabelMap.CommonEmail}</td>
+                        <td>${actionDetailList.eMail?if_exists}</td>
+                      </tr>
+                     
                     <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
-                        <td> Sector 3, Lane No. 1 Sahu Colony Pune</td>
+                        <td>${actionDetailList.address?if_exists}</td>
                         <td class="label">${uiLabelMap.houseNo}</td>
-                        <td> 45/ 12</td>
+                        <td>${actionDetailList.houseNo?if_exists}</td>
                     </tr>
                     
                     <tr>
                     	<td class="label">${uiLabelMap.wardNo}</td>
-                        <td> 15 </td>
+                        <td>${actionDetailList.wardNo?if_exists}</td>
                         <td class="label">${uiLabelMap.mohalla}</td>
-                        <td> Aajad Ward</td>
-                    </tr>
-                    
-                    <tr>
-                    	<td class="label">${uiLabelMap.landMark}</td>
-                        <td>Ekshubhit Bungalow</td>
+                        <td>${actionDetailList.mohalla?if_exists}</td>
+                   </tr>
+                   
+                   <tr>     
+                        <td class="label">${uiLabelMap.landMark}</td>
+                        <td>${actionDetailList.landMark?if_exists}</td>
                         <td class="label">${uiLabelMap.village}</td>
-                        <td>Bhainsdehi</td>
+                        <td>${actionDetailList.village?if_exists}</td>
                     </tr>
                     
                     <tr>
@@ -108,45 +148,127 @@
                     <tr>
                     	<td class="label">${uiLabelMap.CommonCountry}</td>
                         <td>India</td>
-                        <td class="label">${uiLabelMap.mobileNo}</td>
-                        <td>8978789885</td>
-                    </tr>
+                     </tr>
+                     
+                    <input name="sequenceId"  type="hidden" value="${actionDetailList.sequenceId?if_exists}">
+                    <input name="mobileNumber"  type="hidden" value="${actionDetailList.mobileNumber?if_exists}">
+                    <input name="eMail"  type="hidden" value="${actionDetailList.eMail?if_exists}">
+                    <input name="firstName"  type="hidden" value="${actionDetailList.firstName}">
+    				<input name="lastName"  type="hidden" value="${actionDetailList.lastName}">
+                    
+                   				</#list>
+                        </#if>
+                        
+                        <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.actionDetail}</font></td></tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.resContactNo}</td>
-                        <td>7878978789</td>
-                        <td class="label">${uiLabelMap.CommonEmail}</td>
-                        <td>example@gmail.com</td>
-                    </tr>
-                   
-                    <tr>
+		
+		   					<td class="label">Action Status <font color="red">*</td>
+					       	<td> 
+					       		<input type="radio" name="actionStatus" id="registrationStatus_A"  value="Approve" onchange="javascript:getActionDetails(this)"/> Approve
+								<input type="radio" name="actionStatus" id="registrationStatus_R" value="Reject"  onchange="javascript:getActionDetails(this)"/> Reject
+							</td>
+		   			</tr>
+		   			
+		   			 </tbody>
+        </table>
+        
+        <div id="registrationStatus_Approve" style="display:none">
+					<table cellspacing="0" class="basic-table table-responsive">
+					<tbody>
+					<tr>
+							<td class="label">${uiLabelMap.CommonRemark}</td>
+							<td><textarea name="approveRemark"></textarea></td>
+						</tr>  
+						</tbody>
+					</table>
+				</div>	
+				
+				<div id="registrationStatus_Reject" style="display:none">
+					<table cellspacing="0" class="basic-table table-responsive">
+					<tbody>
+				
+						<tr>
+							<td class="label">Resone For Reject <font color="red">*</td>  
+							<td><textarea name="resoneForReject"></textarea></td>
+						</tr>  
+						</tbody>
+					</table>
+				</div>		
+				
+				<table cellspacing="0" class="basic-table table-responsive">
+					<tbody>
+						<tr>
                     	<td colspan="4">
                     	<center>
-                    	<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:actionRegistrationDetail(this);"/>
-                    	<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:actionRegistrationDetail(this);"/>
+                    	<input name="action"   type="button" value="${uiLabelMap.action}" onClick="javascript:actionRegistration();"/>
                     	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	</center>
                      	</td>
                     </tr>
-                    
-            </tbody>
-        </table>
+						</tbody>
+					</table>
+					
     </div>
+    <input name="actionByOfficerName"  type="hidden" value="${person.firstName} ${person.lastName}">
+    <input name="createdByLoginId" type="hidden" value="${userLogin.partyId}">
 </form>
 
 <script type="text/javascript" language="javascript">
 
-function actionRegistrationDetail(Msg)
+function actionRegistration()
    {
 		      var form=document['actionNewRegistration'];
-		      var tempMsgCheck = Msg.value;
-		      var sure = confirm("Are you sure, you want to "+tempMsgCheck+" the Form ?");
-                              if( sure == true )
-                             {
-                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
-			            form.submit();
-		                disSubmit('disBttn');    
-		                } 
+		      var actionStatus = form.actionStatus.value;
+		      var approveRemark = form.approveRemark.value;
+		      var resoneForReject = form.resoneForReject.value;
+		      
+		      		if(notEmptyField(actionStatus,"${uiLabelMap.CommonSelect} Action Status"))
+		     		{
+		     			if(actionStatus == "Reject")
+		     			{
+		      				if(notEmptyField(resoneForReject,"Resone For Reject ${uiLabelMap.notEmpty}"))
+		      					{
+		      						var sure = confirm("Are you sure, you want to "+actionStatus+" the Form ?");
+                              		if( sure == true )
+                             		{
+                        				form.action = "<@ofbizUrl>actionRegistration</@ofbizUrl>";
+			            				form.submit();
+		                				disSubmit('disBttn');    
+		                		 	} 
+		                		}
+		                }
+		                else
+		                {
+		                			var sure = confirm("Are you sure, you want to "+actionStatus+" the Form ?");
+                              		if( sure == true )
+                             		{
+                        				form.action = "<@ofbizUrl>actionRegistration</@ofbizUrl>";
+			            				form.submit();
+		                				disSubmit('disBttn');    
+		                		 	} 
+		                }
+		              }
     }
     
+    function getActionDetails(field)
+    {  
+  
+	    var test=field.value;
+	 
+		if(test != "")
+		{
+		   if(test == 'Approve')
+		     {
+				document.getElementById('registrationStatus_Approve').style.display="block";
+				document.getElementById('registrationStatus_Reject').style.display="none";
+			 }
+			else 
+		     {
+		     	document.getElementById('registrationStatus_Reject').style.display="block";
+		     	document.getElementById('registrationStatus_Approve').style.display="none";
+		     }
+		}
+		
+}	
     </script>

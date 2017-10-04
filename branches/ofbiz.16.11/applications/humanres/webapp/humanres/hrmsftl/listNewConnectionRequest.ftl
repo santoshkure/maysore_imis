@@ -22,25 +22,31 @@
 		 <thead>
         	<tr class="header-row-2">
         	  <td>${uiLabelMap.sno}</td>
-              <td>${uiLabelMap.customerNo}</td>
-	          <td>${uiLabelMap.customerName}</td>
-	          <td>${uiLabelMap.customerAddress}</td>
-              <td>${uiLabelMap.contact}</td>
-              <td>${uiLabelMap.applyDate}</td>
+              <td>${uiLabelMap.customerId}</td>
+	          <td>${uiLabelMap.connectionCategory}</td>
+	          <td>${uiLabelMap.applicationType}</td>
+              <td>${uiLabelMap.typeOfBuilding}</td>
+              <td>${uiLabelMap.applicationDate}</td>
               <td>${uiLabelMap.action}</td>
            </tr>
            
           </thead>
            		<tbody>
+           		<#assign i=1>
+           		<#if actionConnectionList?exists>
+           		<#list actionConnectionList as actionConnectionList>
         			<tr>
-        				<td>1</td>
-        				<td><a href="viewCustomerConnectionDetail">10001</a></td>
-        				<td>Ravi Kuamr Rai</td>
-	          			<td>Sahu Colony</td>
-              			<td>4545454554</td>
-              			<td>02/08/2017</td>
-              			<td><a href="actionNewConnection" class="buttontext">${uiLabelMap.action}</a></td>
+        				<td>${i?if_exists}</td>
+        				<td><a href="viewCustomerConnectionDetail?checkId=${actionConnectionList.sequenceId?if_exists}&regId=${actionConnectionList.customerId?if_exists}">${actionConnectionList.customerId?if_exists}</a></td>
+        				<td>${actionConnectionList.connectionCategory?if_exists}i</td>
+	          			<td>${actionConnectionList.applicationType?if_exists}</td>
+              			<td>${actionConnectionList.typeOfBuilding?if_exists}</td>
+              			<td>${actionConnectionList.applicationDate?if_exists}</td>
+              			<td><a href="actionNewConnection?checkId=${actionConnectionList.sequenceId?if_exists}&regId=${actionConnectionList.customerId?if_exists}" class="buttontext">${uiLabelMap.action}</a></td>
            			</tr>
+           			<#assign i=i+1>
+           			</#list>
+           			</#if>
            		</tbody>
         		</table>
 	  </div>

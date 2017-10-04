@@ -21,14 +21,10 @@
 				<thead>
         			<tr class="header-row-2">
         				<td>${uiLabelMap.sno}</td>
-        	  			<td>Connection No</td>
-              			<td>${uiLabelMap.customerNo}</td>
-	          			<td>${uiLabelMap.customerName}</td>
-	          			<#-- <td>Connection Type</td>
-             			<td>${uiLabelMap.contact}</td>
-             			<td>${uiLabelMap.applyDate}</td>
-            			<td>${uiLabelMap.actionDate}</td>-->
-            			<td>${uiLabelMap.CommonStatus}</td>
+              			<td>${uiLabelMap.connectionNo}</td>
+	          			<td>${uiLabelMap.customerNo}</td>
+            			<td>${uiLabelMap.connectionCategory}</td>
+            			<td>${uiLabelMap.applicationType}</td>
             			<td>${uiLabelMap.CommonEdit}</td>
             			<td>${uiLabelMap.forOfficeUseOnly}</td>
             			<td>${uiLabelMap.aprForSanction}</td>
@@ -36,20 +32,22 @@
 				</thead>
 				
 			<tbody>
+			<#assign i=1>
+			<#if connectionList?exists>
+			<#list connectionList as connectionList>
 					<tr>
-						<td>1</td>
-        				<td><a href="viewCustomerConnectionActionDetail">CNMCC10001</a></td>
-        				<td>10001</td>
-        				<td>Ravi Kumar Rai</td>
-        				<#--  <td>permanent</td>
-              			<td>0123345677</td>
-              			<td>02/08/2017</td>
-              			<td>02/08/2017</td>-->
-              			<td>Approved</td>
-              			<td><a href="<@ofbizUrl>editConnectionDetail</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
+						<td>${i?if_exists}</td>
+        				<td><a href="viewCustomerConnectionActionDetail?checkId=${connectionList.sequenceId?if_exists}&validId=${connectionList.costomerNo?if_exists}">${connectionList.connectionNo?if_exists}</a></td>
+        				<td>${connectionList.customerId?if_exists}</td>
+        				<td>${connectionList.connectionCategory?if_exists}</td>
+        				<td>${connectionList.applicationType?if_exists}</td>
+              			<td><a href="<@ofbizUrl>editConnectionDetail?checkId=${connectionList.sequenceId?if_exists}&validId=${connectionList.costomerNo?if_exists}</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
               			<td><a href="<@ofbizUrl>forOfficeUseOnly</@ofbizUrl>" class="buttontext">${uiLabelMap.forOfficeUseOnly}</a></td>
               			<td><a href="<@ofbizUrl>aprForSanction</@ofbizUrl>" class="buttontext">${uiLabelMap.aprForSanction}</a></td>
            			</tr>
+           			<#assign i=i+1>
+           			</#list>
+           			</#if>
      		</tbody>
        </table>
 	  </div>

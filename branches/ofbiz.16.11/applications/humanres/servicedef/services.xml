@@ -1340,4 +1340,112 @@ under the License.
 	    </service>
 	 	<!-- END -->
 
-</services>
+	<!-- Added By shubham malviya for Action Consumer Registration -->
+
+		<service name="actionRegistrationDetail" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="actionConsumerRegistration">
+    	
+    	<attribute name="sequenceId" type="String" mode="IN" optional="true" />
+    	<attribute name="actionStatus" type="String" mode="IN" optional="true" />
+    	<attribute name="approveRemark" type="String" mode="IN" optional="true" />
+	    <attribute name="resoneForReject" type="String" mode="IN" optional="true" />
+	    <attribute name="mobileNumber" type="String" mode="IN" optional="true" />
+	    <attribute name="eMail" type="String" mode="IN" optional="true" />
+	    <attribute name="actionByOfficerName" type="String" mode="IN" optional="true" />
+	    <attribute name="createdByLoginId" type="String" mode="IN" optional="true" />
+	    <attribute name="firstName" type="String" mode="IN" optional="true" />
+	    <attribute name="lastName" type="String" mode="IN" optional="true" />
+	    
+	    </service>
+	   
+	   <service name="editCostomerDetail" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editCostomerDetail">
+    	
+    	<attribute name="seqId" type="String" mode="IN" optional="true" />
+    	<attribute name="title" type="String" mode="IN" optional="true" />
+     <attribute name="firstName" type="String" mode="IN" optional="true" />
+     <attribute name="middleName" type="String" mode="IN" optional="true" />
+     <attribute name="lastName" type="String" mode="IN" optional="true" />
+     <attribute name="dateOfBirth" type="String" mode="IN" optional="true" />
+     <attribute name="gender" type="String" mode="IN" optional="true" />
+     <attribute name="maritalStatus" type="String" mode="IN" optional="true" />
+     <attribute name="fatherName" type="String" mode="IN" optional="true" />
+     <attribute name="motherName" type="String" mode="IN" optional="true" />
+     <attribute name="aadharCardNo" type="String" mode="IN" optional="true" />
+     <attribute name="nationality" type="String" mode="IN" optional="true" />
+     <attribute name="cummunityName" type="String" mode="IN" optional="true" />
+     <attribute name="consumerCast" type="String" mode="IN" optional="true" />
+      <attribute name="contactNo" type="String" mode="IN" optional="true" />
+      <attribute name="resContactNo" type="String" mode="IN" optional="true" />
+     <attribute name="eMail" type="String" mode="IN" optional="true" />
+     <attribute name="address" type="String" mode="IN" optional="true" />
+     <attribute name="houseNo" type="String" mode="IN" optional="true" />
+     <attribute name="wardNo" type="String" mode="IN" optional="true" />
+     <attribute name="mohalla" type="String" mode="IN" optional="true" />
+     <attribute name="landMark" type="String" mode="IN" optional="true" />
+     <attribute name="village" type="String" mode="IN" optional="true" />
+	    
+	    </service>
+	    
+	    <service name="actionConnectionDetail" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="actionConnectionDetail">
+    	
+    	<attribute name="sequenceId" type="String" mode="IN" optional="true" />
+     	<attribute name="connectionStatus" type="String" mode="IN" optional="true" />
+	    <attribute name="dmaNo" type="String" mode="IN" optional="true" />
+	    <attribute name="connectionDate" type="String" mode="IN" optional="true" />
+	    <attribute name="meterNo" type="String" mode="IN" optional="true" />
+	    <attribute name="refFileNo" type="String" mode="IN" optional="true" />
+	    <attribute name="bookNo" type="String" mode="IN" optional="true" />
+	    <attribute name="leafNo" type="String" mode="IN" optional="true" />
+	    <attribute name="drinkingWater" type="String" mode="IN" optional="true" />
+	    <attribute name="mccZone" type="String" mode="IN" optional="true" />
+	    <attribute name="division" type="String" mode="IN" optional="true" />
+	    <attribute name="pipeSize" type="String" mode="IN" optional="true" />
+	    <attribute name="constituency" type="String" mode="IN" optional="true" />
+	    <attribute name="zone" type="String" mode="IN" optional="true" />
+	    <attribute name="surveyNumber" type="String" mode="IN" optional="true" />
+	    <attribute name="eeName" type="String" mode="IN" optional="true" />
+	    <attribute name="oldWard" type="String" mode="IN" optional="true" />
+	    <attribute name="mrName" type="String" mode="IN" optional="true" />
+	    <attribute name="areaCoordinator" type="String" mode="IN" optional="true" />
+	    <attribute name="logitude" type="String" mode="IN" optional="true" />
+	    <attribute name="lattitude" type="String" mode="IN" optional="true" />
+	    <attribute name="conneStatus" type="String" mode="IN" optional="true" />
+	    <attribute name="refConsumerNo" type="String" mode="IN" optional="true" />
+	    <attribute name="resoneForReject" type="String" mode="IN" optional="true" />
+	    <attribute name="actionByOfficerName" type="String" mode="IN" optional="true" />
+	    <attribute name="remark" type="String" mode="IN" optional="true" />
+	    <attribute name="customerNo" type="String" mode="IN" optional="true" />
+	    
+	    </service>
+	    
+	    <service name="updateConnectionDetails" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateConnectionDetails">
+    	
+    	<attribute name="sequenceId" type="String" mode="IN" optional="true" />
+	    <attribute name="dmaNo" type="String" mode="IN" optional="true" />
+	    <attribute name="connectionDate" type="String" mode="IN" optional="true" />
+	    <attribute name="meterNo" type="String" mode="IN" optional="true" />
+	    <attribute name="refFileNo" type="String" mode="IN" optional="true" />
+	    <attribute name="bookNo" type="String" mode="IN" optional="true" />
+	    <attribute name="leafNo" type="String" mode="IN" optional="true" />
+	    <attribute name="drinkingWater" type="String" mode="IN" optional="true" />
+	    <attribute name="mccZone" type="String" mode="IN" optional="true" />
+	    <attribute name="division" type="String" mode="IN" optional="true" />
+	    <attribute name="pipeSize" type="String" mode="IN" optional="true" />
+	    <attribute name="constituency" type="String" mode="IN" optional="true" />
+	    <attribute name="zone" type="String" mode="IN" optional="true" />
+	    <attribute name="surveyNumber" type="String" mode="IN" optional="true" />
+	    <attribute name="eeName" type="String" mode="IN" optional="true" />
+	    <attribute name="oldWard" type="String" mode="IN" optional="true" />
+	    <attribute name="mrName" type="String" mode="IN" optional="true" />
+	    <attribute name="areaCoordinator" type="String" mode="IN" optional="true" />
+	    <attribute name="logitude" type="String" mode="IN" optional="true" />
+	    <attribute name="lattitude" type="String" mode="IN" optional="true" />
+	    <attribute name="conneStatus" type="String" mode="IN" optional="true" />
+	    <attribute name="refConsumerNo" type="String" mode="IN" optional="true" />
+	    
+	    </service>
+	    
+	    </services>

@@ -1958,6 +1958,44 @@ under the License.
         <response name="error" type="view" value="searchDesignationMaster" />
     </request-map>
      <!-- END -->
+     
+     <!-- Added by shubham malviya for Action Customer Registration -->
+    <request-map uri="actionRegistration">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="actionRegistrationDetail"/>
+        <response name="success" type="view" value="approveCustomerDetail"/>
+          <response name="error" type="view" value="actionNewRegistration"/>
+    </request-map>
+    
+    <request-map uri="editCostomerDetail">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="editCostomerDetail"/>
+        <response name="success" type="view" value="customerDeatil"/>
+          <response name="error" type="view" value="editCustomerDetail"/>
+    </request-map>
+    
+    <request-map uri="empCreateConsRegistration">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="saveConsumerRegistration"/>
+        <response name="success" type="view" value="main"/>
+          <response name="error" type="view" value="empCreateNewCustomer"/>
+    </request-map>
+    
+    <request-map uri="actionConnectionDetail">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="actionConnectionDetail"/>
+        <response name="success" type="view" value="approveNewConnection"/>
+          <response name="error" type="view" value="actionNewConnection"/>
+    </request-map>
+    
+    <request-map uri="updateConnectionDetails">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateConnectionDetails"/>
+        <response name="success" type="view" value="connectionDetails"/>
+          <response name="error" type="view" value="editConnectionDetail?"/>
+    </request-map>
+    <!-- END -->
+    
   <!-- ==========end==================  --> 
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>

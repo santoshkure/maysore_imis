@@ -21,9 +21,12 @@
         <table cellspacing="0" class="basic-table table-responsive">
              <tbody>
               
+                 <#if registrationDetailList?exists>
+             <#list registrationDetailList as registrationDetailList>
+             
                 <tr>
                     <td class="label">${uiLabelMap.customerNo}</td>
-                    <td colspan="3">10001</td>
+                    <td colspan="5">${registrationDetailList.customerId?if_exists}</td>
                   </tr>
                   
                 <tr>
@@ -32,85 +35,86 @@
                
                 <tr>
                     <td class="label">${uiLabelMap.CommonTitle}</td>
-                    <td>Mr.</td>
+                    <td>${registrationDetailList.title?if_exists}</td>
                     <td class="label">${uiLabelMap.firstName}</td>
-                    <td> Ravi</td>
+                        <td>${registrationDetailList.firstName?if_exists}</td>
                   </tr>
                   
                   <tr>
-                        <td class="label">${uiLabelMap.middleName}</td>
-                        <td>  Kumar</td>
+                         <td class="label">${uiLabelMap.middleName}</td>
+                        <td>${registrationDetailList.middleName?if_exists}</td>
                         <td class="label">${uiLabelMap.lastName}</td>
-                        <td> Rai</td>
+                        <td>${registrationDetailList.lastName?if_exists}</td>
                    </tr>
                    
                    <tr>
                         <td class="label">${uiLabelMap.dateOfBirth}</td>
-                        <td> 29/04/1994</td>
+                        <td>${registrationDetailList.dateOfBirth?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.gender}</td>
-                        <td> Male</td>
+                        <td>${registrationDetailList.genderId?if_exists}</td>
                         
    					</tr>
             
                     <tr>
-                    	<td class="label">${uiLabelMap.maritalStatusOption}</td>
-   						<td>Single</td>
+                    <td class="label">${uiLabelMap.maritalStatus}</td>
+   						<td>${registrationDetailList.maritalStatusId?if_exists}</td>
                         <td class="label">${uiLabelMap.fatherName}</td>
-                        <td>RajKumar Rai</td>
-                     </tr>
+                        <td>${registrationDetailList.fatherName?if_exists}</td>
+                      
+                        </tr>
             
-                    <tr>   
+                    <tr>  
                         <td class="label">${uiLabelMap.motherName}</td>
-                        <td>Ramkali Rai</td>
+                       	<td>${registrationDetailList.motherName?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.aadharCardNo}</td>
-                        <td>1234 4567 7891 4567</td>
+                        <td>${registrationDetailList.aadharCardNo?if_exists}</td>
                     </tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.cummunity}</td>
-                        <td> OBC </td>
-                        <td class="label">${uiLabelMap.cast}</td>
-                        <td> Kalar</td>
+                        <td>${registrationDetailList.cummunityNameId?if_exists}</td>
+                        <td class="label">${uiLabelMap.caste}</td>
+                        <td>${registrationDetailList.consumerCastId?if_exists}</td>
                     </tr>
                     
                     <tr>
-                     <td class="label">${uiLabelMap.nationality}</td>
-                     <td>Indian</td>
-                    
-                     <td class="label">${uiLabelMap.mobileNo}</td>
-                     <td>8978789885</td>
+                    	<td class="label">${uiLabelMap.mobileNo}</td>
+                        <td>${registrationDetailList.mobileNumber?if_exists}</td>
+                        <td class="label">${uiLabelMap.CommonEmail}</td>
+                        <td>${registrationDetailList.eMail?if_exists}</td>
                      </tr>
-                    
-                    <tr>
-                     <td class="label">${uiLabelMap.resContactNo}</td>
-                     <td>7878978789</td>
-                     <td class="label">${uiLabelMap.eMail}</td>
-                     <td>example@gmail.com</td>
+                        
+                     <tr>
+                        <td class="label">${uiLabelMap.resContactNo}</td>
+                        <td>${registrationDetailList.resContactNo?if_exists}</td>
+                         <td class="label">${uiLabelMap.nationality}</td>
+                        <td>Indian</td>
                     </tr>
                         
                     <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.currentAddress}</font></td></tr>
                     
                     <tr>
                         <td class="label">${uiLabelMap.Address}</td>
-                        <td> Sector 3, Lane No. 1 Sahu Colony Pune</td>
+                         <td>${registrationDetailList.address?if_exists}</td>
                         <td class="label">${uiLabelMap.houseNo}</td>
-                        <td> 45/ 12</td>
+                         <td>${registrationDetailList.houseNo?if_exists}</td>
                     </tr>
                     
                     <tr>
-                    	<td class="label">${uiLabelMap.wardNo}</td>
-                        <td> 15 </td>
+                     <td class="label">${uiLabelMap.wardNo}</td>
+                        <td>${registrationDetailList.wardNo?if_exists}</td>
                         <td class="label">${uiLabelMap.mohalla}</td>
-                        <td> Aajad Ward</td>
-                    </tr>
+                         <td>${registrationDetailList.mohalla?if_exists}</td>
+                        
+                        </tr>
                     
-                    <tr>     
+                    <tr>
                         <td class="label">${uiLabelMap.landMark}</td>
-                        <td>Ekshubhit Bungalow</td>
+                         <td>${registrationDetailList.landMark?if_exists}</td>
                         <td class="label">${uiLabelMap.village}</td>
-                        <td>Bhainsdehi</td>
+                         <td>${registrationDetailList.village?if_exists}</td>
                     </tr>
                     
                     <tr>
@@ -120,41 +124,47 @@
                         <td>Karnataka</td>
                     </tr>
                     
-                    <tr>
-                    	<td class="label">${uiLabelMap.CommonCountry}</td>
-                        <td>India</td>
-                    <tr>    
+                        <tr>
                         
+                        <td class="label">${uiLabelMap.CommonCountry}</td>
+                        <td>India</td>
+                        </tr>
+                    
                    <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.registrationDetail}</font></td></tr>
                     
                     <tr>
                      	<td class="label">${uiLabelMap.registrationDate}</td>
-                    	<td>02/08/2017</td>
+                    	<td>${registrationDetailList.submittedDate?if_exists}</td>
                     	<td class="label">${uiLabelMap.approveDate}</td>
-                    	<td>02/08/2017</td>
-                    <tr>
-                    
-                    <tr>
-                    	<td class="label">${uiLabelMap.actionByOfficer}</td>
-                    	<td></td>
+                    	<td>${registrationDetailList.actionDate?if_exists}</td>
                     </tr>
+                    
+                     <tr>
+                    <td class="label">${uiLabelMap.actionByOfficer}</td>
+                    <td>${registrationDetailList.actionByOfficerName?if_exists}</td>
+                     </tr>
+                  </#list>
+                    </#if>	 
                     	
                    <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
                    
+                   <#if viewConnectionDetail?exists>
+              <#list viewConnectionDetail as viewConnectionDetail>
                    <tr>
                         <td class="label">${uiLabelMap.connectionType}</td>
-                        <td>Domestic</td>
+                        <td>${viewConnectionDetail.connectionCategory?if_exists}</td>
                         <td class="label">${uiLabelMap.applicationType}</td>
-                        <td>Permanent</td>
+                        <td>${viewConnectionDetail.applicationType?if_exists}</td>
                     </tr>
-                    
+                    <input type="hidden" name="customerNo" value="${viewConnectionDetail.customerId?if_exists}">
                     <tr>
-                    	<td class="label">${uiLabelMap.typeOfBuilding}</td>
-                        <td>Residential buildings etc.</td>
+                    <td class="label">${uiLabelMap.typeOfBuilding}</td>
+                        <td>${viewConnectionDetail.typeOfBuilding?if_exists}</td>
                         <td class="label">${uiLabelMap.applicationDate}</td>
-                        <td>02/08/2017</td>
-                    </tr>
+                        <td>${viewConnectionDetail.applicationDate?if_exists}</td>
                         
+                        </tr>
+                    
                     <tr>
                         <td class="label">${uiLabelMap.assentialDoccument}</td>
                         <td>Example.Doc</td>
@@ -164,14 +174,18 @@
                     
                     <tr>
                         <td class="label">${uiLabelMap.feeStatus}</td>
-                        <td colspan="3">Paid</td>
+                        <td colspan="5"></td>
                     </tr>
+                    <input type="hidden" name="sequenceId" value="${viewConnectionDetail.sequenceId?if_exists}">
+                    </#list>
+                    </#if>	 
+                    <input name="actionByOfficerName"  type="hidden" value="${person.firstName} ${person.lastName}">
                     
                     <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.connectionActionDetail}</font></td></tr>
                     
                     <tr>
 		
-		   					<td class="label">Connection Status</td>
+		   					<td class="label">Connection Status <font color="red">*</td>
 					       	<td> 
 					       		<input type="radio" name="connectionStatus" id="connectionStatus_A"  value="approve" onchange="javascript:getActionDetails(this)"/> Approve
 								<input type="radio" name="connectionStatus" id="connectionStatus_R" value="reject"  onchange="javascript:getActionDetails(this)"/> Reject
@@ -193,7 +207,7 @@
 						</tr>
 						
 						<tr>
-							<td class="label">Meter No.</td>  
+							<td class="label">Meter No.</td>
 							<td><input name="meterNo"  type="text" maxlength="60" value=""></td>
 							<td class="label">Ref file No.</td>  
 							<td><input name="refFileNo"  type="text" maxlength="60" value=""></td>
@@ -210,7 +224,7 @@
 							<td class="label">Pipe Size</td>  
 							<td><input name="pipeSize"  type="text" maxlength="60" value=""></td>
 							<td class="label">Drinking Water</td>  
-							<td><input name="dmaNo"  type="text" maxlength="60" value=""></td>
+							<td><input name="drinkingWater"  type="text" maxlength="60" value=""></td>
 						</tr> 
 						
 						<tr>
@@ -244,7 +258,7 @@
 						
 						<tr>	
 							<td class="label">Remark</td>  
-							<td><input name="remark"  type="text" maxlength="60" value=""></td>
+							<td><input name="Remark"  type="text" maxlength="60" value=""></td>
 							<td class="label">MR Name</td>  
 							<td><input name="mrName"  type="text" maxlength="60" value=""></td>
 						</tr> 
@@ -260,7 +274,7 @@
 							<td class="label">lattitude</td>  
 							<td><input name="lattitude"  type="text" maxlength="60" value=""></td>
 							<td class="label">Connection stauts</td>  
-							<td><input name="connectionStatus"  type="text" maxlength="60" value=""></td>
+							<td><input name="conneStatus"  type="text" maxlength="60" value=""></td>
 						</tr>
 						
 						</tbody>
@@ -284,15 +298,17 @@
               
                 		<tr>
                     		<td class="label">${uiLabelMap.commonOfficerName}</td>
-                    		<td><input name="actionOfficerName"  type="text" maxlength="40" value=""></td>
+                    		<td>${person.firstName} ${person.lastName}</td>
+                    <input name="actionOfficerName"  type="hidden" value="${person.firstName} ${person.lastName}">
                     
                      		<td class="label">${uiLabelMap.designation}</td>
-                    		<td><input name="designation"  type="text" maxlength="40" value=""></td>
+                    		<td></td>
+                    		<input name="designation"  type="hidden" value="">
                     	</tr>
                   		
                   		<tr>	
                     		<td class="label">${uiLabelMap.actionDate}</td>
-                    		<td><@htmlTemplate.renderDateTimeField name="actionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="actionDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
+                    		<td>${nowTimestamp?string("dd/MM/yyyy")}</td>
                   		
                     		<td class="label">${uiLabelMap.CommonRemark}</td>
                     		<td><textarea name="remark" maxlength ="500"></textarea></td>
@@ -301,8 +317,7 @@
                   		<tr>
                     	<td colspan="4">
                     	<center>
-                    	<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:actionConnectionDetail(this);"/>
-                    	<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:actionConnectionDetail(this);"/>
+                    	<input name="action"   type="button" value="${uiLabelMap.action}" onClick="javascript:actionConnectionDetail();"/>
                     	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      	</center>
                      	</td>
@@ -336,18 +351,21 @@ function getActionDetails(field)
 		
 }	
 
-function actionConnectionDetail(Msg)
+function actionConnectionDetail()
    {
 		      var form=document['actionNewConnectionDetail'];
-		      var tempMsgCheck = Msg.value;
+		      var connectionStatus = form.connectionStatus.value;
 		      
-		      var sure = confirm("Are you sure, you want to "+tempMsgCheck+" the Form ?");
+		      if(notEmptyField(connectionStatus,"${uiLabelMap.CommonSelect} Connection Status"))
+     				{
+		      var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
-                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>actionConnectionDetail</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
-		                } 
+		                	} 
+		            }    
     }
     
 </script>
