@@ -672,9 +672,18 @@ under the License.
                  <entity-condition list="ZoneMasterLists" entity-name="ZoneMaster">
        			 <condition-expr field-name="zoneId" operator="equals" value="${parameters.zoneId}" />
 		  	   </entity-condition>
-		  	   <entity-condition list="officeMasterLists" entity-name="OfficeTypeMaster">
+		  <!-- 	   <entity-condition list="officeMasterLists" entity-name="OfficeTypeMaster">
  					<condition-expr field-name="status" operator="equals" value="A" />
-			   </entity-condition>
+			   </entity-condition> -->
+			   <entity-condition list="officeMasterLists"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1151,10 +1160,18 @@ under the License.
 			 <condition-expr field-name="zoneId" operator="not-equals" value="" />
 			   </condition-list>
             </entity-condition>
-               <entity-condition list="officeMaterLists" entity-name="OfficeTypeMaster">
+             <!--   <entity-condition list="officeMaterLists" entity-name="OfficeTypeMaster">
  					<condition-expr field-name="status" operator="equals" value="A" />
-			   </entity-condition>			
-		  	  
+			   </entity-condition> -->			
+		  	  <entity-condition list="officeMasterLists"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1273,9 +1290,19 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="areamastertab"/>
                 <set field="subTabButtonItem" value="zonemastertab"/>
-                <entity-condition list="officeMasterLists" entity-name="OfficeTypeMaster">
+               <!--  <entity-condition list="officeMasterLists" entity-name="OfficeTypeMaster">
  					<condition-expr field-name="status" operator="equals" value="A" />
-			   </entity-condition>
+			   </entity-condition> -->
+			   
+			   <entity-condition list="officeMasterLists"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
