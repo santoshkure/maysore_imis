@@ -1277,6 +1277,7 @@ under the License.
     	location="org.apache.ofbiz.humanres.HumanResEvents" invoke="approveRegistration">
 	   	    <attribute name="registrationId" type="String" mode="IN" optional="true" />
 	   	   	    <attribute name="actionFlag" type="String" mode="IN" optional="true" />
+	   	   	    <attribute name="remarks" type="String" mode="IN" optional="true" />
 	   	</service>
 	   	
 	   	<service name="updateRegistration" export="true" engine="java" 
