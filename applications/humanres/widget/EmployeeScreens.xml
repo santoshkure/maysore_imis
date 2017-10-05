@@ -39,18 +39,21 @@ under the License.
        			 				<condition-expr field-name="status" operator="equals" value="A" />
        			 				</condition-list>
 		  	   				</entity-condition>  
+		  	   				
                   <entity-condition list="genderMasterList" entity-name="genderMaster">
 		  	   				<condition-list combine="and">
        			 				<condition-expr field-name="genderName" operator="not-equals" value="" />
        			 				<condition-expr field-name="status" operator="equals" value="A" />
        			 				</condition-list>
 		  	   				</entity-condition>
+		  	   				
 							<entity-condition list="communityList" entity-name="communityMaster">
                 		<condition-list combine="and">
        			 				<condition-expr field-name="communityname" operator="not-equals" value="" />
        			 				<condition-expr field-name="status" operator="equals" value="A" />
        			 				</condition-list>
 		  	   				</entity-condition>
+		  	   				
 		  	   				<entity-condition list="officeList"
 					entity-name="OfficeDetail">
 					<condition-list combine="and">
