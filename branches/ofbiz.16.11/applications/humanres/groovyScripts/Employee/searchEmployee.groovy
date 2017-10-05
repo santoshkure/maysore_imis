@@ -30,12 +30,14 @@ officeId = parameters.officeId;
 List<EntityCondition> andExprs = new LinkedList<EntityCondition>();
 EntityCondition mainCond = null;
 				if(UtilValidate.isNotEmpty(employeeId)) {
+				//print("~~~~~~~~~~~~~~~~~employeeId~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+employeeId);
 				
 					andExprs.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("employeeCode"),
 						EntityOperator.LIKE, EntityFunction.UPPER("%" + employeeId + "%")));
 				}
 				
 				if(UtilValidate.isNotEmpty(officeId)) {
+								//print("~~~~~~~~~~~~~~~~~~~~~~~~~officeId~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+officeId);
 				
 					andExprs.add(EntityCondition.makeCondition("officeId",
 						EntityOperator.EQUALS,officeId));
@@ -64,7 +66,7 @@ int listSize = 0
 
 listIt = from("EmplRegistration").where(mainCond).orderBy("registrationId").cursorScrollInsensitive().cache(true).queryIterator()
 employeeList = listIt.getPartialList(lowIndex, highIndex - lowIndex + 1)
-print("~~~~~~~~~~~~~~~~~employeeList~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+listIt);
+//print("~~~~~~~~~~~~~~~~~employeeList~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+employeeId);
 
 listSize = listIt.getResultsSizeAfterPartialList()
 if (listSize < highIndex) {
