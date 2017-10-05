@@ -9,6 +9,7 @@
 <#assign checkLocale = "${locale?if_exists}">
 <#setting locale="en">
 
+<script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
 
 <form method="post" name="editEmployee" class="basic-form">
 <div class="row">
@@ -292,6 +293,8 @@
  		var dateOfBirth = form.dateOfBirth.value;
  		var gender = form.gender.value;
  		var fatherName = form.fatherName.value;
+ 		var mobileNo = form.mobileNo.value; 		
+ 		var contactNumber = form.contactNumber.value;  		
  		var permanentAddress = form.permanentAddress.value;
  		var officeId = form.officeId.value;
  		var appointmentType = form.appointmentType.value;
@@ -307,6 +310,8 @@
  		if(notEmptyField(dateOfBirth,"Date of Birth should not be empty.")){
  		if(notEmptyField(gender,"Gender should not be empty.")){
  		if(notEmptyField(fatherName,"Father name should not be empty.")){
+ 		if(enterNumeric(mobileNo,"Mobile Number should be Numeric .")){ 
+ 		if(enterNumeric(contactNumber,"Contact Number should be Numeric .")){ 			 		
  		if(notEmptyField(permanentAddress,"Permanent Address should not be empty.")){
  		if(notEmptyField(officeId,"Present Office should not be empty.")){
  		if(notEmptyField(designation,"Designation should not be empty.")){
@@ -318,43 +323,12 @@
  				  form.action = "<@ofbizUrl>updateEmployee</@ofbizUrl>";
 			      form.submit();
 			      disSubmit('saveBtn');
-		}}}}}}}}}}}}}}	      
+		}}}}}}}}}}}}}}}}	      
 		         
         }
 	
 	
-		function numericfloat(value,field)
-	   {
-	        var alphaExp = /^[0-9\.]+$/;
-	        if(value == "") {
-	            return true;
-	        } else {
-	        var input = alphaExp.test(value);
-	        if(input == true) {
-	            return true;
-	        } else {
-	            alert(field);
-	            return false;
-	        }
-	     }
-	   }
 		
-		function ValidateEmail(uemail) {
-            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-           
-            if(uemail == "") {
-                return true;
-            }
-            else if(uemail.match(mailformat)) {
-                return true;
-            }
-            else
-            {
-                alert("Enter Email Address in abcd@mail.com format.");
-                uemail.focus();
-                return false;
-            }
-        }
 </script>
 
 
