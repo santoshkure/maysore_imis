@@ -8,6 +8,7 @@
 <#-- #####################################################################################################-->
 
 
+<script language="javascript" src="/images/commonjs/commonValidation.js" type="text/javascript"></script>
 
 <form method="post" name="createOffice" action="" class="basic-form">
 <div class="row">
@@ -24,11 +25,13 @@
 
 
 		
-		<table class="basic-table"><tr>
-			<td class="label" width="25%">${uiLabelMap.HrmsOfficeName} &nbsp;*</td> 
+		<table class="basic-table">
+		<tr><td colspan="6"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
+		<tr>
+			<td class="label" width="25%">${uiLabelMap.HrmsOfficeName} &nbsp;<font color="red" >*</font> </td> 
 			<td  width="25%"><input type="text" name="officeName" value="" maxlength="140" style="width:302px;"/></td>
-			<td class="label">${uiLabelMap.HrmsOfficeType}&nbsp;&nbsp;*</td> 
-			<td width="25%"><select name="officeType" style="width:132px;margin:5px 0 5px 0;" onchange="javascript:getParentOffice(this);">
+			<td class="label">${uiLabelMap.HrmsOfficeType}&nbsp;<font color="red" >*</font> </td> 
+			<td width="25%"><select name="officeType" style="width:132px;margin:5px 0 5px 0;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>             	    	       	    	        
 
 	    	   <#if officeTypeList?exists>
@@ -45,8 +48,8 @@
                     </td>
 			</tr>
 		<tr>
-		<td class="label">${uiLabelMap.HrmsParentOfficeName}&nbsp;&nbsp;*</td> 
-<td width="25%"><select name="parentOffice" style="width:302px;margin:5px 0 5px 0;" >
+		<td class="label">${uiLabelMap.HrmsParentOfficeName}&nbsp;<font color="red" >*</font> </td> 
+		<td width="25%"><select name="parentOffice" style="width:302px;margin:5px 0 5px 0;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>
 	    	   <#if officeList?exists>
 	    	      <#if officeList?has_content>
@@ -59,22 +62,22 @@
 	    	     </#if>
 	    	   </#if>
 	    	</select>
-                    </td>		<td class="label" width="25%">Office Code &nbsp;*</td>  
+                    </td>		<td class="label" width="25%">Office Code &nbsp;<font color="red" >*</font> </td>  
 		<td  width="25%"><input type="text" name="officeCode" value="" maxlength="40" style="width:302px;"/></td>
 		</tr>
 		
 		<tr>
-		<td class="label">${uiLabelMap.Address}&nbsp;&nbsp;*</td>
+		<td class="label">${uiLabelMap.Address}&nbsp;<font color="red" >*</font> </td>
 		<td> <textarea name= "address" class="form-control"style="width:302px;margin:5px 0 5px 0;" id="address"></textarea></td>
-		<td class="label">${uiLabelMap.HrmsPinCode}&nbsp;&nbsp;*</td> 
+		<td class="label">${uiLabelMap.HrmsPinCode}&nbsp;<font color="red" >*</font> </td> 
 		<td  width="25%"><input type="text" name="pinCode" value="" maxlength="15" style="width:302px;"></td>
 		</tr>
 		
 		
 		<tr>
-		<td class="label">${uiLabelMap.City}&nbsp;&nbsp;*</td>
+		<td class="label">${uiLabelMap.City}&nbsp;<font color="red" >*</font> </td>
 		<td  width="25%"><input type="text" name="city" value="" maxlength="100" style="width:302px;"/></td>
-		<td class="label">${uiLabelMap.District}&nbsp;&nbsp;*</td> 
+		<td class="label">${uiLabelMap.District}&nbsp;<font color="red" >*</font> </td> 
 		<td width="25%"><select name="district">
 						<option value="">Select District</option>                            
 
@@ -85,9 +88,9 @@
 		
 		<tr>
 		<td class="label">${uiLabelMap.Fax}&nbsp;&nbsp;</td>
-		<td  width="25%"><input type="text" name="faxNo" value="" maxlength="40" style="width:302px;"/></td>
+		<td  width="25%"><input type="text" name="faxNo" value="" maxlength="15" style="width:302px;"/></td>
 		<td class="label">${uiLabelMap.contactNumber}&nbsp;&nbsp;</td> 
-		<td  width="25%"><input type="text" name="contactNumber" value="" maxlength="15" style="width:302px;"/></td>
+		<td  width="25%"><input type="text" name="contactNumber" value="" maxlength="12" style="width:302px;"/></td>
 		</tr>
 		
 		<tr>
@@ -98,12 +101,22 @@
             <td><input type="text" name="latitude" autocomplete="off" value="" maxlength="12" style="width:302px;">
             </td>
 		</tr>
+		 </tr>
+        	<tr>
+				<td colspan="6">
+					<center><div id="submit" align="center">
+						<input type="button" submit="" value="${uiLabelMap.CommonSave}" onclick="javascript:validateParameters('createOffice');"/>
+					    <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/>
+					</div>
+					</center>
+				</td>
+			</tr>
 		</table></div>
 		
-		<div class="button-bar" align="center">
-                  <td align="right"><input type="submit" value="${uiLabelMap.CommonSave}" onclick="return validateFields1('createOffice');"/>
+		<#----<div id="submit" align="center">
+                  <td align="right"><input type="submit" submit="" value="${uiLabelMap.CommonSave}" onclick="javascript:validateParameters('createOffice');"/>
                   <td align="right"><input type="submit" name="cancel" value="${uiLabelMap.CommonCancel}"/>
-        </div>
+        </div>--->
 
                 
 
@@ -112,12 +125,56 @@
 
 </from>
 
-<Script>
- function validateFields1(formname)
+<script>
+ function validateParameters(formname)
  {
- var form=document[formname];
-form.action = "<@ofbizUrl>saveoffice</@ofbizUrl>";
-                   form.submit();
-}
+	
+	 var form=document[formname];
+	 var officeName = form.officeName.value;
+	 var officeType = form.officeType.value;
+	 var parentOffice = form.parentOffice.value;
+	 var officeCode = form.officeCode.value;
+	 var address = form.address.value;
+	 var pinCode = form.pinCode.value;
+	 var city = form.city.value;
+	 var district = form.district.value;
+ 	 var contactNumber = form.contactNumber.value;	 
+ 	 var longitude = form.longitude.value;
+ 	 var latitude = form.latitude.value; 	  	 
+	 var IMIS = "IMIS";
+	
+	 if(notEmptyField(officeName,"Office Name should not be empty.")){
+	 if(notEmptyField(officeType,"Office Type should not be empty.")){ 		 
+ 	 if(officeType != IMIS)
+ 	 {
+ 	 if(notEmptyField(parentOffice,"Head of Office should not be empty.")){
+ 	 if(notEmptyField(officeCode,"Office Code should not be empty.")){
+	 if(notEmptyField(address,"Address should not be empty.")){
+	 if(notEmptyField(pinCode,"Pin Code Name should not be empty.")){
+	 if(notEmptyField(city,"City should not be empty.")){
+	 if(notEmptyField(district,"District should not be empty.")){
+ 	 if(enterNumeric(contactNumber,"Contact Number should be Numeric .")){ 			 		
+	 if(validateLongitudeforMP1(longitude,"Longitude should be in [ Deg : Min : Sec ] Formate.")){	
+	 if(validateLatitudeforMP1(latitude,"Latitude should be in [ Deg : Min : Sec ] Formate.")){
+					  form.action = "<@ofbizUrl>saveoffice</@ofbizUrl>";
+	                  form.submit();
+	                  disSubmit('saveBtn');
+ 	 }}}}}}}}}
+ 	 } 
+	 else{		
+	 if(notEmptyField(officeCode,"Office Code should not be empty.")){
+	 if(notEmptyField(address,"Address should not be empty.")){
+	 if(notEmptyField(pinCode,"Pin Code Name should not be empty.")){
+	 if(notEmptyField(city,"City should not be empty.")){
+	 if(notEmptyField(district,"District should not be empty.")){
+ 	 if(enterNumeric(contactNumber,"Contact Number should be Numeric .")){ 			 		
+	 if(validateLongitudeforMP1(longitude,"Longitude should be in [ Deg : Min : Sec ] Formate.")){	
+	 if(validateLatitudeforMP1(latitude,"Latitude should be in [ Deg : Min : Sec ] Formate.")){
+					  form.action = "<@ofbizUrl>saveoffice</@ofbizUrl>";
+	                  form.submit();
+	                  disSubmit('saveBtn');
+	}}}}}}}}}}}
+	
+	}
 
-</Script>
+</script>
