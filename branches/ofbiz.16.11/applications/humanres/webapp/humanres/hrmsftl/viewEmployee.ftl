@@ -183,7 +183,10 @@
         </tr>
          <tr>
        <td class="label" >Type of Appointment</td>
-		         <td>${viewEmployeeList.appointmentType?if_exists}	</td>
+		         <td>
+		          <#if "${viewEmployeeList.appointmentType?if_exists}" == "REGULAR">
+		          Regular
+		          </#if>	</td>
          	<td class="label" style="width:225px;">Payscale</td>
 			   				<td>${viewEmployeeList.payScaleId?if_exists}</td>
 			   				<td class="label" style="width:225px;">Basic Pay</td>

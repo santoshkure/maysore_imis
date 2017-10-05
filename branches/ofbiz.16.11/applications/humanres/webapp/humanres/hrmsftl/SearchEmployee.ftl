@@ -15,7 +15,7 @@
 					<#-- <li class="back" text-align="left"><a href = "javascript:history.go(-1);">${uiLabelMap.CommonBack}</a></li> -->
 			      <div class="h3" align="center"><b>Search Employee</b></div> 
 			        <div class="basic-nav" style="margin-top: -36px;">
-			                       <li> <a title="" href="<@ofbizUrl>NewEmployee</@ofbizUrl>"></li>
+			                       
 			
 			          <ul>
 			            <li>
@@ -29,16 +29,21 @@
 			    
 			  </div>
 				<div class="screenlet-body">
-			        <table class="basic-table" cellspacing="0">
+			        <table class="basic-table" cellspacing="4">
 			        	 <tr>
 			              	<td class="label">${uiLabelMap.employeeId}</td>
 			             	<td><input type="text" name="employeeId" value="" style="width:240px;" maxlength="50"></td>
 			             	<td class="label">Office Name</td>
 			                <td>
-			                	<select name="officeId" style="width:90px;">
-			                   			<option value="">Select</option>
-			                   			
-			                   	</select>
+			                	<select name="officeId" style="width:160px">
+		        		<option value="">${uiLabelMap.CommonSelect}</option>
+		        		<#if officeList?exists>
+	    	      <#if officeList?has_content>
+	    	       <#list officeList as officeList>
+ 	    	         <option value="${officeList.partyId?if_exists}">${officeList.officeSiteName?if_exists}</option>
+ 	    	       </#list>
+	    	     </#if>
+	    	   </#if></select>
 			                </td>
 						 </tr>
 						 
