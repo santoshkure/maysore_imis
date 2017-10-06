@@ -3589,6 +3589,18 @@
         <value xml:lang="en">Create Block Master</value>
         <value xml:lang="kn">Create Block Master</value>
     </property>
+ <property key="buildingTypeKan">
+        <value xml:lang="en">Building Type in Kannad</value>
+        <value xml:lang="kn">Building Type in Kannad</value>
+    </property>
+     <property key="applicationTypeKan">
+        <value xml:lang="en">Application Type in Kannad</value>
+        <value xml:lang="kn">Application Type in Kannad</value>
+    </property>
+     <property key="connectionTypeKan">
+        <value xml:lang="en">Connection Type in Kannad</value>
+        <value xml:lang="kn">Connection Type in Kannad</value>
+    </property>
       <!-- ==========End==================  -->
       
     <!-- Added By Shubham Malviya On 03/08/2017 -->

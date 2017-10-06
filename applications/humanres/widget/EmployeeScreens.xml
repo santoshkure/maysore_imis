@@ -2720,7 +2720,18 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="typemaster"/>
                 <set field="subTabButtonItem" value="connectionmastertab"/>
-            </actions>
+            	<!--      Added by Anubha -->
+           	    <script location="component://humanres/groovyScripts/office/connectionTypeMaster.groovy"/>
+           	    
+           	    <entity-condition list="connectionMasterLists" entity-name="connectionTypeMaster">
+                <condition-list combine="and">
+				<condition-expr field-name="status" operator="equals" value="A" />
+			 	<condition-expr field-name="ConnectionTypeId" operator="not-equals" value="${parameters.ConnectionTypeId}" />
+			   	</condition-list>
+            	</entity-condition>
+           	     <!-- END -->
+               </actions>
+             
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
@@ -2745,6 +2756,16 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="typemaster"/>
                 <set field="subTabButtonItem" value="buildingmastertab"/>
+				 <!--   Added by Anubha  -->
+                 <script location="component://humanres/groovyScripts/typeMaster/buildingTypeMaster.groovy"/>
+                
+           	    <entity-condition list="buildingLists" entity-name="buildingTypeMaster">
+                <condition-list combine="and">
+				<condition-expr field-name="status" operator="equals" value="A" />
+			 	<condition-expr field-name="buildingId" operator="not-equals" value="${parameters.buildingId}" />
+			   	</condition-list>
+            	</entity-condition>
+             <!--    End  -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -2770,7 +2791,18 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="typemaster"/>
                 <set field="subTabButtonItem" value="applicationmastertab"/>
-            </actions>
+            
+  <!--- Added by  Anubha Saini on 21/09/2017 -->
+                     <script location="component://humanres/groovyScripts/typeMaster/applicationTypeMaster.groovy"/>
+                     
+                <entity-condition list="applicationTypeLists" entity-name="applicationTypeMaster">
+                <condition-list combine="and">
+				<condition-expr field-name="status" operator="equals" value="A" />
+			 	<condition-expr field-name="applicationTypeeId" operator="not-equals" value="${parameters.applicationTypeeId}" />
+			   	</condition-list>
+            	</entity-condition>
+            	<!--  End -->
+</actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
@@ -2868,7 +2900,13 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="typemaster"/>
                 <set field="subTabButtonItem" value="connectionmastertab"/>
-            </actions>
+                <!--   Added by Anubha -->
+                 <entity-condition list="connectionTypeList" entity-name="connectionTypeMaster">
+       			 <condition-expr field-name="ConnectionTypeId" operator="equals" value="${parameters.ConnectionTypeId}" />
+       			 <condition-expr field-name="status" operator="equals" value="A" /> 
+		  	   </entity-condition>
+		  	  <!--  END -->
+             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
@@ -2893,6 +2931,14 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="typemaster"/>
                 <set field="subTabButtonItem" value="applicationmastertab"/>
+                <!--   Added by Anubha -->
+                  <entity-condition list="applicationMasterListed" entity-name="applicationTypeMaster">
+                	<condition-list combine="and">
+					<condition-expr field-name="applicationTypeeId" operator="equals" value="${parameters.applicationTypeeId}" />
+       			 	<condition-expr field-name="status" operator="equals" value="A" />
+			   		</condition-list>
+            </entity-condition>
+            <!-- END -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -2918,6 +2964,14 @@ under the License.
                 <set field="headerItem" value="master"/>
                 <set field="tabButtonItem" value="typemaster"/>
                 <set field="subTabButtonItem" value="buildingmastertab"/>
+              <!--   Added by Anubha -->
+             <entity-condition list="buildingMasterListed" entity-name="buildingTypeMaster">
+                <condition-list combine="and">
+					<condition-expr field-name="status" operator="equals" value="A" />  
+					<condition-expr field-name="buildingId" operator="equals" value="${parameters.buildingId}" />
+				</condition-list>
+            </entity-condition>
+              <!--   End -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">

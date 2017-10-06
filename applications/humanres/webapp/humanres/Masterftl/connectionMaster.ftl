@@ -4,8 +4,9 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created     Updated by -->
 <#--- Nikhil Pathak   	23 August 2017     -->
-
+<#--- Modify by   Anubha Saini on 18/09/2017 -->
 <#-- #####################################################################################################-->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
 
 <form method="post" name="connectionMaster" class="basic-form">
 
@@ -13,15 +14,15 @@
   	<div class="alert alert-info">
    		<ul>
     		<li class="h3">${uiLabelMap.connectionmaster}</li>
-    		  <div class="basic-nav" style="margin-top: -80px;">
-  				   <ul>
-    				    <li>
-							    <a title="Create Zone Master" href="<@ofbizUrl>createConnectionMaster</@ofbizUrl>">
-								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
-							    </a>
-    				   </li>
-  				  </ul>
-  			</div>  
+    		<div class="basic-nav" style="margin-top: -37px;">
+  				<ul>
+    				<li>
+							<a title="Create Connection Master" href="<@ofbizUrl>createConnectionMaster</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
+    				</li>
+  				</ul>
+ 			</div>    
     	</ul>
   	</div>
 	<div class="screenlet-body">
@@ -29,27 +30,30 @@
 		
 			  <tr>
 			     <td class="label">${uiLabelMap.connectionType}</td>
-			       <td> 
-				    <select name="connectionType" style="width:150px;">
-					   <option value="">${uiLabelMap.CommonSelect}</option>
-				 	   <option value="">Domestic</option>
-				 	   <option value="">Commercial</option>
-				  </select>
-			    </td> 
-			     
-			    
-			        <td class="label" >${uiLabelMap.description}</td>
-		            <td><input type="text" name="Desctiption" id="castename" style="width:140px" maxlength ="150"/></td> 	
-        	</tr> 
-		     <tr>
-		            <td class="label" >${uiLabelMap.remark}</td>
-		            <td><textarea name="remark" style="width:140px" maxlength ="150"></textarea></td>
-		   
-		            <td class="label" >${uiLabelMap.createdate}</td>
-		            <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>
-	         </tr>
+			      <td width="25%"><select name="connectionType" style="width:150px;" >
+			     <option value=''>${uiLabelMap.CommonSelect}</option>
+	    	   <#if connectionMasterLists?exists>
+	    	      <#if connectionMasterLists?has_content>
+	    	       <#list connectionMasterLists as connectionMasterLists>
+ 	    	         <option value="${connectionMasterLists.connectionType?if_exists}">${connectionMasterLists.connectionType?if_exists}</option>
+ 	    	       </#list>
+	    	     </#if>
+	    	   </#if>
+	     	 </select>(${uiLabelMap.inEnglish})<br>
+	     	  <td width="25%"><select name="connectionTypeKan" style="width:150px;" >
+			     <option value=''>${uiLabelMap.CommonSelect}</option>
+	    	   <#if connectionMasterLists?exists>
+	    	      <#if connectionMasterLists?has_content>
+	    	       <#list connectionMasterLists as connectionMasterLists>
+ 	    	         <option value="${connectionMasterLists.connectionTypeKan?if_exists}">${connectionMasterLists.connectionTypeKan?if_exists}</option>
+ 	    	       </#list>
+	    	     </#if>
+	    	   </#if>
+	     	 </select>(${uiLabelMap.inKannada})</br>
+			       	
+            	  </tr>
        		   <tr>
-				    <td colspan="8"><center><div id="saveBtn" align="center"><input type="button"  name="search" value="Search" onclick="javascript:connectionMasterType('connectionMaster');"></center></td>
+				   <td colspan="8"><center><div id="saveBtn" align="center"><input type="button" title="Search" name="search" value="Search" onclick="javascript:validateFields1('connectionMaster');"></center></td>
 			  </tr>
 			</tr>
 		</table>
@@ -64,70 +68,134 @@
     <ul>
       <li class="h3">${uiLabelMap.connectionMasterList}</li>
     </ul>
-    
+
   </div>
    <div class="screenlet-body min-scroll-div">
-    <table class="basic-table" cellspacing="0">
+    <#assign commonUrl="ConnectionMaster?searchOptions_collapsed=${(parameters.searchOptions_collapsed)?default(\"false\")}&amp;" />
+    <#assign messageMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("lowCount", lowIndex, "highCount", highIndex, "total", listSize)/>
+    <#assign commonDisplaying = Static["org.apache.ofbiz.base.util.UtilProperties"].getMessage("CommonUiLabels", "CommonDisplaying", messageMap, locale)/>
+    <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
+    
+   <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
-             <td>${uiLabelMap.sno}</td>
+             <td><center>${uiLabelMap.sno}</center></td>
 	         <td>${uiLabelMap.connectionType}</td>
+	         <td>${uiLabelMap.connectionTypeKan}</td>
              <td>${uiLabelMap.description}</td>
-             <td>${uiLabelMap.remark}</td>
              <td>${uiLabelMap.createdate}</td>
+             <td>${uiLabelMap.remark}</td>
+              <td>${uiLabelMap.status}</td>
              <td>${uiLabelMap.Edit}</td>
-             <td>${uiLabelMap.enableDisable}</td>
-             <td>${uiLabelMap.Remove}</td>
-         </tr>
-      </thead> 
-          <tr>
-		      	<td>1</td>
-	          	<td>Domestic</td>
-			  	<td>Hyderabad</td>
-			 	<td>Remarks</td> 
-		  	 	<td>23/08/2017</td> 
-				<td><a href="javascript:editConnectionMaster('listConnectionMaster');" class="buttontext">Edit</a></td>
-		      	<td><a href="javascript:enableConnectionMaster('listConnectionMaster');" class="buttontext">Disable</a></td>
-		      	<td><a href="javascript:removeConnectionMaster('listConnectionMaster');" class="buttontext">Remove</a></td>
-		   </tr>    
-        </table>
-      </div>
-   </div>
-</form>
-<script type="text/javascript" language="javascript">
+              <td>${uiLabelMap.Remove}</td>
+             <td>${uiLabelMap.ActiveDeactive}</td>
+            
+           
+          </tr>
+			 <#if (connectionTypeList)?has_content>
+			<#assign count = 1>
+			<#list connectionTypeList as connectionTypeList>
+		 
+            <tr> <td><center>${count?if_exists}</center></td>
+            <td><center>${connectionTypeList.connectionType?if_exists}</center></td>
+           
+             <td><center>${connectionTypeList.connectionTypeKan?if_exists}</center></td>
+            <td><center>${connectionTypeList.description?if_exists}</center></td>
+             <td><center><#if connectionTypeList.createdate?has_content>${connectionTypeList.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 
 
-	function connectionMasterType()
-	{
-					document.connectionMaster.action= "<@ofbizUrl>ConnectionMaster</@ofbizUrl>";
-					document.connectionMaster.submit();
-					disSubmit('saveBtn'); 
-					//return true;
-					//alert("submit");
-	}
-	function editConnectionMaster(formname)
+ 			 <td><center>${connectionTypeList.remark?if_exists}</center></td>
+
+            <td><center>
+            <#assign std = '${connectionTypeList.status?if_exists}'>
+                           <#if std =="A">
+                           Active
+                           <#else>
+                           Deactive
+                           </#if>
+                           
+                           </center></td>
+                          <td><center>
+                           <#if std =="A">
+                          <a title="Edit Connection Master" href='<@ofbizUrl>editConnectionMaster?ConnectionTypeId=${connectionTypeList.ConnectionTypeId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                          <#else>
+                          <a class="buttontextdisabled" title="Disabled">${uiLabelMap.edit}</a>
+                          </#if>
+                          </center></td>
+                          <td><center>                   
+                           <#if std =="A" || std =="D">
+                          <a title="Remove" href="javascript:editZoneValidate('listConnectionMaster','delete','${connectionTypeList.ConnectionTypeId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                          <#else>
+                         <a title="Disabled"class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                          </#if>
+                          </center></td>
+                          
+                          
+                          <td><center>
+                          <#if std =="A">
+                          <a title="Deactive" href="javascript:editZoneForm('listConnectionMaster','status','${connectionTypeList.ConnectionTypeId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <#else>
+                          <a title="Active" href="javascript:editZoneForm('listConnectionMaster','status','${connectionTypeList.ConnectionTypeId?if_exists}','A');" class="buttontext">Active</a>
+
+                          </#if>
+                          </center></td>
+                  </tr> 
+                  <#assign count = count + 1>
+						</#list>
+						</#if>
+          
+                  <input type="hidden" name="ConnectionTypeId" value="" style="width:140px"  />
+                  <input type="hidden" name="activestatus" value="" style="width:140px"  />
+  			      <input type="hidden" name="status" value="" style="width:140px"  />	
+      </table>
+                  <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
+  
+   </div>
+</div>        
+
+</from>
+ <script language="JavaScript" type="text/javascript" />
+//code is added by Anubha
+function editZoneValidate(formname,stat,id,activestd)
 	{
 	     var form =document[formname];	
-         form.action="<@ofbizUrl>editConnectionMaster</@ofbizUrl>";
-	     form.submit();
-	}
-	function enableConnectionMaster(formname)
+	    // alert(""+id);
+	     form.status.value = stat;
+	     form.ConnectionTypeId.value=id;
+	     form.activestatus.value = activestd;
+            var r=confirm("Are you sure, you want to Remove the Record ?")
+            if (r==true)
+               {
+        form.action="<@ofbizUrl>updateConnectionType</@ofbizUrl>";
+	    form.submit();
+	}          }
+
+	function editZoneForm(formname,stat,id,activestd)
 	{
-	var r=confirm("Are you sure, you want to Enable/Disable the Form ?")
-        if (r==true)
-        {
 	     var form =document[formname];	
-         form.action="<@ofbizUrl>ConnectionMaster</@ofbizUrl>";
-	     form.submit();
-	}
-	}
-	function removeConnectionMaster(formname)
-	{
-	var r=confirm("Are you sure, you want to Remove the Form ?")
-        if (r==true)
-    {
-	     var form =document[formname];	
-         form.action="<@ofbizUrl>ConnectionMaster</@ofbizUrl>";
-	     form.submit();
-	}
-	}
+	   // alert(""+activestd);
+	     form.status.value = stat;
+	     form.ConnectionTypeId.value=id;
+	     form.activestatus.value = activestd;
+	       
+	     if((activestd=="D") ||(activestd=="A"))
+	     {
+            var r=confirm("Are you sure, you want to Active/Deactive the Record ?")
+            if (r==true)
+               {
+        form.action="<@ofbizUrl>updateConnectionType</@ofbizUrl>";
+	    form.submit();
+	} }}	
+  	
+ 	
+ 	
+function validateFields1(formname)
+ {
+ var form=document[formname];
+ var connectionType = form.connectionType.value;
+ 
+ form.action = "<@ofbizUrl>ConnectionMaster</@ofbizUrl>";
+  form.submit();
+}
+
+
 </script>

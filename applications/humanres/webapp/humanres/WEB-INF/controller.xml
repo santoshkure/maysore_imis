@@ -1809,7 +1809,43 @@ under the License.
         <response name="success" type="view" value="veiwGrievanceEmpPortal"/>
         <response name="error" type="view" value="veiwGrievanceEmpPortal"/>
     </request-map>
-      <!-- END -->
+  <request-map uri="saveConnectionType">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveConnectionType"/>
+        <response name="success" type="request-redirect" value="ConnectionMaster"/>
+        <response name="error" type="view" value="ConnectionMaster" />
+    </request-map>
+     <request-map uri="updateConnectionType">
+        <security https="true" auth="true" />
+        <event type="service" invoke="updateConnectionType"/>
+        <response name="success" type="request-redirect" value="ConnectionMaster"/>
+        <response name="error" type="view" value="ConnectionMaster" />
+    </request-map>
+    <request-map uri="saveApplicationMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveApplicationMaster"/>
+        <response name="success" type="request-redirect" value="ApplicationMaster"/>
+        <response name="error" type="view" value="ApplicationMaster" />
+    </request-map>
+     <request-map uri="updateApplicationMaster">
+        <security https="true" auth="true" />
+         <event type="service" invoke="updateApplicationMaster"/>
+        <response name="success" type="request-redirect" value="ApplicationMaster"/>
+        <response name="error" type="view" value="ApplicationMaster" />
+    </request-map>
+     <request-map uri="saveBuildingMaster">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveBuildingMaster"/>
+        <response name="success" type="request-redirect" value="BuildingMaster"/>
+        <response name="error" type="view" value="BuildingMaster" />
+    </request-map>
+      <request-map uri="updateBuildingMaster">
+        <security https="true" auth="true" />
+         <event type="service" invoke="updateBuildingMaster"/>
+        <response name="success" type="request-redirect" value="BuildingMaster"/>
+        <response name="error" type="view" value="BuildingMaster" />
+    </request-map>
+ 	<!-- END -->
       <!--Added by siddhi -->
     <request-map uri="jobDetails">
         <security https="true" auth="true" />
@@ -2137,9 +2173,13 @@ under the License.
     <view-map name="Streetmaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#streetMaster"/>
     <view-map name="blockMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#blockMaster"/>
     <view-map name="createZoneMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createZoneMaster"/>
-     <view-map name="createWardMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createWardMaster"/>
-      <view-map name="createBlockMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createBlockMaster"/>
-       <view-map name="createStreetMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createStreetMaster"/>
+    <view-map name="createWardMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createWardMaster"/>
+    <view-map name="createBlockMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createBlockMaster"/>
+    <view-map name="createStreetMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createStreetMaster"/>
+    <view-map name="GrievanceDetailEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceDetailEmpPortal"/>
+    <view-map name="GrievanceActionEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceActionEmpPortal"/>
+    <view-map name="veiwGrievanceEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#veiwGrievanceEmpPortal"/>
+          
     <!-- ==========End==================  -->
 
     <!--Added by siddhi -->

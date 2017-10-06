@@ -190,4 +190,47 @@ under the License.
       <prim-key field="designationId"/>      
     </entity>
 <!-- END -->
+
+ 
+ <!-- Added By Anubha Saini for  Type  Master -->
+ 
+ <entity entity-name="connectionTypeMaster" 
+            package-name="org.apache.ofbiz.humanres.master" title="Connection Type Master Entity">
+      <field name="ConnectionTypeId" type="id-ne"></field>
+      <field name="connectionType" type="short-varchar"/>
+      <field name="connectionTypeKan" type="short-varchar"/>
+      <field name="remark" type="long-varchar"></field>
+      <field name="description" type="short-varchar"/>
+      <field name="createdate" type="date"></field>
+	  <field name="status" type="indicator"></field>
+      <field name="activestatus" type="short-varchar"/>
+      <prim-key field="ConnectionTypeId"/>    
+     
+    </entity>
+    <entity entity-name="applicationTypeMaster" 
+            package-name="org.apache.ofbiz.humanres.master" title="Application Type Master Entity">
+      <field name="applicationTypeeId" type="id-ne"></field>
+      <field name="applicationType" type="short-varchar"/>
+      <field name="ApplicationTypeKan" type="short-varchar"/>
+      <field name="remark" type="long-varchar"></field>
+      <field name="status" type="indicator"/>
+      <field name="description" type="short-varchar"/>
+      <field name="createdate" type="date"></field>
+       <field name="activestatus" type="short-varchar"/>
+      <prim-key field="applicationTypeeId"/> 
+     </entity>
+     
+     <entity entity-name="buildingTypeMaster" 
+            package-name="org.apache.ofbiz.humanres.master" title="Building Type Master Entity">
+      <field name="buildingId" type="id-ne"></field>
+      <field name="buildingType" type="short-varchar"/>
+      <field name="buildingTypeKan" type="short-varchar"/>
+      <field name="remark" type="long-varchar"></field>
+      <field name="status" type="indicator"/>
+	  <field name="description" type="short-varchar"/>
+      <field name="createdate" type="date"></field>
+      <field name="activestatus" type="short-varchar"/>
+      <prim-key field="buildingId"/> 
+    </entity>
+ <!-- END -->
 </entitymodel>
