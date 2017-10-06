@@ -1449,4 +1449,73 @@ under the License.
 	    
 	    </service>
 	    
+ <!-- code is added by Anubha Saini for Type  Master  details -->
+	    
+		<service name="saveConnectionType" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveConnectionType">
+		<attribute name="connectionType" type="String" mode="IN" optional="true" />
+		<attribute name="connectionTypeKan" type="String" mode="IN" optional="true" />
+		<attribute name="description" type="String" mode="IN" optional="true" />
+		<attribute name="remark" type="String" mode="IN" optional="true" />
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
+		<attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />
+	    </service>
+	    
+	    <service name="updateConnectionType" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateConnectionType">
+		 <attribute name="ConnectionTypeId" type="String" mode="IN" optional="true" />	
+		<attribute name="connectionType" type="String" mode="IN" optional="true" />
+		<attribute name="connectionTypeKan" type="String" mode="IN" optional="true" />
+		<attribute name="description" type="String" mode="IN" optional="true" />
+		<attribute name="remark" type="String" mode="IN" optional="true" />
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
+		 <attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	    </service>
+		
+		<service name="saveApplicationMaster" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveApplicationMaster">
+		<attribute name="applicationType" type="String" mode="IN" optional="true" />
+		<attribute name="ApplicationTypeKan" type="String" mode="IN" optional="true" />
+		<attribute name="description" type="String" mode="IN" optional="true" />
+		<attribute name="remark" type="String" mode="IN" optional="true" />
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
+		<attribute name="status" type="String" mode="IN" optional="true" />	 
+		 <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	    </service>
+	    
+	    <service name="updateApplicationMaster" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateApplicationMaster">
+		<attribute name="applicationTypeeId" type="String" mode="IN" optional="true" />
+	    <attribute name="applicationType" type="String" mode="IN" optional="true" />
+		<attribute name="ApplicationTypeKan" type="String" mode="IN" optional="true" />
+		 <attribute name="description" type="String" mode="IN" optional="true" />
+ 	    <attribute name="remark" type="String" mode="IN" optional="true" />
+  	    <attribute name="createdate" type="String" mode="IN" optional="true" />	  	    	
+ 	    <attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	    </service>
+	   
+	    <service name="saveBuildingMaster" export="true" engine="java" location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveBuildingMaster">
+		<attribute name="buildingType" type="String" mode="IN" optional="true" />
+		<attribute name="buildingTypeKan" type="String" mode="IN" optional="true" />
+		<attribute name="description" type="String" mode="IN" optional="true" />
+		<attribute name="remark" type="String" mode="IN" optional="true" />
+		<attribute name="createdate" type="String" mode="IN" optional="true" />	
+		 <attribute name="status" type="String" mode="IN" optional="true" />	 
+		 <attribute name="activestatus" type="String" mode="IN" optional="true" />	 
+		 </service>
+	    
+	   <service name="updateBuildingMaster" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="updateBuildingMaster">
+    	<attribute name="buildingId" type="String" mode="IN" optional="true" />
+    	<attribute name="buildingType" type="String" mode="IN" optional="true" />
+	    <attribute name="buildingTypeKan" type="String" mode="IN" optional="true" />
+		<attribute name="description" type="String" mode="IN" optional="true" />
+ 	    <attribute name="remark" type="String" mode="IN" optional="true" />
+  	    <attribute name="createdate" type="String" mode="IN" optional="true" />	  	    	
+ 	    <attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
+	   <!--  <attribute name="buildingId" type="String" mode="IN" optional="true" /> -->
+	    </service>
+		<!-- End -->
+
+
 	    </services>

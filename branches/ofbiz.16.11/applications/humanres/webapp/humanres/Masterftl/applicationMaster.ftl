@@ -6,48 +6,53 @@
 <#--- Nikhil Pathak   	24 August 2017     -->
 
 <#-- #####################################################################################################-->
-
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
  <form method="post" name="applicationMaster" class="basic-form">
 
   <div class="row">
   	<div class="alert alert-info">
    		<ul>
     		<li class="h3">${uiLabelMap.applicationmaster}</li>
-    		  <div class="basic-nav" style="margin-top: -80px;">
-  				   <ul>
-    				    <li>
-							    <a title="Create Zone Master" href="<@ofbizUrl>createApplicationMaster</@ofbizUrl>">
-								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
-							    </a>
-    				   </li>
-  				  </ul>
-  			</div>  
+    		<div class="basic-nav" style="margin-top: -37px;">
+  				<ul>
+    				<li>
+							<a title="Create Application Master" href="<@ofbizUrl>createApplicationMaster</@ofbizUrl>">
+								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
+							</a>
+    				</li>
+  				</ul>
+ 			</div>    
+    		 
     	</ul>
   	</div>
 	<div class="screenlet-body">
 	<table class="basic-table" cellspacing="0">
 			    <tr>
 			       <td class="label">${uiLabelMap.applicationType}</td>
-			      <td> 
-				    <select name="applicationType" style="width:150px;">
-					   <option value="">${uiLabelMap.CommonSelect}</option>
-				 	   <option value="">Temporary</option>
-				 	   <option value="">Parmanent</option>
-				   </select>
-			    </td> 
-			        <td class="label" >${uiLabelMap.description}</td>
-		            <td><input type="text" name="Desctiption" style="width:140px" maxlength ="150"/></td> 	
-        	</tr> 
-		     <tr>
-		            <td class="label" >${uiLabelMap.remark}</td>
-		            <td><textarea name="remark" style="width:140px" maxlength ="150"></textarea></td>
-		   
-		            <td class="label" >${uiLabelMap.createdate}</td>
-		            <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"/></td>
-	         </tr>
-       		   <tr>
-				    <td colspan="8"><center><div id="saveBtn" align="center"><input type="button"  name="search" value="Search" onclick="javascript:applicationMasterType('applicationMaster');"></center></td>
+			   	 <td width="25%"><select name="applicationType" style="width:150px;" >
+			          <option value=''>${uiLabelMap.CommonSelect}</option>
+	    	  			 <#if applicationTypeLists?exists>
+	    	     			 <#if applicationTypeLists?has_content>
+	    	      				 <#list applicationTypeLists as applicationTypeLists>
+ 	    	         				<option value="${applicationTypeLists.applicationType?if_exists}">${applicationTypeLists.applicationType?if_exists}</option>
+ 	    	       				 </#list>
+	    	     			 </#if>
+	    	   			 </#if>
+	     	 	</select>(${uiLabelMap.inEnglish})<br>
+	     	  	<td width="25%"><select name="ApplicationTypeKan" style="width:150px;" >
+			     	<option value=''>${uiLabelMap.CommonSelect}</option>
+	    	   			<#if applicationTypeLists?exists>
+	    	      			<#if applicationTypeLists?has_content>
+	    	       				<#list applicationTypeLists as applicationTypeLists>
+ 	    	         				<option value="${applicationTypeLists.ApplicationTypeKan?if_exists}">${applicationTypeLists.ApplicationTypeKan?if_exists}</option>
+ 	    	       				</#list>
+	    	     			</#if>
+	    	   			</#if>
+	     	 		</select>(${uiLabelMap.inKannada})</br>
 			  </tr>
+       		   <tr>
+       		   <td colspan="8"><center><div id="saveBtn" align="center"><input type="button" title="Search" name="search" value="Search" onclick="javascript:validateFields1('applicationMaster');"></center></td>
+				 </tr>
 			</tr>
 		</table>
 		</div>
@@ -64,67 +69,136 @@
     
   </div>
    <div class="screenlet-body min-scroll-div">
+
+   <#assign commonUrl="ApplicationMaster?searchOptions_collapsed=${(parameters.searchOptions_collapsed)?default(\"false\")}&amp;" />
+    <#assign messageMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("lowCount", lowIndex, "highCount", highIndex, "total", listSize)/>
+    <#assign commonDisplaying = Static["org.apache.ofbiz.base.util.UtilProperties"].getMessage("CommonUiLabels", "CommonDisplaying", messageMap, locale)/>
+    
+     <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
+
     <table class="basic-table" cellspacing="0">
     <thead>
          <tr class="header-row-2">
              <td>${uiLabelMap.sno}</td>
 	         <td>${uiLabelMap.applicationType}</td>
+	         <td>${uiLabelMap.applicationTypeKan}</td>
              <td>${uiLabelMap.description}</td>
-             <td>${uiLabelMap.remark}</td>
              <td>${uiLabelMap.createdate}</td>
+             <td>${uiLabelMap.remark}</td>
+             <td>${uiLabelMap.status}</td>
              <td>${uiLabelMap.Edit}</td>
-             <td>${uiLabelMap.enableDisable}</td>
              <td>${uiLabelMap.Remove}</td>
+             <td>${uiLabelMap.ActiveDeactive}</td>
+             
          </tr>
-      </thead> 
-         <tr>
-		      	<td>1</td>
-	          	<td>Temporary</td>
-			  	<td>Hyderabad</td>
-			 	<td>Remarks</td> 
-		  	 	<td>23/08/2017</td> 
-				<td><a href="javascript:editApplicationMaster('listApplicationMaster');" class="buttontext">Edit</a></td>
-		      	<td><a href="javascript:enableApplicationMaster('listApplicationMaster');" class="buttontext">Disable</a></td>
-		      	<td><a href="javascript:removeApplicationMaster('listApplicationMaster');"class="buttontext">Remove</a></td>
-		  </tr>    
+      </thead>
+      
+	 <#if (applicationMasterListed)?has_content>
+			<#assign count = 1>
+			<#list applicationMasterListed as applicationMasterListed>
+		 
+            <tr> <td><center>${count?if_exists}</center></td>
+            <td>${applicationMasterListed.applicationType?if_exists}</td>
+			  	<td>${applicationMasterListed.ApplicationTypeKan?if_exists}</td>
+			 	<td>${applicationMasterListed.description?if_exists}</td> 
+			 	<td><center><#if applicationMasterListed.createdate?has_content>${applicationMasterListed.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 
+
+		  	 	<td>${applicationMasterListed.remark?if_exists}</td> 
+		  	 	
+		  	 <td><center>
+            <#assign std = '${applicationMasterListed.status?if_exists}'>
+                           <#if std =="A">
+                           Active
+                           <#else>
+                           Deactive
+                           </#if>
+                           
+                           </center></td>
+                          <td><center>
+                           <#if std =="A">
+                          <a title="Edit Application Master" href='<@ofbizUrl>editApplicationMaster?applicationTypeeId=${applicationMasterListed.applicationTypeeId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
+                          <#else>
+                          <a class="buttontextdisabled" title="Disabled">${uiLabelMap.edit}</a>
+                          </#if>
+                          </center></td>
+                          <td><center>                   
+                           <#if std =="A" || std =="D">
+                          <a title="Remove" href="javascript:editZoneValidate('listApplicationMaster','delete','${applicationMasterListed.applicationTypeeId?if_exists}');" class="buttontext">${uiLabelMap.Remove}</a>
+                          <#else>
+                         <a title="Disabled"class="buttontext" data-disabled="true">${uiLabelMap.Remove}</a>
+                          </#if>
+                          </center></td>
+                          
+                          
+                          <td><center>
+                          <#if std =="A">
+                          <a title="Deactive" href="javascript:editZoneForm('listApplicationMaster','status','${applicationMasterListed.applicationTypeeId?if_exists}','D');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <#else>
+                          <a title="Active" href="javascript:editZoneForm('listApplicationMaster','status','${applicationMasterListed.applicationTypeeId?if_exists}','A');" class="buttontext">Active</a>
+
+                          </#if>
+                          </center></td>
+                  </tr> 
+                  <#assign count = count + 1>
+						</#list>
+						</#if>
+          
+                  <input type="hidden" name="applicationTypeeId" value="" style="width:140px"  />
+                  <input type="hidden" name="activestatus" value="" style="width:140px"  />
+  			      <input type="hidden" name="status" value="" style="width:140px"  />	
+     
        </table>
+            <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
+
     </div>
   </div>
  </form>
-<script type="text/javascript" language="javascript">
-
-	function applicationMasterType()
-	  {
-					document.applicationMaster.action= "<@ofbizUrl>ApplicationMaster</@ofbizUrl>";
-					document.applicationMaster.submit();
-					disSubmit('saveBtn'); 
-					return true;
-					alert("submit");
-	  }
-	function editApplicationMaster(formname)
-	  {
+ 
+ <script language="JavaScript" type="text/javascript" />
+//code is added by Anubha
+function editZoneValidate(formname,stat,id,activestd)
+	{
 	     var form =document[formname];	
-         form.action="<@ofbizUrl>editApplicationMaster</@ofbizUrl>";
-	     form.submit();
-	  }
-	function enableApplicationMaster(formname)
-	 {
-	var r=confirm("Are you sure, you want to Enable/Disable the Form ?")
-        if (r==true)
-     {
-	      var form =document[formname];	
-          form.action="<@ofbizUrl>ApplicationMaster</@ofbizUrl>";
-	      form.submit();
-	 }
-    } 
-	function removeApplicationMaster(formname)
-	 {
-	  var r=confirm("Are you sure, you want to Remove the Form ?")
-      if (r==true)
-      {
-	      var form =document[formname];	
-          form.action="<@ofbizUrl>ApplicationMaster</@ofbizUrl>";
-	      form.submit();
-	  }
-	 }
+	     //alert(""+id);
+	     form.status.value = stat;
+	     form.applicationTypeeId.value=id;
+	     form.activestatus.value = activestd;
+            var r=confirm("Are you sure, you want to Remove the Record ?")
+            if (r==true)
+               {
+        form.action="<@ofbizUrl>updateApplicationMaster</@ofbizUrl>";
+	    form.submit();
+	}          }
+
+	function editZoneForm(formname,stat,id,activestd)
+	{
+	     var form =document[formname];	
+	     //alert(""+activestd);
+	     form.status.value = stat;
+	     form.applicationTypeeId.value=id;
+	     form.activestatus.value = activestd;
+	       
+	     if((activestd=="D") ||(activestd=="A"))
+	     {
+            var r=confirm("Are you sure, you want to Active/Deactive the Record ?")
+            if (r==true)
+               {
+        form.action="<@ofbizUrl>updateApplicationMaster</@ofbizUrl>";
+	    form.submit();
+	} }}	
+  	
+ 	
+ 	
+function validateFields1(formname)
+ {
+ var form=document[formname];
+ var applicationType = form.applicationType.value;
+ 
+ form.action = "<@ofbizUrl>ApplicationMaster</@ofbizUrl>";
+  form.submit();
+}
+
+
 </script>
+
+ 

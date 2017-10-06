@@ -4,8 +4,13 @@
 <#---Version Number    1.0 --->
 <#--- Author          	Date Created     Updated by -->
 <#--- Nikhil Pathak   	23 August 2017     -->
-
+<#--- Modify by   Anubha Saini on 18/09/2017 -->
 <#-- #####################################################################################################-->
+<script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
+
+<#assign checkLocale = "${locale?if_exists}">
+<#setting locale="en">
+
 
  <form method="post" name="createConnectionMaster" class="basic-form">
 
@@ -21,52 +26,62 @@
 		              <tr><td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
 		           <tr>
 		               <td class="label">${uiLabelMap.connectionType}<font color="red" >*</font> </td>
-			         <td> 
-				       <select name="connectionType" style="width:150px;">
-				       <option value="">${uiLabelMap.CommonSelect}</option>
-					   <option value="">Domestic</option>
-				 	   <option value="">Commercial</option>
-				      </select>
-			        </td>  
+		                <td><input type="text" style="width:150px" maxlength="50" name="connectionType" id="connectionType" value="" onchange="javascript:validateName(this);"/>(${uiLabelMap.inEnglish})<br> 
+               			<#-- Kannad language conversation -->
+               			<input type="text" style="width:150px" maxlength="50" name="connectionTypeKan" id="connectionTypeKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+            	 	</td>
 			           <td class="label">${uiLabelMap.description}</td>
 			           <td><input type="text" style="width:140px"  name="description" maxlength ="30" value=""/></td>    	
 			           
                 </tr>
                 <tr>     
-                       <td width='20%' align='right' class="label">${uiLabelMap.createdate} </td>
-                       <td>
-                         <@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-                       </td>
-                    
-			          <td class="label">${uiLabelMap.remark}</td>
+                      <td class="label">${uiLabelMap.remark}</td>
 			          <td colspan="4"><textarea name="remark" value="" maxlength="150" style="width:400px"></textarea></td>
                </tr>
-            	<tr>
-				    <td colspan="4">
-					   <center><div id="submit" align="center">
-						<input type="button" submit="" value="Submit" onclick="javascript:validateTypeMaster();"/>
-					    <input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:ConfirmBackMaster();"/>
-					</div>
-				</center>
-		      </td>
-		    </tr>
+               		 <input type="Hidden" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  />
+               
+            	 <tr>
+                          <td colspan="4"><center>
+                          <div id ="saveBtn">
+                          <input name="save" value="${uiLabelMap.CommonSave}" type="button" onClick="validateParameters('createConnectionMaster')">
+                          <input type="button" name="Cancel" value="Cancel" onclick="javascript:validateConfirmBack();" >
+                      </div>
+                    </td>
+                  </tr>
 		</table>
 	</div>
   </div>
 </form>
 
 <script type="text/javascript" language="javascript">
+	
+	  function validateParameters(formName)
+      {
+		   var form=document[formName];
+		   var connectionType = form.connectionType.value;
+		    var connectionTypeKan = form.connectionTypeKan.value;
+		  // var description = form.description.value;
+   		   
+   		      var createdate = form.createdate.value;
+ 		  // alert(""+createdate);
+		    if(notEmptyField(connectionType,"Connection Type should not be empty.")) 
+		     {
+		     if(notEmptyField(connectionTypeKan,"Connection Type in Kannad should not be empty.")) 
+		     {
+		     if(alphabhetValidation1(connectionType,"Connection Type ${uiLabelMap.alphabetical}"))
+               {
+		      
+	            
+		          var r=confirm("Are you sure, you want to Save the Form ?")
+                    if (r==true)
+                       {
+ 				  form.action = "<@ofbizUrl>saveConnectionType</@ofbizUrl>";
+			      form.submit();
+			      disSubmit('saveBtn');
+		       
+		         }		     }}}}
+        
+	
 
-     function validateTypeMaster()
-	{
-	var r=confirm("Are you sure, you want to Save the Form ?")
-        if (r==true)
-        { 
-					document.createConnectionMaster.action= "<@ofbizUrl>ConnectionMaster</@ofbizUrl>";
-					document.createConnectionMaster.submit();
-					disSubmit('saveBtn'); 
-					return true;
-					alert("submit");
-		}			
-	}
+  
 </script>

@@ -2295,5 +2295,455 @@ public class hrmsMasterEvents {
    		 return result;	
    	}
 	// End
-	    	
+	   
+  /**
+			 * Method Name :  saveConnectionType
+			 * @Version 1.0
+			 * @Description creates Connection Type Master 
+			 * @param DispatchContext dctx
+			 * @param Map<String, ? extends Object> context
+			 * @return Map - Map returning the office Id created
+			 *  Transaction is handled by service engine
+			 *  If there is a failure in one table, nothing will be committed, taken care by service engine.  
+			 *  Code added by Anubha Saini on 18 Sep 2017
+			 */		
+	  		    
+	 		   public static Map<String, Object> saveConnectionType(DispatchContext dctx,
+						Map<String, ? extends Object> context) {
+					// Defining result map to return to the service.
+					Map<String, Object> result = ServiceUtil.returnSuccess();
+					// Getting the delegator,userLogin and locale object using the context.
+					GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+					GenericValue userLogin = (GenericValue) context.get("userLogin");
+					Locale locale = (Locale) context.get("locale");
+				/*	List<GenericValue> caseList = FastList.newInstance();*/
+				    List<GenericValue> caseList = new LinkedList<GenericValue>();
+				    
+					String connectionType =(String) context.get("connectionType");
+					String connectionTypeKan =(String) context.get("connectionTypeKan");
+					String description =(String) context.get("description");	
+					String remark =(String) context.get("remark");
+					String createDated =(String) context.get("createdate");
+		  		    String ConnectionTypeId = (String) delegator.getNextSeqId("connectionTypeMaster");
+		  		    String status =(String) context.get("status");
+					String activestatus =(String) context.get("activestatus");
+		  		    
+		  		    
+		  		    java.sql.Date dateofcreatevar = getConvertedDate(createDated);
+		  		    
+					if (UtilValidate.isEmpty(ConnectionTypeId)) {
+						ConnectionTypeId = "0";
+					}
+		  		    
+		 		    //String connectionTypeUPPER = connectionType.toUpperCase();
+			  	
+			    	if (UtilValidate.isNotEmpty(connectionType)) {
+
+					try {
+					    List<EntityExpr> expList = new LinkedList<EntityExpr>();
+	 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+						EntityCondition mainCondition = null;
+
+						if (UtilValidate.isNotEmpty(connectionType)) {
+							expList.add(EntityCondition.makeCondition("connectionType",EntityOperator.EQUALS, connectionType));
+							mainCondition = EntityCondition.makeCondition(expList,EntityOperator.AND);
+							  List<GenericValue> resultList = new LinkedList<GenericValue>();
+							//List<GenericValue> resultList = FastList.newInstance();
+							try {
+								resultList = delegator.findList("connectionTypeMaster",
+										mainCondition, UtilMisc.toSet("connectionType"), null,
+										null, false);
+								if (UtilValidate.isNotEmpty(resultList)) {
+									return ServiceUtil
+											.returnSuccess("Connection Type already exists.");
+								}
+							} catch (GenericEntityException e1) {
+								e1.printStackTrace();
+							}
+
+							if (UtilValidate.isEmpty(resultList)) {
+								Map ConnectionMasterDetails = UtilMisc.toMap("ConnectionTypeId",ConnectionTypeId,"connectionType",connectionType,
+										"description",description,"connectionTypeKan",connectionTypeKan,"remark",remark,"createdate",dateofcreatevar,"status","A");
+								
+								GenericValue valueToStore = delegator.makeValue("connectionTypeMaster", ConnectionMasterDetails);
+								valueToStore.create();
+
+							result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, connectionType, locale));
+							
+							}
+						}
+					} catch (GenericEntityException e) {
+						e.printStackTrace();
+					}
+				}
+					result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, connectionType, locale));
+
+				return result;
+			}
+	 		   
+	 		   
+	 	      
+		        /**
+				 * Method Name :  updateConnectionType
+				 * @Version 1.0
+				 * @Description Edit Connection Type  Master
+				 * @param DispatchContext dctx
+				 * @param Map<String, ? extends Object> context
+				 * @return Map - Map returning Success Message
+				 *  Transaction is handled by service engine
+				 *  Code added by Anubha Saini on 18 Sep 2017
+				 *  
+				 */	  
+	 		   
+	 		  public static Map<String, Object> updateConnectionType(DispatchContext dctx,
+	 					Map<String, ? extends Object> context) {
+	 				Map<String, Object> result = ServiceUtil.returnSuccess();
+	 				GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+	 				LocalDispatcher dispatcher = dctx.getDispatcher();
+	 				GenericValue userLogin = (GenericValue) context.get("userLogin");
+	 				final Locale locale = (Locale) context.get("locale");
+	 				String connectionType =(String) context.get("connectionType");
+	 				String connectionTypeKan =(String) context.get("connectionTypeKan");
+	 				String description =(String) context.get("description");	
+					String remark =(String) context.get("remark");		
+	 				
+					String status =(String) context.get("status"); 
+		            String activestatus =(String) context.get("activestatus"); 
+	 				String ConnectionTypeId =(String) context.get("ConnectionTypeId");
+	 				
+	 				String createDated =(String) context.get("createdate");
+	 				java.sql.Date dateofcreatevar = getConvertedDate(createDated);
+	 				
+	 			    System.out.println("~~~~~~~~~~~status~~~~~~-----------------------------------~~~~~~"+status);	
+	 			    System.out.println("~~~~~~~~~~~ConnectionTypeId~~~~~~-----------------------------------~~~~~~"+ConnectionTypeId);	
+
+	 			    System.out.println("~~~~~~~~~~~activestatus~~~~~~-----------------------------------~~~~~~"+activestatus);	
+	 			    System.out.println("~~~~~~~~~~~connectionType~~~~~~-----------------------------------~~~~~~"+connectionType);	
+	 			    
+	 			   // String connectionTypeUPPER = connectionType.toUpperCase();
+	 			   System.out.println("~~~~~~~~~~~connectionTypeUPPER~~~~~~-----------------------------------~~~~~~"+connectionType);	
+
+	 			    Map connectionDetails = null;
+	 				try{
+	 				if (UtilValidate.isNotEmpty(ConnectionTypeId))
+	 				{
+	 	           if(status.equals("edit")){
+	 	        	  connectionDetails = UtilMisc.toMap("ConnectionTypeId",ConnectionTypeId,"connectionType",connectionType,
+								"description",description,"connectionTypeKan",connectionTypeKan,"remark",remark,"createdate",dateofcreatevar,"status","A");
+						
+	 	           }
+	 	        
+	 	           else if(status.equals("status")){
+	 	        	  connectionDetails = UtilMisc.toMap("status",activestatus);	
+	 				}
+	 	           if(status.equals("delete")){
+	 	               GenericValue connectionTypeMaster = EntityQuery.use(delegator).from("connectionTypeMaster").where("ConnectionTypeId", ConnectionTypeId).queryOne();
+
+	 	        	  
+	 	                connectionTypeMaster.remove();
+	 	      			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, connectionType, locale));   
+
+	 	           }else{
+	 	        	   Integer valueToStore = delegator.storeByCondition("connectionTypeMaster", connectionDetails
+	 	   					,EntityCondition.makeCondition("ConnectionTypeId",EntityOperator.EQUALS,ConnectionTypeId));
+	 	   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, connectionType, locale));   
+	 	                 }
+	 				
+	 	             }	
+	 				}catch(GeneralException e) {
+	 				Debug.log("Exception occured : " + e );
+	 				}			
+	 				return result;		
+	 			} 
+	 		   
+	 		   /**
+				 * Method Name :  saveApplicationMaster
+				 * @Version 1.0
+				 * @Description creates Connection Type Master 
+				 * @param DispatchContext dctx
+				 * @param Map<String, ? extends Object> context
+				 * @return Map - Map returning the office Id created
+				 *  Transaction is handled by service engine
+				 *  If there is a failure in one table, nothing will be committed, taken care by service engine.  
+				 *  Code added by Anubha Saini on 18 Sep 2017
+				 */		
+		  		    
+		 		   public static Map<String, Object> saveApplicationMaster(DispatchContext dctx,
+							Map<String, ? extends Object> context) {
+						// Defining result map to return to the service.
+						Map<String, Object> result = ServiceUtil.returnSuccess();
+						// Getting the delegator,userLogin and locale object using the context.
+						GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+						GenericValue userLogin = (GenericValue) context.get("userLogin");
+						Locale locale = (Locale) context.get("locale");
+					/*	List<GenericValue> caseList = FastList.newInstance();*/
+					    List<GenericValue> caseList = new LinkedList<GenericValue>();
+					    
+						String applicationType =(String) context.get("applicationType");
+						String ApplicationTypeKan =(String) context.get("ApplicationTypeKan");
+						String description =(String) context.get("description");	
+						String remark =(String) context.get("remark");
+						String createDated =(String) context.get("createdate");
+			  		    String applicationTypeeId = (String) delegator.getNextSeqId("applicationMasterDetails");
+			  		    String status =(String) context.get("status"); 
+			            String activestatus =(String) context.get("activestatus"); 
+			  		    
+			  		    
+			  		    java.sql.Date dateofcreatevar = getConvertedDate(createDated);
+			  		    
+						if (UtilValidate.isEmpty(applicationTypeeId)) {
+							applicationTypeeId = "0";
+						}
+			  		    
+				  	
+				    	if (UtilValidate.isNotEmpty(applicationType)) {
+
+						try {
+						    List<EntityExpr> expList = new LinkedList<EntityExpr>();
+		 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+							EntityCondition mainCondition = null;
+
+							if (UtilValidate.isNotEmpty(applicationType)) {
+								expList.add(EntityCondition.makeCondition("applicationType",EntityOperator.EQUALS, applicationType));
+								mainCondition = EntityCondition.makeCondition(expList,EntityOperator.AND);
+								  List<GenericValue> resultList = new LinkedList<GenericValue>();
+								//List<GenericValue> resultList = FastList.newInstance();
+								try {
+									resultList = delegator.findList("applicationTypeMaster",
+											mainCondition, UtilMisc.toSet("applicationType"), null,
+											null, false);
+									if (UtilValidate.isNotEmpty(resultList)) {
+										return ServiceUtil
+												.returnSuccess("Application Type already exists.");
+									}
+								} catch (GenericEntityException e1) {
+									e1.printStackTrace();
+								}
+
+								if (UtilValidate.isEmpty(resultList)) {
+									Map applicationMasterDetails = UtilMisc.toMap("applicationTypeeId",applicationTypeeId,"applicationType",applicationType,
+											"description",description,"ApplicationTypeKan",ApplicationTypeKan,"remark",remark,"createdate",dateofcreatevar,"status","A");
+									
+									GenericValue valueToStore = delegator.makeValue("applicationTypeMaster", applicationMasterDetails);
+									valueToStore.create();
+
+								result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, applicationType, locale));
+
+								}
+							}
+						} catch (GenericEntityException e) {
+							e.printStackTrace();
+						}
+					}
+
+					return result;
+				}
+
+		 		  /**
+					 * Method Name :  updateApplicationMaster
+					 * @Version 1.0
+					 * @Description Edit Connection Type  Master
+					 * @param DispatchContext dctx
+					 * @param Map<String, ? extends Object> context
+					 * @return Map - Map returning Success Message
+					 *  Transaction is handled by service engine
+					 *  Code added by Anubha Saini on 20 Sep 2017
+					 *  
+					 */	  
+
+		 		  public static Map<String, Object> updateApplicationMaster(DispatchContext dctx,
+		 					Map<String, ? extends Object> context) {
+		 				Map<String, Object> result = ServiceUtil.returnSuccess();
+		 				GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+		 				LocalDispatcher dispatcher = dctx.getDispatcher();
+		 				GenericValue userLogin = (GenericValue) context.get("userLogin");
+		 				final Locale locale = (Locale) context.get("locale");
+		 		
+		 				String applicationTypeeId =(String) context.get("applicationTypeeId");
+		 				String applicationType =(String) context.get("applicationType");
+		 				String ApplicationTypeKan =(String) context.get("ApplicationTypeKan");	
+		 				String description =(String) context.get("description");	
+						String remark =(String) context.get("remark");		
+		 				
+						String status =(String) context.get("status"); 
+			            String activestatus =(String) context.get("activestatus"); 
+		 		
+		 				
+		 				String createdate =(String) context.get("createdate");
+		 				java.sql.Date dateofcreatevar = getConvertedDate(createdate);
+		 				
+		 			    System.out.println("~~~~~~~~~~~status~~~~~~-----------------------------------~~~~~~"+status);	
+		 			    System.out.println("~~~~~~~~~~~applicationTypeeId~~~~~~-----------------------------------~~~~~~"+applicationTypeeId);	
+
+		 			    System.out.println("~~~~~~~~~~~activestatus~~~~~~-----------------------------------~~~~~~"+activestatus);	
+		 			    System.out.println("~~~~~~~~~~~applicationType~~~~~~-----------------------------------~~~~~~"+applicationType);	
+		 			    
+		 			
+		 			    Map applicationDetail = null;
+		 				try{
+		 				if (UtilValidate.isNotEmpty(applicationTypeeId))
+		 				{
+		 	           if(status.equals("edit")){
+		 	        	  applicationDetail = UtilMisc.toMap("applicationTypeeId",applicationTypeeId,"applicationType",applicationType,
+									"description",description,"ApplicationTypeKan",ApplicationTypeKan,"remark",remark,"createdate",dateofcreatevar,"status","A");
+							
+		 	           }
+		 	        
+		 	           else if(status.equals("status")){
+		 	        	  applicationDetail = UtilMisc.toMap("status",activestatus);	
+		 				}
+		 	           if(status.equals("delete")){
+		 	               GenericValue applicationTypeMaster = EntityQuery.use(delegator).from("applicationTypeMaster").where("applicationTypeeId", applicationTypeeId).queryOne();
+
+		 	        	  
+		 	              applicationTypeMaster.remove();
+		 	      			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, applicationType, locale));   
+
+		 	           }else{
+		 	        	   Integer valueToStore = delegator.storeByCondition("applicationTypeMaster", applicationDetail
+		 	   					,EntityCondition.makeCondition("applicationTypeeId",EntityOperator.EQUALS,applicationTypeeId));
+		 	   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, applicationType, locale));   
+		 	                 }
+		 				
+		 	             }	
+		 				}catch(GeneralException e) {
+		 				Debug.log("Exception occured : " + e );
+		 				}			
+		 				return result;		
+		 			} 
+		 		  
+		 		 public static Map<String, Object> saveBuildingMaster(DispatchContext dctx,
+							Map<String, ? extends Object> context) {
+						// Defining result map to return to the service.
+						Map<String, Object> result = ServiceUtil.returnSuccess();
+						// Getting the delegator,userLogin and locale object using the context.
+						GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+						GenericValue userLogin = (GenericValue) context.get("userLogin");
+						Locale locale = (Locale) context.get("locale");
+					/*	List<GenericValue> caseList = FastList.newInstance();*/
+					    List<GenericValue> caseList = new LinkedList<GenericValue>();
+					    
+						String buildingType =(String) context.get("buildingType");
+						String buildingTypeKan =(String) context.get("buildingTypeKan");
+						String description =(String) context.get("description");	
+						String remark =(String) context.get("remark");
+						String createdate =(String) context.get("createdate");
+			  		    String buildingId = (String) delegator.getNextSeqId("buildingTypeMaster");
+			  		    String status =(String) context.get("status");
+						String activestatus =(String) context.get("activestatus");
+			  		    
+					    System.out.println("~~~~~~~~~~~buildingId~~~~~~-----------------------------------~~~~~~"+buildingId);	
+					    System.out.println("~~~~~~~~~~~buildingType~~~~~~-----------------------------------~~~~~~"+buildingType);	
+					    System.out.println("~~~~~~~~~~~status~~~~~~-----------------------------------~~~~~~"+status);	
+			  		    
+			  		    java.sql.Date dateofcreatevar = getConvertedDate(createdate);
+			  		    
+						if (UtilValidate.isEmpty(buildingId)) {
+							buildingId = "0";
+						}
+			  		    
+			 		    //String connectionTypeUPPER = connectionType.toUpperCase();
+				  	
+				    	if (UtilValidate.isNotEmpty(buildingType)) {
+
+						try {
+						    List<EntityExpr> expList = new LinkedList<EntityExpr>();
+		 				/*	List<EntityExpr> expList = FastList.newInstance();*/
+							EntityCondition mainCondition = null;
+
+							if (UtilValidate.isNotEmpty(buildingType)) {
+								expList.add(EntityCondition.makeCondition("buildingType",EntityOperator.EQUALS, buildingType));
+								mainCondition = EntityCondition.makeCondition(expList,EntityOperator.AND);
+								  List<GenericValue> resultList = new LinkedList<GenericValue>();
+								//List<GenericValue> resultList = FastList.newInstance();
+								try {
+									resultList = delegator.findList("buildingTypeMaster",
+											mainCondition, UtilMisc.toSet("buildingType"), null,
+											null, false);
+									if (UtilValidate.isNotEmpty(resultList)) {
+										return ServiceUtil
+												.returnSuccess("Connection Type already exists.");
+									}
+								} catch (GenericEntityException e1) {
+									e1.printStackTrace();
+								}
+
+								if (UtilValidate.isEmpty(resultList)) {
+									Map buildingTypeMaster = UtilMisc.toMap("buildingId",buildingId,"buildingType",buildingType,
+											"description",description,"buildingTypeKan",buildingTypeKan,"remark",remark,"createdate",dateofcreatevar,"status","A");
+									
+									GenericValue valueToStore = delegator.makeValue("buildingTypeMaster", buildingTypeMaster);
+									valueToStore.create();
+
+								result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, buildingType, locale));
+								
+								}
+							}
+						} catch (GenericEntityException e) {
+							e.printStackTrace();
+						}
+					}
+
+					return result;
+				}
+		 		   
+		 		  
+		 		  public static Map<String, Object> updateBuildingMaster(DispatchContext dctx,
+		 					Map<String, ? extends Object> context) {
+		 				Map<String, Object> result = ServiceUtil.returnSuccess();
+		 				GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+		 				LocalDispatcher dispatcher = dctx.getDispatcher();
+		 				GenericValue userLogin = (GenericValue) context.get("userLogin");
+		 				final Locale locale = (Locale) context.get("locale");
+		 				String buildingType =(String) context.get("buildingType");
+		 				String buildingTypeKan =(String) context.get("buildingTypeKan");
+		 				String description =(String) context.get("description");	
+						String remark =(String) context.get("remark");		
+		 				
+						String status =(String) context.get("status"); 
+			            String activestatus =(String) context.get("activestatus"); 
+		 				String buildingId =(String) context.get("buildingId");
+		 				
+		 				String createDated =(String) context.get("createdate");
+		 				java.sql.Date dateofcreatevar = getConvertedDate(createDated);
+		 				System.out.println("~~~~~~~~~~~status~~~~~~-----------------------------------~~~~~~"+status);	
+		 			 
+		 			    System.out.println("~~~~~~~~~~~buildingId~~~~~~-----------------------------------~~~~~~"+buildingId);	
+
+		 			    System.out.println("~~~~~~~~~~~activestatus~~~~~~-----------------------------------~~~~~~"+activestatus);	
+		 			    System.out.println("~~~~~~~~~~~buildingType~~~~~~-----------------------------------~~~~~~"+buildingType);	
+		 			    
+
+		 			    Map BuildingDetails = null;
+		 				try{
+		 				if (UtilValidate.isNotEmpty(buildingId))
+		 				{
+		 	           if(status.equals("edit")){
+		 	        	  BuildingDetails = UtilMisc.toMap("buildingId",buildingId,"buildingType",buildingType,
+									"description",description,"buildingTypeKan",buildingTypeKan,"remark",remark,"createdate",dateofcreatevar,"status","A");
+							
+		 	           }
+		 	        
+		 	           else if(status.equals("status")){
+		 	        	  BuildingDetails = UtilMisc.toMap("status",activestatus);	
+		 				}
+		 	           if(status.equals("delete")){
+		 	               GenericValue buildingTypeMaster = EntityQuery.use(delegator).from("buildingTypeMaster").where("buildingId", buildingId).queryOne();
+
+		 	        	  
+		 	              buildingTypeMaster.remove();
+		 	      			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, buildingType, locale));   
+
+		 	           }else{
+		 	        	   Integer valueToStore = delegator.storeByCondition("buildingTypeMaster", BuildingDetails
+		 	   					,EntityCondition.makeCondition("buildingId",EntityOperator.EQUALS,buildingId));
+		 	   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, buildingType, locale));   
+		 	                 }
+		 				
+		 	             }	
+		 				}catch(GeneralException e) {
+		 				Debug.log("Exception occured : " + e );
+		 				}			
+		 				return result;		
+		 			}  	
 }
