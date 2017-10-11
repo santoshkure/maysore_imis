@@ -3068,5 +3068,197 @@ under the License.
         </section>
     </screen> 
  <!-- END -->
+ 
+ <!-- Vendor Registration -->
+    
+    <screen name="SearchVendor">
+        <section>
+            <actions>
+                <set field="titleProperty" value="${uiLabelMap.CommonFind} ${uiLabelMap.HumanResEmployee}"/>
+                <set field="headerItem" value="Vendor"/>
+               
+                 <script location="component://humanres/groovyScripts/vendor/vendorSearchList.groovy"/>
+                  <!-- <entity-condition list="vendorList" entity-name="vendorMaster">
+                    <condition-expr field-name="registarionId" operator="equals" value="${parameters.registarionId}" />
+                 </entity-condition> -->
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <!-- <service service-name="findParty" auto-field-map="true"/>
+                                <set field="tabButtonItem" value="Employee"/> -->
+                            </actions>
+                            <widgets>
+                                <container style="button-bar">
+<!--                                     <link target="NewEmployee" text="${uiLabelMap.HumanResNewEmployee}" style="buttontext create"/>
+ -->                                </container>
+                                <section>
+                                    <widgets>
+                                        <platform-specific>
+                                            <html>
+                                            <html-template location="component://humanres/webapp/humanres/hrmsftl/searchVendor.ftl"/>
+                                            </html>
+                                        </platform-specific>
+                                    </widgets>
+                                </section>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.PartyMgrViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+      
+      
+      
+      
+    
+    
+   <screen name="createVendorBill">
+        <section>
+            <actions>
+                <set field="headerItem" value="Vendor"/>
+               <entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+               <!--  <entity-condition list="officeMasterLists" entity-name="OfficeTypeMaster">
+ 					<condition-expr field-name="status" operator="equals" value="A" />
+			   </entity-condition> -->
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                          
+                        <platform-specific>
+                    		 
+                          <html><html-template location="component://humanres/webapp/humanres/hrmsftl/createVendorBill.ftl"/>
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+    
+      
+      
+     
+    
+     
+    <screen name="editVendor">
+       <section>
+           <actions>
+               <set field="headerItem" value="Vendor"/>
+             <entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+               <entity-condition list="vendorList" entity-name="vendorMaster">
+                   <condition-expr field-name="registarionId" operator="equals" value="${parameters.registarionId}" />
+                </entity-condition>
+           </actions>
+           <widgets>
+               <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                   <decorator-section name="body">
+                      
+                       <platform-specific>
+                           <html>
+                           <html-template location="component://humanres/webapp/humanres/hrmsftl/editVendorDetail.ftl"/>   
+                           </html>
+                       </platform-specific>
+                   </decorator-section>
+               </decorator-screen>
+           </widgets>
+       </section>
+   </screen>  
+
+
+ <screen name="viewVendor">
+       <section>
+           <actions>
+               <set field="headerItem" value="Vendor"/>
+             <entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+               <entity-condition list="vendorList" entity-name="vendorMaster">
+                   <condition-expr field-name="registarionId" operator="equals" value="${parameters.registarionId}" />
+                </entity-condition>
+           </actions>
+           <widgets>
+               <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                   <decorator-section name="body">
+                    
+                         
+                       <platform-specific>
+                           <html>
+                           <html-template location="component://humanres/webapp/humanres/hrmsftl/viewVendorDetail.ftl"/>   
+                           
+                           </html>
+                       </platform-specific>
+                   </decorator-section>
+               </decorator-screen>
+           </widgets>
+       </section>
+   </screen>
+
+   
+   
+   <screen name="approveVendor">
+       <section>
+           <actions>
+               <set field="headerItem" value="Vendor"/>
+             <entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+               <entity-condition list="vendorList" entity-name="vendorMaster">
+                   <condition-expr field-name="registarionId" operator="equals" value="${parameters.registarionId}" />
+                </entity-condition>
+           </actions>
+           <widgets>
+               <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                   <decorator-section name="body">
+                      
+                       <platform-specific>
+                           <html>
+                           <html-template location="component://humanres/webapp/humanres/hrmsftl/approveVendorDetail.ftl"/>   
+                           
+                           </html>
+                       </platform-specific>
+                   </decorator-section>
+               </decorator-screen>
+           </widgets>
+       </section>
+   </screen>  
+    <!-- END -->
+
+ 
     
 </screens>

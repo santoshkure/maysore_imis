@@ -27,6 +27,7 @@
         <menu-item name="EmplSkills" title="${uiLabelMap.HumanResSkills}"><link target="FindPartySkills"/></menu-item>
         <menu-item name="EmplPosition" title="${uiLabelMap.HumanResEmployeePosition}"><link target="FindEmplPositions"/></menu-item>
         <menu-item name="Leave" title="${uiLabelMap.HumanResEmplLeave}"><link target="FindEmplLeaves"/></menu-item>
+        <menu-item name="Vendor" title="${uiLabelMap.Vendor}"><link target="SearchVendor"/></menu-item>
         <menu-item name="PartyQual" title="${uiLabelMap.HumanResPartyQualification}"><link target="FindPartyQuals"/></menu-item>
         <!-- <menu-item name="Employment" title="${uiLabelMap.HumanResEmployment}"><link target="FindEmployments"/></menu-item>
         <menu-item name="PerfReview" title="${uiLabelMap.HumanResPerfReview}"><link target="FindPerfReviews"/></menu-item>
@@ -37,6 +38,7 @@
         <menu-item name="GlobalHRSettings" title="${uiLabelMap.HumanResGlobalHRSettings}" selected-style="selected"><link target="globalHRSettings"/></menu-item> -->
         <!--Added by siddhi on 28 July 2017 -->
         <menu-item name="master" title="${uiLabelMap.master}">
+        <condition><if-has-permission permission="ALL_MASTER"/></condition>
         <link target="ZoneMaster"/></menu-item>
         <!-- End -->
     </menu>
