@@ -598,6 +598,13 @@ under the License.
         <response name="error" type="view" value="findEmployees"/>
     </request-map>
     
+     <request-map uri="updateEmpStatus">
+        <security https="true" auth="true" />
+        <event type="service" invoke="updateEmpStatus"/>
+        <response name="success" type="request-redirect" value="findEmployees"/>
+        <response name="error" type="view" value="findEmployees" />
+    </request-map>
+    
      <!-- END -->
     <request-map uri="EditEmployeeSkills">
         <security https="true" auth="true"/>
@@ -2030,7 +2037,80 @@ under the License.
         <response name="success" type="view" value="connectionDetails"/>
           <response name="error" type="view" value="editConnectionDetail?"/>
     </request-map>
-    <!-- END -->
+    
+    <!-- Vendor Registration -->
+    <request-map uri="SearchVendor">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="SearchVendor"/>
+        <response name="error" type="view" value="SearchVendor" />
+     </request-map>
+    
+    
+     <request-map uri="createVendorBill">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="createVendorBill"/>
+        <response name="error" type="view" value="createVendorBill" />
+     </request-map>
+    
+    
+    
+     <request-map uri="saveVendor">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="saveVendor"/>
+        <response name="success" type="request-redirect" value="SearchVendor"/>
+        <response name="error" type="view" value="SearchVendor"/>
+      </request-map> 
+    
+    
+    
+      <request-map uri="editVendor">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editVendor"/>
+        <response name="error" type="view" value="editVendor" />
+      </request-map>   
+        
+      <request-map uri="editVendors">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="editVendors"/>
+        <response name="success" type="request-redirect" value="SearchVendor"/>
+        <response name="error" type="view" value="SearchVendor"/>
+      </request-map> 
+
+
+      <request-map uri="viewVendor">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="viewVendor"/>
+        <response name="error" type="view" value="viewVendor" />
+      </request-map>
+    
+      <request-map uri="approveVendor">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="approveVendor"/>
+        <response name="error" type="view" value="approveVendor" />
+      </request-map>
+    
+    
+    
+       <request-map uri="approveVendorDetails">
+        <security https="true" auth="true" />
+        <event type="service" invoke="approveVendorDetails"/>
+        <response name="success" type="request-redirect" value="SearchVendor"/>
+        <response name="error" type="view" value="SearchVendor" />
+       </request-map>
+	
+	<request-map uri="updateVendorStatus">
+        <security https="true" auth="true" />
+        <event type="service" invoke="activeVendorDetails"/>
+        <response name="success" type="request-redirect" value="SearchVendor"/>
+        <response name="error" type="view" value="SearchVendor" />
+       </request-map>
+
+
+    <!--END  -->
+    
+    
+    
+    
     
   <!-- ==========end==================  --> 
     <!-- ===================Lookup Request===================== -->
@@ -2307,4 +2387,10 @@ under the License.
          <view-map name="designationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#designationMaster"/>
          <view-map name="editDesignationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editDesignationMaster"/>
          <!-- END -->
+         <view-map name="SearchVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#SearchVendor"/>
+         <view-map name="createVendorBill" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createVendorBill"/>
+         <view-map name="editVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editVendor"/>
+         <view-map name="viewVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewVendor"/>
+         <view-map name="approveVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveVendor"/>
+         
 </site-conf>
