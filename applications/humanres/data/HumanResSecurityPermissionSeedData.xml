@@ -24,6 +24,68 @@ under the License.
     <SecurityPermission description="Create operations in the HumanRes Manager." permissionId="HUMANRES_CREATE"/>
     <SecurityPermission description="Update operations in the HumanRes Manager." permissionId="HUMANRES_UPDATE"/>
     <SecurityPermission description="Delete operations in the HumanRes Manager." permissionId="HUMANRES_DELETE"/>
+    
+    
+    <!-- Master Tab Permission -->
+    <SecurityGroup groupId="ALL_MASTER_ACCESS" description="Master Tab Group Permission." />
+    <SecurityPermission description="Permission for Master Tab Access" permissionId="ALL_MASTER"/>
+     <SecurityGroupPermission groupId="ALL_MASTER_ACCESS" permissionId="ALL_MASTER"/>
+
+        <!-- Permission for Employee -->
+
+    <SecurityGroup groupId="EMP_REG_CREATE" description="Employee Registration Group Permission for Creater." />
+    <SecurityGroup groupId="EMP_REG_APPROVE" description="Employee Registration Group Permission for Approver." />
+    <SecurityGroup groupId="EMP_REG_VIEW" description="Employee Registration Group Permission for View." />
+    <SecurityGroup groupId="EMP_REG_ACT_DEACT" description="Employee Registration Group Permission for Active/Deactive." />
+            
+    <SecurityPermission description="Create Employee" permissionId="EMPL_CREATE"/>
+    <SecurityPermission description="View Employee" permissionId="EMPL_VIEW"/>
+    <SecurityPermission description="Edit Employee" permissionId="EMPL_EDIT"/>
+    <SecurityPermission description="Approve Employee" permissionId="EMPL_APPROVE"/> 
+    <SecurityPermission description="Active/Deactive Employee" permissionId="EMPL_ACT_DEACT"/> 
+    
+    
+     <SecurityGroupPermission groupId="EMP_REG_CREATE" permissionId="EMPL_CREATE"/>
+     <SecurityGroupPermission groupId="EMP_REG_CREATE" permissionId="EMPL_EDIT"/>
+     <SecurityGroupPermission groupId="EMP_REG_CREATE" permissionId="EMPL_VIEW"/>
+               
+     <SecurityGroupPermission groupId="EMP_REG_VIEW" permissionId="EMPL_VIEW"/>
+     
+     <SecurityGroupPermission groupId="EMP_REG_ACT_DEACT" permissionId="EMPL_ACT_DEACT"/>       
+            
+     <SecurityGroupPermission groupId="EMP_REG_APPROVE" permissionId="EMPL_CREATE"/>
+     <SecurityGroupPermission groupId="EMP_REG_APPROVE" permissionId="EMPL_VIEW"/>
+     <SecurityGroupPermission groupId="EMP_REG_APPROVE" permissionId="EMPL_EDIT"/>
+     <SecurityGroupPermission groupId="EMP_REG_APPROVE" permissionId="EMPL_APPROVE"/>     
+        
+    <!-- END -->
+    
+        <!-- Permission for Vendor/Bill -->
+        <SecurityGroup description="Create Vendor Group Permission for Creater." groupId="HUM_VEN_CREATE"/>
+        <SecurityGroup description="View Vendor Group Permission for View." groupId="HUM_VEN_VIEW"/>
+        <SecurityGroup description="Approve Vendor Group Permission for Approve." groupId="HUM_VEN_APPROVE"/>
+        <SecurityGroup description="Active/Deactive Vendor Group Permission for Active/Deactive." groupId="HUM_VEN_ACT_DEACT"/>
+                
+        <SecurityPermission description="Create VENDOR" permissionId="VENDOR_CREATE"/>
+        <SecurityPermission description="View VENDOR" permissionId="VENDOR_VIEW"/>
+        <SecurityPermission description="Remove VENDOR" permissionId="VENDOR_EDIT"/>
+        <SecurityPermission description="Approve VENDOR" permissionId="VENDOR_APPROVE"/> 
+        <SecurityPermission description="Active/Deactive VENDOR" permissionId="VENDOR_ACT_DEACT"/>
+              
+        <SecurityGroupPermission groupId="HUM_VEN_CREATE" permissionId="VENDOR_CREATE"/>
+        <SecurityGroupPermission groupId="HUM_VEN_CREATE" permissionId="VENDOR_EDIT"/>
+        <SecurityGroupPermission groupId="HUM_VEN_CREATE" permissionId="VENDOR_VIEW"/>
+               
+        <SecurityGroupPermission groupId="HUM_VEN_VIEW" permissionId="VENDOR_VIEW"/>
+        
+        <SecurityGroupPermission groupId="HUM_VEN_ACT_DEACT" permissionId="VENDOR_ACT_DEACT"/> 
+              
+        <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_CREATE"/>
+        <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_VIEW"/>
+        <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_EDIT"/>
+        <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_APPROVE"/> 
+        <!-- END -->
+        
     <!-- Recruitment  permission -->
     <SecurityPermission description="Approver can update the IJP approval status with this permission." permissionId="HUMANRES_APPROVE"/>
     
