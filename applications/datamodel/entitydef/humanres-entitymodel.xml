@@ -1144,6 +1144,7 @@ under the License.
       <field name="partyId" type="short-varchar"></field>
       <field name="remarks" type="short-varchar"></field>
       <field name="status" type="short-varchar"></field>
+       <field name="activeStatus" type="short-varchar"></field>
       <field name="appointmentType" type="short-varchar"></field>
       <field name="dateOfRetirement" type="date"></field>
       <field name="dateOfJoining" type="date"></field>
