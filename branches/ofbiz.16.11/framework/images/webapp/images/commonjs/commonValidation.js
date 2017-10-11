@@ -265,3 +265,51 @@
 		     		 return true;
 		     	 }
 		     }
+			 
+			 /* Numeric Validation*/
+	            
+	            function isNumerics(value,field)
+	            {
+	                 if (value.toString().match(/^[-]?\d*\.?\d*$/))
+	                     {
+	                      alert(field);
+	                      
+	                      return false;
+	                     }    
+	                 return true;
+	            }
+	            
+	            
+	            function numericfloat(value,field)
+	               {
+	                    var alphaExp = /^[0-9\.]+$/;
+	                    if(value == "") {
+	                        return true;
+	                    } else {
+	                    var input = alphaExp.test(value);
+	                    if(input == true) {
+	                        return true;
+	                    } else {
+	                        alert(field);
+	                        return false;
+	                    }
+	                 }
+	               }
+	            
+	            
+	            function ValidateEmail(uemail) {
+	                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	               
+	                if(uemail == "") {
+	                    return true;
+	                }
+	                else if(uemail.match(mailformat)) {
+	                    return true;
+	                }
+	                else
+	                {
+	                    alert("Enter Email Address in abcd@mail.com format.");
+	                    uemail.focus();
+	                    return false;
+	                }
+	            }
