@@ -4600,5 +4600,63 @@
 	<property key="editdesignation">
 		<value xml:lang="en">Edit Designation Master</value>
 	</property>
+	
+	<property key="vendor">
+     <value xml:lang="en">Vendor/Bill Reader</value>
+        <value xml:lang="kn">Vendor/Bill Reader</value>
+    </property>
+    
+    <property key="Vendor">
+     <value xml:lang="en">Vendor</value>
+        <value xml:lang="kn">Vendor</value>
+    </property>
+    
+    <property key=" BillReader">
+     <value xml:lang="en"> Bill Reader</value>
+        <value xml:lang="kn"> Bill Reader</value>
+    </property>
+    
+    <property key="Plumber">
+     <value xml:lang="en">Plumber</value>
+        <value xml:lang="kn">Plumber</value>
+    </property>
+    
+     <property key="DateofRegister">
+     <value xml:lang="en">Date of Register</value>
+        <value xml:lang="kn">Date of Register</value>
+    </property>
+    
+    
+    <property key="ProjectName">
+     <value xml:lang="en">Project Name</value>
+        <value xml:lang="kn">Project Name</value>
+    </property>
+    
+    <property key="RegistrationType">
+     <value xml:lang="en">Registration Type</value>
+        <value xml:lang="kn">Registration Type</value>
+    </property>
+    
+     <property key="RegistarionId">
+     <value xml:lang="en">Registarion Id</value>
+        <value xml:lang="kn">Registarion Id</value>
+    </property>
+    
+     <property key="RegistrationName">
+     <value xml:lang="en">Registration Name</value>
+        <value xml:lang="kn">Registration Name</value>
+    </property>
+    
+    <property key="approved">
+     <value xml:lang="en">Approved</value>
+        <value xml:lang="kn">Approved</value>
+    </property>
+    
+    
+     <property key="Registered">
+     <value xml:lang="en">Registered</value>
+        <value xml:lang="kn">Registered</value>
+    </property>
+    
 	<!-- END -->
 </resource>
