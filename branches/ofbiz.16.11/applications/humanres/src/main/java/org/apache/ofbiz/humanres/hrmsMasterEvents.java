@@ -1725,7 +1725,7 @@ public class hrmsMasterEvents {
 
 	                     if (UtilValidate.isEmpty(resultList) && UtilValidate.isEmpty(resultLists)) {
 	                         Map designationMasterDetails = UtilMisc.toMap("designationId",designationId,"designationTypeId",designationTypeIdUPPER,
-	         						"designationName",designationNameUPPER,"createdDate",createdDate,"status","A","description",designationRemark,"activestatus","Active"
+	         						"designationName",designationName,"createdDate",createdDate,"status","A","description",designationRemark,"activestatus","Active"
 	                         );
 	                
 	                           GenericValue valueToStore = delegator.makeValue("designationMaster", designationMasterDetails);
@@ -2746,4 +2746,313 @@ public class hrmsMasterEvents {
 		 				}			
 		 				return result;		
 		 			}  	
+		 		  
+		 		  
+		 		 /**
+					 * Method Name :  saveVendorDetail
+					 * @Version 1.0
+					 * @Description Save Vendor Bill Reader
+					 * @param DispatchContext dctx
+					 * @param Map<String, ? extends Object> context
+					 * @return Map - Map returning Success Message
+					 *  Transaction is handled by service engine
+					 *  
+					 *  
+					 */	 
+		 		  
+		 		  public static Map<String, Object> saveVendorDetail(DispatchContext dctx,
+			                Map<String, ? extends Object> context) {
+			            Map<String, Object> result = ServiceUtil.returnSuccess();
+			            GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			            LocalDispatcher dispatcher = dctx.getDispatcher();
+			            List<GenericValue> caseList = new LinkedList<GenericValue>();
+			            GenericValue userLogin = (GenericValue) context.get("userLogin");
+			            final Locale locale = (Locale) context.get("locale");
+			            String registrationType =(String) context.get("registrationType");
+		 	            String registarionId =(String) context.get("registarionId");
+			            String tenderName =(String) context.get("tenderName");
+			            String dateofTender =(String) context.get("dateofTender");
+			            //java.sql.Date dateofcreatevar = getConvertedDate(dateofTender);
+			            String name =(String) context.get("name");
+						String officeName =(String) context.get("officeName");			
+
+			            String presentAddress =(String) context.get("presentAddress");
+			            String phoneNumber =(String) context.get("phoneNumber");
+			            String email =(String) context.get("email");
+			            String state =(String) context.get("state");
+			            String pinCode =(String) context.get("pinCode");
+			            String dateRegistration =(String) context.get("dateRegistration");
+			            
+			            //java.sql.Date dateofcreate = getConvertedDate(dateRegistration);
+			            java.sql.Date projectDate = null; 
+			           if (UtilValidate.isNotEmpty(dateofTender)){
+			            projectDate = java.sql.Date.valueOf(dateofTender);
+			           }
+			            java.sql.Date registationDate = null; 
+			           if (UtilValidate.isNotEmpty(dateRegistration)){
+			            registationDate = java.sql.Date.valueOf(dateRegistration);
+			           }
+			            
+			            String regId =(String) delegator.getNextSeqId("vendorMaster");
+			              
+			        
+			                
+			          
+			             if (UtilValidate.isNotEmpty(tenderName)) {
+
+			             try {
+			                 List<EntityExpr> expList = new LinkedList<EntityExpr>();
+			                 //List<EntityExpr> expList = FastList.newInstance();
+			                 EntityCondition mainCondition = null;
+
+			                 if (UtilValidate.isNotEmpty(tenderName)){
+			                     expList.add(EntityCondition.makeCondition("tenderName",EntityOperator.EQUALS, tenderName));
+			                     mainCondition = EntityCondition.makeCondition(expList,EntityOperator.AND);
+			                       List<GenericValue> resultList = new LinkedList<GenericValue>();
+			                     //List<GenericValue> resultList = FastList.newInstance();
+			                     try {
+			                         resultList = delegator.findList("vendorMaster",
+			                                 mainCondition, UtilMisc.toSet("tenderName"), null,
+			                                 null, false);
+			                         if (UtilValidate.isNotEmpty(resultList)) {
+			                             return ServiceUtil
+			                                     .returnSuccess("Tender Name already exists.");
+			                         }
+			                     } catch (GenericEntityException e1) {
+			                         e1.printStackTrace();
+			                     }
+
+			                     if (UtilValidate.isEmpty(resultList)) {
+			                    	 
+			                    	 
+			                         Map vendorTypDetails = UtilMisc.toMap("regId",regId,"registrationType",registrationType,
+			         						"registarionId",registarionId,"tenderName",tenderName,"dateofTender",projectDate,"name",name,"officeName",officeName,
+			         						"presentAddress",presentAddress,"phoneNumber",phoneNumber,"email",email,
+			         						"state",state,"pinCode",pinCode,"dateRegistration",registationDate);
+			                
+			                           GenericValue valueToStore = delegator.makeValue("vendorMaster", vendorTypDetails);
+			                          valueToStore.create();
+			                          }
+
+			                     result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, tenderName, locale));
+			                     //return ServiceUtil.returnSuccess(OfficeSetupConstants.SAVE_SUCCESSFULLY);
+			      
+			                     }
+			                 }
+			              catch (GenericEntityException e) {
+			                 e.printStackTrace();
+			             }
+			         }
+
+			         return result;
+			     }
+			        
+			      
+
+		 		 /**
+					 * Method Name :  editVendors
+					 * @Version 1.0
+					 * @Description Edit Vendor Bill Reader
+					 * @param DispatchContext dctx
+					 * @param Map<String, ? extends Object> context
+					 * @return Map - Map returning Success Message
+					 *  Transaction is handled by service engine
+					 *  
+					 *  
+					 */
+		        public static Map<String, Object> editVendors(DispatchContext dctx,
+							Map<String, ? extends Object> context) {
+						Map<String, Object> result = ServiceUtil.returnSuccess();
+						GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+						LocalDispatcher dispatcher = dctx.getDispatcher();
+						GenericValue userLogin = (GenericValue) context.get("userLogin");
+						final Locale locale = (Locale) context.get("locale");
+		 	            String registarionId =(String) context.get("registarionId");
+						   String registrationType =(String) context.get("registrationType");
+						//String createdate =(String) context.get("createdate");	
+			            //java.sql.Date createdate1 = getConvertedDate(createdate);
+						    String tenderName =(String) context.get("tenderName");
+				            String dateofTender =(String) context.get("dateofTender");
+				            //java.sql.Date dateofcreatevar = getConvertedDate(dateofTender);
+				            String name =(String) context.get("name");
+				            String permanentAddress =(String) context.get("permanentAddress");
+				            String presentAddress =(String) context.get("presentAddress");
+				            String phoneNumber =(String) context.get("phoneNumber");
+				            String email =(String) context.get("email");
+				            String state =(String) context.get("state");
+				            String pinCode =(String) context.get("pinCode");
+				            String areaWork =(String) context.get("areaWork");
+				            String dateRegistration =(String) context.get("dateRegistration");
+				            //java.sql.Date dateofcreate = getConvertedDate(dateRegistration);
+				            String officeName =(String) context.get("officeName");
+				            String regId =(String) context.get("regId");
+				    
+				                			 			           
+	 			          java.sql.Date projectDate = null; 
+	 			           if (UtilValidate.isNotEmpty(dateofTender)){
+	 			            projectDate = java.sql.Date.valueOf(dateofTender);
+	 			           }
+	 			            java.sql.Date registationDate = null; 
+	 			           if (UtilValidate.isNotEmpty(dateRegistration)){
+	 			            registationDate = java.sql.Date.valueOf(dateRegistration);
+	 			           }
+						   String status =(String) context.get("status");
+						   String activestatus =(String) context.get("activestatus");
+						Map vendorTypDetails = null;
+						try{
+						if (UtilValidate.isNotEmpty(registarionId))
+						{
+			        	   vendorTypDetails = UtilMisc.toMap("registrationType",registrationType,
+		    						"registarionId",registarionId,"tenderName",tenderName,"dateofTender",projectDate,"name",name,
+		    						"permanentAddress",permanentAddress,"presentAddress",presentAddress,"phoneNumber",phoneNumber,"email",email,
+		    						"state",state,"pinCode",pinCode,"areaWork",areaWork,"dateRegistration",registationDate,"officeName",officeName);
+			           
+			        	   Integer valueToStore = delegator.storeByCondition("vendorMaster", vendorTypDetails
+			   					,EntityCondition.makeCondition("regId",EntityOperator.EQUALS,regId));
+				           Integer UpdateMessage = valueToStore;
+				           result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, tenderName, locale));   
+			               
+			           }
+			             	
+						}catch(GeneralException e) {
+							// It is the mother of all the ofbiz exceptions
+							// All the specific exceptions are handled above
+							// It would be executed in the worst case scenario
+							Debug.log("Exception occured : " + e );
+							
+						}			
+						
+						
+						return result;		
+					}
+			        
+
+		        /**
+				 * Method Name :  approveVendorDetails
+				 * @Version 1.0
+				 * @Description : Approve Vendor Bill Reader
+				 * @param DispatchContext dctx
+				 * @param Map<String, ? extends Object> context
+				 * @return Map - Map returning Success Message
+				 *  Transaction is handled by service engine
+				 *  
+				 *  
+				 */
+			     
+			        public static Map<String, Object> approveVendorDetails(DispatchContext dctx,
+							Map<String, ? extends Object> context) {
+						Map<String, Object> result = ServiceUtil.returnSuccess();
+						GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+						LocalDispatcher dispatcher = dctx.getDispatcher();
+						GenericValue userLogin = (GenericValue) context.get("userLogin");
+						final Locale locale = (Locale) context.get("locale");
+						String registrationType =(String) context.get("registrationType");
+						//String createdate =(String) context.get("createdate");	
+			            //java.sql.Date createdate1 = getConvertedDate(createdate);
+					    String regId =(String) context.get("regId");
+				        String remark =(String) context.get("remark");
+				       String mobileNumber =(String) context.get("mobileNumber");
+				        String eMail =(String) context.get("eMail");
+						Map vendorTypDetails = null;
+						try{
+						if (UtilValidate.isNotEmpty(regId))
+						{
+							 vendorTypDetails = UtilMisc.toMap("activeStatus","ACTIVE","status","A","remark",remark);
+			        	   Integer valueToStore = delegator.storeByCondition("vendorMaster", vendorTypDetails
+			   					,EntityCondition.makeCondition("regId",EntityOperator.EQUALS,regId));
+				           Integer UpdateMessage = valueToStore;
+			        	  result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY,"", locale));  
+			             }	
+						}catch(GeneralException e) {
+							// It is the mother of all the ofbiz exceptions
+							// All the specific exceptions are handled above
+							// It would be executed in the worst case scenario
+							Debug.log("Exception occured : " + e );
+							//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+						}
+						
+						
+						// code to call Service for SMS
+   			   			try {
+   			   					Map smsLogMap = FastMap.newInstance();
+   			   					Map LogMap = FastMap.newInstance();
+   			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNumber, "textMessage", "Record Approved", "customerId", regId, "tabName", "VendorRegistration", "discription", "Approved Confirmation"));
+   			   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
+   			   				}
+   			   			catch(GenericServiceException e)
+   			   				{
+   			   					e.printStackTrace();
+   			   				}
+   			   			//End
+   			   			
+   			   			// code to call Service for Mail
+   			   			try {
+   			   					Map emailLogMap = FastMap.newInstance();
+   			   					Map LogMap = FastMap.newInstance();
+   			   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage","Record Approved", "customerId", regId, "tabName", "Vendor Registration", "discription", "Approved Confirmation","subject", "Email From IMIS"));
+   			   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
+   			   				}
+   			   			catch(GenericServiceException e)
+   			   				{
+   			   				e.printStackTrace();
+   			   				}
+   			   			//End
+						
+						return result;		
+                 }
+
+
+
+
+			        /**
+					 * Method Name :  activeVendorDetails
+					 * @Version 1.0
+					 * @Description : Active/Deactive Vendor Bill Reader
+					 * @param DispatchContext dctx
+					 * @param Map<String, ? extends Object> context
+					 * @return Map - Map returning Success Message
+					 *  Transaction is handled by service engine
+					 *  
+					 *  
+					 */
+			        
+			        
+			       public static Map<String, Object> activeVendorDetails(DispatchContext dctx,
+							Map<String, ? extends Object> context) {
+						Map<String, Object> result = ServiceUtil.returnSuccess();
+						GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+						LocalDispatcher dispatcher = dctx.getDispatcher();
+						GenericValue userLogin = (GenericValue) context.get("userLogin");
+						final Locale locale = (Locale) context.get("locale");
+						String registrationType =(String) context.get("registrationType");
+						//String createdate =(String) context.get("createdate");	
+			            //java.sql.Date createdate1 = getConvertedDate(createdate);
+					    String regId =(String) context.get("registarionId");
+				        String activestatus =(String) context.get("activestatus");
+				     
+						Map vendorTypDetails = null;
+						try{
+						if (UtilValidate.isNotEmpty(regId))
+						{
+							 vendorTypDetails = UtilMisc.toMap("activeStatus",activestatus);
+			        	   Integer valueToStore = delegator.storeByCondition("vendorMaster", vendorTypDetails
+			   					,EntityCondition.makeCondition("regId",EntityOperator.EQUALS,regId));
+				           Integer UpdateMessage = valueToStore;
+							result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY,"", locale));   
+			                
+			             }	
+						}catch(GeneralException e) {
+							// It is the mother of all the ofbiz exceptions
+							// All the specific exceptions are handled above
+							// It would be executed in the worst case scenario
+							Debug.log("Exception occured : " + e );
+							//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+						}			
+						
+						return result;		
+                }     
+			        
+		 		  
+		 		  
+		 		  
 }

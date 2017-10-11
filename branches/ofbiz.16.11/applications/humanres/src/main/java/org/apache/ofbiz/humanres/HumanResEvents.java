@@ -39,6 +39,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 import java.util.StringTokenizer;
+import javolution.util.FastMap;
 
 import org.apache.ofbiz.base.util.Debug;
 import org.apache.ofbiz.base.util.GeneralException;
@@ -1840,12 +1841,15 @@ public class HumanResEvents {
 							basicPay = getEmployeeDetail.get(0).getBigDecimal("basicPay");
 							
 						}
+						
+						
+					
 
 						inMap.put("personalTitle", title);
 						inMap.put("firstName", firstName);
 						inMap.put("middleName", middleName);
 						inMap.put("lastName", lastName);
-						inMap.put("gender", gender);
+						inMap.put("gender", "");
 						inMap.put("birthDate", dateOfBirth);
 						inMap.put("userLogin", userLogin);
 						
@@ -1861,7 +1865,7 @@ public class HumanResEvents {
 							inMap.put("roleTypeId", "EMPLOYEE");
 						}
 
-						Map empDetails = UtilMisc.toMap("status","APPROVED", "partyId", employeeId,"remarks",remarks);
+						Map empDetails = UtilMisc.toMap("status","APPROVED","activeStatus","ACTIVE", "partyId", employeeId,"remarks",remarks);
 
 						int update = delegator.storeByCondition("EmplRegistration",
 								empDetails, EntityCondition.makeCondition(
@@ -2036,6 +2040,33 @@ public class HumanResEvents {
 									resource,EmployeeConstants.REGISTRATION_APPROVED_SUCCESSFULLY + " For ", printName, locale));	
 						}
 					} 
+					
+					
+					// code to call Service for SMS
+			   			try {
+			   					Map smsLogMap = FastMap.newInstance();
+			   					Map LogMap = FastMap.newInstance();
+			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", contactNumber, "textMessage", "Record Approved", "customerId", employeeId, "tabName", "Employee Registration", "discription", "Approved Confirmation"));
+			   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
+			   				}
+			   			catch(GenericServiceException e)
+			   				{
+			   					e.printStackTrace();
+			   				}
+			   			//End
+			   			
+			   			// code to call Service for Mail
+			   			try {
+			   					Map emailLogMap = FastMap.newInstance();
+			   					Map LogMap = FastMap.newInstance();
+			   					emailLogMap.putAll(UtilMisc.toMap("emailId", emailAddress, "textMessage","Record Approved", "customerId", employeeId, "tabName", "Employee Registration", "discription", "Approved Confirmation","subject", "Email From IMIS"));
+			   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
+			   				}
+			   			catch(GenericServiceException e)
+			   				{
+			   				e.printStackTrace();
+			   				}
+			   			//End
 				}
 			}catch (GenericServiceException e) {
 				// Returning the result map with error message.
@@ -2056,6 +2087,161 @@ public class HumanResEvents {
 		return result;
 	}
 
+    
+    public static Map<String, Object> updateEmpStatus(DispatchContext dctx,
+			Map<String, ? extends Object> context) throws GenericEntityException {
+		Map<String, Object> result = ServiceUtil.returnSuccess();
+		GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+		LocalDispatcher dispatcher = dctx.getDispatcher();
+		GenericValue userLogin = (GenericValue) context.get("userLogin");
+		Locale locale = (Locale) context.get("locale");				
+		String employeeId = (String) context.get("partyId"); 
+		String activeStatus = (String) context.get("activeStatus"); 
+		try
+		{
+			//System.out.println("~~~~~~~~~activeStatus~~~2~~~~~~~~~~~~~~~~~~~~"+activeStatus);
+			//System.out.println("~~~~~~~~~employeeId~~~2~~~~~~~~~~~~~~~~~~~~"+employeeId);
+
+			 if(activeStatus.equals("DEACTIVE"))
+			{
+				
+				Map maintenanceMap = UtilMisc.toMap(
+						"statusId","EMPL_POS_INACTIVE","serviceAction", "DEACTIVED","workingStatus", "INACTIVE");
+
+				Integer updatedRow = delegator.storeByCondition("EmplPosition",maintenanceMap
+						,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+				
+				//Updating values in PartyRelationship Table
+				
+				Map updateMap = UtilMisc.toMap("statusId","PARTY_REL_INACTIVE");
+
+				Integer updatedItem = delegator.storeByCondition("PartyRelationship",updateMap
+						,EntityCondition.makeCondition("partyIdFrom",EntityOperator.EQUALS,employeeId));
+				
+				//Updating values in UserLogin Table
+				List<GenericValue> UserEmployeelist = null;
+				EntityCondition usercondition = EntityCondition.makeCondition(
+						EntityOperator.AND, EntityCondition.makeCondition(
+								"partyId", EntityOperator.EQUALS, employeeId));
+				UserEmployeelist = delegator.findList(
+						"UserLogin", usercondition, null, null, null, false);
+				String userLoginId = null;
+				if (UserEmployeelist.size() > 0) {
+					
+					for(int j=0; j<UserEmployeelist.size(); j++)
+					{
+					  userLoginId = UserEmployeelist.get(j).getString("userLoginId");
+
+				}
+				}
+				//userLoginId = "DEACTIVED-"+userLoginId;
+			       //System.out.println("~~~~~~~~~userLoginId~~~2~~~~~~~~~~~~~~~~~~~~"+userLoginId);
+				Map updateUserLoginMap = UtilMisc.toMap("userLoginId",userLoginId,"enabled","N");
+
+				Integer updatedUserLoginItem = delegator.storeByCondition("UserLogin",updateUserLoginMap
+						,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+				
+				//Updating values in Party Table
+				
+				Map updatePartyMap = UtilMisc.toMap("statusId","PARTY_DISABLED");
+
+				Integer updatedPartyItem = delegator.storeByCondition("Party",updatePartyMap
+						,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+				
+				//Updating Status in EmplRegistration
+				Map empstautsMap = UtilMisc.toMap("activeStatus","DEACTIVE");
+
+				Integer updatedempstatus = delegator.storeByCondition("EmplRegistration",empstautsMap
+						,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+				
+				
+				
+				result.put(
+						EmployeeConstants.SUCCESS_MESSAGE,
+						UIMessages
+								.getSuccessMessage(
+										resource,
+										EmployeeConstants.UPDATED_SUCCESS,
+										"", locale));
+			}
+			 else if(activeStatus.equals("ACTIVE")) 
+			 {
+				 Map maintenanceMap = UtilMisc.toMap(
+							"statusId","EMPL_POS_ACTIVE","serviceAction", "Joining","workingStatus", "ACTIVE");
+
+					Integer updatedRow = delegator.storeByCondition("EmplPosition",maintenanceMap
+							,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+					
+					//Updating values in PartyRelationship Table
+					
+					Map updateMap = UtilMisc.toMap("statusId","PARTY_REL_ACTIVE");
+
+					Integer updatedItem = delegator.storeByCondition("PartyRelationship",updateMap
+							,EntityCondition.makeCondition("partyIdFrom",EntityOperator.EQUALS,employeeId));
+					
+					//Updating values in UserLogin Table
+					List<GenericValue> UserEmployeelist = null;
+					EntityCondition usercondition = EntityCondition.makeCondition(
+							EntityOperator.AND, EntityCondition.makeCondition(
+									"partyId", EntityOperator.EQUALS, employeeId));
+					UserEmployeelist = delegator.findList(
+							"UserLogin", usercondition, null, null, null, false);
+					String userLoginId = null;
+					if (UserEmployeelist.size() > 0) {
+						
+						for(int j=0; j<UserEmployeelist.size(); j++)
+						{
+						  userLoginId = UserEmployeelist.get(j).getString("userLoginId");
+
+					}
+					}
+					//userLoginId = "DEACTIVED-"+userLoginId;
+					
+					//String splited[] = userLoginId.split("-");
+					
+
+				        //String userLoginIdsplied = (String) splited[1];
+				       //System.out.println("~~~~~~~~~userLoginIdsplied~~~2~~~~~~~~~~~~~~~~~~~~"+userLoginIdsplied);
+					Map updateUserLoginMap = UtilMisc.toMap("userLoginId",userLoginId,"enabled","Y");
+
+					Integer updatedUserLoginItem = delegator.storeByCondition("UserLogin",updateUserLoginMap
+							,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+					
+					//Updating values in Party Table
+					
+					Map updatePartyMap = UtilMisc.toMap("statusId","PARTY_ENABLED");
+						
+					Integer updatedPartyItem = delegator.storeByCondition("Party",updatePartyMap
+							,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+					
+					//Updating Status in EmplRegistration
+					Map empstautsMap = UtilMisc.toMap("activeStatus","ACTIVE");
+
+					Integer updatedempstatus = delegator.storeByCondition("EmplRegistration",empstautsMap
+							,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,employeeId));
+					
+					
+					
+					result.put(
+							EmployeeConstants.SUCCESS_MESSAGE,
+							UIMessages
+									.getSuccessMessage(
+											resource,
+											EmployeeConstants.UPDATED_SUCCESS,
+											"", locale));
+			 }
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	
+	
+ 	return result;       
+}
+    
+    
+    
     private static java.sql.Date getConvertedDate(String inputDate) {
 
         java.sql.Date outputDate = null;
