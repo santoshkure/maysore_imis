@@ -16,6 +16,7 @@
 			      <div class="h3" align="center"><b>Search Employee</b></div> 
 			        <div class="basic-nav" style="margin-top: -36px;">
 			                       
+			               <#if security.hasPermission('EMPL_CREATE',userLogin)>
 			
 			          <ul>
 			            <li>
@@ -24,6 +25,7 @@
 			                </a>
 			            </li>
 			          </ul>
+			          </#if>
 			        </div>
 				</ul>
 			    
@@ -84,9 +86,19 @@
 
              <td><center>Designation</center></td>
              <td><center>${uiLabelMap.Status}</center></td>
+            <td><center>${uiLabelMap.ActiveStatus}</center></td> 
+               <#if security.hasPermission('EMPL_EDIT',userLogin)>
              <td><center>${uiLabelMap.edit}</center></td>
+              </#if>
+             <#if security.hasPermission('EMPL_APPROVE',userLogin)>
              <td><center>${uiLabelMap.approve}</center></td>
+             </#if>
+              <#if security.hasPermission('EMPL_ACT_DEACT',userLogin)>
+             <td><center>${uiLabelMap.Disable}</center></td>
+             </#if>
+             <#if security.hasPermission('EMPL_VIEW',userLogin)>
              <td><center>${uiLabelMap.view}</center></td>
+              </#if>
          </tr>
    </thead>
    <#if employeeList?has_content>
@@ -124,15 +136,27 @@
  	    	       </#list>
 	    	     </#if>
 	    	   </#if></center></td>
+                           
+                           
                            <td><center>
                            <#assign std = '${employeeList.status?if_exists}'>
                            <#if std =="REGISTERED">
                            Registered
                            <#else>
                            Approved
-                           </#if>
-                           
+                           </#if>                           
                            </center></td>
+                           
+                           <td><center>
+                           <#assign actdstd = '${employeeList.activeStatus?if_exists}'>
+                           <#if actdstd =="ACTIVE">
+                           Active
+                           <#else>
+                           Deactive
+                           </#if>                           
+                           </center></td>
+                           
+                       <#if security.hasPermission('EMPL_EDIT',userLogin)>                           
                           <td><center>
                            <#if std =="REGISTERED">
                           <a href='<@ofbizUrl>editview?regId=${employeeList.registrationId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.edit}</a>
@@ -140,6 +164,8 @@
                          <a class="buttontextdisabled"  disabled>${uiLabelMap.edit}</a>
                           </#if>
                           </center></td>
+                           </#if>
+                          <#if security.hasPermission('EMPL_APPROVE',userLogin)>
                           <td><center>                   
                            <#if std =="REGISTERED">
                            <#assign flag = "y">
@@ -148,22 +174,39 @@
                          <a class="buttontextdisabled" disabled>${uiLabelMap.approve}</a>
                           </#if>
                           </center></td>
+                          </#if>
                           
+                          <#if security.hasPermission('EMPL_ACT_DEACT',userLogin)>
+                          <td><center>    
+                          <#assign actstd = '${employeeList.activeStatus?if_exists}'> 
+                          <#if std =="APPROVED">              
+                           <#if actstd?if_exists =="ACTIVE">
+                          <a title="Active/Deactive" href="javascript:empActivestat('listEmployee','${employeeList.partyId?if_exists}','DEACTIVE');" class="buttontext">${uiLabelMap.Deactive}</a>
+                          <#else>
+                           <a title="Active/Deactive" href="javascript:empActivestat('listEmployee','${employeeList.partyId?if_exists}','ACTIVE');" class="buttontext">${uiLabelMap.Active}</a>
+                         </#if>
+                          <#else>
+                         <a class="buttontextdisabled" disabled>${uiLabelMap.active}</a>
+                          </#if>
+                          </center></td>
+                          </#if>
+                         
+                          <#if security.hasPermission('EMPL_VIEW',userLogin)>                     
                           
-                          <td><center>
-                          
-                          <a href='<@ofbizUrl>viewEmployee?regId=${employeeList.registrationId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.view}</a>
-                          
+                          <td><center>                          
+                          <a href='<@ofbizUrl>viewEmployee?regId=${employeeList.registrationId?if_exists}</@ofbizUrl>' class="buttontext">${uiLabelMap.view}</a>                         
                           
                           </center></td>
+                          </#if>
+                          
                   </tr> 
                    <#assign count=count+ 1>
                      </#list>
                      </#if> 
                      
                        <input type="hidden" name="officeTypeId" value="" style="width:140px"  />
-                  <input type="hidden" name="activestatus" value="" style="width:140px"  />
-  			      <input type="hidden" name="status" value="" style="width:140px"  />	
+                  <input type="hidden" name="activeStatus" value="" style="width:140px"  />
+  			      <input type="hidden" name="partyId" value="" style="width:140px"  />	
 
       </table>
       
@@ -175,3 +218,26 @@
   </div>
 </div>
  </form>
+ 
+ 
+ 
+ <script language="JavaScript" type="text/javascript" />
+
+
+    
+    function empActivestat(formname,partyId,actStatus)
+	{
+	var form =document[formname];
+	    form.partyId.value = partyId;
+	    form.activeStatus.value=actStatus;
+		
+	     
+	     
+        form.action="<@ofbizUrl>updateEmpStatus</@ofbizUrl>";
+	    form.submit();
+	    
+	
+	}
+	
+ </script>
+		
