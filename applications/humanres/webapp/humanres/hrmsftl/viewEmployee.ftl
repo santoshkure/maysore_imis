@@ -51,7 +51,18 @@
          <td class="label" >${uiLabelMap.dob}</td>
 		         <td>${viewEmployeeList.dateOfBirth?if_exists}</td>
 			<td class="label">${uiLabelMap.gender}</font></td>
-			 <td>${viewEmployeeList.gender?if_exists}</td>
+			 <td>
+			 <#assign gender  = "${viewEmployeeList.gender?if_exists}">					
+				<#if genderMasterList?exists>
+	    	      <#if genderMasterList?has_content>
+	    	       <#list genderMasterList as genderMasterList>
+	    	       <#if "${genderMasterList.genderId?if_exists}" == "${gender?if_exists}">
+                            ${genderMasterList.genderName?if_exists}                   		 
+	        					
+                             </#if>
+			       </#list>
+	    	     </#if>
+	    	   </#if></td>
 			    	
 			
              <td class="label">${uiLabelMap.meritalStatus}</font> </td>
@@ -187,8 +198,8 @@
 		          <#if "${viewEmployeeList.appointmentType?if_exists}" == "REGULAR">
 		          Regular
 		          </#if>	</td>
-         	<td class="label" style="width:225px;">Payscale</td>
-			   				<td>${viewEmployeeList.payScaleId?if_exists}</td>
+         	<#--<td class="label" style="width:225px;">Payscale</td>
+			   				<td>${viewEmployeeList.payScaleId?if_exists}</td>-->
 			   				<td class="label" style="width:225px;">Basic Pay</td>
 			   				<td>${viewEmployeeList.basicPay?if_exists}</td>
 			
@@ -196,6 +207,7 @@
         
         <tr><#--<td class="label">${uiLabelMap.essentialDocument}</font></td>
 			 <td></td>--> 	
+			 
 			<td class="label" style="width:225px;">${uiLabelMap.Remark}</td>
 			  
 			  <#if '${flag?if_exists}' == "y" >

@@ -73,15 +73,15 @@
 			<td class="label">${uiLabelMap.gender}&nbsp;<font color="red" >*</font></font></td>
 			 <td><select name="gender" style="width:80px;">
 					<option value="">${uiLabelMap.CommonSelect}</option>
-					<option value="M">Male</option>
-					<option value="F">Female</option>
-					 <#--<#if genderMasterList?exists>
+					<#--<option value="M">Male</option>
+					<option value="F">Female</option>-->
+					 <#if genderMasterList?exists>
 	    	      <#if genderMasterList?has_content>
 	    	       <#list genderMasterList as genderMasterList>
  	    	         <option value="${genderMasterList.genderId?if_exists}">${genderMasterList.genderName?if_exists}</option>
  	    	       </#list>
 	    	     </#if>
-	    	   </#if>-->
+	    	   </#if>
 				</select>
 			</td>    	
 			
@@ -103,7 +103,7 @@
 		</tr>
 		
 		<tr>
-			 <td class="label">${uiLabelMap.fatherName}&nbsp;<font color="red" >*</font></font></td>
+			 <td class="label">${uiLabelMap.fatherName}&nbsp;<font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  name="fatherName"  onchange="javascript:trimFunction(this)" autocomplete="off" id="fatherName" maxlength ="30" value="" /></td>    	
 			 
              <td class="label">${uiLabelMap.motherName}</font></td>
@@ -152,13 +152,13 @@
 
 
        <tr>
-			 <td class="label">${uiLabelMap.mobileNo}</font></td>
+			 <td class="label">${uiLabelMap.mobileNo}&nbsp;<font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  name="mobileNo"  onchange="javascript:trimFunction(this)" autocomplete="off" id="mobileNo" maxlength ="10" value="" /></td>    	
 			 
              <td class="label">${uiLabelMap.resContactNo}</font></td>
 			 <td><input type="text" style="width:140px"  name="contactNumber"  onchange="javascript:trimFunction(this)" autocomplete="off" id="contactNumber" maxlength ="15" value="" /></td>    	
 			
-			<td class="label">${uiLabelMap.emailAddress}</font></td>
+			<td class="label">${uiLabelMap.emailAddress}&nbsp;<font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  name="emailAddress"  onchange="javascript:trimFunction(this)" autocomplete="off" id="emailAddress" maxlength ="30" value="" /></td>    	
 			
         </tr>
@@ -216,8 +216,8 @@
 		        		<option value="">${uiLabelMap.CommonSelect}</option>
 		        		<option value="REGULAR">Regular</option>
 		        		</select></td></td>
-         	<td class="label" style="width:225px;">Payscale</td>
-			   				<td><input type="text" name="payScaleId" style="width:160px;"/></td>
+         	<#--<td class="label" style="width:225px;">Payscale</td>
+			   				<td><input type="text" name="payScaleId" style="width:160px;"/></td>-->
 			   				<td class="label" style="width:225px;">Basic Pay</td>
 			   				<td><input type="text" name="basicPay" style="width:160px;"/></td>
 			
@@ -267,6 +267,8 @@
  		var dateOfJoining = form.dateOfJoining.value; 		
  		var emailAddress = form.emailAddress.value; 	
  		var basicPay = form.basicPay.value;
+ 		//var payScaleId = form.payScaleId.value;		
+ 		
  		
  		if(notEmptyField(employeeCode,"Employee Code should not be empty.")){
  		if(notEmptyField(title,"Title should not be empty.")){
@@ -275,6 +277,8 @@
  		if(notEmptyField(dateOfBirth,"Date of Birth should not be empty.")){
  		if(notEmptyField(gender,"Gender should not be empty.")){
  		if(notEmptyField(fatherName,"Father name should not be empty.")){
+ 		if(notEmptyField(mobileNo,"Mobile Number should not be empty.")){
+ 		if(notEmptyField(emailAddress,"Email Address should not be empty.")){
  		if(enterNumeric(mobileNo,"Mobile Number should be Numeric .")){ 
  		if(enterNumeric(contactNumber,"Contact Number should be Numeric .")){ 				
  		if(notEmptyField(permanentAddress,"Permanent Address should not be empty.")){
@@ -284,11 +288,12 @@
  		if(notEmptyField(appointmentType,"Appointment Type should not be empty.")){
  		if(ValidateEmail(emailAddress)){
  		if(numericfloat(basicPay, "Basic Pay should be numeric value only.")){
+ 		//if(enterNumeric(payScaleId,"PayScale should be Numeric .")){
  		
  				  form.action = "<@ofbizUrl>createEmployee</@ofbizUrl>";
 			      form.submit();
 			      disSubmit('saveBtn');
-		}}}}}}}}}}}}}}}}     
+		}}}}}}}}}}}}}}}}}}//}     
 		         
         }
 	
