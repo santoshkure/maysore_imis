@@ -233,4 +233,34 @@ under the License.
       <prim-key field="buildingId"/> 
     </entity>
  <!-- END -->
+ 
+ 
+  <entity entity-name="vendorMaster" 
+            package-name="org.apache.ofbiz.humanres.master"
+            title="vendor Master  Entity">
+      <field name="regId" type="id-ne"></field>
+      <field name="registarionId" type="short-varchar"></field>
+      <field name="registrationType" type="short-varchar"/>
+      <field name="tenderName" type="short-varchar"/>
+      <field name="dateofTender" type="date"/>
+      <field name="name" type="short-varchar"/>
+      <field name="permanentAddress" type="short-varchar"/>
+      <field name="presentAddress" type="short-varchar"/>
+      <field name="phoneNumber" type="short-varchar"/>
+      <field name="email" type="short-varchar"/>
+      <field name="state" type="short-varchar"/>      
+      <field name="pinCode" type="short-varchar"/>
+      <field name="areaWork" type="short-varchar"/>
+      <field name="dateRegistration" type="date"/>
+      <field name="status" type="indicator"></field>
+      <field name="activeStatus" type="short-varchar"></field>      
+      <field name="refDocument" type="short-varchar"/>
+      <field name="remark" type="short-varchar"/>
+      <field name="officeName" type="short-varchar"/>
+      
+      
+       
+      <prim-key field="regId"/>    
+      </entity>
+      
 </entitymodel>
