@@ -1280,6 +1280,12 @@ under the License.
 	   	   	    <attribute name="remarks" type="String" mode="IN" optional="true" />
 	   	</service>
 	   	
+	   <service name="updateEmpStatus" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.HumanResEvents" invoke="updateEmpStatus">
+	   	    <attribute name="partyId" type="String" mode="IN" optional="true" />
+	   	   	<attribute name="activeStatus" type="String" mode="IN" optional="true" />
+	   	</service>	
+	   	
 	   	<service name="updateRegistration" export="true" engine="java" 
     	location="org.apache.ofbiz.humanres.HumanResEvents" invoke="updateRegistration">
 	   	  <attribute name="employeeCode" type="String" mode="IN" optional="true" />
@@ -1516,6 +1522,65 @@ under the License.
 	   <!--  <attribute name="buildingId" type="String" mode="IN" optional="true" /> -->
 	    </service>
 		<!-- End -->
+		
+		
+		<!--Vendor Registration  -->
+		
+		
+        <service name="saveVendor" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="saveVendorDetail">
+        <attribute name="registrationType" type="String" mode="IN" optional="true" />
+ 	<attribute name="registarionId" type="String" mode="IN" optional="true" />
+	<attribute name="tenderName" type="String" mode="IN" optional="true" />
+	<attribute name="dateofTender" type="String" mode="IN" optional="true" />
+	<attribute name="name" type="String" mode="IN" optional="true" />
+	<attribute name="presentAddress" type="String" mode="IN" optional="true" />
+	<attribute name="phoneNumber" type="String" mode="IN" optional="true" />
+	<attribute name="email" type="String" mode="IN" optional="true" />
+	<attribute name="state" type="String" mode="IN" optional="true" />
+	<attribute name="pinCode" type="String" mode="IN" optional="true" />
+	<attribute name="dateRegistration" type="String" mode="IN" optional="true" />
+        <attribute name="officeName" type="String" mode="IN" optional="true" />
+        </service>
+  
+  
+  	 <service name="editVendors" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="editVendors">
+        <attribute name="regId" type="String" mode="IN" optional="true" />
+    	<attribute name="registrationType" type="String" mode="IN" optional="true" />
+ 	<attribute name="registarionId" type="String" mode="IN" optional="true" />
+        <attribute name="tenderName" type="String" mode="IN" optional="true" />
+	<attribute name="dateofTender" type="String" mode="IN" optional="true" />
+	<attribute name="name" type="String" mode="IN" optional="true" />
+        <attribute name="permanentAddress" type="String" mode="IN" optional="true" />
+        <attribute name="presentAddress" type="String" mode="IN" optional="true" />
+        <attribute name="phoneNumber" type="String" mode="IN" optional="true" />
+        <attribute name="email" type="String" mode="IN" optional="true" />
+        <attribute name="state" type="String" mode="IN" optional="true" />
+        <attribute name="pinCode" type="String" mode="IN" optional="true" />
+        <attribute name="areaWork" type="String" mode="IN" optional="true" />
+	<attribute name="dateRegistration" type="String" mode="IN" optional="true" />		
+	<attribute name="officeName" type="String" mode="IN" optional="true" />
+	<attribute name="status" type="String" mode="IN" optional="true" />	
+	<attribute name="activestatus" type="String" mode="IN" optional="true" />
+        </service>
+
+        <service name="approveVendorDetails" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="approveVendorDetails">
+    	<attribute name="regId" type="String" mode="IN" optional="true" />
+    	<attribute name="remark" type="String" mode="IN" optional="true" />
+    	<attribute name="mobileNumber" type="String" mode="IN" optional="true" />
+    	<attribute name="eMail" type="String" mode="IN" optional="true" />
+        </service>
+
+        <service name="activeVendorDetails" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="activeVendorDetails">
+    	<attribute name="registarionId" type="String" mode="IN" optional="true" />
+    	<attribute name="activestatus" type="String" mode="IN" optional="true" />    
+        </service>
+
+		<!--  END-->
+		
 
 
 	    </services>
