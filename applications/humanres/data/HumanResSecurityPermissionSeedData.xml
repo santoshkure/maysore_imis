@@ -30,6 +30,12 @@ under the License.
     <SecurityGroup groupId="ALL_MASTER_ACCESS" description="Master Tab Group Permission." />
     <SecurityPermission description="Permission for Master Tab Access" permissionId="ALL_MASTER"/>
      <SecurityGroupPermission groupId="ALL_MASTER_ACCESS" permissionId="ALL_MASTER"/>
+             <!-- Added By Pankaj Trivedi for Add permission to Full and Biz admin  -->
+     
+     <SecurityGroupPermission groupId="FULLADMIN" permissionId="ALL_MASTER"/>
+         <SecurityGroupPermission groupId="BIZADMIN" permissionId="ALL_MASTER"/>
+              <!-- End Pankaj Trivedi -->
+     
 
         <!-- Permission for Employee -->
 
@@ -83,7 +89,20 @@ under the License.
         <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_CREATE"/>
         <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_VIEW"/>
         <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_EDIT"/>
-        <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_APPROVE"/> 
+        <SecurityGroupPermission groupId="HUM_VEN_APPROVE" permissionId="VENDOR_APPROVE"/>
+        <!-- Added By Pankaj Trivedi for Add permission to Full and Biz admin  -->
+        <SecurityGroupPermission groupId="FULLADMIN" permissionId="VENDOR_CREATE"/>
+         <SecurityGroupPermission groupId="BIZADMIN" permissionId="VENDOR_CREATE"/>
+         
+         <SecurityGroupPermission groupId="FULLADMIN" permissionId="VENDOR_EDIT"/>
+         <SecurityGroupPermission groupId="BIZADMIN" permissionId="VENDOR_EDIT"/>
+         
+         <SecurityGroupPermission groupId="FULLADMIN" permissionId="VENDOR_APPROVE"/>
+         <SecurityGroupPermission groupId="BIZADMIN" permissionId="VENDOR_APPROVE"/> 
+         
+         <SecurityGroupPermission groupId="FULLADMIN" permissionId="VENDOR_ACT_DEACT"/>
+         <SecurityGroupPermission groupId="BIZADMIN" permissionId="VENDOR_ACT_DEACT"/>
+         <!-- End Pankaj Trivedi -->
         <!-- END -->
         
     <!-- Recruitment  permission -->
