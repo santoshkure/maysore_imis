@@ -44,7 +44,7 @@
          	
          	
          	<tr>
-         	 <td class="label">${uiLabelMap.RegistrationName}<font color="red" >*</font></td>
+         	 <td class="label">${uiLabelMap.RegistrationName} <font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="tenderName" placeholder="${uiLabelMap.EnterRegistrationName}" autocomplete="off" id="tenderName" maxlength ="30" value="" /></td> 
            	 <td class="label">${uiLabelMap.DateofRegister}<font color="red" ></font></td>
 			 <td> <@htmlTemplate.renderDateTimeField name="dateRegistration" event="" action="" className="" alert="" title="Format: MM-DD-YYYY" 
@@ -83,7 +83,7 @@
 			  
            	
 			<tr>
-         	 <td class="label">${uiLabelMap.Email}<font color="red" >*</font></td>
+         	 <td class="label">${uiLabelMap.Email} <font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="email" placeholder="${uiLabelMap.EnterEmail}" autocomplete="off" id="email" maxlength ="30" value="" /></td> 
            	 <td class="label">${uiLabelMap.State}<font color="red" ></font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="state" placeholder="${uiLabelMap.EnterState}"  autocomplete="off" id="state" maxlength ="30" value="" /></td> 
@@ -92,7 +92,7 @@
 			<tr>
          	 <td class="label">${uiLabelMap.Pincode}<font color="red" ></font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="pinCode" placeholder="${uiLabelMap.EnterPincode}" autocomplete="off" id="pinCode" maxlength ="6" value="" /></td> 
-           	 <td class="label">${uiLabelMap.PhoneNumber}<font color="red" >*</font></td>
+           	 <td class="label">${uiLabelMap.PhoneNumber} <font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="phoneNumber" placeholder="${uiLabelMap.EnterPhoneNumber}" autocomplete="off" id="phoneNumber" maxlength ="10" value="" /></td>
            	</tr>
            	
@@ -132,6 +132,7 @@ function ConfirmBack() {
    		   var tenderName = form.tenderName.value;
    		   var email = form.email.value;
    		   var phoneNumber = form.phoneNumber.value;
+   		   var pinCode = form.pinCode.value;
    		   
    		   
    		if(notEmptyField(registrationType,"Registration Type should not be empty")) 
@@ -142,9 +143,11 @@ function ConfirmBack() {
                   {
                 if(notEmptyField(email,"Email Id should not be empty")){
                     if(ValidateEmail(email)){
+                   
                        if(notEmptyField(phoneNumber,"Phone Number should not be empty"))
                          {
-                        if(enterNumeric(phoneNumber,"Mobile Number should be Numeric .")){ 
+                        if(enterNumeric(phoneNumber,"Phone Number should be Numeric .")){ 
+                         if(enterNumeric(pinCode,"Pincode should be Numeric .")){
                
  	             
 		            var r=confirm("Are you sure, you want to Save the Form ?")
@@ -155,5 +158,5 @@ function ConfirmBack() {
 			      disSubmit('saveBtn');
 		         }
 		         }
-		     }}}}}}}
+		     }}}}}}}}
  </script>

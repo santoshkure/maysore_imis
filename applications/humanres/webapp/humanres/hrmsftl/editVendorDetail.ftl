@@ -48,13 +48,13 @@
                    	    </select>
              	 </td>
     
-             <td class="label">${uiLabelMap.RegistarionId}<font color="red" >*</font></td>
+             <td class="label">${uiLabelMap.RegistarionId} <font color="red" >*</font></td>
 			 <td><input type="text" value="${vendorList.registarionId?if_exists}" style="width:140px"  onchange="javascript:trimFunction(this)" name="registarionId" autocomplete="off"  maxlength ="30" /></td> 
          	</tr>
          	
          	
          	<tr>
-         	 <td class="label">${uiLabelMap.RegistrationName}<font color="red" >*</font></td>
+         	 <td class="label">${uiLabelMap.RegistrationName} <font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="tenderName" value="${vendorList.tenderName?if_exists}" autocomplete="off"  maxlength ="30" value="" /></td> 
            	 <td class="label">${uiLabelMap.DateofRegister}<font color="red" ></font></td>
 			 <td>
@@ -73,7 +73,7 @@
          	<tr>
          	 <td class="label">${uiLabelMap.ProjectName}<font color="red" ></font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="name" value="${vendorList.name?if_exists}" autocomplete="off"  maxlength ="30" value="" /></td> 
-           	 <td class="label">${uiLabelMap.OfficeName }<font color="red" ></font></td>
+           	 <td class="label">${uiLabelMap.officeName}<font color="red" ></font></td>
 			 <td><select name="officeName" style="width:132px;margin:5px 0 5px 0;" >
              <option value=''>${uiLabelMap.CommonSelect}</option>
 	    	   <option value=''>${uiLabelMap.CommonSelect}</option>
@@ -111,12 +111,12 @@
 		          </td> 
            	
          	 <td class="label">${uiLabelMap.Address}<font color="red" ></font></td>
-         	 <td><textarea style="width:240px" name="presentAddress"  onchange="javascript:trimFunction(this)" autocomplete="off" value="${vendorList.presentAddress?if_exists}"  maxlength ="210"></textarea></td> 
+         	 <td><textarea style="width:240px" name="presentAddress"  onchange="javascript:trimFunction(this)" autocomplete="off" value="${vendorList.presentAddress?if_exists}"  maxlength ="210">${vendorList.presentAddress?if_exists}</textarea></td> 
          	 </tr>
          	
            	
 			<tr>
-         	 <td class="label">${uiLabelMap.Email}<font color="red" >*</font></td>
+         	 <td class="label">${uiLabelMap.Email} <font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="email" value="${vendorList.email?if_exists}"  autocomplete="off"  maxlength ="30" value="" /></td> 
            	 <td class="label">${uiLabelMap.State}<font color="red" ></font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="state" value="${vendorList.state?if_exists}" autocomplete="off"  maxlength ="30" value="" /></td> 
@@ -125,7 +125,7 @@
 			 <tr>
          	 <td class="label">${uiLabelMap.Pincode}<font color="red" ></font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="pinCode" value="${vendorList.pinCode?if_exists}" autocomplete="off"  maxlength ="6" value="" /></td> 
-           	 <td class="label">${uiLabelMap.PhoneNumber}<font color="red" >*</font></td>
+           	 <td class="label">${uiLabelMap.PhoneNumber} <font color="red" >*</font></td>
 			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="phoneNumber" value="${vendorList.phoneNumber?if_exists}" autocomplete="off"  maxlength ="10" value="" /></td>
              </tr>
            	  
@@ -166,6 +166,8 @@
     var tenderName = form.tenderName.value;
     var email = form.email.value;
     var phoneNumber = form.phoneNumber.value;
+    var pinCode = form.pinCode.value;
+    
     
     
       if(notEmptyField(registrationType,"Registration Type should not be empty")) 
@@ -178,8 +180,9 @@
                      if(ValidateEmail(email)){
                          if(notEmptyField(phoneNumber,"Phone Number should not be empty"))
                           {
-                        if(enterNumeric(phoneNumber,"Mobile Number should be Numeric ."))
+                        if(enterNumeric(phoneNumber,"Phone Number should be Numeric ."))
                             { 
+                            if(enterNumeric(pinCode,"Pincode should be Numeric .")){
 	     var r=confirm("Are you sure, you want to Update the Form ?")
         if (r==true)
         { 	
@@ -189,6 +192,6 @@
 	    form.submit();
 	    }
 	
-	}}}}}}}}
+	}}}}}}}}}
 	
  </script>
