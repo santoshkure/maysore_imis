@@ -4658,5 +4658,54 @@
         <value xml:lang="kn">Registered</value>
     </property>
     
+      <property key="SNO">
+     <value xml:lang="en">S.No</value>
+        <value xml:lang="kn">S.No</value>
+    </property>
+    
+    
+     <property key="ActiveStatus">
+     <value xml:lang="en">Active Status</value>
+        <value xml:lang="kn">Active Status</value>
+    </property>
+    
+    
+     <property key="createVendorBill">
+     <value xml:lang="en">Create Vendor Bill</value>
+        <value xml:lang="kn">Create Vendor Bill</value>
+    </property>
+    
+      <property key="PhoneNumber">
+     <value xml:lang="en">Phone Number</value>
+        <value xml:lang="kn">Phone Number</value>
+    </property>
+    
+    
+   
+     <property key="DateofProject">
+     <value xml:lang="en">Date of Project</value>
+        <value xml:lang="kn">Date of Project</value>
+    </property> 
+    
+    <property key="editVendorDetails">
+     <value xml:lang="en">Edit Vendor Details</value>
+        <value xml:lang="kn">Edit Vendor Details</value>
+    </property> 
+    
+    <property key="viewVendorDetails">
+     <value xml:lang="en">View Vendor Details</value>
+        <value xml:lang="kn">View Vendor Details</value>
+    </property> 
+    
+    <property key="approveVendorDetails">
+     <value xml:lang="en">Approve Vendor Details</value>
+        <value xml:lang="kn">Approve Vendor Details</value>
+    </property>  ListVendor
+    
+    
+    <property key="vendorlist">
+     <value xml:lang="en">Vendor List</value>
+        <value xml:lang="kn">Vendor List</value>
+    </property> 
 	<!-- END -->
 </resource>
