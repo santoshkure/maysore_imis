@@ -5,6 +5,7 @@
 <#-- #####################################################################################################-->
 <#---Version Number		Author 		 Date Created 		Date Modified   --->
 <#---1.0			Shubham malviya   01/08/2017         
+<#---1.0			                               Anubha Saini  on  11/10/2017 --> 
 <#-- #####################################################################################################-->
 <#--This ftl is used to Search Meter Detail -->
 
@@ -31,31 +32,26 @@
         <table class="basic-table" cellspacing="0">
         	 <tr>
               	<td class="label">${uiLabelMap.meterNo}</td>
-             	<td><input type="text" name="meterId" value="" style="width:240px;" maxlength="50"></td>
-             	<td class="label">${uiLabelMap.meterCondition}</td>
-                <td>
-                	<select name="meterCondition" style="width:90px;">
-                   			<option value="">Select</option>
-                   			<option value="select">select</option>
-                   			<option value="select">select</option>
-                   	</select>
-                </td>
-			 </tr>
-			 
-			 <tr>
-                <td class="label" colspan="1">${uiLabelMap.meterStatus}</td>
-                <td colspan="3">
-                	<select name="meterStatus" style="width:90px;">
-                   			<option value="">Select</option>
-                   			<option value="select">select</option>
-                   			<option value="select">select</option>
-                   	</select>
-                </td>
-                </tr>
-                
-        </table>
-        <center><input type="submit" value="${uiLabelMap.CommonSearch}"></center>
-    </div>
+             	<td><input type="text" name="meterNo" onchange="javascript:trimFunction(this)" value="" maxlength="140" style="width:302px;"/>
+             	</td>
+           </tr>	
+        <tr>
+			<td colspan="8"><center><div id="saveBtn" align="center"><input type="button" title="Search" name="search" value="${uiLabelMap.CommonSearch}" onclick="javascript:validateFields1('searchMeterDetail');"></center></td>
+		</tr>
+		</table>
+     </div>
 </div>
 </form>
 
+ <script language="JavaScript" type="text/javascript" />
+ 
+function validateFields1(formname)
+ {
+ var form=document[formname];
+ //var meterId = form.meterId.value;
+ var meterNo = form.meterNo.value;
+ 
+ form.action = "<@ofbizUrl>registerMeterDetails</@ofbizUrl>";
+  form.submit();
+}
+</script>

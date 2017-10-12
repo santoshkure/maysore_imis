@@ -2341,5 +2341,150 @@ public class HumanResEvents {
 		return sb.toString();
 
 	}
-    
+	//-----Added by Anubha Saini for Meter Register ---------  
+
+	 public static Map<String, Object> saveMeterDetails(DispatchContext dctx,
+				Map<String, ? extends Object> context) {
+			// Defining result map to return to the service.
+			Map<String, Object> result = ServiceUtil.returnSuccess();
+			// Getting the delegator,userLogin and locale object using the context.
+			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			GenericValue userLogin = (GenericValue) context.get("userLogin");
+			Locale locale = (Locale) context.get("locale");
+			List<GenericValue> caseList = new LinkedList<GenericValue>();
+		    
+		    String meterNo =(String) context.get("meterNo");
+			String meterConstant =(String) context.get("meterConstant");
+			String meterCondition =(String) context.get("meterCondition");	
+			String meterExisting =(String) context.get("meterExisting");
+			String meterCost = (String) context.get("meterCost");
+			/*String meterStatus =(String) context.get("meterStatus");*/
+			String remark =(String) context.get("remark");
+			String purchaseDate =(String) context.get("purchaseDate");
+		    String officeId =(String) context.get("officeId");
+		    String status =(String) context.get("status");
+			String activestatus =(String) context.get("activestatus");
+			//String meterId = (String) delegator.getNextSeqId("newMeterRegistration");
+			
+			   
+		    java.sql.Date dateOfPurchase = getConvertedDate(purchaseDate);
+		  
+		    String meterId = delegator.getNextSeqId("newMeterRegistration", 1);
+		    
+			if (UtilValidate.isEmpty(meterId)) {
+				meterId = "0";
+			}
+		    
+	    	if (UtilValidate.isNotEmpty(meterNo)) {
+
+			try {
+			    List<EntityExpr> expList = new LinkedList<EntityExpr>();
+				//List<EntityExpr> expList = FastList.newInstance();
+				EntityCondition mainCondition = null;
+
+				if (UtilValidate.isNotEmpty(meterNo)) {
+					expList.add(EntityCondition.makeCondition("meterNo",EntityOperator.EQUALS, meterNo));
+					mainCondition = EntityCondition.makeCondition(expList,EntityOperator.AND);
+					  List<GenericValue> resultList = new LinkedList<GenericValue>();
+					//List<GenericValue> resultList = FastList.newInstance();
+					try {
+						resultList = delegator.findList("newMeterRegistration",
+								mainCondition, UtilMisc.toSet("meterNo"), null,
+								null, false);
+						if (UtilValidate.isNotEmpty(resultList)) {
+							return ServiceUtil
+									.returnSuccess("Meter Number already exists.");
+						}
+					} catch (GenericEntityException e1) {
+						e1.printStackTrace();
+					}
+
+					if (UtilValidate.isEmpty(resultList)) {
+						
+						Map MeterRegistration = UtilMisc.toMap("meterId",meterId,"meterNo",meterNo,
+								"meterConstant",meterConstant,"meterCondition",meterCondition,"meterExisting",meterExisting,
+								"meterCost",meterCost,"remark",remark,"purchaseDate",dateOfPurchase,"officeId",officeId,"status","A");
+						
+						GenericValue valueToStore = delegator.makeValue("newMeterRegistration", MeterRegistration);
+						valueToStore.create();
+
+					result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, meterNo, locale));
+					
+					}
+				}
+			} catch (GenericEntityException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+	   
+	  
+	  public static Map<String, Object> updateMeterDetail(DispatchContext dctx,
+				Map<String, ? extends Object> context) {
+			Map<String, Object> result = ServiceUtil.returnSuccess();
+			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			LocalDispatcher dispatcher = dctx.getDispatcher();
+			GenericValue userLogin = (GenericValue) context.get("userLogin");
+			final Locale locale = (Locale) context.get("locale");
+			String meterNo =(String) context.get("meterNo");
+			String meterConstant =(String) context.get("meterConstant");
+			String meterCondition =(String) context.get("meterCondition");	
+			String remark =(String) context.get("remark");		
+			String status =(String) context.get("status"); 
+			/*String meterStatus =(String) context.get("meterStatus");*/ 
+			String meterCost =(String) context.get("meterCost");
+			String meterExisting =(String) context.get("meterExisting"); 
+			String activestatus =(String) context.get("activestatus"); 
+			String meterId =(String) context.get("meterId");
+			String officeId =(String) context.get("officeId");
+			
+			String purchaseDate =(String) context.get("purchaseDate");
+			/*java.sql.Date dateofcreatevar = getConvertedDate(purchaseDate);*/
+			java.sql.Date dateOfPurchase = getConvertedDate(purchaseDate);
+			
+			System.out.println("~~~~~~~~~~~officeId~~~~~~-----------------------------------~~~~~~"+officeId);	
+		    
+		   /* java.sql.Date dateOfPurchase = null;        
+		    dateOfPurchase = java.sql.Date.valueOf(purchaseDate);
+	        System.out.println("--------"+dateOfPurchase);*/
+
+		    Map MeterDetails = null;
+			try{
+			if (UtilValidate.isNotEmpty(meterId))
+			{
+          if(status.equals("edit")){
+        	  System.out.println("~~~~~~~~~~~edit~~~~~~-----------------------------------~~~~~~");
+        	  MeterDetails = UtilMisc.toMap("meterNo", meterNo,"meterId", meterId,"meterConstant", meterConstant,"meterCost", meterCost,"meterExisting", meterExisting,
+                      "purchaseDate", dateOfPurchase,"remark", remark, "officeId", officeId,"meterCondition",meterCondition,"status", "A");
+        	  
+              GenericValue register = delegator.makeValue("newMeterRegistration", MeterDetails);
+				
+          }
+       
+          else if(status.equals("status")){
+        	  System.out.println("~~~~~~~~~~~status~~~~~~-----------------------------------~~~~~~");
+        	  MeterDetails = UtilMisc.toMap("status",activestatus);	
+			}
+          if(status.equals("delete")){
+              GenericValue newMeterRegistration = EntityQuery.use(delegator).from("newMeterRegistration").where("meterId", meterId).queryOne();
+
+       	  
+              newMeterRegistration.remove();
+     			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_REMOVED_SUCCESSFULLY, meterNo, locale));   
+
+          }else{
+       	   Integer valueToStore = delegator.storeByCondition("newMeterRegistration", MeterDetails
+  					,EntityCondition.makeCondition("meterId",EntityOperator.EQUALS,meterId));
+  			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_UPDATE_SUCCESSFULLY, meterNo, locale));   
+                }
+			
+            }	
+			}catch(GeneralException e) {
+			
+			}			
+			return result;		
+		}  	
+    /*------------END-------*/
 }

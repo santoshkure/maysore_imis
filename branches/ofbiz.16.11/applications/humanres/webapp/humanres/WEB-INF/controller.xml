@@ -1852,6 +1852,18 @@ under the License.
         <response name="success" type="request-redirect" value="BuildingMaster"/>
         <response name="error" type="view" value="BuildingMaster" />
     </request-map>
+ 	<request-map uri="saveMeterDetails">
+        <security https="true" auth="true" />
+        <event type="service" invoke="saveMeterDetails"/>
+        <response name="success" type="request-redirect" value="registerMeterDetails"/>
+        <response name="error" type="view" value="registerMeterDetails" />
+    </request-map>
+     <request-map uri="updateMeterDetail">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateMeterDetail"/>
+        <response name="success" type="view" value="registerMeterDetails"/>
+         <response name="error" type="view" value="registerMeterDetails"/>
+    </request-map>
  	<!-- END -->
       <!--Added by siddhi -->
     <request-map uri="jobDetails">

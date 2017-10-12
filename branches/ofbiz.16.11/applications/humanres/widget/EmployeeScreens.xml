@@ -1439,6 +1439,16 @@ under the License.
     <screen name="registerMeterDetails">
         <section>
             <actions>
+            <!--      Added by Anubha -->
+           	    <script location="component://humanres/groovyScripts/office/searchMeterDetail.groovy"/>
+           	    
+           	    <entity-condition list="searchMeterLists" entity-name="newMeterRegistration">
+                <condition-list combine="and">
+				<!-- <condition-expr field-name="status" operator="equals" value="A" /> --> 
+			 	<condition-expr field-name="meterId" operator="not-equals" value="${parameters.meterId}" />
+			   	</condition-list>
+            	</entity-condition>
+           	     <!-- END -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1458,6 +1468,17 @@ under the License.
     <screen name="createNewMeter">
         <section>
             <actions>
+            
+            	<entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+            
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1815,6 +1836,21 @@ under the License.
     <screen name="editMeterDetail">
         <section>
             <actions>
+              <!--   Added by Anubha -->
+                 <entity-condition list="materDetailList" entity-name="newMeterRegistration">
+       			 <condition-expr field-name="meterId" operator="equals" value="${parameters.meterId}" />
+       			<!--  <condition-expr field-name="status" operator="equals" value="A" />  -->
+		  	   </entity-condition>
+		  	   <entity-condition list="officeList"
+					entity-name="OfficeDetail">
+					<condition-list combine="and">
+						<condition-expr field-name="partyTypeId" operator="equals" value="PARTY_GROUP" />
+						<condition-expr field-name="officeSiteName" operator="not-equals" value="null" />
+						<condition-expr field-name="statusId" operator="equals" value="PARTY_ENABLED" />
+					</condition-list>					
+					<order-by field-name="officeSiteName"/>
+				</entity-condition>
+		  	   <!--  END -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">

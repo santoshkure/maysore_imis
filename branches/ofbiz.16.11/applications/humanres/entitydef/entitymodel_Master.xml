@@ -232,6 +232,23 @@ under the License.
       <field name="activestatus" type="short-varchar"/>
       <prim-key field="buildingId"/> 
     </entity>
+    
+ <entity entity-name="newMeterRegistration" 
+            package-name="org.apache.ofbiz.humanres.master" title="Meter Register Entity">
+      <field name="meterId" type="id-ne"></field>
+      <field name="meterNo" type="short-varchar"/>
+      <field name="meterConstant" type="short-varchar"/>
+      <field name="meterCondition" type="short-varchar"/>
+      <field name="remark" type="long-varchar"></field>
+      <field name="meterExisting" type="short-varchar"></field>
+      <field name="meterCost" type="short-varchar"></field> 
+	   <field name="purchaseDate" type="date"></field>
+      <field name="activestatus" type="short-varchar"/>
+      <field name="officeId" type="short-varchar"></field>
+      <field name="status" type="short-varchar"/>
+      <prim-key field="meterId"/> 
+    </entity> 
+
  <!-- END -->
  
  

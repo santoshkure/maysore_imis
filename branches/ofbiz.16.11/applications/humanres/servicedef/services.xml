@@ -1521,6 +1521,37 @@ under the License.
 	    <attribute name="activestatus" type="String" mode="IN" optional="true" />	
 	   <!--  <attribute name="buildingId" type="String" mode="IN" optional="true" /> -->
 	    </service>
+	    
+	  
+	    <service name="saveMeterDetails" export="true" engine="java" location="org.apache.ofbiz.humanres.HumanResEvents" invoke="saveMeterDetails">
+		<attribute name="meterNo" type="String" mode="IN" optional="true" />
+	    <attribute name="meterConstant" type="String" mode="IN" optional="true" />
+		<attribute name="meterCondition" type="String" mode="IN" optional="true" />
+		<attribute name="meterExisting" type="String" mode="IN" optional="true" />
+		<attribute name="meterCost" type="String" mode="IN" optional="true" />
+ 	    <attribute name="remark" type="String" mode="IN" optional="true" />
+  	    <attribute name="purchaseDate" mode="IN" type="String" optional="true"/>
+  	    <attribute name="officeId" mode="IN" type="String" optional="true"/>  	    	
+ 	    <attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" />		 
+		</service>
+	    
+	     <service name="updateMeterDetail" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.HumanResEvents" invoke="updateMeterDetail">
+    	<attribute name="meterId" type="String" mode="IN" optional="true" />
+    	<attribute name="meterNo" type="String" mode="IN" optional="true" />
+	    <attribute name="meterConstant" type="String" mode="IN" optional="true" />
+		<attribute name="meterCondition" type="String" mode="IN" optional="true" />
+		<attribute name="meterExisting" type="String" mode="IN" optional="true" />
+		<!-- <attribute name="meterStatus" type="String" mode="IN" optional="true" /> -->
+		<attribute name="meterCost" type="String" mode="IN" optional="true" />
+ 	    <attribute name="remark" type="String" mode="IN" optional="true" />
+  	    <attribute name="purchaseDate" mode="IN" type="String" optional="true"></attribute>  	    	
+ 	  	<attribute name="status" type="String" mode="IN" optional="true" />	
+	    <attribute name="activestatus" type="String" mode="IN" optional="true" /> 
+	    <attribute name="officeId" mode="IN" type="String" optional="true"/>  
+	  	</service>
+
 		<!-- End -->
 		
 		
