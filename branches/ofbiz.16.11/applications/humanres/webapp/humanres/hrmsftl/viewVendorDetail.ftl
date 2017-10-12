@@ -48,7 +48,7 @@
          	<tr>
          	 <td class="label">${uiLabelMap.ProjectName}</td>
 			 <td>${vendorList.name?if_exists}</td> 
-           	 <td class="label">${uiLabelMap.OfficeName}</td>
+           	 <td class="label">${uiLabelMap.officeName}</td>
 			 <td> <#assign officeId = '${vendorList.officeName?if_exists}'>
 	                	<#if officeList?exists>
 			    	      <#if officeList?has_content>
