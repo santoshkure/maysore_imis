@@ -1030,20 +1030,27 @@ under the License.
     <screen name="customerDeatil">
         <section>
             <actions>
-           <entity-condition list="actionConsumerList" entity-name="consumerRegistrationDetails">
+           <!-- <entity-condition list="actionConsumerList" entity-name="consumerRegistrationDetails">
+            <condition-list combine="or">
             <condition-expr field-name="actionStatus" operator="equals" value="Approve" />
+            <condition-expr field-name="actionStatus" operator="equals" value="Disable" />
+            </condition-list>
             <order-by field-name="createdStamp"/>
-            </entity-condition>
+            </entity-condition> -->
+            <script location="component://humanres/groovyScripts/Employee/customerSearchList.groovy"/>        
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
                     		<html>
+                    		
                     		<html-template location="component://humanres/webapp/humanres/hrmsftl/searchCustomerDeatil.ftl"/>	
                     		<html-template location="component://humanres/webapp/humanres/hrmsftl/customerDeatilList.ftl"/>	
                     		</html>
+                    		<xsl-fo><html-template location="component://humanres/webapp/humanres/hrmsftl/customerDetailPdf.fo.ftl"/></xsl-fo>
                         </platform-specific>
+                
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -1054,10 +1061,7 @@ under the License.
     <screen name="approveCustomerDetail">
         <section>
             <actions>
-            <entity-condition list="registeredConsumerList" entity-name="consumerRegistrationDetails">
-            <condition-expr field-name="actionStatus" operator="equals" value="" />
-            <order-by field-name="createdStamp"/>
-            </entity-condition>
+            <script location="component://humanres/groovyScripts/Employee/customerRegisSearchList.groovy"/>  
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1128,9 +1132,12 @@ under the License.
     <screen name="approveNewConnection">
         <section>
             <actions>
-            <entity-condition list="actionConnectionList" entity-name="saveConnectionDetail">
-        		<condition-expr field-name="actionStatus" operator="equals" value=""/>
-        	</entity-condition>
+            <set field="customerId" value="${parameters.customerId}" />
+			<set field="listSizeView" value="${parameters.listSizeView}" />
+			<set field="connectionNo" value="${parameters.connectionNo}" />
+			<set field="applicationType" value="${parameters.applicationType}" />
+			<script location="component://humanres/groovyScripts/Employee/applyNewConnectionList.groovy"/>    
+            
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1417,9 +1424,10 @@ under the License.
     <screen name="connectionDetails">
         <section>
             <actions>
-            <entity-condition list="connectionList" entity-name="saveConnectionDetail">
+            <script location="component://humanres/groovyScripts/Employee/connectionSearchList.groovy"/>        
+            <!-- <entity-condition list="connectionList" entity-name="saveConnectionDetail">
         		<condition-expr field-name="actionStatus" operator="equals" value="approve"/>
-        	</entity-condition>
+        	</entity-condition> -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -3294,7 +3302,84 @@ under the License.
        </section>
    </screen>  
     <!-- END -->
-
- 
     
+<!-- added by shubham malviya for PDF View -->
+ <screen name="customerDetailPdf">
+		<section>
+			<actions>
+			<set field="customerId" value="${parameters.customerId}" />
+			<set field="listSizeView" value="${parameters.listSizeView}" />
+			<set field="nameOfCustomer" value="${parameters.nameOfCustomer}" />
+			<script location="component://humanres/groovyScripts/Employee/customerSearchList.groovy"/>    
+			</actions>
+			<widgets>
+				<platform-specific>
+					<xsl-fo>
+						<html-template
+							location="component://humanres/webapp/humanres/hrmsftl/customerDetailPdf.fo.ftl" />
+					</xsl-fo>
+				</platform-specific>
+			</widgets>
+		</section>
+	</screen>
+	
+	<screen name="connectionDetailPdf">
+		<section>
+			<actions>
+			<set field="customerId" value="${parameters.customerId}" />
+			<set field="listSizeView" value="${parameters.listSizeView}" />
+			<set field="connectionNo" value="${parameters.connectionNo}" />
+			<set field="applicationType" value="${parameters.applicationType}" />
+			<script location="component://humanres/groovyScripts/Employee/connectionSearchList.groovy"/>    
+			</actions>
+			<widgets>
+				<platform-specific>
+					<xsl-fo>
+						<html-template
+							location="component://humanres/webapp/humanres/hrmsftl/connectionDetailPdf.fo.ftl" />
+					</xsl-fo>
+				</platform-specific>
+			</widgets>
+		</section>
+	</screen>
+	
+	<screen name="customerRegiDetailPdf">
+		<section>
+			<actions>
+			<set field="customerId" value="${parameters.customerId}" />
+			<set field="listSizeView" value="${parameters.listSizeView}" />
+			<set field="nameOfCustomer" value="${parameters.nameOfCustomer}" />
+			<script location="component://humanres/groovyScripts/Employee/customerRegisSearchList.groovy"/>    
+			</actions>
+			<widgets>
+				<platform-specific>
+					<xsl-fo>
+						<html-template
+							location="component://humanres/webapp/humanres/hrmsftl/customerRegiDetailPdf.fo.ftl" />
+					</xsl-fo>
+				</platform-specific>
+			</widgets>
+		</section>
+	</screen>
+	
+	<screen name="applyConnectionDetailPdf">
+		<section>
+			<actions>
+			<set field="customerId" value="${parameters.customerId}" />
+			<set field="listSizeView" value="${parameters.listSizeView}" />
+			<set field="applicationType" value="${parameters.applicationType}" />
+			<script location="component://humanres/groovyScripts/Employee/applyNewConnectionList.groovy"/>    
+			</actions>
+			<widgets>
+				<platform-specific>
+					<xsl-fo>
+						<html-template
+							location="component://humanres/webapp/humanres/hrmsftl/applyConnectionDetailPdf.fo.ftl" />
+					</xsl-fo>
+				</platform-specific>
+			</widgets>
+		</section>
+	</screen>
+     <!-- END -->
+     
 </screens>

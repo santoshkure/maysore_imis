@@ -2120,7 +2120,36 @@ under the License.
 
     <!--END  -->
     
+    <request-map uri="disEnbCustomer">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="disEnbCustomer"/>
+        <response name="success" type="view" value="customerDeatil"/>
+          <response name="error" type="view" value="customerDeatil"/>
+    </request-map>
     
+    <request-map uri="customerDetailPdf">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="customerDetailPdf"/>
+        <response name="error" type="view" value="customerDeatil" />
+    </request-map>
+    
+    <request-map uri="connectionDetailPdf">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="connectionDetailPdf"/>
+        <response name="error" type="view" value="connectionDetails" />
+    </request-map>
+    
+    <request-map uri="customerRegiDetailPdf">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="customerRegiDetailPdf"/>
+        <response name="error" type="view" value="customerRegiDetailPdf" />
+    </request-map>
+    
+    <request-map uri="applyConnectionDetailPdf">
+        <security https="true" auth="true" />
+        <response name="success" type="view" value="applyConnectionDetailPdf"/>
+        <response name="error" type="view" value="approveNewConnection" />
+    </request-map>
     
     
     
@@ -2404,5 +2433,8 @@ under the License.
          <view-map name="editVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editVendor"/>
          <view-map name="viewVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewVendor"/>
          <view-map name="approveVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveVendor"/>
-         
+			<view-map name="customerDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#customerDetailPdf" content-type="application/pdf" encoding="none" />  
+			<view-map name="connectionDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#connectionDetailPdf" content-type="application/pdf" encoding="none" />  
+			<view-map name="customerRegiDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#customerRegiDetailPdf" content-type="application/pdf" encoding="none" />  
+			<view-map name="applyConnectionDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#applyConnectionDetailPdf" content-type="application/pdf" encoding="none" />
 </site-conf>

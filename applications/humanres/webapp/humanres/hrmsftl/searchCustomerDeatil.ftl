@@ -20,10 +20,10 @@
 	<div class="screenlet-body">
         <table class="basic-table" cellspacing="0">
         	 <tr>
-              	<td class="label">${uiLabelMap.customerName}</td>
+              	<td class="label">${uiLabelMap.customerId}</td>
+             	<td><input type="text" name="customerId" value="" style="width:240px;" maxlength="15"></td>
+             	<td class="label">${uiLabelMap.customerName}</td>
              	<td><input type="text" name="nameOfCustomer" value="" style="width:240px;" maxlength="50"></td>
-             	<td class="label">${uiLabelMap.customerNo}</td>
-             	<td><input type="text" name="customerNo" value="" style="width:240px;" maxlength="50"></td>
 			 </tr>
 			 <tr>
               	<td class="label">${uiLabelMap.fromDate}</td>

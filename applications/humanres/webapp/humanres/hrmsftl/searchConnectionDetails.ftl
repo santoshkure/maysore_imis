@@ -20,16 +20,14 @@
 	<div class="screenlet-body">
         <table class="basic-table" cellspacing="0">
         	 <tr>
-              	<td class="label">${uiLabelMap.customerName}</td>
-             	<td><input type="text" name="nameOfCustomer" value="" style="width:240px;" maxlength="50"></td>
-             	<td class="label">${uiLabelMap.customerNo}</td>
-             	<td><input type="text" name="customerNo" value="" style="width:240px;" maxlength="50"></td>
-			 </tr>
-			 <tr>
               	<td class="label">${uiLabelMap.connectionNo}</td>
              	<td><input type="text" name="connectionNo" value="" style="width:240px;" maxlength="50"></td>
+             	<td class="label">${uiLabelMap.customerId}</td>
+             	<td><input type="text" name="customerId" value="" style="width:240px;" maxlength="50"></td>
+			 </tr>
+			 <tr>
              	<td class="label">${uiLabelMap.applicationType}</td>
-                <td>
+                <td colspan="3">
                 	<select name="applicationType" style="width:90px;">
                    			<option value="">Select</option>
                    			<option value="Permanent">Permanent</option>
@@ -37,16 +35,7 @@
                    	</select>
                 </td>
                 </tr>
-                <tr>
-                <td class="label" colspan="1">${uiLabelMap.CommonStatus}</td>
-                <td colspan="3">
-                	<select name="status" style="width:90px;">
-                   			<option value="">Select</option>
-                   			<option value="Approved">Approved</option>
-                   			<option value="Rejected">Rejected</option>
-                   	</select>
-                </td>
-			 </tr>
+                
         </table>
         <center><input type="submit" value="${uiLabelMap.CommonSearch}"></center>
     </div>
