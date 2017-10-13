@@ -1612,6 +1612,13 @@ under the License.
 
 		<!--  END-->
 		
-
+		<!-- Added by shubham malviya for Disable And Enable Customer -->
+				<service name="disEnbCustomer" export="true" engine="java" 
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="disEnbCustomer">
+    	<attribute name="customerId" type="String" mode="IN" optional="true" />
+    	<attribute name="activestatus" type="String" mode="IN" optional="true" />
+    	<attribute name="status" type="String" mode="IN" optional="true" />
+	    </service>
+<!--  END-->
 
 	    </services>

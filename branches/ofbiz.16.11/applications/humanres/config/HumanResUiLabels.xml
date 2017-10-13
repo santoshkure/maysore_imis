@@ -4708,4 +4708,8 @@
         <value xml:lang="kn">Vendor List</value>
     </property> 
 	<!-- END -->
+<property key="CommonDisable">
+		<value xml:lang="en">Disable</value>
+		<value xml:lang="kn">Disable</value>
+	</property>
 </resource>

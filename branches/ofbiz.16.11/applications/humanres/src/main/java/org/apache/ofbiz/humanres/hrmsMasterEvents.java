@@ -1928,15 +1928,14 @@ public class hrmsMasterEvents {
 				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
 			        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY, "", locale));    
    						
-   							//String message = "This is a system generated mail. Please do not reply to this email ID. Ifyou have a query or need any clarification you may: \n Call our 24-hour Customer Care.\n \n"
-   		        					//+ "Dear Customer,\n         Welcome. We thank you for your registration. \n \n Your Id:" +customerId+ "\n Password: "+PS+"\n \n Thankyou";
-   							String message=null;
+   							String massage=null;
+   							
    							if(actionStatus.equals("Approve")){
-   							message = "Welcome, your password "+PS+" Thankyou";
+   								massage ="Dear Customer, \n          	Welcome. We thank you for your registration at IMIS. \n \n Your user id is "+customerId+" \n Your Password is "+PS+" \n \n Thankyou";
    							}
    							else
    							{
-   								message = "Sorry, your registration Detail have been Rejected";
+   								massage = "Sorry, your registration Detail have been Rejected";
    							}
    							
    							if(actionStatus.equals("Approve"))
@@ -1980,7 +1979,7 @@ public class hrmsMasterEvents {
 			   			try {
 			   					Map smsLogMap = FastMap.newInstance();
 			   					Map LogMap = FastMap.newInstance();
-			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNumber, "textMessage", message, "customerId", customerId, "tabName", "Registration Action", "discription", "Action Confirmation"));
+			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNumber, "textMessage", "Dear Customer,Welcome. We thank you for your registration at IMIS. Your user id is "+customerId+" \n Your Password is "+PS+"", "customerId", customerId, "tabName", "Registration Action", "discription", "Action Confirmation"));
 			   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
 			   				}
 			   			catch(GenericServiceException e)
@@ -1993,7 +1992,7 @@ public class hrmsMasterEvents {
 			   			try {
 			   					Map emailLogMap = FastMap.newInstance();
 			   					Map LogMap = FastMap.newInstance();
-			   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",message, "customerId", customerId, "tabName", "Action Registration", "discription", "Action Confirmation","subject", "Email From IMIS"));
+			   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",massage, "customerId", customerId, "tabName", "Action Registration", "discription", "Action Confirmation","subject", "Email From IMIS"));
 			   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
 			   				}
 			   			catch(GenericServiceException e)
@@ -2174,20 +2173,20 @@ public class hrmsMasterEvents {
 			   				String eMail = consumerRegistrationList.get(0).getString("eMail");
 			     			//End
 
-			   				String message=null;
+			   				String massage=null;
    							if(connectionStatus.equals("approve")){
-   							message = "your Connection Detail have been Approved.";
+   								massage = "your Connection Detail have been Approved.";
    							}
    							else
    							{
-   								message = "Sorry, your Connection Detail have been Rejected";
+   								massage = "Sorry, your Connection Detail have been Rejected";
    							}
    							
 			   			// code to call Service for SMS
 				   			try {
 				   					Map smsLogMap = FastMap.newInstance();
 				   					Map LogMap = FastMap.newInstance();
-				   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNo, "textMessage", message, "customerId", customerNo, "tabName", "Action Connection", "discription", "Action Confirmation"));
+				   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNo, "textMessage", massage, "customerId", customerNo, "tabName", "Action Connection", "discription", "Action Confirmation"));
 				   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
 				   				}
 				   			catch(GenericServiceException e)
@@ -2200,7 +2199,7 @@ public class hrmsMasterEvents {
 				   			try {
 				   					Map emailLogMap = FastMap.newInstance();
 				   					Map LogMap = FastMap.newInstance();
-				   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",message, "customerId", customerNo, "tabName", "Action Connection", "discription", "Action Confirmation","subject", "Email From IMIS"));
+				   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",massage, "customerId", customerNo, "tabName", "Action Connection", "discription", "Action Confirmation","subject", "Email From IMIS"));
 				   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
 				   				}
 				   			catch(GenericServiceException e)
@@ -3052,7 +3051,75 @@ public class hrmsMasterEvents {
 						return result;		
                 }     
 			        
-		 		  
+		 		 /**
+			         * Create By : shubham malviya
+					 * Method Name :  disEnbCustomer
+					 * entity Name : saveConnectionDetail
+					 * entity Name : consumerRegistrationDetails
+					 * entity Name : saveConnectionDetail
+					 * @Version 1.0
+					 * @Description is use for Disable Customer
+					 * @param DispatchContext dctx
+					 * @param Map<String, ? extends Object> context
+					 * @return Map - Map returning Success Message
+					 *  Transaction is handled by service engine
+					 *    
+					 *  
+					 */	 
+			    	
+			    	public static Map<String, Object> disEnbCustomer(DispatchContext dctx,Map<String, ? extends Object> context) {
+			        	Map<String, Object> result = ServiceUtil.returnSuccess();
+			        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			        	LocalDispatcher dispatcher = dctx.getDispatcher();
+			        	GenericValue userLogin = (GenericValue) context.get("userLogin");
+			        	Locale locale = (Locale) context.get("locale");
+			        	
+			        	String customerId = (String) context.get("customerId");
+			        	String activestatus = (String) context.get("activestatus");
+			        	String status = (String) context.get("status");
+			        	String tempStatus= null;
+			        	String disabledBy=null;
+			        			
+			        	if(activestatus.equals("N"))
+			        	{
+			        		tempStatus = "Disable";
+			        		disabledBy= "admin";
+			        	}
+			        	else
+			        	{
+			        		tempStatus = "Approve";
+			        	}
+			        	try{
+			      			if (UtilValidate.isNotEmpty(customerId))
+			      			{
+			      				// Added for to change enabled column if Disable then 'Y' and Active then 'N'
+			      				Map disEnbCustomer = UtilMisc.toMap("enabled",activestatus,"disabledDateTime",null,"disabledBy",disabledBy); 
+					        	   Integer valueToStore1 = delegator.storeByCondition("UserLogin", disEnbCustomer
+						   					,EntityCondition.makeCondition("userLoginId",EntityOperator.EQUALS,customerId));
+					        	   
+					        	   // added for to change actionstatus Approve to Disable or Disable to Approve
+					        	   Map disEnbSaveCustomer = UtilMisc.toMap("actionStatus",tempStatus); 
+					        	   Integer valueToStore2 = delegator.storeByCondition("consumerRegistrationDetails", disEnbSaveCustomer
+						   					,EntityCondition.makeCondition("customerId",EntityOperator.EQUALS,customerId));
+					        	   
+					        	   // added for remove permission of myportal login
+					        	   /*GenericValue buildingTypeMaster = EntityQuery.use(delegator).from("buildingTypeMaster").where("buildingId", buildingId).queryOne();
+					 	              buildingTypeMaster.remove();*/
+					 	              
+					        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.CUSTOMER_SUCCESSFULLY, status, locale));    
+			        			
+			      			}
+			      		}
+			        	
+			     catch(GenericEntityException e)
+		   			{
+		   			System.out.println("Exception occured : " + e ); 
+		   			}
+		   		
+		   	
+		   		 return result;	
+		   	}
+			// End 
 		 		  
 		 		  
 }

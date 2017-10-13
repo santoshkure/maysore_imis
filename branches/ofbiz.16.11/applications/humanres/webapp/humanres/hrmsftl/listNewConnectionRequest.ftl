@@ -14,7 +14,15 @@
 	<div class="row">
 		<div class="alert alert-info">
 		    <ul>
-		 	 <div class="h3" align="center"><b>${uiLabelMap.listCustomerRequestDetail}</b></div> 
+		 	 <li class="h3">${uiLabelMap.listCustomerRequestDetail}</li>
+    		<div class="basic-nav" style="margin-top: -37.50px;">
+  				<ul>
+    				<li>
+    				<a title="View PDF" target="blank_" href="<@ofbizUrl>applyConnectionDetailPdf?customerId=${customerId?if_exists}&applicationType=${applicationType?if_exists}&listSizeView=${listSize?if_exists}</@ofbizUrl>"><img src="/rainbowstone/images/pdf.png" width="24px"></img></a>
+    				</li>
+  				</ul>
+ 			 
+  			</div>  
 		   </ul>
 	   </div>
 		<div class="screenlet-body">
@@ -33,16 +41,16 @@
           </thead>
            		<tbody>
            		<#assign i=1>
-           		<#if actionConnectionList?exists>
-           		<#list actionConnectionList as actionConnectionList>
+           		<#if searchApplyConnectionList?exists>
+           		<#list searchApplyConnectionList as searchApplyConnectionList>
         			<tr>
         				<td>${i?if_exists}</td>
-        				<td><a href="viewCustomerConnectionDetail?checkId=${actionConnectionList.sequenceId?if_exists}&regId=${actionConnectionList.customerId?if_exists}">${actionConnectionList.customerId?if_exists}</a></td>
-        				<td>${actionConnectionList.connectionCategory?if_exists}i</td>
-	          			<td>${actionConnectionList.applicationType?if_exists}</td>
-              			<td>${actionConnectionList.typeOfBuilding?if_exists}</td>
-              			<td>${actionConnectionList.applicationDate?if_exists}</td>
-              			<td><a href="actionNewConnection?checkId=${actionConnectionList.sequenceId?if_exists}&regId=${actionConnectionList.customerId?if_exists}" class="buttontext">${uiLabelMap.action}</a></td>
+        				<td><a href="viewCustomerConnectionDetail?checkId=${searchApplyConnectionList.sequenceId?if_exists}&regId=${searchApplyConnectionList.customerId?if_exists}">${searchApplyConnectionList.customerId?if_exists}</a></td>
+        				<td>${searchApplyConnectionList.connectionCategory?if_exists}i</td>
+	          			<td>${searchApplyConnectionList.applicationType?if_exists}</td>
+              			<td>${searchApplyConnectionList.typeOfBuilding?if_exists}</td>
+              			<td>${searchApplyConnectionList.applicationDate?if_exists}</td>
+              			<td><a href="actionNewConnection?checkId=${searchApplyConnectionList.sequenceId?if_exists}&regId=${searchApplyConnectionList.customerId?if_exists}" class="buttontext">${uiLabelMap.action}</a></td>
            			</tr>
            			<#assign i=i+1>
            			</#list>
