@@ -62,13 +62,18 @@ under the License.
 		  <field name="registrationId" type="id-ne"/>
 		  <field name="title" type="short-varchar"/>
 		  <field name="firstName" type="short-varchar"/>
+		  <field name="firstNameInKn" type="short-varchar"/>
 		  <field name="middleName" type="short-varchar"/>
+		  <field name="middleNameInKn" type="short-varchar"/>
 		  <field name="lastName" type="short-varchar"/>
+		  <field name="lastNameInKn" type="short-varchar"/>
 		  <field name="genderId" type="short-varchar"/>
 		  <field name="maritalStatusId" type="short-varchar"/>
 		  <field name="dateOfBirth" type="short-varchar"/>
 		  <field name="fatherName" type="short-varchar"/>
+		  <field name="fatherNameInKn" type="short-varchar"/>
 		  <field name="motherName" type="short-varchar"/>
+		  <field name="motherNameInKn" type="short-varchar"/>
 		  <field name="aadharCardNo" type="short-varchar"/>
 		  <field name="cummunityNameId" type="short-varchar"/>
 		  <field name="consumerCastId" type="short-varchar"/>
@@ -77,9 +82,11 @@ under the License.
 		  <field name="nationality" type="short-varchar"/>
 		  <field name="eMail" type="short-varchar"/>
 		  <field name="address" type="long-varchar"/>
+		  <field name="addressInKn" type="long-varchar"/>
 		  <field name="houseNo" type="short-varchar"/>
 		  <field name="wardNo" type="short-varchar"/>
 		  <field name="mohalla" type="short-varchar"/>
+		  <field name="mohallaInKn" type="short-varchar"/>
 		  <field name="landMark" type="short-varchar"/>
 		  <field name="village" type="short-varchar"/>
 		  <field name="submittedDate" type="short-varchar"/>
