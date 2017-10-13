@@ -4700,7 +4700,7 @@
     <property key="approveVendorDetails">
      <value xml:lang="en">Approve Vendor Details</value>
         <value xml:lang="kn">Approve Vendor Details</value>
-    </property>  ListVendor
+    </property>  
     
     
     <property key="vendorlist">
@@ -4713,3 +4713,13 @@
 		<value xml:lang="kn">Disable</value>
 	</property>
 </resource>
+
+ <property key="Deactive">
+     <value xml:lang="en">Deactive</value>
+        <value xml:lang="kn">Deactive</value>
+    </property> 
+    
+     <property key="Active">
+     <value xml:lang="en">Active</value>
+        <value xml:lang="kn">Active</value>
+    </property> 
