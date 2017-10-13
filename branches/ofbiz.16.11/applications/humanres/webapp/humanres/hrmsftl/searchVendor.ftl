@@ -175,7 +175,7 @@
                 
                 <a title="Active/Deactive" href="javascript:updateVendorStat('ListVendor','${vendorList.regId?if_exists}','DEACTIVE');" class="buttontext">${uiLabelMap.Deactive}</a>
                 <#else>
-                  <a title="Active/Deactive" href="javascript:updateVendorStat('ListVendor','${vendorList.regId?if_exists}','ACTIVE');" class="buttontext">${uiLabelMap.active}</a>
+                  <a title="Active/Deactive" href="javascript:updateVendorStat('ListVendor','${vendorList.regId?if_exists}','ACTIVE');" class="buttontext">${uiLabelMap.Active}</a>
               
               </#if>
                	<#else>
