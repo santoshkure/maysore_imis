@@ -12,6 +12,7 @@
     
     <div class=""><span style="color: #2f87c6;font-size: 25px;padding: 5px 10px 5px 10px;">${uiLabelMap.registerNewCustomer}</span></div>
     <form method="post" name="RegisterPerson" action="" class="basic-form">
+    <script language="javascript" src="/images/commonjs/kannadaTyping.js" type="text/javascript"></script>
     <div class="row">
     	<div class="alert alert-info">
   			<ul>
@@ -38,14 +39,21 @@
                  		</select>
              		</td>
              		<td class="label">${uiLabelMap.firstName} <font color="red">*</td>
-                    <td><input name="firstName"  type="text" maxlength="60" value="" title="First Name should be alphabatic." placeholder="${uiLabelMap.enterFirstName}" onchange="javascript:trimFunction(this)"></td>
+                    <td><input name="firstName"  type="text" maxlength="60" value="" title="First Name should be alphabatic." placeholder="${uiLabelMap.enterFirstName}" onchange="javascript:trimFunction(this)">(${uiLabelMap.inEnglish})
+                    <br> 
+               		<input type="text" maxlength="60" name="firstNameInKn" id="firstNameInKn" value="" onkeydown="return processFnn(this, event);" placeholder="${uiLabelMap.enterFirstName}" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>
                   </tr>
                   
                   <tr>
                         <td class="label">${uiLabelMap.middleName}</td>
-                        <td><input name="middleName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMiddleName}" onchange="javascript:trimFunction(this)"></td>
+                        <td><input name="middleName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMiddleName}" onchange="javascript:trimFunction(this)">(${uiLabelMap.inEnglish})
+                    	<br> 
+               			<input type="text" maxlength="60" name="middleNameInKn" id="middleNameInKn" value="" onkeydown="return processFnn(this, event);" placeholder="${uiLabelMap.enterMiddleName}" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>
+                        
                         <td class="label">${uiLabelMap.lastName} <font color="red">*</td>
-                        <td><input name="lastName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterlastName}" onchange="javascript:trimFunction(this)"></td>
+                        <td><input name="lastName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterlastName}" onchange="javascript:trimFunction(this)">(${uiLabelMap.inEnglish})
+                    	<br> 
+               			<input type="text" maxlength="60" name="lastNameInKn" id="lastNameInKn" value="" onkeydown="return processFnn(this, event);" placeholder="${uiLabelMap.enterlastName}" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>
                    </tr>
                    
                    <tr>
@@ -79,14 +87,18 @@
                    			</select>
                    		</td>
                         <td class="label">${uiLabelMap.fatherName} <font color="red">*</td>
-                        <td><input name="fatherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFatherName}" onchange="javascript:trimFunction(this)"></td>
+                        <td><input name="fatherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterFatherName}" onchange="javascript:trimFunction(this)">(${uiLabelMap.inEnglish})
+						<br> 
+               			<input type="text" maxlength="60" name="fatherNameInKn" id="fatherNameKn" value="" onkeydown="return processFnn(this, event);" placeholder="${uiLabelMap.enterFatherName}" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
                      
                     </tr>
             
                     <tr>   
                         <td class="label">${uiLabelMap.motherName} <font color="red">*</td>
-                        <td><input name="motherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMotherName}" onchange="javascript:trimFunction(this)"></td>
-                        
+                        <td><input name="motherName"  type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMotherName}" onchange="javascript:trimFunction(this)">(${uiLabelMap.inEnglish})
+                        <br> 
+               			<input type="text" maxlength="60" name="motherNameInKn" id="motherNameKn" value="" onkeydown="return processFnn(this, event);" placeholder="${uiLabelMap.enterMotherName}" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+                     
                         <td class="label">${uiLabelMap.aadharCardNo} <font color="red">*</td>
                         <td><input name="aadharCardNo"  type="text" maxlength="16" value="" placeholder="${uiLabelMap.EnterAadharCard}" onchange="javascript:allnumeric(this,'${uiLabelMap.aadharCardNo} ${uiLabelMap.shouldBeNumericMsg}')" onKeyUp="javascript:trimFunction(this)"></td>
                     </tr>
@@ -145,7 +157,8 @@
                     <tr>
                         <td class="label">${uiLabelMap.OrderAddress} <font color="red">*</td>
                         <td>
-                        <textarea name="address" type="text" maxlength="150" value="" placeholder="${uiLabelMap.enterAddress}" onchange="javascript:trimFunction(this)"></textarea>
+                        <textarea name="address" type="text" maxlength="150" value="" placeholder="${uiLabelMap.enterAddress}" onchange="javascript:trimFunction(this)"></textarea><br>
+                        <textarea name="addressInKn" type="text" maxlength="150" value="" placeholder="${uiLabelMap.enterAddress} In Kannada" onchange="javascript:trimFunction(this)" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"></textarea><br>
                         </td>
                         <td class="label">${uiLabelMap.houseNo}</td>
                         <td>
@@ -160,7 +173,9 @@
                         </td>
                         <td class="label">${uiLabelMap.mohalla} <font color="red">*</td>
                         <td>
-                        <input name="mohalla" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMohalla}" onchange="javascript:trimFunction(this)">
+                        <input name="mohalla" type="text" maxlength="60" value="" placeholder="${uiLabelMap.enterMohalla}" onchange="javascript:trimFunction(this)">(${uiLabelMap.inEnglish})
+						<br> 
+               			<input type="text" maxlength="60" name="mohallaInKn" id="mohallaInKn" value="" onkeydown="return processFnn(this, event);" placeholder="${uiLabelMap.enterMohalla}" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
                         </td>
                    </tr>
                     

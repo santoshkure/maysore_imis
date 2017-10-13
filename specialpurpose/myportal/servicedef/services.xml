@@ -94,13 +94,18 @@ under the License.
     	
      <attribute name="title" type="String" mode="IN" optional="true" />
      <attribute name="firstName" type="String" mode="IN" optional="true" />
+     <attribute name="firstNameInKn" type="String" mode="IN" optional="true"/>
      <attribute name="middleName" type="String" mode="IN" optional="true" />
+     <attribute name="middleNameInKn" type="String" mode="IN" optional="true" />
      <attribute name="lastName" type="String" mode="IN" optional="true" />
+     <attribute name="lastNameInKn" type="String" mode="IN" optional="true" />
      <attribute name="dateOfBirth" type="String" mode="IN" optional="true" />
      <attribute name="gender" type="String" mode="IN" optional="true" />
      <attribute name="maritalStatus" type="String" mode="IN" optional="true" />
      <attribute name="fatherName" type="String" mode="IN" optional="true" />
+     <attribute name="fatherNameInKn" type="String" mode="IN" optional="true" />
      <attribute name="motherName" type="String" mode="IN" optional="true" />
+     <attribute name="motherNameInKn" type="String" mode="IN" optional="true" />
      <attribute name="aadharCardNo" type="String" mode="IN" optional="true" />
      <attribute name="nationality" type="String" mode="IN" optional="true" />
      <attribute name="cummunityName" type="String" mode="IN" optional="true" />
@@ -109,9 +114,11 @@ under the License.
       <attribute name="resContactNo" type="String" mode="IN" optional="true" />
      <attribute name="eMail" type="String" mode="IN" optional="true" />
      <attribute name="address" type="String" mode="IN" optional="true" />
+     <attribute name="addressInKn" type="String" mode="IN" optional="true" />
      <attribute name="houseNo" type="String" mode="IN" optional="true" />
      <attribute name="wardNo" type="String" mode="IN" optional="true" />
      <attribute name="mohalla" type="String" mode="IN" optional="true" />
+     <attribute name="mohallaInKn" type="String" mode="IN" optional="true" />
      <attribute name="landMark" type="String" mode="IN" optional="true" />
      <attribute name="village" type="String" mode="IN" optional="true" />
      <attribute name="registerdBy" type="String" mode="IN" optional="true" />

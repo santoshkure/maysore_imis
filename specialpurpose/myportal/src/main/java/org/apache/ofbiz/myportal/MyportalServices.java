@@ -343,14 +343,19 @@ public class MyportalServices {
        Date date = new Date();
        
       	String title = (String) context.get("title");
-         String firstName = (String) context.get("firstName");
+        String firstName = (String) context.get("firstName");
+        String firstNameInKn = (String) context.get("firstNameInKn");
   		String middleName = (String) context.get("middleName");
+  		String middleNameInKn = (String) context.get("middleNameInKn");
   		String lastName = (String) context.get("lastName");
+  		String lastNameInKn = (String) context.get("lastNameInKn");
   		String dateOfBirth = (String) context.get("dateOfBirth");
   		String gender = (String) context.get("gender");
   		String maritalStatus = (String) context.get("maritalStatus");
   		String fatherName = (String) context.get("fatherName");
+  		String fatherNameInKn = (String) context.get("fatherNameInKn");
   		String motherName = (String) context.get("motherName");
+  		String motherNameInKn = (String) context.get("motherNameInKn");
   		String aadharCardNo = (String) context.get("aadharCardNo");
   		String nationality = (String) context.get("nationality");
   		String cummunityName = (String) context.get("cummunityName");
@@ -359,32 +364,41 @@ public class MyportalServices {
   		String resContactNo = (String) context.get("resContactNo");
   		String eMail = (String) context.get("eMail");
   		String address = (String) context.get("address");
+  		String addressInKn = (String) context.get("addressInKn");
   		String houseNo = (String) context.get("houseNo");
   		String wardNo = (String) context.get("wardNo");
   		String mohalla = (String) context.get("mohalla");
+  		String mohallaInKn = (String) context.get("mohallaInKn");
   		String landMark = (String) context.get("landMark");
   		String village = (String) context.get("village");
   		String registerdBy = (String) context.get("registerdBy");
   		
   		try{     
   			GenericValue saveRegistrationDetail = null;
-  			String sequenceId = delegator.getNextSeqId("consumerRegistrationDetails");
+  			String sequenceId = delegator.getNextSeqId("consumerRegistrationDetails",1);
   			String registrationId = "CUSR"+sequenceId;
   			
-  			Map<String, ? extends Object> RegistrationDetail = UtilMisc.toMap("sequenceId",sequenceId,"registrationId",registrationId,"title",title,"firstName",firstName,"middleName",middleName,"lastName",lastName
-  					,"dateOfBirth",dateOfBirth,"genderId",gender,"maritalStatusId",maritalStatus,"fatherName",fatherName,"motherName",motherName,"aadharCardNo",aadharCardNo,"cummunityNameId",cummunityName
-  					,"nationality",nationality,"consumerCastId",consumerCast,"mobileNumber",contactNo,"resContactNo",resContactNo,"eMail",eMail,"address",address,"houseNo",houseNo,"wardNo",wardNo,"mohalla",mohalla
+  			Map<String, ? extends Object> RegistrationDetail = UtilMisc.toMap("sequenceId",sequenceId,"registrationId",registrationId,"title",title,"firstName",firstName,"firstNameInKn",firstNameInKn,"middleName",middleName,
+  					"middleNameInKn",middleNameInKn,"lastName",lastName,"lastNameInKn",lastNameInKn
+  					,"dateOfBirth",dateOfBirth,"genderId",gender,"maritalStatusId",maritalStatus,"fatherName",fatherName,"fatherNameInKn",fatherNameInKn,
+  					"motherName",motherName,"motherNameInKn",motherNameInKn,"aadharCardNo",aadharCardNo,"cummunityNameId",cummunityName
+  					,"nationality",nationality,"consumerCastId",consumerCast,"mobileNumber",contactNo,"resContactNo",resContactNo,"eMail",eMail,"address",address,
+  					"addressInKn",addressInKn,"houseNo",houseNo,"wardNo",wardNo,"mohalla",mohalla,"mohallaInKn",mohallaInKn
   					,"landMark",landMark,"village",village,"submittedDate",dateFormat.format(date),"registerdBy",registerdBy);
   			
   			saveRegistrationDetail = delegator.makeValue("consumerRegistrationDetails", RegistrationDetail);
   			saveRegistrationDetail.create();
   			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, "", locale));
   			
+  			String massage ="Dear Customer,\n       Welcome. We thank you for your registration at IMIS Mysore. \n Thankyou \n \n"+
+  					"This is a system generated mail. Please do not reply to this email ID. If you have a query or need any"
+  					+ "clarification you may: Call our 24-hour Customer Care." ;
+  			
   				// code to call Service for SMS
      				try {
      						Map smsLogMap = FastMap.newInstance();
      						Map LogMap = FastMap.newInstance();
-     						smsLogMap.putAll(UtilMisc.toMap("mobNumber", contactNo, "textMessage", "Dear Customer you are Sucessfully Registered.Thankyou", "customerId", registrationId, "tabName", "Registration", "discription", "Registration Confirmation"));
+     						smsLogMap.putAll(UtilMisc.toMap("mobNumber", contactNo, "textMessage", massage, "customerId", registrationId, "tabName", "Registration", "discription", "Registration Confirmation"));
      						smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
      					}
      				catch(GenericServiceException e)
@@ -397,7 +411,7 @@ public class MyportalServices {
      				try {     
      						Map emailLogMap = FastMap.newInstance();
      						Map LogMap = FastMap.newInstance();
-     						emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage","Dear Customer you are Sucessfully Registered. Thankyou.", "customerId", registrationId, "tabName", "Registration", "discription", "Registration Confirmation","subject", "Email From IMIS"));
+     						emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",massage, "customerId", registrationId, "tabName", "Registration", "discription", "Registration Confirmation","subject", "Email From IMIS"));
      						emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
      					}
      				catch(GenericServiceException e)
@@ -436,7 +450,7 @@ public class MyportalServices {
   		
   		try{     
   			GenericValue saveConnectionDetail = null;
-  			String sequenceId = delegator.getNextSeqId("saveConnectionDetail");
+  			String sequenceId = delegator.getNextSeqId("saveConnectionDetail",1);
   			//String connectionNo = "CONN"+sequenceId;
   			
   			Map<String, ? extends Object> connectionDetail = UtilMisc.toMap("sequenceId",sequenceId,"customerId",costomerNo,"connectionCategory",connectionCategory
@@ -458,7 +472,7 @@ public class MyportalServices {
      				try {
      						Map smsLogMap = FastMap.newInstance();
      						Map LogMap = FastMap.newInstance();
-     						smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNo, "textMessage", "Dear Customer your Connection Applied Successfully.Thankyou", "customerId", costomerNo, "tabName", "Apply Connection", "discription", "apply for new connection"));
+     						smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNo, "textMessage", "Dear Customer, your Connection Applied Successfully.Thankyou", "customerId", costomerNo, "tabName", "Apply Connection", "discription", "apply for new connection"));
      						smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
      					}
      				catch(GenericServiceException e)

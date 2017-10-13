@@ -87,6 +87,7 @@
     <request-map uri="registerNewCustomer">
         <security https="true" auth="false"/>
         <response name="success" type="view" value="registerNewCustomer"/>
+        <response name="error" type="view" value="registerNewCustomer"/>
     </request-map>
     <!-- added by siddhi -->
      <request-map uri="billhistory">
