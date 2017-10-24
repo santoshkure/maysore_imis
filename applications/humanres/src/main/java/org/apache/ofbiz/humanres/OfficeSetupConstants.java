@@ -132,5 +132,6 @@ public interface OfficeSetupConstants {
 	public static String RECORD_APPROVE_SUCCESSFULLY = "Record Approved Successfully.";
 	public static String RECORD_Compassionate_Approved = "Compassionate Approved Successfully.";
 	public static String RECORD_REMOVED_SUCCESSFULLY = "Record Removed Successfully.";
+	public static String CUSTOMER_SUCCESSFULLY = "Customer Successfully.";
 
 }
