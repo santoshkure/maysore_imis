@@ -4712,7 +4712,6 @@
 		<value xml:lang="en">Disable</value>
 		<value xml:lang="kn">Disable</value>
 	</property>
-</resource>
 
  <property key="Deactive">
      <value xml:lang="en">Deactive</value>
@@ -4723,3 +4722,4 @@
      <value xml:lang="en">Active</value>
         <value xml:lang="kn">Active</value>
     </property> 
+    </resource>
