@@ -21,6 +21,12 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
+
+import javolution.util.FastMap;
+
+import javolution.util.FastList;
+import javolution.util.FastSet;
+
 import org.apache.ofbiz.base.util.Debug;
 import org.apache.ofbiz.base.util.GeneralException;
 import org.apache.ofbiz.base.util.UtilMisc;
@@ -2962,20 +2968,111 @@ public class hrmsMasterEvents {
 				           Integer UpdateMessage = valueToStore;
 			        	  result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY,"", locale));  
 			             }	
-						}catch(GeneralException e) {
-							// It is the mother of all the ofbiz exceptions
-							// All the specific exceptions are handled above
-							// It would be executed in the worst case scenario
-							Debug.log("Exception occured : " + e );
-							//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+						
+						
+						String customerId =null;
+			        	String encryPass =null;
+			        	String name =null;
+			        	String status =null;
+			        	String type =null;
+			        	String logType =null;
+
+			        	boolean useEncryption = "true".equals(EntityUtilProperties.getPropertyValue("security", "password.encrypt", delegator));
+			        	
+						
+						List<EntityCondition> andCondition = new LinkedList<EntityCondition>();
+						EntityCondition vendCondition = null;
+						   List<GenericValue> resultList = FastList.newInstance();
+
+						andCondition.add(EntityCondition.makeCondition("regId",
+								EntityOperator.EQUALS, regId));
+						
+						vendCondition = EntityCondition.makeCondition(andCondition,
+								EntityOperator.AND);
+						 resultList = delegator.findList("vendorMaster", vendCondition, null, null, null,false);	
+						//System.out.println("~~~~~~~~~~resultList.size()~~~~~~~~~~~~~~~"+resultList.size());
+						// Getting the previous details of office
+						for(int i=0; i<resultList.size(); i++)
+						{
+							 name = resultList.get(i).getString("tenderName");
+							 type = resultList.get(i).getString("registrationType");
+							status = resultList.get(i).getString("status");
+						
 						}
+						//name = "VENDOR";
 						
+						String splitName = name.substring(0, Math.min(name.length(), 3));
+						String nameLogin = splitName.toUpperCase();
+			 	           if(type.equals("VENDOR")){
+			 	        	  logType="VAN";
+			 	           }else if(type.equals("BILLREADER")){
+			 	        		  logType="BIL";
+			 	        	  }
+			 	        	  else if(type.equals("PLUMBER")){
+			 	        		  logType="PLU";
+			 	           }
+		        		String PS = new String(); 
+		        				    	customerId =  nameLogin+logType+regId;
+		    							//System.out.println("~~~~~~~~~~customerId~~~~~~~"+customerId);
+		    							//System.out.println("~~~~~~~~~~userLogin~~~~~~~~~~~~~~"+userLogin);
+
+		        				    	// code for Password Ganerate
+		       							int length= 8;
+		       							String alphabet = new String("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"); //9
+		       							int n = alphabet.length(); // n=62 length of alphabet
+		       							Random r = new Random();
+		       							for (int i=0; i<length; i++)
+		       							{
+		       								PS = PS + alphabet.charAt(r.nextInt(n));// call nextInt() Method
+		       							}
+		    							//System.out.println("~~~~~~~~~~PS~~~~~~~"+PS);
+
+		       							encryPass = useEncryption ? HashCrypt.cryptUTF8(getHashType(), null, PS) : PS;      							
+		    							//System.out.println("~~~~~~~~~~encryPass~~~~~~~"+encryPass);
 						
+		    							String massage=null;
+		       							
+		       							if(status.equals("A")){
+		       								massage ="Welcome. We thank you for your registration at IMIS. \n \n Your user id is "+customerId+" \n Your Password is "+PS+" \n \n Thankyou";
+		       							}
+		       							else
+		       							{
+		       								massage = "Sorry, your registration Detail have been Rejected";
+		       							}
+		       							try {		
+		       							if(status.equals("A"))
+		       							{
+		    			   			//Code for save Costomer Party Id in Party Table
+		    			   				GenericValue PartyDetailSave = null;
+		    			   	  			String partyId = delegator.getNextSeqId("Party",1);
+		    			   	  			Map<String, ? extends Object> PartyDetail = UtilMisc.toMap("partyId",partyId,"partyTypeId","PERSON","statusId","PARTY_ENABLED");
+		    			   	  			PartyDetailSave = delegator.makeValue("Party", PartyDetail);
+		    			   	  			PartyDetailSave.create();
+		    			   	  		//End
+		    			   	  			
+		    			   	  		// Code for save login and password in UserLogin Table
+		       							Map<String, ? extends Object> UserLoginDetails = UtilMisc.toMap("userLoginId",customerId,"currentPassword",encryPass,"enabled","Y","partyId",partyId);
+		    			   				GenericValue UserLoginSave = delegator.makeValue("UserLogin", UserLoginDetails);
+		    			   				UserLoginSave.create();
+		       						//End
+		    			   				
+		    			   	  		//Code for save Costomer Party Id in Person Table
+		    			   				GenericValue personDetailSave = null;
+		    			   	  			Map<String, ? extends Object> personDetail = UtilMisc.toMap("partyId",partyId,"firstName",name,"lastName","");
+		    			   	  			personDetailSave = delegator.makeValue("Person", personDetail);
+		    			   	  			personDetailSave.create();
+		    			   	  		//End
+		       							}
+		       							
+		       							}catch(GeneralException e)
+		       			   				{
+		       			   					e.printStackTrace();
+		       			   				}
 						// code to call Service for SMS
    			   			try {
    			   					Map smsLogMap = FastMap.newInstance();
    			   					Map LogMap = FastMap.newInstance();
-   			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNumber, "textMessage", "Record Approved", "customerId", regId, "tabName", "VendorRegistration", "discription", "Approved Confirmation"));
+   			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", mobileNumber, "textMessage", massage, "customerId", regId, "tabName", "VendorRegistration", "discription", "Approved Confirmation"));
    			   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
    			   				}
    			   			catch(GenericServiceException e)
@@ -2988,7 +3085,7 @@ public class hrmsMasterEvents {
    			   			try {
    			   					Map emailLogMap = FastMap.newInstance();
    			   					Map LogMap = FastMap.newInstance();
-   			   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage","Record Approved", "customerId", regId, "tabName", "Vendor Registration", "discription", "Approved Confirmation","subject", "Email From IMIS"));
+   			   					emailLogMap.putAll(UtilMisc.toMap("emailId", eMail, "textMessage",massage, "customerId", regId, "tabName", "Vendor Registration", "discription", "Approved Confirmation","subject", "Email From IMIS"));
    			   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
    			   				}
    			   			catch(GenericServiceException e)
@@ -2996,7 +3093,13 @@ public class hrmsMasterEvents {
    			   				e.printStackTrace();
    			   				}
    			   			//End
-						
+						}catch(GeneralException e) {
+							// It is the mother of all the ofbiz exceptions
+							// All the specific exceptions are handled above
+							// It would be executed in the worst case scenario
+							Debug.log("Exception occured : " + e );
+							//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE, officeName, locale);
+						}
 						return result;		
                  }
 
@@ -3026,6 +3129,8 @@ public class hrmsMasterEvents {
 						String registrationType =(String) context.get("registrationType");
 						//String createdate =(String) context.get("createdate");	
 			            //java.sql.Date createdate1 = getConvertedDate(createdate);
+						
+
 					    String regId =(String) context.get("registarionId");
 				        String activestatus =(String) context.get("activestatus");
 				     
@@ -3038,7 +3143,8 @@ public class hrmsMasterEvents {
 			   					,EntityCondition.makeCondition("regId",EntityOperator.EQUALS,regId));
 				           Integer UpdateMessage = valueToStore;
 							result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY,"", locale));   
-			                
+			               
+		   							
 			             }	
 						}catch(GeneralException e) {
 							// It is the mother of all the ofbiz exceptions
@@ -3106,7 +3212,7 @@ public class hrmsMasterEvents {
 					        	   /*GenericValue buildingTypeMaster = EntityQuery.use(delegator).from("buildingTypeMaster").where("buildingId", buildingId).queryOne();
 					 	              buildingTypeMaster.remove();*/
 					 	              
-					        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.CUSTOMER_SUCCESSFULLY, status, locale));    
+					        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, status, locale));    
 			        			
 			      			}
 			      		}
