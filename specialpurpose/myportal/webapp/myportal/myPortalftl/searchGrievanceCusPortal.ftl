@@ -165,8 +165,12 @@
 			  	<td><center><#if requestList.grievanceDate?has_content>${requestList.grievanceDate?string('dd/MM/yyyy')?if_exists}</#if></center></td> 
 			    <td><center><#if requestList.grievancePetitionDate?has_content>${requestList.grievancePetitionDate?string('dd/MM/yyyy')?if_exists}</#if></center></td> 
 			    <td><center>${requestList.typeOfGrievance?if_exists}</center></td> 
-			 	<td><center>${requestList.status?if_exists}</center></td> 
-				<td><center><a href="javascript:editGrievanceCusPortal('listGrievanceDetails','${requestList.sequenceId?if_exists}');" class="buttontext">${uiLabelMap.CommonEdit}</a></center></td>
+			 	<td><center>${requestList.status?if_exists}</center></td>
+			 	<#if requestList.status?if_exists = 'Submitted'> 
+					<td><center><a href="javascript:editGrievanceCusPortal('listGrievanceDetails','${requestList.sequenceId?if_exists}');" class="buttontext">${uiLabelMap.CommonEdit}</a></center></td>
+				<#else>
+					<td><a class="buttontextdisabled">${uiLabelMap.CommonEdit}</a></td>
+				</#if>	
 		   </tr>  
 	 <#assign count = count + 1>
 	 </#list>

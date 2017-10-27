@@ -31,6 +31,8 @@ import org.apache.ofbiz.service.DispatchContext;
 import org.apache.ofbiz.service.GenericServiceException;
 import org.apache.ofbiz.service.LocalDispatcher;
 import org.apache.ofbiz.service.ServiceUtil;
+import org.apache.ofbiz.myportal.UIMessage;
+import org.apache.ofbiz.myportal.UIPagination;
  /*Added by Siddhi*/
 public class MyportalServices {
 	public static final String module = MyportalServices.class.getName();
@@ -66,7 +68,7 @@ public class MyportalServices {
 		Locale locale = (Locale) context.get("locale");
         Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
     	String partyId = (String) userLogin.get("partyId");
-        String receiptNo = (String) context.get("receiptNo");
+        //String receiptNo = (String) context.get("receiptNo");
 		String grievanceDate = (String) context.get("grievanceDate");
 		String grievancePetitionDate = (String) context.get("grievancePetitionDate");
 		String typeOfGrievance = (String) context.get("typeOfGrievance");
@@ -82,12 +84,13 @@ public class MyportalServices {
 		String sequenceId = null ;
 		java.sql.Date grievanceDateNew = getConvertedDate(grievanceDate);
 		java.sql.Date grievancePetitionDateNew = getConvertedDate(grievancePetitionDate);
-
+		String receiptNo = null;
 		
 		try{
 			
 			GenericValue gv = null;
 			sequenceId = delegator.getNextSeqId("GrievanceDetails");
+			receiptNo = "GRVNC"+sequenceId;
 			String ErrorMessage = sequenceId;
 			Map<String, ? extends Object> grievanceDetails = UtilMisc.toMap("sequenceId",sequenceId,"receiptNo",receiptNo,"grievanceDate",grievanceDateNew,"grievancePetitionDate",grievancePetitionDateNew,"typeOfGrievance",typeOfGrievance,"grievanceNameEN",grevNameEn,"grievanceNameKN",grevNameKn,
 					"grievanceAddEn", grevAddEn,"grievanceAddKn",grevAddKn,"mobileNo",mobileNo,"eMail",eMail,"grievanceDetailEn",grievanceDetailEn,"grievanceDetailKn",grievanceDetailKn,"status",status,"createdBy",partyId);

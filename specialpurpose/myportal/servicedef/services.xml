@@ -33,8 +33,8 @@ under the License.
     </service>
     <!-- Added by siddhi -->
    <service name="createGrievanceDetails" export="true" engine="java" location="org.apache.ofbiz.myportal.MyportalServices" invoke="createGrievanceDetails">
-     <attribute name="receiptNo" type="String" mode="IN" optional="false" />
-     <attribute name="grievanceDate" type="String" mode="IN" optional="true" />
+<!--      <attribute name="receiptNo" type="String" mode="IN" optional="false" />
+ -->     <attribute name="grievanceDate" type="String" mode="IN" optional="true" />
      <attribute name="grievancePetitionDate" type="String" mode="IN" optional="true" />
      <attribute name="typeOfGrievance" type="String" mode="IN" optional="true" />
      <attribute name="grevNameEn" type="String" mode="IN" optional="true" />
