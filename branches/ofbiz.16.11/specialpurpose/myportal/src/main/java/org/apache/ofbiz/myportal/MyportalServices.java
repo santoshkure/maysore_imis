@@ -85,34 +85,7 @@ public class MyportalServices {
 
 		
 		try{
-			/*String fileLocDocumentId = null;
-			ByteBuffer fileLoc = (ByteBuffer) context.get("fileLoc");
-			String fileLocFileName=(String) context.get("fileLocFileName");
-			String fileLocFileType=(String) context.get("fileLocFileType");
-			if(UtilValidate.isNotEmpty(fileLocFileName)) 
-			{
-				Map serviceFolderInMap  = new HashMap();
-				serviceFolderInMap.put("fileId", fileLoc);                
-				serviceFolderInMap.put("fileName", fileLocFileName);                      
-				serviceFolderInMap.put("rootFolderName", "myportal");    
-				serviceFolderInMap.put("folderName", "myportal");   
-				serviceFolderInMap.put("moduleName", "myportal");         
-				serviceFolderInMap.put("fileType", fileLocFileType);     
-				serviceFolderInMap.put("description", "NA");                    
-				serviceFolderInMap.put("userLogin", userLogin); 
-				serviceFolderInMap.put("facilityName", null); 
-
-				try 
-				{  
- 					Map serviceFolderResultMap = dispatcher.runSync("commonFileUpload", serviceFolderInMap);
-         		    fileLocDocumentId = (String) serviceFolderResultMap.get("referenceId");
-
-					//System.out.println("=========ceqDocumentId============="+ceqDocumentId);
-
-				} catch (GenericServiceException e) {
-
-				}
-			}*/
+			
 			GenericValue gv = null;
 			sequenceId = delegator.getNextSeqId("GrievanceDetails");
 			String ErrorMessage = sequenceId;
@@ -121,6 +94,8 @@ public class MyportalServices {
 			gv = delegator.makeValue("GrievanceDetails", grievanceDetails);
 			gv.create();
 			result.put("ErrorMessage", ErrorMessage);
+  			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.SAVE_SUCCESSFULLY, receiptNo, locale));   
+
 			
 		}
 		catch(GenericEntityException e){
@@ -211,8 +186,12 @@ public class MyportalServices {
 				andExprs.add(EntityCondition.makeCondition("typeOfGrievance",
 						EntityOperator.LIKE, "%" + typeOfGrievance + "%"));
 			}
-			andExprs.add(EntityCondition.makeCondition("status",
-					EntityOperator.EQUALS,"Submitted"));
+			
+			if (UtilValidate.isNotEmpty(createdBy)) {
+				paramList = paramList + "&createdBy=" + createdBy;
+				andExprs.add(EntityCondition.makeCondition("createdBy",
+						EntityOperator.LIKE, "%" + createdBy + "%"));
+			}
 			
 			if (andExprs.size() > 0)
 				mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);

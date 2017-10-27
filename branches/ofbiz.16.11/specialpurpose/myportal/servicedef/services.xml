@@ -46,10 +46,6 @@ under the License.
      <attribute name="grievanceDetailEn" type="String" mode="IN" optional="true" />
      <attribute name="grievanceDetailKn" type="String" mode="IN" optional="true" />
      <attribute name="ErrorMessage" type="String" mode="OUT" optional="true" />
-     <!-- <attribute name="fileLoc" type="java.nio.ByteBuffer" mode="IN" optional="true"/>
-	 <attribute name="fileLocFileName" type="String" mode="IN" optional="true"/>
-	 <attribute name="fileLocFileType" type="String" mode="IN" optional="true"/> -->
-		
   </service> 
   
   <service name="searchgrievanceDetail" engine="java" location="org.apache.ofbiz.myportal.MyportalServices" invoke="searchgrievanceDetail">

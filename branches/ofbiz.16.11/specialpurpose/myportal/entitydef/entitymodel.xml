@@ -42,18 +42,10 @@ under the License.
 		  <field name="grievanceDetailKn" type="long-varchar"/>
   	      <field name="status" type="short-varchar"/>
   	      <field name="createdBy" type="short-varchar"/>
+  	      <field name="remark" type="short-varchar"/>
+  	      <field name="actionBy" type="short-varchar"/>
   	      <prim-key field="sequenceId"/>
-	     <!-- <field name="myportalDocId" type="short-varchar"/>
-	      <field name="myportalReplyDocId" type="short-varchar"/>
-	     
-	      <relation type="one" rel-entity-name="DocumentReference" fk-name="img_fk">
-			<key-map field-name="myportalDocId" rel-field-name="referenceId" />
-		 </relation>  
-		
-		  <relation type="one" rel-entity-name="DocumentReference" fk-name="myportalReplyDocId">
-			<key-map field-name="myportalReplyDocId" rel-field-name="referenceId" />
-		</relation> -->
-   </entity>
+	</entity>
 
 <!-- Added By Shubham Malviya For Save Consumer Registration Detail's -->
 
