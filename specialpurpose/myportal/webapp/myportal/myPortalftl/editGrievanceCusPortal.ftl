@@ -40,7 +40,6 @@
    						<td colspan="12">
    						   <input type="text" name="grievanceDate" autocomplete="off" value="<#if grievanceDetailsList.grievanceDate?has_content>${grievanceDetailsList.grievanceDate?if_exists?string('dd/MM/yyyy')}</#if>" id="grievanceDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
         			       <a href="javascript:call_cal(document.editGrievanceCustomer.grievanceDate);">
-       				       <img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a>
    						</td>
 						
 				</tr>
@@ -76,10 +75,10 @@
                   	 <tr>
                     		<td class="label">${uiLabelMap.name}</td>
                          	<td><input name="grevNameEn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameEN?if_exists}">${uiLabelMap.InEnglish}
-                         	<br><input name="grevNameKn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameKN?if_exists}">${uiLabelMap.Inkannada}</br></td>
+                         	<br><input name="grevNameKn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameKN?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${uiLabelMap.Inkannada}</br></td>
                        		<td class="label">${uiLabelMap.OrderAddress}</td>
                         	<td colspan="4"><textarea name="grevAddEn"  maxlength="300" style="width:400px">${grievanceDetailsList.grievanceAddEn?if_exists}</textarea>${uiLabelMap.InEnglish}
-                        	<br><textarea name="grevAddKn" maxlength="300" style="width:400px">${grievanceDetailsList.grievanceAddKn?if_exists}</textarea>${uiLabelMap.Inkannada}</br></td> 
+                        	<br><textarea name="grevAddKn" maxlength="300" style="width:400px" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${grievanceDetailsList.grievanceAddKn?if_exists} </textarea>${uiLabelMap.Inkannada}</br></td> 
                       </tr>  	
                      <tr>
                     		<td class="label">${uiLabelMap.mobileNo}</td>
@@ -94,7 +93,7 @@
                     <tr>
                     		<td class="label">${uiLabelMap.grievanceDetail}</td>
                        	 	<td colspan="1"><textarea name="grievanceDetailEn"  maxlength="500" >${grievanceDetailsList.grievanceDetailEn?if_exists}</textarea>${uiLabelMap.InEnglish}
-                       	 	<br><textarea name="grievanceDetailKn"  maxlength="500" >${grievanceDetailsList.grievanceDetailKn?if_exists}</textarea>${uiLabelMap.Inkannada}</br></td>
+                       	 	<br><textarea name="grievanceDetailKn"  maxlength="500" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${grievanceDetailsList.grievanceDetailKn?if_exists}</textarea>${uiLabelMap.Inkannada}</br></td>
                     		<td class="label">${uiLabelMap.assentialDocument}</td>
 				        	<td colspan="4"><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
                         	<input type="button" onclick="javascript:resetVal(document.editGrievanceCustomer.fileLoc);" value="Reset"/>

@@ -31,7 +31,7 @@
  			 </div> 
   				</div>
   				<div class="screenlet-body" id="printId1">
-  				<table cellspacing="0" class="basic-table table-responsive" rules="all" style="border:1px solid black">
+  				<table cellspacing="0" class="basic-table table-responsive" rules="all">
   				
   				<#if grievanceDetailsList?exists>     
                  <#if grievanceDetailsList?has_content>
@@ -60,9 +60,10 @@
                   
                   	<tr>
                     		<td class="label">${uiLabelMap.name}</td>
-                         	<td >${grievanceDetailsList.grievanceNameEN?if_exists}</td>
+                         	<td >${grievanceDetailsList.grievanceNameEN?if_exists}</br>
+                         	${grievanceDetailsList.grievanceNameKN?if_exists}</td>
                        		<td class="label">${uiLabelMap.OrderAddress}</td>
-                        	<td colspan="4">${grievanceDetailsList.grievanceAddEn?if_exists}</td> 
+                        	<td colspan="4">${grievanceDetailsList.grievanceAddEn?if_exists} </br>${grievanceDetailsList.grievanceAddKn?if_exists}</td> 
                   	</tr>
                     <tr>
                     		<td class="label">${uiLabelMap.mobileNo}</td>
@@ -73,7 +74,7 @@
                     </tr>
                     <tr>
                     		<td class="label">${uiLabelMap.grievanceDetail}</td>
-                       	 	<td colspan="1">${grievanceDetailsList.grievanceDetailEn?if_exists}</td>
+                       	 	<td colspan="1">${grievanceDetailsList.grievanceDetailEn?if_exists}</br>${grievanceDetailsList.grievanceDetailKn?if_exists}</td>
                     		<td class="label">${uiLabelMap.assentialDocument}</td>
 				        	<td colspan="4">GrievanceDetail.doc</td>
                         	
