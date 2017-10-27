@@ -4722,4 +4722,10 @@
      <value xml:lang="en">Active</value>
         <value xml:lang="kn">Active</value>
     </property> 
-    </resource>
+
+	<property key="actionGrievance">
+     <value xml:lang="en">Action Details</value>
+        <value xml:lang="kn">ಆಕ್ಷನ್ ವಿವರಗಳು</value>
+    </property>     
+    
+</resource>

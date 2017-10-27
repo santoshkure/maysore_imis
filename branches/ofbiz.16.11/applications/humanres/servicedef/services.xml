@@ -1619,6 +1619,37 @@ under the License.
     	<attribute name="activestatus" type="String" mode="IN" optional="true" />
     	<attribute name="status" type="String" mode="IN" optional="true" />
 	    </service>
-<!--  END-->
+		<!--  END	-->
+
+		<!-- Added by Pankaj Trivedi for Search Grievance Details -->
+		<service name="searchGrievanceDetailsEmp" engine="java" location="org.apache.ofbiz.humanres.HumanResEvents" invoke="searchGrievanceDetailsEmp">
+			<attribute name="receiptNo" type="String" mode="IN" optional="true"/>
+			<attribute name="typeOfGrievance" type="String" mode="IN" optional="true"/>
+			<attribute name="sortType" type="String" mode="INOUT" optional="true"/>
+			<attribute name="VIEW_INDEX" type="String" mode="IN" optional="true"/>
+			<attribute name="VIEW_SIZE" type="String" mode="IN" optional="true"/>
+			<attribute name="lookupFlag" type="String" mode="IN" optional="true"/>
+			<attribute name="orderField" type="String" mode="INOUT" optional="true"/>
+			<attribute name="viewIndex" type="Integer" mode="OUT" optional="false"/>
+			<attribute name="viewSize" type="Integer" mode="OUT" optional="false"/>
+			<attribute name="requestListSize" type="Integer" mode="OUT" optional="false"/>
+			<attribute name="requestList" type="List" mode="OUT" optional="false"/>
+			<attribute name="paramList" type="String" mode="OUT" optional="false"/>
+			<attribute name="highIndex" type="Integer" mode="OUT" optional="false"/>
+			<attribute name="lowIndex" type="Integer" mode="OUT" optional="false"/>
+			<attribute name="indexNumbers" type="Integer" mode="OUT" optional="false"/>
+			<attribute name="pdfList" type="List" mode="OUT" optional="false"/>
+		 </service>
+		 
+		 <service name="actionGreivance" engine="java" location="org.apache.ofbiz.humanres.HumanResEvents" invoke="actionGreivance">
+			<attribute name="sequenceId" type="String" mode="IN" optional="true"/>
+			<attribute name="actionStatus" type="String" mode="IN" optional="true"/>
+			<attribute name="remark" type="String" mode="IN" optional="true"/>
+			<attribute name="receiptNo" type="String" mode="IN" optional="true"/>
+			<attribute name="ErrorMessage1" type="String" mode="OUT" optional="false"/>
+			
+		 </service>
+		
+		<!-- End -->
 
 	    </services>

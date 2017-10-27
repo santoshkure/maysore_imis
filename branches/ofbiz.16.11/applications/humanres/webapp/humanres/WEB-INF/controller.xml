@@ -1801,7 +1801,7 @@ under the License.
 
     <!-- END -->
      <!-- Added By Anubha Saini -->
-      <request-map uri="GrievanceDetailEmpPortal">
+    <request-map uri="GrievanceDetailEmpPortal">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="GrievanceDetailEmpPortal"/>
         <response name="error" type="view" value="GrievanceDetailEmpPortal"/>
@@ -1816,7 +1816,7 @@ under the License.
         <response name="success" type="view" value="veiwGrievanceEmpPortal"/>
         <response name="error" type="view" value="veiwGrievanceEmpPortal"/>
     </request-map>
-  <request-map uri="saveConnectionType">
+  	<request-map uri="saveConnectionType">
         <security https="true" auth="true" />
         <event type="service" invoke="saveConnectionType"/>
         <response name="success" type="request-redirect" value="ConnectionMaster"/>
@@ -2154,6 +2154,22 @@ under the License.
     
     
   <!-- ==========end==================  --> 
+  
+  
+  <!-- Pdf for Grievance -->
+  	<request-map uri="grievancePDF">
+      	<security https="true" auth="true"/>
+      	<response name="success" type="view" value="grievancePDF"/>
+      	<response name="error" type="view" value="grievancePDF"/>
+   	</request-map>
+   	
+   	<request-map uri="actionGreivance">
+      	<security https="true" auth="true"/>
+      	<event type="service" invoke="actionGreivance"/>
+      	<response name="success" type="view" value="GrievanceDetailEmpPortal"/>
+      	<response name="error" type="view" value="GrievanceDetailEmpPortal"/>
+   	</request-map>
+   <!-- End -->
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -2399,42 +2415,45 @@ under the License.
           <view-map name="GrievanceActionEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#GrievanceActionEmpPortal"/>
           <view-map name="veiwGrievanceEmpPortal" type="screen" page="component://humanres/widget/EmployeeScreens.xml#veiwGrievanceEmpPortal"/>
            <!--Added by siddhi -->
-         <view-map name="jobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#jobDetails"/>
-         <view-map name="viewJobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewJobDetails"/>
-         <view-map name="actionJobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionJobDetails"/>
-         <view-map name="searchMeterReading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#searchMeterReading"/>
-         <view-map name="createMeterReading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createMeterReading"/>
-         <view-map name="editmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editmeterreading"/>
-         <view-map name="viewreadingdetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewreadingdetails"/>
-         <view-map name="actionmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionmeterreading"/>
-         <view-map name="currentBillDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#currentBillDetail"/>  
-         <view-map name="viewBillDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetail"/>  
-         <view-map name="viewBillDetailpdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetailpdf" content-type="application/pdf" encoding="none" />  
-		 <view-map name="billpaymentHistory" type="screen" page="component://humanres/widget/EmployeeScreens.xml#billpaymentHistory"/>  
-          <!-- ==========Added By Nikhil on 23Aug2017 for Type Master================== -->
-     <view-map name="BuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#buildingMasterScreen"/>
-     <view-map name="ApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#applicationMasterScreen"/>
-     <view-map name="ConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#connectionMasterScreen"/>
-     <view-map name="createApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createApplicationMaster"/>
-     <view-map name="createConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createConnectionMaster"/>
-     <view-map name="createBuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createBuildingMaster"/>
-     <view-map name="editConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editConnectionMaster"/>
-     <view-map name="editApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editApplicationMaster"/>
-     <view-map name="editBuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editBuildingMaster"/>
-      <!-- End -->
-      
+         	<view-map name="jobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#jobDetails"/>
+         	<view-map name="viewJobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewJobDetails"/>
+         	<view-map name="actionJobDetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionJobDetails"/>
+         	<view-map name="searchMeterReading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#searchMeterReading"/>
+         	<view-map name="createMeterReading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createMeterReading"/>
+         	<view-map name="editmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editmeterreading"/>
+         	<view-map name="viewreadingdetails" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewreadingdetails"/>
+         	<view-map name="actionmeterreading" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionmeterreading"/>
+         	<view-map name="currentBillDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#currentBillDetail"/>  
+         	<view-map name="viewBillDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetail"/>  
+         	<view-map name="viewBillDetailpdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#viewBillDetailpdf" content-type="application/pdf" encoding="none" />  
+		 	<view-map name="billpaymentHistory" type="screen" page="component://humanres/widget/EmployeeScreens.xml#billpaymentHistory"/>  
+         	 <!-- ==========Added By Nikhil on 23Aug2017 for Type Master================== -->
+     		<view-map name="BuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#buildingMasterScreen"/>
+     		<view-map name="ApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#applicationMasterScreen"/>
+    	 	<view-map name="ConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#connectionMasterScreen"/>
+    	 	<view-map name="createApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createApplicationMaster"/>
+		    <view-map name="createConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createConnectionMaster"/>
+		    <view-map name="createBuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createBuildingMaster"/>
+		    <view-map name="editConnectionMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editConnectionMaster"/>
+		    <view-map name="editApplicationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editApplicationMaster"/>
+		    <view-map name="editBuildingMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editBuildingMaster"/>
+		      <!-- End -->
+		      
       <!--Code is Added by Anil Kumar on 26 Aug 2017 for Designation Master-->
-         <view-map name="searchDesignationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#searchDesignationMaster" />
-         <view-map name="designationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#designationMaster"/>
-         <view-map name="editDesignationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editDesignationMaster"/>
-         <!-- END -->
-         <view-map name="SearchVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#SearchVendor"/>
-         <view-map name="createVendorBill" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createVendorBill"/>
-         <view-map name="editVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editVendor"/>
-         <view-map name="viewVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewVendor"/>
-         <view-map name="approveVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveVendor"/>
+	        <view-map name="searchDesignationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#searchDesignationMaster" />
+	        <view-map name="designationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#designationMaster"/>
+	        <view-map name="editDesignationMaster" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editDesignationMaster"/>
+	  <!-- END -->
+	        <view-map name="SearchVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#SearchVendor"/>
+	        <view-map name="createVendorBill" type="screen" page="component://humanres/widget/EmployeeScreens.xml#createVendorBill"/>
+	        <view-map name="editVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editVendor"/>
+	        <view-map name="viewVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewVendor"/>
+	        <view-map name="approveVendor" type="screen" page="component://humanres/widget/EmployeeScreens.xml#approveVendor"/>
 			<view-map name="customerDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#customerDetailPdf" content-type="application/pdf" encoding="none" />  
 			<view-map name="connectionDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#connectionDetailPdf" content-type="application/pdf" encoding="none" />  
 			<view-map name="customerRegiDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#customerRegiDetailPdf" content-type="application/pdf" encoding="none" />  
 			<view-map name="applyConnectionDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#applyConnectionDetailPdf" content-type="application/pdf" encoding="none" />
+	
+			<view-map name="grievancePDF" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#grievancePDF" content-type="application/pdf"/>
+			
 </site-conf>
