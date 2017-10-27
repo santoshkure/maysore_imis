@@ -2493,6 +2493,7 @@ under the License.
 	<screen name="GrievanceDetailEmpPortal">
         <section>
             <actions>
+				<service service-name="searchGrievanceDetailsEmp" auto-field-map="parameters" />  
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -2510,6 +2511,9 @@ under the License.
     <screen name="GrievanceActionEmpPortal">
         <section>
             <actions>
+            	<entity-condition list="grievanceDetailsList" entity-name="GrievanceDetails">
+					<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -2527,6 +2531,9 @@ under the License.
      <screen name="veiwGrievanceEmpPortal">
         <section>
             <actions>
+            	<entity-condition list="grievanceDetailsList" entity-name="GrievanceDetails">
+					<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -3381,5 +3388,20 @@ under the License.
 		</section>
 	</screen>
      <!-- END -->
+     
+    <screen name="grievancePDF">
+        <section>
+            <actions>
+            	<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+               	<service service-name="searchGrievanceDetailsEmp" auto-field-map="true"/>
+            </actions>
+            
+            <widgets>
+                <platform-specific>
+                     <xsl-fo><html-template location="component://myportal/webapp/myportal/myPortalftl/grievanceDetailsPDF.fo.ftl"/></xsl-fo>
+                </platform-specific>               
+            </widgets>
+        </section>
+    </screen>
      
 </screens>

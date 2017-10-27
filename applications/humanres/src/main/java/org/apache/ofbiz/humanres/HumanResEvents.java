@@ -34,11 +34,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 import java.util.StringTokenizer;
+
+import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.apache.ofbiz.base.util.Debug;
@@ -74,6 +77,9 @@ import org.apache.ofbiz.humanres.hrmsOfficeexception.DuplicateOfficeException;
 import org.apache.ofbiz.humanres.hrmsOfficeexception.EmptyParentOfficeException;
 import org.apache.ofbiz.humanres.hrmsOfficeexception.FacilityException;
 import org.apache.ofbiz.humanres.hrmsOfficeexception.UpdateParentOfficeException;
+import org.apache.ofbiz.myportal.UIMessage;
+import org.apache.ofbiz.myportal.UIPagination;
+import org.apache.ofbiz.myportal.myportalConstants;
 import org.apache.ofbiz.humanres.hrmsOfficeexception.LongitudeDegreeOutOfRangeException;
 import org.apache.ofbiz.humanres.hrmsOfficeexception.SecondsOutOfRangeException;
 import org.apache.ofbiz.humanres.hrmsOfficeexception.MinutesOutOfRangeException;
@@ -2487,4 +2493,187 @@ public class HumanResEvents {
 			return result;		
 		}  	
     /*------------END-------*/
+	  
+	  /** Name of the Method: searchGrievanceDetailsEmp
+	     * Version:@1.0
+	     * Date:24/10/2017     
+	     * Author: Pankaj Trivedi
+	     * Modified By:         Date:
+	     * Purpose of this Program: Search Grievance Details By Employee.
+	     */
+	  
+		public static Map<String, Object> searchGrievanceDetailsEmp(
+				DispatchContext dctx, Map<String, ? extends Object> context) {
+			Map<String, Object> result = ServiceUtil.returnSuccess();
+			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			GenericValue userLogin = (GenericValue) context.get("userLogin");
+			Locale locale = (Locale) context.get("locale");
+			String createdBy = null;
+			if(UtilValidate.isNotEmpty(userLogin)){
+				createdBy = (String) userLogin.get("partyId");
+			}
+		
+			List<String> orderBy = FastList.newInstance();
+			int viewIndex = 0;
+			try {
+				viewIndex = Integer.parseInt((String) context.get("VIEW_INDEX"));
+			} catch (NumberFormatException e) {
+				try {
+					// Taking default value from property file
+					viewIndex = Integer.parseInt(UtilProperties.getPropertyValue(
+							"pagination.properties", "paginate.default.page"));
+				} catch (NumberFormatException ex) {
+					viewIndex = myportalConstants.DEFAULT_PAGE; // redirects
+					// to first
+					// page.
+				}
+			}
+			result.put("viewIndex", Integer.valueOf(viewIndex));
+			int viewSize = myportalConstants.DEFAULT_LIST_SIZE;
+			try {
+				viewSize = Integer.parseInt((String) context.get("VIEW_SIZE"));
+			} catch (NumberFormatException e) {
+				try {
+					// Taking default value from property file
+					viewSize = Integer.parseInt(UtilProperties.getPropertyValue(
+							"pagination.properties", "paginate.default.size"));
+				} catch (NumberFormatException ex) {
+					viewSize = myportalConstants.DEFAULT_LIST_SIZE;
+				}
+			}
+			result.put("viewSize", Integer.valueOf(viewSize));
+			String lookupFlag = "Y";
+			// blank param list
+			String paramList = "";
+			String orderField = null;
+			String sortType = null;
+			List<GenericValue> requestList = null;
+			int requestListSize = 0;
+			List<EntityCondition> andExprs = FastList.newInstance();
+			EntityCondition mainCond = null;
+			
+			String officeId=null;
+			List subOffice = null;
+		
+			int lowIndex = 0;
+			int highIndex = 0;
+			int indexNumbers = 0;
+			List<GenericValue> pdfList = null;
+				
+			if ("Y".equals(lookupFlag)) {
+				
+				List<GenericValue> employeeOfficeId = null;
+				paramList = paramList + "&lookupFlag=" + lookupFlag.trim();
+				// define the main condition & expression list
+				// get the params
+				
+				
+				String receiptno = (String) context.get("receiptNo");
+				if (receiptno != null && receiptno.length() > 0) {
+					paramList = paramList + "&receiptno=" + receiptno;
+					andExprs.add(EntityCondition.makeCondition("receiptNo",
+							EntityOperator.EQUALS,receiptno));
+				}
+				String typeOfGrievance = (String) context.get("typeOfGrievance"); 
+				if (UtilValidate.isNotEmpty(typeOfGrievance)) {
+					paramList = paramList + "&petitionType=" + typeOfGrievance;
+					andExprs.add(EntityCondition.makeCondition("typeOfGrievance",
+							EntityOperator.LIKE, "%" + typeOfGrievance + "%"));
+				}
+								
+				if (andExprs.size() > 0)
+					mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+
+				orderField = (String) context.get("orderField");
+				sortType = (String) context.get("sortType");
+				// sorting UI fields
+				if (orderField != null && orderField.length() > 0) {
+					if (sortType.equals("ASC")) {
+						orderBy.add(orderField);
+					} else {
+						orderBy.add("-" + orderField);
+					}
+				}
+				try
+				{
+				pdfList = delegator.findList("GrievanceDetails", mainCond, null,
+							null, null, false);
+				}
+				catch (GenericEntityException e) {
+					e.printStackTrace();
+				}
+				
+				try {
+					EntityFindOptions findOpts = new EntityFindOptions(true, EntityFindOptions.TYPE_SCROLL_INSENSITIVE, EntityFindOptions.CONCUR_READ_ONLY, true);
+					// using list iterator
+					EntityListIterator consumerListIterator = delegator.find("GrievanceDetails", mainCond, null, null,orderBy, findOpts);
+					Map<String, Object> paginateResult = UIPagination.paginate(consumerListIterator, viewIndex, viewSize,resource,module);
+					consumerListIterator.close();
+					Integer low = (Integer) paginateResult.get("lowIndex");
+					lowIndex = low.intValue();
+					Integer high = (Integer) paginateResult.get("highIndex");
+					highIndex = high.intValue();
+					requestList = (List) paginateResult.get("recordList");
+					Integer size = (Integer) paginateResult.get("listSize");
+					requestListSize = size.intValue();
+					Integer index = (Integer) paginateResult.get("indexNumbers");
+					indexNumbers = index.intValue();
+				} 
+				catch (GenericEntityException e) {
+					e.printStackTrace();
+				}
+			}
+			else {
+				requestListSize = 0;
+			}
+			if (requestList == null) {
+				requestList = FastList.newInstance();
+			}
+			result.put("requestList", requestList);
+			result.put("pdfList", pdfList);
+			result.put("requestListSize", Integer.valueOf(requestListSize));
+			result.put("paramList", paramList);
+			result.put("highIndex", Integer.valueOf(highIndex));
+			result.put("lowIndex", Integer.valueOf(lowIndex));
+			result.put("orderField", orderField);
+			result.put("indexNumbers", Integer.valueOf(indexNumbers));
+			result.put("sortType", sortType);
+			return result;
+
+		}
+		
+		public static Map<String, Object> actionGreivance(DispatchContext dctx,Map<String, ? extends Object> context) {
+			Map<String, Object> result = ServiceUtil.returnSuccess();
+			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			GenericValue userLogin = (GenericValue) context.get("userLogin");
+			LocalDispatcher dispatcher = dctx.getDispatcher();
+			Locale locale = (Locale) context.get("locale");
+	        Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
+	    	String partyId = (String) userLogin.get("partyId");
+	    	String sequenceId = (String) context.get("sequenceId");
+	        String receiptNo = (String) context.get("receiptNo");
+	        String actionStatus = (String) context.get("actionStatus");
+			String remark = (String) context.get("remark");
+			
+			String ErrorMessage1 = sequenceId;
+			
+			try{
+				
+				Map<String, ? extends Object> grievanceDetails = UtilMisc.toMap("status", actionStatus, "remark", remark, "actionBy", partyId);
+				
+				int asd = delegator.storeByCondition("GrievanceDetails",grievanceDetails,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
+				
+				result.put("ErrorMessage1", ErrorMessage1);
+	  			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY, receiptNo, locale));   
+
+			}
+			catch(GenericEntityException e){
+				//Debug.log("Entity Exception occured : " + e);
+				return UIMessage.getErrorMessage(resource, myportalConstants.CANT_CREATE,receiptNo, locale);
+		
+			}
+			
+		
+			 return result;	
+		}
 }
