@@ -95,7 +95,9 @@ under the License.
                  <entity-condition list="officeList" entity-name="OfficeDetail">
        			 <condition-expr field-name="partyId" operator="equals" value="${parameters.officeId}" />
 		  	   </entity-condition>
-		  	     
+		  	       <entity-condition list="hooOfficeList" entity-name="PartyGroup">
+       			 <condition-expr field-name="officeSiteName" operator="not-equals" value="" />
+		  	   </entity-condition>
                    <entity-condition list="officeTypeList" entity-name="OfficeTypeMaster">
        			 <condition-expr field-name="status" operator="equals" value="A" />
 		  	   </entity-condition>
