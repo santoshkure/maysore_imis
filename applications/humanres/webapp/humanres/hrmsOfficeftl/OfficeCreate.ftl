@@ -112,6 +112,7 @@
 				</td>
 			</tr>
 		</table></div>
+		      <input type="text" name="hoo" value="" id= "hoo"/>
 		
 		<#----<div id="submit" align="center">
                   <td align="right"><input type="submit" submit="" value="${uiLabelMap.CommonSave}" onclick="javascript:validateParameters('createOffice');"/>
@@ -142,7 +143,7 @@
  	 var longitude = form.longitude.value;
  	 var latitude = form.latitude.value; 	  	 
 	 var IMIS = "IMIS";
-	
+	form.hoo.value = parentOffice;
 	 if(notEmptyField(officeName,"Office Name should not be empty.")){
 	 if(notEmptyField(officeType,"Office Type should not be empty.")){ 		 
  	 if(officeType != IMIS)
