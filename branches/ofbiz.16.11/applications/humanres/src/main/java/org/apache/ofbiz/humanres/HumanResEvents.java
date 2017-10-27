@@ -43,6 +43,10 @@ import java.util.StringTokenizer;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import javolution.util.FastSet;
+
+import org.apache.ofbiz.base.crypto.HashCrypt;
+import org.apache.ofbiz.entity.util.EntityUtilProperties;
 
 import org.apache.ofbiz.base.util.Debug;
 import org.apache.ofbiz.base.util.GeneralException;
@@ -442,9 +446,9 @@ public class HumanResEvents {
 		{
 			// Checking for duplicates : office name
 			checkDuplicates(delegator, officeName);
-			if(UtilValidate.isNotEmpty(hoo))
+			/*if(UtilValidate.isNotEmpty(hoo))
 				checkHooRole(delegator, hoo);
-
+*/
 			//Checking the value of tribal
 			if ( tribal == null ) {
 				tribal = "N";
@@ -539,17 +543,18 @@ public class HumanResEvents {
 			
 			
 			//Creating HOO relation
-			if(UtilValidate.isNotEmpty(hoo))
-				createHeadOfOffice(dispatcher, parentOffice, hoo, userLogin, officeType, partyId);
+			//if(UtilValidate.isNotEmpty(hoo))
+			//	createHeadOfOffice(dispatcher, parentOffice, hoo, userLogin, officeType, partyId);
 
 		}
 		//catch (DuplicateOfficeException e) {
 		//	return UIMessages.getErrorMessage(resource,OfficeSetupConstants.DUPLICATE_OFFICE, officeName, locale);
 		//}
 
-		catch (CheckEmployeeRoleException e) {
-			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CHECK_EMPLOYEE_ROLE, hoo, locale);
-		}catch (EmptyParentOfficeException e) {
+		//catch (CheckEmployeeRoleException e) {
+			//return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CHECK_EMPLOYEE_ROLE, hoo, locale);
+		//}
+	     catch (EmptyParentOfficeException e) {
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE_WITHOUT_PARENT, officeType, locale);
 		}catch (ParentOfficeException e) {
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_PARENT_OF_WRDMP, officeType, locale);				
@@ -573,8 +578,7 @@ public class HumanResEvents {
 		result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.OFFICE_CREATED, officeName, locale));
 		return result;
 	}
-	
-	
+
 	
 
 	/**
@@ -762,7 +766,7 @@ public class HumanResEvents {
 	 *  UpdateParentOfficeException - When user tries to change parent office and employees are attached to it
 	 *  UpdateOfficeNameException - When user tries to change office name and employees are attached to it
 	 *  UpdateOfficeTypeException - When user tries to change office type and employees are attached to it
-	 *  ParentOfficeException - When user tries to create parent of WRDMP office
+	 *  ParentOfficeException - When user tries to create parent of IMIS office
 	 *  
 	 */	
 	public static Map<String, Object> updateOfficeDetail(DispatchContext dctx,
@@ -800,13 +804,28 @@ public class HumanResEvents {
 		String faxNo =(String) context.get("faxNo");
 		String contactNumber =(String) context.get("contactNumber");
 		String officeCode =(String) context.get("officeCode");
-		result.put("officeId", officeId);
-		
-	
+		result.put("officeId", officeId);	
 		String longitudeValue = (String) context.get("longitude");
 		String latitudeValue = (String) context.get("latitude");
 		String geoPointId = (String) context.get("geoPointId");
-		
+				/*
+		System.out.println("~~~~~~~~~~officeId~~~~~~~~~~~"+officeId);
+		System.out.println("~~~~~~~~~~contactMechId~~~~~~~~~~~"+contactMechId);
+		System.out.println("~~~~~~~~~~officeName~~~~~~~~~~~"+officeName);
+		System.out.println("~~~~~~~~~~officeType~~~~~~~~~~~"+officeType);
+		System.out.println("~~~~~~~~~~parentOffice~~~~~~~~~~~"+parentOffice);
+		System.out.println("~~~~~~~~~~address~~~~~~~~~~~"+address);
+		System.out.println("~~~~~~~~~~pinCode~~~~~~~~~~~"+pinCode);
+		System.out.println("~~~~~~~~~~city~~~~~~~~~~~"+city);
+		System.out.println("~~~~~~~~~~statusId~~~~~~~~~~~"+statusId);
+		System.out.println("~~~~~~~~~~district~~~~~~~~~~~"+district);
+		System.out.println("~~~~~~~~~~tribal~~~~~~~~~~~"+tribal);
+		System.out.println("~~~~~~~~~~hoo~~~~~~~~~~~"+hoo);
+		System.out.println("~~~~~~~~~~faxNo~~~~~~~~~~~"+faxNo);
+		System.out.println("~~~~~~~~~~contactNumber~~~~~~~~~~~"+contactNumber);
+		System.out.println("~~~~~~~~~~officeCode~~~~~~~~~~~"+officeCode);
+		System.out.println("~~~~~~~~~~longitudeValue~~~~~~~~~~~"+longitudeValue);
+		System.out.println("~~~~~~~~~~latitudeValue~~~~~~~~~~~"+latitudeValue);*/
 		// checking for mandatory fields
 		//remove mandatory HOA for some time
 		/*String [] mandatoryKeys = ParameterValidation.createMandateFields("officeId","officeName","officeType","address","pinCode","city", "statusId");
@@ -829,17 +848,17 @@ public class HumanResEvents {
 			officeCondition = EntityCondition.makeCondition(andCondition,
 					EntityOperator.AND);
 			employees = delegator.findList("EmplPosition", officeCondition, fields, orderBy, findOptions,false);	
-			//System.out.println("~~~~~~~~~~employees.size()~~~~~~~~~~~~~~~"+employees.size());
+			System.out.println("~~~~~~~~~~employees.size()~~~~~~~~~~~~~~~"+employees.size());
 			// Getting the previous details of office
 			previousDetail = dispatcher.runSync("getOfficeDetail", UtilMisc.toMap("officeId", officeId));
-
+			System.out.println("~~~~~~~~~~epreviousDetail~~~~~~~~~~~"+previousDetail);
 			String parentOfficeId = (String)previousDetail.get("parentOfficeId");
 			String officePreviousName = (String)previousDetail.get("officeName");
 			String officePreviousType = (String)previousDetail.get("officeType");
 			String officeStatus = (String)previousDetail.get("statusId");
 
-			if (employees.size() == 0)
-			{
+			/*if (employees.size() == 0)
+			{*/
 				//Checking for duplicate office name
 				if (!officeName.trim().equals(((String)previousDetail.get("officeName")).trim()))
 				{
@@ -854,36 +873,10 @@ public class HumanResEvents {
 				}
 				//Updating the details of the office (using services)
 				officeupdateGroup(dispatcher, officeId, officeType, tribal, userLogin, officeName, statusId, officeCode);
-				//Updating office relationship
-				if (parentOfficeId == null || !parentOfficeId.equals(parentOffice)) {
-					createRelationship(dispatcher, officeId, parentOffice, userLogin, officeType);
-				}
-				//deleting previous relationship
-				if ( parentOfficeId != null && !parentOfficeId.equals(parentOffice) 
-						|| parentOfficeId != null && officeType.equals(OfficeSetupConstants.OFFICE_TYPE )) {
-					deleteRelationship(dispatcher, parentOfficeId, (String)previousDetail.get("officeId"), 
-							(java.sql.Timestamp)previousDetail.get("createdOn"), userLogin);
-				}
-			}
-			// if office has employees
-			else {
-				// if user is trying to change parent office
-				if (parentOfficeId == null && parentOffice != null || !parentOfficeId.trim().equals(parentOffice.trim())) {
-					throw new UpdateParentOfficeException();
-				}
-				// if user is trying to change office name
-				if (!officePreviousName.trim().equals(officeName.trim())) {
-					throw new UpdateOfficeNameException();
-				}
-				// if user is trying to change office type
-				if (!officePreviousType.trim().equals(officeType.trim())) {
-					throw new UpdateOfficeTypeException();
-				}
-				// if user is trying to change Status
-				if (!officeStatus.trim().equals(statusId.trim())) {
-					return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CAN_NOT_DISABLE_OFFICE, officeName, locale);
-				}
-			}
+				
+				
+			//System.out.println("~~~~~~~~~~officeStatus~~~~~~~~~~~"+officeStatus);
+
 			
 			if(UtilValidate.isNotEmpty(geoPointId) )
 			 {
@@ -908,22 +901,18 @@ public class HumanResEvents {
 						// updateGeoPoint(delegator,geoPointId,longitude,latitude);
 						// Calling createGeoPoint service in framework/services.xml for
 						// updating longitude & lattitude
-						/*Map geoPointIDN = null;
+						Map geoPointIDN = null;
 						if (UtilValidate.isNotEmpty(geoPointId)) {
 							geoPointIDN = dispatcher.runSync("updateGeoPoint", UtilMisc
 									.toMap("geoPointId", geoPointId, "longitude",
 											longitude, "latitude", latitude,
-											"dataSourceId", dataSourceId, "userLogin",
+											"dataSourceId", "", "userLogin",
 											userLogin));
-						} */
+						} 
 					}
 					
 					
-					
-					
 					Map officeDetails = UtilMisc.toMap("information","OFFICE","longitude",longitude,"latitude",latitude);
-					
-				
 					
 					Integer valueToStore = delegator.storeByCondition("GeoPoint", officeDetails
 							,EntityCondition.makeCondition("geoPointId",EntityOperator.EQUALS,geoPointId));
@@ -972,119 +961,68 @@ public class HumanResEvents {
 							e.printStackTrace();
 						}
 					}
-					/*geoPointID = dispatcher.runSync("createGeoPoint", UtilMisc
+					Map geoPointID = dispatcher.runSync("createGeoPoint", UtilMisc
 							.<String, Object> toMap("longitude", longitude, "latitude",
-									latitude,"dataSourceId", dataSourceId,"userLogin", userLogin));
+									latitude,"dataSourceId", "","userLogin", userLogin));
 					geoPointId = (String) geoPointID.get("geoPointId");
 
-*/
-					 geoPointId = (String) delegator.getNextSeqId("GeoPoint");
+
+					String geoPointSeqId = (String) delegator.getNextSeqId("GeoPoint");
 					
-					Map officeDetails = UtilMisc.toMap("geoPointId",geoPointId,"information","OFFICE","longitude",longitude,"latitude",latitude, 
-							"information",userLogin);
+					Map officeDetails = UtilMisc.toMap("geoPointId",geoPointSeqId,"information","OFFICE","longitude",longitude,"latitude",latitude, 
+							"userLogin",userLogin);
 					
 					GenericValue valueToStore = delegator.makeValue("GeoPoint", officeDetails);
 					valueToStore.create();
 					
 			 }
+			
+			long faxNumber = Long.parseLong(faxNo);
+			long contactNo = Long.parseLong(contactNumber);
+
 			if (contactMechId.isEmpty()) {
 				// if no address exists creating one
 				createAddress(dispatcher, officeId, address, city, pinCode, district, userLogin,faxNo,contactNumber,geoPointId);
 			}
 			else {
-				// if address exists update 
-				updateAddress(dispatcher, contactMechId, officeId, address, city, pinCode, district, userLogin,faxNo,contactNumber,geoPointId);
-			}
+				Map updateAddressMap = UtilMisc.toMap("address1", address,"city", city,"postalCode", pinCode,"district", district,"faxNo",faxNumber,"contactNumber",contactNo,"geoPointId",geoPointId);
+				
+				
+				Integer valueToStore = delegator.storeByCondition("PostalAddress", updateAddressMap
+						,EntityCondition.makeCondition("contactMechId",EntityOperator.EQUALS,contactMechId));				
+			}			
+			
+			if(!(officeType.isEmpty()) &&   OfficeSetupConstants.OFFICE_TYPE.equals(officeType) ){
+				
+				
+				 GenericValue officeRelation = EntityQuery.use(delegator).from("PartyRelationship").where("partyIdTo", officeId).queryOne();
 
-			//if(!(parentOffice.isEmpty()) && UtilValidate.isNotEmpty(parentOffice) && UtilValidate.isNotEmpty(hoo)){
-			if(UtilValidate.isNotEmpty(parentOffice) && UtilValidate.isNotEmpty(hoo)){
-				// Added by Ankit Solanki on 06 Aug for UPDATE HOO relation
-				//List<EntityCondition> andExprs = FastList.newInstance();
-				List<EntityCondition> andExprs = new LinkedList<EntityCondition>();
-				EntityCondition mainCond = null;
+				 officeRelation.remove();
+				 
+					//System.out.println("~~~~~~~~~~officeRelation~~~~~~~~~~~"+officeRelation);
+			}else
+			if(UtilValidate.isNotEmpty(parentOffice) && UtilValidate.isNotEmpty(hoo)){				
+	
+				List<EntityCondition> andExpr = FastList.newInstance();
 				EntityCondition mainConds = null;
-				EntityCondition mainCondd = null;
-				if (UtilValidate.isNotEmpty(officeId))
-				{
+				andExpr.add(EntityCondition.makeCondition("partyIdTo", EntityOperator.EQUALS, officeId));
+				andExpr.add(EntityCondition.makeCondition("roleTypeIdFrom", EntityOperator.EQUALS, OfficeSetupConstants.PARTY_ROLE_TYPE));
+				andExpr.add(EntityCondition.makeCondition("roleTypeIdTo", EntityOperator.EQUALS, OfficeSetupConstants.PARTY_ROLE_TYPE));
+				//andExprs.add(EntityCondition.makeCondition("partyRelationshipTypeId", EntityOperator.EQUALS, "HOO"));
+				if (andExpr.size() > 0)
+					mainConds = EntityCondition.makeCondition(andExpr, EntityOperator.AND);
+				int test = delegator.storeByCondition("PartyRelationship", UtilMisc.toMap("partyIdFrom",hoo), mainConds);
 
-					andExprs.add(EntityCondition.makeCondition("partyIdFrom", EntityOperator.EQUALS, officeId));
-					andExprs.add(EntityCondition.makeCondition("roleTypeIdFrom", EntityOperator.EQUALS, OfficeSetupConstants.PARTY_ROLE_TYPE));
-					andExprs.add(EntityCondition.makeCondition("roleTypeIdTo", EntityOperator.EQUALS, OfficeSetupConstants.EMPLOYEE_ROLE_TYPE));
-					andExprs.add(EntityCondition.makeCondition("partyRelationshipTypeId", EntityOperator.EQUALS, "HOO"));
-					if (andExprs.size() > 0)
-						mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+				
+			}
+			
+			
+			 	
 
-					List<GenericValue> hooDetail = delegator.findList("PartyRelationship", mainCond, null, null, null, false);
-
-					if (UtilValidate.isNotEmpty(hooDetail))
-					{
-						String hooId = hooDetail.get(0).getString("partyIdTo");
-						if(!(hooId.equals(hoo)))
-						{
-							//int test = delegator.storeByCondition("PartyRelationship", UtilMisc.toMap("statusId", EmployeeConstants.EMPL_PARTY_REL_ACTIVE, "partyRelationshipTypeId", EmployeeConstants.EMPL_PRL_REL_TYPE, "comments", "OLD_HOO"), mainCond);
-							int test = delegator.storeByCondition("PartyRelationship", UtilMisc.toMap("partyRelationshipTypeId", EmployeeConstants.EMPL_PRL_REL_TYPE, "comments", "OLD_HOO"), mainCond);
-
-							if (UtilValidate.isNotEmpty(andExprs))
-								andExprs.clear();
-							/*if (UtilValidate.isNotEmpty(mainCond))
-								mainCond.reset();
-*/
-							andExprs.add(EntityCondition.makeCondition("partyIdFrom", EntityOperator.EQUALS, officeId));
-							andExprs.add(EntityCondition.makeCondition("partyIdTo", EntityOperator.EQUALS, hoo));
-							andExprs.add(EntityCondition.makeCondition("roleTypeIdFrom", EntityOperator.EQUALS, OfficeSetupConstants.PARTY_ROLE_TYPE));
-							andExprs.add(EntityCondition.makeCondition("roleTypeIdTo", EntityOperator.EQUALS, OfficeSetupConstants.EMPLOYEE_ROLE_TYPE));
-							if (andExprs.size() > 0)
-								mainConds = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
-
-							List<GenericValue> employeeDetail = delegator.findList("PartyRelationship", mainCond, null, null, null, false);
-
-							if (UtilValidate.isNotEmpty(employeeDetail))
-							{
-								int dataStore = delegator.storeByCondition("PartyRelationship", UtilMisc.toMap("statusId", EmployeeConstants.EMPL_PARTY_REL_ACTIVE, "partyRelationshipTypeId", "HOO"), mainConds);
-							}
-							else
-							{
-								updateHeadOfOffice(dispatcher, parentOffice, hoo, userLogin, officeType, officeId);
-							}
-						}
-						else
-						{
-							int dataStore = delegator.storeByCondition("PartyRelationship", UtilMisc.toMap("statusId", EmployeeConstants.EMPL_PARTY_REL_ACTIVE, "partyRelationshipTypeId", "HOO"), mainConds);
-						}
-					}
-					else if (UtilValidate.isEmpty(hooDetail))
-					{
-						if (UtilValidate.isNotEmpty(andExprs))
-							andExprs.clear();
-//						if (UtilValidate.isNotEmpty(mainCond))
-//							mainCond.reset();
-
-						andExprs.add(EntityCondition.makeCondition("partyIdFrom", EntityOperator.EQUALS, officeId));
-						andExprs.add(EntityCondition.makeCondition("partyIdTo", EntityOperator.EQUALS, hoo));
-						andExprs.add(EntityCondition.makeCondition("roleTypeIdFrom", EntityOperator.EQUALS, OfficeSetupConstants.PARTY_ROLE_TYPE));
-						andExprs.add(EntityCondition.makeCondition("roleTypeIdTo", EntityOperator.EQUALS, OfficeSetupConstants.EMPLOYEE_ROLE_TYPE));
-						if (andExprs.size() > 0)
-							mainCondd = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
-
-						List<GenericValue> employeeDetail = delegator.findList("PartyRelationship", mainCondd, null, null, null, false);
-
-						if (UtilValidate.isNotEmpty(employeeDetail))
-						{
-							int dataStore = delegator.storeByCondition("PartyRelationship", UtilMisc.toMap("statusId", EmployeeConstants.EMPL_PARTY_REL_ACTIVE, "partyRelationshipTypeId", "HOO"), mainCondd);
-						}
-						else
-						{
-							updateHeadOfOffice(dispatcher, parentOffice, hoo, userLogin, officeType, officeId);
-						}
-					}
-				}
-			}            
-
-			 
 
 		}catch (DuplicateOfficeException e) {
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.DUPLICATE_OFFICE, officeName, locale);
-		}catch (EmptyParentOfficeException e) {
+		}/*catch (EmptyParentOfficeException e) {
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_OFFICE_WITHOUT_PARENT, officeType, locale);
 		}catch (ParentOfficeException e) {
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_CREATE_PARENT_OF_WRDMP, officeType, locale);				
@@ -1094,14 +1032,15 @@ public class HumanResEvents {
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICENAME, officeName, locale);
 		}catch(UpdateOfficeTypeException e) {
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICETYPE, officeName, locale);
-		}catch(GenericEntityException e) {
+				}catch(GenericEntityException e) {
 			// All the programatical exceptions related to entity are handled here
 			Debug.log("Entity Exception occured : " + e );
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
-		}catch(GenericServiceException e) {
+		}*/catch(GenericServiceException e) {
 			// All the programatical exceptions related to service are handled here
 			Debug.log("Service Exception occured : " + e );
 			return UIMessages.getErrorMessage(resource,OfficeSetupConstants.CANNOT_UPDATE_OFFICE, officeName, locale);
+			
 		}catch(GeneralException e) {
 			// It is the mother of all the ofbiz exceptions
 			// All the specific exceptions are handled above
@@ -1113,6 +1052,7 @@ public class HumanResEvents {
 		result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.OFFICE_UPDATED, officeName, locale));			
 		return result;		
 	}	
+
 
 
 
@@ -1736,7 +1676,7 @@ public class HumanResEvents {
 		return result;
 	}
     
-    /** Name of the Method: approveRegistration
+	/** Name of the Method: approveRegistration
      * Version:@1.0
      * Date:12/08/2017     
      * Author:PRABHU.S
@@ -2047,12 +1987,59 @@ public class HumanResEvents {
 						}
 					} 
 					
+					String customerId =null;
+		        	String encryPass =null;
+		        	String massage=null;
+
+		        	boolean useEncryption = "true".equals(EntityUtilProperties.getPropertyValue("security", "password.encrypt", delegator));
+		        	
 					
+					
+					try{
+						
+						String splitName = firstName.substring(0, Math.min(firstName.length(), 3));
+						String nameLogin = splitName.toUpperCase();
+		        		String PS ="password"; 
+				    	customerId =  nameLogin+"EMP"+employeeId;
+						//System.out.println("~~~~~~~~~~customerId~~~~~~~"+customerId);
+						//System.out.println("~~~~~~~~~~userLogin~~~~~~~~~~~~~~"+userLogin);
+
+				    	// code for Password Ganerate
+						/*	int length= 8;
+							String alphabet = new String("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"); //9
+							int n = alphabet.length(); // n=62 length of alphabet
+							Random r = new Random();
+							for (int i=0; i<length; i++)
+							{
+								PS = PS + alphabet.charAt(r.nextInt(n));// call nextInt() Method
+							}*/
+						//System.out.println("~~~~~~~~~~PS~~~~~~~"+PS);
+
+							encryPass = useEncryption ? HashCrypt.cryptUTF8(getHashType(), null, PS) : PS;      							
+						//System.out.println("~~~~~~~~~~encryPass~~~~~~~"+encryPass);
+		
+						
+							
+							
+								massage ="Welcome. We thank you for your registration at IMIS. \n \n Your user id is "+customerId+" \n Your Password is "+PS+" \n \n Thankyou";
+							
+					
+					// Code for save login and password in UserLogin Table
+						Map<String, ? extends Object> UserLoginDetails = UtilMisc.toMap("userLoginId",customerId,"currentPassword",encryPass,"enabled","Y","partyId",employeeId);
+	   				GenericValue UserLoginSave = delegator.makeValue("UserLogin", UserLoginDetails);
+	   				UserLoginSave.create();
+					//End
+					}
+	   				catch(GenericEntityException e)
+	   				{
+	   					e.printStackTrace();
+	   				}
+				
 					// code to call Service for SMS
 			   			try {
 			   					Map smsLogMap = FastMap.newInstance();
 			   					Map LogMap = FastMap.newInstance();
-			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", contactNumber, "textMessage", "Record Approved", "customerId", employeeId, "tabName", "Employee Registration", "discription", "Approved Confirmation"));
+			   					smsLogMap.putAll(UtilMisc.toMap("mobNumber", contactNumber, "textMessage", massage, "customerId", employeeId, "tabName", "Employee Registration", "discription", "Approved Confirmation"));
 			   					smsLogMap = dispatcher.runSync("smsServiceCall",smsLogMap);
 			   				}
 			   			catch(GenericServiceException e)
@@ -2065,7 +2052,7 @@ public class HumanResEvents {
 			   			try {
 			   					Map emailLogMap = FastMap.newInstance();
 			   					Map LogMap = FastMap.newInstance();
-			   					emailLogMap.putAll(UtilMisc.toMap("emailId", emailAddress, "textMessage","Record Approved", "customerId", employeeId, "tabName", "Employee Registration", "discription", "Approved Confirmation","subject", "Email From IMIS"));
+			   					emailLogMap.putAll(UtilMisc.toMap("emailId", emailAddress, "textMessage",massage, "customerId", employeeId, "tabName", "Employee Registration", "discription", "Approved Confirmation","subject", "Email From IMIS"));
 			   					emailLogMap = dispatcher.runSync("emailServiceCall",emailLogMap);
 			   				}
 			   			catch(GenericServiceException e)
@@ -2092,6 +2079,19 @@ public class HumanResEvents {
 		}
 		return result;
 	}
+
+    public static String getHashType() {
+        String hashType = UtilProperties.getPropertyValue("security", "password.encrypt.hash.type");
+
+        if (UtilValidate.isEmpty(hashType)) {
+            Debug.logWarning("Password encrypt hash type is not specified in security.properties, use SHA", module);
+            hashType = "SHA";
+        }
+
+        return hashType;
+    }
+    
+
 
     
     public static Map<String, Object> updateEmpStatus(DispatchContext dctx,
