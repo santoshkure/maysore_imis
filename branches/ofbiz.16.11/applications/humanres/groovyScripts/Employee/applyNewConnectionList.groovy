@@ -51,7 +51,7 @@ List<EntityCondition> andExprs = new LinkedList<EntityCondition>();
 						EntityOperator.AND);
 
 viewIndex = parameters.VIEW_INDEX ? Integer.valueOf(parameters.VIEW_INDEX) : 0
-viewSize = parameters.VIEW_SIZE ? Integer.valueOf(parameters.VIEW_SIZE) : 2
+viewSize = parameters.VIEW_SIZE ? Integer.valueOf(parameters.VIEW_SIZE) : 20
 
 int lowIndex = viewIndex * viewSize + 1
 int highIndex = (viewIndex + 1) * viewSize

@@ -16,6 +16,10 @@
     		<li class="h3">${uiLabelMap.listConnectionDetail}</li>
     		<div class="basic-nav" style="margin-top: -37.50px;">
   				<ul>
+  					<li>
+    					<a href="javascript:getExcel();">
+         				<img  border="0" src="/solr/img/filetypes/xls.png" width="20" height="20"  title="Click Here To Export List in Excel" /></a></blink></li>
+    				</li>
     				<li>
     				<a title="View PDF" target="blank_" href="<@ofbizUrl>connectionDetailPdf?connectionNo=${connectionNo?if_exists}&customerId=${customerId?if_exists}&applicationType=${applicationType?if_exists}&listSizeView=${listSize?if_exists}</@ofbizUrl>"><img src="/rainbowstone/images/pdf.png" width="24px"></img></a>
     				</li>
@@ -63,6 +67,20 @@
      		</tbody>
        </table>
        <@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
+	  				<input type="hidden" name="xlsConnectionNo" value="${connectionNo?if_exists}"/>
+                  	<input type="hidden" name="xlsCustomerId" value="${customerId?if_exists}"/>
+                  	<input type="hidden" name="xlsApplicationType" value="${applicationType?if_exists}"/>
 	  </div>
 	</div>   
   </form>
+  
+<script>
+function getExcel()
+	{
+	     var form =document['listConnectionDetail'];	
+	     
+        form.action="<@ofbizUrl>connectionDetail</@ofbizUrl>";
+	    form.submit();
+	}
+	
+</script>

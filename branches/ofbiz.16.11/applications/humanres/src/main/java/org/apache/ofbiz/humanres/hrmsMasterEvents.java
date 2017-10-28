@@ -59,6 +59,20 @@ import org.apache.ofbiz.minilang.method.envops.StringAppend;
 // added by shubham malviya for password encryption
 import org.apache.ofbiz.base.crypto.HashCrypt;
 import org.apache.ofbiz.entity.util.EntityUtilProperties;
+//added for XLS
+import java.awt.Color;
+import java.io.File;
+import java.io.FileOutputStream;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import javolution.util.FastList;
+//end
 
 import java.io.*;
 
@@ -3227,5 +3241,459 @@ public class hrmsMasterEvents {
 		   	}
 			// End 
 		 		  
-		 		  
+			    	// code added by shubham malviya For XLS Sheet Styling
+			    	//Setting Up Header
+				   	 public static void headerWithBorder(XSSFCellStyle stylee)
+				   		{
+				   		 //Set Border for Cell 
+				   		 // Set Thikness of Border by Changing BORDER_THIN, BORDER_THICK, BORDER_MEDIUM, BORDER_HAIR ETC
+				   		 
+				   		 stylee.setBorderRight(XSSFCellStyle.BORDER_THIN);
+				   		 stylee.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+				   		 stylee.setBorderTop(XSSFCellStyle.BORDER_THIN);
+				   		 stylee.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+				   		 // Set color to cell Background
+				   		 XSSFColor myColor = new XSSFColor(Color.yellow);
+				   		 stylee.setFillBackgroundColor(myColor);
+				   		 stylee.setFillPattern(CellStyle.BORDER_HAIR);
+				   		}
+				   	 
+				   	 // Setting up cell
+				   	 public static void cellBorder(XSSFCellStyle stylee)
+				   		{
+				   		 stylee.setBorderRight(XSSFCellStyle.BORDER_HAIR);
+				   		 stylee.setBorderLeft(XSSFCellStyle.BORDER_HAIR);
+				   		 stylee.setBorderTop(XSSFCellStyle.BORDER_HAIR);
+				   		 stylee.setBorderBottom(XSSFCellStyle.BORDER_HAIR);
+				   		
+				   		}
+				   	 // code Added by shubham malviya For Genarate Xls File
+				 	public static Map<String, Object> customerDetailXLS(DispatchContext dctx,Map<String, ? extends Object> context) {
+			        	Map<String, Object> result = ServiceUtil.returnSuccess();
+			        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			        	LocalDispatcher dispatcher = dctx.getDispatcher();
+				 	      try{
+				 	      XSSFWorkbook abc = new XSSFWorkbook();
+				 	      XSSFWorkbook workbook = new XSSFWorkbook(); 
+				 	      XSSFSheet spreadsheet = workbook.createSheet("Customer Detail");
+				 	      XSSFRow rowA=spreadsheet.createRow(0);
+				 	      XSSFRow row=spreadsheet.createRow(1);
+				 	      XSSFCell cell;
+				 	      XSSFCellStyle style1 = workbook.createCellStyle();
+				 	      headerWithBorder(style1);
+				 	     
+				 	      //Set alignment of cell Horizontal
+				 	      style1.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+				 	      //Set alignment of cell Vertical
+				 	      style1.setVerticalAlignment(XSSFCellStyle.VERTICAL_TOP);
+				 	      //spreadsheet.addMergedRegion(new CellRangeAddress(0,0,5,1));
+
+				 	      // style1.setFillBackgroundColor(HSSFColor.LEMON_CHIFFON.index );;
+				 	      // Column Heading Name
+				 	      cell=rowA.createCell(3);
+				 	      cell.setCellValue("Customer Detail");
+				 	      cell=row.createCell(0);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("S No.");
+				 	      cell=row.createCell(1);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Customer Id");
+				 	      cell=row.createCell(2);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("First Name");
+				 	      cell=row.createCell(3);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Contact");
+				 	      cell=row.createCell(4);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Address");
+				 	      cell=row.createCell(5);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Email");
+				 	      cell=row.createCell(6);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Action Date");
+				 	    
+				 	      // code for Show Data Searching wise
+				 	      List<EntityCondition> andExprs = FastList.newInstance();
+				 	      EntityCondition mainCond = null;
+				 	      String paramList = "";
+				 	      List<GenericValue> xlsList = null;
+				 	    
+				 	      String customerId = (String) context.get("xlsCustomerId");
+							if (customerId != null && customerId.length() > 0) {
+								paramList = paramList + "&customerId=" + customerId;
+								andExprs.add(EntityCondition.makeCondition("customerId",
+										EntityOperator.EQUALS,customerId));
+							}
+							String nameOfCustomer = (String) context.get("xlsNameOfCustomer"); 
+							if (UtilValidate.isNotEmpty(nameOfCustomer)) {
+								paramList = paramList + "&nameOfCustomer=" + nameOfCustomer;
+								andExprs.add(EntityCondition.makeCondition("firstName",
+										EntityOperator.LIKE, "%" + nameOfCustomer + "%"));
+							}
+							andExprs.add(EntityCondition.makeCondition("actionStatus",
+									EntityOperator.EQUALS,"Approve"));
+							
+							if (andExprs.size() > 0)
+								mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+							xlsList = delegator.findList("consumerRegistrationDetails", mainCond, null,
+										null, null, false);
+							//end
+							
+					 	      for(int i=0; i<xlsList.size(); i++)
+					 	      {
+					 	         row=spreadsheet.createRow(i+2);
+					 	         cell=row.createCell(0);
+					 	         cell.setCellValue(i+1);
+					 	         cell=row.createCell(1);
+					 	         cell.setCellValue(xlsList.get(i).getString("customerId"));
+					 	         cell=row.createCell(2);
+					 	         cell.setCellValue(xlsList.get(i).getString("firstName"));
+					 	         cell=row.createCell(3);
+					 	         cell.setCellValue(xlsList.get(i).getString("mobileNumber"));
+					 	         cell=row.createCell(4);
+					 	        cell.setCellValue(xlsList.get(i).getString("address"));
+					 	         cell=row.createCell(5);
+					 	         cell.setCellValue(xlsList.get(i).getString("eMail"));
+					 	         cell=row.createCell(6);
+					 	         cell.setCellValue(xlsList.get(i).getString("actionDate"));
+					 	         
+					 	      }
+
+					 	      FileOutputStream out = new FileOutputStream(new File("framework/images/webapp/images/Export/Excel/CustomerPortal/customerDetail.xls"));
+					 	      workbook.write(out);
+					 	      out.close();
+					 	      System.out.println("exceldatabase.xlsx written successfully");
+				 	      
+				 	      
+				 	      	}
+				 	      	catch (Exception e) {
+				 			// TODO: handle exception
+				 	    	  e.printStackTrace();
+				 	      	}
+				 	     return result;		
+				 	      }
+				 	
+				 	public static Map<String, Object> customerRegistrationXls(DispatchContext dctx,Map<String, ? extends Object> context) {
+			        	Map<String, Object> result = ServiceUtil.returnSuccess();
+			        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			        	LocalDispatcher dispatcher = dctx.getDispatcher();
+				 	      try{
+				 	      XSSFWorkbook abc = new XSSFWorkbook();
+				 	      XSSFWorkbook workbook = new XSSFWorkbook(); 
+				 	      XSSFSheet spreadsheet = workbook.createSheet("Registration Detail");
+				 	      XSSFRow rowA=spreadsheet.createRow(0);
+				 	      XSSFRow row=spreadsheet.createRow(1);
+				 	      XSSFCell cell;
+				 	      XSSFCellStyle style1 = workbook.createCellStyle();
+				 	      headerWithBorder(style1);
+				 	     
+				 	      //Set alignment of cell Horizontal
+				 	      style1.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+				 	      //Set alignment of cell Vertical
+				 	      style1.setVerticalAlignment(XSSFCellStyle.VERTICAL_TOP);
+				 	      //spreadsheet.addMergedRegion(new CellRangeAddress(0,0,5,1));
+
+				 	      // style1.setFillBackgroundColor(HSSFColor.LEMON_CHIFFON.index );;
+				 	  // Column Heading Name
+				 	      cell=rowA.createCell(3);
+				 	      cell.setCellValue("Registration Detail");
+				 	      cell=row.createCell(0);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("S No.");
+				 	      cell=row.createCell(1);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Registration No.");
+				 	      cell=row.createCell(2);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("First Name");
+				 	      cell=row.createCell(3);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Last Name");
+				 	      cell=row.createCell(4);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Gender");
+				 	      cell=row.createCell(5);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Customer Address");
+				 	      cell=row.createCell(6);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Mobile No.");
+				 	      cell=row.createCell(7);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Registration Date");
+				 	      
+				 	      // code for Show Data Searching wise
+				 	      List<EntityCondition> andExprs = FastList.newInstance();
+				 	      EntityCondition mainCond = null;
+				 	      String paramList = "";
+				 	      List<GenericValue> xlsList = null;
+				 	    
+				 	      String registrationNo = (String) context.get("xlsRegistrationNo");
+							if (registrationNo != null && registrationNo.length() > 0) {
+								paramList = paramList + "&registrationNo=" + registrationNo;
+								andExprs.add(EntityCondition.makeCondition("registrationId",
+										EntityOperator.EQUALS,registrationNo));
+							}
+							String nameOfCustomer = (String) context.get("xlsNameOfCustomer"); 
+							if (UtilValidate.isNotEmpty(nameOfCustomer)) {
+								paramList = paramList + "&nameOfCustomer=" + nameOfCustomer;
+								andExprs.add(EntityCondition.makeCondition("firstName",
+										EntityOperator.LIKE, "%" + nameOfCustomer + "%"));
+							}
+							andExprs.add(EntityCondition.makeCondition("actionStatus",
+									EntityOperator.EQUALS,null));
+							
+							if (andExprs.size() > 0)
+								mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+							xlsList = delegator.findList("consumerRegistrationDetails", mainCond, null,
+										null, null, false);
+							//end
+							
+					 	      for(int i=0; i<xlsList.size(); i++)
+					 	      {
+					 	         row=spreadsheet.createRow(i+2);
+					 	         cell=row.createCell(0);
+					 	         cell.setCellValue(i+1);
+					 	         cell=row.createCell(1);
+					 	         cell.setCellValue(xlsList.get(i).getString("registrationId"));
+					 	         cell=row.createCell(2);
+					 	         cell.setCellValue(xlsList.get(i).getString("firstName"));
+					 	         cell=row.createCell(3);
+					 	         cell.setCellValue(xlsList.get(i).getString("lastName"));
+					 	         cell=row.createCell(4);
+					 	         cell.setCellValue(xlsList.get(i).getString("genderId"));
+					 	         cell=row.createCell(5);
+					 	         cell.setCellValue(xlsList.get(i).getString("address"));
+					 	         cell=row.createCell(6);
+					 	         cell.setCellValue(xlsList.get(i).getString("mobileNumber"));
+					 	         cell=row.createCell(7);
+					 	         cell.setCellValue(xlsList.get(i).getString("submittedDate"));
+					 	      }
+
+					 	      FileOutputStream out = new FileOutputStream(new File("framework/images/webapp/images/Export/Excel/CustomerPortal/customerRegistration.xls"));
+					 	      workbook.write(out);
+					 	      out.close();
+					 	      System.out.println("exceldatabase.xlsx written successfully");
+				 	      
+				 	      
+				 	      	}
+				 	      	catch (Exception e) {
+				 			// TODO: handle exception
+				 	    	  e.printStackTrace();
+				 	      	}
+				 	     return result;		
+				 	      }
+				 	
+				 	public static Map<String, Object> connectionRegistrationXls(DispatchContext dctx,Map<String, ? extends Object> context) {
+			        	Map<String, Object> result = ServiceUtil.returnSuccess();
+			        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			        	LocalDispatcher dispatcher = dctx.getDispatcher();
+				 	      try{
+				 	      XSSFWorkbook abc = new XSSFWorkbook();
+				 	      XSSFWorkbook workbook = new XSSFWorkbook(); 
+				 	      XSSFSheet spreadsheet = workbook.createSheet("Connection Detail");
+				 	      XSSFRow rowA=spreadsheet.createRow(0);
+				 	      XSSFRow row=spreadsheet.createRow(1);
+				 	      XSSFCell cell;
+				 	      XSSFCellStyle style1 = workbook.createCellStyle();
+				 	      headerWithBorder(style1);
+				 	     
+				 	      //Set alignment of cell Horizontal
+				 	      style1.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+				 	      //Set alignment of cell Vertical
+				 	      style1.setVerticalAlignment(XSSFCellStyle.VERTICAL_TOP);
+				 	      //spreadsheet.addMergedRegion(new CellRangeAddress(0,0,5,1));
+				 	  // Column Heading Name
+				 	      cell=rowA.createCell(3);
+				 	      cell.setCellValue("Connection Detail");
+				 	      cell=row.createCell(0);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("S No.");
+				 	      cell=row.createCell(1);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Customer Id");
+				 	      cell=row.createCell(2);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Connection Category");
+				 	      cell=row.createCell(3);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Application Type");
+				 	      cell=row.createCell(4);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Type Of Building");
+				 	      cell=row.createCell(5);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Application Date");
+				 	      
+				 	      // code for Show Data Searching wise
+				 	      List<EntityCondition> andExprs = FastList.newInstance();
+				 	      EntityCondition mainCond = null;
+				 	      String paramList = "";
+				 	      List<GenericValue> xlsList = null;
+				 	    
+				 	      String xlsApplicationType = (String) context.get("xlsApplicationType");
+							if (xlsApplicationType != null && xlsApplicationType.length() > 0) {
+								paramList = paramList + "&xlsApplicationType=" + xlsApplicationType;
+								andExprs.add(EntityCondition.makeCondition("applicationType",
+										EntityOperator.EQUALS,xlsApplicationType));
+							}
+							String xlsCustomerId = (String) context.get("xlsCustomerId"); 
+							if (xlsCustomerId != null && xlsCustomerId.length() > 0) {
+								paramList = paramList + "&xlsCustomerId=" + xlsCustomerId;
+								andExprs.add(EntityCondition.makeCondition("customerId",
+										EntityOperator.EQUALS,xlsCustomerId));
+							}
+							andExprs.add(EntityCondition.makeCondition("actionStatus",
+									EntityOperator.EQUALS,null));
+							
+							if (andExprs.size() > 0)
+								mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+							xlsList = delegator.findList("saveConnectionDetail", mainCond, null,
+										null, null, false);
+							//end
+							
+					 	      for(int i=0; i<xlsList.size(); i++)
+					 	      {
+					 	         row=spreadsheet.createRow(i+2);
+					 	         cell=row.createCell(0);
+					 	         cell.setCellValue(i+1);
+					 	         cell=row.createCell(1);
+					 	         cell.setCellValue(xlsList.get(i).getString("customerId"));
+					 	         cell=row.createCell(2);
+					 	         cell.setCellValue(xlsList.get(i).getString("connectionCategory"));
+					 	         cell=row.createCell(3);
+					 	         cell.setCellValue(xlsList.get(i).getString("applicationType"));
+					 	         cell=row.createCell(4);
+					 	         cell.setCellValue(xlsList.get(i).getString("typeOfBuilding"));
+					 	         cell=row.createCell(5);
+					 	         cell.setCellValue(xlsList.get(i).getString("applicationDate"));
+					 	      }
+
+					 	      FileOutputStream out = new FileOutputStream(new File("framework/images/webapp/images/Export/Excel/CustomerPortal/connectionRegistration.xls"));
+					 	      workbook.write(out);
+					 	      out.close();
+					 	      System.out.println("exceldatabase.xlsx written successfully");
+				 	      
+				 	      
+				 	      	}
+				 	      	catch (Exception e) {
+				 			// TODO: handle exception
+				 	    	  e.printStackTrace();
+				 	      	}
+				 	     return result;		
+				 	      }
+				 	
+				 	public static Map<String, Object> connectionDetailXls(DispatchContext dctx,Map<String, ? extends Object> context) {
+			        	Map<String, Object> result = ServiceUtil.returnSuccess();
+			        	GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			        	LocalDispatcher dispatcher = dctx.getDispatcher();
+				 	      try{
+				 	      XSSFWorkbook abc = new XSSFWorkbook();
+				 	      XSSFWorkbook workbook = new XSSFWorkbook(); 
+				 	      XSSFSheet spreadsheet = workbook.createSheet("Connection Detail");
+				 	      XSSFRow rowA=spreadsheet.createRow(0);
+				 	      XSSFRow row=spreadsheet.createRow(1);
+				 	      XSSFCell cell;
+				 	      XSSFCellStyle style1 = workbook.createCellStyle();
+				 	      headerWithBorder(style1);
+				 	     
+				 	      //Set alignment of cell Horizontal
+				 	      style1.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+				 	      //Set alignment of cell Vertical
+				 	      style1.setVerticalAlignment(XSSFCellStyle.VERTICAL_TOP);
+				 	      //spreadsheet.addMergedRegion(new CellRangeAddress(0,0,5,1));
+				 	      			// Column Heading Name
+				 	      cell=rowA.createCell(3);
+				 	      cell.setCellValue("Connection Detail");
+				 	      cell=row.createCell(0);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("S No.");
+				 	      cell=row.createCell(1);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Connection No");
+				 	      cell=row.createCell(2);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Customer Id");
+				 	      cell=row.createCell(3);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Connection Category");
+				 	      cell=row.createCell(4);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Application Type");
+				 	      cell=row.createCell(5);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Type Of Building");
+				 	      cell=row.createCell(6);
+				 	      cell.setCellStyle(style1);
+				 	      cell.setCellValue("Application Date");
+				 	      
+				 	      // code for Show Data Searching wise
+				 	      List<EntityCondition> andExprs = FastList.newInstance();
+				 	      EntityCondition mainCond = null;
+				 	      String paramList = "";
+				 	      List<GenericValue> xlsList = null;
+				 	    
+				 	      String xlsConnectionNo = (String) context.get("xlsConnectionNo");
+							if (xlsConnectionNo != null && xlsConnectionNo.length() > 0) {
+								paramList = paramList + "&xlsConnectionNo=" + xlsConnectionNo;
+								andExprs.add(EntityCondition.makeCondition("connectionNo",
+										EntityOperator.EQUALS,xlsConnectionNo));
+							}
+							String xlsCustomerId = (String) context.get("xlsCustomerId"); 
+							if (xlsCustomerId != null && xlsCustomerId.length() > 0) {
+								paramList = paramList + "&xlsCustomerId=" + xlsCustomerId;
+								andExprs.add(EntityCondition.makeCondition("customerId",
+										EntityOperator.EQUALS,xlsCustomerId));
+							}
+							String xlsApplicationType = (String) context.get("xlsApplicationType");
+							if (xlsApplicationType != null && xlsApplicationType.length() > 0) {
+								paramList = paramList + "&xlsApplicationType=" + xlsApplicationType;
+								andExprs.add(EntityCondition.makeCondition("applicationType",
+										EntityOperator.EQUALS,xlsApplicationType));
+							}
+							
+							andExprs.add(EntityCondition.makeCondition("actionStatus",
+									EntityOperator.EQUALS,"approve"));
+							
+							if (andExprs.size() > 0)
+								mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+							xlsList = delegator.findList("saveConnectionDetail", mainCond, null,
+										null, null, false);
+							//end
+							
+					 	      for(int i=0; i<xlsList.size(); i++)
+					 	      {
+					 	         row=spreadsheet.createRow(i+2);
+					 	         cell=row.createCell(0);
+					 	         cell.setCellValue(i+1);
+					 	         cell=row.createCell(1);
+					 	         cell.setCellValue(xlsList.get(i).getString("connectionNo"));
+					 	         cell=row.createCell(2);
+					 	         cell.setCellValue(xlsList.get(i).getString("customerId"));
+					 	         cell=row.createCell(3);
+					 	         cell.setCellValue(xlsList.get(i).getString("connectionCategory"));
+					 	         cell=row.createCell(4);
+					 	         cell.setCellValue(xlsList.get(i).getString("applicationType"));
+					 	        cell=row.createCell(5);
+					 	         cell.setCellValue(xlsList.get(i).getString("typeOfBuilding"));
+					 	         cell=row.createCell(6);
+					 	         cell.setCellValue(xlsList.get(i).getString("applicationDate"));
+					 	      }
+
+					 	      FileOutputStream out = new FileOutputStream(new File("framework/images/webapp/images/Export/Excel/CustomerPortal/connectionDetail.xls"));
+					 	      workbook.write(out);
+					 	      out.close();
+					 	      System.out.println("exceldatabase.xlsx written successfully");
+				 	      
+				 	      
+				 	      	}
+				 	      	catch (Exception e) {
+				 			// TODO: handle exception
+				 	    	  e.printStackTrace();
+				 	      	}
+				 	     return result;		
+				 	      }
+				 	// End
 }

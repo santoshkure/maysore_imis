@@ -1652,4 +1652,31 @@ under the License.
 		
 		<!-- End -->
 
+				<!-- Added By shubham malviya for Xls -->
+		<service name="customerDetailXLS" export="true" engine="java"
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="customerDetailXLS">
+    	<attribute name="xlsCustomerId" type="String" mode="IN" optional="true" />
+    	<attribute name="xlsNameOfCustomer" type="String" mode="IN" optional="true" />
+	    </service>
+	    
+	    <service name="customerRegistrationXls" export="true" engine="java"
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="customerRegistrationXls">
+    	<attribute name="xlsRegistrationNo" type="String" mode="IN" optional="true" />
+    	<attribute name="xlsNameOfCustomer" type="String" mode="IN" optional="true" />
+	    </service>
+	    
+	    <service name="connectionRegistrationXls" export="true" engine="java"
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="connectionRegistrationXls">
+    	<attribute name="xlsApplicationType" type="String" mode="IN" optional="true" />
+    	<attribute name="xlsCustomerId" type="String" mode="IN" optional="true" />
+	    </service>
+	    
+	    <service name="connectionDetailXls" export="true" engine="java"
+    	location="org.apache.ofbiz.humanres.hrmsMasterEvents" invoke="connectionDetailXls">
+    	<attribute name="xlsConnectionNo" type="String" mode="IN" optional="true" />
+    	<attribute name="xlsCustomerId" type="String" mode="IN" optional="true" />
+    	<attribute name="xlsApplicationType" type="String" mode="IN" optional="true" />
+	    </service>
+	    				<!-- End -->
+	    				
 	    </services>

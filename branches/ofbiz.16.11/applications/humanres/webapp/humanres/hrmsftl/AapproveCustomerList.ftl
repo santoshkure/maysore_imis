@@ -17,6 +17,10 @@
     		<li class="h3">${uiLabelMap.listCustomerDetail}</li>
     		<div class="basic-nav" style="margin-top: -37.50px;">
   				<ul>
+  					<li>
+    				<a href="javascript:getExcel();">
+         				<img  border="0" src="/solr/img/filetypes/xls.png" width="20" height="20"  title="Click Here To Export List in Excel" /></a></blink></li>
+    				</li>
     				<li>
     				<a title="View PDF" target="blank_" href="<@ofbizUrl>customerRegiDetailPdf?nameOfCustomer=${nameOfCustomer?if_exists}&registrationNo=${registrationNo?if_exists}&listSizeView=${listSize?if_exists}</@ofbizUrl>"><img src="/rainbowstone/images/pdf.png" width="24px"></img></a>
     				</li>
@@ -66,5 +70,17 @@
         		</table>
 	  		<@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
 		</div>   
-	
+					<input type="hidden" name="xlsRegistrationNo" value="${registrationNo?if_exists}"/>
+                  	<input type="hidden" name="xlsNameOfCustomer" value="${nameOfCustomer?if_exists}"/>
  </form>
+ 
+<script>
+function getExcel()
+	{
+	     var form =document['listApproveDetail'];	
+	     
+        form.action="<@ofbizUrl>customerRegistration</@ofbizUrl>";
+	    form.submit();
+	}
+	
+</script>
