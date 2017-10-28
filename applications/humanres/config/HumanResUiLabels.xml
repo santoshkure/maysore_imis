@@ -19,7 +19,7 @@
     under the License.
 -->
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
-    <property key="FormFieldTitle_accountNumber">
+    <property key="FormFieldk_accountNumber">
         <value xml:lang="en">Account Number</value>
         <value xml:lang="fr">N° de compte</value>
         <value xml:lang="it">Numero Conto</value>
@@ -4437,170 +4437,239 @@
     </property>
       <!-- END -->
     <!-- For Employee Creation -->
-<property key="employeeId">
+  <property key="employeeId">
         <value xml:lang="en">Employee Id</value>
+        <value xml:lang="kn">Employee Id</value>
     </property> 
     
    <property key="title">
         <value xml:lang="en">Title</value>
-    </property>   
+        <value xml:lang="kn">Title</value>
+   </property>   
   
   <property key="firstName">
         <value xml:lang="en">First Name</value>
-    </property>   
+        <value xml:lang="kn">First Name</value>
+  </property>   
     
     <property key="middleName">
         <value xml:lang="en">Middle Name</value>
-    </property>   
+        <value xml:lang="kn">Middle Name</value>
+   </property>   
     
     <property key="lastName">
         <value xml:lang="en">Last Name</value>
+        <value xml:lang="kn">Last Name</value>
     </property>     
     
      <property key="dob">
         <value xml:lang="en">Date of Birth</value>
-    </property> 
+        <value xml:lang="kn">Date of Birth</value>
+     </property> 
     
     <property key="gender">
         <value xml:lang="en">Gender</value>
+        <value xml:lang="kn">Gender</value>
     </property>
     
      <property key="meritalStatus">
         <value xml:lang="en">Merital Status</value>
-    </property>
+        <value xml:lang="kn">Merital Status</value>
+     </property>
     
     <property key="fatherName">
         <value xml:lang="en">Father Name</value>
+        <value xml:lang="kn">Father Name</value>
     </property>   
     
     <property key="motherName">
         <value xml:lang="en">Mother Name</value>
+        <value xml:lang="kn">Mother Name</value>
     </property>   
     
     <property key="adharCardNo">
         <value xml:lang="en">Adhar Card No</value>
+        <value xml:lang="kn">Adhar Card No</value>
     </property>     
     
      <property key="joiningDate">
         <value xml:lang="en">Date of Joining</value>
-    </property>   
+        <value xml:lang="kn">Date of Joining</value>
+     </property>   
     
     <property key="joiningPlace">
         <value xml:lang="en">Joining Place</value>
+        <value xml:lang="kn">Joining Place</value>
     </property>   
     
     <property key="currentPlace">
         <value xml:lang="en">Current Place</value>
+        <value xml:lang="kn">Current Place</value>
     </property>  
     
      <property key="community">
         <value xml:lang="en">Community</value>
-    </property>   
+        <value xml:lang="kn">Community</value>
+     </property>   
     
     <property key="caste">
         <value xml:lang="en">Caste</value>
+        <value xml:lang="kn">Caste</value>
     </property>   
     
     <property key="nationality">
         <value xml:lang="en">Nationality</value>
+        <value xml:lang="kn">Nationality</value>
     </property>  
     
     <property key="designation">
         <value xml:lang="en">Designation</value>
+        <value xml:lang="kn">Designation</value>
     </property> 
     
      <property key="permanentAddress">
         <value xml:lang="en">Permanent Address</value>
-    </property>   
+        <value xml:lang="kn">Permanent Address</value>
+     </property>   
     
     <property key="houseNo">
         <value xml:lang="en">House No</value>
+        <value xml:lang="kn">House No</value>
     </property>  
     
     <property key="wardNo">
         <value xml:lang="en">Ward No</value>
+        <value xml:lang="kn">Ward No</value>
     </property> 
     
      <property key="landMark">
         <value xml:lang="en">Land Mark</value>
-    </property>   
+        <value xml:lang="kn">Land Mark</value>
+     </property>   
     
     <property key="village">
         <value xml:lang="en">Village</value>
+        <value xml:lang="kn">Village</value>
     </property>  
     
     <property key="city">
         <value xml:lang="en">City</value>
+        <value xml:lang="kn">City</value>
     </property> 
     
      <property key="state">
         <value xml:lang="en">State</value>
-    </property>   
+        <value xml:lang="kn">State</value>
+     </property>   
     
     <property key="country">
         <value xml:lang="en">Country</value>
+        <value xml:lang="kn">Country</value>
     </property>  
     
     <property key="pin">
         <value xml:lang="en">Pin Code</value>
+        <value xml:lang="kn">Pin Code</value>
     </property> 
     
      <property key="mobileNo">
         <value xml:lang="en">Mobile No.</value>
-    </property>   
+        <value xml:lang="kn">Mobile No.</value>
+     </property>   
     
     <property key="resContactNo">
         <value xml:lang="en">Res. Contact No.</value>
+        <value xml:lang="kn">Res. Contact No.</value>
     </property>  
     
     <property key="emailAddress">
         <value xml:lang="en">E-Mail Address</value>
+        <value xml:lang="kn">E-Mail Address</value>
     </property>
     
     <property key="currentAddress">
         <value xml:lang="en">Current Address</value>
+        <value xml:lang="kn">Current Address</value>
     </property>   
     
     <property key="houseNo">
         <value xml:lang="en">House No</value>
+        <value xml:lang="kn">House No</value>
     </property>  
     
     <property key="wardNo">
         <value xml:lang="en">Ward No</value>
+        <value xml:lang="kn">Ward No</value>
     </property> 
     
      <property key="permanentAddressSame">
         <value xml:lang="en">Permanent Address Same</value>
-    </property> 
+        <value xml:lang="kn">Permanent Address Same</value>
+     </property> 
     
     <property key="applicationDate">
         <value xml:lang="en">Application Date</value>
-    </property> 
+        <value xml:lang="kn">Application Date</value>
+     </property> 
     
     <property key="essentialDocument">
         <value xml:lang="en">Essential Document</value>
+        <value xml:lang="kn">Essential Document</value>
     </property> 
-		<!-- END -->
+    
+    <property key="typeOfAppointment">
+        <value xml:lang="en">Type Of Appointment</value>
+        <value xml:lang="kn">Type Of Appointment</value>
+    </property> 
+    
+    <property key="basicPay">
+        <value xml:lang="en">Basic Pay</value>
+        <value xml:lang="kn">Basic Pay</value>
+    </property>
+    
+     <property key="basicPay">
+        <value xml:lang="en">Basic Pay</value>
+        <value xml:lang="kn">Basic Pay</value>
+    </property>
+    
+    <property key="presentOffice">
+        <value xml:lang="en">Present Office </value>
+        <value xml:lang="kn">Present Office </value>
+    </property>
+  <!-- END -->
        <!--Code is Added by Anil Kumar on 26 Aug 2017 for Designation Master-->
    <property key="designationmaster">
        <value xml:lang="en">Designation Master</value>
-	</property>
+       <value xml:lang="kn">Designation Master</value>
+   </property>
+   
 	<property key="designationtypeid">
 		<value xml:lang="en">Designation Type Id</value>
-	</property>
+		<value xml:lang="kn">Designation Type Id</value>
+   </property>
+   
 	<property key="designationmasterlist">
 		<value xml:lang="en">Designation Master List</value>
-	</property>
-	<property key="createdesignationmaster">
-		<value xml:lang="en">Create Designation Master</value>
-	</property>
-	<property key="designationname">
-		<value xml:lang="en">Designation Name</value>
-	</property>
-	<property key="editdesignation">
-		<value xml:lang="en">Edit Designation Master</value>
+	    <value xml:lang="kn">Designation Master List</value>
 	</property>
 	
+	<property key="createdesignationmaster">
+		<value xml:lang="en">Create Designation Master</value>
+		<value xml:lang="kn">Create Designation Master</value>
+	</property>
+	
+	<property key="designationname">
+		<value xml:lang="en">Designation Name</value>
+		<value xml:lang="kn">Designation Name</value>
+	</property>
+	
+	<property key="editdesignation">
+		<value xml:lang="en">Edit Designation Master</value>
+		<value xml:lang="kn">Edit Designation Master</value>
+	</property>
+  <!-- END -->
+	
+
 	<property key="vendor">
      <value xml:lang="en">Vendor/Bill Reader</value>
         <value xml:lang="kn">Vendor/Bill Reader</value>
