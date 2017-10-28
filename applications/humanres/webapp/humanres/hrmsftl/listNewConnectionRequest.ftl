@@ -17,6 +17,10 @@
 		 	 <li class="h3">${uiLabelMap.listCustomerRequestDetail}</li>
     		<div class="basic-nav" style="margin-top: -37.50px;">
   				<ul>
+  					<li>
+    					<a href="javascript:getExcel();">
+         				<img  border="0" src="/solr/img/filetypes/xls.png" width="20" height="20"  title="Click Here To Export List in Excel" /></a></blink></li>
+    				</li>
     				<li>
     				<a title="View PDF" target="blank_" href="<@ofbizUrl>applyConnectionDetailPdf?customerId=${customerId?if_exists}&applicationType=${applicationType?if_exists}&listSizeView=${listSize?if_exists}</@ofbizUrl>"><img src="/rainbowstone/images/pdf.png" width="24px"></img></a>
     				</li>
@@ -26,6 +30,10 @@
 		   </ul>
 	   </div>
 		<div class="screenlet-body">
+		<#assign commonUrl="approveNewConnection?searchOptions_collapsed=${(parameters.searchOptions_collapsed)?default(\"false\")}&amp;" />
+    			<#assign messageMap = Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("lowCount", lowIndex, "highCount", highIndex, "total", listSize)/>
+    			<#assign commonDisplaying = Static["org.apache.ofbiz.base.util.UtilProperties"].getMessage("CommonUiLabels", "CommonDisplaying", messageMap, locale)/>
+    			<@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
 		 <table class="basic-table hover-bar" cellspacing="0">
 		 <thead>
         	<tr class="header-row-2">
@@ -57,6 +65,20 @@
            			</#if>
            		</tbody>
         		</table>
+        		<@htmlTemplate.nextPrev commonUrl=commonUrl listSize=listSize viewSize=viewSize viewIndex=viewIndex highIndex=highIndex commonDisplaying=commonDisplaying/>
 	  </div>
 	</div>   
+					<input type="hidden" name="xlsApplicationType" value="${applicationType?if_exists}"/>
+                  	<input type="hidden" name="xlsCustomerId" value="${customerId?if_exists}"/>
 </form>
+
+<script>
+function getExcel()
+	{
+	     var form =document['listNewConnection'];	
+	     
+        form.action="<@ofbizUrl>connectionRegistration</@ofbizUrl>";
+	    form.submit();
+	}
+	
+</script>

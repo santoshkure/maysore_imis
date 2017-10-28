@@ -13,17 +13,15 @@
 <form method="post" name="listcustomerDetail" action="" class="basic-form">
 	<div class="row">
 		   <div class="alert alert-info">
-   		<ul>
-    		<li class="h3">${uiLabelMap.listCustomerDetail}</li>
-    		<div class="basic-nav" style="margin-top: -37.50px;">
-  				<ul>
+   			<ul>
+    				<li>
+    				<a href="javascript:getExcel();">
+         				<img  border="0" src="/solr/img/filetypes/xls.png" width="20" height="20"  title="Click Here To Export List in Excel" /></a></blink></li>
+    				</li>
     				<li>
     				<a title="View PDF" target="blank_" href="<@ofbizUrl>customerDetailPdf?nameOfCustomer=${nameOfCustomer?if_exists}&customerId=${customerId?if_exists}&listSizeView=${listSize?if_exists}</@ofbizUrl>"><img src="/rainbowstone/images/pdf.png" width="24px"></img></a>
     				</li>
   				</ul>
- 			 
-  			</div>  
-    	</ul>
   	</div>
   	
 	   </div>
@@ -82,6 +80,8 @@
                   	<input type="hidden" name="activestatus" value="" style="width:140px"  />
                   	<input type="hidden" name="status" value="" style="width:140px"  />
                   	<input type="hidden" name="listSizeView" value="" style="width:140px"  />
+                  	<input type="hidden" name="xlsCustomerId" value="${customerId?if_exists}"/>
+                  	<input type="hidden" name="xlsNameOfCustomer" value="${nameOfCustomer?if_exists}"/>
   </form>
   
   <script>
@@ -100,4 +100,13 @@
         form.action="<@ofbizUrl>disEnbCustomer</@ofbizUrl>";
 	    form.submit();
 	} }}	
+	
+	function getExcel()
+	{
+	     var form =document['listcustomerDetail'];	
+	     
+        form.action="<@ofbizUrl>customerDetailXLS</@ofbizUrl>";
+	    form.submit();
+	}
+	
 </script>

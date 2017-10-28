@@ -2170,6 +2170,36 @@ under the License.
       	<response name="error" type="view" value="GrievanceDetailEmpPortal"/>
    	</request-map>
    <!-- End -->
+   <!-- Xls Genarate -->
+   <request-map uri="customerDetailXLS">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="customerDetailXLS"/>
+        <response name="success" type="url" value="/images/Export/Excel/CustomerPortal/customerDetail.xls"/>
+         <response name="error" type="none" value="none"/>
+    </request-map>
+    
+    <request-map uri="customerRegistration">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="customerRegistrationXls"/>
+        <response name="success" type="url" value="/images/Export/Excel/CustomerPortal/customerRegistration.xls"/>
+         <response name="error" type="none" value="none"/>
+    </request-map>
+    
+    <request-map uri="connectionRegistration">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="connectionRegistrationXls"/>
+        <response name="success" type="url" value="/images/Export/Excel/CustomerPortal/connectionRegistration.xls"/>
+         <response name="error" type="none" value="none"/>
+    </request-map>
+    
+    <request-map uri="connectionDetail">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="connectionDetailXls"/>
+        <response name="success" type="url" value="/images/Export/Excel/CustomerPortal/connectionDetail.xls"/>
+         <response name="error" type="none" value="none"/>
+    </request-map>
+    <!-- End -->
+    
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
