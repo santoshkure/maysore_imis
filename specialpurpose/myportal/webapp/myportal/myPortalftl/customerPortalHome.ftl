@@ -130,7 +130,7 @@
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> FAQ </a>
 					</li>
 					<li>
-						<a href="testSms"><i class="fa fa-arrow-right" aria-hidden="true"></i> Help </a>
+						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Help </a>
 					</li>
 				</ul>
 			</div>	
