@@ -983,5 +983,66 @@ under the License.
            
         </section>
     </screen>
-
+    
+<!-- Added by shubham malviya for show help and Faq Detail-->
+<screen name="helpCenter">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/helpCenter.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="faqSupport">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/faqSupport.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <!-- End -->
+    
+    <!-- Added by shubham malviya For Customer Connection Detail on Customer Portal -->
+    <screen name="customerConnection">
+        <section>
+				<actions>
+            <entity-condition list="customerConnetion" entity-name="saveConnectionDetail">
+				<condition-expr field-name="partyId" operator="equals" value="${parameters.checkId}"/>
+		    </entity-condition>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://myportal/webapp/myportal/myPortalftl/customerConnection.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <!-- End -->
+    
 </screens>

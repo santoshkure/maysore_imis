@@ -395,12 +395,31 @@
     </request-map>
 
 	<request-map uri="applyConnection">
-        <security https="true" auth="true" />
+        <security https="true" auth="true"/>
         <event type="service" invoke="applyForConnection"/>
         <response name="success" type="view" value="main"/>
         <response name="error" type="view" value="connectionApply" />
     </request-map>
     
+    <!-- Added by shubham malviya for show help,Faq Detail and Customer Connection Detail-->
+	<request-map uri="helpCenter">
+		<security https="true" auth="true"/>
+         <response name="success" type="view" value="helpCenter"/>
+        <response name="error" type="view" value="helpCenter"/>
+	</request-map>
+	
+	<request-map uri="faqSupport">
+		<security https="true" auth="true"/>
+         <response name="success" type="view" value="faqSupport"/>
+        <response name="error" type="view" value="faqSupport"/>
+	</request-map>
+	
+	<request-map uri="customerConnection">
+		<security https="true" auth="true"/>
+         <response name="success" type="view" value="customerConnection"/>
+        <response name="error" type="view" value="customerConnection"/>
+	</request-map>
+	
    <!-- end -->
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
@@ -474,4 +493,7 @@
      
    <!-- End -->
     <view-map name="grievancePDF" type="screenfop" page="component://myportal/widget/PortalAdmScreens.xml#grievancePDF" content-type="application/pdf"/>
+   <view-map name="helpCenter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#helpCenter"/>
+   <view-map name="faqSupport" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#faqSupport"/>
+      <view-map name="customerConnection" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#customerConnection"/>
 </site-conf>

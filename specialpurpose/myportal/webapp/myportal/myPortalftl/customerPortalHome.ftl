@@ -31,7 +31,6 @@
 <#setting locale="en">
 
 <form name="employeeDashBoard" method="post" action="">
-
 <#--External java script File-->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -127,10 +126,10 @@
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Application Status </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> FAQ </a>
+						<a href="faqSupport"><i class="fa fa-arrow-right" aria-hidden="true"></i> FAQ </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Help </a>
+						<a href="helpCenter"><i class="fa fa-arrow-right" aria-hidden="true"></i> Help </a>
 					</li>
 				</ul>
 			</div>	
@@ -192,7 +191,7 @@
                         	</div>
                         	<a href="#">
                             	<div class="panel-footer">
-                            	    <span class="pull-left"><a href="connectionDetails">View Details</a></span>
+                            	    <span class="pull-left"><a href="customerConnection?checkId=${userLogin.partyId}">View Details</a></span>
                                 	<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 	<div class="clearfix"></div>
                             	</div>
