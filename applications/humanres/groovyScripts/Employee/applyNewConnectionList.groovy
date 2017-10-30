@@ -45,7 +45,7 @@ List<EntityCondition> andExprs = new LinkedList<EntityCondition>();
 				}
 				
 					andExprs.add(EntityCondition.makeCondition("actionStatus",
-						EntityOperator.EQUALS,null));
+						EntityOperator.EQUALS,"In Progress"));
 					
 				mainCond = EntityCondition.makeCondition(andExprs,
 						EntityOperator.AND);

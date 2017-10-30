@@ -1941,8 +1941,20 @@ public class hrmsMasterEvents {
 	        			encryPass = null;
 	        		}
 	        			//end
-	        				    	
-			        	   actionRegistrationDetails = UtilMisc.toMap("actionStatus",actionStatus,"appRejRemark",appRejRemark,"actionDate",currentDate,"customerId",customerId,"actionByOfficerName",actionByOfficerName); 
+	        				
+	        		//Code for save Costomer Party Id in Party Table
+	        		String partyId=null;
+	        		if(actionStatus.equals("Approve"))
+						{
+	   				GenericValue PartyDetailSave = null;
+	   	  			partyId = delegator.getNextSeqId("Party",1);
+	   	  			Map<String, ? extends Object> PartyDetail = UtilMisc.toMap("partyId",partyId,"partyTypeId","PERSON","statusId","PARTY_ENABLED","createdByUserLogin",createdByLoginId);
+	   	  			PartyDetailSave = delegator.makeValue("Party", PartyDetail);
+	   	  			PartyDetailSave.create();
+						}
+	   	  			//End
+	   	  			
+			        	   actionRegistrationDetails = UtilMisc.toMap("actionStatus",actionStatus,"appRejRemark",appRejRemark,"actionDate",currentDate,"customerId",customerId,"partyId",partyId,"actionByOfficerName",actionByOfficerName); 
 			        	   
 			        	   Integer valueToStore = delegator.storeByCondition("consumerRegistrationDetails", actionRegistrationDetails 
 				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
@@ -1960,13 +1972,6 @@ public class hrmsMasterEvents {
    							
    							if(actionStatus.equals("Approve"))
    							{
-			   			//Code for save Costomer Party Id in Party Table
-			   				GenericValue PartyDetailSave = null;
-			   	  			String partyId = delegator.getNextSeqId("Party",1);
-			   	  			Map<String, ? extends Object> PartyDetail = UtilMisc.toMap("partyId",partyId,"partyTypeId","PERSON","statusId","PARTY_ENABLED","createdByUserLogin",createdByLoginId);
-			   	  			PartyDetailSave = delegator.makeValue("Party", PartyDetail);
-			   	  			PartyDetailSave.create();
-			   	  		//End
 			   	  			
 			   	  		// Code for save login and password in UserLogin Table
    							Map<String, ? extends Object> UserLoginDetails = UtilMisc.toMap("userLoginId",customerId,"currentPassword",encryPass,"enabled","Y","partyId",partyId);
