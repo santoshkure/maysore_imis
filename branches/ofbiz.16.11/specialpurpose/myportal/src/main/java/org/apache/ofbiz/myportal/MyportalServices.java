@@ -418,6 +418,7 @@ public class MyportalServices {
   		LocalDispatcher dispatcher = dctx.getDispatcher();
   		GenericValue userLogin = (GenericValue) context.get("userLogin");
   		Locale locale = (Locale) context.get("locale");
+  		String partyId = (String) userLogin.get("partyId");
        Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
        Date date = new Date();
@@ -436,7 +437,7 @@ public class MyportalServices {
   			//String connectionNo = "CONN"+sequenceId;
   			
   			Map<String, ? extends Object> connectionDetail = UtilMisc.toMap("sequenceId",sequenceId,"customerId",costomerNo,"connectionCategory",connectionCategory
-  					,"applicationType",applicationType,"typeOfBuilding",typeOfBuilding,"applicationDate",applicationDate,"feeForConnection",feeForConnection,"paymentStatus",paymentStatus);
+  					,"applicationType",applicationType,"typeOfBuilding",typeOfBuilding,"applicationDate",applicationDate,"feeForConnection",feeForConnection,"paymentStatus",paymentStatus,"actionStatus","In Progress","connectionNo","NA","partyId",partyId);
   			
   			saveConnectionDetail = delegator.makeValue("saveConnectionDetail", connectionDetail);
   			saveConnectionDetail.create();

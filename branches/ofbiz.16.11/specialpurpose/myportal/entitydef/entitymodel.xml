@@ -87,6 +87,7 @@ under the License.
 		  <field name="appRejRemark" type="short-varchar"/>
 		  <field name="actionDate" type="short-varchar"/>
 		  <field name="customerId" type="short-varchar"/>
+		  <field name="partyId" type="short-varchar"/>
 		  <field name="actionByOfficerName" type="short-varchar"/>
 		  
   	      <prim-key field="sequenceId"/>
@@ -104,6 +105,7 @@ under the License.
 		  <field name="feeForConnection" type="short-varchar"/>
 		  <field name="paymentStatus" type="short-varchar"/>
 		  <field name="actionStatus" type="short-varchar"/>
+		  <field name="partyId" type="short-varchar"/>
 		  <field name="connectionNo" type="short-varchar"/>
 		  <field name="dmaNo" type="short-varchar"/>
 		   <field name="connectionDate" type="short-varchar"/>
