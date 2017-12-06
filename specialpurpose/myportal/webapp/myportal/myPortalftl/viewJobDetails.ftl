@@ -40,7 +40,7 @@
                     <tr>
                         <td class="label" >${uiLabelMap.applicationDate}</td>
                         <td>07/08/2017</td>
-                        <td class="label">${uiLabelMap.assentialDocument}</td>
+                        <td class="label">${uiLabelMap.essentialDocument}</td>
                         <td>jobDetails.doc </td>
 				   </tr>
 				   <tr>

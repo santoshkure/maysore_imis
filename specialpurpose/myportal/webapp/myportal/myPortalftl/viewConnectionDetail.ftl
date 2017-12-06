@@ -60,7 +60,7 @@
 	                       <td class="label">${uiLabelMap.connectionNo}</td>
 	                        <td>CARF1000</td>
 	                         
-	                         <td class="label">${uiLabelMap.assentialDocument}</td>
+	                         <td class="label">${uiLabelMap.essentialDocument}</td>
 							<td>Residential.doc</td>
                     </tr>
                     

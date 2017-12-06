@@ -48,7 +48,7 @@
                      <tr>
                         <td class="label" >${uiLabelMap.billCorrectionApplyDate}</td>
                         <td>11/08/2017</td>
-                        <td class="label">${uiLabelMap.assentialDocument}</td>
+                        <td class="label">${uiLabelMap.essentialDocument}</td>
                         <td>IssueFile.doc </td>
 					 </tr>
 					  

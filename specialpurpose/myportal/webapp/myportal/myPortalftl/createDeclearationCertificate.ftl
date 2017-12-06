@@ -40,7 +40,7 @@
 							<td class="label"><center>${uiLabelMap.DecleaCerti}</center></td>
 							<td>
 		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-		    				<input type="button" onclick="javascript:resetVal(document.connectionApply.fileLoc);" value="Reset"/>
+		    				<input type="button" onclick="javascript:resetVal(document.createDeclearationCerti.fileLoc);" value="Reset"/>
 		    				<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
 		    				<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
 		 					</td>
@@ -72,4 +72,4 @@
 		                disSubmit('disBttn');    
 		                } 
     }
-    </script>
+ </script>

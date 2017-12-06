@@ -29,7 +29,7 @@
                 	</tr>
                     <tr>
                         <td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input type="text" name="cusNo" value="CAN101" readonly /></td>
+                        <td><input name="cusNo" type="text" maxlength="10" value="${userLogin.userLoginId}" readonly></td>
                         <td class="label">${uiLabelMap.connectionNo}</td>
                         <td><input type="text" value="CON101" name="conNo" readonly /></td>
                     </tr>
@@ -40,9 +40,9 @@
                      <tr>
                         <td class="label" >${uiLabelMap.billCorrectionApplyDate}</td>
                         <td><input type="text" name="BillCorrectionApplyDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
-                        <td class="label">${uiLabelMap.assentialDocument}</td>
+                        <td class="label">${uiLabelMap.essentialDocument}</td>
                         <td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        <input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
+                        <input type="button" onclick="javascript:resetVal(fileLoc);" value="Reset"/>
                         <input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
                         <input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
                         </td>

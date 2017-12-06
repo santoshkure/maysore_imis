@@ -34,7 +34,7 @@
                 	
         			<tr>
                       	<td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input name="customerNo"  type="text" maxlength="10" readonly value="CAN1001"></td>
+                        <td><input name="customerNo"  type="text" maxlength="10" readonly value="${userLogin.userLoginId}"></td>
                         
                         <td class="label">${uiLabelMap.connectionNo}</td>
                         <td><input name="connectionNo"  type="text" maxlength="10" readonly value="CON2001""></td>
@@ -45,10 +45,10 @@
                      <tr>
                       	<td class="label">${uiLabelMap.applicationDate}</td>
                         <td><input name="applicationDate"  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy")}" placeholder="${uiLabelMap.applicationDate}"></td>
-                        <td class="label">${uiLabelMap.assentialDocument}</td>
+                        <td class="label">${uiLabelMap.essentialDocument}</td>
                         <td>
 		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-		    				<input type="button" onclick="javascript:resetVal(document.connectionApply.fileLoc);" value="Reset"/> 
+		    				<input type="button" onclick="javascript:resetVal(document.editKhataChange.fileLoc);" value="Reset"/> 
 		    				<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
 		    				<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
 		 				</td>
@@ -93,7 +93,7 @@
    					</tr>
                     <tr>
 	                         
-	                         <td class="label">${uiLabelMap.assentialDocument}</td>
+	                         <td class="label">${uiLabelMap.essentialDocument}</td>
 							<td>Residential.doc</td>
                     </tr>
                     
@@ -134,5 +134,6 @@ function editKhataChangeDetail(editKhataChange)
 		                disSubmit('disBttn');    
 		                } 
     }
+ 
     
 </script>

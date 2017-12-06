@@ -19,26 +19,22 @@
   		</div>
 		<table cellspacing="0" class="basic-table table-responsive">
 			<tr>
-	           	<td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
+	           	<td colspan="6"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
             </tr>
             <tr>
                	<td colspan="12" align="left"><font color="blue"><b>${uiLabelMap.grievanceDetail}</b></font></td>
             </tr>
             <tr>
              	<td class="label">${uiLabelMap.grievanceDate}</td>
-   				<td colspan="12">
-       					<input type="text" name="grievanceDate" autocomplete="off" id="grievanceDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
-        			    <a href="javascript:call_cal(document.createGrievanceCustomer.grievanceDate);">
-       				    <img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a>
-      		    </td>
+   				 <td>
+                      <@htmlTemplate.renderDateTimeField name="grievanceDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="applyDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                 </td>
 			</tr>
 			<tr>	
 				<td class="label" >${uiLabelMap.grievancePetitionDate}</td>
-   				<td>
-					   <input type="text" name="grievancePetitionDate" autocomplete="off" id="grievancePetitionDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
-        		       <a href="javascript:call_cal(document.createGrievanceCustomer.grievancePetitionDate);">
-       			       <img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a>
-      		    </td>
+   				 <td>
+                      <@htmlTemplate.renderDateTimeField name="grievancePetitionDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="applyDate_1" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                 </td>
                	<td class="label" >${uiLabelMap.typeOfGrievance}</td>
 				<td colspan="4">
 	               	<select name="typeOfGrievance">
@@ -50,11 +46,11 @@
             </tr>  
            	<tr>
            		<td class="label">${uiLabelMap.name}</td>
-               	<td><input name="grevNameEn"  type="text" maxlength="50" value="">${uiLabelMap.InEnglish}
-                	<br><input name="grevNameKn"  type="text" maxlength="50" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${uiLabelMap.Inkannada}</br></td>
+               	<td><input name="grevNameEn" type="text" maxlength="50" value="">${uiLabelMap.inEnglish}
+                	<br><input name="grevNameKn"  type="text" maxlength="50" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${uiLabelMap.inkannada}</br></td>
            		<td class="label">${uiLabelMap.OrderAddress}</td>
-               	<td colspan="4"><textarea name="grevAddEn" value="" maxlength="300" style="width:400px"></textarea>${uiLabelMap.InEnglish}
-                   	<br><textarea name="grevAddKn" value="" maxlength="300" style="width:400px" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"></textarea>${uiLabelMap.Inkannada}</br></td> 
+               	<td colspan="4"><textarea name="grevAddEn" value="" maxlength="300" style="width:400px"></textarea>${uiLabelMap.inEnglish}
+                   	<br><textarea name="grevAddKn" value="" maxlength="300" style="width:400px" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"></textarea>${uiLabelMap.inkannada}</br></td> 
            	</tr>
             <tr>
               	<td class="label">${uiLabelMap.mobileNo}</td>
@@ -68,13 +64,13 @@
            	</tr>
             <tr>
                 <td class="label">${uiLabelMap.grievanceDetail}</td>
-                <td colspan="1"><textarea name="grievanceDetailEn" value="" maxlength="500" ></textarea>${uiLabelMap.InEnglish}
-                    <br><textarea name="grievanceDetailKn" value="" maxlength="500" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"></textarea>${uiLabelMap.Inkannada}</br></td>
-                <td class="label">${uiLabelMap.assentialDocument}</td>
+                <td colspan="1"><textarea name="grievanceDetailEn" value="" maxlength="500" ></textarea>${uiLabelMap.inEnglish}
+                    <br><textarea name="grievanceDetailKn" value="" maxlength="500" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"></textarea>${uiLabelMap.inkannada}</br></td>
+                <td class="label">${uiLabelMap.essentialDocument}</td>
 				<td colspan="4"><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                    	<input type="button" onclick="javascript:resetVal(document.createGrievanceCustomer.fileLoc);" value="Reset"/>
-                    	<input type="text" name="fileLocFileName" id="fileLocFileName" value=""/>
-                    	<input type="text" name="fileLocFileType" id="fileLocFileType" value=""/>
+                    	<input type="button" onclick="javascript:resetVal(fileLoc);" value="Reset"/>
+                    	<input type="Hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
+                    	<input type="Hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
                 </td>
             </tr>
             <tr>

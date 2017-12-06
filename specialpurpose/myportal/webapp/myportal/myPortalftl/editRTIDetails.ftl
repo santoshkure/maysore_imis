@@ -46,10 +46,10 @@
 				   		</tr>
 				  		 <tr>
 				        	<td class="label">${uiLabelMap.supportingDocument}</td>
-				        	<td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        	<input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
-                        	<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
-                        	<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
+				        	<td><input type="file" name="fileLoc1"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName1'),document.getElementById('fileLocFileType1'));"/>
+                        	<input type="button" onclick="javascript:resetVal(fileLoc1);" value="Reset"/>
+                        	<input type="hidden" name="fileLocFileName1" id="fileLocFileName1" value=""/>
+                        	<input type="hidden" name="fileLocFileType1" id="fileLocFileType1" value=""/>
                         	</td>
                         
                         
@@ -70,10 +70,10 @@
 						<tbody>
 			   				<tr>
 			        			<td class="label">${uiLabelMap.uploadCopyOfBPLCard}</td>
-								<td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        		<input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
-                        		<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
-                        		<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/></td>
+								<td><input type="file" name="fileLoc2"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName2'),document.getElementById('fileLocFileType2'));"/>
+                        		<input type="button" onclick="javascript:resetVal(fileLoc2);" value="Reset"/>
+                        		<input type="hidden" name="fileLocFileName2" id="fileLocFileName2" value=""/>
+                        		<input type="hidden" name="fileLocFileType2" id="fileLocFileType2" value=""/></td>
 	    					</tr> 
 						</tbody>
 						</table>
@@ -124,10 +124,10 @@
                                   <td class="label">${uiLabelMap.applicationBank}</td>
                         	      <td><input name="Application Challan Refrence no."  type="text" maxlength="70" value="" ></td>
                                   <td class="label">${uiLabelMap.uploadChallan}</td>
-								  <td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        		  <input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
-                        		  <input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
-                        		  <input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/></td>
+								  <td><input type="file" name="fileLoc3"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName3'),document.getElementById('fileLocFileType3'));"/>
+                        		  <input type="button" onclick="javascript:resetVal(fileLoc3);" value="Reset"/>
+                        		  <input type="hidden" name="fileLocFileName3" id="fileLocFileName3" value=""/>
+                        		  <input type="hidden" name="fileLocFileType3" id="fileLocFileType3" value=""/></td>
                             
                             </tr>
                             

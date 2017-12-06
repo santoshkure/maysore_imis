@@ -54,7 +54,7 @@
                      <tr>
                       	<td class="label">${uiLabelMap.applicationDate}</td>
                         <td>09/08/2017</td>
-                        <td class="label">${uiLabelMap.assentialDocument}</td>
+                        <td class="label">${uiLabelMap.essentialDocument}</td>
                         <td>Disconnection</td>
                     </tr>
                    
@@ -73,7 +73,7 @@
    					</tr>
                     <tr>
 	                         
-	                         <td class="label">${uiLabelMap.assentialDocument}</td>
+	                         <td class="label">${uiLabelMap.essentialDocument}</td>
 							<td>Disconnection</td>
                     </tr>
                     

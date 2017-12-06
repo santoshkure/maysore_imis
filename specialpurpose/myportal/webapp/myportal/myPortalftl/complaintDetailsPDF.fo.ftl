@@ -2,8 +2,8 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 
  <fo:layout-master-set>
-    <fo:simple-page-master master-name="table" page-height="285.00mm"
-     page-width="425.00mm" margin-top=".5in" margin-bottom="1.0in"
+    <fo:simple-page-master master-name="table" page-height="485.00mm"
+     page-width="335.00mm" margin-top=".5in" margin-bottom="1.0in"
      margin-left=".5in" margin-right=".5in">
      <fo:region-body/>
      <fo:region-before extent=".5in"/>
@@ -47,7 +47,7 @@
     </fo:block>
 	<fo:block space-after="1mm" font-size="14pt" font-family="Times New Roman" text-align="center" font-weight="bold">Mysore City Corporation
    
-    <fo:block space-after="1mm" font-size="14pt" font-family="Times New Roman" text-align="center" font-weight="bold">Grievance Details</fo:block>
+    <fo:block space-after="1mm" font-size="14pt" font-family="Times New Roman" text-align="center" font-weight="bold">Complaint Details</fo:block>
     <fo:block space-after="1mm" font-size="10pt" font-family="Times New Roman" text-align="right" font-weight="bold" font-style="">Date : ${nowTimestamp?if_exists?string('dd/MM/yyyy')}</fo:block>   
   </fo:block>
             
@@ -72,37 +72,37 @@
 			    
 			    
 			       <fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.receiptNo}</fo:inline>
+			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.complaintNo}</fo:inline>
 			       	</fo:block>
 			    </fo:table-cell>
 			    
 			       <fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.name}</fo:inline>
+			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.customerNo}</fo:inline>
 			       	</fo:block>
 			    </fo:table-cell>
 			    
 			       
 			   	  	<fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.grievanceDate}</fo:inline>
+			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.connectionNo}</fo:inline>
 			       	 </fo:block>
 			    </fo:table-cell>
 			    
 			    
 			       <fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.grievancePetitionDate}</fo:inline>
+			    	 <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.complaintDate}</fo:inline>
 			       	</fo:block>
 			    </fo:table-cell>
 			   
 			     <fo:table-cell padding="0.5mm" border="solid">
-			      <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.typeOfGrievance}</fo:inline>
+			      <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.CommonStatus}</fo:inline>
 			       <fo:inline font-size="10px"></fo:inline></fo:block>
 			    </fo:table-cell> 
 			   			    
 			    
-			     <fo:table-cell padding="0.5mm"  border="solid">
+<#--  			     <fo:table-cell padding="0.5mm"  border="solid">
 			      <fo:block ><fo:inline font-weight="bold" font-size="10px">${uiLabelMap.status}</fo:inline>
 			       </fo:block>
-			    </fo:table-cell> 		    
+			    </fo:table-cell> 		    -->
 			   
 			    
 		  </fo:table-row> 
@@ -118,35 +118,35 @@
 			    </fo:table-cell>
 			      
 			      <fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block text-align="left" ><fo:inline font-size="8px">${pdfList.receiptNo?if_exists}</fo:inline>
+			    	 <fo:block text-align="left" ><fo:inline font-size="8px">${pdfList.complaintId?if_exists}</fo:inline>
 			       	 </fo:block>
 			    </fo:table-cell>
 			    
 			   	  	<fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block  text-align="left" ><fo:inline font-size="10px">${pdfList.grievanceNameEN?if_exists}</fo:inline>
+			    	 <fo:block  text-align="left" ><fo:inline font-size="10px">${pdfList.custNo?if_exists}</fo:inline>
 			       </fo:block>
 			    </fo:table-cell>
 			    
 			    	<fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block text-align="left" ><fo:inline font-size="10px"><#if pdfList.grievanceDate?has_content>${pdfList.grievanceDate?string('dd/MM/yyyy')?if_exists}</#if></fo:inline>
+			    	 <fo:block text-align="left" ><fo:inline font-size="10px"><#if pdfList.conNo?has_content>${pdfList.conNo?if_exists}</#if></fo:inline>
 			       	 </fo:block>
 			    </fo:table-cell>
 			    
 			    	<fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block  text-align="left"><fo:inline font-size="10px"><#if pdfList.grievancePetitionDate?has_content>${pdfList.grievancePetitionDate?string('dd/MM/yyyy')?if_exists}</#if></fo:inline>
+			    	 <fo:block  text-align="left"><fo:inline font-size="10px"><#if pdfList.complDate?has_content>${pdfList.complDate?string('dd/MM/yyyy')?if_exists}</#if></fo:inline>
 			       	 </fo:block>
 			    </fo:table-cell>
 			    
 			    <fo:table-cell padding="0.5mm" border="solid">
-			    	 <fo:block  text-align="left"><fo:inline font-size="10px">${pdfList.typeOfGrievance?if_exists}</fo:inline>
+			    	 <fo:block  text-align="left"><fo:inline font-size="10px">${pdfList.compStatus?if_exists}</fo:inline>
 			       	 </fo:block>
 			    </fo:table-cell>
 			    
-			    	<fo:table-cell padding="0.5mm" border="solid">
+	<#-- 		    	<fo:table-cell padding="0.5mm" border="solid">
 			    	 <fo:block text-align="left"><fo:inline font-size="10px">${pdfList.status?if_exists}</fo:inline>
 			       	 </fo:block>
 			    </fo:table-cell>
-			    
+	-->		    
 			   
 	  </fo:table-row>
 			   
