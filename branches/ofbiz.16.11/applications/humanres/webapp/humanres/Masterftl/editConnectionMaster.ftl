@@ -26,8 +26,8 @@
 		           <tr>
 		              
 			          <td class="label">${uiLabelMap.connectionType}<font color="red" >*</font> </td>
-		               <td><input type="text" name="connectionType" onchange="javascript:trimFunction(this)" value="${connectionTypeList.connectionType?if_exists}" style="width:140px"  />(${uiLabelMap.inEnglish})<br> 
-               				<input type="text" style="width:150px" maxlength="50" name="connectionTypeKan" id="connectionTypeKan" value="${connectionTypeList.connectionTypeKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+		               <td><input type="text" name="connectionType" onchange="javascript:trimFunction(this)" value="${connectionTypeList.connectionType?if_exists}" style="width:140px"  />${uiLabelMap.inEnglish}<br> 
+               				<input type="text" style="width:150px" maxlength="50" name="connectionTypeKan" id="connectionTypeKan" value="${connectionTypeList.connectionTypeKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br>
 						</td>
 			           <td class="label">${uiLabelMap.description}</td>
 			           <td><input type="text" style="width:140px"  name="description" maxlength ="30" value="${connectionTypeList.description?if_exists}"/></td>    	

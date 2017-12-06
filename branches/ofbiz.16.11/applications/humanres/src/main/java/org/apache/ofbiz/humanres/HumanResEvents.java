@@ -2676,4 +2676,186 @@ public class HumanResEvents {
 		
 			 return result;	
 		}
+
+public static Map<String, Object> searchComplaintDetailEmp(
+				DispatchContext dctx, Map<String, ? extends Object> context) {
+			Map<String, Object> result = ServiceUtil.returnSuccess();
+			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			GenericValue userLogin = (GenericValue) context.get("userLogin");
+			Locale locale = (Locale) context.get("locale");
+			String createdBy = null;
+			if(UtilValidate.isNotEmpty(userLogin)){
+				createdBy = (String) userLogin.get("partyId");
+			}
+		
+			List<String> orderBy = FastList.newInstance();
+			int viewIndex = 0;
+			try {
+				viewIndex = Integer.parseInt((String) context.get("VIEW_INDEX"));
+			} catch (NumberFormatException e) {
+				try {
+					// Taking default value from property file
+					viewIndex = Integer.parseInt(UtilProperties.getPropertyValue(
+							"pagination.properties", "paginate.default.page"));
+				} catch (NumberFormatException ex) {
+					viewIndex = myportalConstants.DEFAULT_PAGE; // redirects
+					// to first
+					// page.
+				}
+			}
+			result.put("viewIndex", Integer.valueOf(viewIndex));
+			int viewSize = myportalConstants.DEFAULT_LIST_SIZE;
+			try {
+				viewSize = Integer.parseInt((String) context.get("VIEW_SIZE"));
+			} catch (NumberFormatException e) {
+				try {
+					// Taking default value from property file
+					viewSize = Integer.parseInt(UtilProperties.getPropertyValue(
+							"pagination.properties", "paginate.default.size"));
+				} catch (NumberFormatException ex) {
+					viewSize = myportalConstants.DEFAULT_LIST_SIZE;
+				}
+			}
+			result.put("viewSize", Integer.valueOf(viewSize));
+			
+			// blank param list
+			String paramList = "";
+			String orderField = null;
+			String sortType = null;
+			List<GenericValue> requestList = null;
+			int requestListSize = 0;
+			List<EntityCondition> andExprs = FastList.newInstance();
+			EntityCondition mainCond = null;
+			
+			int lowIndex = 0;
+			int highIndex = 0;
+			int indexNumbers = 0;
+			List<GenericValue> pdfList = null;
+				
+			
+				
+				// define the main condition & expression list
+				// get the params
+				
+				
+				String complaintId = (String) context.get("complaintId");
+				if (complaintId != null && complaintId.length() > 0) {
+					paramList = paramList + "&complaintId=" + complaintId;
+					andExprs.add(EntityCondition.makeCondition("complaintId",
+							EntityOperator.EQUALS,complaintId));
+				}
+				String custNo = (String) context.get("customerNo");
+				if (custNo != null && custNo.length() > 0) {
+					paramList = paramList + "&custNo=" + custNo;
+					andExprs.add(EntityCondition.makeCondition("custNo",
+							EntityOperator.EQUALS,custNo));
+				}
+				String complDate = (String) context.get("complDate");
+				if (complDate != null && complDate.length() > 0) {
+					paramList = paramList + "&complDate=" + complDate;
+					andExprs.add(EntityCondition.makeCondition("complDate",
+							EntityOperator.EQUALS,complDate));
+				}
+				String complaintType = (String) context.get("complaintType");
+				if (complaintType != null && complaintType.length() > 0) {
+					paramList = paramList + "&complaintType=" + complaintType;
+					andExprs.add(EntityCondition.makeCondition("complaintType",
+							EntityOperator.EQUALS,complaintType));
+				}
+				
+				
+				
+				if (andExprs.size() > 0)
+					mainCond = EntityCondition.makeCondition(andExprs, EntityOperator.AND);
+
+				orderField = (String) context.get("orderField");
+				sortType = (String) context.get("sortType");
+				// sorting UI fields
+				if (orderField != null && orderField.length() > 0) {
+					if (sortType.equals("ASC")) {
+						orderBy.add(orderField);
+					} else {
+						orderBy.add("-" + orderField);
+					}
+				}
+				try
+				{
+				pdfList = delegator.findList("complRegDetails", mainCond, null,
+							null, null, false);
+				}
+				catch (GenericEntityException e) {
+					e.printStackTrace();
+				}
+				
+				try {
+					EntityFindOptions findOpts = new EntityFindOptions(true, EntityFindOptions.TYPE_SCROLL_INSENSITIVE, EntityFindOptions.CONCUR_READ_ONLY, true);
+					// using list iterator
+					EntityListIterator consumerListIterator = delegator.find("complRegDetails", mainCond, null, null,orderBy, findOpts);
+					Map<String, Object> paginateResult = UIPagination.paginate(consumerListIterator, viewIndex, viewSize,resource,module);
+					consumerListIterator.close();
+					Integer low = (Integer) paginateResult.get("lowIndex");
+					lowIndex = low.intValue();
+					Integer high = (Integer) paginateResult.get("highIndex");
+					highIndex = high.intValue();
+					requestList = (List) paginateResult.get("recordList");
+					Integer size = (Integer) paginateResult.get("listSize");
+					requestListSize = size.intValue();
+					Integer index = (Integer) paginateResult.get("indexNumbers");
+					indexNumbers = index.intValue();
+				} 
+				catch (GenericEntityException e) {
+					e.printStackTrace();
+				}
+			
+			if (requestList == null) {
+				requestList = FastList.newInstance();
+			}
+			result.put("requestList", requestList);
+			result.put("pdfList", pdfList);
+			result.put("requestListSize", Integer.valueOf(requestListSize));
+			result.put("paramList", paramList);
+			result.put("highIndex", Integer.valueOf(highIndex));
+			result.put("lowIndex", Integer.valueOf(lowIndex));
+			result.put("orderField", orderField);
+			result.put("indexNumbers", Integer.valueOf(indexNumbers));
+			result.put("sortType", sortType);
+			return result;
+
+		}
+		
+		public static Map<String, Object> actionComplaint(DispatchContext dctx,Map<String, ? extends Object> context) {
+			Map<String, Object> result = ServiceUtil.returnSuccess();
+			GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+			GenericValue userLogin = (GenericValue) context.get("userLogin");
+			LocalDispatcher dispatcher = dctx.getDispatcher();
+			Locale locale = (Locale) context.get("locale");
+	        Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
+	    	String partyId = (String) userLogin.get("partyId");
+	    	String sequenceId = (String) context.get("sequenceId");
+	        String complaintId = (String) context.get("complaintId");
+	        String actionStatus = (String) context.get("actionStatus");
+			String remark = (String) context.get("remark");
+			
+			String ErrorMessage1 = sequenceId;
+			
+			try{
+				
+				Map<String, ? extends Object> complaintDetails = UtilMisc.toMap("compStatus", actionStatus, "remark", remark, "actionBy", partyId);
+				
+				int asd = delegator.storeByCondition("complRegDetails",complaintDetails,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
+				
+				result.put("ErrorMessage1", ErrorMessage1);
+	  			result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY, complaintId, locale));   
+
+			}
+			catch(GenericEntityException e){
+				//Debug.log("Entity Exception occured : " + e);
+				return UIMessage.getErrorMessage(resource, myportalConstants.CANT_CREATE,complaintId, locale);
+		
+			}
+			
+		
+			 return result;	
+		}
+
 }

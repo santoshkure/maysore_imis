@@ -11,8 +11,9 @@
 <div class="row">   
  <div class="alert alert-info">
    <ul>
-      <li class="h3">${uiLabelMap.pincodemaster}</li>
-      <div class="basic-nav" style="margin-top: -80px;">
+      
+  		<div class="h3" align="center"><b>${uiLabelMap.pincodemaster}</b></div> 
+  		<div class="basic-nav" style="margin-top: -36px;">
           <ul>
               <li>
                  <a title="Create PinCode Master" href="<@ofbizUrl>PincodeMaster</@ofbizUrl>">
@@ -72,7 +73,7 @@
              <td><center>${uiLabelMap.Status}</center></td>
              <td><center>${uiLabelMap.edit}<center></td>    
              <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.activeDeactive}</center></td>  
+             <td><center>${uiLabelMap.enableDisable}</center></td>  
         </tr>
         </thead>  
         

@@ -31,8 +31,8 @@
 		
 			        <tr>
 						   <td class="label" >${uiLabelMap.gendername} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="${genderMasterList.genderName?if_exists}" style="width:140px">(${uiLabelMap.inEnglish})<br>
-					           <input type="text" style="width:140px" maxlength="11" name="genderNameKan" id="genderNameKan" value="${genderMasterList.genderNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="${genderMasterList.genderName?if_exists}" style="width:140px">${uiLabelMap.inEnglish}<br>
+					           <input type="text" style="width:140px" maxlength="11" name="genderNameKan" id="genderNameKan" value="${genderMasterList.genderNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br>
 					          <#--<td class="label" >${uiLabelMap.createdate}</td>--->
                         <#--   <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td> -->
 	 		             <#--<td><input type="text" name="dateOfCreateGender" value="<#if genderMasterList.dateOfCreateGender?has_content>${genderMasterList.dateOfCreateGender?if_exists?string("dd/MM/yyyy")}</#if>" style="width:140px" readonly /></td>------>

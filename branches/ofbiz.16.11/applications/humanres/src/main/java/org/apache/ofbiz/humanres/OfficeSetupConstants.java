@@ -129,6 +129,8 @@ public interface OfficeSetupConstants {
 	public static int viewSize = 10;
 	public static String SAVE_SUCCESSFULLY = "Record Saved Successfully.";
 	public static String RECORD_UPDATE_SUCCESSFULLY = "Record Updated Successfully.";
+	public static String RECORD_Enable_SUCCESSFULLY = "Record Enable Successfully.";
+	public static String RECORD_Disable_SUCCESSFULLY = "Record Disable Successfully.";
 	public static String RECORD_APPROVE_SUCCESSFULLY = "Record Approved Successfully.";
 	public static String RECORD_Compassionate_Approved = "Compassionate Approved Successfully.";
 	public static String RECORD_REMOVED_SUCCESSFULLY = "Record Removed Successfully.";

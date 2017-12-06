@@ -68,7 +68,7 @@
                     	<tr>
                     		<td class="label">${uiLabelMap.grievanceDetail}</td>
                        	 	<td colspan="1">${grievanceDetailsList.grievanceDetailEn?if_exists}</br>${grievanceDetailsList.grievanceDetailKn?if_exists}</td>
-                    		<td class="label">${uiLabelMap.assentialDocument}</td>
+                    		<td class="label">${uiLabelMap.essentialDocument}</td>
 				        	<td colspan="4">GrievanceDetail.doc</td>
                     	</tr>
                     	<tr>
@@ -79,8 +79,8 @@
                     	<tr>
                     		<td colspan="4">
                     			<center>
-                    				<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:actionGreivanceDetail(this);"/>
-                    				<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:actionGreivanceDetail(this);"/>
+                    				<input name="approve"   type="button" value="${uiLabelMap.approve}" onClick="javascript:actionGrievanceDetails(this);"/>
+                    				<input name="reject"   type="button" value="${uiLabelMap.reject}" onClick="javascript:actionGrievanceDetails(this);"/>
                     				<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      			</center>
                      		</td>
@@ -96,7 +96,7 @@
 </form>
 	
 <script>	
-	function actionGreivanceDetail(Msg)
+	function actionGrievanceDetails(Msg)
    	{
 		var form=document['actionGrievance'];
 		var tempMsgCheck = Msg.value;

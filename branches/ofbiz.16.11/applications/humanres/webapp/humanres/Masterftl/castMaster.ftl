@@ -22,8 +22,8 @@
 		<tr><td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
  		<tr>
 		   <td class="label" >${uiLabelMap.castename} <font color="red">*</font></td>
-		   <td><input type="text" name="castename" onchange="javascript:trimFunction(this)" id="castename" style="width:140px" maxlength ="20" onchange="javascript:checkCasteName();"/>(${uiLabelMap.inEnglish})<br>
-		       <input type="text" style="width:140px" maxlength="20" name="castenameKan" id="casteMasterKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"/>(${uiLabelMap.inKannada})<br>
+		   <td><input type="text" name="castename" onchange="javascript:trimFunction(this)" id="castename" style="width:140px" maxlength ="20" onchange="javascript:checkCasteName();"/>${uiLabelMap.inEnglish}<br>
+		       <input type="text" style="width:140px" maxlength="20" name="castenameKan" id="casteMasterKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);"/>${uiLabelMap.inKannada}<br>
 		  <#-- <td class="label" >${uiLabelMap.createdate}</td>
 		   <td><input type="text" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly /></td>-->
 	  
@@ -62,14 +62,14 @@
         <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}</center></td>
 	         <td><center>${uiLabelMap.castename}</center></td>
-	         <td><center>${uiLabelMap.castenameKan}</center></td>
+	         <td><center>${uiLabelMap.castename} ${uiLabelMap.inKannada}</center></td>
 	         <td><center>${uiLabelMap.createdate}<center></td>
 	         <td><center>${uiLabelMap.remark}<center></td>
 	         
             <td><center>${uiLabelMap.Status}</center></td> 
              <td><center>${uiLabelMap.edit}<center></td>     
              <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.activeDeactive}</center></td>   
+             <td><center>${uiLabelMap.enableDisable}</center></td>   
         </tr>
 	    </thead> 
 	    

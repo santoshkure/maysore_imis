@@ -107,17 +107,18 @@
              <td><center>${uiLabelMap.sno}<center></td>
 	         <td><center>${uiLabelMap.blockName}<center></td>
 	         <#--Add by anubha for kannad conversation -->
-	         <td><center>${uiLabelMap.blockNameKan}<center></td>
+	         <td><center>${uiLabelMap.blockName} ${uiLabelMap.inKannada}<center></td>
             <#-- End -->
              <td><center>${uiLabelMap.wardname}</center></td>
          <#--    <td><center>${uiLabelMap.zoneName}</center></td>   -->
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.Remark}</center></td>
              <td><center>${uiLabelMap.createdate}</center></td>
-              <td><center>${uiLabelMap.status}</center></td>
+              <td><center>${uiLabelMap.Status}</center></td>
              <td><center>${uiLabelMap.edit}</center></td>
-             <td><center>${uiLabelMap.enableDisable}</center></td>
              <td><center>${uiLabelMap.Remove}</center></td>
+             <td><center>${uiLabelMap.enableDisable}</center></td>
+            
          </tr>
          </thead>
      <#if blockTypeList?has_content>
