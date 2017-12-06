@@ -405,6 +405,9 @@ under the License.
     <screen name="searchcomplainregister">
         <section>
             <actions>
+   	            <service service-name="searchComplaintDetail" auto-field-map="parameters" />  
+                <!-- <entity-condition list="complRegDetailsList" entity-name="complRegDetails">
+		    	</entity-condition> -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -439,6 +442,9 @@ under the License.
     <screen name="editregistercomplain">
         <section>
             <actions>
+                <entity-condition list="complRegDetailsList" entity-name="complRegDetails">
+  					<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -636,6 +642,9 @@ under the License.
     <screen name="viewComplaintDetails">
         <section>
             <actions>
+            	<entity-condition list="complRegDetailsList" entity-name="complRegDetails">
+  					<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -965,14 +974,8 @@ under the License.
         <section>
             <actions>
              <set field="title" value="Order"/>
-                <property-map resource="MyPortalUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-              
-            
-               <service service-name="searchgrievanceDetail" auto-field-map="true"/>
+               	<service service-name="searchgrievanceDetail" auto-field-map="true"/>
             </actions>
             
              <widgets>
@@ -1044,5 +1047,22 @@ under the License.
         </section>
     </screen>
     <!-- End -->
-    
+
+    <screen name="complaintDetailsPDF">
+        <section>
+            <actions>
+             <set field="title" value="Order"/>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+               	<service service-name="searchComplaintDetail" auto-field-map="true"/>
+            </actions>
+            
+             <widgets>
+                <platform-specific>
+                     <xsl-fo><html-template location="component://myportal/webapp/myportal/myPortalftl/complaintDetailsPDF.fo.ftl"/></xsl-fo>
+                </platform-specific>               
+            </widgets>
+           
+        </section>
+    </screen>
+
 </screens>

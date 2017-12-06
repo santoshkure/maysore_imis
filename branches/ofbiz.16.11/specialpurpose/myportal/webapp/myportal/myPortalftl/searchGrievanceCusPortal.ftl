@@ -19,7 +19,7 @@
     			<div class="basic-nav" style="margin-top: -40px;"> 
 		    		<ul>
     					<li>
-							<a title="Create Apply For Job" href="<@ofbizUrl>createGrievanceCusPortal</@ofbizUrl>">
+							<a title="Create Grievance Details" href="<@ofbizUrl>createGrievanceCusPortal</@ofbizUrl>">
 								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
 							</a>
     				  	</li>
@@ -230,8 +230,8 @@
 					<tr class="header-row-2">
 					    <td>${uiLabelMap.sno}</td>
 						<td>${uiLabelMap.receiptNo}</td>
-						<td>${uiLabelMap.name}${uiLabelMap.InEnglish}</td>
-						<td>${uiLabelMap.name}${uiLabelMap.Inkannada}</td>
+						<td>${uiLabelMap.name}${uiLabelMap.inEnglish}</td>
+						<td>${uiLabelMap.name}${uiLabelMap.inkannada}</td>
 						<td>${uiLabelMap.grievanceDate}</td>
 						<td>${uiLabelMap.grievancePetitionDate}</td>
 						<td>${uiLabelMap.typeOfGrievance}</td>

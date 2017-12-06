@@ -138,4 +138,26 @@ under the License.
    </entity>
    <!-- End -->
    
+   <!-- Added By Pankaj Trivedi -->
+   	<!-- Complaint Details -->
+   	     <entity entity-name="complRegDetails" package-name="org.apache.ofbiz.myportal" title="Save Complaint Details">
+		  <field name="sequenceId" type="id-ne"/>
+		  <field name="complaintId" type="short-varchar"/>
+		  <field name="complDate" type="date"/>
+		  <field name="custNo" type="short-varchar"/>
+		  <field name="conNo" type="short-varchar"/>
+		  <field name="fileLoc" type="short-varchar"/>
+		  <field name="complDescription" type="short-varchar"/>
+		  <field name="complaintType" type="short-varchar"/>
+		  <field name="serviceAdd" type="short-varchar"/>
+		  <field name="actionDate" type="date"/>
+		 
+  	      <field name="compStatus" type="short-varchar"/>
+  	      <field name="createdBy" type="short-varchar"/>
+  	      <field name="remark" type="short-varchar"/>
+  	      <field name="actionBy" type="short-varchar"/>
+  	      <prim-key field="sequenceId"/>
+	</entity>
+   <!-- End -->
+   
 </entitymodel>

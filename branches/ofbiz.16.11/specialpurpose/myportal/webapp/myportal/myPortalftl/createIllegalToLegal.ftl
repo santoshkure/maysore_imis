@@ -32,7 +32,7 @@
                 	</tr>
         			<tr>
                       	<td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input name="consumerNo"  type="text" maxlength="10" value="CAN101" readonly></td>
+                        <td><input name="consumerNo"  type="text" maxlength="10" value="${userLogin.userLoginId}" readonly></td>
                        
                  </tr>
                     
@@ -86,10 +86,10 @@
 	                        <input name="connectionNo"  type="text" maxlength="10" readonly value="CON101" >
 	                        </td>
 	                         
-	                         <td class="label">${uiLabelMap.assentialDocument}</td>
+	                         <td class="label">${uiLabelMap.essentialDocument}</td>
 							<td>
 		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-		    				<input type="button" onclick="javascript:resetVal(document.createIllegalToLegal.fileLoc);" value="Reset"/> 
+		    				<input type="button" onclick="javascript:resetVal(fileLoc);" value="Reset"/> 
 		    				<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
 		    				<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
 		 					</td>
@@ -124,6 +124,4 @@ function saveRegistrationDetail()
 		                disSubmit('disBttn');    
 		                } 
     }
-    
-    
     </script>

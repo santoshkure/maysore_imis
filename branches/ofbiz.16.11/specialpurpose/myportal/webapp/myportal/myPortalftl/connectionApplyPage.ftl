@@ -78,10 +78,10 @@
 	                        <td class="label">${uiLabelMap.feeForConnection}</td>
 	                        <td><input name="feeForConnection"  type="text" maxlength="7" readonly value="500" ></td>
 
-                    <td class="label">${uiLabelMap.assentialDocument}</td>
+                    <td class="label">${uiLabelMap.essentialDocument}</td>
 							<td colspan="3">
 		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-		    				<input type="button" onclick="javascript:resetVal(document.connectionApply.fileLoc);" value="Reset"/> 
+		    				<input type="button" onclick="javascript:resetVal(fileLoc);" value="Reset"/> 
 		    				<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
 		    				<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
 		 					</td>
@@ -129,6 +129,4 @@ function saveRegistrationDetail()
 		             }
 		             }  
     }
-    
-    
     </script>

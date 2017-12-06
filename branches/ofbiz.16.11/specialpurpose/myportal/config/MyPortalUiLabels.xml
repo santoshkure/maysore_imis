@@ -337,8 +337,8 @@
         <value xml:lang="kn">Paid Amount</value>
     </property>
     <property key="paymentRefNo">
-        <value xml:lang="en">Payment Refrence No.</value>
-         <value xml:lang="kn">Payment Refrence No.</value>
+        <value xml:lang="en">Payment Reference No.</value>
+         <value xml:lang="kn">Payment Reference No.</value>
     </property>
     <property key="paymentStatus">
         <value xml:lang="en">Payment Status</value>
@@ -385,10 +385,10 @@
         <value xml:lang="en">Connection Details</value>
          <value xml:lang="kn">Connection Details</value>
     </property>
-    <property key="assentialDocument">
-        <value xml:lang="en">assential Document</value>
-        <value xml:lang="kn">assential Document</value>
-    </property>
+<!--     <property key="essentialDocument">
+        <value xml:lang="en">Essential Document</value>
+        <value xml:lang="kn">Essential Document</value>
+    </property> -->
     <property key="feeForConnection">
         <value xml:lang="en">Fee For Connection</value>
         <value xml:lang="kn">Fee For Connection</value>
@@ -397,14 +397,14 @@
         <value xml:lang="en">Fee Status</value>
         <value xml:lang="kn">Fee Status</value>
     </property>
-    <property key="connectionNo">
+<!--     <property key="connectionNo">
         <value xml:lang="en">Connection No.</value>
         <value xml:lang="kn">Connection No.</value>
     </property>
     <property key="customerNo">
         <value xml:lang="en">Customer No.</value>
         <value xml:lang="kn">Customer No.</value>
-    </property>
+    </property> -->
      <property key="connectionStatus">
         <value xml:lang="en">Connection Status</value>
         <value xml:lang="kn">Connection Status</value>
@@ -592,7 +592,7 @@
     </property>
      <property key="typeOfJob">
         <value xml:lang="en"> Type Of Job </value>
-        <value xml:lang="kn"> Create Job Details</value>
+        <value xml:lang="kn"> Type Of Job</value>
     </property>
     <property key="detailOfJob">
         <value xml:lang="en"> Job Description </value>
@@ -639,8 +639,8 @@
         <value xml:lang="kn">Applicant Address</value>
     </property>
     <property key="neededInformation">
-        <value xml:lang="en">Nedded Information</value>
-        <value xml:lang="kn">Nedded Information</value>
+        <value xml:lang="en">Needed Information</value>
+        <value xml:lang="kn">Needed Information</value>
     </property>
     <property key="supportingDocument">
         <value xml:lang="en">Supporting Document if any</value>
@@ -650,17 +650,17 @@
         <value xml:lang="en">Upload Copy Of BPL Card</value>
         <value xml:lang="kn">Upload Copy Of BPL Card</value>
     </property>
-     <property key="challanRefrenceNo">
-        <value xml:lang="en">Challan Refrence No.</value>
-        <value xml:lang="kn">Challan Refrence No.</value>
+     <property key="challanReferenceNo">
+        <value xml:lang="en">Challan Reference No.</value>
+        <value xml:lang="kn">Challan Reference No.</value>
     </property>
     <property key="challanAmount">
         <value xml:lang="en">Challan Amount</value>
         <value xml:lang="kn">Challan Amount</value>
     </property>
       <property key="applicationBank">
-        <value xml:lang="en">Application Bank / Postoffice / Teasury name</value>
-        <value xml:lang="kn">Application Bank / Postoffice / Teasury name</value>
+        <value xml:lang="en">Application Bank / Post Office / Teasury name</value>
+        <value xml:lang="kn">Application Bank / Post Office / Teasury name</value>
     </property>
      <property key="uploadChallan">
         <value xml:lang="en">Upload Challan Copy</value>
@@ -671,8 +671,8 @@
         <value xml:lang="kn">Create RTI Application</value>
     </property>
      <property key="RTIRefNo">
-        <value xml:lang="en">RTI refrence No.</value>
-        <value xml:lang="kn">RTI refrence No.</value>
+        <value xml:lang="en">RTI Reference No.</value>
+        <value xml:lang="kn">RTI Reference No.</value>
     </property>
      <property key="modeOfPayment">
         <value xml:lang="en">Mode Of Payment</value>
@@ -775,8 +775,8 @@
     </property>
     
     <property key="line1">
-        <value xml:lang="en">I appointment a authorised departmental contractor for water supply works.</value>
-        <value xml:lang="kn">I appointment a authorised departmental contractor for water supply works.</value>
+        <value xml:lang="en">I appointment a authorized departmental contractor for water supply works.</value>
+        <value xml:lang="kn">I appointment a authorized departmental contractor for water supply works.</value>
     </property>
      <property key="line">
         <value xml:lang="en">Therefore give me a </value>
@@ -796,24 +796,24 @@
         <value xml:lang="kn">I enclose herewith estimate plan with format as per 7-A submitted.</value>
     </property>
      <property key="createAppWaterSupply">
-        <value xml:lang="en">Create App Water Supply</value>
-        <value xml:lang="kn">Create App Water Supply</value>
+        <value xml:lang="en">Apply Water Supply</value>
+        <value xml:lang="kn">Apply Water Supply</value>
     </property>
     <property key="editDisconnection">
-        <value xml:lang="en">edit Disconnection</value>
-        <value xml:lang="kn">edit Disconnection</value>
+        <value xml:lang="en">Edit Disconnection</value>
+        <value xml:lang="kn">Edit Disconnection</value>
     </property>
     <property key="editKhataChange">
         <value xml:lang="en">Edit Khata Change Details</value>
         <value xml:lang="kn">Edit Khata Change Details</value>
     </property>
-    <property key="commonVeiw">
-        <value xml:lang="en">Veiw Khata Change Details</value>
-        <value xml:lang="kn">Veiw Khata Change Details</value>
+    <property key="commonView">
+        <value xml:lang="en">View Khata Change Details</value>
+        <value xml:lang="kn">View Khata Change Details</value>
     </property>
-    <property key="commonVeiw">
-        <value xml:lang="en">Veiw</value>
-        <value xml:lang="kn">Veiw</value>
+    <property key="commonView">
+        <value xml:lang="en">View</value>
+        <value xml:lang="kn">View</value>
     </property>
      <property key="createAppForAgreementLetter">
         <value xml:lang="en">Create Agreement Letter</value>
@@ -861,31 +861,31 @@
         								Signature of Applicants
        </value>
     </property>
-    <property key="veiwAgreementLetter">
-        <value xml:lang="en">Veiw Agreement Letter</value>
-        <value xml:lang="kn">Veiw Agreement Letter</value>
+    <property key="ViewAgreementLetter">
+        <value xml:lang="en">View Agreement Letter</value>
+        <value xml:lang="kn">View Agreement Letter</value>
     </property>
-    <property key="createDeclearationCertificate">
-        <value xml:lang="en">Create Declearation Certificate</value>
-        <value xml:lang="kn">Create Declearation Certificate</value>
+    <property key="createDeclarationCertificate">
+        <value xml:lang="en">Create Declaration Certificate</value>
+        <value xml:lang="kn">Create Declaration Certificate</value>
     </property>
     <property key="applyForDecleaCerti">
-        <value xml:lang="en">Apply For Declearation Certificate</value>
-        <value xml:lang="kn">Apply For Declearation Certificate</value>
+        <value xml:lang="en">Apply For Declaration Certificate</value>
+        <value xml:lang="kn">Apply For Declaration Certificate</value>
     </property>
     <property key="DecleaCerti">
-        <value xml:lang="en">Declearation Certificate</value>
-        <value xml:lang="kn">Declearation Certificate</value>
+        <value xml:lang="en">Declaration Certificate</value>
+        <value xml:lang="kn">Declaration Certificate</value>
     </property>
-    <property key="declearationHeading">
+    <property key="DeclarationHeading">
         <value xml:lang="en">
 				        DECLEARTAION CERTIFCATE
-				   [ declared 20.00 Bond by notory ]
+				   [ declared 20.00 Bond by notary ]
 				  [ only applicable for revenue site ] 
 		 </value>
 		 <value xml:lang="kn">
 				        DECLEARTAION CERTIFCATE
-				   [ declared 20.00 Bond by notory ]
+				   [ declared 20.00 Bond by notary ]
 				  [ only applicable for revenue site ] 
 		 </value>
     </property>
@@ -896,8 +896,8 @@
       		I constructed house/site is</value>
     </property>
     <property key="decLineTwo">
-        <value xml:lang="en"> street House No:-</value>
-        <value xml:lang="kn"> street House No:-</value>
+        <value xml:lang="en"> Street House No:-</value>
+        <value xml:lang="kn"> Street House No:-</value>
     </property>
     <property key="siteNo">
         <value xml:lang="en"> Site No:-</value>
@@ -945,13 +945,13 @@
 	This deceleration certificate only for connection of water supply. There no right to 
 	assists. 
 
-	Date:-09/08/2017 							Decelerator
+	Date:-09/08/2017 							Declarator
 	Place:- Mysore
 	         </value>
     </property>
-    <property key="veiwDeclearationCertificate">
-        <value xml:lang="en"> veiw Declearation Certificate </value>
-        <value xml:lang="kn"> veiw Declearation Certificate </value>
+    <property key="ViewDeclarationCertificate">
+        <value xml:lang="en"> View Declaration Certificate </value>
+        <value xml:lang="kn"> View Declaration Certificate </value>
     </property>
     <property key="paraOneAgreement">
         <value xml:lang="en">	I request application for water   supply connection to my 
@@ -986,13 +986,13 @@
 </value>
 </property>
 
-<property key="veiwAppWaterSupply">
-        <value xml:lang="en"> veiw Water Supply</value>
-        <value xml:lang="kn"> veiw Water Supply </value>
+	<property key="ViewAppWaterSupply">
+        <value xml:lang="en"> View Water Supply</value>
+        <value xml:lang="kn"> View Water Supply </value>
     </property>
-    <property key="veiwKhataChange">
-        <value xml:lang="en"> veiw Khata Change</value>
-        <value xml:lang="kn"> veiw Khata Change </value>
+    <property key="ViewKhataChange">
+        <value xml:lang="en"> View Khata Change</value>
+        <value xml:lang="kn"> View Khata Change </value>
     </property>
     <property key="ComplainList">
         <value xml:lang="en"> Complaint List</value>

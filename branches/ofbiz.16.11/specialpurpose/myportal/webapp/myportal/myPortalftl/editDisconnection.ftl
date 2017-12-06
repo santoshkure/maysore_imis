@@ -35,7 +35,7 @@
                 	</tr>
         			<tr>
                       	<td class="label">${uiLabelMap.customerNo}</td>
-                        <td><input name="customerNo"  type="text" maxlength="10" readonly value="0987" placeholder="${uiLabelMap.customerNo}"></td>
+                        <td><input name="customerNo"  type="text" maxlength="10" readonly value="${userLogin.userLoginId}" placeholder="${uiLabelMap.customerNo}"></td>
                         <td class="label">${uiLabelMap.connectionNo}</td>
                         <td><input name="consumerNo"  type="text" maxlength="10" readonly value="CAN101" placeholder="${uiLabelMap.connectionNo}"></td>
                         
@@ -63,10 +63,10 @@
                      <tr>
                       	<td class="label">${uiLabelMap.applicationDate}</td>
                         <td><input name="applicationDate"  type="date" maxlength="10" readonly value="0708/2017"></td>
-                        <td class="label">${uiLabelMap.assentialDocument}</td>
+                        <td class="label">${uiLabelMap.essentialDocument}</td>
                         <td>
 		     				<input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-		    				<input type="button" onclick="javascript:resetVal(document.connectionApply.fileLoc);" value="Reset"/> 
+		    				<input type="button" onclick="javascript:resetVal(fileLoc);" value="Reset"/> 
 		    				<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
 		    				<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
 		 				</td>
@@ -103,5 +103,4 @@ function editDisconnectionDetail(editDisconnectionApply)
 		                disSubmit('disBttn');    
 		                } 
     }
-    
 </script>

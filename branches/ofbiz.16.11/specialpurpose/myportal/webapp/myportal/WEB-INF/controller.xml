@@ -419,8 +419,35 @@
          <response name="success" type="view" value="customerConnection"/>
         <response name="error" type="view" value="customerConnection"/>
 	</request-map>
-	
-   <!-- end -->
+
+<!-- end --> 
+<!-- Added By Pankaj -->
+    
+    <!-- Save Complaint Details -->
+    	<request-map uri="compRegister">
+        	<security https="true" auth="true" />
+        	<event type="service" invoke="compRegister"/>
+       		<response name="success" type="request-redirect" value="searchcomplainregister"/>
+        	<response name="error" type="view" value="searchcomplainregister" />
+    	</request-map>
+    	
+    <!-- Edit Complaint Details -->	
+    	<request-map uri="editComplaintDetails">
+        	<security https="true" auth="true" />
+        	<event type="service" invoke="editComplaintDetails"/>
+       		<response name="success" type="request-redirect" value="searchcomplainregister"/>
+        	<response name="error" type="view" value="searchcomplainregister" />
+    	</request-map>
+    
+    <!-- Complaint Detail PDF -->
+    	<request-map uri="complaintPDF">
+      		<security https="true" auth="true"/>
+      		<response name="success" type="view" value="complaintPDF"/>
+      		<response name="error" type="view" value="complaintPDF"/>
+   		</request-map>
+    
+<!-- End -->
+   
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>
     <view-map name="login" type="screen" page="component://myportal/widget/CommonScreens.xml#login"/>
     <view-map name="newRegisterLogin" type="screen" page="component://myportal/widget/CommonScreens.xml#newRegisterLogin"/>  
@@ -496,4 +523,5 @@
    <view-map name="helpCenter" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#helpCenter"/>
    <view-map name="faqSupport" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#faqSupport"/>
       <view-map name="customerConnection" type="screen" page="component://myportal/widget/PortalAdmScreens.xml#customerConnection"/>
+    <view-map name="complaintPDF" type="screenfop" page="component://myportal/widget/PortalAdmScreens.xml#complaintDetailsPDF" content-type="application/pdf"/>
 </site-conf>

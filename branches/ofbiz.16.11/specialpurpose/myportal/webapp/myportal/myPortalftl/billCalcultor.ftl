@@ -24,7 +24,7 @@
 		   <option value="">${uiLabelMap.selectTariffPlan}</option>
 		   <option value="com">Commercial</option>
 		   <option value="noncom">Non Commercial</option>
-		   <option value="dom">domestic</option></select></td>
+		   <option value="dom">Domestic</option></select></td>
 		  </tr>
 		  <tr>
  		   <td class="label" >${uiLabelMap.previousBillReading} <font color="red">*</font></td>

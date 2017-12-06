@@ -23,17 +23,15 @@
 	                	<tr><td colspan="12" align="left"><font color="blue"><b>${uiLabelMap.grievanceDetail}</b></font></td></tr>
     	            	<tr>
                  			<td class="label">${uiLabelMap.grievanceDate}</td>
-   							<td colspan="12">
-   							   <input type="text" name="grievanceDate" autocomplete="off" value="<#if grievanceDetailsList.grievanceDate?has_content>${grievanceDetailsList.grievanceDate?if_exists?string('dd/MM/yyyy')}</#if>" id="grievanceDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
-        				       <a href="javascript:call_cal(document.editGrievanceCustomer.grievanceDate);">
-   							</td>
+   							 <td>
+                      <@htmlTemplate.renderDateTimeField name="grievanceDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="applyDate_4" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                 </td>
 						</tr>
 						<tr>	
 							<td class="label" >${uiLabelMap.grievancePetitionDate}</td>
-   							<td>
-								<input type="text" name="grievancePetitionDate" autocomplete="off" value="<#if grievanceDetailsList.grievancePetitionDate?has_content>${grievanceDetailsList.grievancePetitionDate?if_exists?string('dd/MM/yyyy')}</#if>" id="grievancePetitionDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
-        				    	<a href="javascript:call_cal(document.editGrievanceCustomer.grievancePetitionDate);">
-       				    		<img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a></td>
+   							 <td>
+                      <@htmlTemplate.renderDateTimeField name="grievanceDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="applyDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                 </td>
 	                    	<td class="label" >${uiLabelMap.typeOfGrievance}</td>
  							<td colspan="4">
  								<#assign TypeofGrivance = "${grievanceDetailsList.typeOfGrievance?if_exists}" />
@@ -56,11 +54,11 @@
 						</tr>  
 	              		<tr>
                     		<td class="label">${uiLabelMap.name}</td>
-                       		<td><input name="grevNameEn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameEN?if_exists}">${uiLabelMap.InEnglish}
-                        		<br><input name="grevNameKn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameKN?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${uiLabelMap.Inkannada}</br></td>
+                       		<td><input name="grevNameEn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameEN?if_exists}">${uiLabelMap.inEnglish}
+                        		<br><input name="grevNameKn"  type="text" maxlength="50" value="${grievanceDetailsList.grievanceNameKN?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${uiLabelMap.inkannada}</br></td>
                     		<td class="label">${uiLabelMap.OrderAddress}</td>
-                      		<td colspan="4"><textarea name="grevAddEn"  maxlength="300" style="width:400px">${grievanceDetailsList.grievanceAddEn?if_exists}</textarea>${uiLabelMap.InEnglish}
-                        		<br><textarea name="grevAddKn" maxlength="300" style="width:400px" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${grievanceDetailsList.grievanceAddKn?if_exists} </textarea>${uiLabelMap.Inkannada}</br></td> 
+                      		<td colspan="4"><textarea name="grevAddEn"  maxlength="300" style="width:400px">${grievanceDetailsList.grievanceAddEn?if_exists}</textarea>${uiLabelMap.inEnglish}
+                        		<br><textarea name="grevAddKn" maxlength="300" style="width:400px" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${grievanceDetailsList.grievanceAddKn?if_exists} </textarea>${uiLabelMap.inkannada}</br></td> 
                     	</tr>  	
                     	<tr>
                     		<td class="label">${uiLabelMap.mobileNo}</td>
@@ -74,11 +72,11 @@
                     	</tr>
                     	<tr>
                     		<td class="label">${uiLabelMap.grievanceDetail}</td>
-                       		<td colspan="1"><textarea name="grievanceDetailEn"  maxlength="500" >${grievanceDetailsList.grievanceDetailEn?if_exists}</textarea>${uiLabelMap.InEnglish}
-                       		 	<br><textarea name="grievanceDetailKn"  maxlength="500" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${grievanceDetailsList.grievanceDetailKn?if_exists}</textarea>${uiLabelMap.Inkannada}</br></td>
-                    		<td class="label">${uiLabelMap.assentialDocument}</td>
+                       		<td colspan="1"><textarea name="grievanceDetailEn"  maxlength="500" >${grievanceDetailsList.grievanceDetailEn?if_exists}</textarea>${uiLabelMap.inEnglish}
+                       		 	<br><textarea name="grievanceDetailKn"  maxlength="500" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);">${grievanceDetailsList.grievanceDetailKn?if_exists}</textarea>${uiLabelMap.inkannada}</br></td>
+                    		<td class="label">${uiLabelMap.essentialDocument}</td>
 				        	<td colspan="4"><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        		<input type="button" onclick="javascript:resetVal(document.editGrievanceCustomer.fileLoc);" value="Reset"/>
+                        		<input type="button" onclick="javascript:resetVal(fileLoc);" value="Reset"/>
                         		<input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
                         		<input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
                         	</td>

@@ -15,4 +15,10 @@ public interface myportalConstants {
 	public static String RECORD_SUBMITTED_SUCCESSFULLY = "Your Detail's Submitted Successfully.";
 	public static String RECORD_APPROVE_SUCCESSFULLY = "Your Detail's Approved Successfully.";
 	public static String CONNECTION_SUBMITTED_SUCCESSFULLY = "Your Connection Detail's Submitted Successfully.";
+	
+/*	Added By Pankaj Trivedi Complaint message Details*/
+	public static String COMP_SUBMITTED_SUCCESSFULLY = "Your Complaint Details Submitted Successfully.";
+	public static String COMP_UPDATE_SUCCESSFULLY = "Your Complaint Details Update Successfully.";
+/*	End*/
+
 }

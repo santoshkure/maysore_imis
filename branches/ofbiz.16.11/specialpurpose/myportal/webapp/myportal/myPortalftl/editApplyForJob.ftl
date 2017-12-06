@@ -32,16 +32,16 @@
                 	</tr>
                     <tr>
                         <td class="label">${uiLabelMap.customerNo}<font color="red">*</font></td>
-                        <td><input type="text" name="cusNo" value="" readonly /></td>
+                        <td><input type="text" name="cusNo" value="${userLogin.userLoginId}" readonly /></td>
                         <td class="label">${uiLabelMap.connectionNo}<font color="red">*</font></td>
                         <td><input type="text" name="conNo" value="" readonly /></td>
                    </tr>
                     <tr>
                         <td class="label" >${uiLabelMap.applicationDate}</td>
                         <td><input type="text" name="ApplicationDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
-                        <td class="label">${uiLabelMap.assentialDocument}</td>
+                        <td class="label">${uiLabelMap.essentialDocument}</td>
                         <td><input type="file" name="fileLoc"  onchange="javascript:validateFile(this,document.getElementById('fileLocFileName'),document.getElementById('fileLocFileType'));"/>
-                        <input type="button" onclick="javascript:resetVal(document..fileLoc);" value="Reset"/>
+                        <input type="button" onclick="javascript:resetVal(fileLoc);" value="Reset"/>
                         <input type="hidden" name="fileLocFileName" id="fileLocFileName" value=""/>
                         <input type="hidden" name="fileLocFileType" id="fileLocFileType" value=""/>
                         </td>

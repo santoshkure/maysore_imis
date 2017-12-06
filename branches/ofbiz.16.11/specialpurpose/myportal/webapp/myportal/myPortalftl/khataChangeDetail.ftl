@@ -66,7 +66,7 @@
              	<td>${uiLabelMap.sno}</td>
 	        	<td>${uiLabelMap.khataChangeApplicationNo}</td>
              	<td>${uiLabelMap.applicationDate}</td>
-             	<td>${uiLabelMap.assentialDocument}</td>
+             	<td>${uiLabelMap.essentialDocument}</td>
              	<td>${uiLabelMap.CommonStatus}</td>
              	<td>${uiLabelMap.CommonEdit}</td>
          	</tr>

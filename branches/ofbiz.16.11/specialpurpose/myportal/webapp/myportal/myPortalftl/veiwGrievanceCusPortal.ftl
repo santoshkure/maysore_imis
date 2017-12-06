@@ -75,7 +75,7 @@
                     <tr>
                     		<td class="label">${uiLabelMap.grievanceDetail}</td>
                        	 	<td colspan="1">${grievanceDetailsList.grievanceDetailEn?if_exists}</br>${grievanceDetailsList.grievanceDetailKn?if_exists}</td>
-                    		<td class="label">${uiLabelMap.assentialDocument}</td>
+                    		<td class="label">${uiLabelMap.essentialDocument}</td>
 				        	<td colspan="4">GrievanceDetail.doc</td>
                         	
                     </tr>
