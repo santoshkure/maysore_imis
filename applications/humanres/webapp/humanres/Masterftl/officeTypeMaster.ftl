@@ -90,7 +90,7 @@ function validateParameters(formName)
              <td><center>${uiLabelMap.Status}</center></td>
              <td><center>${uiLabelMap.edit}</center></td>
              <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.activeDeactive}</center></td>
+             <td><center>${uiLabelMap.enableDisable}</center></td>
          </tr>
    </thead>
 

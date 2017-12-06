@@ -107,7 +107,7 @@
              <td><center>${uiLabelMap.sno}<center></td>
 	         <td><center>${uiLabelMap.wardname}<center></td>
 	         <#-- Add by Anubha -->
-	          <td><center>${uiLabelMap.wardNameKan}<center></td>
+	          <td><center>${uiLabelMap.wardname} ${uiLabelMap.inKannada}<center></td>
              <td><center>${uiLabelMap.zoneName}</center></td>
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.Remark}</center></td>
@@ -115,7 +115,7 @@
              <td><center>${uiLabelMap.Status}</center></td>
               <td><center>${uiLabelMap.edit}</center></td>
             <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.ActiveDeactive}</center></td>
+             <td><center>${uiLabelMap.enableDisable}</center></td>
            
          </tr>
        </thead>  

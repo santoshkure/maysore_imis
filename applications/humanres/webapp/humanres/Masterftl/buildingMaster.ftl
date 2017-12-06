@@ -39,7 +39,7 @@
  	    	       				 </#list>
 	    	     			 </#if>
 	    	   			 </#if>
-	     	 	</select>(${uiLabelMap.inEnglish})<br>
+	     	 	</select>${uiLabelMap.inEnglish}<br>
 	     	  	<td width="25%"><select name="buildingTypeKan" style="width:150px;" >
 			     	<option value=''>${uiLabelMap.CommonSelect}</option>
 	    	   			<#if buildingLists?exists>
@@ -49,7 +49,7 @@
  	    	       				</#list>
 	    	     			</#if>
 	    	   			</#if>
-	     	 		</select>(${uiLabelMap.inKannada})</br>
+	     	 		</select>${uiLabelMap.inKannada}</br>
 			   </tr>
 	
 			   <tr>
@@ -81,14 +81,14 @@
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}</center></td>
 	         <td>${uiLabelMap.buildingType}</td>
-	         <td>${uiLabelMap.buildingTypeKan}</td>
+	         <td>${uiLabelMap.buildingType} ${uiLabelMap.inKannada}</td>
              <td>${uiLabelMap.description}</td>
              <td>${uiLabelMap.createdate}</td>
              <td>${uiLabelMap.remark}</td>
-              <td>${uiLabelMap.status}</td>
+              <td>${uiLabelMap.Status}</td>
              <td>${uiLabelMap.CommonEdit}</td>
              <td>${uiLabelMap.Remove}</td>
-             <td>${uiLabelMap.ActiveDeactive}</td>
+             <td>${uiLabelMap.enableDisable}</td>
              
            
           </tr>

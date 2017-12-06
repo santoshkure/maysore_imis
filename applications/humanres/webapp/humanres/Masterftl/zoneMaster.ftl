@@ -71,6 +71,7 @@
                  
 					<td><input type="date" style="width:140px"  name="createDated" autocomplete="off" id="remark" maxlength ="10" value="" /></td> 
 					   -->
+		     	<input type="Hidden" name="createdate" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  />
         	</tr>
        		<tr>
 				<td colspan="8"><center><div id="saveBtn" align="center"><input type="button" title="Search" name="search" value="Search" onclick="javascript:validateFields1('zoneMaster');"></center></td>
@@ -100,7 +101,7 @@
              <td><center>${uiLabelMap.sno}</center></td>
 	         <td><center>${uiLabelMap.zoneName}</center></td>
 	            <#-- Add by Anubha -->
-	           <td><center>${uiLabelMap. zoneNameKan}</center></td>
+	           <td><center>${uiLabelMap.zoneName} ${uiLabelMap.inKannada}</center></td>
              <td><center>${uiLabelMap.cityName}</center></td>
              <td><center>${uiLabelMap.officeName}<center></td>
              <td><center>${uiLabelMap.createdate}</center></td>
@@ -117,11 +118,11 @@
 			<#list allOfficeZoneListed as allOfficeZoneListed>
 		 
             <tr> <td><center>${count?if_exists}</center></td>
-            <td><center>${allOfficeZoneListed.zoneName}</center></td>
+            <td><center>${allOfficeZoneListed.zoneName?if_exists}</center></td>
               <#-- Add by Anubha -->
-             <td><center>${allOfficeZoneListed.zoneNameKan}</center></td>
+             <td><center>${allOfficeZoneListed.zoneNameKan?if_exists}</center></td>
             <td><center>${allOfficeZoneListed.cityName?if_exists}</center></td>
-            <td><center>${allOfficeZoneListed.officeName}</center></td>
+            <td><center>${allOfficeZoneListed.officeName?if_exists}</center></td>
  			<td><center><#if allOfficeZoneListed.createdate?has_content>${allOfficeZoneListed.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
             <td><center>${allOfficeZoneListed.remark?if_exists}</center></td>
            

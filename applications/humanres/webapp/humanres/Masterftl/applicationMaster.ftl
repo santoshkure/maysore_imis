@@ -38,7 +38,7 @@
  	    	       				 </#list>
 	    	     			 </#if>
 	    	   			 </#if>
-	     	 	</select>(${uiLabelMap.inEnglish})<br>
+	     	 	</select>${uiLabelMap.inEnglish}<br>
 	     	  	<td width="25%"><select name="ApplicationTypeKan" style="width:150px;" >
 			     	<option value=''>${uiLabelMap.CommonSelect}</option>
 	    	   			<#if applicationTypeLists?exists>
@@ -48,7 +48,7 @@
  	    	       				</#list>
 	    	     			</#if>
 	    	   			</#if>
-	     	 		</select>(${uiLabelMap.inKannada})</br>
+	     	 		</select>${uiLabelMap.inKannada}</br>
 			  </tr>
        		   <tr>
        		   <td colspan="8"><center><div id="saveBtn" align="center"><input type="button" title="Search" name="search" value="Search" onclick="javascript:validateFields1('applicationMaster');"></center></td>
@@ -81,14 +81,14 @@
          <tr class="header-row-2">
              <td>${uiLabelMap.sno}</td>
 	         <td>${uiLabelMap.applicationType}</td>
-	         <td>${uiLabelMap.applicationTypeKan}</td>
+	         <td>${uiLabelMap.applicationType} ${uiLabelMap.inKannada}</td>
              <td>${uiLabelMap.description}</td>
              <td>${uiLabelMap.createdate}</td>
              <td>${uiLabelMap.remark}</td>
-             <td>${uiLabelMap.status}</td>
+             <td>${uiLabelMap.Status}</td>
              <td>${uiLabelMap.Edit}</td>
              <td>${uiLabelMap.Remove}</td>
-             <td>${uiLabelMap.ActiveDeactive}</td>
+             <td>${uiLabelMap.enableDisable}</td>
              
          </tr>
       </thead>

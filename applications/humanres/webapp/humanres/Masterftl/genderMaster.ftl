@@ -27,8 +27,8 @@
 				
  				       <tr>
 						   <td class="label" >${uiLabelMap.gendername} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="" style="width:140px">(${uiLabelMap.inEnglish})<br>
-					       <input type="text" style="width:140px" maxlength="11" name="genderNameKan" id="genderNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+					       <td><input type="text" maxlength="11" name="genderName" onchange="javascript:trimFunction(this)" value="" style="width:140px">${uiLabelMap.inEnglish}<br>
+					       <input type="text" style="width:140px" maxlength="11" name="genderNameKan" id="genderNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br>
 					       <#--<td class="label" >${uiLabelMap.createdate}</td>
                            <td><input type="text" name="dateOfCreateGender" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px"  /></td>--->
 					 
@@ -73,13 +73,13 @@
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
              <td><center>${uiLabelMap.gendername}</center></td>
-             <td><center>${uiLabelMap.gendernameKan}</center></td>
+             <td><center>${uiLabelMap.gendername} ${uiLabelMap.inKannada}</center></td>
 		     <td><center>${uiLabelMap.createdate}</center></td> 
 		     <td><center>${uiLabelMap.remark}</center></td> 
              <td><center>${uiLabelMap.Status}</center></td>
              <td><center>${uiLabelMap.edit}</center></td>
              <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.activeDeactive}</center></td>
+             <td><center>${uiLabelMap.enableDisable}</center></td>
          </tr>
    </thead>
     

@@ -26,8 +26,8 @@
  			     <tr><td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td></tr>
  				    <tr>
 						   <td class="label" >${uiLabelMap.statusname} <font color="red">*</font></td>
-					       <td><input type="text" maxlength="11" name="maritalStatus" onchange="javascript:trimFunction(this)" value="" style="width:140px">(${uiLabelMap.inEnglish})<br>
-					           <input type="text" style="width:140px" maxlength="11" name="maritalStatusKan" id="maritalStatusKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+					       <td><input type="text" maxlength="11" name="maritalStatus" onchange="javascript:trimFunction(this)" value="" style="width:140px">${uiLabelMap.inEnglish}<br>
+					           <input type="text" style="width:140px" maxlength="11" name="maritalStatusKan" id="maritalStatusKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br>
 					       <#---<td class="label" >${uiLabelMap.createdate}</td>
                            <td><input type="text" name="dateOfCreateMarital" value="${nowTimestamp?string("dd/MM/yyyy")}" style="width:140px" readonly />--->
                            <#--<@htmlTemplate.renderDateTimeField name="eventDate" event="" action="" className="" alert="" title="Format: yyyy-MM-dd HH:mm:ss.SSS" value="${requestParameters.eventDate!nowTimestamp}" size="25" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>-->
@@ -67,13 +67,13 @@
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}<center></td>
              <td class="label"><center>${uiLabelMap.statusname}</center></td>
-             <td class="label"><center>${uiLabelMap.statusnameKan}</center></td>
+             <td class="label"><center>${uiLabelMap.statusname} ${uiLabelMap.inKannada}</center></td>
 		     <td class="label"><center>${uiLabelMap.createdate}</center></td> 
 		     <td class="label"><center>${uiLabelMap.remark}</center></td> 
              <td><center>${uiLabelMap.Status}</center></td>
              <td><center>${uiLabelMap.edit}</center></td>
              <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.activeDeactive}</center></td>
+             <td><center>${uiLabelMap.enableDisable}</center></td>
          </tr>
    </thead>
    <#if maritalStatusMasterList?has_content>

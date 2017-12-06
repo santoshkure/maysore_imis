@@ -51,9 +51,9 @@
 	    	</select>
                     </td>
 			 <td class="label">${uiLabelMap.wardname}<font color="red" >*</font></td>
-			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="wardName" autocomplete="off" id="wardName" maxlength ="30" value="" />(${uiLabelMap.inEnglish})<br> 
+			 <td><input type="text" style="width:140px"  onchange="javascript:trimFunction(this)" name="wardName" autocomplete="off" id="wardName" maxlength ="30" value="" />${uiLabelMap.inEnglish}<br> 
                <#-- Kannad language conversation -->
-               	<input type="text" style="width:150px" maxlength="50" name="wardNameKan" id="wardNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td> 
+               	<input type="text" style="width:150px" maxlength="50" name="wardNameKan" id="wardNameKan" value="" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br></td> 
          	</tr>
          	<tr>
 			 <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>

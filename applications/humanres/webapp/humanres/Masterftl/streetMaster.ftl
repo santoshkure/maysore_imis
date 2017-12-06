@@ -98,15 +98,16 @@
              <td><center>S.No<center></td>
 	         <td><center>${uiLabelMap.streetName}<center></td>
 	        <#-- Add by Anubha -->
-	         <td><center>${uiLabelMap.streetNameKan}<center></td>
+	         <td><center>${uiLabelMap.streetName} ${uiLabelMap.inKannada}<center></td>
              <td><center>${uiLabelMap.blockName}</center></td>
              <td><center>${uiLabelMap.cityName}<center></td>
              <td><center>${uiLabelMap.remark}</center></td>
              <td><center>${uiLabelMap.createdate}</center></td>
-               <td><center>${uiLabelMap.status}</center></td>
+             <td><center>${uiLabelMap.Status}</center></td>
              <td><center>${uiLabelMap.edit}</center></td>
-             <td><center>${uiLabelMap.enableDisable}</center></td>
              <td><center>${uiLabelMap.Remove}</center></td>
+             <td><center>${uiLabelMap.enableDisable}</center></td>
+
          </tr></thead>
                 </thead>
      <#if streetTypeList?has_content>

@@ -3330,10 +3330,10 @@
         <value xml:lang="en">Caste Name</value>
         <value xml:lang="kn">Caste Name</value>
     </property>
-      <property key="castenameKan">
-        <value xml:lang="en">Caste Name(in kannada)</value>
-        <value xml:lang="kn">Caste Name(in kannada)</value>
-    </property>
+   <!--    <property key="castenameKan">
+        <value xml:lang="en">Caste Name(in Kannada)</value>
+        <value xml:lang="kn">Caste Name(in Kannada)</value>
+    </property> -->
     <property key="castemasterlist">
         <value xml:lang="en">Cast Master List</value>
         <value xml:lang="kn">Cast Master List</value>
@@ -3404,10 +3404,10 @@
 		<value xml:lang="en">Community Name</value>
 		<value xml:lang="kn">Community Name</value>
 	</property>
-	<property key="communitynameKan">
-		<value xml:lang="en">Community Name(in kannada)</value>
-		<value xml:lang="kn">Community Name(in kannada)</value>
-	</property>
+	<!-- <property key="communitynameKan">
+		<value xml:lang="en">Community Name(in Kannada)</value>
+		<value xml:lang="kn">Community Name(in Kannada)</value>
+	</property> -->
 	<property key="gendermaster">
 		<value xml:lang="en">Gender Master</value>
 		<value xml:lang="kn">Gender Master</value>
@@ -3417,10 +3417,10 @@
 		<value xml:lang="en">Gender Name</value>
 		<value xml:lang="kn">Gender Name</value>
 	</property>
-	<property key="gendernameKan">
-		<value xml:lang="en">Gender Name(in kannada)</value>
-		<value xml:lang="kn">Gender Name(in kannada)</value>
-	</property>
+<!-- 	<property key="gendernameKan">
+		<value xml:lang="en">Gender Name(in Kannada)</value>
+		<value xml:lang="kn">Gender Name(in Kannada)</value>
+	</property> -->
 	<property key="maritalstatusmaster">
 		<value xml:lang="en">Marital Status Master</value>
 		<value xml:lang="kn">Marital Status Master</value>
@@ -3442,10 +3442,10 @@
 		<value xml:lang="en">Marital Status</value>
 		<value xml:lang="kn">Marital Status</value>
 	</property>
-	<property key="statusnameKan">
-		<value xml:lang="en">Marital Status(in kannada)</value>
-		<value xml:lang="kn">Marital Status(in kannada)</value>
-	</property>
+	<!-- <property key="statusnameKan">
+		<value xml:lang="en">Marital Status(in Kannada)</value>
+		<value xml:lang="kn">Marital Status(in Kannada)</value>
+	</property> -->
       <!-- End -->
      <!-- Added By Shubham Malviya on Date 01/08/2017 -->
      <property key="customerDetails">
@@ -3574,8 +3574,8 @@
         <value xml:lang="kn">Create Zone Master</value>
     </property>
      <property key="enableDisable">
-        <value xml:lang="en">Enable/Disable</value>
-        <value xml:lang="kn">Enable/Disable</value>
+        <value xml:lang="en">Active/Deactive</value>
+        <value xml:lang="kn">Active/Deactive</value>
     </property>
     <property key="createWardMaster">
         <value xml:lang="en">Create Ward Master</value>
@@ -3589,18 +3589,18 @@
         <value xml:lang="en">Create Block Master</value>
         <value xml:lang="kn">Create Block Master</value>
     </property>
- <property key="buildingTypeKan">
-        <value xml:lang="en">Building Type in Kannad</value>
-        <value xml:lang="kn">Building Type in Kannad</value>
+ <!-- <property key="buildingTypeKan">
+        <value xml:lang="en">Building Type(in Kannada)</value>
+        <value xml:lang="kn">Building Type(in Kannada)</value>
     </property>
      <property key="applicationTypeKan">
-        <value xml:lang="en">Application Type in Kannad</value>
-        <value xml:lang="kn">Application Type in Kannad</value>
+        <value xml:lang="en">Application Type(in Kannada)</value>
+        <value xml:lang="kn">Application Type(in Kannada)</value>
     </property>
      <property key="connectionTypeKan">
-        <value xml:lang="en">Connection Type in Kannad</value>
-        <value xml:lang="kn">Connection Type in Kannad</value>
-    </property>
+        <value xml:lang="en">Connection Type(in Kannada)</value>
+        <value xml:lang="kn">Connection Type(in Kannada)</value>
+    </property> -->
       <!-- ==========End==================  -->
       
     <!-- Added By Shubham Malviya On 03/08/2017 -->
@@ -3794,8 +3794,8 @@
         <value xml:lang="kn">Search Complaint Request</value>
     </property>
     <property key="compliantApplyDate">
-        <value xml:lang="en">Complaint Apply Date</value>
-        <value xml:lang="kn">Complaint Apply Date</value>
+        <value xml:lang="en">Complaint Date</value>
+        <value xml:lang="kn">Complaint Date</value>
     </property>
     <property key="complaintType">
         <value xml:lang="en">Complaint Type</value>
@@ -4361,22 +4361,22 @@
         <value xml:lang="en">Area Co-ordinator</value>
         <value xml:lang="kn">Area Co-ordinator</value>
     </property>
-      <property key="streetNameKan">
-        <value xml:lang="en">Street Name in Kannad</value>
-        <value xml:lang="kn">Street Name in Kannad</value>
+    <!--   <property key="streetNameKan">
+        <value xml:lang="en">Street Name(in Kannada)</value>
+        <value xml:lang="kn">Street Name(in Kannada)</value>
     </property>
      <property key="blockNameKan">
-        <value xml:lang="en">Block Name in Kannad</value>
-        <value xml:lang="kn">Block Name in Kannad</value>
+        <value xml:lang="en">Block Name(in Kannada)</value>
+        <value xml:lang="kn">Block Name(in Kannada)</value>
     </property>
      <property key="wardNameKan">
-        <value xml:lang="en">Ward Name in Kannad</value>
-        <value xml:lang="kn">Ward Name in Kannad</value>
+        <value xml:lang="en">Ward Name(in Kannada)</value>
+        <value xml:lang="kn">Ward Name(in Kannada)</value>
     </property>
      <property key="zoneNameKan">
-        <value xml:lang="en">Zone Namein Kannad</value>
-        <value xml:lang="kn">Zone Namein Kannad</value>
-    </property>
+        <value xml:lang="en">Zone Name(in Kannada)</value>
+        <value xml:lang="kn">Zone Name(in Kannada)</value>
+    </property> -->
     <!-- END -->
     <!--   Added by Nikhil  -->
     <property key="connectionMasterList">

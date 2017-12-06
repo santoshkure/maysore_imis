@@ -60,9 +60,9 @@
             
                     
 			  <td class="label">${uiLabelMap.wardname}<font color="red" >*</font></td>
-             <td><input type="text" name="wardName" onchange="javascript:trimFunction(this)" value="${WardMasterLists.wardName?if_exists}" style="width:140px"  />${uiLabelMap.inEnglish})<br> 
+             <td><input type="text" name="wardName" onchange="javascript:trimFunction(this)" value="${WardMasterLists.wardName?if_exists}" style="width:140px"  />${uiLabelMap.inEnglish}<br> 
                	<#-- Add by Anubha -->
-               	<input type="text" style="width:150px" maxlength="50" name="wardNameKan" id="wardNameKan" value="${WardMasterLists.wardNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>
+               	<input type="text" style="width:150px" maxlength="50" name="wardNameKan" id="wardNameKan" value="${WardMasterLists.wardNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br></td>
         	</tr>
         	 
         	<tr>

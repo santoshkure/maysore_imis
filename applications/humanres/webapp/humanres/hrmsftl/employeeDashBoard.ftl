@@ -220,16 +220,16 @@
    				</ul>
 			</div>
 			<div class="row" style="background:#f5f5f5;">
-				<div class="col-md-12" id="container3" style="height: 300px;  margin: 0 auto"></div>
+				<div class="col-md-12" id="container3" style="height: 340px;  margin: 0 auto"></div>
 			</div>
 			<div class="row" style="background:#f5f5f5;">
-				<div class="col-md-12" id="container4" style="height: 300px;  margin: 0 auto"></div>
+				<div class="col-md-12" id="container4" style="height: 340px;  margin: 0 auto"></div>
 			</div>
-			<div class="row" style="background:#f5f5f5; padding-top: 15px;">
+			<#--  <div class="row" style="background:#f5f5f5; padding-top: 15px;">
 				<div class="col-md-4" id="container" style="height: 200px;  margin: 0 auto"></div>
 				<div class="col-md-4"id="container1" style="height: 200px; margin: 0 auto"></div>
 				<div class="col-md-4" id="container2" style=" height: 200px;  margin: 0 auto"></div>
-			</div>
+			</div>-->
 			
    		</div>
    		<#-- End -->

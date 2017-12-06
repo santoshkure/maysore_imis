@@ -36,9 +36,9 @@
 			</tr>
 			 <tr>
 			 	<td class="label">${uiLabelMap.billNo}</td>
-             	<td><b>BillNo1</b></td>
+             	<td><b>9156342</b></td>
 			 	<td class="label">${uiLabelMap.customerNo}</td>
-             	<td>CustNo10001</td>
+             	<td>CUS10001</td>
              	<td class="label">${uiLabelMap.connectionNo}</td>
              	<td>CN10001</td>
 			</tr>
@@ -53,7 +53,7 @@
 			</tr>
 			<tr>
 			<td class="label">${uiLabelMap.CommonEmail}</td>
-             	<td>acve@gmail.com</td>
+             	<td>ravi14@gmail.com</td>
              	<td class="label">${uiLabelMap.HrmsAddress}</td>
              	<td colspan="3">Sahu Colony Mysore</td>
              	</tr>
@@ -64,7 +64,7 @@
 			 	<td class="label">${uiLabelMap.billDate}</td>
              	<td>23/08/2017</td>
              	<td class="label">${uiLabelMap.dueDate}</td>
-             	<td>23/08/2017</td>
+             	<td>05/09/2017</td>
 			</tr>
 			
 			 <tr style="padding: 15px;border-bottom: 3px solid #5393c9;">
@@ -73,7 +73,7 @@
 			 	<td class="label">${uiLabelMap.connectionType}</td>
              	<td >Domestic</td>
              	<td class="label">${uiLabelMap.tariffPlan}</td>
-             	<td >Tariff 10001 plan</td>
+             	<td >Regular Plan</td>
 			</tr>
 			
 			<tr>

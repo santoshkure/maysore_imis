@@ -1678,5 +1678,39 @@ under the License.
     	<attribute name="xlsApplicationType" type="String" mode="IN" optional="true" />
 	    </service>
 	    				<!-- End -->
+
+<!-- Search Complaint Details -->
+			<service name="searchComplaintDetailEmp" engine="java" 
+				location="org.apache.ofbiz.humanres.HumanResEvents" invoke="searchComplaintDetailEmp">
+				<attribute name="complaintId" type="String" mode="IN" optional="true"/>
+				<attribute name="customerNo" type="String" mode="IN" optional="true"/>
+				<attribute name="complDate" type="String" mode="IN" optional="true"/>
+				<attribute name="complaintType" type="String" mode="IN" optional="true"/>
+				<attribute name="sortType" type="String" mode="INOUT" optional="true"/>
+				<attribute name="VIEW_INDEX" type="String" mode="IN" optional="true"/>
+				<attribute name="VIEW_SIZE" type="String" mode="IN" optional="true"/>
+				<attribute name="lookupFlag" type="String" mode="IN" optional="true"/>
+				<attribute name="orderField" type="String" mode="INOUT" optional="true"/>
+				<attribute name="viewIndex" type="Integer" mode="OUT" optional="false"/>
+				<attribute name="viewSize" type="Integer" mode="OUT" optional="false"/>
+				<attribute name="requestListSize" type="Integer" mode="OUT" optional="false"/>
+				<attribute name="requestList" type="List" mode="OUT" optional="false"/>
+				<attribute name="paramList" type="String" mode="OUT" optional="false"/>
+				<attribute name="highIndex" type="Integer" mode="OUT" optional="false"/>
+				<attribute name="lowIndex" type="Integer" mode="OUT" optional="false"/>
+				<attribute name="indexNumbers" type="Integer" mode="OUT" optional="false"/>
+				<attribute name="pdfList" type="List" mode="OUT" optional="false"/>
+ 			</service>	
+ 			
+		 <!-- Action On Complaint -->
+		 <service name="actionComplaint" engine="java" location="org.apache.ofbiz.humanres.HumanResEvents" invoke="actionComplaint">
+			<attribute name="sequenceId" type="String" mode="IN" optional="true"/>
+			<attribute name="actionStatus" type="String" mode="IN" optional="true"/>
+			<attribute name="remark" type="String" mode="IN" optional="true"/>
+			<attribute name="complaintId" type="String" mode="IN" optional="true"/>
+			<attribute name="ErrorMessage1" type="String" mode="OUT" optional="false"/>
+		 </service> 				 
+		
+		<!-- End -->
 	    				
 	    </services>

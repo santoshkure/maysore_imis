@@ -12,7 +12,7 @@
  <div class="alert alert-info">
    <ul>
       <li class="h3">${uiLabelMap.designationmaster}</li>
-      <div class="basic-nav" style="margin-top: -80px;">
+      <div class="basic-nav" style="margin-top: -40px;">
           <ul>
               <li>
                  <a title="Create Designation Master" href="<@ofbizUrl>designationMaster</@ofbizUrl>">
@@ -76,7 +76,7 @@
              <td><center>${uiLabelMap.Status}</center></td>
              <td><center>${uiLabelMap.edit}<center></td>    
              <td><center>${uiLabelMap.Remove}</center></td>
-             <td><center>${uiLabelMap.activeDeactive}</center></td>  
+             <td><center>${uiLabelMap.enableDisable}</center></td>  
         </tr>
         </thead>  
         

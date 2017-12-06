@@ -14,7 +14,7 @@
   	<div class="alert alert-info">
    		<ul>
     		<li class="h3">${uiLabelMap.connectionmaster}</li>
-    		<div class="basic-nav" style="margin-top: -37px;">
+    		<div class="basic-nav" style="margin-top: -38px;">
   				<ul>
     				<li>
 							<a title="Create Connection Master" href="<@ofbizUrl>createConnectionMaster</@ofbizUrl>">
@@ -39,7 +39,7 @@
  	    	       </#list>
 	    	     </#if>
 	    	   </#if>
-	     	 </select>(${uiLabelMap.inEnglish})<br>
+	     	 </select>${uiLabelMap.inEnglish}<br>
 	     	  <td width="25%"><select name="connectionTypeKan" style="width:150px;" >
 			     <option value=''>${uiLabelMap.CommonSelect}</option>
 	    	   <#if connectionMasterLists?exists>
@@ -49,7 +49,7 @@
  	    	       </#list>
 	    	     </#if>
 	    	   </#if>
-	     	 </select>(${uiLabelMap.inKannada})</br>
+	     	 </select>${uiLabelMap.inKannada}</br>
 			       	
             	  </tr>
        		   <tr>
@@ -81,14 +81,14 @@
          <tr class="header-row-2">
              <td><center>${uiLabelMap.sno}</center></td>
 	         <td>${uiLabelMap.connectionType}</td>
-	         <td>${uiLabelMap.connectionTypeKan}</td>
+	         <td>${uiLabelMap.connectionType} ${uiLabelMap.inKannada}</td>
              <td>${uiLabelMap.description}</td>
              <td>${uiLabelMap.createdate}</td>
              <td>${uiLabelMap.remark}</td>
-              <td>${uiLabelMap.status}</td>
+              <td>${uiLabelMap.Status}</td>
              <td>${uiLabelMap.Edit}</td>
               <td>${uiLabelMap.Remove}</td>
-             <td>${uiLabelMap.ActiveDeactive}</td>
+             <td>${uiLabelMap.enableDisable}</td>
             
            
           </tr>

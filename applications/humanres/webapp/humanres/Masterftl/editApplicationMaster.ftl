@@ -28,9 +28,9 @@
 		               
 		            <tr>
 		                <td class="label">${uiLabelMap.applicationType}<font color="red" >*</font> </td>
-			           <td><input type="text" style="width:150px" maxlength="50" name="applicationType" id="applicationType" value="${applicationMasterListed.applicationType?if_exists}" onchange="javascript:validateName(this);"/>(${uiLabelMap.inEnglish})<br> 
+			           <td><input type="text" style="width:150px" maxlength="50" name="applicationType" id="applicationType" value="${applicationMasterListed.applicationType?if_exists}" onchange="javascript:validateName(this);"/>${uiLabelMap.inEnglish}<br> 
                			<#-- Kannad language conversation -->
-               			<input type="text" style="width:150px" maxlength="50" name="ApplicationTypeKan" id="ApplicationTypeKan" value="${applicationMasterListed.ApplicationTypeKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+               			<input type="text" style="width:150px" maxlength="50" name="ApplicationTypeKan" id="ApplicationTypeKan" value="${applicationMasterListed.ApplicationTypeKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br>
 			       
 			             <td class="label">${uiLabelMap.description}</td>
 			             <td><input type="text" style="width:140px"  name="description" maxlength ="30" value="${applicationMasterListed.description?if_exists}"/></td>    	

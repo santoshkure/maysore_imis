@@ -23,8 +23,8 @@
 		            <tr>
 		            <td class="label">${uiLabelMap.BuildingType}<font color="red" >*</font> </td>
 			       <td>
-			           <input type="text" name="buildingType" onchange="javascript:trimFunction(this)" value="${buildingMasterListed.buildingType?if_exists}" style="width:140px"  />(${uiLabelMap.inEnglish})<br> 
-               	       <input type="text" style="width:150px" maxlength="50" name="buildingTypeKan" id="buildingTypeKan" value="${buildingMasterListed.buildingTypeKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br>
+			           <input type="text" name="buildingType" onchange="javascript:trimFunction(this)" value="${buildingMasterListed.buildingType?if_exists}" style="width:140px"  />${uiLabelMap.inEnglish}<br> 
+               	       <input type="text" style="width:150px" maxlength="50" name="buildingTypeKan" id="buildingTypeKan" value="${buildingMasterListed.buildingTypeKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br>
 					</td>
 						
 			             <td class="label">${uiLabelMap.description}</td>

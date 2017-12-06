@@ -1428,10 +1428,10 @@ under the License.
         <response name="error" type="view" value="actionMeterChange"/>
     </request-map>
     
-    <request-map uri="actionCompliantRequest">
+    <request-map uri="actionComplaintRequest">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="actionCompliantRequest"/>
-        <response name="error" type="view" value="actionNewRegistration"/>
+        <response name="success" type="view" value="actionComplaintRequest"/>
+        <response name="error" type="view" value="actionComplaintRequest"/>
     </request-map>
     
     <request-map uri="viewComplaintDetail">
@@ -1650,7 +1650,7 @@ under the License.
         <security https="true" auth="true" />
         <event type="service" invoke="updateZoneDet"/>
         <response name="success" type="request-redirect" value="ZoneMaster"/>
-        <response name="error" type="view" value="ZoneMaster" />
+        <response name="error" type="request-redirect" value="ZoneMaster" />
     </request-map>
      <request-map uri="saveWardMaster">
         <security https="true" auth="true" />
@@ -2169,6 +2169,21 @@ under the License.
       	<response name="success" type="view" value="GrievanceDetailEmpPortal"/>
       	<response name="error" type="view" value="GrievanceDetailEmpPortal"/>
    	</request-map>
+   	
+<!-- Complaint Detail PDF -->
+    <request-map uri="complaintPDF">
+    	<security https="true" auth="true"/>
+    	<response name="success" type="view" value="complaintPDF"/>
+    	<response name="error" type="view" value="complaintPDF"/>
+   	</request-map>
+   	
+<!-- Action on Complaint  -->
+   	<request-map uri="actionComplaint">
+      	<security https="true" auth="true"/>
+      	<event type="service" invoke="actionComplaint"/>
+      	<response name="success" type="view" value="complaintRequest"/>
+      	<response name="error" type="view" value="complaintRequest"/>
+   	</request-map>   	
    <!-- End -->
    <!-- Xls Genarate -->
    <request-map uri="customerDetailXLS">
@@ -2395,7 +2410,7 @@ under the License.
          <view-map name="editMeterDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#editMeterDetail"/> 
          <view-map name="viewMeterChangeRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewMeterChangeRequest"/>
          <view-map name="actionMeterChange" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionMeterChange"/>
-         <view-map name="actionCompliantRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionCompliantRequest"/>                                                 
+         <view-map name="actionComplaintRequest" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionComplaintRequest"/>                                                 
 		 <view-map name="viewComplaintDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewComplaintDetail"/>
 		 <view-map name="viewKhataChangeDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#viewKhataChangeDetail"/>
 		 <view-map name="actionKhataChange" type="screen" page="component://humanres/widget/EmployeeScreens.xml#actionKhataChange"/>
@@ -2485,5 +2500,5 @@ under the License.
 			<view-map name="applyConnectionDetailPdf" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#applyConnectionDetailPdf" content-type="application/pdf" encoding="none" />
 	
 			<view-map name="grievancePDF" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#grievancePDF" content-type="application/pdf"/>
-			
+			<view-map name="complaintPDF" type="screenfop" page="component://myportal/widget/PortalAdmScreens.xml#complaintDetailsPDF" content-type="application/pdf"/>
 </site-conf>

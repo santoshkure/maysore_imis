@@ -30,9 +30,9 @@
 			<tr>
 			
 			 <td class="label">${uiLabelMap.zoneName} <font color="red" >*</font></td>
-             <td><input type="text" name="zoneName" onchange="javascript:trimFunction(this)" value="${ZoneMasterLists.zoneName?if_exists}" style="width:140px"  />(${uiLabelMap.inEnglish})<br> 
+             <td><input type="text" name="zoneName" onchange="javascript:trimFunction(this)" value="${ZoneMasterLists.zoneName?if_exists}" style="width:140px"  />${uiLabelMap.inEnglish}<br> 
                	<#-- Add by Anubha -->
-               	<input type="text" style="width:150px" maxlength="50" name="zoneNameKan" id="zoneNameKan" value="${ZoneMasterLists.zoneNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />(${uiLabelMap.inKannada})<br></td>
+               	<input type="text" style="width:150px" maxlength="50" name="zoneNameKan" id="zoneNameKan" value="${ZoneMasterLists.zoneNameKan?if_exists}" onkeydown="return processFnn(this, event);" onkeypress="return Geechi(this, event);" />${uiLabelMap.inKannada}<br></td>
 			
 			  <td class="label">${uiLabelMap.cityName} <font color="red" >*</font></td>
 			  <td> 
