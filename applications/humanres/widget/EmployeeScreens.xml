@@ -1524,6 +1524,7 @@ under the License.
     <screen name="complaintRequest">
         <section>
             <actions>
+            	<service service-name="searchComplaintDetailEmp" auto-field-map="true"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1910,16 +1911,19 @@ under the License.
         </section>
     </screen>
     
-    <screen name="actionCompliantRequest">
+    <screen name="actionComplaintRequest">
         <section>
             <actions>
+            	<entity-condition list="complRegDetailsList" entity-name="complRegDetails">
+  					<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
                     		<html>
-                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/actionCompliantRequest.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/actionComplaintRequest.ftl"/>	
                     		</html>
                         </platform-specific>
                     </decorator-section>
@@ -1931,13 +1935,16 @@ under the License.
     <screen name="viewComplaintDetail">
         <section>
             <actions>
+            	<entity-condition list="complRegDetailsList" entity-name="complRegDetails">
+  					<condition-expr field-name="sequenceId" operator="equals" from-field="parameters.sequenceId"/>
+		    	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
                     		<html>
-                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewComplaintDetail.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/viewComplaintDetailEmp.ftl"/>	
                     		</html>
                         </platform-specific>
                     </decorator-section>
@@ -3401,6 +3408,23 @@ under the License.
                      <xsl-fo><html-template location="component://myportal/webapp/myportal/myPortalftl/grievanceDetailsPDF.fo.ftl"/></xsl-fo>
                 </platform-specific>               
             </widgets>
+        </section>
+    </screen>
+
+	<screen name="complaintDetailsPDF">
+        <section>
+            <actions>
+             <set field="title" value="Order"/>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+               	<service service-name="searchComplaintDetail" auto-field-map="true"/>
+            </actions>
+            
+             <widgets>
+                <platform-specific>
+                     <xsl-fo><html-template location="component://myportal/webapp/myportal/myPortalftl/complaintDetailsPDF.fo.ftl"/></xsl-fo>
+                </platform-specific>               
+            </widgets>
+           
         </section>
     </screen>
      
