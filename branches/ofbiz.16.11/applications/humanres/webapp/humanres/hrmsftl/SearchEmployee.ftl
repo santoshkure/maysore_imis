@@ -16,7 +16,7 @@
 			      <div class="h3" align="center"><b>Search Employee</b></div> 
 			        <div class="basic-nav" style="margin-top: -36px;">
 			                       
-			               <#if security.hasPermission('EMPL_CREATE',userLogin)>
+			              <#--   <#if security.hasPermission('EMPL_CREATE',userLogin)>-->
 			
 			          <ul>
 			            <li>
@@ -25,7 +25,7 @@
 			                </a>
 			            </li>
 			          </ul>
-			          </#if>
+			          <#-- </#if>-->
 			        </div>
 				</ul>
 			    
