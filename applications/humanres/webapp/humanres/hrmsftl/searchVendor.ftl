@@ -12,16 +12,16 @@
  <div class="alert alert-info">
    <ul>
       <li class="h3">${uiLabelMap.vendor}</li>
-      <div class="basic-nav" style="margin-top: -80px;">
-      <#if security.hasPermission('VENDOR_CREATE',userLogin)>
+      <div class="basic-nav" style="margin-top: -40px;">
+      <#--  <#if security.hasPermission('VENDOR_CREATE',userLogin)>-->
           <ul>
               <li>
                  <a title="Create Vendor/Bill Reader" href="<@ofbizUrl>createVendorBill</@ofbizUrl>">
-                 <i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
+                 <i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 30px;color: #2f87c6;"></i>
                   </a>
                </li>
          </ul>
-         </#if>
+        <#-- </#if>-->
       </div>
     </ul>
    

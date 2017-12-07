@@ -138,7 +138,7 @@
                         </#if>   
               </center></td>
             <td><center>${allOfficeWardListed.cityName}</center></td>
-             <td><center>${allOfficeWardListed.wardRemark}</center></td>
+             <td><center>${allOfficeWardListed.wardRemark?if_exists}</center></td>
  			<td><center><#if allOfficeWardListed.createdate?has_content>${allOfficeWardListed.createdate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 	
              
          <#--   <td><center><#if allOfficeWardListed.wardRemark?if_exists>
