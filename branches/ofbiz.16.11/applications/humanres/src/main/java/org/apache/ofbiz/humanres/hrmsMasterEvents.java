@@ -1971,6 +1971,12 @@ public class hrmsMasterEvents {
 			   	  			personDetailSave = delegator.makeValue("Person", personDetail);
 			   	  			personDetailSave.create();
 			   	  		//End
+			   	  		//Code for save Costomer Party Id in Person Table
+			   				GenericValue savePermissionDetail = null;
+			   	  			Map<String, ? extends Object> savePermission = UtilMisc.toMap("userLoginId",customerId,"groupId","MYPORTAL_CUSTOMER","fromDate",new java.sql.Timestamp(utilDate.getTime()));
+			   	  			savePermissionDetail = delegator.makeValue("UserLoginSecurityGroup", savePermission);
+			   	  			savePermissionDetail.create();
+			   	  		//End
    							}
 			   	  		/*//Code for save Costomer Party Id in Party ProductStoreRole Table
 			   				GenericValue PartyRole = null;
@@ -2047,13 +2053,13 @@ public class hrmsMasterEvents {
 	      		LocalDispatcher dispatcher = dctx.getDispatcher();
 	      		GenericValue userLogin = (GenericValue) context.get("userLogin");
 	      		Locale locale = (Locale) context.get("locale");
-	           Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
-	           DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	           Date date = new Date();
-	           
-	           String seqId = (String) context.get("seqId");
-	          	String title = (String) context.get("title");
-	             String firstName = (String) context.get("firstName");
+	      		Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
+	      		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	      		Date date = new Date();
+	           	String updateBy = (String) userLogin.get("partyId");
+	           	String seqId = (String) context.get("seqId");
+	           	String title = (String) context.get("title");
+	           	String firstName = (String) context.get("firstName");
 	      		String middleName = (String) context.get("middleName");
 	      		String lastName = (String) context.get("lastName");
 	      		String dateOfBirth = (String) context.get("dateOfBirth");
@@ -2074,6 +2080,7 @@ public class hrmsMasterEvents {
 	      		String mohalla = (String) context.get("mohalla");
 	      		String landMark = (String) context.get("landMark");
 	      		String village = (String) context.get("village");
+	      		String partyId = (String) context.get("partyId");
 	      		
 	      		try{
 	      			if (UtilValidate.isNotEmpty(seqId))
@@ -2081,7 +2088,7 @@ public class hrmsMasterEvents {
 	      				Map editCostomerDetail = UtilMisc.toMap("title",title,"firstName",firstName,"middleName",middleName,"lastName",lastName
 	      	  					,"dateOfBirth",dateOfBirth,"genderId",gender,"maritalStatusId",maritalStatus,"fatherName",fatherName,"motherName",motherName,"aadharCardNo",aadharCardNo,"cummunityNameId",cummunityName
 	      	  					,"nationality",nationality,"consumerCastId",consumerCast,"mobileNumber",contactNo,"resContactNo",resContactNo,"eMail",eMail,"address",address,"houseNo",houseNo,"wardNo",wardNo,"mohalla",mohalla
-	      	  					,"landMark",landMark,"village",village); 
+	      	  					,"landMark",landMark,"village",village);
 			        	   
 			        	   Integer valueToStore = delegator.storeByCondition("consumerRegistrationDetails", editCostomerDetail
 				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,seqId));
@@ -2094,7 +2101,19 @@ public class hrmsMasterEvents {
 	      			System.out.println("Exception occured : " + e ); 
 	      		}
 	      		
-	      	
+	      		try{
+	      			if (UtilValidate.isNotEmpty(seqId))
+	      			{
+	      				Map personLogDetail = UtilMisc.toMap("firstName",firstName,"lastName",lastName); 
+			        	   Integer value = delegator.storeByCondition("Person", personLogDetail
+				   					,EntityCondition.makeCondition("partyId",EntityOperator.EQUALS,partyId));
+	      			}
+	      		}
+	      		catch(GenericEntityException e)
+	      		{
+	      			System.out.println("Exception occured : " + e ); 
+	      		}
+	      		
 	      		 return result;	
 	      	}
 	    	
@@ -2163,6 +2182,10 @@ public class hrmsMasterEvents {
 	    		 if(connectionStatus.equals("approve"))
 	    		 {
 	    		  connectionNo = "CON"+sequenceId+"M";
+	    		 }
+	    		 else
+	    		 {
+	    			 connectionNo= "NA";
 	    		 }
 	    		 System.out.println("connectionNo======================================="+connectionNo);
 	    		 

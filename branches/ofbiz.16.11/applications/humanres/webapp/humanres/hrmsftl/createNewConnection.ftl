@@ -1,4 +1,4 @@
-<#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
+\<#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
 <#---Program Name: createNewConnection.ftl----->
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
@@ -21,16 +21,16 @@
             <table cellspacing="0" class="basic-table table-responsive">
                 <tbody>
                 	<tr>
-                		<td colspan="2"><font color="blue"></font></td>
-	                	<td colspan="2"><font color="blue"><u><i>${uiLabelMap.noteMandatoryAsterisk}</i></u></font color></td>
-                	</tr>
+	               <td colspan="3"><font color="blue">${uiLabelMap.personalDetail}</font></td>
+	               <td colspan="1"><h4 align="right"><i><b><font color="blue">${uiLabelMap.noteMandatoryAsterisk}</font></b></i></a></td></tr>
+                </tr>
                 	<tr>
                 	<td class='label'>${uiLabelMap.customerNo} *</td>
                     	<td colspan="3">
-                      	<@htmlTemplate.lookupField value='' formName="connectionCreate" name="customerDeatil" id="customerDeatil" fieldFormName="customerDeatil"/>
+                      	<@htmlTemplate.lookupField value='' formName="connectionCreate" name="customerId" id="customerId" fieldFormName="customerLookupDetail" readonly="true"/>
                     	</td>
                     </tr>
-                    <tr>
+                    <#-- <tr>
                         <td class="label">${uiLabelMap.CommonTitle}</td>
                         <td>
                         	<input name="firstName"  type="text" maxlength="60" value="" readonly>
@@ -168,36 +168,46 @@
                         <td>
                         <input name="eMail" type="text" maxlength="40" value="" readonly>
                         </td>
-                     </tr>
+                     </tr> --->
                         
                     <tr><td colspan="4" align="left"><font color="blue">${uiLabelMap.connectionDetail}</font></td></tr>
                     
                     <tr>
-                        <td class="label">${uiLabelMap.connectionType}</td>
-                        <td><select name="maritalStatus" style="width:90px;">
+                    <td class="label">${uiLabelMap.connectionCategory} <font color="red">*</td></td>
+                         <td>
+   							<select name="connectionCategory" style="width:90px;">
                    				<option value="">Select</option>
-                   				<option value="Domestic">Domestic</option>
-                   				<option value="Commercial">Commercial</option>
-                    			<option value="Industrial">Industrial</option>
-                    			<option value="Institutional">Institutional</option>
+                   				<#if connectionCategoryList?has_content>
+                            		<#list connectionCategoryList as connectionCategoryList>
+                                		<option value="${connectionCategoryList.ConnectionTypeId?if_exists}">${connectionCategoryList.connectionType?if_exists}</option>
+                            		</#list>
+                            	</#if>
                    			</select>
                    		</td>
-                        <td class="label">${uiLabelMap.applicationType}</td>
-                        <td><select name="maritalStatus" style="width:90px;">
+                        <td class="label">${uiLabelMap.applicationType} <font color="red">*</td></td>
+                         <td>
+                    	<select name="applicationType" >
                    			<option value="">Select</option>
-                   			<option value="Permanent">Permanent</option>
-                   			<option value="Temporary">Temporary</option>
-                   			</select>
-                   		</td>
-                   	 </tr>
+                   			<#if applicationCategoryList?has_content>
+                            		<#list applicationCategoryList as applicationCategoryList>
+                                		<option value="${applicationCategoryList.applicationTypeeId?if_exists}">${applicationCategoryList.applicationType?if_exists}</option>
+                            		</#list>
+                            	</#if>
+                 		</select>
+             		</td>
+             		<tr>
                     
-                    <tr>
-                    	<td class="label">${uiLabelMap.typeOfBuilding}</td>
-                        <td><select name="maritalStatus" style="width:90px;">
+                   <td class="label">${uiLabelMap.typeOfBuilding} <font color="red">*</td></td>
+ 						<td>
+                    	<select name="typeOfBuilding" >
                    			<option value="">Select</option>
-                   			<option value="residentialBuildings">Residential buildings etc.</option>
-                   			</select>
-                   		</td>
+                   			<#if buildingTypeList?has_content>
+                            		<#list buildingTypeList as buildingTypeList>
+                                		<option value="${buildingTypeList.buildingId?if_exists}">${buildingTypeList.buildingType?if_exists}</option>
+                            		</#list>
+                            	</#if>
+                 		</select>
+             			</td>   
                         <td class="label">${uiLabelMap.applicationDate}</td>
                         <td>
                       <@htmlTemplate.renderDateTimeField name="applicationDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="applicationDate" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
@@ -223,7 +233,7 @@
                      </tr>
                     <tr>
                     	<td colspan="4"><center>
-                    	<input name="save"   type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveConnectionDetail(connectionCreate);"/>
+                    	<input name="save" type="button" value="${uiLabelMap.CommonSave}" onClick="javascript:saveConnectionDetail();"/>
                     	<input type="button" name="cancel" value="${uiLabelMap.CommonCancel}" onclick="javascript:validateConfirmBack();"/> 
                      </center></td>
                     </tr>
@@ -236,10 +246,10 @@
     
     <script type="text/javascript" language="javascript">
 
-function saveConnectionDetail(connectionCreate)
+function saveConnectionDetail()
    {
 		      var form=document['connectionCreate'];
-		      
+		      var customerId = form.customerId.value;
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
