@@ -1081,6 +1081,15 @@ under the License.
     <screen name="createNewConnection">
         <section>
             <actions>
+                <entity-condition list="connectionCategoryList" entity-name="connectionTypeMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        <entity-condition list="applicationCategoryList" entity-name="applicationTypeMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        <entity-condition list="buildingTypeList" entity-name="buildingTypeMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -3428,4 +3437,25 @@ under the License.
         </section>
     </screen>
      
+<screen name="customerLookupDetail">
+        <section>
+            <actions>
+            <script location="component://humanres/groovyScripts/Employee/lookupSearchCustomer.groovy"/>        
+            </actions>
+            <widgets>
+                <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
+                    <decorator-section name="body">
+                        <platform-specific>
+                    		<html>
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/customerSearchLookup.ftl"/>	
+                    		<html-template location="component://humanres/webapp/humanres/hrmsftl/customerListlookup.ftl"/>	
+                    		</html>
+                        </platform-specific>
+                
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen> 
+
 </screens>

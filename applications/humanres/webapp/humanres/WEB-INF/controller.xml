@@ -2215,6 +2215,25 @@ under the License.
     </request-map>
     <!-- End -->
     
+    <request-map uri="customerLookupDetail">
+      	<security https="true" auth="true"/>
+      	<response name="success" type="view" value="customerLookupDetail"/>
+      	<response name="error" type="view" value="customerLookupDetail"/>
+   	</request-map>
+   	
+   	<request-map uri="empApplyConnection">
+      	<security https="true" auth="true"/>
+      	<event type="service" invoke="applyForConnection"/>
+      	<response name="success" type="view" value="approveNewConnection"/>
+      	<response name="error" type="view" value="approveNewConnection"/>
+   	</request-map>
+   	
+   	<request-map uri="searchLookValue">
+      	<security https="true" auth="true"/>
+      	<response name="success" type="view" value="customerLookupDetail"/>
+      	<response name="error" type="view" value="customerLookupDetail"/>
+   	</request-map>
+   	
     <!-- ===================Lookup Request===================== -->
     <request-map uri="LookupPartyName"><security auth="true" https="true"/><response name="success" type="view" value="LookupPartyName"/></request-map>
     <request-map uri="LookupPayment"><security auth="true" https="true"/><response name="success" type="view" value="LookupPayment"/></request-map>
@@ -2501,4 +2520,5 @@ under the License.
 	
 			<view-map name="grievancePDF" type="screenfop" page="component://humanres/widget/EmployeeScreens.xml#grievancePDF" content-type="application/pdf"/>
 			<view-map name="complaintPDF" type="screenfop" page="component://myportal/widget/PortalAdmScreens.xml#complaintDetailsPDF" content-type="application/pdf"/>
+<view-map name="customerLookupDetail" type="screen" page="component://humanres/widget/EmployeeScreens.xml#customerLookupDetail"/>
 </site-conf>

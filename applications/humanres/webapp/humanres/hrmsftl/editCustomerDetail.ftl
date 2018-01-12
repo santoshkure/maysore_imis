@@ -251,6 +251,7 @@
                     	 <td>${editConsumerDetail.actionStatus?if_exists}</td>
                      </tr>
                      <input name="seqId" type="hidden" value="${editConsumerDetail.sequenceId?if_exists}">
+                     <input name="partyId" type="hidden" value="${editConsumerDetail.partyId?if_exists}">
                     </#list>
                     </#if>
                       
