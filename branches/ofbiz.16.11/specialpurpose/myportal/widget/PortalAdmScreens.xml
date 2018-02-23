@@ -137,6 +137,27 @@ under the License.
             <actions>
              <set field="layoutSettings.javaScripts[]" value="/images/myportal.js" global="true"/>
              <set field="layoutSettings.styleSheets[+0]" value="/images/myportal.css" global="true"/>
+             
+             <entity-condition list="updateConsumerDetail" entity-name="consumerRegistrationDetails">
+            <condition-expr field-name="partyId" operator="equals" value="${parameters.checkId}" />
+            <order-by field-name="createdStamp"/>
+            </entity-condition>
+                 
+        <entity-condition list="genderMasterList" entity-name="genderMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="maritalMasterList" entity-name="maritalStatusMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="communityMasterList" entity-name="communityMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        
+        <entity-condition list="casteMasterList" entity-name="casteMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -236,7 +257,15 @@ under the License.
     <screen name="connectionApplyPage">
         <section>
             <actions>
-               
+               <entity-condition list="connectionCategoryList" entity-name="connectionTypeMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        <entity-condition list="applicationCategoryList" entity-name="applicationTypeMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
+        <entity-condition list="buildingTypeList" entity-name="buildingTypeMaster">
+        	<condition-expr field-name="status" operator="equals" value="A"/>
+        </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -425,6 +454,9 @@ under the License.
     <screen name="createregisterComplain">
         <section>
             <actions>
+            <entity-condition list="customerConnetion" entity-name="saveConnectionDetail">
+				<condition-expr field-name="partyId" operator="equals" value="${parameters.checkId}"/>
+		    </entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -458,11 +490,14 @@ under the License.
                 </decorator-screen>
             </widgets>
         </section>
-    </screen> 
+    </screen>
     <!-- Added By Nikhil  For apply for job -->  
     <screen name="searchapplyforjob">
         <section>
             <actions>
+            <!-- <entity-condition list="jobDetailList" entity-name="jobDetails">
+  					<condition-expr field-name="customerId" operator="equals" value="${parameters.checkId}"/>
+		    	</entity-condition> -->
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -480,6 +515,9 @@ under the License.
      <screen name="createapplyforjob">
         <section>
             <actions>
+            <entity-condition list="connectionList" entity-name="saveConnectionDetail">
+  					<condition-expr field-name="customerId" operator="equals" value="${parameters.checkId}"/>
+		    	</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">

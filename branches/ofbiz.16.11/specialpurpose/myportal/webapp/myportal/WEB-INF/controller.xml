@@ -446,6 +446,20 @@
       		<response name="error" type="view" value="complaintPDF"/>
    		</request-map>
     
+    <request-map uri="updateCostomerDetail">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="editCostomerDetail"/>
+        <response name="success" type="view" value="main"/>
+          <response name="error" type="view" value="updatecustomerdetails"/>
+    </request-map>
+    
+    <request-map uri="saveJobDetail">
+        <security https="true" auth="true"/>
+         <event type="service" invoke="saveJobDetails"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="createapplyforjob"/>
+    </request-map>
+    
 <!-- End -->
    
     <view-map name="main" type="screen" page="component://common/widget/PortalPageScreens.xml#showPortalPage"/>

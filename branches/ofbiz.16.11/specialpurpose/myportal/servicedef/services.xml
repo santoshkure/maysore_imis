@@ -182,4 +182,18 @@ under the License.
  			</service> 
 	<!-- End -->
 	
+	<service name="saveJobDetails" export="true" engine="java" 
+    			location="org.apache.ofbiz.myportal.MyportalServices"      invoke="saveJobDetails">
+    	
+     			<attribute name="custNo" type="String" mode="IN" optional="true" />
+     			<attribute name="conNo" type="String" mode="IN" optional="true" />
+			    <attribute name="ApplicationDate" type="String" mode="IN" optional="true" />
+			    <attribute name="fileLoc" type="String" mode="IN" optional="true" />
+			    <attribute name="serviceDate" type="String" mode="IN" optional="true" />
+			    <attribute name="FeeAmount" type="String" mode="IN" optional="true" />
+			    <attribute name="job" type="String" mode="IN" optional="true" />
+			    <attribute name="detailOfJob" type="String" mode="IN" optional="true" />
+			    <attribute name="serviceAddress" type="String" mode="IN" optional="true" />
+</service> 
+
 </services>

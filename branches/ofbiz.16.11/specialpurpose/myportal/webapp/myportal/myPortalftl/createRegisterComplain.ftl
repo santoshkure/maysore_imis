@@ -28,7 +28,17 @@
 						<td class="label">${uiLabelMap.customerNo}</td>
 						<td><input type="text" name="custNo" id="custNo" value="${userLogin.userLoginId?if_exists}" readonly /></td>
 						<td class="label">${uiLabelMap.connectionNo}</td>
-						<td><input type="text" name="conNo" id="conNo" value="" /></td>
+						<td><select name="conNo">
+                   				<option value="">Select</option>
+                   				<#if customerConnetion?exists>
+                   					<#if customerConnetion?has_content>
+										<#list customerConnetion as customerConnetion>
+											<option value="${customerConnetion.connectionNo?if_exists}">${customerConnetion.connectionNo?if_exists}</option>
+                            			</#list>
+                            		</#if>
+								</#if>
+                   			</select>
+                   		</td>
 					</tr>
 					<tr>
 						<td class="label" >${uiLabelMap.complaintDate}</td>

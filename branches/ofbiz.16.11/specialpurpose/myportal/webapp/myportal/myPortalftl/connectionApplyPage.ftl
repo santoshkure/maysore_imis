@@ -38,23 +38,26 @@
                  </tr>
                     
                      <tr>
-                    <td class="label">${uiLabelMap.connectionCategory} <font color="red">*</td></td>
+                         <td class="label">${uiLabelMap.connectionCategory} <font color="red">*</td></td>
                          <td>
-                    	<select name="connectionCategory" >
-                   			<option value="">Select</option>
-                   			<option value="Household">Household</option>
-                   			<option value="household">Non-household</option>
-                   			<option value="Commercial">Commercial</option>
-                   			
-                 		</select>
-             		</td>
-                        <td class="label">${uiLabelMap.applicationType} <font color="red">*</td></td>
+   							<select name="connectionCategory" style="width:90px;">
+                   				<option value="">Select</option>
+                   				<#if connectionCategoryList?has_content>
+                            		<#list connectionCategoryList as connectionCategoryList>
+                                		<option value="${connectionCategoryList.ConnectionTypeId?if_exists}">${connectionCategoryList.connectionType?if_exists}</option>
+                            		</#list>
+                            	</#if>
+                   			</select>
+                   		</td>
+                       <td class="label">${uiLabelMap.applicationType} <font color="red">*</td></td>
                          <td>
                     	<select name="applicationType" >
                    			<option value="">Select</option>
-                   			<option value="Permanent">Permanent</option>
-                   			<option value="Temporary">Temporary</option>
-                   			
+                   			<#if applicationCategoryList?has_content>
+                            		<#list applicationCategoryList as applicationCategoryList>
+                                		<option value="${applicationCategoryList.applicationTypeeId?if_exists}">${applicationCategoryList.applicationType?if_exists}</option>
+                            		</#list>
+                            	</#if>
                  		</select>
              		</td>
              		<tr>
@@ -62,16 +65,16 @@
  						<td>
                     	<select name="typeOfBuilding" >
                    			<option value="">Select</option>
-                   			<option value="Residential">Residential</option>
-                   			<option value="Industrial">Industrial</option>
-                   			
+                   			<#if buildingTypeList?has_content>
+                            		<#list buildingTypeList as buildingTypeList>
+                                		<option value="${buildingTypeList.buildingId?if_exists}">${buildingTypeList.buildingType?if_exists}</option>
+                            		</#list>
+                            	</#if>
                  		</select>
              			</td>   
    						<td class="label">${uiLabelMap.applicationDate}</td>
    						<td>
-						<#--<@htmlTemplate.renderDateTimeField name="dateOfBirth" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
-						--><input name="applicationDate"  type="date" maxlength="10" readonly value="${nowTimestamp?string("dd/MM/yyyy hh:mm:ss a")}"></td>
-   						
+						<@htmlTemplate.renderDateTimeField name="applicationDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="fromDate_2" dateType="date" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
    					</tr>
    					 <tr>
 	                         
