@@ -33,7 +33,7 @@
 											<input type="hidden" name="sequenceId" id="sequenceId" value="${complRegDetailsList.sequenceId?if_exists}" readonly />
 											<input type="hidden" name="complaintId" id="complaintId" value="${complRegDetailsList.complaintId?if_exists}" readonly />
 										<td class="label">${uiLabelMap.connectionNo}</td>
-										<td><input type="text" name="conNo" id="conNo" value="${complRegDetailsList.conNo?if_exists}" /></td>
+										<td><input type="text" name="conNo" id="conNo" value="${complRegDetailsList.conNo?if_exists}" readonly/></td>
 									</tr>
 									<tr>
 										<td class="label" >${uiLabelMap.complaintDate}</td>

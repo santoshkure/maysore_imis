@@ -741,4 +741,40 @@ public class MyportalServices {
 
 	}
 	
+	public static Map<String, Object> saveJobDetails(DispatchContext dctx,Map<String, ? extends Object> context) {
+		 Map<String, Object> result = ServiceUtil.returnSuccess();
+		 GenericDelegator delegator = (GenericDelegator) dctx.getDelegator();
+		 LocalDispatcher dispatcher = dctx.getDispatcher();
+		GenericValue userLogin = (GenericValue) context.get("userLogin");
+		Locale locale = (Locale) context.get("locale");
+		       
+		String partyId = userLogin.getString("partyId");
+		String custNo = (String) context.get("custNo");
+		String conNo = (String) context.get("conNo");
+		String ApplicationDate = (String) context.get("ApplicationDate");
+		String fileLoc = (String) context.get("fileLoc");
+		String serviceDate = (String) context.get("serviceDate");
+		String FeeAmount = (String) context.get("FeeAmount");
+		String job = (String) context.get("job");
+		String detailOfJob = (String) context.get("detailOfJob");
+		String serviceAddress = (String) context.get("serviceAddress");
+		  		
+		 try{     
+		 GenericValue saveDetail = null;
+		 String sequenceId = delegator.getNextSeqId("jobDetails",1);
+		  			System.out.println("===========sequenceId=========="+sequenceId);
+		  			Map<String, ? extends Object> jobDetails = UtilMisc.toMap("sequenceId",sequenceId,"custNo",custNo,"conNo",conNo,"ApplicationDate",ApplicationDate,"fileLoc",fileLoc,
+		  					"serviceDate",serviceDate,"FeeAmount",FeeAmount,"job",job,"detailOfJob",detailOfJob,"serviceAddress",serviceAddress);
+		  			
+		  			saveDetail = delegator.makeValue("jobDetails", jobDetails);
+		 saveDetail.create();
+		  		result.put(myportalConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,myportalConstants.RECORD_SUBMITTED_SUCCESSFULLY, "", locale));
+		  		}
+		  		catch(GenericEntityException e)
+		  		{
+		  			e.printStackTrace();
+		  		}
+		  		 return result;	
+		  	}
+		
 }

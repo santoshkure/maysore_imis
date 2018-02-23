@@ -413,10 +413,6 @@
         <value xml:lang="en">Edit Connection</value>
         <value xml:lang="kn">Edit Connection</value>
     </property>
-    <property key="connectionCategory">
-        <value xml:lang="en">Category Of Water Use</value>
-        <value xml:lang="kn">Category Of Water Use</value>
-    </property>
      <property key="disconnectionApply">
         <value xml:lang="en">Disconnection Details</value>
         <value xml:lang="kn">Disconnection Details</value>

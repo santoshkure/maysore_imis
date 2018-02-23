@@ -6,8 +6,7 @@
 <#-- #####################################################################################################-->
 
 <#setting locale="en">
-<script language="javascript" src="/images/jquery/plugins/validate/additional-methods.js"  type="text/javascript"></script>
-<form name="billpayment" class="basic-form" method="post" action="">
+<form name="billCalculate" class="basic-form" method="post" action="">
    		    <div class="col-md-12"> 
                <div class="alert alert-info">
                  <ul>
@@ -20,7 +19,7 @@
  	 <td colspan="4"><h4 align="right"><i><b><font color="red">${uiLabelMap.CommonMandatoryNote}</font></b></i></a></td>
  		 <tr>
  		   <td class="label" >${uiLabelMap.tariffPlan} <font color="red">*</font></td>
-		   <td><select name="tariffplan" style="width:150px;">
+		   <td><select name="tariffplan" style="width:150px;" OnChange="javascript:calculateBill();">
 		   <option value="">${uiLabelMap.selectTariffPlan}</option>
 		   <option value="com">Commercial</option>
 		   <option value="noncom">Non Commercial</option>
@@ -28,29 +27,51 @@
 		  </tr>
 		  <tr>
  		   <td class="label" >${uiLabelMap.previousBillReading} <font color="red">*</font></td>
-		   <td><input name="prebillreading"  type="text" maxlength="10" value="" style="width:150px;"></td>
+		   <td><input name="prebillreading" onKeyUp="javascript:calculateBill();" type="text" maxlength="10" value="" style="width:150px;"></td>
 		 </tr>
 		  <tr>
  		   <td class="label" >${uiLabelMap.currentBillReading} <font color="red">*</font></td>
-		   <td><input name="curbillreading"  type="text" maxlength="10" value="" style="width:150px;"></td>
+		   <td><input name="curbillreading" onKeyUp="javascript:calculateBill();" type="text" maxlength="10" value="" style="width:150px;"></td>
 		 </tr>
 		<tr>
- 		   <td class="label" >${uiLabelMap.unitReading}</td>
+ 		   <td class="label" >Used Reading</td>
 		   <td><input name="unitofreading"  type="text" maxlength="10" value="" readonly style="width:150px;"></td>
 		 </tr>
 		<tr>
-			<td colspan="4"><center>
-			<div id ="saveBtn">
-				<input name="save" value="${uiLabelMap.calculate}" type="button" onClick="validateParameters('')">
-				
-			</div></center>
-			</td>
-						
-		</tr>
+ 		   <td class="label" >Bill Amount (In Rs.)</td>
+		   <td><input name="billAmount"  type="text" maxlength="10" value="" readonly style="width:150px;"></td>
+		 </tr>
 		 </table>
      </div>  
    	</div>	
 </form>
 
- 
+<script>
+function calculateBill()
+{
+var form = document['billCalculate'];
+var tariffplan = form.tariffplan.value;
+if(notEmptyField(tariffplan,"Select Tariff Plan"))
+{
+var rate;
+if(tariffplan == "com")
+{
+rate =10;
+}
+else if(tariffplan == "noncom")
+{
+rate =7;
+}
+else
+{
+rate =5;
+}
 
+var prebillreading = form.prebillreading.value;
+var currentBillReading = form.curbillreading.value;
+var totalUsed = currentBillReading - prebillreading;
+form.unitofreading.value= totalUsed;
+form.billAmount.value= totalUsed*rate;
+}
+}
+</script>

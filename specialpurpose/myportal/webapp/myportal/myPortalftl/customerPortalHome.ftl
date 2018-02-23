@@ -78,7 +78,7 @@
 						<a href="kattaChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Request </a>
 					</li>
 					<li>
-						<a href="khataChangeDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Detail</a>
+						<a href="khataChangeDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change</a>
 					</li>
 					<#-- <li>
 						<a href="createcustomerbillcorrection"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply for Bill Correction </a>
@@ -114,7 +114,7 @@
 						<a href="RTIappdetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application Details </a>
 					</li>-->
 					<li>
-						<a href="updatecustomerdetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Update Personal Detail </a>
+						<a href="updatecustomerdetails?checkId=${userLogin.partyId}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Update Personal Detail </a>
 					</li>
 					<#-- <li>
 						<a href="createGrievanceCusPortal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Apply Grievance </a>
@@ -185,7 +185,7 @@
                                     	<i class="fa fa-random fa-3x"></i>
                                 	</div>
                                 	<div class="col-xs-9 text-right">
-                                    	<div>Connection Details</div>
+                                    	<div>Connection</div>
                                 	</div>
                             	</div>
                         	</div>
@@ -206,7 +206,7 @@
                 	                    <i class="fa fa-exchange fa-3x"></i>
                     	            </div>
                         	        <div class="col-xs-9 text-right">
-                                	    <div>Transaction Details</div>
+                                	    <div>Transactions</div>
                                 	</div>
                             	</div>
                         	</div>
@@ -251,7 +251,7 @@
                                 		    <i class="fa fa-file-text fa-3x"></i>
                                 		</div>
                                 		<div class="col-xs-9 text-right">
-                                		    <div>Bill Details</div>
+                                		    <div>Bill</div>
                                 		</div>
                             		</div>
                         		</div>
@@ -302,7 +302,7 @@
                                     		<i class="fa fa-info-circle fa-3x"></i>
                                 		</div>
                                 		<div class="col-xs-9 text-right">
-                                    		<div>RTI Details</div>
+                                    		<div>Right to Information</div>
                                 		</div>
                             		</div>
                         		</div>
@@ -323,7 +323,7 @@
                                 	    <i class="fa fa-hand-paper-o fa-3x"></i>
                                 	</div>
                                 	<div class="col-xs-9 text-right">
-                                    	<div>Grievance Details</div>
+                                    	<div>Grievance</div>
                                 	</div>
                             	</div>
                         	</div>
@@ -348,13 +348,13 @@
                             	        <i class="fa fa-suitcase fa-3x"></i>
                             	    </div>
                             	    <div class="col-xs-9 text-right">
-                            	        <div>Job Details</div>
+                            	        <div>Job </div>
                             	    </div>
                             	</div>
                         	</div>
                         	<a href="#">
                             	<div class="panel-footer">
-                            	    <span class="pull-left"><a href="searchapplyforjob">View Details</a></span>
+                            	    <span class="pull-left"><a href="searchapplyforjob?checkId=${userLogin.partyId}">View Details</a></span>
                             	    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             	    <div class="clearfix"></div>
                             	</div>
@@ -369,13 +369,13 @@
                                     	<i class="fa fa-pencil fa-3x"></i>
                                 	</div>
                                 	<div class="col-xs-9 text-right">
-                                    	<div>Register Complaint</div>
+                                    	<div>Personal Details</div>
                                 	</div>
                             	</div>
                         	</div>
                         	<a href="#">
                             	<div class="panel-footer">
-                                	<span class="pull-left"><a href="createregisterComplain">View Details</a></span>
+                                	<span class="pull-left"><a href="updatecustomerdetails?checkId=${userLogin.partyId}">View Details</a></span>
                                 	<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 	<div class="clearfix"></div>
                             	</div>
@@ -390,7 +390,7 @@
                                 	    <i class="fa fa-exclamation-triangle fa-3x"></i>
                                 	</div>
                                 	<div class="col-xs-9 text-right">
-                                	    <div>Complaint Details</div>
+                                	    <div>Complaint </div>
                                 	</div>
                             	</div>
                         	</div>

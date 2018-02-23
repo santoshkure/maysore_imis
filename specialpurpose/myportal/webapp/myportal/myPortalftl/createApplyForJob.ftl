@@ -1,5 +1,5 @@
 <#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
-<#---Program Name: customerbillcorrection.ftl----->
+<#---Program Name:  createApplyForJob.ftl----->
 		
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
@@ -27,10 +27,19 @@
                 	</tr>
                     <tr>
                         <td class="label">${uiLabelMap.customerNo}<font color="red">*</font></td>
-                        <td><input type="text" value="${userLogin.userLoginId}" name="cusNo" readonly /></td>
+                        <td><input type="text" value="${userLogin.userLoginId}" name="custNo" readonly /></td>
                         <td class="label">${uiLabelMap.connectionNo}<font color="red">*</font></td>
-                        <td><input type="text" value="" name="conNo"readonly /></td>
-                   </tr>
+                        <td>
+   							<select name="conNo">
+                   				<option value="">${uiLabelMap.CommonSelect}</option>
+                   				<#if connectionList?has_content>
+                            		<#list connectionList as connectionList>
+                                		<option value="${connectionList.connectionNo?if_exists}">${connectionList.connectionNo?if_exists}</option>
+                            		</#list>
+                            	</#if>
+                   			</select>
+                   		</td>
+   					</tr>
                     <tr>
                         <td class="label" >${uiLabelMap.applicationDate}</td>
                         <td><input type="text" name="ApplicationDate" value="${nowTimestamp?string("dd/MM/yyyy")}"  readonly /></td>
@@ -43,7 +52,7 @@
 				   </tr>
 				   <tr>
 				        <td class="label" >${uiLabelMap.serviceDate}</td>
-                        <td><input type="text" name="ServiceDate" value="" /></td>
+                        <td><@htmlTemplate.renderDateTimeField name="serviceDate" event="" action="" className="" alert="" title="" value="" size="15" maxlength="30" id="connectionDate" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
 				        <td class="label" >${uiLabelMap.serviceTime}</td>
                         <td><input type="text" name="Service Time" value="" /></td>
 				   </tr>
@@ -64,7 +73,7 @@
 					    <td class="label">${uiLabelMap.detailOfJob}</td>
                         <td colspan="1"><textarea name="detailOfJob" value="" maxlength="3000" ></textarea></td>
                         <td class="label">${uiLabelMap.serviceAddress}</td>
-                        <td colspan="1"><textarea name="ServiceAddress" value="" maxlength="500" ></textarea></td>
+                        <td colspan="1"><textarea name="serviceAddress" value="" maxlength="500" ></textarea></td>
 					 </tr>
                       <tr>
                     	 <td colspan="4"><center>
@@ -88,7 +97,7 @@
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
-                        form.action = "<@ofbizUrl>searchapplyforjob</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>saveJobDetail</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 

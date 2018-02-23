@@ -159,5 +159,18 @@ under the License.
   	      <prim-key field="sequenceId"/>
 	</entity>
    <!-- End -->
-   
+   <entity entity-name="jobDetails" package-name="org.apache.ofbiz.myportal" title="Save Job Details">
+		  <field name="sequenceId" type="id-ne"/>
+		  <field name="ApplicationDate" type="short-varchar"/>
+		  <field name="custNo" type="short-varchar"/>
+		  <field name="conNo" type="short-varchar"/>
+		  <field name="fileLoc" type="short-varchar"/>
+		  <field name="serviceDate" type="short-varchar"/>
+		  <field name="FeeAmount" type="short-varchar"/>
+		  <field name="job" type="short-varchar"/>
+		  <field name="detailOfJob" type="short-varchar"/>
+  	      <field name="serviceAddress" type="short-varchar"/>
+  	      <prim-key field="sequenceId"/>
+	</entity>
+	
 </entitymodel>

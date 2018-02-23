@@ -20,7 +20,7 @@
     		<div class="basic-nav" style="margin-top: -40px;"> 
 		    	<ul>
     				  <li>
-							<a title="Create Apply For Job" href="<@ofbizUrl>createapplyforjob</@ofbizUrl>">
+							<a title="Create Apply For Job" href="<@ofbizUrl>createapplyforjob?checkId=${userLogin.userLoginId}</@ofbizUrl>">
 								<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 35px;color: #2f87c6;"></i>
 							</a>
     				  </li>

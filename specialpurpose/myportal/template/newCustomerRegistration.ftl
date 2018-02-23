@@ -6,7 +6,7 @@
 <#---Version Number		Author 		 Date Created 		Date Modified   --->
 <#---1.0			Shubham malviya   01/08/2017         
 <#-- #####################################################################################################-->
-<#--This ftl is used to Register New Customer -->
+<#--This ftl is used to Register New Customers -->
 
 <#setting locale="en">
     
