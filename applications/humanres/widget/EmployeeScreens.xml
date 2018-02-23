@@ -1062,6 +1062,7 @@ under the License.
         <section>
             <actions>
             <script location="component://humanres/groovyScripts/Employee/customerRegisSearchList.groovy"/>  
+            <entity-condition list="genderName" entity-name="genderMaster"></entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1146,7 +1147,9 @@ under the License.
 			<set field="connectionNo" value="${parameters.connectionNo}" />
 			<set field="applicationType" value="${parameters.applicationType}" />
 			<script location="component://humanres/groovyScripts/Employee/applyNewConnectionList.groovy"/>    
-            
+            <entity-condition list="connectionCategoryName" entity-name="connectionTypeMaster"></entity-condition>
+            <entity-condition list="applicationTypeName" entity-name="applicationTypeMaster"></entity-condition>
+            <entity-condition list="buildingTypeName" entity-name="buildingTypeMaster"></entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1763,11 +1766,20 @@ under the License.
             <entity-condition list="viewConnectionDetail" entity-name="saveConnectionDetail">
         		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
         	</entity-condition>
-        
         	<entity-condition list="registrationDetailList" entity-name="consumerRegistrationDetails">
                 	<condition-expr field-name="customerId" operator="equals" value="${parameters.regId}" />
             </entity-condition>
-             	
+             	<entity-condition list="connectionCategoryName" entity-name="connectionTypeMaster"></entity-condition>
+            <entity-condition list="applicationTypeName" entity-name="applicationTypeMaster"></entity-condition>
+            <entity-condition list="buildingTypeName" entity-name="buildingTypeMaster"></entity-condition>
+            <entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				</entity-condition>
+							<entity-condition list="communityList" entity-name="communityMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="maritalStatusMaster" entity-name="maritalStatusMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="casteMaster" entity-name="casteMaster">
+		  	   				</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1788,11 +1800,24 @@ under the License.
             <actions>
             <entity-condition list="viewConnectionDetail" entity-name="saveConnectionDetail">
         		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
-        	</entity-condition>
-        
+        	</entity-condition>      
         	<entity-condition list="registrationDetailList" entity-name="consumerRegistrationDetails">
                 	<condition-expr field-name="customerId" operator="equals" value="${parameters.regId}" />
             </entity-condition>
+             <entity-condition list="meterNoList" entity-name="newMeterRegistration">
+             <condition-expr field-name="assignMeter" operator="not-equals" value="Y" />
+        	</entity-condition>
+        	<entity-condition list="connectionCategoryName" entity-name="connectionTypeMaster"></entity-condition>
+            <entity-condition list="applicationTypeName" entity-name="applicationTypeMaster"></entity-condition>
+            <entity-condition list="buildingTypeName" entity-name="buildingTypeMaster"></entity-condition>
+            <entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				</entity-condition>
+							<entity-condition list="communityList" entity-name="communityMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="maritalStatusMaster" entity-name="maritalStatusMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="casteMaster" entity-name="casteMaster">
+		  	   				</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -1818,6 +1843,17 @@ under the License.
             <entity-condition list="viewConnectionList" entity-name="saveConnectionDetail">
         		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
         	</entity-condition>
+        	<entity-condition list="connectionCategoryName" entity-name="connectionTypeMaster"></entity-condition>
+            <entity-condition list="applicationTypeName" entity-name="applicationTypeMaster"></entity-condition>
+            <entity-condition list="buildingTypeName" entity-name="buildingTypeMaster"></entity-condition>
+            <entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				</entity-condition>
+							<entity-condition list="communityList" entity-name="communityMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="maritalStatusMaster" entity-name="maritalStatusMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="casteMaster" entity-name="casteMaster">
+		  	   				</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -2080,6 +2116,17 @@ under the License.
             <entity-condition list="viewConnectionList" entity-name="saveConnectionDetail">
         		<condition-expr field-name="sequenceId" operator="equals" value="${parameters.checkId}"/>
         	</entity-condition>
+        	<entity-condition list="connectionCategoryName" entity-name="connectionTypeMaster"></entity-condition>
+            <entity-condition list="applicationTypeName" entity-name="applicationTypeMaster"></entity-condition>
+            <entity-condition list="buildingTypeName" entity-name="buildingTypeMaster"></entity-condition>
+            <entity-condition list="genderMasterList" entity-name="genderMaster">
+		  	   				</entity-condition>
+							<entity-condition list="communityList" entity-name="communityMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="maritalStatusMaster" entity-name="maritalStatusMaster">
+		  	   				</entity-condition>
+		  	   				<entity-condition list="casteMaster" entity-name="casteMaster">
+		  	   				</entity-condition>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">

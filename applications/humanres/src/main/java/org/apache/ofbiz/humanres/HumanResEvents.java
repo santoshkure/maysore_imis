@@ -2373,7 +2373,7 @@ public class HumanResEvents {
 			//String meterId = (String) delegator.getNextSeqId("newMeterRegistration");
 			
 			   
-		    java.sql.Date dateOfPurchase = getConvertedDate(purchaseDate);
+		    //java.sql.Date dateOfPurchase = getConvertedDate(purchaseDate);
 		  
 		    String meterId = delegator.getNextSeqId("newMeterRegistration", 1);
 		    
@@ -2409,7 +2409,7 @@ public class HumanResEvents {
 						
 						Map MeterRegistration = UtilMisc.toMap("meterId",meterId,"meterNo",meterNo,
 								"meterConstant",meterConstant,"meterCondition",meterCondition,"meterExisting",meterExisting,
-								"meterCost",meterCost,"remark",remark,"purchaseDate",dateOfPurchase,"officeId",officeId,"status","A");
+								"meterCost",meterCost,"remark",remark,"purchaseDate",purchaseDate,"officeId",officeId,"status","A");
 						
 						GenericValue valueToStore = delegator.makeValue("newMeterRegistration", MeterRegistration);
 						valueToStore.create();

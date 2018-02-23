@@ -1,4 +1,4 @@
-\<#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
+<#--Addition by Mechatronics Private Limited.It runs with Apache Ofbiz and distributed along with it or separately as needed-->
 <#---Program Name: createNewConnection.ftl----->
 <#--------------------------------------------Description: -------------------------------------------------> 
 <#-- #####################################################################################################-->
@@ -27,7 +27,7 @@
                 	<tr>
                 	<td class='label'>${uiLabelMap.customerNo} *</td>
                     	<td colspan="3">
-                      	<@htmlTemplate.lookupField value='' formName="connectionCreate" name="customerId" id="customerId" fieldFormName="customerLookupDetail" readonly="true"/>
+                      	<@htmlTemplate.lookupField value='' formName="connectionCreate" name="costomerNo" id="customerId" fieldFormName="customerLookupDetail" readonly="true"/>
                     	</td>
                     </tr>
                     <#-- <tr>
@@ -249,11 +249,11 @@
 function saveConnectionDetail()
    {
 		      var form=document['connectionCreate'];
-		      var customerId = form.customerId.value;
+		      var costomerNo = form.costomerNo.value;
 		      var sure = confirm("Are you sure, you want to Save the Form ?");
                               if( sure == true )
                              {
-                        form.action = "<@ofbizUrl>main</@ofbizUrl>";
+                        form.action = "<@ofbizUrl>applyConnection</@ofbizUrl>";
 			            form.submit();
 		                disSubmit('disBttn');    
 		                } 

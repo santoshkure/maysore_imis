@@ -2197,6 +2197,19 @@ public class hrmsMasterEvents {
 			        	   
 			        	   Integer valueToStore = delegator.storeByCondition("saveConnectionDetail", actionConnectionDetails 
 				   					,EntityCondition.makeCondition("sequenceId",EntityOperator.EQUALS,sequenceId));
+			        	   
+			        	   // added code for Update Y on AssignMeter column in newMeterRegistration 
+			        	   try{
+			        		   Map meterDetail = UtilMisc.toMap("assignMeter","Y");
+					        	   
+					        	   Integer Detail = delegator.storeByCondition("newMeterRegistration", meterDetail
+						   					,EntityCondition.makeCondition("meterId",EntityOperator.EQUALS,meterNo));
+			        	   }
+			        	   catch(GenericEntityException e)
+			      			{
+			      			System.out.println("Exception occured : " + e ); 
+			      			}
+			        	   //End
 			        	   result.put(OfficeSetupConstants.SUCCESS_MESSAGE, UIMessages.getSuccessMessage(resource,OfficeSetupConstants.RECORD_APPROVE_SUCCESSFULLY, "", locale));    
 			   	  		
 			        	// get mob no and email

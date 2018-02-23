@@ -54,9 +54,9 @@
         			<tr>
         				<td>${i?if_exists}</td>
         				<td><a href="viewCustomerConnectionDetail?checkId=${searchApplyConnectionList.sequenceId?if_exists}&regId=${searchApplyConnectionList.customerId?if_exists}">${searchApplyConnectionList.customerId?if_exists}</a></td>
-        				<td>${searchApplyConnectionList.connectionCategory?if_exists}i</td>
-	          			<td>${searchApplyConnectionList.applicationType?if_exists}</td>
-              			<td>${searchApplyConnectionList.typeOfBuilding?if_exists}</td>
+        				<td><#if connectionCategoryName?has_content><#list connectionCategoryName as CategoryList><#if '${CategoryList.ConnectionTypeId?if_exists}' == '${searchApplyConnectionList.connectionCategory?if_exists}'> ${CategoryList.connectionType?if_exists}</#if></#list></#if></td>
+	          			<td><#if applicationTypeName?has_content><#list applicationTypeName as applicationTypeName><#if '${applicationTypeName.applicationTypeeId?if_exists}' == '${searchApplyConnectionList.applicationType?if_exists}'> ${applicationTypeName.applicationType?if_exists}</#if></#list></#if></td>
+              			<td><#if buildingTypeName?has_content><#list buildingTypeName as buildingTypeName><#if '${buildingTypeName.buildingId?if_exists}' == '${searchApplyConnectionList.applicationType?if_exists}'> ${buildingTypeName.buildingType?if_exists}</#if></#list></#if></td>
               			<td>${searchApplyConnectionList.applicationDate?if_exists}</td>
               			<td><a href="actionNewConnection?checkId=${searchApplyConnectionList.sequenceId?if_exists}&regId=${searchApplyConnectionList.customerId?if_exists}" class="buttontext">${uiLabelMap.action}</a></td>
            			</tr>
