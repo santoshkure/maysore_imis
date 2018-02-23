@@ -242,7 +242,8 @@ under the License.
       <field name="remark" type="long-varchar"></field>
       <field name="meterExisting" type="short-varchar"></field>
       <field name="meterCost" type="short-varchar"></field> 
-	   <field name="purchaseDate" type="date"></field>
+	   <field name="purchaseDate" type="short-varchar"></field>
+	   <field name="assignMeter" type="short-varchar"/>
       <field name="activestatus" type="short-varchar"/>
       <field name="officeId" type="short-varchar"></field>
       <field name="status" type="short-varchar"/>

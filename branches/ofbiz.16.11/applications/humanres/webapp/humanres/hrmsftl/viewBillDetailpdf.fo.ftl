@@ -14,13 +14,13 @@
 		<fo:table table-layout="fixed"  font-size="8px" font-family="verdana" width="25cm" height="17cm" border-width="0.4mm" border-style="solid">
 			<fo:table-body>
  
-  			<fo:table-row background-color = " #f8f7da">
+  			<fo:table-row background-color = " #ffffff">
 				<fo:table-cell padding="6pt" border="1pt solid black" number-columns-spanned="06" >
-            	<fo:block font-weight="bold" text-align="center"><fo:external-graphic src="/rainbowstone/images/imis-logo.png"  content-height="0.9in" vertical-align="middle"/></fo:block>
+            	<fo:block font-weight="bold" text-align="center"><fo:external-graphic src="/rainbowstone/images/logo_mysore.png"  content-height="0.9in" vertical-align="middle"/></fo:block>
          		</fo:table-cell>
 			</fo:table-row>
 
-			<fo:table-row background-color = " #f8f7da">
+			<fo:table-row background-color = " #ffffff">
 	      		<fo:table-cell padding="2mm"  border="0.8pt solid black" number-columns-spanned="02" >
 	      		<fo:block font-size="10px">Bill No.:- BillNo1</fo:block>
 	      		</fo:table-cell>
@@ -34,7 +34,7 @@
 	      		</fo:table-cell>
 	        </fo:table-row>
 	        
-			<fo:table-row background-color = " #f8f7da">
+			<fo:table-row background-color = " #ffffff">
 	      		<fo:table-cell padding="2mm"  border="0.8pt solid black" number-columns-spanned="02">
 	      		<fo:block font-size="10px">Customer Name:- Ravi kumar Rai</fo:block>
 	      		</fo:table-cell>
@@ -48,7 +48,7 @@
 	      		</fo:table-cell>
 	        </fo:table-row>
 	        
-	       <fo:table-row background-color = " #f8f7da">
+	       <fo:table-row background-color = " #ffffff">
 	      		<fo:table-cell padding="2mm"  border="0.8pt solid black" number-columns-spanned="02">
 	      		<fo:block font-size="10px">Email:- acve@gmail.com</fo:block>
 	      		</fo:table-cell>
@@ -58,7 +58,7 @@
 	      		</fo:table-cell>
 	        </fo:table-row>
 
-	        <fo:table-row background-color = " #f8f7da">
+	        <fo:table-row background-color = " #ffffff">
 	      		<fo:table-cell padding="2mm"  border="0.8pt solid black" number-columns-spanned="02">
 	      		<fo:block font-size="10px">Billing Period:- jul-Aug 2017</fo:block>
 	      		</fo:table-cell>
@@ -72,7 +72,7 @@
 	      		</fo:table-cell>
 	        </fo:table-row>
 	        
-	        <fo:table-row background-color = " #f8f7da">
+	        <fo:table-row background-color = " #ffffff">
 	      		<fo:table-cell padding="2mm"  border="0.8pt solid black" number-columns-spanned="02">
 	      		<fo:block font-size="10px">Meter No.:- MN10001</fo:block>
 	      		</fo:table-cell>

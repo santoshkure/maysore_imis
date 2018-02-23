@@ -34,7 +34,7 @@
               <#list viewActionConsumerList as viewActionConsumerList>
                 <tr>
                     <td class="label">${uiLabelMap.customerNo}</td>
-                    <td colspan="2">${viewActionConsumerList.customerId?if_exists}</td>
+                    <td colspan="2"><b>${viewActionConsumerList.customerId?if_exists}</b></td>
                     
                   </tr>
                   

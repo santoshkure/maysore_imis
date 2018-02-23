@@ -112,7 +112,7 @@
 				</td>
 			</tr>
 		</table></div>
-		      <input type="text" name="hoo" value="" id= "hoo"/>
+		      <input type="hidden" name="hoo" value="" id= "hoo"/>
 		
 		<#----<div id="submit" align="center">
                   <td align="right"><input type="submit" submit="" value="${uiLabelMap.CommonSave}" onclick="javascript:validateParameters('createOffice');"/>

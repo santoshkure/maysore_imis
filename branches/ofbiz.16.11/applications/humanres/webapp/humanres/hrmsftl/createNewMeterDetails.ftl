@@ -52,11 +52,7 @@
                      
                      <tr>
                      	<td class='label'>${uiLabelMap.dateofpurchase} <font color="red">*</td>
-                    	<td>
-                    		<input type="text" name="purchaseDate" autocomplete="off" id="purchaseDate" style="width:140px;" maxlength="10" style="width:140px;" onchange=""/>
-        			       	<a href="javascript:call_cal(document.createNewMeterDetail.purchaseDate);">
-       				       	<img src="/images/cal.gif" width="16" height="16" border="0" alt="View Calendar" title="View Calendar"/></a>
-                    	</td>
+                    	<td><@htmlTemplate.renderDateTimeField name="purchaseDate" event="" action="" className="" alert="" title="Format: dd/mm/yyyy" value="" size="15" maxlength="30" id="dateOfBirth" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/></td>
                     	<td colspan="1" class='label'>${uiLabelMap.officeName} <font color="red">*</td>
                     	<td colspan="3">
                     	<select name="officeId" style="width:160px">

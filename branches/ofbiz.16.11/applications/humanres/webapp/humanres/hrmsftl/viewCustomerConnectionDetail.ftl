@@ -33,8 +33,18 @@
                 </tr>
                
                 <tr>
-                    <td class="label">${uiLabelMap.CommonTitle}</td>
-                    <td>${registrationDetailList.title?if_exists}</td>
+                   <td class="label">${uiLabelMap.CommonTitle}</td>
+                    <td>
+					<#if '${registrationDetailList.title?if_exists}' == "mr">
+					Mr
+					<#elseif '${registrationDetailList.title?if_exists}' == "ms">
+					Mrs
+					<#elseif '${registrationDetailList.title?if_exists}' == "miss">
+					Miss
+					<#else>
+					Other
+					</#if>
+					 </td>
                     <td class="label">${uiLabelMap.firstName}</td>
                         <td>${registrationDetailList.firstName?if_exists}</td>
                   </tr>
@@ -51,16 +61,15 @@
                         <td>${registrationDetailList.dateOfBirth?if_exists}</td>
                         
                         <td class="label">${uiLabelMap.gender}</td>
-                        <td>${registrationDetailList.genderId?if_exists}</td>
+                        <td><#if genderMasterList?has_content><#list genderMasterList as genderMasterList><#if '${genderMasterList.genderId?if_exists}' == '${registrationDetailList.genderId?if_exists}'>${genderMasterList.genderName?if_exists}</#if></#list></#if></td>
                         
    					</tr>
             
                     <tr>
                     <td class="label">${uiLabelMap.maritalStatus}</td>
-   						<td>${registrationDetailList.maritalStatusId?if_exists}</td>
+   						<td><#if maritalStatusMaster?has_content><#list maritalStatusMaster as maritalStatusMaster><#if '${maritalStatusMaster.maritalStatusId?if_exists}' == '${registrationDetailList.maritalStatusId?if_exists}'>${maritalStatusMaster.maritalStatus?if_exists}</#if></#list></#if></td>
                         <td class="label">${uiLabelMap.fatherName}</td>
                         <td>${registrationDetailList.fatherName?if_exists}</td>
-                      
                         </tr>
             
                     <tr>  
@@ -73,9 +82,9 @@
                     
                     <tr>
                         <td class="label">${uiLabelMap.cummunity}</td>
-                        <td>${registrationDetailList.cummunityNameId?if_exists}</td>
+                        <td><#if communityList?has_content><#list communityList as communityList><#if '${communityList.communityId?if_exists}' == '${registrationDetailList.cummunityNameId?if_exists}'>${communityList.communityname?if_exists}</#if></#list></#if></td>
                         <td class="label">${uiLabelMap.caste}</td>
-                        <td>${registrationDetailList.consumerCastId?if_exists}</td>
+                        <td><#if casteMaster?has_content><#list casteMaster as casteMaster><#if '${casteMaster.casteId?if_exists}' == '${registrationDetailList.consumerCastId?if_exists}'>${casteMaster.castename?if_exists}</#if></#list></#if></td>
                     </tr>
                     
                     <tr>
@@ -150,14 +159,14 @@
               <#list viewConnectionDetail as viewConnectionDetail>
                    <tr>
                         <td class="label">${uiLabelMap.connectionType}</td>
-                        <td>${viewConnectionDetail.connectionCategory?if_exists}</td>
+                        <td><#if connectionCategoryName?has_content><#list connectionCategoryName as CategoryList><#if '${CategoryList.ConnectionTypeId?if_exists}' == '${viewConnectionDetail.connectionCategory?if_exists}'> ${CategoryList.connectionType?if_exists}</#if></#list></#if></td>
                         <td class="label">${uiLabelMap.applicationType}</td>
-                        <td>${viewConnectionDetail.applicationType?if_exists}</td>
+                       <td><#if applicationTypeName?has_content><#list applicationTypeName as applicationTypeName><#if '${applicationTypeName.applicationTypeeId?if_exists}' == '${viewConnectionDetail.applicationType?if_exists}'> ${applicationTypeName.applicationType?if_exists}</#if></#list></#if></td>
                     </tr>
                     
                     <tr>
                     <td class="label">${uiLabelMap.typeOfBuilding}</td>
-                        <td>${viewConnectionDetail.typeOfBuilding?if_exists}</td>
+                        <td><#if buildingTypeName?has_content><#list buildingTypeName as buildingTypeName><#if '${buildingTypeName.buildingId?if_exists}' == '${viewConnectionDetail.typeOfBuilding?if_exists}'> ${buildingTypeName.buildingType?if_exists}</#if></#list></#if></td>
                         <td class="label">${uiLabelMap.applicationDate}</td>
                         <td>${viewConnectionDetail.applicationDate?if_exists}</td>
                         

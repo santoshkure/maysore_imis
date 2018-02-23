@@ -28,7 +28,17 @@
              	<#list actionDetailList as actionDetailList>
                 <tr>
                     <td class="label">${uiLabelMap.CommonTitle}</td>
-                    <td>${actionDetailList.title?if_exists}</td>
+                    <td>
+					<#if '${actionDetailList.title?if_exists}' == "mr">
+					Mr
+					<#elseif '${actionDetailList.title?if_exists}' == "ms">
+					Mrs
+					<#elseif '${actionDetailList.title?if_exists}' == "miss">
+					Miss
+					<#else>
+					Other
+					</#if>
+					 </td>
                   </tr>
                   
                   <tr>

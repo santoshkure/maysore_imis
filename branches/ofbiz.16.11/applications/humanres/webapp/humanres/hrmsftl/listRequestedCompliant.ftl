@@ -95,7 +95,7 @@
 							    <td><center><a id="conNo" class="sort-order" href="complaintRequest?orderField=${conNo}&sortType=${sortType}&id=conNo&VIEW_SIZE=${viewSize}&amp;VIEW_INDEX=${viewIndex}${paramList}">${uiLabelMap.connectionNo}</a></center></td>
 								<td><center><a id="complDate" class="sort-order" href="complaintRequest?orderField=${complDate}&sortType=${sortType}&id=complDate&VIEW_SIZE=${viewSize}&amp;VIEW_INDEX=${viewIndex}${paramList}">${uiLabelMap.complaintDate}</a></center></td>
 								<td><center><a id="compStatus" class="sort-order" href="complaintRequest?orderField=${compStatus}&sortType=${sortType}&id=compStatus&VIEW_SIZE=${viewSize}&amp;VIEW_INDEX=${viewIndex}${paramList}">${uiLabelMap.CommonStatus}</a></center></td>
-								<td><center>${uiLabelMap.CommonEdit}</center></td>
+								<td><center>${uiLabelMap.action}</center></td>
 							</tr>
 						</thead> 
 	 					<#if (requestList)?has_content>
@@ -178,7 +178,7 @@
              			<td>${uiLabelMap.connectionNo}</td>
              			<td>${uiLabelMap.complaintDate}</td>
              			<td>${uiLabelMap.CommonStatus}</td>
-             			<td>${uiLabelMap.CommonEdit}</td>
+             			<td>${uiLabelMap.action}</td>
 			  		</tr>
 		 			<tr>
 			 			<td colspan="8"><h3>${uiLabelMap.NoRecordsFound}</h3></td>

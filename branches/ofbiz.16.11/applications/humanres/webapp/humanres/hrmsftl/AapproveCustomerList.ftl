@@ -9,7 +9,6 @@
 <#--This ftl is used to show Requested for connection Customer List  -->
 
 <#setting locale="en">
-
 <form method="post" name="listApproveDetail" action="" class="basic-form">
 		<div class="row">
 			<div class="alert alert-info">
@@ -57,7 +56,7 @@
         				<td title="View Details"><a href="viewCustomerRegistrationDetail?regis=${searchRegistList.registrationId?if_exists}">${searchRegistList.registrationId?if_exists}</a></td>
 	          			<td>${searchRegistList.firstName?if_exists}</td>
 	          			<td>${searchRegistList.lastName?if_exists}</td>
-	          			<td>${searchRegistList.genderId?if_exists}</td>
+	          			<td><#if genderName?has_content><#list genderName as genderName><#if '${genderName.genderId?if_exists}' == '${searchRegistList.genderId?if_exists}'>${genderName.genderName?if_exists}</#if></#list></#if></td>
 	          			<td>${searchRegistList.address?if_exists}</td>
               			<td>${searchRegistList.mobileNumber?if_exists}</td>
               			<td>${searchRegistList.submittedDate?if_exists}</td>

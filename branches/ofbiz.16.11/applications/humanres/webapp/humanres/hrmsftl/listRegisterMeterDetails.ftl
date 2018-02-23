@@ -46,7 +46,7 @@
             <tr> <td><center>${count?if_exists}</center></td>
              <td><center>${materDetailList.meterNo?if_exists}</center></td>
            	 <td><center>${materDetailList.meterCondition?if_exists}</center></td>
-           	<td><center><#if materDetailList.purchaseDate?has_content>${materDetailList.purchaseDate?if_exists?string("dd/MM/yyyy")}</#if></center></td> 
+           	<td><center><#if materDetailList.purchaseDate?has_content>${materDetailList.purchaseDate?if_exists}</#if></center></td> 
            	 <td><center>
             <#assign std = '${materDetailList.status?if_exists}'>
                            <#if std =="A">

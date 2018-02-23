@@ -167,34 +167,34 @@
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Edit Personal Data </a>
 					</li>
 					<li>
-						<a href="registerMeterDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter Details </a>
+						<a href="registerMeterDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Meter </a>
 					</li>
 					<li>
 						<a href="searchMeterReading"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enter Meter Reading </a>
 					</li>
 					<li>
-						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change Details</a>
+						<a href="meterChangeReplacement"><i class="fa fa-arrow-right" aria-hidden="true"></i> Meter Change</a>
 					</li>
 					<li>
-						<a href="GrievanceDetailEmpPortal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance Details </a>
+						<a href="GrievanceDetailEmpPortal"><i class="fa fa-arrow-right" aria-hidden="true"></i> Grievance </a>
 					</li>
 					<li>
-						<a href="complaintRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint Details</a>
+						<a href="complaintRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaint</a>
 					</li>
 					<li>
-						<a href="jobDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Job Details</a>
+						<a href="jobDetails"><i class="fa fa-arrow-right" aria-hidden="true"></i> Job</a>
 					</li>
 					<li>
-						<a href="khataChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change Details </a>
+						<a href="khataChangeRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Khata Change </a>
 					</li>
 					<li>
-						<a href="RtiApplyDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application Details </a>
+						<a href="RtiApplyDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> RTI Application </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Employee </a>
+						<a href="NewEmployee"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register Employee </a>
 					</li>
 					<li>
-						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Employee Details </a>
+						<a href="findEmployees"><i class="fa fa-arrow-right" aria-hidden="true"></i> Employee </a>
 					</li>
 					<li>
 						<a href="main"><i class="fa fa-arrow-right" aria-hidden="true"></i> User Permission </a>
@@ -206,7 +206,7 @@
 						<a href="billCorrectionRequest"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Correction </a>
 					</li>
 					<li>
-						<a href="currentBillDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill Details </a>
+						<a href="currentBillDetail"><i class="fa fa-arrow-right" aria-hidden="true"></i> Bill </a>
 					</li>
    				</ul>
 			</div>	
@@ -220,16 +220,16 @@
    				</ul>
 			</div>
 			<div class="row" style="background:#f5f5f5;">
-				<div class="col-md-12" id="container3" style="height: 340px;  margin: 0 auto"></div>
+				<div class="col-md-12" id="container3" style="height: 300px;  margin: 0 auto"></div>
 			</div>
 			<div class="row" style="background:#f5f5f5;">
-				<div class="col-md-12" id="container4" style="height: 340px;  margin: 0 auto"></div>
+				<div class="col-md-12" id="container4" style="height: 300px;  margin: 0 auto"></div>
 			</div>
-			<#--  <div class="row" style="background:#f5f5f5; padding-top: 15px;">
+			<div class="row" style="background:#f5f5f5; padding-top: 15px;">
 				<div class="col-md-4" id="container" style="height: 200px;  margin: 0 auto"></div>
 				<div class="col-md-4"id="container1" style="height: 200px; margin: 0 auto"></div>
 				<div class="col-md-4" id="container2" style=" height: 200px;  margin: 0 auto"></div>
-			</div>-->
+			</div>
 			
    		</div>
    		<#-- End -->

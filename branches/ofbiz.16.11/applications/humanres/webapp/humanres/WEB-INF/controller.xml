@@ -2221,6 +2221,13 @@ under the License.
       	<response name="error" type="view" value="customerLookupDetail"/>
    	</request-map>
    	
+   	<request-map uri="applyConnection">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="applyForConnection"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main" />
+    </request-map>
+    
    	<request-map uri="empApplyConnection">
       	<security https="true" auth="true"/>
       	<event type="service" invoke="applyForConnection"/>

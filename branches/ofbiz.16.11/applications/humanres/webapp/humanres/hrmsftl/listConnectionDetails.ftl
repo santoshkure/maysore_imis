@@ -53,11 +53,11 @@
 			<#list searchConnectionList as searchConnectionList>
 					<tr>
 						<td>${i?if_exists}</td>
-        				<td><a href="viewCustomerConnectionActionDetail?checkId=${searchConnectionList.sequenceId?if_exists}&validId=${searchConnectionList.costomerNo?if_exists}">${searchConnectionList.connectionNo?if_exists}</a></td>
+        				<td><a href="viewCustomerConnectionActionDetail?checkId=${searchConnectionList.sequenceId?if_exists}&validId=${searchConnectionList.customerId?if_exists}">${searchConnectionList.connectionNo?if_exists}</a></td>
         				<td>${searchConnectionList.customerId?if_exists}</td>
         				<td>${searchConnectionList.connectionCategory?if_exists}</td>
         				<td>${searchConnectionList.applicationType?if_exists}</td>
-              			<td><a href="<@ofbizUrl>editConnectionDetail?checkId=${searchConnectionList.sequenceId?if_exists}&validId=${searchConnectionList.costomerNo?if_exists}</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
+              			<td><a href="<@ofbizUrl>editConnectionDetail?checkId=${searchConnectionList.sequenceId?if_exists}&validId=${searchConnectionList.customerId?if_exists}</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonEdit}</a></td>
               			<td><a href="<@ofbizUrl>forOfficeUseOnly</@ofbizUrl>" class="buttontext">${uiLabelMap.forOfficeUseOnly}</a></td>
               			<td><a href="<@ofbizUrl>aprForSanction</@ofbizUrl>" class="buttontext">${uiLabelMap.aprForSanction}</a></td>
            			</tr>
