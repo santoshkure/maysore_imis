@@ -16091,5 +16091,9 @@
     </property>
     
     <!-- end -->
+    <property key="connectionCategory">
+        <value xml:lang="en">Category Of Water Use</value>
+        <value xml:lang="kn">Category Of Water Use</value>
+    </property>
 </resource>
 
